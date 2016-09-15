@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[small]{caption}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{url}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+\pagestyle{empty}
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Notes on Papers for False Spring}
+\author{C Chamberlain}
+\date{\today}
+\maketitle 
+\newpage
+\begin{center}
+{\LARGE{\textit{Drivers of leaf-out phenology and their implications for species invasions: insights from Thoreau's Concord}}} \\ {\Large{Polgar et al. 2014}}
+\end{center}
+\section*{Abstract Notes}
+Investigate the differences in functional traits, invasive versus native, shrubs versus trees. This study looks into the rate of change by days per degree Celcius change, making it a suitable and viable source. 
+\section*{Introduction Notes}
+\begin{itemize}
+\item{Species around the world are beginning leaf-out around 4.6 days earlier per degree Celcius (Wolkovich et al., 2012)}
+\item{Communities dominated by native species tend to exhibit a weaker repsonse to temperature, whereas non-native dominated communities respond strongly to changes in temperature (Willis et al., 2008; Hulme, 2011).}
+\item{Leaf-out may be delayed, however, as winter seasons begin to warm and chilling requirements are not met, thus resulting in more warming to occur for bud burst to begin (McCreary et al., 1990; Morin et al., 2009; Fu et al., 2012).}
+\item{Spring bud burst occurs from a combination of winter chilling, spring warming, and photoperiod. Chilling units are seen as a method of protection against warm to cold spells in the spring to reduce the chance of freeze damage. Species-specific requirements for these three factors causes varying bud burst dates. Invasive species tend to leaf out much earlier than native species, permitting longer growing seasons and greater competition (Gu et al., 2008; Korner & Basler,
+2010; Basler & Korner, 2012). }
+\end{itemize}
+\section*{Materials and Methods Notes}
+\begin{itemize}
+\item{Takes observational data from Thoreau's data recorded from 1854,1855,1860 and compares to data recorded from 2009 to 2013.}
+\item{Looks at bud burst, as defined by Project Bud Burst and USNPN.}
+\end{itemize}
+
+
+
+
+
+\end{document}

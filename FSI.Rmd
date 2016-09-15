@@ -1,0 +1,68 @@
+---
+title: "False Spring Index"
+author: "Cat Chamberlain"
+date: "July 26, 2016"
+output: pdf_document
+includes: 
+  in_header: header.tex
+fontsize: 11pt
+bibliography: library.bib
+---
+```{r package_options, include=FALSE}
+knitr::opts_knit$set(progress = TRUE, verbose = TRUE)
+```
+
+
+```{r setup, include=FALSE}
+rm(list=ls()) 
+options(stringsAsFactors = FALSE)
+
+ipak <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
+packages <- c("ggplot2", "dplyr", "tidyr", "tidytext", "knitr",
+              "rmarkdown","knitcitations")
+ipak(packages)
+
+knitr::opts_chunk$set(echo = TRUE)
+
+budburst<-read.csv("hf003-06-mean-spp.csv",header=TRUE, sep=",")
+attach(budburst)
+tbl_df(budburst)
+glimpse(budburst)
+obs_bb<- budburst %>%
+  group_by(year)%>%
+  summarise_each(funs(mean),bb.jd)%>%
+  arrange(year)
+method<-read.csv("method.test.csv",header=TRUE,sep=",")
+attach(method)
+FSI.table<- method %>%
+  select(Year, FSI_obs, FSI_cam, FSI_npn) %>%
+  filter(Year>=2008) %>%
+  filter(Year<2015) 
+
+blend<-FSI.table %>% 
+  gather(Methodologies, FSI, -Year) %>%
+  arrange(Year)
+
+methodplot<-ggplot(blend, aes(Year, FSI)) + xlab("Year") +
+  ylab("False Spring Index") +
+  geom_point(aes(col=Methodologies))
+```
+
+Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al., 2008, there are two phases involved in spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. In this study, we aim to establish an index, known as a False Spring Index (FSI), that signifies the likelihood of a damage to occur from a late spring and the severity of that damage. FSI evaluates day of bud burst, number of growing degree days, and day of last spring freeze. 
+
+
+```{r table2, results="asis", message=FALSE, echo=FALSE}
+print(xtable::xtable(FSI.table,caption = "False Spring Indices calculated using all three methodologies"),comment=FALSE, caption.placement="top")
+      
+```
+\baselineskip12pt
+```{r results = "asis", message=FALSE, echo=FALSE}
+plot(methodplot)
+```
+
+

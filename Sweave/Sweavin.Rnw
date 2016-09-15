@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[small]{caption}
+\usepackage{gensymb}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+\pagestyle{empty}
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+\usepackage{setspace}
+
+\begin{document}
+
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\newline
+Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback [@Gu2008]. More frequently, however, plants that have been exposed to a false spring will experience leaf loss and slower canopy development [@Hufkens2012]. With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. It is anticipated that there will be a decrease in false spring occurrence overall, however, the severity of temperature variation is likely to increase [@Allstadt2015]. 
+\newline
+Different species exhibit varying responses to late spring freezing events and the level of damage also varies across phenophases. Generally, reproductive phases are more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots [@Peterson2014]. False spring events also put seedling and sapling trees at greater risk to damage than adult trees [@Vitasse2014]. Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for bud burst to take place and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date [@Augspurger2013]. In a study performed by Peterson and Abatzoglou (2014), it had been determined that 7 days between bud burst and last freeze date is a significant parameter. There is much debate over the definition of freezing temperatures and has resulted in two types of freezes: a "hard"" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C [@Augspurger2013; @Kodra2011; @Vavrus2006].
+
+<<label=sourcestuff, echo=FALSE, results="hide",message=FALSE>>=
+options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+
+setwd("~/Documents/git/falsespring")
+source("~/Documents/git/falsespring/FinalFSI.R")
+
+method<-read.csv("method.test.csv",header=TRUE,sep=",")
+attach(method)
+
+bb.table<-method %>%
+  select(Year,last_frz,bb_obs,bb_cam,bb_npn) %>%
+  filter(Year>=2008)%>%
+  filter(Year<2015)%>%
+  rename("Last Freeze"=last_frz)%>%
+  rename("Observed"=bb_obs)%>%
+  rename("PhenoCam"=bb_cam)%>%
+  rename("SI-x"=bb_npn)
+xtable(bb.table, caption="Date of bud burst")
+@
+
+<<label=bb.table, echo=FALSE, message=FALSE, results="asis">>=
+bb<-xtable(bb.table,caption = "Last Freeze julian dates recorded from 2008 to 2014 and day of bud burst recorded for all three methodologies.",comment=FALSE, caption.placement="top")
+print(bb, caption.placement="top")
+@
+
+\end{document}
