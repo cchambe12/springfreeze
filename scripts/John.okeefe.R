@@ -1,10 +1,9 @@
 # FALSE SPRING INDEX
-# 24 May 2016
+# 15 September 2016 - Started by Cat
 # Goal: compile weather data, phenology data, and NPN spring indices
-#       to establish false spring indices for Common Garden Project
-# Using: dply, tidyr, purrr
-## When using 'select' function in dply, cannot have MASS package
-## uploaded, interferes with dplyr package!!
+#       to establish false spring indices
+# In this script, I am working to sort through John O'Keefe's dataset to 
+# make a more appropriate comparison to the NPN data.
 
 # Clear workspace
 rm(list=ls()) # remove everything currently held in the R memory
@@ -36,7 +35,7 @@ sp <- budburst %>%
   arrange(year) 
 
 spp<- c("PRSE", "AMSP", "POTR", "CRSP", "HAVI", "ACSA", "BEPA", "ACPE", "ACRU", "QURU", 
-                         "BEAL", "BELE") ## Species that were observed each year
+        "BEAL", "BELE") ## Species that were observed each year
 
 d <- budburst %>%
   select(year, species, bb.jd)%>%
@@ -78,3 +77,40 @@ sm.comp<- condensed %>%
   filter(year>=1990) %>%
   filter(year<2015)
 
+# Compares FSI values for small dataset of Dr O'Keefe's observational
+# data and USNPN Spring Indices, based on -1.7 deg Celcius last freeze
+method<-read.csv("method.test.csv",header=TRUE,sep=",")
+attach(method)
+
+bb.table<-method %>%
+  select(year,last_frz,bb_npn, sm.bb) %>%
+  filter(year>=2008)%>%
+  filter(year<2015)%>%
+  rename("Last Freeze"=last_frz)%>%
+  rename("Observed"=sm.bb)%>%
+  rename("SI-x"=bb_npn)
+
+FSI.table<- method %>%
+  select(year, FSI_npn, FSI_sm) %>%
+  filter(year>=2008) %>%
+  filter(year<2015)
+
+blend<-FSI.table %>% 
+  gather(Methodologies, FSI, -year) %>%
+  arrange(year)
+
+methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
+  ylab("False Spring Index") +
+  geom_point(aes(col=Methodologies))
+plot(methodplot)
+
+npn_sm <- method %>%
+  select(year, FSI_npn, FSI_sm) %>%
+  filter(year>=2008) %>%
+  filter(year<2015)
+regression <- glm(formula = FSI_npn ~ FSI_sm + year, 
+                  data = npn_sm)
+summary(regression)
+
+pearson<-cor(FSI.table, method="pearson")
+pearson
