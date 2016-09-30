@@ -17,8 +17,7 @@ ipak <- function(pkg){
     install.packages(new.pkg, dependencies = TRUE)
   sapply(pkg, require, character.only = TRUE)
 }
-packages <- c("ggplot2", "rmarkdown", "dplyr", "knitcitations",
-              "knitr","lattice", "tidyr")
+packages <- c("ggplot2", "dplyr", "lattice", "tidyr")
 ipak(packages)
 
 # Integrate Phenology Data and compare methodologies
@@ -91,7 +90,7 @@ bb.table<-method %>%
   rename("SI-x"=bb_npn)
 
 FSI.table<- method %>%
-  select(year, FSI_npn, FSI_sm) %>%
+  select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 
@@ -105,7 +104,7 @@ methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
 plot(methodplot)
 
 npn_sm <- method %>%
-  select(year, FSI_npn, FSI_sm) %>%
+  select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 regression <- glm(formula = FSI_npn ~ FSI_sm + year, 
