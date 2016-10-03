@@ -152,7 +152,7 @@ If FSI is a positive number and greater than 7, then crown dieback is more likel
 PhenoCam data is not available for Harvard Forest until 2008 and observation data is only recorded through 2014, so this evaluation assesses FSI values from 2008 through 2014. 
 \section{Results}
 Date of bud burst varied between the three methodologies used. For the observational data, date of bud burst was determined by finding the mean date for all species observed in the study performed by Dr. O'Keefe (2014). %%%Lizzie, should I use first date of bud burst instead? I can change this method to determine observed bud burst date.%%% 
-As is seen in Table 1, Observed Bud Burst Dates and PhenoCam Bud Burst dates are similar, whereas SI-x dates gathered from the USA-NPN are recorded as much earlier in the year.
+As is seen in Table 1, Observed Bud Burst dates and PhenoCam Bud Burst dates are similar, whereas SI-x dates gathered from the USA-NPN are recorded as much earlier in the year.
 
 <<label=bb.table, echo=FALSE, message=FALSE, results="asis">>=
 bb<-xtable(bb.table,caption = "Last Freeze julian dates recorded from 2008 to 2014 and day of bud burst recorded for all three methodologies.",comment=FALSE, caption.placement="top")
