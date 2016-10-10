@@ -27,6 +27,8 @@ library(tidyr)
 library(ggplot2)
 library(xtable)
 library(broom)
+library(knitr)
+library(knitcitations)
 
 setwd("~/Documents/git/springfreeze")
 source("~/Documents/git/springfreeze/input/John.okeefe.R")

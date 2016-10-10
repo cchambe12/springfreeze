@@ -24,7 +24,7 @@ ipak(packages)
 
 # Integrate Phenology Data and compare methodologies
 # Set Working Directory
-setwd("~/Documents/git/falsespring")
+setwd("~/Documents/git/falsespring copy")
 
 budburst<-read.csv("hf003-06-mean-spp.csv",header=TRUE, sep=",")
 attach(budburst)

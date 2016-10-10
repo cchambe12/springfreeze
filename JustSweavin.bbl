@@ -1,0 +1,880 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Gu2008}{article}{}
+  \name{author}{8}{}{%
+    {{}%
+     {Gu}{G.}%
+     {Lianhong}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hanson}{H.}%
+     {Paul~J.}{P.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Post}{P.}%
+     {W.~Mac}{W.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kaiser}{K.}%
+     {Dale~P.}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yang}{Y.}%
+     {Bai}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nemani}{N.}%
+     {Ramakrishna}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pallardy}{P.}%
+     {Stephen~G.}{S.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Meyers}{M.}%
+     {Tilden}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{carbon cycle,climate warming,extreme temperature fluctuation,frost
+  damage,plant phenology}
+  \strng{namehash}{GL+1}
+  \strng{fullhash}{GLHPJPWMKDPYBNRPSGMT1}
+  \field{abstract}{%
+  Abstract Plant ecologists have long been concerned with a seemingly
+  paradoxical scenario in the relationship between plant growth and climate
+  change: warming may actually increase the risk of plant frost damage. The
+  underlying hypothesis is that mild winters and warm, early springs, which are
+  expected to occur as the climate warms, may induce premature plant
+  development, resulting in exposure of vulnerable plant tissues and organs to
+  subsequent late-season frosts. The 2007 spring freeze in the eastern United
+  States provides an excellent opportunity to evaluate this hypothesis and
+  assess its large-scale consequences. In this article, we contrast the rapid
+  prefreeze phenological advancement caused by unusually warm conditions with
+  the dramatic postfreeze setback, and report complicated patterns of freeze
+  damage to plants. The widespread devastation of crops and natural vegetation
+  occasioned by this event demonstrates the need to consider large fluctuations
+  in spring temperatures a real threat to terrestrial ecosystem structure and
+  functioning in a warming climate.%
+  }
+  \verb{doi}
+  \verb 10.1641/B580311
+  \endverb
+  \field{isbn}{0006-3568}
+  \field{issn}{0006-3568}
+  \field{number}{3}
+  \field{pages}{253}
+  \field{title}{{The 2007 Eastern US Spring Freeze: Increased Cold Damage in a
+  Warming World}}
+  \field{volume}{58}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/FSI/References/Gu{\_}2008{\_}BioSci.pdf
+  \verb :pdf
+  \endverb
+  \field{journaltitle}{BioScience}
+  \field{year}{2008}
+\endentry
+
+\entry{Hufkens2012}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Hufkens}{H.}%
+     {Koen}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Friedl}{F.}%
+     {Mark~A.}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Keenan}{K.}%
+     {Trevor~F.}{T.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sonnentag}{S.}%
+     {Oliver}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bailey}{B.}%
+     {Amey}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {O'Keefe}{O.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Richardson}{R.}%
+     {Andrew~D.}{A.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Carbon balance,Elevational gradient,Frost event,Northern hardwood
+  forest,Phenology}
+  \strng{namehash}{HK+1}
+  \strng{fullhash}{HKFMAKTFSOBAOJRAD1}
+  \field{abstract}{%
+  In the spring of 2010, temperatures averaged similar to 3 similar to degrees
+  C above the long-term mean (MarchMay) across the northeastern United States.
+  However, in mid-to-late spring, much of this region experienced a severe
+  frost event. The spring of 2010 therefore provides a case study on how future
+  spring temperature extremes may affect northeastern forest ecosystems. We
+  assessed the response of three northern hardwood tree species (sugar maple,
+  American beech, yellow birch) to these anomalous temperature patterns using
+  several different data sources and addressed four main questions: (1) Along
+  an elevational gradient, how was each species affected by the late spring
+  frost? (2) How did differences in phenological growth strategy influence
+  their response? (3) How did the late spring frost affect ecosystem
+  productivity within the study domain? (4) What are the potential long-term
+  impacts of spring frost events on forest community ecology? Our results show
+  that all species exhibited early leaf development triggered by the warm
+  spring. However, yellow birch and American beech have more conservative
+  growth strategies and were largely unaffected by the late spring frost. In
+  contrast, sugar maples responded strongly to warmer temperatures and
+  experienced widespread frost damage that resulted in leaf loss and delayed
+  canopy development. Late spring frost events may therefore provide a
+  competitive advantage for yellow birch and American beech at the expense of
+  sugar maple. Results from satellite remote sensing confirm that frost damage
+  was widespread throughout the region at higher elevations ({\textgreater}500
+  similar to m). The frost event is estimated to have reduced gross ecosystem
+  productivity by 70153 similar to g similar to C similar to m-2, or 714{\%} of
+  the annual gross productivity (1061 similar to+/-similar to 82 similar to g
+  similar to C similar to m-2) across 8753 similar to km2 of high-elevation
+  forest. We conclude that frost events following leaf out, which are expected
+  to become more common with climate change, may influence both forest
+  composition and ecosystem productivity.%
+  }
+  \verb{doi}
+  \verb 10.1111/j.1365-2486.2012.02712.x
+  \endverb
+  \field{isbn}{1354-1013}
+  \field{issn}{13541013}
+  \field{number}{7}
+  \field{pages}{2365\bibrangedash 2377}
+  \field{title}{{Ecological impacts of a widespread frost event following early
+  spring leaf-out}}
+  \field{volume}{18}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/git/falsespring/References /Hufkens{\_}
+  \verb 2012{\_}GlobalChBiol.pdf:pdf
+  \endverb
+  \field{journaltitle}{Global Change Biology}
+  \field{year}{2012}
+\endentry
+
+\entry{Allstadt2015}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {Allstadt}{A.}%
+     {Andrew~J}{A.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vavrus}{V.}%
+     {Stephen~J}{S.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heglund}{H.}%
+     {Patricia~J}{P.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Pidgeon}{P.}%
+     {Anna~M}{A.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wayne}{W.}%
+     {E}{E}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Radeloff}{R.}%
+     {Volker~C}{V.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IOP Publishing}%
+  }
+  \keyw{budburst,downscaled climate model,hard freeze,late freeze,phenological
+  mismatch,spring index,spring onset}
+  \strng{namehash}{AAJ+1}
+  \strng{fullhash}{AAJVSJHPJPAMWERVC1}
+  \field{abstract}{%
+  The onset of spring plant growth has shifted earlier in the year over the
+  past several decades due to rising global temperatures. Earlier spring onset
+  may cause phenological mismatches between the availability of plant resources
+  and dependent animals, and potentially lead to more false springs, when
+  subsequent freezing temperatures damage new plant growth. We used the
+  extended spring indices to project changes in spring onset, defined by leaf
+  out and by first bloom, and predicted false springs until 2100 in the
+  conterminous United States (US) using statistically-downscaled climate
+  projections from the Coupled Model Intercomparison Project 5 ensemble.
+  Averaged over our study region, the median shift in spring onset was 23 days
+  earlier in the Representative Concentration Pathway 8.5 scenario with
+  particularly large shifts in the Western US and the Great Plains. Spatial
+  variation in phenology was due to the influence of short-term temperature
+  changes around the time of spring onset versus season-long accumulation of
+  warm temperatures. False spring risk increased in the Great Plains and
+  portions of the Midwest, but remained constant or decreased elsewhere. We
+  conclude that global climate change may have complex and spatially variable
+  effects on spring onset and false springs, making local predictions of change
+  difficult.%
+  }
+  \verb{doi}
+  \verb 10.1088/1748-9326/10/10/104008
+  \endverb
+  \field{isbn}{doi:10.1088/1748-9326/10/10/104008}
+  \field{issn}{1748-9326}
+  \field{number}{October}
+  \field{pages}{104008}
+  \field{title}{{Spring plant phenology and false springs in the conterminous
+  U. S. during the 21st century}}
+  \verb{url}
+  \verb http://dx.doi.org/10.1088/1748-9326/10/10/104008
+  \endverb
+  \field{volume}{10}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/FSI/References/Allstadt et al 2015.pdf:
+  \verb pdf
+  \endverb
+  \field{journaltitle}{Environmental Research Letters (submitted)}
+  \field{year}{2015}
+\endentry
+
+\entry{Peterson2014}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Peterson}{P.}%
+     {Alexander~G.}{A.~G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Abatzoglou}{A.}%
+     {John~T.}{J.~T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{biosphere-atmosphere interaction,climate change,false
+  springs,phenology,sensitivity analysis,spring freeze}
+  \strng{namehash}{PAGAJT1}
+  \strng{fullhash}{PAGAJT1}
+  \field{abstract}{%
+  Climate warming fosters an earlier spring green-up that may bring potential
+  benefits to agricultural systems. However, advances in green-up timing may
+  leave early stage vegetation growth vulnerable to cold damage when hard
+  freezes follow green-up resulting in a false spring. Spatiotemporal patterns
+  of green-up dates, last spring freezes, and false springs were examined
+  across the contiguous United States from 1920 to 2013. Results indicate
+  widespread earlier green-up and last spring freeze dates over the period.
+  Observed changes in these dates were asymmetric with the last spring freeze
+  date advancing to earlier in the year relative to green-up date. Although
+  regionally variable, these changes resulted in a reduction in false springs,
+  notably over the past 20 years, except across the intermountain western
+  United States where the advance in green-up timing outpaced that of the last
+  spring freeze. A sensitivity experiment shows that observed decreases in
+  false springs are consistent with a warming climate.%
+  }
+  \verb{doi}
+  \verb 10.1002/2014GL059266
+  \endverb
+  \field{issn}{19448007}
+  \field{number}{6}
+  \field{pages}{2156\bibrangedash 2162}
+  \field{title}{{Observed changes in false springs over the contiguous United
+  States}}
+  \field{volume}{41}
+  \field{journaltitle}{Geophysical Research Letters}
+  \field{year}{2014}
+\endentry
+
+\entry{Vitasse2014}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Vitasse}{V.}%
+     {Yann}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lenz}{L.}%
+     {Armando}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hoch}{H.}%
+     {Gunter}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Korner}{K.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Bud burst,Cold hardiness,Flushing,Frost,Low
+  temperature,Ontogeny,Phenology,Plant-climate
+  interactions,Resistance,Temperate deciduous forest}
+  \strng{namehash}{VY+1}
+  \strng{fullhash}{VYLAHGKC1}
+  \field{abstract}{%
+  We conclude that seedlings and saplings are more prone to freeze damage than
+  adult trees because of their earlier flushing rather than due to a higher
+  sensitivity to freezing as such. Our study highlights that the timing of
+  spring phenology has evolved in such a way that it minimizes the risk of
+  freeze damage according to the species-specific LT50. Early flushing species
+  are among the most freezing-resistant species during flushing, whereas late
+  flushing species are among the least resistant. We conclude that for the
+  examined species the species-specific freezing resistance during leaf
+  emergence could be extracted from either adult or juvenile trees, as long as
+  it is estimated at a same phenological stage%
+  }
+  \verb{doi}
+  \verb 10.1111/1365-2745.12251
+  \endverb
+  \field{isbn}{1365-2745}
+  \field{issn}{13652745}
+  \field{number}{4}
+  \field{pages}{981\bibrangedash 988}
+  \field{title}{{Earlier leaf-out rather than difference in freezing resistance
+  puts juvenile trees at greater risk of damage than adult trees}}
+  \field{volume}{102}
+  \verb{file}
+  \verb :Users/catchamberlain/Downloads/Vitasse{\_}2014{\_}JEcol.pdf:pdf
+  \endverb
+  \field{journaltitle}{Journal of Ecology}
+  \field{year}{2014}
+\endentry
+
+\entry{Augspurger2013}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Augspurger}{A.}%
+     {Carol~K.}{C.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Climate change,Extreme event,Flowers,Frost damage,Global
+  warming,Leaves,Long-term study,Phenology,Temperature pattern,Trees,Warm
+  spring}
+  \strng{namehash}{ACK1}
+  \strng{fullhash}{ACK1}
+  \field{abstract}{%
+  Climate change, with both warmer spring temperatures and greater temperature
+  fluctuations, has altered phenologies, possibly leading to greater risk of
+  spring frost damage to temperate deciduous woody plants. Phenological
+  observations of 20 woody species from 1993 to 2012 in Trelease Woods,
+  Champaign County, Illinois, USA, were used to identify years with frost
+  damage to vegetative and reproductive phases. Local temperature records were
+  used in combination with the phenological observations to determine what
+  combinations of the two were associated with damage. Finally, a long-term
+  temperature record (1889-1992) was evaluated to determine if the frequency of
+  frost damage has risen in recent decades. Frost {\textless} or = -1.7 degrees
+  C occurred after bud-break in 14 of the 20 years of observation. Frost damage
+  occurred in five years in the interior and in three additional years at only
+  the forest edge. The degree of damage varied with species, life stage, tissue
+  (vegetative or reproductive), and phenological phase. Common features
+  associated with the occurrence of damage to interior plants were (1) a period
+  of unusual warm temperatures in March, followed by (2) a frost event in April
+  with a minimum temperature {\textless} or = -6.1 degrees C with (3) a period
+  of 16-33 days between the extremes. In the long-term record, 10 of 124 years
+  met these conditions, but the yearly probability of frost damage increased
+  significantly, from 0.03 during 1889-1979 to 0.21 during 1980-2012. When the
+  criteria were "softened" to {\textless} or = -1.7 degrees C in April and an
+  interval of 16-37 days, 31 of 124 years met the conditions, and the yearly
+  damage probability increased significantly to 0.19 for 1889-1979 and 0.42 for
+  1980-2012. In this forest, the combination of warming trends and temperature
+  variability (extremes) associated with climate change is having ecologically
+  important effects, making previously rare frost damage events more common.%
+  }
+  \verb{doi}
+  \verb 10.1890/12-0200.1
+  \endverb
+  \field{isbn}{0012-9658}
+  \field{issn}{00129658}
+  \field{number}{1}
+  \field{pages}{41\bibrangedash 50}
+  \field{title}{{Reconstructing patterns of temperature, phenology, and frost
+  damage over 124 years: Spring damage risk is increasing}}
+  \field{volume}{94}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/FSI/References/Augspurger{\_}2013{\_}Ec
+  \verb ology.pdf:pdf
+  \endverb
+  \field{journaltitle}{Ecology}
+  \field{year}{2013}
+\endentry
+
+\entry{Kodra2011}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kodra}{K.}%
+     {Evan}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Steinhaeuser}{S.}%
+     {Karsten}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ganguly}{G.}%
+     {Auroop~R.}{A.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{http://dx.doi.org/10.1029/2011GL047103, doi:10.102}
+  \strng{namehash}{KE+1}
+  \strng{fullhash}{KESKGAR1}
+  \field{abstract}{%
+  Analyses of climate model simulations and observations reveal that extreme
+  cold events are likely to persist across each land-continent even under
+  21st-century warming scenarios. The grid-based intensity, duration and
+  frequency of cold extreme events are calculated annually through three
+  indices: the coldest annual consecutive three-day average of daily maximum
+  temperature, the annual maximum of consecutive frost days, and the total
+  number of frost days. Nine global climate models forced with a moderate
+  greenhouse-gas emissions scenario compares the indices over 20912100 versus
+  19912000. The credibility of model-simulated cold extremes is evaluated
+  through both bias scores relative to reanalysis data in the past and
+  multi-model agreement in the future. The number of times the value of each
+  annual index in 20912100 exceeds the decadal average of the corresponding
+  index in 19912000 is counted. The results indicate that intensity and
+  duration of grid-based cold extremes, when viewed as a global total, will
+  often be as severe as current typical conditions in many regions, but the
+  corresponding frequency does not show this persistence. While the models
+  agree on the projected persistence of cold extremes in terms of global
+  counts, regionally, inter-model variability and disparity in model
+  performance tends to dominate. Our findings suggest that, despite a general
+  warming trend, regional preparedness for extreme cold events cannot be
+  compromised even towards the end of the century.%
+  }
+  \verb{doi}
+  \verb 10.1029/2011GL047103
+  \endverb
+  \field{isbn}{1944-8007}
+  \field{issn}{00948276}
+  \field{number}{8}
+  \field{pages}{1\bibrangedash 5}
+  \field{title}{{Persisting cold extremes under 21st-century warming
+  scenarios}}
+  \field{volume}{38}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/git/falsespring/References /Kodra{\_}et
+  \verb {\_}al-2011-Geophysical{\_}Research{\_}Letters.pdf:pdf
+  \endverb
+  \field{journaltitle}{Geophysical Research Letters}
+  \field{year}{2011}
+\endentry
+
+\entry{Vavrus2006}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Vavrus}{V.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Walsh}{W.}%
+     {J.~E.}{J.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chapman}{C.}%
+     {W.~L.}{W.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Portis}{P.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Climate change,Climate models,Cold-air outbreaks,Extreme
+  events,Greenhouse warming,IPCC}
+  \strng{namehash}{VS+1}
+  \strng{fullhash}{VSWJECWLPD1}
+  \field{abstract}{%
+  Climate model output is used to analyze the behavior of extreme cold-air
+  outbreaks (CAOs) under recent and future climatic conditions. The study uses
+  daily output from seven GCMs run under late-twentieth century and projected
+  twenty-first century radiative conditions (SRES A1B greenhouse gas emission
+  scenario). We define a CAO as an occurrence of two or more consecutive days
+  during which the local mean daily surface air temperature is at least two
+  standard deviations below the local wintertime mean temperature. In agreement
+  with observations, the models generally simulate modern CAOs most frequently
+  over western North America and Europe and least commonly over the Arctic.
+  These favored regions for CAOs are located downstream from preferred
+  locations of atmospheric blocking. Future projections indicate that
+  CAOs---defined with respect to late-twentieth century climatic
+  conditions---will decline in frequency by 50 to 100{\%} in most of the
+  Northern Hemisphere during the twenty-first century. Certain regions,
+  however, show relatively small changes and others actually experience more
+  CAOs in the future, due to atmospheric circulation changes and internal
+  variability that counter the thermodynamic tendency from greenhouse forcing.
+  These areas generally experience greater near-surface wind flow from the
+  north or the continent during the twenty-first century and/or are especially
+  prone to atmospheric blocking events. Simulated reductions in CAOs are
+  smallest in western North America, the North Atlantic, and in southern
+  regions of Europe and Asia. The Eurasian pattern is driven by a strong
+  tendency for the models to produce sea-level pressure (SLP) increases in the
+  vicinity of the Mediterranean Sea (intermodel mean of 3 hPa), causing greater
+  advection of continental air from northern and central Asia, while the muted
+  change over western North America is due to enhanced ridging along the west
+  coast and the increased frequency of blocking events. The North Atlantic
+  response is consistent with a slowdown of the thermohaline circulation, which
+  either damps the warming regionally or results in a cooler mean climate in
+  the vicinity of Greenland. Copyright {\textcopyright} 2006 Royal
+  Meteorological Society.%
+  }
+  \verb{doi}
+  \verb 10.1002/joc.1301
+  \endverb
+  \field{isbn}{1097-0088}
+  \field{issn}{08998418}
+  \field{number}{9}
+  \field{pages}{1133\bibrangedash 1147}
+  \field{title}{{The behavior of extreme cold air outbreaks under greenhouse
+  warming}}
+  \field{volume}{26}
+  \verb{file}
+  \verb :Users/catchamberlain/Downloads/Vavrus{\_}et{\_}al-2006-International{\
+  \verb _}Journal{\_}of{\_}Climatology.pdf:pdf
+  \endverb
+  \field{journaltitle}{International Journal of Climatology}
+  \field{year}{2006}
+\endentry
+
+\entry{Marino2011}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Marino}{M.}%
+     {Garrett~P}{G.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kaiser}{K.}%
+     {Dale~P}{D.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gu}{G.}%
+     {Lianhong}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ricciuto}{R.}%
+     {Daniel~M}{D.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{deciduous,false spring,forest,gdd,ghcn,global historical climatology
+  network,growing degree days,last hard freeze,minimum
+  temperature,phenology,season,sgs,start of the growing}
+  \strng{namehash}{MGP+1}
+  \strng{fullhash}{MGPKDPGLRDM1}
+  \field{abstract}{%
+  Near-record warmth over much of the United States during March 2007 promoted
+  early growth of crops and vegetation. A widespread arctic air outbreak
+  followed in early April, resulting in extensive agricultural losses over much
+  of the south-central and southeastern US. This 'false spring' event also
+  resulted in widespread damage to newly grown tissues of native deciduous
+  forest species, shown by previous researchers to have had measurable effects
+  on the terrestrial carbon cycle. The current study reconstructed the
+  historical occurrence of false springs over most of the southeastern quarter
+  of the conterminous US (32--39$\,^{\circ}$N; 75--98$\,^{\circ}$W) from 1901
+  to 2007 using daily maximum and minimum temperature records from 176 stations
+  in the Global Historical Climatology Network database, and enhanced
+  vegetation index (EVI) data derived from Moderate Resolution Imaging
+  Spectroradiometer (MODIS) satellite observations. A false spring index was
+  derived that examined the timing of the start of the growing season (SGS), or
+  leaf emergence, relative to the timing of a potentially damaging last hard
+  freeze (minimum temperature ≤ − 2.2 $\,^{\circ}$C). SGS was modeled for
+  the domain by combining EVI data with ground-based temperature 'degree day'
+  calculations reflecting the rate of springtime warming. No significant
+  area-wide, long-term SGS trend was found; however, over much of a contiguous
+  region stretching from Mississippi eastward to the Carolinas, the timing of
+  the last hard freeze was found to occur significantly later, this change
+  occurring along with increased frequency of false springs. Earlier last hard
+  freeze dates and decreased frequency of false springs were found over much of
+  the northwestern part of the study region, including Arkansas and southern
+  Missouri.%
+  }
+  \verb{doi}
+  \verb 10.1088/1748-9326/6/2/024015
+  \endverb
+  \field{isbn}{1748-9326}
+  \field{issn}{1748-9326}
+  \field{number}{2}
+  \field{pages}{024015}
+  \field{title}{{Reconstruction of false spring occurrences over the
+  southeastern United States, 1901--2007: an increasing risk of spring freeze
+  damage?}}
+  \field{volume}{6}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/FSI/References/Marino et al, 2011.pdf:p
+  \verb df
+  \endverb
+  \field{journaltitle}{Environmental Research Letters}
+  \field{year}{2011}
+\endentry
+
+\entry{OKeefe2014}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {O'Keefe}{O.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{OJ1}
+  \strng{fullhash}{OJ1}
+  \field{title}{{Phenology of Woody Species at Harvard Forest since 1990}}
+  \verb{url}
+  \verb http://harvardforest.fas.harvard.edu:8080/exist/apps/datasets/showData.
+  \verb html?id=hf003
+  \endverb
+  \field{type}{techreport}
+  \field{year}{2014}
+\endentry
+
+\entry{USA-NPN2016}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {USA-NPN}{U.-N.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{UN1}
+  \strng{fullhash}{UN1}
+  \field{title}{{USA National Phenology Network}}
+  \verb{url}
+  \verb http://dx.doi.org/10.5066/F7XD0ZRK
+  \endverb
+  \field{year}{2016}
+  \field{urlday}{24}
+  \field{urlmonth}{05}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Ault2015}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Ault}{A.}%
+     {Toby~R.}{T.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zurita-Milla}{Z.-M.}%
+     {Raul}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schwartz}{S.}%
+     {Mark~D.}{M.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \keyw{Climate variability,Global climate change,Phenology}
+  \strng{namehash}{ATR+1}
+  \strng{fullhash}{ATRZMRSMD1}
+  \field{abstract}{%
+  Metrics to track seasonal transitions are needed for a wide variety of
+  ecological and climatological applications. Here a
+  MATLAB{\textcopyright}toolkit for calculating spring indices is documented.
+  The spring indices have been widely used in earlier studies to model
+  phenological variability and change through time across a wide range of
+  spatial scales. These indices require only daily minimum and maximum
+  temperature observations (e.g., from meteorological records) as input along
+  with latitude, and produce a day of year value corresponding to the simulated
+  average timing of first leaf and first bloom events among three plant
+  cultivars. Core functions to calculate the spring indices require no external
+  dependencies, and data for running several illustrative test cases are
+  included. Instructions and routines for conducing more sophisticated
+  monitoring and modeling studies using the spring indices are also supplied
+  and documented.%
+  }
+  \verb{doi}
+  \verb 10.1016/j.cageo.2015.06.015
+  \endverb
+  \field{issn}{00983004}
+  \field{pages}{46\bibrangedash 53}
+  \field{title}{{A Matlab{\textcopyright} toolbox for calculating spring
+  indices from daily meteorological data}}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S0098300415001466
+  \endverb
+  \field{volume}{83}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/FSI/References/Ault et al 2015.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computers {\&} Geosciences}
+  \field{year}{2015}
+\endentry
+
+\entry{Ault2015a}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Ault}{A.}%
+     {Toby~R.}{T.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schwartz}{S.}%
+     {Mark~D.}{M.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zurita-Milla}{Z.-M.}%
+     {Raul}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Weltzin}{W.}%
+     {Jake~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Betancourt}{B.}%
+     {Julio~L.}{J.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ATR+1}
+  \strng{fullhash}{ATRSMDZMRWJFBJL1}
+  \field{abstract}{%
+  Climate change is expected to modify the timing of seasonal transitions this
+  century, impacting wildlife migrations, ecosystem function, and agricultural
+  activity. Tracking seasonal transitions in a consistent manner across space
+  and through time requires indices that can be used for monitoring and
+  managing biophysical and ecological systems during the coming decades. Here a
+  new gridded dataset of spring indices is described and used to understand
+  interannual, decadal, and secular trends across the coterminous United
+  States. This dataset is derived from daily interpolated meteorological data,
+  and the results are compared with historical station data to ensure the
+  trends and variations are robust. Regional trends in the first leaf index
+  range from 20.8 to 21.6 days decade 21 , while first bloom index trends are
+  between 20.4 and 21.2 for most regions. However, these trends are modulated
+  by interannual to multidecadal variations, which are substantial throughout
+  the regions considered here. These findings emphasize the important role
+  large-scale climate modes of variability play in modulating spring onset on
+  interannual to multidecadal time scales. Finally, there is some potential for
+  successful subseasonal forecasts of spring onset, as indices from most
+  regions are sig-nificantly correlated with antecedent large-scale modes of
+  variability.%
+  }
+  \verb{doi}
+  \verb 10.1175/JCLI-D-14-00736.1
+  \endverb
+  \field{isbn}{0894-8755}
+  \field{issn}{08948755}
+  \field{number}{21}
+  \field{pages}{8363\bibrangedash 8378}
+  \field{title}{{Trends and natural variability of spring onset in the
+  coterminous united states as evaluated by a new gridded dataset of spring
+  indices}}
+  \field{volume}{28}
+  \verb{file}
+  \verb :private/var/folders/sl/44hvt{\_}w91zl9bbyx5l574zw00000gp/T/WebKitPDFs-
+  \verb qzlxJR/Ault{\_}gridded-SIx-NAmerica-v3-JCLIM-SUBMITTED.pdf:pdf
+  \endverb
+  \field{journaltitle}{Journal of Climate}
+  \field{year}{2015}
+\endentry
+
+\entry{Schwartz2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Schwartz}{S.}%
+     {Mark~D.}{M.~D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ault}{A.}%
+     {Toby~R.}{T.~R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Betancourt}{B.}%
+     {Julio~L.}{J.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Lilac,Phenology,Southeastern United States,Spring Indices}
+  \strng{namehash}{SMD+1}
+  \strng{fullhash}{SMDATRBJL1}
+  \field{abstract}{%
+  INTERNATIONAL JOURNAL OF CLIMATOLOGY%
+  }
+  \verb{doi}
+  \verb 10.1002/joc.3625
+  \endverb
+  \field{isbn}{08998418}
+  \field{issn}{08998418}
+  \field{number}{13}
+  \field{pages}{2917\bibrangedash 2922}
+  \field{title}{{Spring onset variations and trends in the continental United
+  States: Past and regional assessment using temperature-based indices}}
+  \field{volume}{33}
+  \verb{file}
+  \verb :Users/catchamberlain/Documents/FSI/References/Schwartz et al, 2013.pdf
+  \verb :pdf
+  \endverb
+  \field{journaltitle}{International Journal of Climatology}
+  \field{year}{2013}
+\endentry
+
+\entry{Schwartz1997}{incollection}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Schwartz}{S.}%
+     {M.~D.}{M.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SMD1}
+  \strng{fullhash}{SMD1}
+  \field{booktitle}{Phenology of Seasonal climates}
+  \field{isbn}{0923-0688}
+  \field{pages}{23\bibrangedash 38}
+  \field{title}{{Spring Index Models: An approach to connecting Satellite and
+  surface phenology}}
+  \field{year}{1997}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
