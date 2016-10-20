@@ -41,6 +41,7 @@ d<-filter(d, Risk > 0)
 d<-filter(d, Risk < 200)
 sp<-as.data.frame(table(d$species))
 
+## Determine the average number of days between for each genus
 df<- d %>%
   select(species, Risk) %>%
   group_by(species) %>%
@@ -71,4 +72,27 @@ gen<- gen.dat%>%
 ggplot(gen,aes(x=Genus,y=Risk, fill=factor(Genus))) +
   geom_bar(stat = "identity" , position="dodge") +
   xlab("Genus")+ylab("Level of Risk") 
-  
+
+## Determine average date bud burst and leaf out for each genus
+timeline<- genus %>%
+  select(Genus, Individual_ID, species, Budburst, Leaves) %>%
+  group_by(Genus, Individual_ID)%>%
+  filter(row_number()==1)
+bb<- timeline %>%
+  select(Genus, Budburst) %>%
+  group_by(Genus) %>%
+  summarise_each(funs(mean), Budburst) %>%
+  arrange(Genus)
+leaf<- timeline %>%
+  select(Genus, Leaves) %>%
+  group_by(Genus) %>%
+  summarise_each(funs(mean), Leaves) %>%
+  arrange(Genus)
+map<-full_join(bb,leaf)
+
+## Make a timeline!!
+time<-ggplot(map,aes(x=,y=0))
+time+geom_segment(aes(y=0,x=Budburst,xend=Leaves, yend=0), color=aes(Genus))
+time+geom_segment(x=Budburst,xend=Leaves,y=0,yend=2,color=aes(Genus),size=1) 
+ #drawing the actual arrow
+
