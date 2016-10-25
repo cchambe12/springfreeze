@@ -115,10 +115,6 @@ fit1<-glm(Year~Risk + species, data=dat)
 summary(fit1)
 plot(fit1)
 
-fit2<-glm(Year~Risk, data=dat)
-summary(fit2)
-plot(fit2)
-
 fit<-stan_glm(Year~Risk + species, data=dat)
 plot(fit, ci_level = 0.5)
 plot(fit, ci_level = 0.5, pars = "beta")
