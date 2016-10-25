@@ -23,7 +23,7 @@ attach(phenology)
 phases<-c("Budburst","Leaves")
 
 pheno<-phenology%>%
-  select(Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude)%>%
+  select(Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
   unite(species, Genus, Species, sep="_") %>%
   filter(Phenophase_Description %in% phases) %>%
   rename(Year = First_Yes_Year)
@@ -40,8 +40,6 @@ y0$Risk <- y0$Leaves - y0$Budburst
 y0<-filter(y0, Risk > 0)
 y0<-filter(y0, Risk < 200)
 
-
-
 y1<-pheno%>%
   filter(Year=="2011")%>%
   group_by(species, Individual_ID, Phenophase_Description)%>%
@@ -53,7 +51,7 @@ y1$Risk <- y1$Leaves - y1$Budburst
 y1<-filter(y1, Risk > 0)
 y1<-filter(y1, Risk < 200)
 
-dat<-full_join(y0,y1)
+j1<-full_join(y0,y1)
 
 y2<-pheno%>%
   filter(Year=="2012")%>%
@@ -108,7 +106,12 @@ y5<-filter(y5, Risk < 200)
 dat<-full_join(dat,y5) %>%
   group_by(species, Year) %>%
   arrange(species) %>%
-  select(species, Year, Risk)
+  select(species, Year, Risk, Latitude)
+
+dat$Genus <- unlist(
+  lapply(strsplit(row.names(dat), "_"),
+         function(x) x[[1]]))
+
 
 ## Integration of glm and rstanarm
 fit1<-glm(Year~Risk + species, data=dat)
