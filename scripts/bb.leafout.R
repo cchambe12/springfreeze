@@ -29,16 +29,6 @@ pheno<-phenology%>%
   
 spp<-as.data.frame(table(phenology$species))
 
-st<-pheno%>%
-  group_by(species, Individual_ID, Phenophase_Description, Year)%>%
-  arrange(Year) %>%
-  filter(row_number()==1) %>%
-  spread(Phenophase_Description, First_Yes_DOY)
-st<-na.omit(d)
-st$Risk <- st$Leaves - st$Budburst
-st<-filter(st, Risk > 0)
-st<-filter(st, Risk < 200)
-
 d<-pheno%>%
   filter(Year=="2010")%>%
   group_by(species, Individual_ID, Phenophase_Description)%>%
