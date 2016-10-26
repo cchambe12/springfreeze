@@ -38,7 +38,22 @@ y0<-pheno%>%
 y0<-na.omit(y0)
 y0$Risk <- y0$Leaves - y0$Budburst
 y0<-filter(y0, Risk > 0)
-y0<-filter(y0, Risk < 200)
+y0<-filter(y0, Risk < 30)
+y0<- y0 %>%
+  group_by(species) %>%
+  summarise_each(funs(mean), Risk)
+
+attempt<- y0 %>%
+  filter(species =="Acer_rubrum")
+
+qplot(Risk, data=y0, geom="histogram")
+rc<-scale(y0$Risk, center=TRUE, scale=FALSE)
+c<-y0$Risk-mean(y0$Risk)
+qplot(c)
+rz<-scale(y0$Risk, center=TRUE, scale=TRUE)
+z<-(y0$Risk - mean(y0$Risk))/sd(y0$Risk)
+qplot(z)
+
 
 y1<-pheno%>%
   filter(Year=="2011")%>%
@@ -51,7 +66,7 @@ y1$Risk <- y1$Leaves - y1$Budburst
 y1<-filter(y1, Risk > 0)
 y1<-filter(y1, Risk < 200)
 
-j1<-full_join(y0,y1)
+dat<-full_join(y0,y1)
 
 y2<-pheno%>%
   filter(Year=="2012")%>%
