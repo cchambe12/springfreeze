@@ -39,21 +39,6 @@ y0<-na.omit(y0)
 y0$Risk <- y0$Leaves - y0$Budburst
 y0<-filter(y0, Risk > 0)
 y0<-filter(y0, Risk < 30)
-y0<- y0 %>%
-  group_by(species) %>%
-  summarise_each(funs(mean), Risk)
-
-attempt<- y0 %>%
-  filter(species =="Acer_rubrum")
-
-qplot(Risk, data=y0, geom="histogram")
-rc<-scale(y0$Risk, center=TRUE, scale=FALSE)
-c<-y0$Risk-mean(y0$Risk)
-qplot(c)
-rz<-scale(y0$Risk, center=TRUE, scale=TRUE)
-z<-(y0$Risk - mean(y0$Risk))/sd(y0$Risk)
-qplot(z)
-
 
 y1<-pheno%>%
   filter(Year=="2011")%>%
@@ -64,7 +49,7 @@ y1<-pheno%>%
 y1<-na.omit(y1)
 y1$Risk <- y1$Leaves - y1$Budburst
 y1<-filter(y1, Risk > 0)
-y1<-filter(y1, Risk < 200)
+y1<-filter(y1, Risk < 30)
 
 dat<-full_join(y0,y1)
 
@@ -77,7 +62,7 @@ y2<-pheno%>%
 y2<-na.omit(y2)
 y2$Risk <- y2$Leaves - y2$Budburst
 y2<-filter(y2, Risk > 0)
-y2<-filter(y2, Risk < 200)
+y2<-filter(y2, Risk < 30)
 
 dat<-full_join(dat,y2)
 
@@ -90,7 +75,7 @@ y3<-pheno%>%
 y3<-na.omit(y3)
 y3$Risk <- y3$Leaves - y3$Budburst
 y3<-filter(y3, Risk > 0)
-y3<-filter(y3, Risk < 200)
+y3<-filter(y3, Risk < 30)
 
 dat<-full_join(dat,y3)
 
@@ -103,7 +88,7 @@ y4<-pheno%>%
 y4<-na.omit(y4)
 y4$Risk <- y4$Leaves - y4$Budburst
 y4<-filter(y4, Risk > 0)
-y4<-filter(y4, Risk < 200)
+y4<-filter(y4, Risk < 30)
 
 dat<-full_join(dat,y4)
 
@@ -116,18 +101,27 @@ y5<-pheno%>%
 y5<-na.omit(y5)
 y5$Risk <- y5$Leaves - y5$Budburst
 y5<-filter(y5, Risk > 0)
-y5<-filter(y5, Risk < 200)
+y5<-filter(y5, Risk < 30)
 
 dat<-full_join(dat,y5) %>%
   group_by(species, Year) %>%
   arrange(species) %>%
   select(species, Year, Risk, Latitude)
 
-dat$Genus <- unlist(
-  lapply(strsplit(row.names(dat), "_"),
-         function(x) x[[1]]))
+qplot(Risk, data=dat, geom="histogram")
+rc<-scale(dat$Risk, center=TRUE, scale=FALSE)
+c<-dat$Risk-mean(dat$Risk)
+qplot(c)
+rz<-scale(dat$Risk, center=TRUE, scale=TRUE)
+z<-(dat$Risk - mean(dat$Risk))/(2*sd(dat$Risk))
+qplot(z)
 
+qplot(Risk~species, data=dat, geom="boxplot")
 
+qplot(Latitude, data=dat, geom="histogram")
+l<- (dat$Latitude - mean(dat$Latitude))/(2*sd(dat$Latitude))
+qplot(l)
+summary(dat$Latitude)
 ## Integration of glm and rstanarm
 fit1<-glm(Year~Risk + species, data=dat)
 summary(fit1)
