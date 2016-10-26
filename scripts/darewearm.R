@@ -20,7 +20,7 @@ setwd("~/Documents/git/springfreeze")
 phenology<-read.csv("input/individual_phenometrics_data.csv",header=TRUE, sep=",")
 attach(phenology)
 
-phases<-c("Budburst","Leaves")
+phases<-c("Breaking Leaf Bud","Leaves")
 
 pheno<-phenology%>%
   select(Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
