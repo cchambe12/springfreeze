@@ -103,11 +103,40 @@ y5$Risk <- y5$Leaves - y5$Budburst
 y5<-filter(y5, Risk > 0)
 y5<-filter(y5, Risk < 31)
 
-dat<-full_join(dat,y5) %>%
+d<-full_join(dat,y5)
+
+buds<- d %>%
+  select(species, Budburst) %>%
+  group_by(species)%>%
+  summarise_each(funs(mean), Budburst) %>%
+  filter(Budburst>=70)%>%
+  arrange(species)
+
+leaf<- d %>%
+  select(species, Leaves) %>%
+  group_by(species)%>%
+  summarise_each(funs(mean), Leaves) %>%
+  filter(Leaves>=76)%>%
+  arrange(species)
+
+df<- full_join(buds, leaf) %>%
+  filter(species != "Alnus_rubra")
+df$Risk<- df$Leaves - df$Budburst
+
+dat<-full_join(dat, y5) %>%
   group_by(species, Year) %>%
   arrange(species) %>%
   select(species, Year, Risk, Latitude)
 
+## Make a big timeline plot
+ggplot((df), aes(x=Budburst, y=species)) + geom_point(aes(x= df$Budburst)) + 
+  geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
+  geom_point(aes(x=df$Leaves)) + theme(legend.position="none") +
+  geom_point(position = position_dodge(.5)) + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
+  ylab("Species")
+
+
+## Normalize the data
 qplot(Latitude, data=dat, geom="histogram") + scale_x_sqrt()
 
 qplot(Risk, data=dat, geom="histogram") + stat_bin(bins = 20)
@@ -124,6 +153,7 @@ qplot(Latitude, data=dat, geom="histogram")
 l<- (dat$Latitude - mean(dat$Latitude))/(2*sd(dat$Latitude))
 qplot(l)
 summary(dat$Latitude)
+
 ## Integration of glm and rstanarm
 fit1<-glm(Year~Risk + species, data=dat)
 summary(fit1)
