@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.9)  11 NOV 2016 15:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.12.9)  11 NOV 2016 16:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**fix.attempt.tex
-(./fix.attempt.tex
+**Rethinking.tex
+(./Rethinking.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -300,230 +300,12 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks23
 \@floatcapt=\box30
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2015/04/19 v3.0 programmable bibliographies (PK/JW/AB)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex1.sty
-Package: biblatex1 2015/04/19 v3.0 programmable bibliographies (bibtex) (PK/JW/
-AB)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count106
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/logreq/logreq.sty
-Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count107
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/logreq/logreq.def
-File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-\c@tabx@nest=\count108
-\c@listtotal=\count109
-\c@listcount=\count110
-\c@liststart=\count111
-\c@liststop=\count112
-\c@citecount=\count113
-\c@citetotal=\count114
-\c@multicitecount=\count115
-\c@multicitetotal=\count116
-\c@instcount=\count117
-\c@maxnames=\count118
-\c@minnames=\count119
-\c@maxitems=\count120
-\c@minitems=\count121
-\c@citecounter=\count122
-\c@savedcitecounter=\count123
-\c@uniquelist=\count124
-\c@uniquename=\count125
-\c@refsection=\count126
-\c@refsegment=\count127
-\c@maxextrayear=\count128
-\c@maxextraalpha=\count129
-\c@abbrvpenalty=\count130
-\c@highnamepenalty=\count131
-\c@lownamepenalty=\count132
-\c@maxparens=\count133
-\c@parenlevel=\count134
-\blx@tempcnta=\count135
-\blx@tempcntb=\count136
-\blx@tempcntc=\count137
-\blx@maxsection=\count138
-\blx@maxsegment=\count139
-\blx@notetype=\count140
-\blx@parenlevel@text=\count141
-\blx@parenlevel@foot=\count142
-\labelnumberwidth=\skip49
-\labelalphawidth=\skip50
-\shorthandwidth=\skip51
-\biblabelsep=\skip52
-\bibitemsep=\skip53
-\bibnamesep=\skip54
-\bibinitsep=\skip55
-\bibparsep=\skip56
-\bibhang=\skip57
-\blx@auxin=\read2
-\blx@auxout=\write4
-\c@mincomprange=\count143
-\c@maxcomprange=\count144
-\c@mincompwidth=\count145
-\c@labelname=\count146
-\c@savedlabelname=\count147
-\c@author=\count148
-\c@savedauthor=\count149
-\c@shortauthor=\count150
-\c@savedshortauthor=\count151
-\c@editor=\count152
-\c@savededitor=\count153
-\c@editora=\count154
-\c@savededitora=\count155
-\c@editorb=\count156
-\c@savededitorb=\count157
-\c@editorc=\count158
-\c@savededitorc=\count159
-\c@shorteditor=\count160
-\c@savedshorteditor=\count161
-\c@bookauthor=\count162
-\c@savedbookauthor=\count163
-\c@translator=\count164
-\c@savedtranslator=\count165
-\c@annotator=\count166
-\c@savedannotator=\count167
-\c@commentator=\count168
-\c@savedcommentator=\count169
-\c@introduction=\count170
-\c@savedintroduction=\count171
-\c@foreword=\count172
-\c@savedforeword=\count173
-\c@afterword=\count174
-\c@savedafterword=\count175
-\c@holder=\count176
-\c@savedholder=\count177
-\c@namea=\count178
-\c@savednamea=\count179
-\c@nameb=\count180
-\c@savednameb=\count181
-\c@namec=\count182
-\c@savednamec=\count183
-\c@institution=\count184
-\c@savedinstitution=\count185
-\c@language=\count186
-\c@savedlanguage=\count187
-\c@location=\count188
-\c@savedlocation=\count189
-\c@organization=\count190
-\c@savedorganization=\count191
-\c@origlocation=\count192
-\c@savedoriglocation=\count193
-\c@origpublisher=\count194
-\c@savedorigpublisher=\count195
-\c@pageref=\count196
-\c@savedpageref=\count197
-\c@publisher=\count198
-\c@savedpublisher=\count199
-\c@lista=\count200
-\c@savedlista=\count201
-\c@listb=\count202
-\c@savedlistb=\count203
-\c@listc=\count204
-\c@savedlistc=\count205
-\c@listd=\count206
-\c@savedlistd=\count207
-\c@liste=\count208
-\c@savedliste=\count209
-\c@listf=\count210
-\c@savedlistf=\count211
-Package biblatex Info: Trying to load compatibility code...
-Package biblatex Info: ... file 'blx-compat.def' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2015/04/19 v3.0 biblatex compatibility (PK/JW/AB)
-)
-Package biblatex Info: Trying to load generic definitions...
-Package biblatex Info: ... file 'biblatex.def' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 
-\c@textcitecount=\count212
-\c@textcitetotal=\count213
-\c@textcitemaxnames=\count214
-\c@biburlnumpenalty=\count215
-\c@biburlucpenalty=\count216
-\c@biburllcpenalty=\count217
-\c@smartand=\count218
-)
-Package biblatex Info: Trying to load bibliography style 'nature'...
-Package biblatex Info: ... file 'nature.bbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex-nature/nature.bbx
-File: nature.bbx 2013/05/20 v1.2e biblatex bibliography style
-Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
-Package biblatex Info: ... file 'numeric-comp.bbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
-File: numeric-comp.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
-Package biblatex Info: Trying to load bibliography style 'numeric'...
-Package biblatex Info: ... file 'numeric.bbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
-File: numeric.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
-Package biblatex Info: Trying to load bibliography style 'standard'...
-Package biblatex Info: ... file 'standard.bbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count219
-\c@bbx:relatedtotal=\count220
-))))
-Package biblatex Info: Trying to load citation style 'nature'...
-Package biblatex Info: ... file 'nature.cbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex-nature/nature.cbx
-File: nature.cbx 2013/05/20 v1.2e biblatex citation style
-Package biblatex Info: Trying to load citation style 'numeric-comp'...
-Package biblatex Info: ... file 'numeric-comp.cbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
-File: numeric-comp.cbx 2015/04/19 v3.0 biblatex citation style (PK/JW/AB)
-\c@cbx@tempcnta=\count221
-\c@cbx@tempcntb=\count222
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\supercite'.
-Package biblatex Info: Redefining '\textcite'.
-Package biblatex Info: Redefining '\textcites'.
-Package biblatex Info: Redefining '\cites'.
-Package biblatex Info: Redefining '\parencites'.
-Package biblatex Info: Redefining '\smartcites'.
-))
-Package biblatex Info: Trying to load configuration file...
-Package biblatex Info: ... file 'biblatex.cfg' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.cfg
-File: biblatex.cfg 
-)))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-Package biblatex Info: Trying to load language 'english'...
-Package biblatex Info: ... file 'english.lbx' found.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
-)
-\@quotelevel=\count223
-\@quotereset=\count224
-
-(./fix.attempt.aux)
-\openout1 = `fix.attempt.aux'.
+(./Rethinking.aux)
+\openout1 = `Rethinking.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
@@ -539,24 +321,22 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 79.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 79.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count225
+\scratchcounter=\count106
 \scratchdimen=\dimen132
 \scratchbox=\box31
-\nofMPsegments=\count226
-\nofMParguments=\count227
+\nofMPsegments=\count107
+\nofMParguments=\count108
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count228
+\MPscratchCnt=\count109
 \MPscratchDim=\dimen133
-\MPnumerator=\count229
-\makeMPintoPDFobject=\count230
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
 \everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -620,18 +400,6 @@ erthousand on input line 79.
 LaTeX Info: Redefining \ohm on input line 79.
 Package gensymb Info: Using \textohm for \ohm on input line 79.
 Package gensymb Info: Using \textmu for \micro on input line 79.
-Package biblatex Info: No input encoding detected.
-(biblatex)             Assuming 'ascii'.
-Package biblatex Info: Automatic encoding selection.
-(biblatex)             Assuming data encoding 'ascii'.
-\openout4 = `fix.attempt-blx.bib'.
-
-Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'fix.attempt.bbl' found.
-
-(./fix.attempt.bbl)
-Package biblatex Info: Reference section=0 on input line 79.
-Package biblatex Info: Reference segment=0 on input line 79.
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 83.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
@@ -644,11 +412,11 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <8> not available
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 83.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 93.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <7> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 93.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 93.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 97.
 
 [1
 
@@ -657,49 +425,33 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 153.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 159.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [3] [4] [5 <./figure/fsifig-1.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 191.
-
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [6] [7]
-(./fix.attempt.aux)
-Package logreq Info: Writing requests to 'fix.attempt.run.xml'.
-\openout1 = `fix.attempt.run.xml'.
-
- ) 
+ [3] [4] [5 <./figure/fsifig-1.pdf>] (./Rethinking.aux) ) 
 Here is how much of TeX's memory you used:
- 9717 strings out of 493089
- 156690 string characters out of 6134842
- 317194 words of memory out of 5000000
- 13003 multiletter control sequences out of 15000+600000
- 40200 words of font info for 83 fonts, out of 8000000 for 9000
+ 4700 strings out of 493089
+ 69393 string characters out of 6134842
+ 132923 words of memory out of 5000000
+ 8063 multiletter control sequences out of 15000+600000
+ 32122 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,48p,2080b,925s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
-/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on fix.attempt.pdf (7 pages, 198900 bytes).
+ 38i,9n,38p,802b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb>
+Output written on Rethinking.pdf (5 pages, 140089 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

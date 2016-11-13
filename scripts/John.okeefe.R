@@ -23,7 +23,7 @@ ipak(packages)
 
 # Integrate Phenology Data and compare methodologies
 # Set Working Directory
-setwd("~/Documents/git/springfreeze")
+setwd("~/Documents/git/springfreeze/input")
 
 budburst<-read.csv("hf003-06-mean-spp.csv",header=TRUE, sep=",")
 attach(budburst)
@@ -62,18 +62,15 @@ obs_bb<- obs_bb.avg%>%
   right_join(obs_bb.sd,obs_bb.avg,by="year")%>%
   arrange(year)
   
-
-summarise_each(funs(mean),bb.jd)%>%
-
 compare<- read.csv("method.test.csv", header=TRUE, sep=",")
 attach(compare)
 
-obs.npn<- obs_bb %>%
-  full_join(compare) %>%
-  select(year, bb.jd, bb_npn) %>%
-  arrange(year) %>%
-  filter(year>=1990) %>%
-  filter(year<2015)
+#obs.npn<- obs_bb %>%
+  ##full_join(compare) %>%
+  #select(year, bb.jd, bb_npn)%>%
+  #arrange(year) %>%
+  #filter(year>=1990) %>%
+  #filter(year<2015)
 
 ## Species that are more comparable to lilacs and honeysuckle ##
 sm.sp<- c("PRSE", "POTR", "AMSP", "CRSP", "HAVI", "ACSA", "BEPA", "ACPE")
@@ -138,9 +135,9 @@ plot(longplot)
 
 fit<-glm(FSI~Method + year, data=blend)
 fit
-tidy(fit)
-head(augment(fit))
-glance(fit)
+#tidy(fit)
+#head(augment(fit))
+#glance(fit)
 plot(fit)
 
 npn_sm <- method %>%
@@ -153,7 +150,7 @@ summary(regression)
 
 pearson<-cor(FSI.table, method="pearson")
 pearson
-tidy(pearson)
-glance(pearson)
+#tidy(pearson)
+#glance(pearson)
 pearson.long<-cor(FSI.long, method="pearson")
 pearson.long
