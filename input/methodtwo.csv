@@ -1,4 +1,4 @@
-year,bb_npn,Tmax,Interval_SI,Tmax to SI,last_freeze,TminLF,Tmin,SI to FF,Interval_frost,FSI_SI,,bb_obs,bb_cam,SI_flower,FSI_flwr,PhenoCam_sh,frz_2.2,last_frz,FSI_obs,,FSI_cam,,FSI_npn,FSI_sh,frz.sh,sh_cam,sm.bb,FSI_sm,,,,120.37625,,0.269166667
+year,bb.npn,Tmax,Interval.SI,Tmax to SI,last.freeze,TminLF,Tmin,SI to FF,Interval.frost,FSI.SI,,bb.obs,bb.cam,SI.flower,FSI.flwr,PhenoCam.sh,frz.2.2,last.frz,FSI.obs,,FSI.cam,,FSI.npn,FSI.sh,frz.sh,sh.cam,sm.bb,FSI.sm,,,,120.37625,,0.269166667
 1981,97,24,1+2,3,125,-8,-8,0,7,28,,NA,NA,134,-9,,,,,,,,,,,,,,,,,,,
 1982,115,21,1+1,5,0,0,0,0,0,0,,NA,NA,138,-138,,,,,,,,,,,,,,,,,,,
 1983,113,17,0,9,138,-2,-4,0,2,25,,NA,NA,140,-2,,,,,,,,,,,,,,,,,,,

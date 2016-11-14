@@ -2,10 +2,8 @@
 \usepackage{Sweave}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage{amsmath}
+
 \usepackage[small]{caption}
-\usepackage{gensymb}
-\usepackage{float}
 \setkeys{Gin}{width=0.8\textwidth}
 \setlength{\captionmargin}{30pt}
 \setlength{\abovecaptionskip}{0pt}
@@ -22,11 +20,8 @@
 
 %Making a Bibliography
 \begin{document}
-\usepackage[backend=bibtex, style=nature]{biblatex}
-\bibliography{references.bib}
+\bibliographystyle{~/Documents/git/springfreeze/References/references.bib}
 
-
-\SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
 \author{C Chamberlain}
 \date{\today}
@@ -43,34 +38,35 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(xtable)
-library(knitr)
-library(knitcitations)
 
 setwd("~/Documents/git/springfreeze/input")
 source("~/Documents/git/springfreeze/scripts/John.okeefe.R")
 
-method<-read.csv("method.test.csv",header=TRUE,sep=",")
+method<-read.csv("methodtwo.csv",header=TRUE,sep=",")
 attach(method)
 
 bb.table<-method %>%
-  select(year,last_frz,bb_npn, sm.bb) %>%
+  select(year,last.frz,bb.npn, sm.bb) %>%
   filter(year>=2008)%>%
   filter(year<2015)%>%
-  rename("Last Freeze"=last_frz)%>%
+  rename("Last Freeze"=last.frz)%>%
   rename("Observed"=sm.bb)%>%
-  rename("SI-x"=bb_npn)
+  rename("SI"=bb.npn)
 
 FSI.table<- method %>%
-  select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
+  select(year, FSI.npn, FSI.sm, FSI.obs, FSI.cam) %>%
   filter(year>=2008) %>%
   filter(year<2015)
+  
 FSI.long<- method%>%
-  select(year,FSI_npn,FSI_sm, FSI_obs)%>%
+  select(year,FSI.npn,FSI.sm, FSI.obs)%>%
   filter(year>=2001)%>%
   filter(year<2015)
+  
 blend<-FSI.table %>% 
   gather(Method, FSI, -year) %>%
   arrange(year)
+  
 blend.long<-FSI.long%>%
   gather(Method,FSI,-year)%>%
   arrange(year)
@@ -94,11 +90,11 @@ plot(longplot)
 fit<-glm(FSI~Method + year, data=blend)
 
 npn_sm <- method %>%
-  select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
+  select(year, FSI.npn, FSI.sm, FSI.obs, FSI.cam) %>%
   filter(year>=2008) %>%
   filter(year<2015)
-regression <- glm(formula = FSI_npn ~ FSI_sm + year, 
-                  data = npn_sm)
+regression <- glm(formula = FSI.npn ~ FSI.sm + year, 
+                  data = npn.sm)
 summary(regression)
 
 pearson<-cor(FSI.table, method="pearson")
@@ -111,7 +107,7 @@ pearson.long
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 
-Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \cite{Gu2008}.
+Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback %\cite{Gu2008}.
 More frequently, however, plants that have been exposed to a false spring will experience leaf loss and slower canopy development %\cite{Hufkens2012}. 
 With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. It is anticipated that there will be a decrease in false spring occurrence overall but the severity of temperature variation is likely to increase %\cite{Allstadt2015}. 
 

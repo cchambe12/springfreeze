@@ -94,7 +94,7 @@ pearson.long
 %% Making a Bibliography
 %\usepackage[backend=bibtex, style=nature]{biblatex}
 %\bibliography{references.bib}
-
+\bibliographystyle{~/Documents/git/springfreeze/References/references.bib}
 \begin{document}
 %\SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
@@ -108,7 +108,7 @@ pearson.long
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 
-Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback %\cite{Gu2008}.
+Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \cite{Gu2008}.
 More frequently, however, plants that have been exposed to a false spring will experience leaf loss and slower canopy development %\cite{Hufkens2012}. 
 With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. It is anticipated that there will be a decrease in false spring occurrence overall but the severity of temperature variation is likely to increase %\cite{Allstadt2015}. 
 

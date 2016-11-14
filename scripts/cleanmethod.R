@@ -19,6 +19,7 @@ attach(d)
 
 # Cleaning
 spring<- d %>%
-  select(year, bb_npn, bb_obs, bb_cam, bb_sm, FSI_npn, FSI_obs, FSI_cam, FSI_sm) %>%
-  unite(BB, bb_npn, bb_obs, bb_cam, bb_sm, -year, -FSI_npn, -FSI_obs, -FSI_cam, -FSI_sm) %>%
-  unite(FSI, FSI_npn, FSI_obs, FSI_cam, bb_sm, -year, -FSI_npn, -FSI_obs, -FSI_cam, -FSI_sm) 
+  select(year, bb_npn, bb_obs, bb_cam, sm.bb, FSI_npn, FSI_obs, FSI_cam, FSI_sm) %>%
+  gather("BB", "method", bb_npn, bb_obs, bb_cam, sm.bb, -year, -FSI_npn, -FSI_obs, -FSI_cam, -FSI_sm) %>%
+  gather("FSI", "Type", FSI_npn, FSI_obs, FSI_cam, sm.bb, -year, -FSI_npn, -FSI_obs, -FSI_cam, -FSI_sm) 
+
