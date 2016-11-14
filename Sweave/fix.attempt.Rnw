@@ -92,10 +92,11 @@ pearson.long
 @
 
 %% Making a Bibliography
-\usepackage[backend=bibtex, style=nature]{biblatex}
+\usepackage[backend=biber, bibencoding=ascii, style=nature]{biblatex}
 \bibliography{library.bib}
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \title{Comparing Methodologies for Calculating False Spring Index}
 \author{C Chamberlain}
 \date{\today}
@@ -160,7 +161,7 @@ print(xtable::xtable(pearson, caption="Pearson Correlation Coefficients shown co
 \section*{Conclusions}
 Our projections indicate that observational FSI values are highly comparable to PhenoCam FSI values, rendering both justifiable methods for determining potential risk involved in late spring freezes. Even though bud burst is defined differently between Dr. O'Keefe and the PhenoCam observations, the dates of bud burst are very similar. The SI-x dates gathered from the USA-NPN are significantly different from the other two methods, which is likely due to fact that the USA-NPN is assessing bud burst for honeysuckle and lilacs rather than forest tree species. Through the use of PhenoCam data, researchers could gather dates of bud burst across multiple locations at once, making it a more effective method than observational data. 
 
-\newpage
-\printbibliography
+%\newpage
+%\printbibliography
 
 \end{document}

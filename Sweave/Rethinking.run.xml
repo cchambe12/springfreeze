@@ -44,7 +44,8 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Rethinking.bcf</file>
+      <file>Rethinking.aux</file>
+      <file>Rethinking-blx.bib</file>
     </provides>
     <requires type="dynamic">
       <file>Rethinking.bbl</file>
@@ -52,6 +53,7 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
+      <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>nature.bbx</file>
       <file>numeric-comp.bbx</file>
@@ -64,13 +66,14 @@
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="1">
-    <generic>biber</generic>
+    <generic>bibtex</generic>
     <cmdline>
-      <binary>biber</binary>
+      <binary>bibtex</binary>
+      <option>-min-crossrefs 2</option>
       <infile>Rethinking</infile>
     </cmdline>
     <input>
-      <file>Rethinking.bcf</file>
+      <file>Rethinking.aux</file>
     </input>
     <output>
       <file>Rethinking.bbl</file>
@@ -79,10 +82,14 @@
       <file>Rethinking.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Rethinking.bcf</file>
+      <file>Rethinking.aux</file>
+      <file>Rethinking-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>library.bib</file>
+      <file>\nobreakspace {}/Documents/git/springfreeze/References/lib.bib</file>
+    </requires>
+    <requires type="static">
+      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>
