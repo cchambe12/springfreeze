@@ -21,6 +21,7 @@
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
 \newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
 
 \usepackage{framed}
 \makeatletter
@@ -74,10 +75,10 @@
 
 %% Making a Bibliography
 \usepackage[backend=bibtex, style=nature]{biblatex}
-\bibliography{~/Documents/git/springfreeze/References/lib.bib}
+\bibliography{references.bib}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+%\SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
 \author{C Chamberlain}
 \date{\today}
@@ -114,8 +115,8 @@ PhenoCam data is not available for Harvard Forest until 2008 and observation dat
 Date of bud burst varied between the three methodologies used. For the observational data, date of bud burst was determined by finding the mean date for all species observed in the study performed by Dr. O'Keefe (2014). %%%Lizzie, should I use first date of bud burst instead? I can change this method to determine observed bud burst date.%%% 
 As is seen in Table 1, Observed Bud Burst dates and PhenoCam Bud Burst dates are similar, whereas SI-x dates gathered from the USA-NPN are recorded as much earlier in the year.
 
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Mon Nov 14 08:52:42 2016
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Nov 14 09:51:43 2016
 \begin{table}[ht]
 \centering
 \caption{Last Freeze julian dates recorded from 2008 to 2014 and day of bud burst recorded for all three methodologies.} 
@@ -184,7 +185,7 @@ year & 1.00 & -0.03 & -0.21 & -0.54 & -0.37 \\
 \section*{Conclusions}
 Our projections indicate that observational FSI values are highly comparable to PhenoCam FSI values, rendering both justifiable methods for determining potential risk involved in late spring freezes. Even though bud burst is defined differently between Dr. O'Keefe and the PhenoCam observations, the dates of bud burst are very similar. The SI-x dates gathered from the USA-NPN are significantly different from the other two methods, which is likely due to fact that the USA-NPN is assessing bud burst for honeysuckle and lilacs rather than forest tree species. Through the use of PhenoCam data, researchers could gather dates of bud burst across multiple locations at once, making it a more effective method than observational data. 
 
-\newpage
+%\newpage
 %\printbibliography
 
 \end{document}

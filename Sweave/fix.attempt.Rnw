@@ -92,7 +92,7 @@ pearson.long
 @
 
 %% Making a Bibliography
-\usepackage[backend=biber, bibencoding=ascii, style=nature]{biblatex}
+\usepackage[backend=bibtex, style=nature]{biblatex}
 \bibliography{library.bib}
 
 \begin{document}
