@@ -15,10 +15,26 @@
 \evensidemargin -0.04cm
 \textwidth 16.59cm
 \textheight 21.94cm 
-\pagestyle{empty}
+\pagestyle{empty} %comment if want page numbers
 \parskip 7.2pt
 \renewcommand{\baselinestretch}{1.5}
 \parindent 0pt
+
+%Making a Bibliography
+\begin{document}
+\usepackage[backend=bibtex, style=nature]{biblatex}
+\bibliography{references.bib}
+
+
+\SweaveOpts{concordance=TRUE}
+\title{Rethinking False Spring Risk}
+\author{C Chamberlain}
+\date{\today}
+\maketitle 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
 
 %% R Script
 <<label=sourcestuff, echo=FALSE, results="hide", message=FALSE, warning=FALSE>>=
@@ -91,20 +107,7 @@ pearson.long<-cor(FSI.long, method="pearson")
 pearson.long
 @
 
-%% Making a Bibliography
-\usepackage[backend=bibtex, style=nature]{biblatex}
-\bibliography{references.bib}
 
-\begin{document}
-\SweaveOpts{concordance=TRUE}
-\title{Rethinking False Spring Risk}
-\author{C Chamberlain}
-\date{\today}
-\maketitle 
-
-\renewcommand{\thetable}{\arabic{table}}
-\renewcommand{\thefigure}{\arabic{figure}}
-\renewcommand{\labelitemi}{$-$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 
