@@ -26,9 +26,6 @@ pheno<-phenology%>%
   unite(species, Genus, Species, sep="_") %>%
   filter(Phenophase_Description %in% phases) %>%
   rename(Year = First_Yes_Year)
-
-pheno$date<-format(strptime(First_Yes_DOY, format="%j"), format="%m-%d")
-pheno$date<-as.Date(First_Yes_DOY - 1, origin = "2010-01-01") 
   
 spp<-as.data.frame(table(phenology$species))
 
@@ -100,7 +97,7 @@ map<-full_join(bb,leaf)
 
 
 time<-ggplot(map,aes(x=,y=0))
-time+geom_segment(aes(y=0,x=Budburst,xend=Leaves, yend=0), color=aes(Genus))
-time+geom_segment(x=Budburst,xend=Leaves,y=0,yend=2,color=aes(Genus),size=1) 
+time+geom_segment(data = map, aes(y=0,x=Budburst,xend=Leaves, yend=0, color=aes(Genus)))
+time+geom_segment(data = map, x=map$Budburst,xend=map$Leaves,y=0,yend=2,color=aes(Genus),size=1) 
  #drawing the actual arrow
 

@@ -134,6 +134,11 @@ ggplot((df), aes(x=Budburst, y=species)) + geom_point(aes(x= df$Budburst)) +
   geom_point(aes(x=df$Leaves)) + theme(legend.position="none") +
   geom_point(position = position_dodge(.5)) + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
   ylab("Species")
+ggplot((df), aes(x=Budburst, y=species)) + geom_point(aes(x= df$Budburst)) + 
+  geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
+  geom_point(aes(x=df$Leaves)) + theme(legend.position="none") +
+  geom_point(position = position_dodge(.5)) + geom_point(aes(col=Genus)) + xlab("Budburst to Leaf Out") +
+  ylab("Species")
 
 
 ## Normalize the data

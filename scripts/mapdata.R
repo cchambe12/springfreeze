@@ -1,8 +1,13 @@
 ## 9 November 2016 - Cat
 ## Attempt to Map out NPN data for Timeline data
 
+# Clear workspace
+rm(list=ls()) # remove everything currently held in the R memory
+options(stringsAsFactors=FALSE)
+graphics.off()
+
 # Install Packages
-install.packages(c("stringr","maps","mapdata"))
+#install.packages(c("stringr","maps","mapdata"))
 library(ggplot2)
 library(ggmap)
 library(maps)
@@ -25,7 +30,7 @@ gg1<- NAmap <- ggplot() + geom_polygon(data = usa,
                fill = "white", color="black") + 
   geom_polygon(data = mexico, aes(x=long, y = lat, group = group), 
                fill = "white", color="black") + 
-  geom_polygon(data = mexico, aes(x=long, y = lat, group = group), 
+  geom_polygon(data = alaska, aes(x=long, y = lat, group = group), 
                                                              fill = "white", color="black") 
 
 # Set Working Directory
@@ -42,8 +47,8 @@ pheno<-phenology%>%
   rename(Year = First_Yes_Year) %>%
   filter(Longitude != 0)
 
-# Plot Points
+# Plot Points - Need to fix color by species
 gg1 + 
-  geom_point(data = pheno, aes(x = Longitude, y = Latitude), color = "black", size = 3) +
-  geom_point(data = pheno, aes(x = Longitude, y = Latitude), color = "red", size = 3)
-
+    geom_point(data = pheno, aes(x = Longitude, y = Latitude), color = "black", size = 3) +
+    geom_point(data = pheno, aes(x = Longitude, y = Latitude), size = 3, color=aes(species)) + 
+  theme(legend.position="none")
