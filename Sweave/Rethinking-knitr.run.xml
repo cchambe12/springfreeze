@@ -44,13 +44,13 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>fix.attempt.aux</file>
-      <file>fix.attempt-blx.bib</file>
+      <file>Rethinking-knitr.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>fix.attempt.bbl</file>
+      <file>Rethinking-knitr.bbl</file>
     </requires>
     <requires type="static">
+      <file>blx-dm.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>nature.bbx</file>
@@ -64,30 +64,25 @@
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="1">
-    <generic>bibtex</generic>
+    <generic>biber</generic>
     <cmdline>
-      <binary>bibtex</binary>
-      <option>-min-crossrefs 2</option>
-      <infile>fix.attempt</infile>
+      <binary>biber</binary>
+      <infile>Rethinking-knitr</infile>
     </cmdline>
     <input>
-      <file>fix.attempt.aux</file>
+      <file>Rethinking-knitr.bcf</file>
     </input>
     <output>
-      <file>fix.attempt.bbl</file>
+      <file>Rethinking-knitr.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>fix.attempt.bbl</file>
+      <file>Rethinking-knitr.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>fix.attempt.aux</file>
-      <file>fix.attempt-blx.bib</file>
+      <file>Rethinking-knitr.bcf</file>
     </requires>
     <requires type="editable">
       <file>library.bib</file>
-    </requires>
-    <requires type="static">
-      <file>biblatex.bst</file>
     </requires>
   </external>
 </requests>
