@@ -162,6 +162,7 @@ gg1 +
     geom_point(data = map, aes(x = Longitude, y = Latitude), size = 3) + 
   geom_point(fill=factor(map$group)) + theme(legend.position="none")
 
-gg1 + geom_point(data = map, aes(Longitude, Latitude, group = group, fill = factor(group)))
+gg1 + geom_point(data = map, aes(Longitude, Latitude, group = group, color=group))
 
-summary(map$Risk)
+write.csv(map, file ="map.csv", row.names = FALSE)
+
