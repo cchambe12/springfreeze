@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage[small]{caption}
+\usepackage{gensymb}
+\usepackage{float}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+\pagestyle{empty}
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\usepackage{natbib} % EMW: You need a package. I use this but I think biblatex is supposed to be better (we could look into together sometime).
+
+
+%% R Script
+% EMW: Sweave does not like your results="hide" ... I need to check but I think you do not need the quotes.
+
+%% Making a Bibliography
+%\usepackage[backend=bibtex, style=nature]{biblatex}
+%\bibliography{references.bib}
+
+\begin{document}
+\bibliographystyle{/Users/Lizzie/Documents/git/projects/misc/springfreeze/References/styles/besjournals}
+
+% \SweaveOpts{concordance=TRUE}
+\title{Rethinking False Spring Risk}
+\author{C Chamberlain}
+\date{\today}
+\maketitle 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+
+Plants grow \citep{frostbook}.
+
+
+%\newpage
+%\printbibliography
+
+\bibliography{/Users/Lizzie/Documents/git/projects/misc/springfreeze/References//samplerefs}
+
+\end{document}
