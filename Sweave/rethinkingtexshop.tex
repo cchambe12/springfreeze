@@ -51,7 +51,8 @@
 \usepackage{Sweave}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage{natbib}
+\usepackage[comma]{natbib}
+\bibliographystyle{agsm} 
 \usepackage[small]{caption}
 \setkeys{Gin}{width=0.8\textwidth}
 \setlength{\captionmargin}{30pt}
@@ -68,21 +69,12 @@
 \parindent 0pt
 
 %% R Script
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in setwd("{}..//..//input"{}): cannot change working directory}}\end{kframe}
-\end{knitrout}
 
 %% Making a Bibliography
-\usepackage[backend=bibtex]{biblatex}
-\bibliography{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib}
-\bibliography{SpringFreeze.bib}
+%\usepackage[backend=bibtex]{biblatex}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-%\bibliographystyle{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib} 
-% \SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
 \author{C Chamberlain}
 \date{\today}
@@ -94,29 +86,29 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
-Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \cite{Gu2008}.
-More frequently, however, plants that have been exposed to a false spring will experience leaf loss and slower canopy development %\cite{Hufkens2012}. 
-With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. It is anticipated that there will be a decrease in false spring occurrence overall but the severity of temperature variation is likely to increase %\cite{Allstadt2015}. 
+Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}.
+More frequently, however, plants that have been exposed to a false spring will experience leaf loss and slower canopy development \citep{Hufkens2012}. 
+With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. It is anticipated that there will be a decrease in false spring occurrence overall but the severity of temperature variation is likely to increase \citep{Allstadt2015}. 
 
-Different species exhibit varying responses to late spring freezing events and the level of damage also varies across phenophases. Generally, reproductive phases are more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots %\cite{Peterson2014}. % This said, it will be less detrimental concerning overall fitness for mature trees that lose one year of reproductive growth from a false spring than if a tree were to suffer severe vegetative growth damage.  
-False spring events also put seedling and sapling trees at greater risk to damage than adult trees %\cite{Vitasse2014}. 
-Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for bud burst to take place and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date %\cite{Augspurger2013}. 
-In a study performed by Peterson and Abatzoglou (2014), it had been determined that 7 days between bud burst and last freeze date is a significant parameter. There is much debate over the definition of freezing temperatures and has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C %\cite{Augspurger2013, Kodra2011, Vavrus2006}.
+Different species exhibit varying responses to late spring freezing events and the level of damage also varies across phenophases. Generally, reproductive phases are more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots \citep{Peterson2014}. % This said, it will be less detrimental concerning overall fitness for mature trees that lose one year of reproductive growth from a false spring than if a tree were to suffer severe vegetative growth damage.  
+False spring events also put seedling and sapling trees at greater risk to damage than adult trees \citep{Vitasse2014}. 
+Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for bud burst to take place and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date \citep{Augspurger2013}. 
+In a study performed by Peterson and Abatzoglou (2014), it had been determined that 7 days between bud burst and last freeze date is a significant parameter. There is much debate over the definition of freezing temperatures and has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C \citep{Augspurger2013, Kodra2011, Vavrus2006}.
 
 \section*{Rethinking False Spring}
-At this time false spring studies fail to incorporate all potential factors that could affect the level of frost damage risk. A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. Currently, FSI evaluates day of bud burst, number of growing degree days, and day of last spring freeze through a simple equation as seen below %\cite{Marino2011}. 
+At this time false spring studies fail to incorporate all potential factors that could affect the level of frost damage risk. A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. Currently, FSI evaluates day of bud burst, number of growing degree days, and day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
 
 \[ FSI = Julian Date (Last Spring Freeze) - Julian Date (Bud Burst) \]
 
-If FSI is a positive number and greater than 7, then crown dieback is more likely to occur. In this study, we aim to integrate a more thorough model for predicting false spring risk, which would ideally incorporate life stage of the individual, location within a forest or canopy, winter chilling hours, proximity to water, level of precipitation prior to the freezing event %%\cite{Anderegg2013}
-, and freeze duration. Another highly crucial factor to consider is the rate of budburst and the length of time between budburst and leaf out at the species level. We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define leaf out %%\cite{Meier2001}.
-Day of budburst will vary across species based on different life strategies %%\cite{Caffarra2011}.
+If FSI is a positive number and greater than 7, then crown dieback is more likely to occur. In this study, we aim to integrate a more thorough model for predicting false spring risk, which would ideally incorporate life stage of the individual, location within a forest or canopy, winter chilling hours, proximity to water, level of precipitation prior to the freezing event \citep{Anderegg2013}
+, and freeze duration. Another highly crucial factor to consider is the rate of budburst and the length of time between budburst and leaf out at the species level. We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define leaf out %\citep{Meier2001}.
+Day of budburst will vary across species based on different life strategies %\citep{Caffarra2011}.
 Before this model can be established, an appropriate determination of spring onset is crucial. There are many methods that can be used to determine first day of spring and there also many definitions. 
 
 \section*{Determining Spring Index}
-The date of last spring freeze was gathered from the Fisher Meteorological Station which was downloaded from the Harvard Forest web page (data available online\footnote{http://harvardforest.fas.harvard.edu/meteorological-hydrological-stations}). The Tmin values were used and the Last Spring Freeze was  determined from the latest Julian date that the temperature reached -1.7$^{\circ}$C or below. The date of bud burst was evaluated through three different methodologies. The first method for collecting bud burst was from observational data recorded for 33 tree species by Dr. John O'Keefe at Harvard Forest from 1990 to present %%\cite{OKeefe2014}. 
-Dr. O'Keefe defines bud burst as 50\% leaf emergence. The second data set was provided from PhenoCam data, which are field cameras, placed in Harvard Forest, take real-time images of plant growth and are programmed to record initial green up. The final set was collected through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x). The SI-x value is the time of leaf out as monitored from historical dates of bud burst using honeysuckle and lilac clones around the U.S. and combining that information with daily recordings from local weather stations %%\cite{USA-NPN2016, Ault2015, Ault2015a, Schwartz2013, Schwartz1997}. 
-Through assessing past years' weather and bud burst, scientists are able to determine general weather trends that subsequently lead to leaf out. Based on these trends, SI-x values can be calculated from daily weather data %%\cite{USA-NPN2016}. %%%Lizzie, I am only assessing Harvard Forest data here to compare the three methods and also there is only one date of bud burst that we can use for SH at this time. I should be able to calculate a second FSI value for SH once Eric is home from vacation and I can get the weather data for 2015. At that time, I'll integrate the SH information!%%%
+The date of last spring freeze was gathered from the Fisher Meteorological Station which was downloaded from the Harvard Forest web page (data available online\footnote{http://harvardforest.fas.harvard.edu/meteorological-hydrological-stations}). The Tmin values were used and the Last Spring Freeze was  determined from the latest Julian date that the temperature reached -1.7$^{\circ}$C or below. The date of bud burst was evaluated through three different methodologies. The first method for collecting bud burst was from observational data recorded for 33 tree species by Dr. John O'Keefe at Harvard Forest from 1990 to present \citep{OKeefe2014}. 
+Dr. O'Keefe defines bud burst as 50\% leaf emergence. The second data set was provided from PhenoCam data, which are field cameras, placed in Harvard Forest, take real-time images of plant growth and are programmed to record initial green up. The final set was collected through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x). The SI-x value is the time of leaf out as monitored from historical dates of bud burst using honeysuckle and lilac clones around the U.S. and combining that information with daily recordings from local weather stations %\citep{USA-NPN2016, Ault2015, Ault2015a, Schwartz2013, Schwartz1997}. 
+Through assessing past years' weather and bud burst, scientists are able to determine general weather trends that subsequently lead to leaf out. Based on these trends, SI-x values can be calculated from daily weather data %\citep{USA-NPN2016}. %%%Lizzie, I am only assessing Harvard Forest data here to compare the three methods and also there is only one date of bud burst that we can use for SH at this time. I should be able to calculate a second FSI value for SH once Eric is home from vacation and I can get the weather data for 2015. At that time, I'll integrate the SH information!%%%
 \newline
 PhenoCam data is not available for Harvard Forest until 2008 and observation data is only recorded through 2014, so this evaluation assesses FSI values from 2008 through 2014. 
 \section*{Results}
@@ -124,7 +116,7 @@ Date of bud burst varied between the three methodologies used. For the observati
 As is seen in Table 1, Observed Bud Burst dates and PhenoCam Bud Burst dates are similar, whereas SI-x dates gathered from the USA-NPN are recorded as much earlier in the year.
 
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Thu Nov 17 22:40:34 2016
+% Fri Nov 18 07:54:15 2016
 \begin{table}[ht]
 \centering
 \caption{Last Freeze julian dates recorded from 2008 to 2014 and day of bud burst recorded for all three methodologies.} 
@@ -194,6 +186,5 @@ year & 1.00 & -0.03 & -0.21 & -0.54 & -0.37 \\
 Our projections indicate that observational FSI values are highly comparable to PhenoCam FSI values, rendering both justifiable methods for determining potential risk involved in late spring freezes. Even though bud burst is defined differently between Dr. O'Keefe and the PhenoCam observations, the dates of bud burst are very similar. The SI-x dates gathered from the USA-NPN are significantly different from the other two methods, which is likely due to fact that the USA-NPN is assessing bud burst for honeysuckle and lilacs rather than forest tree species. Through the use of PhenoCam data, researchers could gather dates of bud burst across multiple locations at once, making it a more effective method than observational data. 
 
 \newpage
-%\printbibliography
-%\bibliography{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib} 
+\bibliography{..//refs/SpringFreeze.bib}
 \end{document}
