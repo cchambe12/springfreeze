@@ -51,6 +51,7 @@
 \usepackage{Sweave}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{natbib}
 \usepackage[small]{caption}
 \setkeys{Gin}{width=0.8\textwidth}
 \setlength{\captionmargin}{30pt}
@@ -66,13 +67,22 @@
 \renewcommand{\baselinestretch}{1.5}
 \parindent 0pt
 
+%% R Script
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in setwd("{}..//..//input"{}): cannot change working directory}}\end{kframe}
+\end{knitrout}
+
 %% Making a Bibliography
-%\usepackage[backend=bibtex]{biblatex}
-\bibliography{~/Documents/git/springfreeze/refs/gu}
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib}
+\bibliography{SpringFreeze.bib}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-\bibliography{gu}
-
+%\bibliographystyle{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib} 
+% \SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
 \author{C Chamberlain}
 \date{\today}
@@ -81,10 +91,6 @@
 \renewcommand{\thetable}{\arabic{table}}
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\labelitemi}{$-$}
-
-%% R Script
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
@@ -118,7 +124,7 @@ Date of bud burst varied between the three methodologies used. For the observati
 As is seen in Table 1, Observed Bud Burst dates and PhenoCam Bud Burst dates are similar, whereas SI-x dates gathered from the USA-NPN are recorded as much earlier in the year.
 
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Wed Nov 16 08:52:47 2016
+% Thu Nov 17 22:40:34 2016
 \begin{table}[ht]
 \centering
 \caption{Last Freeze julian dates recorded from 2008 to 2014 and day of bud burst recorded for all three methodologies.} 
@@ -189,4 +195,5 @@ Our projections indicate that observational FSI values are highly comparable to 
 
 \newpage
 %\printbibliography
+%\bibliography{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib} 
 \end{document}

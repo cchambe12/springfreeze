@@ -2,6 +2,7 @@
 \usepackage{Sweave}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{natbib}
 \usepackage[small]{caption}
 \setkeys{Gin}{width=0.8\textwidth}
 \setlength{\captionmargin}{30pt}
@@ -17,21 +18,6 @@
 \renewcommand{\baselinestretch}{1.5}
 \parindent 0pt
 
-%% Making a Bibliography
-%\usepackage[backend=bibtex]{biblatex}
-\bibliography{~/Documents/git/springfreeze/refs/gu}
-\begin{document}
-\bibliography{gu}
-
-\title{Rethinking False Spring Risk}
-\author{C Chamberlain}
-\date{\today}
-\maketitle 
-
-\renewcommand{\thetable}{\arabic{table}}
-\renewcommand{\thefigure}{\arabic{figure}}
-\renewcommand{\labelitemi}{$-$}
-
 %% R Script
 <<label=sourcestuff, echo=FALSE, results="hide", message=FALSE, warning=FALSE>>=
   options(stringsAsFactors=FALSE)
@@ -42,8 +28,8 @@ library(xtable)
 library(knitr)
 library(knitcitations)
 
-setwd("~/Documents/git/springfreeze/input")
-source("~/Documents/git/springfreeze/scripts/John.okeefe.R")
+setwd("..//..//input")
+source("..//scripts/John.okeefe.R")
 
 method<-read.csv("method.test.csv",header=TRUE,sep=",")
 attach(method)
@@ -103,6 +89,22 @@ pearson.long<-cor(FSI.long, method="pearson")
 pearson.long
 @
 
+%% Making a Bibliography
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib}
+\bibliography{SpringFreeze.bib}
+
+\begin{document}
+%\bibliographystyle{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib} 
+% \SweaveOpts{concordance=TRUE}
+\title{Rethinking False Spring Risk}
+\author{C Chamberlain}
+\date{\today}
+\maketitle 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
@@ -161,4 +163,5 @@ Our projections indicate that observational FSI values are highly comparable to 
 
 \newpage
 %\printbibliography
+%\bibliography{/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib} 
 \end{document}

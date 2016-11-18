@@ -83,7 +83,8 @@
       <file>rethinkingtexshop-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>\nobreakspace {}/Documents/git/springfreeze/refs/SpringFreeze.bib</file>
+      <file>/Users/CatherineChamberlain/Documents/git/springfreeze/refs/SpringFreeze.bib</file>
+      <file>SpringFreeze.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>
