@@ -26,7 +26,7 @@ ipak(packages)
 setwd("~/Documents/git/springfreeze/input")
 
 budburst<-read.csv("hf003-06-mean-spp.csv",header=TRUE, sep=",")
-attach(budburst)
+budburst<-filter(budburst, year>2000)
 
 sp <- budburst %>%
   select(year, species, bb.jd) %>%
@@ -34,12 +34,18 @@ sp <- budburst %>%
   group_by(species, year)%>%
   arrange(year) 
 
+df<-as.data.frame(table(budburst$species))
+
 spp<- c("PRSE", "AMSP", "POTR", "CRSP", "HAVI", "ACSA", "BEPA", "ACPE", "ACRU", "QURU", 
         "BEAL", "BELE") ## Species that were observed each year
 
+sp.short<- c("ACPE","ACRU","ACSA","FAGR","FRAM","HAVI","QUAL",
+             "QURU","PRSE", "AMSP", "POTR", "CRSP","BEPA",
+             "BEAL", "BELE", "COAL", "QUVE")
+
 d <- budburst %>%
   select(year, species, bb.jd)%>%
-  filter(species %in% spp)
+  filter(species %in% sp.short)
 
 df<- d %>%
   select(species, bb.jd) %>%
@@ -92,7 +98,7 @@ sm.comp<- condensed %>%
 # Compares FSI values for small dataset of Dr O'Keefe's observational
 # data and USNPN Spring Indices, based on -1.7 deg Celcius last freeze
 method<-read.csv("method.test.csv",header=TRUE,sep=",")
-attach(method)
+#attach(method)
 
 bb.table<-method %>%
   select(year,last_frz,bb_npn, sm.bb) %>%
@@ -103,9 +109,8 @@ bb.table<-method %>%
   rename("SI-x"=bb_npn)
 
 FSI.table<- method %>%
-  select(year, FSI_npn, FSI_obs, FSI_sm, FSI_cam) %>%
-  rename(small.obs = FSI_sm) %>%
-  rename(total.obs = FSI_obs)%>%
+  select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
+  rename(okeefe = FSI_okeefe)%>%
   rename(phenocam = FSI_cam) %>%
   rename(npn = FSI_npn) %>%
   filter(year>=2008) %>%

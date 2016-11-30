@@ -26,11 +26,11 @@ ggplot(d, aes(year, l75.jd)) +
 
 lo <- bb <- sp <- yr <- vector()
 
-for(i in unique(d$year)){ # i = '2000'
-  dxx <- d[d$year == i,]
+for(i in unique(budburst$year)){ # i = '2000'
+  dxx <- budburst[budburst$year == i,]
   lox <- rank(dxx$l75.jd)
   lox[is.na(dxx$l75.jd)] = NA
-  box <- rank(dxx$bb.jd, na.last = T)
+  box <- rank(dxx$bb.jd, na.last = TRUE)
   box[is.na(dxx$bb.jd)] = NA
   lo = c(lo, lox)
   bb = c(bb, box)
@@ -38,7 +38,7 @@ for(i in unique(d$year)){ # i = '2000'
   yr = c(yr, rep(i, nrow(dxx)))
 }
 
-d1 <- data.frame(year = yr, sp, leafout.order = lo, budburst.order = bb, l75 = d$l75.jd)
+d1 <- data.frame(year = yr, sp, leafout.order = lo, budburst.order = bb, l75 = budburst$l75.jd)
 
 
 # plotting order of budburst and order of leafout over years
@@ -59,7 +59,7 @@ bse.order.2 <- aggregate(budburst.order ~ sp, function(x) sd(x,na.rm=T)/sqrt((le
 
 # are the orders even internally consistent between these two time periods?
 par(mfrow =c(1,2))
-xx <- merge(mean.order.1, mean.order.2, by = 'sp', all=T)
-bxx <- merge(bmean.order.1, bmean.order.2, by = 'sp', all=T)
+xx <- merge(mean.order.1, mean.order.2, by = 'sp', all=TRUE)
+bxx <- merge(bmean.order.1, bmean.order.2, by = 'sp', all=TRUE)
 with(xx, plot(leafout.order.x, leafout.order.y)) # Yes, not bad!
 with(bxx, plot(budburst.order.x, budburst.order.y)) # Quite good actually

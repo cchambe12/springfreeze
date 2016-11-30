@@ -33,20 +33,10 @@ library(knitcitations)
 source("..//scripts/John.okeefe.R")
 
 method<-read.csv("method.test.csv",header=TRUE,sep=",")
-attach(method)
-
-bb.table<-method %>%
-  select(year,last_frz,bb_npn, sm.bb) %>%
-  filter(year>=2008)%>%
-  filter(year<2015)%>%
-  rename("Last Freeze"=last_frz)%>%
-  rename("Observed"=sm.bb)%>%
-  rename("SI-x"=bb_npn)
 
 FSI.table<- method %>%
-  select(year, FSI_npn, FSI_obs, FSI_sm, FSI_cam) %>%
-  rename(small.obs = FSI_sm) %>%
-  rename(total.obs = FSI_obs)%>%
+  select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
+  rename(okeefe = FSI_okeefe) %>%
   rename(phenocam = FSI_cam) %>%
   rename(npn = FSI_npn) %>%
   filter(year>=2008) %>%
@@ -120,19 +110,19 @@ The date of last spring freeze was gathered from the Fisher Meteorological Stati
 PhenoCam data is not available for Harvard Forest until 2008 and observation data is only recorded through 2014, so this evaluation assesses FSI values from 2008 through 2014.
 The FSI values were calculated for each methodology using the formula based on the study performed by Marino et al. (2011). Table 2 shows that the Observed and PhenoCam FSI values are all negative from 2008 through 2014. The FSI values from the NPN are, on average, much higher in comparison to the other two methods.  
 \par
-A graphical representation of the FSI values compared across the three methodologies can be seen in Figure 1. In 2008 and 2012, FSI is higher than the significant parameter given of 7, indicating a possibly damaging false spring event although the PhenoCam data did not indicate a false spring in either of the two years. The NPN data always had the highest FSI values.
+A graphical representation of the FSI values compared across the three methodologies can be seen in Figure 1. In 2008 and 2012, FSI is higher than the significant parameter given of 7 for the NPN data, indicating a possibly damaging false spring event. However, the PhenoCam data did not indicate a false spring in either of the two years and the FSI value for 2012 found through the observed data was not significant. The NPN data always had the highest FSI values.
 
 <<label=fsifig, results="asis", echo=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
 plot(methodplot)
 @
 
-A Pearson Correlation was used to determine the strength of association between the three methods used in the study. As indicated in Table 1, the FSI values from the observed data and the SI-x NPN data are strongly correlated (r=0.94974434), whereas the FSI values calculated using the PhenoCam data is not strongly correlated to either the observed FSI values (r=0.3839451) or the NPN FSI values (r=0.42420587).
+A Pearson Correlation was used to determine the strength of association between the three methods used in the study. As indicated in Table 1, the FSI values from the observed data and the SI-x NPN data are strongly correlated (r=0.93947095), whereas the FSI values calculated using the PhenoCam data is not as strongly correlated to either the observed FSI values (r=0.4679934) or the NPN FSI values (r=0.4242059). Although, according to the pearson correlation, all results were similar. 
 
 <<label=pearson, results="asis", echo=FALSE>>=
 print(xtable::xtable(pearson, caption="Pearson Correlation Coefficients shown comparing the strength of association between the FSI values calculated across all three methodologies."),comment=FALSE, caption.placement="top")
 @
 
-Our projections indicate that observational FSI values are highly comparable to PhenoCam FSI values, rendering both justifiable methods for determining potential risk involved in late spring freezes. Even though bud burst is defined differently between Dr. O'Keefe and the PhenoCam observations, the dates of bud burst are very similar. The SI-x dates gathered from the USA-NPN are significantly different from the other two methods, which is likely due to fact that the USA-NPN is assessing bud burst for honeysuckle and lilacs rather than forest tree species. Through the use of PhenoCam data, researchers could gather dates of bud burst across multiple locations at once, making it a more effective method than observational data. 
+Our projections indicate that observational FSI values are highly comparable to the USA-NPN FSI values, rendering both justifiable methods for determining potential risk involved in late spring freezes. Even though budburst is defined differently between Dr. O'Keefe, USA-NPN, and the PhenoCam, the dates of budburst are similar. The spring onset dates gathered from the PhenoCam dataset are different from the other two methods, which is likely due to fact that the PhenoCam data is assessing budburst for the forest canopy. Through the use of USA-NPN data, researchers could gather dates of budburst across multiple locations at once in order to determine False Spring risk, making it a more effective method than observational data. Although, all three methods are viable. It largely depends on the functional group of interest for the study, definition of budburst, and resources available.  
 
 \newpage
 \bibliography{..//refs/SpringFreeze.bib}

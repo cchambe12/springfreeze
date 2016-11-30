@@ -164,5 +164,5 @@ gg1 +
 
 gg1 + geom_point(data = map, aes(Longitude, Latitude, group = group, color=group))
 
-write.csv(map, file ="map.csv", row.names = FALSE)
+write.csv(map, file ="./output/map.csv", row.names = FALSE)
 
