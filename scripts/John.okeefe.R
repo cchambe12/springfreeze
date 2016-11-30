@@ -103,7 +103,11 @@ bb.table<-method %>%
   rename("SI-x"=bb_npn)
 
 FSI.table<- method %>%
-  select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
+  select(year, FSI_npn, FSI_obs, FSI_sm, FSI_cam) %>%
+  rename(small.obs = FSI_sm) %>%
+  rename(total.obs = FSI_obs)%>%
+  rename(phenocam = FSI_cam) %>%
+  rename(npn = FSI_npn) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 FSI.long<- method%>%

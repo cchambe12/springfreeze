@@ -22,6 +22,27 @@ Augspurger, C.~K.  \harvardyearleft 2013\harvardyearright , `{Reconstructing
   patterns of temperature, phenology, and frost damage over 124 years: Spring
   damage risk is increasing}', {\em Ecology} {\bf 94}(1),~41--50.
 
+\harvarditem{Ault, Schwartz, Zurita-Milla, Weltzin \harvardand\
+  Betancourt}{2015}{Ault2015a}
+Ault, T.~R., Schwartz, M.~D., Zurita-Milla, R., Weltzin, J.~F. \harvardand\
+  Betancourt, J.~L.  \harvardyearleft 2015\harvardyearright , `{Trends and
+  natural variability of spring onset in the coterminous united states as
+  evaluated by a new gridded dataset of spring indices}', {\em Journal of
+  Climate} {\bf 28}(21),~8363--8378.
+
+\harvarditem{Ault, Zurita-Milla \harvardand\ Schwartz}{2015}{Ault2015}
+Ault, T.~R., Zurita-Milla, R. \harvardand\ Schwartz, M.~D.  \harvardyearleft
+  2015\harvardyearright , `{A Matlab{\{}{\textcopyright}{\}} toolbox for
+  calculating spring indices from daily meteorological data}', {\em Computers
+  {\{}{\&}{\}} Geosciences} {\bf 83},~46--53.
+\newline\harvardurl{http://www.sciencedirect.com/science/article/pii/S0098300415001466}
+
+\harvarditem{Caffarra \harvardand\ Donnelly}{2011}{Caffarra2011}
+Caffarra, A. \harvardand\ Donnelly, A.  \harvardyearleft 2011\harvardyearright
+  , `{The ecological significance of phenology in four different tree species:
+  Effects of light and temperature on bud burst}', {\em International Journal
+  of Biometeorology} {\bf 55}(5),~711--721.
+
 \harvarditem[Gu et~al.]{Gu, Hanson, Post, Kaiser, Yang, Nemani, Pallardy
   \harvardand\ Meyers}{2008}{Gu2008}
 Gu, L., Hanson, P.~J., Post, W.~M., Kaiser, D.~P., Yang, B., Nemani, R.,
@@ -50,6 +71,13 @@ Marino, G.~P., Kaiser, D.~P., Gu, L. \harvardand\ Ricciuto, D.~M.
   risk of spring freeze damage?}', {\em Environmental Research Letters} {\bf
   6}(2),~24015.
 
+\harvarditem{Meier}{2001}{Meier2001}
+Meier, U.  \harvardyearleft 2001\harvardyearright , `{Growth stages of mono-and
+  dicotyledonous plants BBCH Monograph Edited by Uwe Meier Federal Biological
+  Research Centre for Agriculture and Forestry}', {\em Agriculture} {\bf
+  12},~141--147 ST -- Geochemical study of the organic mat.
+\newline\harvardurl{http://pub.jki.bund.de/index.php/BBCH/article/view/515/464}
+
 \harvarditem{O'Keefe}{2014}{OKeefe2014}
 O'Keefe, J.  \harvardyearleft 2014\harvardyearright , {Phenology of Woody
   Species at Harvard Forest since 1990}, Technical report.
@@ -60,6 +88,19 @@ Peterson, A.~G. \harvardand\ Abatzoglou, J.~T.  \harvardyearleft
   2014\harvardyearright , `{Observed changes in false springs over the
   contiguous United States}', {\em Geophysical Research Letters} {\bf
   41}(6),~2156--2162.
+
+\harvarditem{Schwartz}{1997}{Schwartz1997}
+Schwartz, M.~D.  \harvardyearleft 1997\harvardyearright , {Spring Index Models:
+  An approach to connecting Satellite and surface phenology}, {\em in}
+  `Phenology of Seasonal climates', pp.~23--38.
+
+\harvarditem[Schwartz et~al.]{Schwartz, Ault \harvardand\
+  Betancourt}{2013}{Schwartz2013}
+Schwartz, M.~D., Ault, T.~R. \harvardand\ Betancourt, J.~L.  \harvardyearleft
+  2013\harvardyearright , `{Spring onset variations and trends in the
+  continental United States: Past and regional assessment using
+  temperature-based indices}', {\em International Journal of Climatology} {\bf
+  33}(13),~2917--2922.
 
 \harvarditem[Vavrus et~al.]{Vavrus, Walsh, Chapman \harvardand\
   Portis}{2006}{Vavrus2006}
