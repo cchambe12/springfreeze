@@ -16,7 +16,6 @@ library(ggplot2)
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
 phenology<-read.csv("input/condensed_phenometrics.csv",header=TRUE)
-attach(phenology)
 
 phases<-c("Budburst","Leaves")
 
@@ -24,7 +23,7 @@ pheno<-phenology%>%
   select(Site_ID, Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
   unite(species, Genus, Species, sep="_") %>%
   filter(Phenophase_Description %in% phases) %>%
-  filter(Site_ID == 6242) %>%
+  filter(Site_ID == 2) %>%
   rename(Year = First_Yes_Year) 
 
 # Make dataframe that includes Risk for each species
@@ -52,13 +51,13 @@ y1<-filter(y1, Risk < 31)
 
 dat<-full_join(y0,y1)
 
-bud<- dat %>%
+bud<- y0 %>%
   select(species, Budburst) %>%
   group_by(species)%>%
   summarise_each(funs(mean), Budburst) %>%
   arrange(species)
 
-leaves<- dat %>%
+leaves<- y0 %>%
   select(species, Leaves) %>%
   group_by(species)%>%
   summarise_each(funs(mean), Leaves) %>%
@@ -69,8 +68,7 @@ basic$Risk<- basic$Leaves - basic$Budburst
 
 ggplot((basic), aes(x=Budburst, y=species)) + geom_point(aes(x= basic$Budburst)) + 
   geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") +
-  geom_point(position = position_dodge(.5)) + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
+  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
   ylab("Species")
 
 ######################################################################

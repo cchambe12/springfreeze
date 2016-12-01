@@ -40,7 +40,16 @@ for(i in unique(budburst$year)){ # i = '2000'
 
 # rowSums(data > 0)
 # apply(data>30,7,identity)
+fx <- function(weather, AirT, n){
+  warm <- rle(weather$AirT >0)
+  gdd<-warm$lengths>= 7
+}
 
-for(i in unique(weather$AirT)){
-  apply(weather$AirT>0, 7, identity)
+
+for(i in unique(weather$AirTMin)){
+  dxx<-weather[weather$year == i,]
+  dxx$warm<-rle(weather$AirT > 0)
+  dxx$warm[is.na(dxx$AirT)] = NA
+  dxx$frz<-ifelse(weather$AirTMin<0, Y, NA)
+  yr = c(yr, rep(i, nrow(dxx)))
 }
