@@ -46,10 +46,46 @@ fx <- function(weather, AirT, n){
 }
 
 
-for(i in unique(weather$AirTMin)){
+for(i in 2001:2014)){
   dxx<-weather[weather$year == i,]
   dxx$warm<-rle(weather$AirT > 0)
   dxx$warm[is.na(dxx$AirT)] = NA
   dxx$frz<-ifelse(weather$AirTMin<0, Y, NA)
   yr = c(yr, rep(i, nrow(dxx)))
 }
+
+u1 <- rnorm(30)
+usq<-0
+for(i in 1:10) 
+{
+  usq[i]<-u1[i]*u1[i] # i-th element of u1 squared into i-th position of usq
+  print(usq[i])
+}
+print(i)
+
+weather$warm<- ifelse(weather$AirT>0, 1, 0)
+weather<-na.omit(weather)
+weather$inst<-length(weather$warm)["1"]
+weather$inst<-length(weather)[weather$warm=="1"])
+  
+inst<- rle(as.data.frame(table(weather$warm)))
+  warm<- rle(as.character(weather$AirT))
+  dxx$inst<-tally(warm, sort = TRUE)
+
+print(dxx)
+
+> lapply(split(subRes[,2], subRes[,1]), function(x) {
+  +             df.rle <- ifelse(x > 0, 1, 0)
+  +             df.rle <- rle(df.rle)
+  + 
+    +             wh <- which(df.rle$lengths == max(df.rle$lengths))
+    +             mx <- df.rle$lengths[wh]
+    +             suma <- df.rle$lengths[1:wh]
+    +             out <- x[(sum(suma) - (suma[length(suma)] - 1)):sum(suma)]
+    +             return(out)
+    +         })
+
+z <- c(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE)
+rle(z)
+rle(as.character(z))
+print(rle(z), prefix = "..| ")
