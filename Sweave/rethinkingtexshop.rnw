@@ -3,8 +3,8 @@
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{tabularx}
-\usepackage[comma]{natbib}
-\bibliographystyle{agsm} 
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
 \usepackage[small]{caption}
 \setkeys{Gin}{width=0.8\textwidth}
 \setlength{\captionmargin}{30pt}
