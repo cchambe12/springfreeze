@@ -10,16 +10,10 @@ rm(list=ls()) # remove everything currently held in the R memory
 options(stringsAsFactors=FALSE)
 graphics.off()
 
-# Install Packages
-ipak <- function(pkg){
-  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
-  if (length(new.pkg)) 
-    install.packages(new.pkg, dependencies = TRUE)
-  sapply(pkg, require, character.only = TRUE)
-}
-packages <- c("ggplot2", "rmarkdown", "dplyr", "knitcitations",
-              "knitr","lattice", "tidyr")
-ipak(packages)
+# Load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 
 # Integrate Phenology Data and compare methodologies
 # Set Working Directory
@@ -115,8 +109,8 @@ FSI.table<- method %>%
   rename(npn = FSI_npn) %>%
   filter(year>=2008) %>%
   filter(year<2015)
-FSI.long<- method%>%
-  select(year,FSI_npn,FSI_sm, FSI_obs)%>%
+bb.long<- method%>%
+  select(year,bb_npn,sm.bb, bb_obs, bb_cam)%>%
   filter(year>=2001)%>%
   filter(year<2015)
 blend<-FSI.table %>% 

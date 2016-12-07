@@ -17,7 +17,34 @@ library(lubridate)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
-weather<-read.csv("input/WeatherData.csv",header=TRUE)
+lat1<-read.csv("input/Lat.one.csv", header=TRUE)
+
+# Dresden-Klotz(Germany): 54.38N, 10.15E
+lat1<-lat1 %>%
+  select(DATE, TG, TN) %>%
+  rename(Tmean = TG) %>%
+  rename(Tmin = TN) %>%
+  rename(date = DATE)
+lat1$year <- substr(lat1$date, 0, 4)
+lat1<- filter(lat1, year>=1986)
+lat1$month<- substr(lat1$date, 5, 6)
+lat1$day<- substr(lat1$date, 7,8)
+lat1<- lat1 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin)
+lat1$doy<-yday(lat1$date)
+lat1$year<-substr(lat1$date,0,4)
+lat1<- lat1 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 181)
+
+fx <- function(lat1, Tmean, n){
+  warm <- rle(lat1$Tmean >0)
+  gdd<-warm$lengths>= 7
+  frz<-gdd$Tmin<=-2
+}
+  
 
 # Subset Weather down for HF
 weather<- weather %>%
