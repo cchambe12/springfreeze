@@ -1,4 +1,53 @@
-\documentclass{article}
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage{Sweave}
 \usepackage{float}
 \usepackage{graphicx}
@@ -21,42 +70,16 @@
 \parindent 0pt
 
 %% R Script
-<<label=sourcestuff, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
-  options(stringsAsFactors=FALSE)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(xtable)
-library(knitr)
-library(knitcitations)
+\begin{kframe}
 
-source("..//scripts/John.okeefe.R")
-source("ts.timeline.R")
-source("dans.timeline.R")
 
-method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in file(filename, "{}r"{}, encoding = encoding): cannot open the connection}}
 
-FSI.table<- method %>%
-  select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
-  rename(okeefe = FSI_okeefe) %>%
-  rename(phenocam = FSI_cam) %>%
-  rename(npn = FSI_npn) %>%
-  filter(year>=2008) %>%
-  filter(year<2015)
-blend<-FSI.table %>% 
-  gather(Method, FSI, -year) %>%
-  arrange(year)
-
-methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
-  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
-plot(methodplot)
-
-pearson<-cor(FSI.table, method="pearson")
-@
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in file(filename, "{}r"{}, encoding = encoding): cannot open the connection}}\end{kframe}
 
 %% Making a Bibliography
 %\usepackage[backend=bibtex]{biblatex}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \title{Rethinking False Spring Risk}
 \author{Chamberlain, Wolkovich}
@@ -115,112 +138,48 @@ The FSI values were calculated for each methodology using the formula based on t
 \par
 A graphical representation of the FSI values compared across the three methodologies can be seen in Figure 1. In 2008 and 2012, FSI is higher than the significant parameter given of 7 for the NPN data, indicating a possibly damaging false spring event. However, the PhenoCam data did not indicate a false spring in either of the two years and the FSI value for 2012 found through the observed data was not significant. The NPN data always had the highest FSI values.
 
-<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
-read_chunk("..//scripts/John.okeefe.R")
-method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/fsifig-1} \caption[A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study]{A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.}\label{fig:fsifig}
+\end{figure}
 
-FSI.table<- method %>%
-  select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
-  rename(okeefe = FSI_okeefe) %>%
-  rename(phenocam = FSI_cam) %>%
-  rename(npn = FSI_npn) %>%
-  filter(year>=2008) %>%
-  filter(year<2015)
-blend<-FSI.table %>% 
-  gather(Method, FSI, -year) %>%
-  arrange(year)
 
-methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
-  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
-plot(methodplot)
-@
 
 A Pearson Correlation was used to determine the strength of association between the three methods used in the study. As indicated in Table 1, the FSI values from the observed data and the SI-x NPN data are strongly correlated (r=0.93947095), whereas the FSI values calculated using the PhenoCam data is not as strongly correlated to either the observed FSI values (r=0.4679934) or the NPN FSI values (r=0.4242059). Although, according to the pearson correlation, all results were similar. 
 
-<<label=pearson, results="asis", echo=FALSE, warning=FALSE, message=FALSE>>=
-pearson<-cor(FSI.table, method="pearson")
-print(xtable::xtable(pearson, caption="Pearson Correlation Coefficients shown comparing the strength of association between the FSI values calculated across all three methodologies."),comment=FALSE, caption.placement="top")
-@
+\begin{table}[ht]
+\centering
+\caption{Pearson Correlation Coefficients shown comparing the strength of association between the FSI values calculated across all three methodologies.} 
+\begin{tabular}{rrrrr}
+  \hline
+ & year & npn & okeefe & phenocam \\ 
+  \hline
+year & 1.00 & -0.03 & -0.20 & -0.37 \\ 
+  npn & -0.03 & 1.00 & 0.94 & 0.42 \\ 
+  okeefe & -0.20 & 0.94 & 1.00 & 0.47 \\ 
+  phenocam & -0.37 & 0.42 & 0.47 & 1.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
 
 Our projections indicate that observational FSI values are highly comparable to the USA-NPN FSI values, rendering both justifiable methods for determining potential risk involved in late spring freezes. Even though budburst is defined differently between Dr. O'Keefe, USA-NPN, and the PhenoCam, the dates of budburst are similar. The spring onset dates gathered from the PhenoCam dataset are different from the other two methods, which is likely due to fact that the PhenoCam data is assessing budburst for the forest canopy. Through the use of USA-NPN data, researchers could gather dates of budburst across multiple locations at once in order to determine False Spring risk, making it a more effective method than observational data. Although, all three methods are viable. It largely depends on the functional group of interest for the study, definition of budburst, and resources available. 
 
 \section*{Determining the Duration of Vegetative Risk (?)}
 \subsection*{Tree Spotters Data}
 
-<<label=treespotters, results = "asis", echo=FALSE, warning=FALSE, message= FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species studied at the Arnold Arboretum in 2016.", fig.pos="H">>=
-read_chunk("..//scripts/ts.timeline.R")
-phenology<-read.csv("..//input/treespotters.timeline.csv",header=TRUE)
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/treespotters-1} \caption[A timeline plot indicating the duration of vegetative risk for each species studied at the Arnold Arboretum in 2016]{A timeline plot indicating the duration of vegetative risk for each species studied at the Arnold Arboretum in 2016.}\label{fig:treespotters}
+\end{figure}
 
-phases<-c("Budburst","Leaves")
 
-pheno<-phenology%>%
-  select(Site_ID, Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
-  unite(species, Genus, Species, sep="_") %>%
-  filter(Phenophase_Description %in% phases) %>%
-  rename(Year = First_Yes_Year) 
-
-# Make dataframe that includes Risk for each species
-y0<-pheno%>%
-  filter(Year=="2015")%>%
-  group_by(species, Individual_ID, Phenophase_Description)%>%
-  arrange(Individual_ID) %>%
-  filter(row_number()==1) %>%
-  spread(Phenophase_Description, First_Yes_DOY)
-y0<-na.omit(y0)
-y0$Risk <- y0$Leaves - y0$Budburst
-y0<-filter(y0, Risk > 0)
-y0<-filter(y0, Risk < 31)
-
-y1<-pheno%>%
-  filter(Year=="2016")%>%
-  group_by(species, Individual_ID, Phenophase_Description)%>%
-  arrange(Individual_ID) %>%
-  filter(row_number()==1) %>%
-  spread(Phenophase_Description, First_Yes_DOY)
-y1<-na.omit(y1)
-y1$Risk <- y1$Leaves - y1$Budburst
-y1<-filter(y1, Risk > 0)
-y1<-filter(y1, Risk < 31)
-
-dat<-full_join(y0,y1)
-
-bud<- y1 %>%
-  select(species, Budburst) %>%
-  group_by(species)%>%
-  summarise_each(funs(mean), Budburst) %>%
-  arrange(species)
-
-leaves<- y1 %>%
-  select(species, Leaves) %>%
-  group_by(species)%>%
-  summarise_each(funs(mean), Leaves) %>%
-  arrange(species)
-
-basic<- full_join(bud, leaves)
-basic$Risk<- basic$Leaves - basic$Budburst
-
-ts.timeline<-ggplot((basic), aes(x=Budburst, y=species)) + geom_point(aes(x= basic$Budburst)) + 
-  geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") +
-  geom_point(position = position_dodge(.5)) + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
-  ylab("Species")
-plot(ts.timeline)
-@
 
 \subsection*{Dan's Data}
 
-<<label=chilling, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from experimental chillingsstudy.", fig.pos="H">>=
-read_chunk("..//scripts/DF.plot.R")
-hf<-read.csv("..//output/DF.timeline.csv",header=TRUE)
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/chilling-1} \caption[A timeline plot indicating the duration of vegetative risk for each species from experimental chillingsstudy]{A timeline plot indicating the duration of vegetative risk for each species from experimental chillingsstudy.}\label{fig:chilling}
+\end{figure}
 
-hf.plot<-ggplot((hf), aes(x=Budburst, y=sp)) + geom_point(aes(x= hf$Budburst)) + 
-  geom_segment(aes(y = sp, yend = sp, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=hf$Leaves)) + geom_point(aes(col=tx)) +
-  xlab("Budburst to Leaf Out") +
-  ylab("Species")
-plot(hf.plot)
-@
+
 
 
 

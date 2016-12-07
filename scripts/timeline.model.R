@@ -273,8 +273,9 @@ leaves<- y1 %>%
 basic<- full_join(bud, leaves)
 basic$Risk<- basic$Leaves - basic$Budburst
 
-ggplot((basic), aes(x=Budburst, y=species)) + geom_point(aes(x= basic$Budburst)) + 
+ts.timeline<-ggplot((basic), aes(x=Budburst, y=species)) + geom_point(aes(x= basic$Budburst)) + 
   geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
   geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") +
   geom_point(position = position_dodge(.5)) + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
   ylab("Species")
+plot(ts.timeline)
