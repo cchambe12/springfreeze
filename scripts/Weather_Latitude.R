@@ -21,6 +21,7 @@ lat<-read.csv("input/germany.csv", header=TRUE)
 ger.more<- read.csv("input/germany.more.csv", header=TRUE)
 norway<- read.csv("input/norway.csv", header=TRUE)
 denmark<- read.csv("input/denmark.csv", header=TRUE)
+final<- read.csv("input/final.weather.csv", header=TRUE)
 hf<- read.csv("input/WeatherData.csv", header=TRUE)
 
 # Harvard Forest
@@ -533,3 +534,143 @@ lat14$fs<- ifelse((lat14$count >= 40 & lat14$frz == "freeze"), TRUE, NA)
 han.count<- select(lat14, year, fs)
 han.count<-na.omit(han.count)
 han.count<-as.data.frame(table(han.count$year))
+
+# Jena, Germany: 50.9267N 11.5842E
+lat15<-final %>%
+  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "JENA STERNWARTE GM") %>%
+  rename(Tmean = TAVG) %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+lat15$year <- substr(lat15$date, 0, 4)
+lat15<- filter(lat15, year>=1986)
+lat15$month<- substr(lat15$date, 5, 6)
+lat15$day<- substr(lat15$date, 7,8)
+lat15<- lat15 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin, Tmax)
+lat15$doy<-yday(lat15$date)
+lat15$year<-substr(lat15$date,0,4)
+lat15$gdd <- lat15$Tmax - 10
+lat15$gdd <-ifelse(lat15$gdd>0, lat15$gdd, NA)
+lat15$warm<- ifelse(!is.na(lat15$gdd), 1, 0)
+lat15$frz<- ifelse((lat15$Tmin<=-2.2), "freeze", "thaw")
+lat15$count <- ave(
+  lat15$warm, lat15$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+lat15<- lat15 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+lat15$fs<- ifelse((lat15$count >= 40 & lat15$frz == "freeze"), TRUE, NA)
+
+jen.count<- select(lat15, year, fs)
+jen.count<-na.omit(jen.count)
+jen.count<-as.data.frame(table(jen.count$year))
+
+# Flyvestation, Denmark: 57.093N 9.849E
+lat16<-final %>%
+  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "FLYVESTATION AALBORG DA") %>%
+  rename(Tmean = TAVG) %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+lat16$year <- substr(lat16$date, 0, 4)
+lat16<- filter(lat16, year>=1986)
+lat16$month<- substr(lat16$date, 5, 6)
+lat16$day<- substr(lat16$date, 7,8)
+lat16<- lat16 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin, Tmax)
+lat16$doy<-yday(lat16$date)
+lat16$year<-substr(lat16$date,0,4)
+lat16$gdd <- lat16$Tmean - 10
+lat16$gdd <-ifelse(lat16$gdd>0, lat16$gdd, NA)
+lat16$warm<- ifelse(!is.na(lat16$gdd), 1, 0)
+lat16$frz<- ifelse((lat16$Tmean<=0), "freeze", "thaw")
+lat16$count <- ave(
+  lat16$warm, lat16$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+lat16<- lat16 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+lat16$fs<- ifelse((lat16$count >= 40 & lat16$frz == "freeze"), TRUE, NA)
+
+fly.count<- select(lat16, year, fs)
+fly.count<-na.omit(fly.count)
+fly.count<-as.data.frame(table(fly.count$year))
+
+# Haines, Canada: 59.4503N -136.3615E
+lat17<-final %>%
+  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "HAINES 40 NW AK CA") %>%
+  rename(Tmean = TAVG) %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+lat17$year <- substr(lat17$date, 0, 4)
+lat17<- filter(lat17, year>=1986)
+lat17$month<- substr(lat17$date, 5, 6)
+lat17$day<- substr(lat17$date, 7,8)
+lat17<- lat17 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin, Tmax)
+lat17$doy<-yday(lat17$date)
+lat17$year<-substr(lat17$date,0,4)
+lat17$gdd <- lat17$Tmax - 10
+lat17$gdd <-ifelse(lat17$gdd>0, lat17$gdd, NA)
+lat17$warm<- ifelse(!is.na(lat17$gdd), 1, 0)
+lat17$frz<- ifelse((lat17$Tmin<=-2.2), "freeze", "thaw")
+lat17$count <- ave(
+  lat17$warm, lat17$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+lat17<- lat17 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+lat17$fs<- ifelse((lat17$count >= 40 & lat17$frz == "freeze"), TRUE, NA)
+
+hai.count<- select(lat17, year, fs)
+hai.count<-na.omit(hai.count)
+hai.count<-as.data.frame(table(hai.count$year))
+
+# Hay River, Canada: 60.8333N -115.7833E
+lat18<-final %>%
+  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "HAY RIVER A CA") %>%
+  rename(Tmean = TAVG) %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+lat18$year <- substr(lat18$date, 0, 4)
+lat18<- filter(lat18, year>=1986)
+lat18$month<- substr(lat18$date, 5, 6)
+lat18$day<- substr(lat18$date, 7,8)
+lat18<- lat18 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin, Tmax)
+lat18$doy<-yday(lat18$date)
+lat18$year<-substr(lat18$date,0,4)
+lat18$gdd <- lat18$Tmax - 10
+lat18$gdd <-ifelse(lat18$gdd>0, lat18$gdd, NA)
+lat18$warm<- ifelse(!is.na(lat18$gdd), 1, 0)
+lat18$frz<- ifelse((lat18$Tmin<=-2.2), "freeze", "thaw")
+lat18$count <- ave(
+  lat18$warm, lat18$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+lat18<- lat18 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+lat18$fs<- ifelse((lat18$count >= 40 & lat18$frz == "freeze"), TRUE, NA)
+
+hay.count<- select(lat18, year, fs)
+hay.count<-na.omit(hay.count)
+hay.count<-as.data.frame(table(hay.count$year))
