@@ -161,17 +161,6 @@ pheno<-phenology%>%
   rename(Year = First_Yes_Year) 
 
 # Make dataframe that includes Risk for each species
-y0<-pheno%>%
-  filter(Year=="2015")%>%
-  group_by(species, Individual_ID, Phenophase_Description)%>%
-  arrange(Individual_ID) %>%
-  filter(row_number()==1) %>%
-  spread(Phenophase_Description, First_Yes_DOY)
-y0<-na.omit(y0)
-y0$Risk <- y0$Leaves - y0$Budburst
-y0<-filter(y0, Risk > 0)
-y0<-filter(y0, Risk < 31)
-
 y1<-pheno%>%
   filter(Year=="2016")%>%
   group_by(species, Individual_ID, Phenophase_Description)%>%
@@ -182,8 +171,6 @@ y1<-na.omit(y1)
 y1$Risk <- y1$Leaves - y1$Budburst
 y1<-filter(y1, Risk > 0)
 y1<-filter(y1, Risk < 31)
-
-dat<-full_join(y0,y1)
 
 bud<- y1 %>%
   select(species, Budburst) %>%
@@ -200,28 +187,59 @@ leaves<- y1 %>%
 basic<- full_join(bud, leaves)
 basic$Risk<- basic$Leaves - basic$Budburst
 
-ts.timeline<-ggplot((basic), aes(x=Budburst, y=species)) + geom_point(aes(x= basic$Budburst)) + 
+basic$code <- reorder(basic$species, basic$Leaves)
+
+ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= basic$Budburst)) + 
   geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") +
-  geom_point(position = position_dodge(.5)) + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
+  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
   ylab("Species")
 plot(ts.timeline)
 @
 
 \subsection*{Dan's Data}
 
-<<label=chilling, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from experimental chillingsstudy.", fig.pos="H">>=
-read_chunk("..//scripts/DF.plot.R")
-hf<-read.csv("..//output/DF.timeline.csv",header=TRUE)
+<<label=chilling, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from experimental chilling study.", fig.pos="H">>=
+read_chunk("..//scripts/dans.timeline.R")
+sp.code<-read.csv("..//output/Dans.timeline.csv",header=TRUE)
+sp.code$code <- reorder(sp.code$sp.code, sp.code$Leaves)
 
-hf.plot<-ggplot((hf), aes(x=Budburst, y=sp)) + geom_point(aes(x= hf$Budburst)) + 
-  geom_segment(aes(y = sp, yend = sp, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=hf$Leaves)) + geom_point(aes(col=tx)) +
+hf.plot<-ggplot((sp.code), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= Budburst)) + 
+  geom_segment(aes(y = sp.code, yend = sp.code, x = Budburst, xend = Leaves, col=tx)) +
+  geom_point(aes(x=Leaves, col=tx)) + geom_point(aes(col=tx)) +
   xlab("Budburst to Leaf Out") +
   ylab("Species")
 plot(hf.plot)
 @
 
+\subsection*{Dan's Data}
+
+<<label=forest, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from collected from Harvard Forest.", fig.pos="H">>=
+read_chunk("..//scripts/hf.timeline.R")
+
+timeline<-read.csv("..//input/hf003-06-mean-spp.csv", header=TRUE)
+
+# Convert to Julian day
+years<-c("2010", "2014")
+timeline<-timeline %>%
+  select(year, species, bb.jd, l75.jd) %>%
+  filter(year %in% years)
+timeline<-na.omit(timeline)
+timeline$risk <- timeline$l75.jd - timeline$bb.jd
+df<- timeline %>%
+  unite(sp.year, species, year, remove=FALSE)
+df$si[df$year=="2010"] <- "early"
+df$si[df$year=="2014"] <- "late"
+
+# Make a graph!
+df$code <- reorder(df$sp.year, df$bb.jd)
+
+df.plot<-ggplot((df), aes(x=bb.jd, y=code), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
+  geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
+  geom_point(aes(x=l75.jd, col=si)) + geom_point(aes(col=si)) +
+  xlab("Budburst to Leaf Out") +
+  ylab("Species")
+plot(df.plot)
+@
 
 
 \newpage

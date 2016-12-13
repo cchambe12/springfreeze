@@ -19,6 +19,8 @@ library(lubridate)
 setwd("~/Documents/git/springfreeze")
 lat<-read.csv("input/germany.csv", header=TRUE)
 america<- read.csv("input/northamerica.csv", header=TRUE)
+italy<- read.csv("input/italy.csv", header=TRUE)
+kansas<- read.csv("input/kansas.csv", header=TRUE)
 hf<- read.csv("input/WeatherData.csv", header=TRUE)
 
 # Harvard Forest
@@ -462,76 +464,6 @@ anth.count<- select(am1, year, fs)
 anth.count<-na.omit(anth.count)
 anth.count<-as.data.frame(table(anth.count$year))
 
-# Anthony, KS, USA: 37.15611N -98.01667
-am1<-america %>%
-  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "ANTHONY KS US") %>%
-  rename(Tmean = TAVG) %>%
-  rename(Tmin = TMIN) %>%
-  rename(Tmax = TMAX) %>%
-  rename(date = DATE)
-am1$year <- substr(am1$date, 0, 4)
-am1<- filter(am1, year>=1986)
-am1$month<- substr(am1$date, 5, 6)
-am1$day<- substr(am1$date, 7,8)
-am1<- am1 %>%
-  select(-date)%>%
-  unite(date, year, month, day, sep="-") %>%
-  select(date, Tmean, Tmin, Tmax)
-am1$doy<-yday(am1$date)
-am1$year<-substr(am1$date,0,4)
-am1$gdd <- am1$Tmax - 10
-am1$gdd <-ifelse(am1$gdd>0, am1$gdd, NA)
-am1$warm<- ifelse(!is.na(am1$gdd), 1, 0)
-am1$frz<- ifelse((am1$Tmin<=-2.2), "freeze", "thaw")
-am1$count <- ave(
-  am1$warm, am1$year, 
-  FUN=function(x) cumsum(c(0, head(x, -1)))
-)
-am1<- am1 %>%
-  filter(doy >= 60) %>%
-  filter(doy <= 210)
-am1$fs<- ifelse((am1$count >= 50 & am1$frz == "freeze"), TRUE, NA)
-
-anth.count<- select(am1, year, fs)
-anth.count<-na.omit(anth.count)
-anth.count<-as.data.frame(table(anth.count$year))
-
-# Hiawatha, KS, USA: 39.8356N -95.532 - ONLY 9 YEARS!!
-am2<-america %>%
-  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "HIAWATHA 9 ESE KS US") %>%
-  rename(Tmean = TAVG) %>%
-  rename(Tmin = TMIN) %>%
-  rename(Tmax = TMAX) %>%
-  rename(date = DATE)
-am2$year <- substr(am2$date, 0, 4)
-am2<- filter(am2, year>=1986)
-am2$month<- substr(am2$date, 5, 6)
-am2$day<- substr(am2$date, 7,8)
-am2<- am2 %>%
-  select(-date)%>%
-  unite(date, year, month, day, sep="-") %>%
-  select(date, Tmean, Tmin, Tmax)
-am2$doy<-yday(am2$date)
-am2$year<-substr(am2$date,0,4)
-am2$gdd <- am2$Tmax - 10
-am2$gdd <-ifelse(am2$gdd>0, am2$gdd, NA)
-am2$warm<- ifelse(!is.na(am2$gdd), 1, 0)
-am2$frz<- ifelse((am2$Tmin<=-2.2), "freeze", "thaw")
-am2$count <- ave(
-  am2$warm, am2$year, 
-  FUN=function(x) cumsum(c(0, head(x, -1)))
-)
-am2<- am2 %>%
-  filter(doy >= 60) %>%
-  filter(doy <= 210)
-am2$fs<- ifelse((am2$count >= 50 & am2$frz == "freeze"), TRUE, NA)
-
-hia.count<- select(am2, year, fs)
-hia.count<-na.omit(hia.count)
-hia.count<-as.data.frame(table(hia.count$year))
-
 # West Point, NE, USA: 41.85N -96.71667E
 am3<-america %>%
   select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
@@ -637,41 +569,6 @@ abe.count<- select(am5, year, fs)
 abe.count<-na.omit(abe.count)
 abe.count<-as.data.frame(table(abe.count$year))
 
-# Cavalier, ND, USA: 48.86667N -97.7
-am6<-america %>%
-  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "CAVALIER 7 NW ND US") %>%
-  rename(Tmean = TAVG) %>%
-  rename(Tmin = TMIN) %>%
-  rename(Tmax = TMAX) %>%
-  rename(date = DATE)
-am6$year <- substr(am6$date, 0, 4)
-am6<- filter(am6, year>=1986)
-am6$month<- substr(am6$date, 5, 6)
-am6$day<- substr(am6$date, 7,8)
-am6<- am6 %>%
-  select(-date)%>%
-  unite(date, year, month, day, sep="-") %>%
-  select(date, Tmean, Tmin, Tmax)
-am6$doy<-yday(am6$date)
-am6$year<-substr(am6$date,0,4)
-am6$gdd <- am6$Tmax - 10
-am6$gdd <-ifelse(am6$gdd>0, am6$gdd, NA)
-am6$warm<- ifelse(!is.na(am6$gdd), 1, 0)
-am6$frz<- ifelse((am6$Tmin<=-2.2), "freeze", "thaw")
-am6$count <- ave(
-  am6$warm, am6$year, 
-  FUN=function(x) cumsum(c(0, head(x, -1)))
-)
-am6<- am6 %>%
-  filter(doy >= 60) %>%
-  filter(doy <= 210)
-am6$fs<- ifelse((am6$count >= 50 & am6$frz == "freeze"), TRUE, NA)
-
-cav.count<- select(am6, year, fs)
-cav.count<-na.omit(cav.count)
-cav.count<-as.data.frame(table(cav.count$year))
-
 # Pembina, ND, USA: 48.96667N -97.2333E
 am7<-america %>%
   select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
@@ -707,3 +604,106 @@ pem.count<- select(am7, year, fs)
 pem.count<-na.omit(pem.count)
 pem.count<-as.data.frame(table(pem.count$year))
 
+# Hastings, NE, USA: 40.58333N -98.35
+am8<-italy %>%
+  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "HASTINGS 4 N NE US") %>%
+  rename(Tmean = TAVG) %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+am8$year <- substr(am8$date, 0, 4)
+am8<- filter(am8, year>=1986)
+am8$month<- substr(am8$date, 5, 6)
+am8$day<- substr(am8$date, 7,8)
+am8<- am8 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin, Tmax)
+am8$doy<-yday(am8$date)
+am8$year<-substr(am8$date,0,4)
+am8$gdd <- am8$Tmax - 10
+am8$gdd <-ifelse(am8$gdd>0, am8$gdd, NA)
+am8$warm<- ifelse(!is.na(am8$gdd), 1, 0)
+am8$frz<- ifelse((am8$Tmin<=-2.2), "freeze", "thaw")
+am8$count <- ave(
+  am8$warm, am8$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+am8<- am8 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+am8$fs<- ifelse((am8$count >= 50 & am8$frz == "freeze"), TRUE, NA)
+
+has.count<- select(am8, year, fs)
+has.count<-na.omit(has.count)
+has.count<-as.data.frame(table(has.count$year))
+
+# Yankton, SD, USA: 42.88333N -97.35
+am9<-italy %>%
+  select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "YANKTON SD US") %>%
+  rename(Tmean = TAVG) %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+am9$year <- substr(am9$date, 0, 4)
+am9<- filter(am9, year>=1986)
+am9$month<- substr(am9$date, 5, 6)
+am9$day<- substr(am9$date, 7,8)
+am9<- am9 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmean, Tmin, Tmax)
+am9$doy<-yday(am9$date)
+am9$year<-substr(am9$date,0,4)
+am9$gdd <- am9$Tmax - 10
+am9$gdd <-ifelse(am9$gdd>0, am9$gdd, NA)
+am9$warm<- ifelse(!is.na(am9$gdd), 1, 0)
+am9$frz<- ifelse((am9$Tmin<=-2.2), "freeze", "thaw")
+am9$count <- ave(
+  am9$warm, am9$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+am9<- am9 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+am9$fs<- ifelse((am9$count >= 50 & am9$frz == "freeze"), TRUE, NA)
+
+yan.count<- select(am9, year, fs)
+yan.count<-na.omit(yan.count)
+yan.count<-as.data.frame(table(yan.count$year))
+
+# Grand Forks, ND, USA: 47.9333N -97.08333E
+am10<-kansas %>%
+  select(STATION_NAME,DATE, TMIN, TMAX) %>%
+  filter(STATION_NAME == "GRAND FORKS UNIVERSITY NWS ND US") %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+am10$year <- substr(am10$date, 0, 4)
+am10<- filter(am10, year>=1986)
+am10$month<- substr(am10$date, 5, 6)
+am10$day<- substr(am10$date, 7,8)
+am10<- am10 %>%
+  select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  select(date, Tmin, Tmax)
+am10$doy<-yday(am10$date)
+am10$year<-substr(am10$date,0,4)
+am10$gdd <- am10$Tmax - 10
+am10$gdd <-ifelse(am10$gdd>0, am10$gdd, NA)
+am10$warm<- ifelse(!is.na(am10$gdd), 1, 0)
+am10$frz<- ifelse((am10$Tmin<=-2.2), "freeze", "thaw")
+am10$count <- ave(
+  am10$warm, am10$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+am10<- am10 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+am10$fs<- ifelse((am10$count >= 50 & am10$frz == "freeze"), TRUE, NA)
+
+gra.count<- select(am10, year, fs)
+gra.count<-na.omit(gra.count)
+gra.count<-as.data.frame(table(gra.count$year))

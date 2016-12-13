@@ -21,13 +21,15 @@ library(lubridate)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
-hf<-read.csv("output/DF.timeline.csv",header=TRUE)
+sp.code<-read.csv("output/Dans.timeline.csv",header=TRUE)
 
-# Make the plot
-hf.plot<-ggplot((hf), aes(x=Budburst, y=sp)) + geom_point(aes(x= hf$Budburst)) + 
-  geom_segment(aes(y = sp, yend = sp, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=hf$Leaves)) + geom_point(aes(col=tx)) +
+hf.plot<-ggplot((sp.code), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= hf$Budburst)) + 
+  geom_segment(aes(y = sp.code, yend = sp.code, x = Budburst, xend = Leaves, col=tx)) +
+  geom_point(aes(x=Leaves, col=tx)) + geom_point(aes(col=tx)) +
   xlab("Budburst to Leaf Out") +
   ylab("Species")
 plot(hf.plot)
+
+hf.lm<-ggplot((sp.code), aes( x= Budburst, y=Risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=tx))
+plot(hf.lm)
 
