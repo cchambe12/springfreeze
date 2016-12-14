@@ -21,38 +21,12 @@
 \parindent 0pt
 
 %% R Script
-<<label=sourcestuff, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
   options(stringsAsFactors=FALSE)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(xtable)
-library(knitr)
-library(knitcitations)
-
-source("..//scripts/John.okeefe.R")
-source("ts.timeline.R")
-source("dans.timeline.R")
-
-method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
-
-FSI.table<- method %>%
-  select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
-  rename(okeefe = FSI_okeefe) %>%
-  rename(phenocam = FSI_cam) %>%
-  rename(npn = FSI_npn) %>%
-  filter(year>=2008) %>%
-  filter(year<2015)
-blend<-FSI.table %>% 
-  gather(Method, FSI, -year) %>%
-  arrange(year)
-
-methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
-  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
-plot(methodplot)
-
-pearson<-cor(FSI.table, method="pearson")
 @
 
 %% Making a Bibliography
@@ -83,30 +57,66 @@ pearson<-cor(FSI.table, method="pearson")
 
 \section*{Introduction}
 Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. According to Gu et al. (2008), there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}.
-More frequently, however, plants that have been exposed to a false spring will experience leaf loss and slower canopy development \citep{Hufkens2012}. 
-With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. It is anticipated that there will be a decrease in false spring occurrence overall but the severity of temperature variation is likely to increase \citep{Allstadt2015}. 
+More frequently plants that have been exposed to a false spring will experience leaf loss and slower canopy development \citep{Hufkens2012}. 
+With anthropogenic climate change, the severity of damage incurred from a false spring phenomena is predicted to be heightened due to earlier spring onset and greater fluctuations in temperatures. Temperate forest species around the world are initiating leaf out on about 4.6 days earlier per $^{\circ}$C \citep(Polgar2014, Wolkovich2012). It is anticipated that there will be a decrease in false spring frequency overall but the severity of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Allstadt2015}. Due to these reasons, it is crucial for researchers to properaly evaluate the effects of false springs on plant species. 
 
-Different species exhibit varying responses to late spring freezing events and the level of damage also varies across phenophases. Generally, reproductive phases are more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots \citep{Peterson2014}. However, trees that suffer severe vegetative growth damage from a false spring event will have more detrimental long-term effects than trees that lose one year of reproductive growth.
+Different species exhibit varying responses to late spring freezing events. The level of damage incurred by a false spring also varies across phenophases. Generally, reproductive phases are more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots \citep{Peterson2014}. However, trees that suffer severe vegetative growth damage from a false spring event will suffer greater long-term effects than trees that lose one year of reproductive growth due to the loss in photosynthetic tissue in one growing season.
 False spring events put seedling and sapling trees at greater risk to damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. This would require more intensive freezing events than it would take to damage seedling and sapling leaf buds.  %need a reference here and to elaborate. 
 Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for budburst to take place and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date \citep{Augspurger2013}. 
-In a study performed by Peterson and Abatzoglou (2014), it had been determined that 7 days between bud burst and last freeze date is a significant parameter. During this time, it was determined that leaf buds will have enough growing degree days to begin budburst but is not too much time where they are past the leaf out phenophase. There is much debate over the definition of freezing temperatures and has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C \citep{Augspurger2013, Kodra2011, Vavrus2006}.
+In a study performed by Peterson and Abatzoglou (2014), it had been determined that 7 days between budburst and last freeze date is a significant parameter. During this time, it was determined that leaf buds will have enough growing degree days to begin budburst but is not too much time where they are past the leaf out phenophase. There is much debate over the definition of freezing temperatures and has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C \citep{Augspurger2013, Kodra2011, Vavrus2006}.
 
 \section*{Climatic Implications: How climate change is affecting spring freezing events}
+\begin{center}
+\captionof{table}{Number of False Springs along a Latitudinal Gradient in Western Europe} \label{tab:title} 
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Station & Elevation & Latitude & Longitude & False Springs \\
+\hline
+Kempten, Germany & 705m & 47.724 & 10.336 & 8 \\
+Augsburg, Germany & 461m & 48.426 & 10.943 & 8 \\
+Bamberg, Germany & 210m & 49.875 & 10.921 & 7 \\
+Jena, Germany & 155m & 50.927 & 11.584 & 4 \\
+Hannover, Germany & 55.0m & 52.466 & 9.679 & 6 \\
+Bremen, Germany & 4.00m & 53.046 & 8.799 & 5 \\
+Hamburg, Germany & 11.0m & 53.635 & 9.99 & 4 \\
+Schleswig, Germany & 43.0m & 54.529 & 9.549 & 0 \\
+Flyvestation, Denmark & 3.00m & 57.093 & 9.849 & 0 \\
+Oslo, Norway & 94.0m & 59.943 & 10.721 & 0 \\
+\hline
+\end{tabular}
+\end{center}
 
+\begin{center}
+\captionof{table}{Number of False Springs along a Latitudinal Gradient in North America} \label{tab:title2} 
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Station & Elevation & Latitude & Longitude & False Springs \\
+\hline
+Anthony, Kansas & 415m & 37.155 & -98.028 & 13 \\
+Hastings, Nebraska & 587m & 40.583 & -98.350  & 7 \\
+West Point, Nebraska & 399m & 41.845 & -96.714 & 5 \\
+Yankton, South Dakota & 360m & 42.883 & -97.350 & 5 \\
+Brookings, South Dakota & 497m & 44.325 & -96.769 & 0 \\
+Aberdeen, South Dakota & 395m & 45.443 & -98.413 & 2 \\
+Grand Forks, North Dakota & 253m & 47.933 & -97.083 & 0 \\
+Pembina, North Dakota & 241m & 48.971 & -97.242 & 1 \\
+\hline
+\end{tabular}
+\end{center}
 
 
 \section*{Rethinking False Spring}
-At this time false spring studies fail to incorporate all potential factors that could affect the level of frost damage risk. A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. Currently, FSI evaluates day of bud burst, number of growing degree days, and day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
+At this time false spring studies fail to incorporate all potential factors that could affect the level of frost damage risk. A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. Currently, FSI evaluates day of budburst, number of growing degree days, and day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
 
-\[ FSI = Julian Date (Last Spring Freeze) - Julian Date (Bud Burst) \]
+\[ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst) \]
 
 If FSI is a positive number and greater than 7, then crown dieback is more likely to occur. In this study, we aim to integrate a more thorough model for predicting false spring risk, which would ideally incorporate life stage of the individual, location within a forest or canopy, winter chilling hours, proximity to water, level of precipitation prior to the freezing event \citep{Anderegg2013}, and freeze duration. Another highly crucial factor to consider is the rate of budburst and the length of time between budburst and leaf out at the species level. We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define leaf out \citep{Meier2001}.
 Day of budburst will vary across species based on different life strategies \citep{Caffarra2011}.
 
 \section*{Determining Spring Index}
-Before an appropriate model for determining False Spring risk can be established, an appropriate determination of spring onset is crucial. There are many methods that can be used to determine first day of spring and there also many definitions. In order to test the best method for calculating spring onset (or bud burst), we gathered data using three different methodologies. The first method for collecting bud burst was from observational data recorded for 33 tree species by Dr. John O'Keefe at Harvard Forest from 1990 to 2014 \citep{OKeefe2014}. 
-Dr. O'Keefe defines bud burst as 50\% leaf emergence. We subsetted this dataset down to include only the tree species that were most consisently observed, which ended up being eight species.The second data set was provided from PhenoCam data, which are field cameras, placed in Harvard Forest, take real-time images of plant growth and are programmed to record initial green up. The final set was collected through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x) by accessing the "Spring Indices, Historic Annual" gridded layer and looking specifically at "First Leaf - Spring Onset" \citep{SI-x2016}. The SI-x value is the time of leaf out was monitored from historical dates of bud burst using honeysuckle and lilac clones around the U.S. and combining that information with daily recordings from local weather stations \citep{USA-NPN2016, Ault2015, Ault2015a, Schwartz2013, Schwartz1997}. 
-Through assessing past years' weather and bud burst, scientists are able to determine general weather trends that subsequently lead to leaf out. Based on these trends, SI-x values can be calculated from daily weather data \citep{USA-NPN2016}.
+Before an appropriate model for determining False Spring risk can be established, an appropriate determination of spring onset is crucial. There are many methods that can be used to determine first day of spring and there also many definitions. In order to test the best method for calculating spring onset (or budburst), we gathered data using three different methodologies. The first method for collecting budburst was from observational data recorded for 33 tree species by Dr. John O'Keefe at Harvard Forest from 1990 to 2014 \citep{OKeefe2014}. 
+Dr. O'Keefe defines budburst as 50\% leaf emergence. We subsetted this dataset down to include only the tree species that were most consisently observed, which ended up being eight species.The second data set was provided from PhenoCam data, which are field cameras, placed in Harvard Forest, take real-time images of plant growth and are programmed to record initial green up. The final set was collected through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x) by accessing the "Spring Indices, Historic Annual" gridded layer and looking specifically at "First Leaf - Spring Onset" \citep{SI-x2016}. The SI-x value is the time of leaf out was monitored from historical dates of budburst using honeysuckle and lilac clones around the U.S. and combining that information with daily recordings from local weather stations \citep{USA-NPN2016, Ault2015, Ault2015a, Schwartz2013, Schwartz1997}. 
+Through assessing past years' weather and budburst, scientists are able to determine general weather trends that subsequently lead to leaf out. Based on these trends, SI-x values can be calculated from daily weather data \citep{USA-NPN2016}.
 \par
 The date of last spring freeze was gathered from the Fisher Meteorological Station which was downloaded from the Harvard Forest web page (data available online\footnote{http://harvardforest.fas.harvard.edu/meteorological-hydrological-stations}). The Tmin values were used and the Last Spring Freeze was  determined from the latest Julian date that the temperature reached -1.7$^{\circ}$C or below. 
 \par
@@ -197,6 +207,7 @@ plot(ts.timeline)
 @
 
 \subsection*{Dan's Data}
+It is possible, that with anthropogenic climate change progressing, leaf out timing may be delayed. As winter seasons begin to warm and chilling requirements are not met, more warming in the spring must first occur for budburst to begin \citep{Polgar2014, Fu2012, Morin2009, McCreary1990}
 
 <<label=chilling, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from experimental chilling study.", fig.pos="H">>=
 read_chunk("..//scripts/dans.timeline.R")
