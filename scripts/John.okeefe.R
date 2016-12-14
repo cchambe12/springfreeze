@@ -103,11 +103,12 @@ bb.table<-method %>%
   rename("SI-x"=bb_npn)
 
 FSI.table<- method %>%
-  select(year, FSI_npn, FSI_okeefe, FSI_cam, FSI_obs) %>%
-  rename(okeefe.small = FSI_okeefe)%>%
+  select(year, FSI_npn, FSI_okeefe, FSI_cam, FSI_obs, FSI_sm) %>%
+  rename(okeefe.accurate = FSI_okeefe)%>%
   rename(phenocam = FSI_cam) %>%
   rename(npn = FSI_npn) %>%
   rename(okeefe.large = FSI_obs) %>%
+  rename(okeefe.small = FSI_sm) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 bb.long<- method%>%
@@ -122,14 +123,15 @@ blend.long<-FSI.long%>%
   arrange(year)
 
 ggplot(blend, (aes(Method, FSI)), xlab="Method", ylab="FSI") + 
-  geom_boxplot(fill=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
+  geom_boxplot(fill=c("#F8766D","#00C094","#00B6EB","#A58AFF","firebrick3"))
 
 boxplot(data=blend, FSI~Method, xlab="Method", ylab="FSI")
 boxplot(data=blend.long, FSI~Method)
 
 methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
   ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
+  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF", "firebrick3")) +
+  geom_smooth(method="loess")
 plot(methodplot)
 
 longplot<-ggplot(blend.long,aes(year,FSI)) +xlab("Year") +
