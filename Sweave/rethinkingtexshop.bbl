@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -14,6 +14,15 @@ Anderegg, W.R.L., Plavcov{\'{a}}, L., Anderegg, L.D.L., Hacke, U.G., Berry,
   J.A. \& Field, C.B. (2013) {Drought's legacy: Multiyear hydraulic
   deterioration underlies widespread aspen forest die-off and portends
   increased future risk}. \emph{Global Change Biology} \textbf{19}, 1188--1196.
+
+\bibitem[{Augspurger(2009)}]{Augspurger2009}
+Augspurger, C.K. (2009) {Spring 2007 warmth and frost: Phenology, damage and
+  refoliation in a temperate deciduous forest}. \emph{Functional Ecology}
+  \textbf{23}, 1031--1039.
+
+\bibitem[{Augspurger(2011)}]{Augspurger2011}
+Augspurger, C.K. (2011) Frost damage and its cascading negative effects on
+  aesculus glabra. \emph{Plant Ecology} \textbf{212}, 1193--1203.
 
 \bibitem[{Augspurger(2013)}]{Augspurger2013}
 Augspurger, C.K. (2013) {Reconstructing patterns of temperature, phenology, and
@@ -74,6 +83,13 @@ Kodra, E., Steinhaeuser, K. \& Ganguly, A.R. (2011) {Persisting cold extremes
   under 21st-century warming scenarios}. \emph{Geophysical Research Letters}
   \textbf{38}, 1--5.
 
+\bibitem[{Lenz \emph{et~al.}(2013)Lenz, Hoch, Vitasse \&
+  K{\"{o}}rner}]{Lenz2013}
+Lenz, A., Hoch, G., Vitasse, Y. \& K{\"{o}}rner, C. (2013) {European deciduous
+  trees exhibit similar safety margins against damage by spring freeze events
+  along elevational gradients}. \emph{New Phytologist} \textbf{200},
+  1166--1175.
+
 \bibitem[{Marino \emph{et~al.}(2011)Marino, Kaiser, Gu \&
   Ricciuto}]{Marino2011}
 Marino, G.P., Kaiser, D.P., Gu, L. \& Ricciuto, D.M. (2011) {Reconstruction of
@@ -103,15 +119,14 @@ Morin, X., Lechowicz, M.J., Augspurger, C., O'keefe, J., Viner, D. \& Chuine,
 O'Keefe, J. (2014) {Phenology of Woody Species at Harvard Forest since 1990}.
   Tech. rep.
 
-\bibitem[{Peterson \& Abatzoglou(2014)}]{Peterson2014}
-Peterson, A.G. \& Abatzoglou, J.T. (2014) {Observed changes in false springs
-  over the contiguous United States}. \emph{Geophysical Research Letters}
-  \textbf{41}, 2156--2162.
-
 \bibitem[{Polgar \emph{et~al.}(2014)Polgar, Gallinat \& Primack}]{Polgar2014}
 Polgar, C., Gallinat, A. \& Primack, R.B. (2014) {Drivers of leaf-out phenology
   and their implications for species invasions: Insights from Thoreau's
   Concord}. \emph{New Phytologist} \textbf{202}, 106--115.
+
+\bibitem[{Sakai \& Larcher(1987)}]{Sakai1987}
+Sakai, A. \& Larcher, W. (1987) \emph{Frost Survival of Plants}.
+  Springer-Verlag.
 
 \bibitem[{Schwartz(1997)}]{Schwartz1997}
 Schwartz, M.D. (1997) {Spring Index Models: An approach to connecting Satellite

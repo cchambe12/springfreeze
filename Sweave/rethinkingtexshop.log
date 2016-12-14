@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 DEC 2016 13:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 DEC 2016 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -342,79 +342,93 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 83.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 83.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 98.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 98.
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] <figure/fsifig-1.pdf, id=21, 505.89pt x 505.89pt>
+(./rethinkingtexshop.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+)
+\tf@toc=\write4
+\openout4 = `rethinkingtexshop.toc'.
+
+ (./rethinkingtexshop.lof)
+\tf@lof=\write5
+\openout5 = `rethinkingtexshop.lof'.
+
+ (./rethinkingtexshop.lot)
+\tf@lot=\write6
+\openout6 = `rethinkingtexshop.lot'.
+
+
+[2] [3] [4] [5] <figure/fsifig-1.pdf, id=28, 505.89pt x 505.89pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 158.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 162.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [4] [5 <./figure/fsifig-1.pdf>]
-<figure/treespotters-1.pdf, id=36, 505.89pt x 505.89pt>
+ [6] [7 <./figure/fsifig-1.pdf>]
+<figure/treespotters-1.pdf, id=44, 505.89pt x 505.89pt>
 File: figure/treespotters-1.pdf Graphic file (type pdf)
 
 <use figure/treespotters-1.pdf>
-Package pdftex.def Info: figure/treespotters-1.pdf used on input line 187.
+Package pdftex.def Info: figure/treespotters-1.pdf used on input line 192.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [6] [7 <./figure/treespotters-1.pdf>]
-<figure/chilling-1.pdf, id=49, 505.89pt x 505.89pt>
+ [8] [9 <./figure/treespotters-1.pdf>]
+<figure/chilling-1.pdf, id=56, 505.89pt x 505.89pt>
 File: figure/chilling-1.pdf Graphic file (type pdf)
 
 <use figure/chilling-1.pdf>
-Package pdftex.def Info: figure/chilling-1.pdf used on input line 196.
+Package pdftex.def Info: figure/chilling-1.pdf used on input line 201.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- <figure/forest-1.pdf, id=50, 505.89pt x 505.89pt>
+ <figure/forest-1.pdf, id=57, 505.89pt x 505.89pt>
 File: figure/forest-1.pdf Graphic file (type pdf)
 
 <use figure/forest-1.pdf>
-Package pdftex.def Info: figure/forest-1.pdf used on input line 204.
+Package pdftex.def Info: figure/forest-1.pdf used on input line 209.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [8 <./figure/chilling-1.pdf>] [9 <./figure/forest-1.pdf>] (./rethinkingtexshop
-.bbl
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 40.
+ [10 <./figure/chilling-1.pdf>] [11 <./figure/forest-1.pdf>] (./rethinkingtexsh
+op.bbl
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 49.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 40.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 49.
 
-[10]) [11] (./rethinkingtexshop.aux) ) 
+[12] [13]) [14] (./rethinkingtexshop.aux) ) 
 Here is how much of TeX's memory you used:
- 4515 strings out of 493014
- 68279 string characters out of 6133351
- 130367 words of memory out of 5000000
- 7938 multiletter control sequences out of 15000+600000
+ 4534 strings out of 493014
+ 68600 string characters out of 6133351
+ 130490 words of memory out of 5000000
+ 7948 multiletter control sequences out of 15000+600000
  38076 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,39p,1008b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts
-/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfr
-m1000.pfb>
-Output written on rethinkingtexshop.pdf (11 pages, 208986 bytes).
+ 38i,8n,39p,1544b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2016/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-supe
+r/sfrm1000.pfb>
+Output written on rethinkingtexshop.pdf (14 pages, 221660 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
