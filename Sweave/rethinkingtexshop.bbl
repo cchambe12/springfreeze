@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -19,6 +19,13 @@ Anderegg, W.R.L., Plavcov{\'{a}}, L., Anderegg, L.D.L., Hacke, U.G., Berry,
 Augspurger, C.K. (2013) {Reconstructing patterns of temperature, phenology, and
   frost damage over 124 years: Spring damage risk is increasing}.
   \emph{Ecology} \textbf{94}, 41--50.
+
+\bibitem[{Ault \emph{et~al.}(2013)Ault, Henebry, de~Beurs, Schwartz, Betancourt
+  \& Moore}]{Ault2013}
+Ault, T.R., Henebry, G.M., de~Beurs, K.M., Schwartz, M.D., Betancourt, J.L. \&
+  Moore, D. (2013) {The False Spring of 2012, Earliest in North American
+  Record}. \emph{Eos, Transactions American Geophysical Union} \textbf{94},
+  181--182.
 
 \bibitem[{Ault \emph{et~al.}(2015{\natexlab{a}})Ault, Schwartz, Zurita-Milla,
   Weltzin \& Betancourt}]{Ault2015a}
@@ -57,6 +64,10 @@ Hufkens, K., Friedl, M.A., Keenan, T.F., Sonnentag, O., Bailey, A., O'Keefe, J.
   \& Richardson, A.D. (2012) {Ecological impacts of a widespread frost event
   following early spring leaf-out}. \emph{Global Change Biology} \textbf{18},
   2365--2377.
+
+\bibitem[{Knudson(2012)}]{Knudson2012}
+Knudson, W. (2012) The economic impact of the spring's weather on the fruit and
+  vegetable sectors. \emph{The Strategic Marketing Institute Working Paper} .
 
 \bibitem[{Kodra \emph{et~al.}(2011)Kodra, Steinhaeuser \& Ganguly}]{Kodra2011}
 Kodra, E., Steinhaeuser, K. \& Ganguly, A.R. (2011) {Persisting cold extremes
@@ -131,5 +142,15 @@ Vavrus, S., Walsh, J.E., Chapman, W.L. \& Portis, D. (2006) {The behavior of
 Vitasse, Y., Lenz, A., Hoch, G. \& K??rner, C. (2014) {Earlier leaf-out rather
   than difference in freezing resistance puts juvenile trees at greater risk of
   damage than adult trees}. \emph{Journal of Ecology} \textbf{102}, 981--988.
+
+\bibitem[{Wolkovich \emph{et~al.}(2012)Wolkovich, Cook, Allen, Crimmins,
+  Betancourt, Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren, Mazer,
+  McCabe, McGill, Parmesan, Salamin, Schwartz \& Cleland}]{Wolkovich2012}
+Wolkovich, E.M., Cook, B.I., Allen, J.M., Crimmins, T.M., Betancourt, J.L.,
+  Travers, S.E., Pau, S., Regetz, J., Davies, T.J., Kraft, N.J.B., Ault, T.R.,
+  Bolmgren, K., Mazer, S.J., McCabe, G.J., McGill, B.J., Parmesan, C., Salamin,
+  N., Schwartz, M.D. \& Cleland, E.E. (2012) {Warming experiments underpredict
+  plant phenological responses to climate change}. \emph{Nature} \textbf{485},
+  18--21.
 
 \end{thebibliography}
