@@ -138,7 +138,7 @@ methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
 plot(methodplot)
 @
 
-A Pearson Correlation was used to determine the strength of association between the three methods used in the study. As indicated in Table 1, the FSI values from the observed data and the SI-x NPN data are strongly correlated (r=0.93947095), whereas the FSI values calculated using the PhenoCam data is not as strongly correlated to either the observed FSI values (r=0.4679934) or the NPN FSI values (r=0.4242059). Although, according to the pearson correlation, all results were similar. 
+A Pearson Correlation was used to determine the strength of association between the three methods used in the study. As indicated in Table 1, the FSI values from the observed data and the SI-x NPN data are strongly correlated (r=0.9395), whereas the FSI values calculated using the PhenoCam data is not as strongly correlated to either the observed FSI values (r=0.4680) or the NPN FSI values (r=0.4242). Although, according to the pearson correlation, all results were similar. 
 
 <<label=pearson, results="asis", echo=FALSE, warning=FALSE, message=FALSE>>=
 pearson<-cor(FSI.table, method="pearson")
