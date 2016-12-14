@@ -707,3 +707,28 @@ am10$fs<- ifelse((am10$count >= 50 & am10$frz == "freeze"), TRUE, NA)
 gra.count<- select(am10, year, fs)
 gra.count<-na.omit(gra.count)
 gra.count<-as.data.frame(table(gra.count$year))
+
+# 14 Dec 2016 - Cat
+## Investigating the stats with the latitudinal weather data
+
+# Clear workspace
+rm(list=ls()) # remove everything currently held in the R memory
+options(stringsAsFactors=FALSE)
+graphics.off()
+
+# Load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(arm)
+
+# Set Working Directory
+setwd("~/Documents/git/springfreeze")
+europe<-read.csv("input/europe.lat.csv", header=TRUE)
+america<-read.csv("input/america.lat.csv", header=TRUE)
+
+# Linear Models looking at latitude and false springs
+eur.lm<-lm(europe$Latitude~europe$False.Springs)
+display(eur.lm)
+am.lm<-lm(america$Latitude~america$False.Springs)
+display(am.lm)
