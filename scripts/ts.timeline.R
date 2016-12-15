@@ -14,7 +14,7 @@ graphics.off()
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-
+library(arm)
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
 phenology<-read.csv("input/treespotters.timeline.csv",header=TRUE)
@@ -22,7 +22,7 @@ phenology<-read.csv("input/treespotters.timeline.csv",header=TRUE)
 phases<-c("Budburst","Leaves")
 
 pheno<-phenology%>%
-  select(Site_ID, Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
+  dplyr::select(Site_ID, Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
   unite(species, Genus, Species, sep="_") %>%
   filter(Phenophase_Description %in% phases) %>%
   rename(Year = First_Yes_Year) 
@@ -53,13 +53,13 @@ y1<-filter(y1, Risk < 31)
 dat<-full_join(y0,y1)
 
 bud<- y1 %>%
-  select(species, Budburst) %>%
+  dplyr::select(species, Budburst) %>%
   group_by(species)%>%
   summarise_each(funs(mean), Budburst) %>%
   arrange(species)
 
 leaves<- y1 %>%
-  select(species, Leaves) %>%
+  dplyr::select(species, Leaves) %>%
   group_by(species)%>%
   summarise_each(funs(mean), Leaves) %>%
   arrange(species)
@@ -67,7 +67,7 @@ leaves<- y1 %>%
 basic<- full_join(bud, leaves)
 basic$Risk<- basic$Leaves - basic$Budburst
 
-basic$code <- reorder(basic$species, basic$Leaves)
+basic$code <- reorder(basic$species, basic$Budburst)
 
 ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= basic$Budburst)) + 
   geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
@@ -76,6 +76,9 @@ ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_po
 plot(ts.timeline)
 
 ggplot((basic), aes( x= Budburst, y=Risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=species))
+
+lmodel<-lm(Risk~Budburst,data=basic)
+display(lmodel)
 
 basic$sd<-sd(basic$Risk)
 basic$mean<-mean(basic$Risk)

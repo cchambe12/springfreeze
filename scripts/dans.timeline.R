@@ -18,6 +18,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(lubridate)
+library(arm)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -28,7 +29,7 @@ timeline$DOY<-yday(timeline$Date)
 phases<-c("4","7")
 tx<-c("WL2","CS1", "WL0", "CS2") # may want to use WL1 instead?
 timeline<-timeline %>%
-  select(id, sp, site, tleaf, DOY, treatcode) %>%
+  dplyr::select(id, sp, site, tleaf, DOY, treatcode) %>%
   filter(treatcode %in% tx) %>%
   filter(tleaf %in% phases)
 timeline$tleaf<- factor(timeline$tleaf, levels = c(4,7), 
@@ -46,19 +47,19 @@ hf<-filter(hf, Risk > 0)
 
 hf.buds <- hf %>%
   filter(treatcode == "CS2") %>%
-  select(sp,id,Budburst) %>%
+  dplyr::select(sp,id,Budburst) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Budburst)
 
 hf.leaves <- hf %>%
   filter(treatcode == "CS2") %>%
-  select(sp,id,Leaves) %>%
+  dplyr::select(sp,id,Leaves) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Leaves)
 
 hf.Risk <- hf %>%
   filter(treatcode == "CS2") %>%
-  select(sp,id,Risk) %>%
+  dplyr::select(sp,id,Risk) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Risk)
 
@@ -68,19 +69,19 @@ cold$tx<-"CS2"
 
 cs1.buds <- hf %>%
   filter(treatcode == "CS1") %>%
-  select(sp,id,Budburst) %>%
+  dplyr::select(sp,id,Budburst) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Budburst)
 
 cs1.leaves <- hf %>%
   filter(treatcode == "CS1") %>%
-  select(sp,id,Leaves) %>%
+  dplyr::select(sp,id,Leaves) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Leaves)
 
 cs1.Risk <- hf %>%
   filter(treatcode == "CS1") %>%
-  select(sp,id,Risk) %>%
+  dplyr::select(sp,id,Risk) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Risk)
 
@@ -90,19 +91,19 @@ cs1$tx<-"CS1"
 
 warm.buds <- hf %>%
   filter(treatcode == "WL2") %>%
-  select(sp,id,Budburst) %>%
+  dplyr::select(sp,id,Budburst) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Budburst)
 
 warm.leaves <- hf %>%
   filter(treatcode == "WL2") %>%
-  select(sp,id,Leaves) %>%
+  dplyr::select(sp,id,Leaves) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Leaves)
 
 warm.Risk <- hf %>%
   filter(treatcode == "WL2") %>%
-  select(sp,id,Risk) %>%
+  dplyr::select(sp,id,Risk) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Risk)
 
@@ -112,19 +113,19 @@ warm$tx<-"WL2"
 
 med.buds <- hf %>%
   filter(treatcode == "WL1") %>%
-  select(sp,id,Budburst) %>%
+  dplyr::select(sp,id,Budburst) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Budburst)
 
 med.leaves <- hf %>%
   filter(treatcode == "WL1") %>%
-  select(sp,id,Leaves) %>%
+  dplyr::select(sp,id,Leaves) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Leaves)
 
 med.Risk <- hf %>%
   filter(treatcode == "WL1") %>%
-  select(sp,id,Risk) %>%
+  dplyr::select(sp,id,Risk) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Risk)
 
@@ -134,19 +135,19 @@ med$tx<-"WL1"
 
 wlo.buds <- hf %>%
   filter(treatcode == "WL0") %>%
-  select(sp,id,Budburst) %>%
+  dplyr::select(sp,id,Budburst) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Budburst)
 
 wlo.leaves <- hf %>%
   filter(treatcode == "WL0") %>%
-  select(sp,id,Leaves) %>%
+  dplyr::select(sp,id,Leaves) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Leaves)
 
 wlo.Risk <- hf %>%
   filter(treatcode == "WL0") %>%
-  select(sp,id,Risk) %>%
+  dplyr::select(sp,id,Risk) %>%
   group_by(sp) %>%
   summarise_each(funs(mean), Risk)
 
@@ -176,6 +177,8 @@ plot(hf.plot)
 
 hf.lm<-ggplot((sp.code), aes( x= Budburst, y=Risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=tx))
 plot(hf.lm)
+lmodel<-lm(Risk~Budburst+tx, data=sp.code)
+display(lmodel)
 
 # Summary Data by Treatment
 cs0<- sp.code %>%

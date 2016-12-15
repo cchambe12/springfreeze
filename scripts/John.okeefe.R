@@ -23,7 +23,7 @@ budburst<-read.csv("hf003-06-mean-spp.csv",header=TRUE, sep=",")
 budburst<-filter(budburst, year>2000)
 
 sp <- budburst %>%
-  select(year, species, bb.jd) %>%
+  dplyr::select(year, species, bb.jd) %>%
   arrange(bb.jd) %>%
   group_by(species, year)%>%
   arrange(year) 
@@ -38,15 +38,15 @@ sp.short<- c("ACPE","ACRU","ACSA","FAGR","FRAM","HAVI","QUAL",
              "BEAL", "BELE", "COAL", "QUVE")
 
 d <- budburst %>%
-  select(year, species, bb.jd)%>%
+  dplyr::select(year, species, bb.jd)%>%
   filter(species %in% sp.short)
 
 df<- d %>%
-  select(species, bb.jd) %>%
+  dplyr::select(species, bb.jd) %>%
   arrange(bb.jd)
 
 obs_bb.avg<- d %>%
-  select(year,bb.jd)%>%
+  dplyr::select(year,bb.jd)%>%
   group_by(year)%>%
   summarise_each(funs(mean), bb.jd) %>%
   rename(mean=bb.jd)%>%
@@ -67,7 +67,7 @@ attach(compare)
 
 #obs.npn<- obs_bb %>%
   ##full_join(compare) %>%
-  #select(year, bb.jd, bb_npn)%>%
+  #dplyr::select(year, bb.jd, bb_npn)%>%
   #arrange(year) %>%
   #filter(year>=1990) %>%
   #filter(year<2015)
@@ -75,7 +75,7 @@ attach(compare)
 ## Species that are more comparable to lilacs and honeysuckle ##
 sm.sp<- c("PRSE", "POTR", "AMSP", "CRSP", "HAVI", "ACSA", "BEPA", "ACPE")
 small<- budburst%>%
-  select(year, species, bb.jd) %>%
+  dplyr::select(year, species, bb.jd) %>%
   filter(species %in% sm.sp)
 condensed<- small %>%
   group_by(year)%>%
@@ -84,7 +84,7 @@ condensed<- small %>%
 
 sm.comp<- condensed %>%
   full_join(compare) %>%
-  select(year, bb.jd, bb_npn, last_frz) %>%
+  dplyr::select(year, bb.jd, bb_npn, last_frz) %>%
   arrange(year) %>%
   filter(year>=1990) %>%
   filter(year<2015)
@@ -95,24 +95,22 @@ method<-read.csv("method.test.csv",header=TRUE,sep=",")
 #attach(method)
 
 bb.table<-method %>%
-  select(year,last_frz,bb_npn, sm.bb) %>%
+  dplyr::select(year,last_frz,bb_npn, sm.bb) %>%
   filter(year>=2008)%>%
   filter(year<2015)%>%
   rename("Last Freeze"=last_frz)%>%
   rename("Observed"=sm.bb)%>%
   rename("SI-x"=bb_npn)
 
-FSI.table<- method %>%
-  select(year, FSI_npn, FSI_okeefe, FSI_cam, FSI_obs, FSI_sm) %>%
-  rename(okeefe.accurate = FSI_okeefe)%>%
+FSI.table<- method %>% 
+  dplyr::dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
+  rename(okeefe = FSI_okeefe)%>%
   rename(phenocam = FSI_cam) %>%
   rename(npn = FSI_npn) %>%
-  rename(okeefe.large = FSI_obs) %>%
-  rename(okeefe.small = FSI_sm) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 bb.long<- method%>%
-  select(year,bb_npn,sm.bb, bb_obs, bb_cam)%>%
+  dplyr::select(year,bb_npn,sm.bb, bb_obs, bb_cam)%>%
   filter(year>=2001)%>%
   filter(year<2015)
 blend<-FSI.table %>% 
@@ -123,14 +121,14 @@ blend.long<-FSI.long%>%
   arrange(year)
 
 ggplot(blend, (aes(Method, FSI)), xlab="Method", ylab="FSI") + 
-  geom_boxplot(fill=c("#F8766D","#00C094","#00B6EB","#A58AFF","firebrick3"))
+  geom_boxplot(fill=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
 
 boxplot(data=blend, FSI~Method, xlab="Method", ylab="FSI")
 boxplot(data=blend.long, FSI~Method)
 
 methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
   ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF", "firebrick3")) +
+  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
   geom_smooth(method="loess")
 plot(methodplot)
 
@@ -147,7 +145,7 @@ fit
 plot(fit)
 
 npn_sm <- method %>%
-  select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
+  dplyr::select(year, FSI_npn, FSI_sm, FSI_obs, FSI_cam) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 regression <- glm(formula = FSI_npn ~ FSI_sm + year, 

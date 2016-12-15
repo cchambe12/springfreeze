@@ -15,6 +15,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(lubridate)
+library(arm)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -43,6 +44,9 @@ df.plot<-ggplot((df), aes(x=bb.jd, y=code), stat="identity") + geom_point(aes(x=
 plot(df.plot)
 
 ggplot((df), aes( x=bb.jd, y=risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=si))
+
+lmodel<-lm(risk~bb.jd,data=df)
+display(lmodel)
 
 # Summarize Data
 early<- df%>%

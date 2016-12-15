@@ -1,7 +1,8 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Climatic Implications: How climate change is affecting spring freezing events}{4}
-\contentsline {section}{\numberline {3}Determining Spring Index}{5}
-\contentsline {section}{\numberline {4}Determining the Duration of Vegetative Risk (?)}{9}
-\contentsline {subsection}{\numberline {4.1}Tree Spotters Data}{9}
-\contentsline {subsection}{\numberline {4.2}Dan's Data}{10}
-\contentsline {subsection}{\numberline {4.3}Dan's Data}{11}
+\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {2}Climatic Implications: How climate change is affecting spring freezing events}{5}
+\contentsline {section}{\numberline {3}Determining Spring Onset}{8}
+\contentsline {section}{\numberline {4}Determining the Duration of Vegetative Risk}{11}
+\contentsline {subsection}{\numberline {4.1}Tree Spotters Data}{11}
+\contentsline {subsection}{\numberline {4.2}Dan's Data}{12}
+\contentsline {subsection}{\numberline {4.3}Dan's Data}{13}
+\contentsline {section}{\numberline {5}Conclusion}{14}
