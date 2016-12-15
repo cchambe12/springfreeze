@@ -27,7 +27,7 @@ timeline<-read.csv("input/Budburst.DF.csv",header=TRUE)
 # Convert to Julian day
 timeline$DOY<-yday(timeline$Date)
 phases<-c("4","7")
-tx<-c("WL2","CS1", "WL0", "CS2") # may want to use WL1 instead?
+tx<-c("WL2", "WL0", "CS2","WL1","CS1") # may want to use WL1 instead?
 timeline<-timeline %>%
   dplyr::select(id, sp, site, tleaf, DOY, treatcode) %>%
   filter(treatcode %in% tx) %>%
@@ -88,6 +88,28 @@ cs1.Risk <- hf %>%
 cs1<-full_join(cs1.buds, cs1.leaves)
 cs1<-full_join(cs1, cs1.Risk)
 cs1$tx<-"CS1"
+
+#cs0.buds <- hf %>%
+  #filter(treatcode == "CS0") %>%
+  #dplyr::select(sp,id,Budburst) %>%
+  #group_by(sp) %>%
+  #summarise_each(funs(mean), Budburst)
+
+#cs0.leaves <- hf %>%
+  #filter(treatcode == "CS0") %>%
+  #dplyr::select(sp,id,Leaves) %>%
+  #group_by(sp) %>%
+  #summarise_each(funs(mean), Leaves)
+
+#cs0.Risk <- hf %>%
+  #filter(treatcode == "CS0") %>%
+  #dplyr::select(sp,id,Risk) %>%
+  #group_by(sp) %>%
+  #summarise_each(funs(mean), Risk)
+
+#cs0<-full_join(cs0.buds, cs0.leaves)
+#cs0<-full_join(cs0, cs0.Risk)
+#cs0$tx<-"CS0"
 
 warm.buds <- hf %>%
   filter(treatcode == "WL2") %>%
@@ -155,7 +177,7 @@ wlo<-full_join(wlo.buds, wlo.leaves)
 wlo<-full_join(wlo, wlo.Risk)
 wlo$tx<-"WL0"
 
-hf<-bind_rows(warm,cold, med, wlo, cs1)
+hf<-bind_rows(warm,cold,med,wlo,cs1)
 species<-c("ACERUB", "BETPAP", "ILEMUC", "POPGRA", "QUERUB")
 hf<- hf %>%
   group_by(sp,tx) %>%

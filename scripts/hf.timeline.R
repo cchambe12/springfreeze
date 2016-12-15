@@ -45,7 +45,7 @@ plot(df.plot)
 
 ggplot((df), aes( x=bb.jd, y=risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=si))
 
-lmodel<-lm(risk~bb.jd,data=df)
+lmodel<-lm(risk~bb.jd + year,data=df)
 display(lmodel)
 
 # Summarize Data

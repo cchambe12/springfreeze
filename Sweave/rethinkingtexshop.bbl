@@ -1,4 +1,4 @@
-\begin{thebibliography}{40}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -199,6 +199,13 @@ USA-NPN (2016{\natexlab{b}}) {USA National Phenology Network Extended Spring
 Vavrus, S., Walsh, J.E., Chapman, W.L. \& Portis, D. (2006) {The behavior of
   extreme cold air outbreaks under greenhouse warming}. \emph{International
   Journal of Climatology} \textbf{26}, 1133--1147.
+
+\bibitem[{Vitasse \emph{et~al.}(2013)Vitasse, Hoch, Randin, Lenz, Kollas,
+  Scheepens \& K{\"{o}}rner}]{Vitasse2013}
+Vitasse, Y., Hoch, G., Randin, C.F., Lenz, A., Kollas, C., Scheepens, J.F. \&
+  K{\"{o}}rner, C. (2013) {Elevational adaptation and plasticity in seedling
+  phenology of temperate deciduous tree species}. \emph{Oecologia}
+  \textbf{171}, 663--678.
 
 \bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch \&
   K{\"{o}}rner}]{Vitasse2014}
