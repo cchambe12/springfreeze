@@ -184,7 +184,7 @@ ham.count<- dplyr::select(lat4, year, fs)
 ham.count<-na.omit(ham.count)
 ham.count<-as.data.frame(table(ham.count$year))
 
-# Erfurt, Germany: 50.9844N 10.9631E
+# Erfurt, Germany: 40.9844N 10.9631E
 lat5<-lat %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
   filter(STATION_NAME == "ERFURT BINDERSLEBEN GM") %>%
