@@ -36,11 +36,11 @@
 {\LARGE{\textit{Drivers of leaf-out phenology and their implications for species invasions: insights from Thoreau's Concord}}} \\ {\Large{Polgar et al. 2014}}
 \end{center}
 \section*{Abstract Notes}
-Investigate the differences in functional traits, invasive versus native, shrubs versus trees. This study looks into the rate of change by days per degree Celcius change, making it a suitable and viable source. 
+Investigate the differences in functional traits, invasive versus native, shrubs versus trees. This study looks into the rate of change by days per degree Celsius change, making it a suitable and viable source. 
 \section*{Introduction Notes}
 \begin{itemize}
-\item{Species around the world are beginning leaf-out around 4.6 days earlier per degree Celcius (Wolkovich et al., 2012)}
-\item{Communities dominated by native species tend to exhibit a weaker repsonse to temperature, whereas non-native dominated communities respond strongly to changes in temperature (Willis et al., 2008; Hulme, 2011).}
+\item{Species around the world are beginning leaf-out around 4.6 days earlier per degree Celsius (Wolkovich et al., 2012)}
+\item{Communities dominated by native species tend to exhibit a weaker response to temperature, whereas non-native dominated communities respond strongly to changes in temperature (Willis et al., 2008; Hulme, 2011).}
 \item{Leaf-out may be delayed, however, as winter seasons begin to warm and chilling requirements are not met, thus resulting in more warming to occur for bud burst to begin (McCreary et al., 1990; Morin et al., 2009; Fu et al., 2012).}
 \item{Spring bud burst occurs from a combination of winter chilling, spring warming, and photoperiod. Chilling units are seen as a method of protection against warm to cold spells in the spring to reduce the chance of freeze damage. Species-specific requirements for these three factors causes varying bud burst dates. Invasive species tend to leaf out much earlier than native species, permitting longer growing seasons and greater competition (Gu et al., 2008; Korner & Basler,
 2010; Basler & Korner, 2012). }
@@ -50,9 +50,19 @@ Investigate the differences in functional traits, invasive versus native, shrubs
 \item{Takes observational data from Thoreau's data recorded from 1854,1855,1860 and compares to data recorded from 2009 to 2013.}
 \item{Looks at bud burst, as defined by Project Bud Burst and USNPN.}
 \end{itemize}
-
-
-
+\newpage
+\begin{center}
+{\LARGE{\textit{Coordinated responses to changing environmental cues across a community of temperate forest plants}}} \\ {\Large{Flynn, D., \& Wolkovich, E.}}
+\end{center}
+\section*{Abstract Notes}
+\newpage
+\begin{center}
+{\LARGE{\textit{Root phenology in a changing climate}}} \\ {\Large{Radville et al., 2016}}
+\end{center}
+\section*{Abstract}
+"Plant phenology is one of the strongest indicators of ecological responses to climate change, and altered phenology can have pronounced effects on net primary production, species composition in local communities, greenhouse gas fluxes, and ecosystem processes. Although many studies have shown that above ground plant phenology advances with warmer temperatures, demonstration of a comparable association for below ground phenology has been lacking because the factors that influence root phenology are poorly understood. Because roots can constitute a large fraction of plant biomass, and root phenology may not respond to warming in the same way as shoots, this represents an important knowledge gap in our understanding of how climate change will influence phenology and plant performance. We review studies of root phenology and provide suggestions to direct future research. Only 29\% of examined studies approached root phenology quantitatively, strongly limiting interpretation of results across studies. Therefore, we suggest that researchers emphasize quantitative analyses in future phenological studies. We suggest that root initiation, peak growth, and root cessation may be under different controls. Root initiation and cessation may be more constrained by soil temperature and the timing of carbon availability, whereas the timing of peak root growth may represent trade-offs among competing plant sinks. Roots probably do not experience winter dormancy in the same way as shoots: 89\% of the studies that examined winter phenology found evidence of growth during winter months. More research is needed to observe root phenology, and future studies should be careful to capture winter and early season phenology. This should be done quantitatively, with direct observations of root growth utilizing rhizotrons or minirhizotrons."
+\section*{Notes}
+Ultimate conclusions stress the importance of quantitatively accessing the phenology of root systems. There is a severe paucity of literature on root phenology. What has been found is that below ground growth and above ground phenology are not responsive to the same cues so growth could become asynchronous. 
 
 
 \end{document}
