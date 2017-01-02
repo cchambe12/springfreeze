@@ -21,22 +21,24 @@ library(arm)
 setwd("~/Documents/git/springfreeze")
 timeline<-read.csv("input/hf003-06-mean-spp.csv", header=TRUE)
 
-# Convert to Julian day
+# Add Risk and only Two Years
 years<-c("2010", "2014")
 timeline<-timeline %>%
-  select(year, species, bb.jd, l75.jd) %>%
-  filter(year %in% years)
+  dplyr::select(year, species, bb.jd, l75.jd) %>%
+  filter(year%in%years)
 timeline<-na.omit(timeline)
 timeline$risk <- timeline$l75.jd - timeline$bb.jd
 df<- timeline %>%
   unite(sp.year, species, year, remove=FALSE)
 df$si[df$year=="2010"] <- "early"
 df$si[df$year=="2014"] <- "late"
+#df<-na.omit(df)
+
 
 # Make a graph!
-df$code <- reorder(df$sp.year, df$bb.jd)
+#df$code <- reorder(df$sp.year, df$bb.jd)
 
-df.plot<-ggplot((df), aes(x=bb.jd, y=code), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
+df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
   geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
   geom_point(aes(x=l75.jd, col=si)) + geom_point(aes(col=si)) +
   xlab("Budburst to Leaf Out") +

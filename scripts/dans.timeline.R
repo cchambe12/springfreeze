@@ -187,10 +187,9 @@ sp.code<-hf %>%
 sp.code$tx<- substr(sp.code$sp.code, 8, 10)
 
 # Make a plot
-sp.code$code <- reorder(sp.code$sp.code, sp.code$Leaves)
 write.csv(sp.code, file="~/Documents/git/springfreeze/output/Dans.timeline.csv",row.names=FALSE)
 
-hf.plot<-ggplot((sp.code), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= hf$Budburst)) + 
+hf.plot<-ggplot((sp.code), aes(x=Budburst, y=sp.code), stat="identity") + geom_point(aes(x= hf$Budburst)) + 
   geom_segment(aes(y = sp.code, yend = sp.code, x = Budburst, xend = Leaves, col=tx)) +
   geom_point(aes(x=Leaves, col=tx)) + geom_point(aes(col=tx)) +
   xlab("Budburst to Leaf Out") +
