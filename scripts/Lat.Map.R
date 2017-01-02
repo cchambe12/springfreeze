@@ -39,7 +39,7 @@ gg1 +
   geom_point(fill=factor(usa$False.Springs)) + theme(legend.position="none")
 
 gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=False.Springs,color=False.Springs)) +
-  scale_color_gradient(low="red", high="blue") + guides(size = FALSE)
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + guides(size = FALSE)
 
 # Europe Map
 # Get the world map
@@ -49,7 +49,7 @@ worldMap <- getMap()
 europeanUnion <- c("Austria","Belgium","Bulgaria","Croatia","Cyprus",
                    "Czech Rep.","Denmark","Estonia","Finland","France",
                    "Germany","Greece","Hungary","Ireland","Italy","Latvia",
-                   "Lithuania","Luxembourg","Malta","Netherlands","Poland",
+                   "Lithuania","Luxembourg","Malta","Netherlands","Norway","Poland",
                    "Portugal","Romania","Slovakia","Slovenia","Spain",
                    "Sweden","Switzerland", "United Kingdom")
 indEU <- which(worldMap$NAME%in%europeanUnion)
@@ -66,6 +66,6 @@ eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y 
                                            color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
 
 eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
-  scale_color_gradient(low="red", high="blue") + guides(size = FALSE)
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + guides(size = FALSE)
 
 
