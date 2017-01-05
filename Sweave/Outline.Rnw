@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(stargazer)
+@
+
+\begin{document}
+\title{Rethinking False Spring Risk}
+\author{Chamberlain, Wolkovich}
+\date{\today}
+\maketitle 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\LARGE\textbf{Outline}
+\end{center}
+\section{Introduction}
+Plants that grow in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to plant growth. Species or individuals that leaf out before the last frost are at risk of damaging wood tissue, leaf loss, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. Therefore, temperate deciduous tree species must have plastic phenological responses in the spring in order to optimize photosynthesis and minimize frost or drought risk \citep{Polgar2011}. These late spring freezing events are known as false springs. False spring events can result in highly detrimental ecological and economic consequences \citep{Ault2013, Knudson2012}.
+
+Climate change is expected to increase damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Martin2010, Inouye2008, Cannell1986}. Temperate forest species around the world are initiating leaf out about 4.6 days earlier per degree Celsius \citep{Polgar2014, Wolkovich2012}. It is anticipated that there will be a decrease in false spring frequency overall but the magnitude of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Allstadt2015, Kodra2011}. Mulitple studies have documented false spring events in recent years \citep{Augspurger2013, Knudson2012, Augspurger2009, Gu2008} and some have linked this to climate change \citep{Muffler2016, Xin2016, Allstadt2015, Ault2013}.
+
+Due to these reasons, it is crucial for researchers to properly evaluate the effects of false spring events on temperate forests and agricultural crops in order to make more accurate predictions on future trends.
+
+\section{Defining False Spring}
+According to Gu et al. \citeyear{Gu2008}, there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}.
+
+Spring frosts during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree species \citep{Sakai1987}.
+
+\bibliography{..//refs/SpringFreeze.bib}
+\end{document}
