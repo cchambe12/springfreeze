@@ -64,5 +64,19 @@ Investigate the differences in functional traits, invasive versus native, shrubs
 \section*{Notes}
 Ultimate conclusions stress the importance of quantitatively accessing the phenology of root systems. There is a severe paucity of literature on root phenology. What has been found is that below ground growth and above ground phenology are not responsive to the same cues so growth could become asynchronous. 
 
+\newpage
+\begin{center}
+{\LARGE{\textit{Earlier leaf-out rather than difference in freezing resistance puts juvenile trees at greater risk of damage than adult trees}}} \\ {\Large{Vitasse, Y., Lenz, A., Hoch, G., and Korner, C.}}
+\end{center}
+\section*{Abstract Notes}
+\begin {itemize}
+\item current assumption - seedlings and saplings are more sensitive than adults to late spring freezing but no data on comparative resistance (Duration of Vegetative Risk)
+\item Sensitivity was found to be the same between seedlings/saplings and adults but more prone to damage because they flush earlier than adults
+\item Early flushing species tend to be more resistant than late flushing species
+\item IDEA: Given differences in 2010 and 2012, does this mean extreme years like 2012 will result in greater damage to seedlings and saplings? Will climate change reduce the level of recruitment that exists in ecosystems?
+
+
+
+
 
 \end{document}
