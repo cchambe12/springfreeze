@@ -38,6 +38,13 @@ library(ggplot2)
 library(xtable)
 library(arm)
 library(stargazer)
+library(ggmap)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(grid)
+library(rworldmap)
+library(gridExtra)
 @
 
 \begin{document}
@@ -65,12 +72,183 @@ Different species respond differently to late spring freezing events. The level 
 
 If FSI is a positive number and greater than 7, then crown dieback is more likely to occur. False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events. In contrast to these simplifications, we argue that a wealth of factors greatly impacts plants' frost spring risk such that simple indices will most likely lead to inaccurate predictions and ultimately do little to advance the field. 
 
-In this paper we aim to highlight the complexity of factors driving a plant's false spring risk. We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), proximity to water \citep{Gu2008}, level of precipitation prior to the freezing event \citep{Anderegg2013}, freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple matrices of false spring. The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in the field.  Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
+In this paper we aim to highlight the complexity of factors driving a plant's false spring risk. We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), proximity to water \citep{Gu2008}, level of precipitation prior to the freezing event \citep{Anderegg2013}, freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field.  
 
 \section{Defining False Spring}
-According to Gu et al. \citeyear{Gu2008}, there are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}.
+There are two phases involved in late spring freezing: rapid vegetative growth prior to the freeze and the post freeze setback. This combined process is known as a false spring \citep{Gu2008}. Freeze and thaw fluctuations can cause xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}.
 
+Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for budburst to initiate and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date \citep{Augspurger2013}. 
+In a study performed by Peterson and Abatzoglou \citeyear{Peterson2014}, it had been determined that 7 days between budburst and last freeze date is a significant parameter. During this time, it was determined that leaf buds will have enough growing degree days to begin budburst but the leaves won't have fully expanded yet. There is much debate over the definition of freezing temperatures, which has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C \citep{Augspurger2013, Kodra2011, Vavrus2006}.
+
+\subsection*{Phenophases}
 Spring frosts during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree species \citep{Sakai1987}.
+
+The level of damage sustained by plants from a false spring also varies across phenophases. Generally, reproductive phases are more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots \citep{Lenz2013,Augspurger2009}. However, trees that suffer severe vegetative growth damage from a false spring event will suffer greater long-term effects from the loss of photosynthetic tissue than trees that lose one year of reproductive growth.
+
+Phenophase is a greater indicator for level of risk than life stage. Inidivudals exhibiting a certain phenophase (i.e. between budburst and full leafout) are more likely to incur damage from a freezing event than individuals past the leafout phenophase, independent of life stage \citep{Augspurger2009,Vitasse2014}.
+
+We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define leaf out \citep{Meier2001}.
+
+\section*{Understanding (Defining?) Vegetative Risk}
+Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
+
+\subsection*{Species}
+False spring events put seedlings and saplings at greater risk to damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. Extensive cavitation in the xylem would require more intensive freezing events than it would take to damage seedling and sapling leaf buds. Especially strong freezing events (i.e. >-8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Lenz2013, Augspurger2011, Sakai1987}.  
+
+However, different species respond differently to anthropogenic climate change. Most species are expected to begin leaf out earlier in the season with warming spring temperatures but some species may have the opposite response \citep{Xin2016, Cleland2006, Yu2010}.
+
+Studies indicate that species growing at more northern latitudes tend to respond greater to photoperiod than species growing further south \citep{Caffarra2011}. Similarly, late successional species exhibit greater photoperiod sensitivities than pioneer species \citep{Basler2012}. 
+
+\section*{Species Differences and Vegetative Risk}
+
+\section*{Regional Differences in Vegetative Risk?}
+Based on this information, we analyzed two latitudinal gradients by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool. We assessed 8-10 different degree latitude lines for each transect in order to measure frequency of false spring events \citep{Menne2012, Menne2012b}. False springs were tallied by first calculating the number of Growing Degree Days (GDD) with a base 10$^{\circ}$C temperature \citep{Nugent2005}.
+
+If there were 40 GDDs before a hard freeze occurred in the spring (-2.2$^{\circ}$C), then it was determined that a false spring could have occurred in that year. Since we did not incorporate actual budburst or spring onset information, it is unclear whether these events were actually damaging. In order to simply address the climate question, we used these parameters to have a better understanding of the potential climate effects of latitude.  % Lizzie - I could use a bigger number of GDDs. I went through to see if the freeze actually occurred in April or later and by using the 40 parameter it typically lined up pretty nicely. 
+Each location includes 30 years of climate data and each transect fell within 3 degrees longitude. Locations that were over 1,000m above sea level were excluded. 
+
+<<label=latmap, results = "asis", echo=FALSE, fig.cap="The number of false spring events along two latitudinal gradients: a) North America and b) Europe.", fig.pos="H">>=
+read_chunk("..//scripts/Lat.Map.R")
+# Upload US map
+usa <- map_data("usa")
+states <- map_data("state")
+
+gg1<- NAmap <- ggplot() + geom_polygon(data = usa, 
+                                       aes(x=long, y = lat, group = group), 
+                                       fill = "white", 
+                                       color="black") +
+  geom_polygon(data = states, aes(x=long, y = lat, group = group), 
+               fill = "white", color="grey") 
+
+# Upload Data
+usa<-read.csv("~/Documents/git/springfreeze/input/america.lat.csv", header=TRUE)
+europe<-read.csv("~/Documents/git/springfreeze/input/europe.lat.csv", header=TRUE)
+
+# USA Map
+am.map <- gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=False.Springs,color=False.Springs)) +
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") +
+  guides(size=FALSE)
+
+# Europe Map
+# Get the world map
+worldMap <- getMap()
+
+# European Countries
+europeanUnion <- c("Austria","Belgium","Bulgaria","Croatia","Cyprus",
+                   "Czech Rep.","Denmark","Estonia","Finland","France",
+                   "Germany","Greece","Hungary","Ireland","Italy","Latvia",
+                   "Lithuania","Luxembourg","Malta","Netherlands","Norway","Poland",
+                   "Portugal","Romania","Slovakia","Slovenia","Spain",
+                   "Sweden","Switzerland", "United Kingdom")
+indEU <- which(worldMap$NAME%in%europeanUnion)
+europeCoords <- lapply(indEU, function(i){
+  df <- data.frame(worldMap@polygons[[i]]@Polygons[[1]]@coords)
+  df$region =as.character(worldMap$NAME[i])
+  colnames(df) <- list("long", "lat", "region")
+  return(df)
+})
+
+europeCoords <- do.call("rbind", europeCoords)
+
+eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y = lat, group=region), 
+                                           color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
+
+eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") + 
+  guides(size=FALSE)
+  
+ 
+
+grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, position = c("bottom", "right")) {
+    
+  plots <- list(...)
+  position <- match.arg(position)
+  g <- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
+  lheight <- sum(legend$height)
+  lwidth <- sum(legend$width)
+  gl <- lapply(plots, function(x) x + theme(legend.position="none"))
+  gl <- c(gl, ncol = ncol, nrow = nrow)
+    
+  combined <- switch(position,
+                       "bottom" = arrangeGrob(do.call(arrangeGrob, gl),
+                                              legend,
+                                              ncol = 1,
+                                              heights = unit.c(unit(1, "npc") - lheight, lheight)),
+                       "right" = arrangeGrob(do.call(arrangeGrob, gl),
+                                             legend,
+                                             ncol = 2,
+                                             widths = unit.c(unit(1, "npc") - lwidth, lwidth)))
+  grid.newpage()
+  grid.draw(combined)
+    
+}
+  
+plot1 <- am.map
+plot2 <- eur.map
+grid_arrange_shared_legend(plot1, plot2, ncol = 2,
+                           widths = c(2.5, 2.5), heights = 2.2)
+@
+
+Table 4 shows the results from the linear regression models performed for both transects. Latitude (1) represents the European transect and Latitude (2) is the American transect. 
+
+<<label=eurlat, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Weather_Latitude.R")
+europe<-read.csv("..//input/europe.lat.csv", header=TRUE)
+america<-read.csv("..//input/america.lat.csv", header=TRUE)
+eur.lm<-lm(Latitude~False.Springs, data=europe)
+am.lm<-lm(Latitude~False.Springs, data=america)
+stargazer(eur.lm, am.lm, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs")
+@
+
+As seen in the above tables, as latitude increased the frequency of false spring events decreased. These results may indicate why species with a more northern range may have greater photoperiod sensitivities \citep{Caffarra2011} because the level of risk associated with a frost may in fact decrease. These findings demonstrate that further research needs to be pursued but they could ultimately indicate that certain latitudes should be prioritized for future false spring studies. 
+
+\section*{Conclusion}
+
+\section*{Supplemental}
+Table 1 shows the results from the European transect investigated. False spring occurrence ranged from 0 to 8 and increased as latitude decreased. 
+
+\begin{center}
+\captionof{table}{Number of False Springs along a Latitudinal Gradient in Western Europe} \label{tab:title} 
+\begin{tabular}{c c c c c}
+\hline
+Station & Elevation & Latitude & Longitude & False Springs \\
+\hline
+Kempten, Germany & 705m & 47.724 & 10.336 & 8 \\
+Augsburg, Germany & 461m & 48.426 & 10.943 & 8 \\
+Bamberg, Germany & 210m & 49.875 & 10.921 & 7 \\
+Jena, Germany & 155m & 50.927 & 11.584 & 4 \\
+Hannover, Germany & 55.0m & 52.466 & 9.679 & 6 \\
+Bremen, Germany & 4.00m & 53.046 & 8.799 & 5 \\
+Hamburg, Germany & 11.0m & 53.635 & 9.99 & 4 \\
+Schleswig, Germany & 43.0m & 54.529 & 9.549 & 0 \\
+Flyvestation, Denmark & 3.00m & 57.093 & 9.849 & 0 \\
+Oslo, Norway & 94.0m & 59.943 & 10.721 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+Table 2 shows the results from the American transect. False spring occurrence ranged from 0 to 13 and also exhibited an inverse relationship with latitude. 
+
+\begin{center}
+\captionof{table}{Number of False Springs along a Latitudinal Gradient in North America} \label{tab:title2} 
+\begin{tabular}{c c c c c}
+\hline
+Station & Elevation & Latitude & Longitude & False Springs \\
+\hline
+Anthony, Kansas & 415m & 37.155 & -98.028 & 13 \\
+Hastings, Nebraska & 587m & 40.583 & -98.350  & 7 \\
+West Point, Nebraska & 399m & 41.845 & -96.714 & 5 \\
+Yankton, South Dakota & 360m & 42.883 & -97.350 & 5 \\
+Brookings, South Dakota & 497m & 44.325 & -96.769 & 0 \\
+Aberdeen, South Dakota & 395m & 45.443 & -98.413 & 2 \\
+Grand Forks, North Dakota & 253m & 47.933 & -97.083 & 0 \\
+Pembina, North Dakota & 241m & 48.971 & -97.242 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+
 
 \bibliography{..//refs/SpringFreeze.bib}
 \end{document}

@@ -16,6 +16,7 @@ library(tidyr)
 library(mapproj)
 library(grid)
 library(rworldmap)
+library(gridExtra)
 
 # Upload US map
 usa <- map_data("usa")
@@ -38,8 +39,9 @@ gg1 +
   geom_point(data = usa, aes(x = Longitude, y = Latitude), size = 3) + 
   geom_point(fill=factor(usa$False.Springs)) + theme(legend.position="none")
 
-gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=False.Springs,color=False.Springs)) +
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + guides(size = FALSE)
+am.map <- gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=False.Springs,color=False.Springs)) +
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") +
+  guides(size=FALSE)
 
 # Europe Map
 # Get the world map
@@ -65,7 +67,40 @@ europeCoords <- do.call("rbind", europeCoords)
 eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y = lat, group=region), 
                                            color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
 
-eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + guides(size = FALSE)
+eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") + 
+  guides(size=FLASE)
+  
+ 
 
+grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, position = c("bottom", "right")) {
+    
+  plots <- list(...)
+  position <- match.arg(position)
+  g <- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
+  legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
+  lheight <- sum(legend$height)
+  lwidth <- sum(legend$width)
+  gl <- lapply(plots, function(x) x + theme(legend.position="none"))
+  gl <- c(gl, ncol = ncol, nrow = nrow)
+    
+  combined <- switch(position,
+                       "bottom" = arrangeGrob(do.call(arrangeGrob, gl),
+                                              legend,
+                                              ncol = 1,
+                                              heights = unit.c(unit(1, "npc") - lheight, lheight)),
+                       "right" = arrangeGrob(do.call(arrangeGrob, gl),
+                                             legend,
+                                             ncol = 2,
+                                             widths = unit.c(unit(1, "npc") - lwidth, lwidth)))
+  grid.newpage()
+  grid.draw(combined)
+    
+}
+  
+plot1 <- am.map
+plot2 <- eur.map
+
+grid_arrange_shared_legend(plot1, plot2, ncol = 2,
+                           widths = c(2.5, 2.5), heights = 2.2)
 
