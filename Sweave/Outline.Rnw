@@ -80,6 +80,8 @@ There are two phases involved in late spring freezing: rapid vegetative growth p
 Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for budburst to initiate and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date \citep{Augspurger2013}. 
 In a study performed by Peterson and Abatzoglou \citeyear{Peterson2014}, it had been determined that 7 days between budburst and last freeze date is a significant parameter. During this time, it was determined that leaf buds will have enough growing degree days to begin budburst but the leaves won't have fully expanded yet. There is much debate over the definition of freezing temperatures, which has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C \citep{Augspurger2013, Kodra2011, Vavrus2006}.
 
+Once budburst has initiated, buds cannot respond to cold temperatures and freezing resistance is greatly reduced \citep{Vitasse2014, Lenz2013, Taschler2004}.
+
 \subsection*{Phenophases}
 Spring frosts during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree species \citep{Sakai1987}.
 
@@ -93,7 +95,7 @@ We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define le
 Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
 
 \subsection*{Species}
-False spring events put seedlings and saplings at greater risk to damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. Extensive cavitation in the xylem would require more intensive freezing events than it would take to damage seedling and sapling leaf buds. Especially strong freezing events (i.e. >-8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Lenz2013, Augspurger2011, Sakai1987}.  
+Seedling and sapling individuals of canopy species initiate budburst before to canopy closure in order to benefit from the increased light levels \citep{Augspurger2008}, therefore putting them at greater risk to false spring damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. Extensive cavitation in the xylem would require more intensive freezing events than it would take to damage seedling and sapling leaf buds. Especially strong freezing events (i.e. >-8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Lenz2013, Augspurger2011, Sakai1987}.  
 
 However, different species respond differently to anthropogenic climate change. Most species are expected to begin leaf out earlier in the season with warming spring temperatures but some species may have the opposite response \citep{Xin2016, Cleland2006, Yu2010}.
 
