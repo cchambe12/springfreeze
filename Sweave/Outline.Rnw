@@ -82,6 +82,38 @@ In a study performed by Peterson and Abatzoglou \citeyear{Peterson2014}, it had 
 
 Once budburst has initiated, buds cannot respond to cold temperatures and freezing resistance is greatly reduced \citep{Vitasse2014, Lenz2013, Taschler2004}.
 
+Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Hofmann2015, Beck2004, Pearce2001}. Dry winters typically result in growth of new shoots with decreased water content which increases frost resistance because the osmotic potential within the shoots has decreased from accumulating solutes \citep{Hofmann2015, Morin2007}. Therefore, increased bud dehyration results in increased frost hardiness \citep{Hofmann2015, Kathke2011, Poirier2010, Nielsen2009, Beck2007}.
+
+\subsection*{Determining Spring Onset}
+Lizzie: "I think 'Determining Spring Onset' can go here but you need to develop idea first (e.g. canopy vs understory, species vs mix etc...) then results only and digest what they mean for reader.
+
+<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
+read_chunk("..//scripts/John.okeefe.R")
+method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+
+FSI.table<- method %>%
+  dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
+  rename(okeefe = FSI_okeefe) %>%
+  rename(phenocam = FSI_cam) %>%
+  rename(npn = FSI_npn) %>%
+  filter(year>=2008) %>%
+  filter(year<2015)
+blend<-FSI.table %>% 
+  gather(Method, FSI, -year) %>%
+  arrange(year)
+
+methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
+  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
+  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
+  geom_line(aes(x=year, y=FSI, col=Method))
+plot(methodplot)
+@
+
+\section*{Understanding (Defining?) Vegetative Risk}
+Lizzie: "Phenophases, Species differences (maybe just set up here...), regional differences?, some of your points in Box 1 here - basically set up everything that could matter then make a case for what matters most and hit on those in next sections."
+
+Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
+
 \subsection*{Phenophases}
 Spring frosts during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree species \citep{Sakai1987}.
 
@@ -91,8 +123,6 @@ Phenophase is a greater indicator for level of risk than life stage. Inidivudals
 
 We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define leaf out \citep{Meier2001}.
 
-\section*{Understanding (Defining?) Vegetative Risk}
-Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
 
 \subsection*{Species}
 Seedling and sapling individuals of canopy species initiate budburst before to canopy closure in order to benefit from the increased light levels \citep{Augspurger2008}, therefore putting them at greater risk to false spring damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. Extensive cavitation in the xylem would require more intensive freezing events than it would take to damage seedling and sapling leaf buds. Especially strong freezing events (i.e. >-8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Lenz2013, Augspurger2011, Sakai1987}.  
@@ -102,95 +132,125 @@ However, different species respond differently to anthropogenic climate change. 
 Studies indicate that species growing at more northern latitudes tend to respond greater to photoperiod than species growing further south \citep{Caffarra2011}. Similarly, late successional species exhibit greater photoperiod sensitivities than pioneer species \citep{Basler2012}. 
 
 \section*{Species Differences and Vegetative Risk}
+Lizzie: "You have so much great stuff here but need to develop WHY and HOW species would differ. You touch on this once in paper but need to develop more. This section should start with building a case for why species would differ then go into data."
+
+\subsection*{Treespotters Data}
+
+<<label=treespotters, results = "asis", echo=FALSE, warning=FALSE, message= FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species studied at the Arnold Arboretum in 2016.", fig.pos="H">>=
+read_chunk("..//scripts/ts.timeline.R")
+phenology<-read.csv("..//input/treespotters.timeline.csv",header=TRUE)
+
+phases<-c("Budburst","Leaves")
+
+pheno<-phenology%>%
+  dplyr::select(Site_ID, Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude) %>%
+  unite(species, Genus, Species, sep="_") %>%
+  filter(Phenophase_Description %in% phases) %>%
+  rename(Year = First_Yes_Year) 
+
+# Make dataframe that includes Risk for each species
+y1<-pheno%>%
+  filter(Year=="2016")%>%
+  group_by(species, Individual_ID, Phenophase_Description)%>%
+  arrange(Individual_ID) %>%
+  filter(row_number()==1) %>%
+  spread(Phenophase_Description, First_Yes_DOY)
+y1<-na.omit(y1)
+y1$Risk <- y1$Leaves - y1$Budburst
+y1<-filter(y1, Risk > 0)
+y1<-filter(y1, Risk < 31)
+
+bud<- y1 %>%
+  dplyr::select(species, Budburst) %>%
+  group_by(species)%>%
+  summarise_each(funs(mean), Budburst) %>%
+  arrange(species)
+
+leaves<- y1 %>%
+  dplyr::select(species, Leaves) %>%
+  group_by(species)%>%
+  summarise_each(funs(mean), Leaves) %>%
+  arrange(species)
+
+basic<- full_join(bud, leaves)
+basic$Risk<- basic$Leaves - basic$Budburst
+
+basic$code <- reorder(basic$species, basic$Budburst)
+
+ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= basic$Budburst)) + 
+  geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
+  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
+  ylab("Species")
+plot(ts.timeline)
+@
+
+\subsection*{Dan's Data}
+
+<<label=chilling, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from experimental chilling study.", fig.pos="H">>=
+read_chunk("..//scripts/dans.timeline.R")
+sp.code<-read.csv("..//output/Dans.timeline.csv",header=TRUE)
+
+hf.plot<-ggplot((sp.code), aes(x=Budburst, y=sp.code), stat="identity") + geom_point(aes(x= Budburst)) + 
+  geom_segment(aes(y = sp.code, yend = sp.code, x = Budburst, xend = Leaves, col=tx)) +
+  geom_point(aes(x=Leaves, col=tx)) + geom_point(aes(col=tx)) +
+  xlab("Budburst to Leaf Out") +
+  ylab("Species")
+plot(hf.plot)
+@
+
+
+<<label=chilllm, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between duration of vegetation risk and intial budburst across five treatments", fig.pos="H">>=
+read_chunk("..//scripts/dans.timeline.R")
+sp.code<-read.csv("..//output/Dans.timeline.csv",header=TRUE)
+lmodel<-lm(Risk~Budburst+tx, data=sp.code)
+stargazer(lmodel, no.space=TRUE, title="The results from a linear regression model analyzing the relationship between duration of vegetation risk and intial budburst across five treatments")
+@
+
+\subsection*{Harvard Forest Data}
+
+<<label=forest, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from collected from Harvard Forest.", fig.pos="H">>=
+read_chunk("..//scripts/hf.timeline.R")
+
+timeline<-read.csv("..//input/hf003-06-mean-spp.csv", header=TRUE)
+
+# Convert to Julian day
+years<-c("2010", "2014")
+timeline<-timeline %>%
+  dplyr::select(year, species, bb.jd, l75.jd) %>%
+  filter(year %in% years)
+timeline<-na.omit(timeline)
+timeline$risk <- timeline$l75.jd - timeline$bb.jd
+df<- timeline %>%
+  unite(sp.year, species, year, remove=FALSE)
+df$si[df$year=="2010"] <- "early"
+df$si[df$year=="2014"] <- "late"
+
+# Make a graph!
+
+df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
+  geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
+  geom_point(aes(x=l75.jd, col=si)) + geom_point(aes(col=si)) +
+  xlab("Budburst to Leaf Out") +
+  ylab("Species")
+plot(df.plot)
+@
+
 
 \section*{Regional Differences in Vegetative Risk?}
+Lizzie: "Again need to build up for readers why regions might differ and how (basically get your readers to come up with your hypothesis before you spell it out) then 1) analyze lit for regional differences b) latitude analysis. And maybe a few other points you make here fit.
+
 Based on this information, we analyzed two latitudinal gradients by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool. We assessed 8-10 different degree latitude lines for each transect in order to measure frequency of false spring events \citep{Menne2012, Menne2012b}. False springs were tallied by first calculating the number of Growing Degree Days (GDD) with a base 10$^{\circ}$C temperature \citep{Nugent2005}.
 
-If there were 40 GDDs before a hard freeze occurred in the spring (-2.2$^{\circ}$C), then it was determined that a false spring could have occurred in that year. Since we did not incorporate actual budburst or spring onset information, it is unclear whether these events were actually damaging. In order to simply address the climate question, we used these parameters to have a better understanding of the potential climate effects of latitude.  % Lizzie - I could use a bigger number of GDDs. I went through to see if the freeze actually occurred in April or later and by using the 40 parameter it typically lined up pretty nicely. 
+If there were 40 GDDs before a hard freeze occurred in the spring (-2.2$^{\circ}$C), then it was determined that a false spring could have occurred in that year. Since we did not incorporate actual budburst or spring onset information, it is unclear whether these events were actually damaging. In order to simply address the climate question, we used these parameters to have a better understanding of the potential climate effects of latitude. 
+
 Each location includes 30 years of climate data and each transect fell within 3 degrees longitude. Locations that were over 1,000m above sea level were excluded. 
 
-<<label=latmap, results = "asis", echo=FALSE, fig.cap="The number of false spring events along two latitudinal gradients: a) North America and b) Europe.", fig.pos="H">>=
-read_chunk("..//scripts/Lat.Map.R")
-# Upload US map
-usa <- map_data("usa")
-states <- map_data("state")
-
-gg1<- NAmap <- ggplot() + geom_polygon(data = usa, 
-                                       aes(x=long, y = lat, group = group), 
-                                       fill = "white", 
-                                       color="black") +
-  geom_polygon(data = states, aes(x=long, y = lat, group = group), 
-               fill = "white", color="grey") 
-
-# Upload Data
-usa<-read.csv("~/Documents/git/springfreeze/input/america.lat.csv", header=TRUE)
-europe<-read.csv("~/Documents/git/springfreeze/input/europe.lat.csv", header=TRUE)
-
-# USA Map
-am.map <- gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=False.Springs,color=False.Springs)) +
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") +
-  guides(size=FALSE)
-
-# Europe Map
-# Get the world map
-worldMap <- getMap()
-
-# European Countries
-europeanUnion <- c("Austria","Belgium","Bulgaria","Croatia","Cyprus",
-                   "Czech Rep.","Denmark","Estonia","Finland","France",
-                   "Germany","Greece","Hungary","Ireland","Italy","Latvia",
-                   "Lithuania","Luxembourg","Malta","Netherlands","Norway","Poland",
-                   "Portugal","Romania","Slovakia","Slovenia","Spain",
-                   "Sweden","Switzerland", "United Kingdom")
-indEU <- which(worldMap$NAME%in%europeanUnion)
-europeCoords <- lapply(indEU, function(i){
-  df <- data.frame(worldMap@polygons[[i]]@Polygons[[1]]@coords)
-  df$region =as.character(worldMap$NAME[i])
-  colnames(df) <- list("long", "lat", "region")
-  return(df)
-})
-
-europeCoords <- do.call("rbind", europeCoords)
-
-eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y = lat, group=region), 
-                                           color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
-
-eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") + 
-  guides(size=FALSE)
-  
- 
-
-grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, position = c("bottom", "right")) {
-    
-  plots <- list(...)
-  position <- match.arg(position)
-  g <- ggplotGrob(plots[[1]] + theme(legend.position = position))$grobs
-  legend <- g[[which(sapply(g, function(x) x$name) == "guide-box")]]
-  lheight <- sum(legend$height)
-  lwidth <- sum(legend$width)
-  gl <- lapply(plots, function(x) x + theme(legend.position="none"))
-  gl <- c(gl, ncol = ncol, nrow = nrow)
-    
-  combined <- switch(position,
-                       "bottom" = arrangeGrob(do.call(arrangeGrob, gl),
-                                              legend,
-                                              ncol = 1,
-                                              heights = unit.c(unit(1, "npc") - lheight, lheight)),
-                       "right" = arrangeGrob(do.call(arrangeGrob, gl),
-                                             legend,
-                                             ncol = 2,
-                                             widths = unit.c(unit(1, "npc") - lwidth, lwidth)))
-  grid.newpage()
-  grid.draw(combined)
-    
-}
-  
-plot1 <- am.map
-plot2 <- eur.map
-grid_arrange_shared_legend(plot1, plot2, ncol = 2,
-                           widths = c(2.5, 2.5), heights = 2.2)
-@
+\begin{figure} [H]
+\begin{center}
+\caption{Number of False Springs across two latitudinal gradients from 1986-2016: a) North American transect and b) European transect. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 30 year timeframe. }
+\includegraphics{..//figure/lat_maps.pdf}
+\end{center}
+\end{figure}
 
 Table 4 shows the results from the linear regression models performed for both transects. Latitude (1) represents the European transect and Latitude (2) is the American transect. 
 

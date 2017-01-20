@@ -69,7 +69,7 @@ eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y 
 
 eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
   scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") + 
-  guides(size=FLASE)
+  guides(size=FALSE)
   
  
 

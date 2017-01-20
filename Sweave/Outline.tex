@@ -21,6 +21,7 @@
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
 \newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
 
 \usepackage{framed}
 \makeatletter
@@ -115,6 +116,24 @@ There are two phases involved in late spring freezing: rapid vegetative growth p
 Warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because it is too soon for budburst to initiate and sufficient chilling has not yet occurred. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing days between the high temperatures and the last freeze date \citep{Augspurger2013}. 
 In a study performed by Peterson and Abatzoglou \citeyear{Peterson2014}, it had been determined that 7 days between budburst and last freeze date is a significant parameter. During this time, it was determined that leaf buds will have enough growing degree days to begin budburst but the leaves won't have fully expanded yet. There is much debate over the definition of freezing temperatures, which has resulted in two types of freezes: a "hard" freeze at -2.2$^{\circ}$C and a "soft" freeze at -1.7$^{\circ}$C \citep{Augspurger2013, Kodra2011, Vavrus2006}.
 
+Once budburst has initiated, buds cannot respond to cold temperatures and freezing resistance is greatly reduced \citep{Vitasse2014, Lenz2013, Taschler2004}.
+
+Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Hofmann2015, Beck2004, Pearce2001}. Dry winters typically result in growth of new shoots with decreased water content which increases frost resistance because the osmotic potential within the shoots has decreased from accumulating solutes \citep{Hofmann2015, Morin2007}. Therefore, increased bud dehyration results in increased frost hardiness \citep{Hofmann2015, Kathke2011, Poirier2010, Nielsen2009, Beck2007}.
+
+\subsection*{Determining Spring Onset}
+Lizzie: "I think 'Determining Spring Onset' can go here but you need to develop idea first (e.g. canopy vs understory, species vs mix etc...) then results only and digest what they mean for reader.
+
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/fsifig-1} \caption[A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study]{A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.}\label{fig:fsifig}
+\end{figure}
+
+
+
+\section*{Understanding (Defining?) Vegetative Risk}
+Lizzie: "Phenophases, Species differences (maybe just set up here...), regional differences?, some of your points in Box 1 here - basically set up everything that could matter then make a case for what matters most and hit on those in next sections."
+
+Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
+
 \subsection*{Phenophases}
 Spring frosts during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree species \citep{Sakai1987}.
 
@@ -124,35 +143,102 @@ Phenophase is a greater indicator for level of risk than life stage. Inidivudals
 
 We will use the BBCH Scale Phase 09 to define budburst and Phase 15 to define leaf out \citep{Meier2001}.
 
-\section*{Understanding (Defining?) Vegetative Risk}
-Another highly crucial factor to consider is the rate of budburst and the length of time between budburst to full leafout, which we will refer to as the duration of vegetative risk.
 
 \subsection*{Species}
-False spring events put seedlings and saplings at greater risk to damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. Extensive cavitation in the xylem would require more intensive freezing events than it would take to damage seedling and sapling leaf buds. Especially strong freezing events (i.e. >-8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Lenz2013, Augspurger2011, Sakai1987}.  
+Seedling and sapling individuals of canopy species initiate budburst before to canopy closure in order to benefit from the increased light levels \citep{Augspurger2008}, therefore putting them at greater risk to false spring damage than adult trees \citep{Vitasse2014}. Younger trees are more likely to incur lastly damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism. In order for xylem embolism to occur, extreme cavitation must first occur. Extensive cavitation in the xylem would require more intensive freezing events than it would take to damage seedling and sapling leaf buds. Especially strong freezing events (i.e. >-8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Lenz2013, Augspurger2011, Sakai1987}.  
 
 However, different species respond differently to anthropogenic climate change. Most species are expected to begin leaf out earlier in the season with warming spring temperatures but some species may have the opposite response \citep{Xin2016, Cleland2006, Yu2010}.
 
 Studies indicate that species growing at more northern latitudes tend to respond greater to photoperiod than species growing further south \citep{Caffarra2011}. Similarly, late successional species exhibit greater photoperiod sensitivities than pioneer species \citep{Basler2012}. 
 
 \section*{Species Differences and Vegetative Risk}
+Lizzie: "You have so much great stuff here but need to develop WHY and HOW species would differ. You touch on this once in paper but need to develop more. This section should start with building a case for why species would differ then go into data."
 
-\section*{Regional Differences in Vegetative Risk?}
-Based on this information, we analyzed two latitudinal gradients by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool. We assessed 8-10 different degree latitude lines for each transect in order to measure frequency of false spring events \citep{Menne2012, Menne2012b}. False springs were tallied by first calculating the number of Growing Degree Days (GDD) with a base 10$^{\circ}$C temperature \citep{Nugent2005}.
-
-If there were 40 GDDs before a hard freeze occurred in the spring (-2.2$^{\circ}$C), then it was determined that a false spring could have occurred in that year. Since we did not incorporate actual budburst or spring onset information, it is unclear whether these events were actually damaging. In order to simply address the climate question, we used these parameters to have a better understanding of the potential climate effects of latitude.  % Lizzie - I could use a bigger number of GDDs. I went through to see if the freeze actually occurred in April or later and by using the 40 parameter it typically lined up pretty nicely. 
-Each location includes 30 years of climate data and each transect fell within 3 degrees longitude. Locations that were over 1,000m above sea level were excluded. 
+\subsection*{Treespotters Data}
 
 \begin{figure}[H]
-\includegraphics[width=\maxwidth]{figure/latmap-1} \caption[The number of false spring events along two latitudinal gradients]{The number of false spring events along two latitudinal gradients: a) North America and b) Europe.}\label{fig:latmap}
+\includegraphics[width=\maxwidth]{figure/treespotters-1} \caption[A timeline plot indicating the duration of vegetative risk for each species studied at the Arnold Arboretum in 2016]{A timeline plot indicating the duration of vegetative risk for each species studied at the Arnold Arboretum in 2016.}\label{fig:treespotters}
 \end{figure}
 
 
+
+\subsection*{Dan's Data}
+
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/chilling-1} \caption[A timeline plot indicating the duration of vegetative risk for each species from experimental chilling study]{A timeline plot indicating the duration of vegetative risk for each species from experimental chilling study.}\label{fig:chilling}
+\end{figure}
+
+
+
+
+
+% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Fri, Jan 20, 2017 - 15:15:12
+\begin{table}[!htbp] \centering 
+  \caption{The results from a linear regression model analyzing the relationship between duration of vegetation risk and intial budburst across five treatments} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & Risk \\ 
+\hline \\[-1.8ex] 
+ Budburst & $-$0.094 \\ 
+  & (0.144) \\ 
+  txCS2 & 2.550 \\ 
+  & (3.179) \\ 
+  txWL0 & $-$14.376$^{***}$ \\ 
+  & (4.315) \\ 
+  txWL1 & $-$12.256$^{***}$ \\ 
+  & (3.163) \\ 
+  txWL2 & $-$13.522$^{***}$ \\ 
+  & (3.202) \\ 
+  Constant & 32.522$^{**}$ \\ 
+  & (12.521) \\ 
+ \hline \\[-1.8ex] 
+Observations & 18 \\ 
+R$^{2}$ & 0.790 \\ 
+Adjusted R$^{2}$ & 0.703 \\ 
+Residual Std. Error & 4.313 (df = 12) \\ 
+F Statistic & 9.031$^{***}$ (df = 5; 12) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+\subsection*{Harvard Forest Data}
+
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/forest-1} \caption[A timeline plot indicating the duration of vegetative risk for each species from collected from Harvard Forest]{A timeline plot indicating the duration of vegetative risk for each species from collected from Harvard Forest.}\label{fig:forest}
+\end{figure}
+
+
+
+
+\section*{Regional Differences in Vegetative Risk?}
+Lizzie: "Again need to build up for readers why regions might differ and how (basically get your readers to come up with your hypothesis before you spell it out) then 1) analyze lit for regional differences b) latitude analysis. And maybe a few other points you make here fit.
+
+Based on this information, we analyzed two latitudinal gradients by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool. We assessed 8-10 different degree latitude lines for each transect in order to measure frequency of false spring events \citep{Menne2012, Menne2012b}. False springs were tallied by first calculating the number of Growing Degree Days (GDD) with a base 10$^{\circ}$C temperature \citep{Nugent2005}.
+
+If there were 40 GDDs before a hard freeze occurred in the spring (-2.2$^{\circ}$C), then it was determined that a false spring could have occurred in that year. Since we did not incorporate actual budburst or spring onset information, it is unclear whether these events were actually damaging. In order to simply address the climate question, we used these parameters to have a better understanding of the potential climate effects of latitude. 
+
+Each location includes 30 years of climate data and each transect fell within 3 degrees longitude. Locations that were over 1,000m above sea level were excluded. 
+
+\begin{figure} [H]
+\begin{center}
+\caption{Number of False Springs across two latitudinal gradients from 1986-2016: a) North American transect and b) European transect. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 30 year timeframe. }
+\includegraphics{..//figure/lat_maps.pdf}
+\end{center}
+\end{figure}
 
 Table 4 shows the results from the linear regression models performed for both transects. Latitude (1) represents the European transect and Latitude (2) is the American transect. 
 
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Thu, Jan 19, 2017 - 16:27:11
+% Date and time: Fri, Jan 20, 2017 - 15:15:13
 \begin{table}[!htbp] \centering 
   \caption{The results from a linear regression model analyzing the relationship between latitude and frequency of false springs} 
   \label{} 
