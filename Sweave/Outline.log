@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 JAN 2017 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 JAN 2017 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -719,24 +719,24 @@ LaTeX Warning: Label `' multiply defined.
 )
 \openout1 = `Outline.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 85.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    ... okay on input line 85.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -778,16 +778,16 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count154
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 86.
+(Font)              <7> on input line 85.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 86.
+(Font)              <5> on input line 85.
 \c__siunitx_mathtt_int=\count155
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 90.
+(Font)              <12> on input line 89.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 90.
+(Font)              <8> on input line 89.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 90.
+(Font)              <6> on input line 89.
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -795,47 +795,47 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 127.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 128.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
  [3] [4 <./figure/fsifig-1.pdf>] [5]
 <figure/treespotters-1.pdf, id=33, 505.89pt x 505.89pt>
 File: figure/treespotters-1.pdf Graphic file (type pdf)
 
 <use figure/treespotters-1.pdf>
-Package pdftex.def Info: figure/treespotters-1.pdf used on input line 160.
+Package pdftex.def Info: figure/treespotters-1.pdf used on input line 163.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [6]
-<figure/chilling-1.pdf, id=37, 505.89pt x 505.89pt>
+ [6] [7 <./figure/treespotters-1.pdf>]
+<figure/chilling-1.pdf, id=46, 505.89pt x 505.89pt>
 File: figure/chilling-1.pdf Graphic file (type pdf)
 
 <use figure/chilling-1.pdf>
-Package pdftex.def Info: figure/chilling-1.pdf used on input line 168.
+Package pdftex.def Info: figure/chilling-1.pdf used on input line 172.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [7 <./figure/treespotters-1.pdf>]
-<figure/forest-1.pdf, id=47, 505.89pt x 505.89pt>
+ [8]
+<figure/forest-1.pdf, id=50, 505.89pt x 505.89pt>
 File: figure/forest-1.pdf Graphic file (type pdf)
  <use figure/forest-1.pdf>
-Package pdftex.def Info: figure/forest-1.pdf used on input line 215.
+Package pdftex.def Info: figure/forest-1.pdf used on input line 219.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
-[8 <./figure/chilling-1.pdf>] [9] [10 <./figure/forest-1.pdf>]
-<..//figure/lat_maps.pdf, id=68, 599.23875pt x 400.49625pt>
+[9 <./figure/chilling-1.pdf>] [10] [11 <./figure/forest-1.pdf>]
+<..//figure/lat_maps.pdf, id=71, 599.23875pt x 400.49625pt>
 File: ..//figure/lat_maps.pdf Graphic file (type pdf)
 
 <use ..//figure/lat_maps.pdf>
-Package pdftex.def Info: ..//figure/lat_maps.pdf used on input line 233.
+Package pdftex.def Info: ..//figure/lat_maps.pdf used on input line 237.
 (pdftex.def)             Requested size: 377.62633pt x 252.3873pt.
- [11] [12 <..//figure/lat_maps.pdf>] [13]
-(./Outline.bbl [14] [15] [16] [17]) [18] (./Outline.aux)
+ [12] [13 <..//figure/lat_maps.pdf>] [14]
+(./Outline.bbl [15] [16] [17] [18]) [19] (./Outline.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15085 strings out of 493014
- 301986 string characters out of 6133351
- 325058 words of memory out of 5000000
- 18432 multiletter control sequences out of 15000+600000
+ 15099 strings out of 493014
+ 302248 string characters out of 6133351
+ 325396 words of memory out of 5000000
+ 18446 multiletter control sequences out of 15000+600000
  37250 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,10n,42p,10379b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -850,10 +850,10 @@ l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Outline.pdf (18 pages, 314485 bytes).
+Output written on Outline.pdf (19 pages, 320587 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
- 94 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

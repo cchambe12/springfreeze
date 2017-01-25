@@ -1,4 +1,4 @@
-\begin{thebibliography}{42}
+\begin{thebibliography}{47}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -75,6 +75,12 @@ Cleland, E., Chiariello, N., Loarie, S., Mooney, H. \& Field, C. (2006) Diverse
   responses of phenology to global changes in a grassland ecosystem.
   \emph{PNAS} \textbf{103}, 13740--13744.
 
+\bibitem[{Fu \emph{et~al.}(2012)Fu, Campioli, {Van Oijen}, Deckmyn \&
+  Janssens}]{Fu2012}
+Fu, Y.H., Campioli, M., {Van Oijen}, M., Deckmyn, G. \& Janssens, I.A. (2012)
+  \emph{{Bayesian comparison of six different temperature-based budburst models
+  for four temperate tree species}}, vol. 230.
+
 \bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post, Kaiser, Yang, Nemani,
   Pallardy \& Meyers}]{Gu2008}
 Gu, L., Hanson, P.J., Post, W.M., Kaiser, D.P., Yang, B., Nemani, R., Pallardy,
@@ -113,6 +119,12 @@ Kodra, E., Steinhaeuser, K. \& Ganguly, A.R. (2011) {Persisting cold extremes
   under 21st-century warming scenarios}. \emph{Geophysical Research Letters}
   \textbf{38}, 1--5.
 
+\bibitem[{Lenz \emph{et~al.}(2016)Lenz, Hoch, K{\"{o}}rner \&
+  Vitasse}]{Lenz2016}
+Lenz, A., Hoch, G., K{\"{o}}rner, C. \& Vitasse, Y. (2016) {Convergence of
+  leaf-out towards minimum risk of freezing damage in temperate trees}.
+  \emph{Functional Ecology} pp. 1--11.
+
 \bibitem[{Lenz \emph{et~al.}(2013)Lenz, Hoch, Vitasse \&
   K{\"{o}}rner}]{Lenz2013}
 Lenz, A., Hoch, G., Vitasse, Y. \& K{\"{o}}rner, C. (2013) {European deciduous
@@ -133,6 +145,12 @@ Martin, M., Gavazov, K., K{\"{o}}rner, C., Hattenschwiler, S. \& Rixen, C.
   (2010) Reduced early growing season freezing resistance in alpine treeline
   plants under elevated atmospheric co 2. \emph{Global Change Biology}
   \textbf{16}, 1057--1070.
+
+\bibitem[{McCreary \emph{et~al.}(1990)McCreary, Lavender \&
+  Hermann}]{McCreary1990}
+McCreary, D.D., Lavender, D.P. \& Hermann, R.K. (1990) {Predicted global
+  warming and Douglas-fir chilling requirements}. \emph{Annales des Sciences
+  Forestieres} \textbf{47}, 325--330.
 
 \bibitem[{Meier(2001)}]{Meier2001}
 Meier, U. (2001) {Growth stages of mono-and dicotyledonous plants BBCH
@@ -159,6 +177,12 @@ Morin, X., Ameglio, T., Ahas, R., Kurz-Besson, C., Lanta, V., Lebourgeois, F.,
   carbohydrate concentration from dormancy induction to bud burst among
   provenances of three european oak species. \emph{Tree Physiology}
   \textbf{27}, 817--825.
+
+\bibitem[{Morin \emph{et~al.}(2009)Morin, Lechowicz, Augspurger, O'keefe, Viner
+  \& Chuine}]{Morin2009}
+Morin, X., Lechowicz, M.J., Augspurger, C., O'keefe, J., Viner, D. \& Chuine,
+  I. (2009) {Leaf phenology in 22 North American tree species during the 21st
+  century}. \emph{Global Change Biology} \textbf{15}, 961--975.
 
 \bibitem[{Muffler \emph{et~al.}(2016)Muffler, Beierkuhnlein, Aas, Jentsch,
   Schweiger, Zohner \& Kreyling}]{Muffler2016}
@@ -199,6 +223,11 @@ Polgar, C., Gallinat, A. \& Primack, R.B. (2014) {Drivers of leaf-out phenology
 Polgar, C.A. \& Primack, R.B. (2011) {Leaf-out phenology of temperate woody
   plants: From trees to ecosystems}. \emph{New Phytologist} \textbf{191},
   926--941.
+
+\bibitem[{Richardson \& O'Keefe(2009)}]{Richardson2009}
+Richardson, A. \& O'Keefe, J. (2009) \emph{Phenological differences between
+  understory and overstory: a case study using the long-term harvard forest
+  records}, pp. 87--117. Springer.
 
 \bibitem[{Sakai \& Larcher(1987)}]{Sakai1987}
 Sakai, A. \& Larcher, W. (1987) \emph{Frost Survival of Plants}.
