@@ -102,5 +102,5 @@ plot1 <- am.map
 plot2 <- eur.map
 
 grid_arrange_shared_legend(plot1, plot2, ncol = 2,
-                           widths = c(2.5, 2.5), heights = 2.2)
+                           widths = c(2.8, 2.8), heights = 2.2)
 

@@ -26,18 +26,19 @@ weather<-read.csv("input/WeatherData.csv", header=TRUE)
 years<- c(2010, 2014)
 
 w<-weather %>%
-  filter(Year %in% years) %>%
-  filter(JD >= 100) %>%
-  filter(JD <= 160)
+  filter(Year==2010) %>%
+  filter(JD >= 107) %>%
+  filter(JD <= 145)
+w14<-weather %>%
+  filter(Year==2014) %>%
+  filter(JD>=130) %>%
+  filter(JD<=158)
 
 climate<-ggplot((w), aes(x=JD, y=AirT)) + xlab("Day of Year") + ylab("Mean Daily Temperature (C)") +
   geom_point(aes(col=factor(Year)))+
   geom_line(aes(x=JD, y=AirT, col=factor(Year))) + scale_shape_manual(values=c("#999999", "#56B4E9"),
                                                                      name="Year")
 climate
-
-grid.newpage()
-grid.draw(rbind(ggplotGrob(df.plot), ggplotGrob(climate), size = "last"))
 
 # Add Risk and only Two Years
 years<-c("2010", "2014")
@@ -86,16 +87,37 @@ late$sd<-sd(late$risk)
 late$mean<-mean(late$risk)
 
 # Integrate weather data and risk data
+
 risk.climate<- df %>%
-  dplyr::select(year, bb.jd, l75.jd, risk, species, sp.year, si) %>%
-  gather(phenophase, JD, -year, -risk, -species, -sp.year, -si) 
+  dplyr::select(year, bb.jd, l75.jd, risk, species) %>%
+  gather(phenophase, JD, -year, -risk, -species) %>%
+  filter(year==2010) 
+risk.climate$phenophase[risk.climate$phenophase == "bb.jd"] <- 1
+risk.climate$phenophase[risk.climate$phenophase == "l75.jd"] <- 2
+risk.climate<-risk.climate %>%
+  unite(species.phase, species, phenophase, remove=TRUE)
 
-risk.climate.df<-full_join(w, risk.climate, by="JD") %>%
-  dplyr::select(JD,AirT,year,risk,species,phenophase, sp.year, si)
-risk.na<-na.omit(risk.climate.df)
+risk14<- df %>%
+  dplyr::select(year, bb.jd, l75.jd, risk, species) %>%
+  gather(phenophase, JD, -year, -risk, -species) %>%
+  filter(year==2014) 
+risk14$phenophase[risk14$phenophase == "bb.jd"] <- 1
+risk14$phenophase[risk14$phenophase == "l75.jd"] <- 2
+risk14<-risk14 %>%
+  unite(species.phase, species, phenophase, remove=TRUE)
 
-querub<-risk.climate.df %>%
-  filter(species=="QURU")
+ten<-full_join(w, risk.climate, by="JD") %>%
+  dplyr::select(JD,AirT,year,risk,species.phase) 
+
+four<-full_join(w14, risk14, by="JD") %>%
+  dplyr::select(JD,AirT,year,risk,species.phase) 
+  
+ten.mean<- ten %>%
+  summarise_each(funs(mean,sd), AirT)
+
+four.mean<- four %>%
+  summarise_each(funs(mean,sd), AirT)
+
 
 mod<-lm(risk~AirT, data = risk.climate.df)
 summary(mod)
