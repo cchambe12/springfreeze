@@ -122,11 +122,11 @@ ten$only.sps<-substr(ten$species.phase,1,4)
 ten$only.phase<-substr(ten$species.phase, 6,6)
 
 unique.sps<-as.character(unique(ten$only.sps))
-unique.sps<-unique.sps[-is.na(unique.sps)]
-unique.sps<-unique.sps[-2]
+#unique.sps<-unique.sps[-is.na(unique.sps)]
+unique.sps<-unique.sps[-3]
 
 store.results<-array(NA,dim=c(length(unique.sps),2))
-colnames(store.results)<-c("means","sd")
+colnames(store.results)<-c("mean","sd")
 i=1
 for(i in 1:nrow(store.results)){
   print(i)
@@ -148,10 +148,10 @@ four$only.phase<-substr(four$species.phase, 6,6)
 
 unique.sps<-as.character(unique(four$only.sps))
 #unique.sps<-unique.sps[-is.na(unique.sps)]
-unique.sps<-unique.sps[-2]
+unique.sps<-unique.sps[-8]
 
 store.results.14<-array(NA,dim=c(length(unique.sps),2))
-colnames(store.results.14)<-c("means","sd")
+colnames(store.results.14)<-c("mean","sd")
 i=1
 for(i in 1:nrow(store.results)){
   print(i)
@@ -168,7 +168,33 @@ for(i in 1:nrow(store.results)){
   store.results.14[i,2]<-sd(temp.vector)
 }
 
-  
+# Make Means vs. Risk plots for each species
+ten.results<-as.data.frame(store.results)
+risk10<-risk.climate %>%
+  dplyr::select(species.phase, risk)
+risk10$species<-substr(risk10$species.phase, 1,4)
+risk10$phase<-substr(risk10$species.phase,6,6)
+risk10$phase<-ifelse(risk10$phase==2, NA, 1)
+risk10<-na.omit(risk10)
+risk10 <- merge(ten.results, risk10, by=0, all=TRUE)  # merge by row names (by=0 or by="row.names")
+risk10<- risk10 %>%
+  dplyr::select(species, risk, mean, sd)
+ten.plot<- ggplot((risk10), aes(x=mean, risk)) + geom_point(aes(col=species))
+ten.plot
+
+four.results<-as.data.frame(store.results.14)
+risk14<-risk14 %>%
+  dplyr::select(species.phase, risk)
+risk14$species<-substr(risk14$species.phase, 1,4)
+risk14$phase<-substr(risk14$species.phase,6,6)
+risk14$phase<-ifelse(risk14$phase==2, NA, 1)
+risk14<-na.omit(risk14)
+risk14 <- merge(four.results, risk14, by=0, all=TRUE)  # merge by row names (by=0 or by="row.names")              
+risk14<- risk14 %>%
+  dplyr::select(species, risk, mean, sd)
+four.plot<- ggplot((risk14), aes(x=mean, risk)) + geom_point(aes(col=species))
+four.plot
+
 ten.mean<- ten %>%
   summarise_each(funs(mean,sd), AirT)
 
