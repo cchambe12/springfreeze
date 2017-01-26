@@ -111,6 +111,63 @@ ten<-full_join(w, risk.climate, by="JD") %>%
 
 four<-full_join(w14, risk14, by="JD") %>%
   dplyr::select(JD,AirT,year,risk,species.phase) 
+
+# 1 create vector with unique names of species
+# 2 create array/dataframe with nrows=numbsps and 2columns
+# 3 generate a for loop for (i in 1:numbsps) that subsets data for target species and stores mean
+# and range computed from the two values for that species
+#ten<- data.frame(JD=rnorm(42), AirT=rnorm(42),year=rep(2010,42), species=c(rep(c(a_1...))))
+#for (j in 2008:2010){}
+ten$only.sps<-substr(ten$species.phase,1,4)
+ten$only.phase<-substr(ten$species.phase, 6,6)
+
+unique.sps<-as.character(unique(ten$only.sps))
+unique.sps<-unique.sps[-is.na(unique.sps)]
+unique.sps<-unique.sps[-2]
+
+store.results<-array(NA,dim=c(length(unique.sps),2))
+colnames(store.results)<-c("means","sd")
+i=1
+for(i in 1:nrow(store.results)){
+  print(i)
+  spsi<-unique.sps[i]
+  position.1<- which(ten$only.sps==spsi)[1]
+  position.2<- which(ten$only.sps==spsi)[2]
+  
+  temp.vector<-ten$AirT[position.1:position.2]
+  #Air.temp1<-subset(ten,only.sps==spsi & only.phase==1)[1,"AirT"]
+  #Air.temp2<-subset(ten,only.sps==spsi & only.phase==2)[1,"AirT"]
+  
+  store.results[i,1]<-mean(temp.vector)
+  #store.results[i,2]<-range(temp.vector)[2]-range(temp.vector)[1]
+  store.results[i,2]<-sd(temp.vector)
+}
+#### Year 2014
+four$only.sps<-substr(four$species.phase,1,4)
+four$only.phase<-substr(four$species.phase, 6,6)
+
+unique.sps<-as.character(unique(four$only.sps))
+#unique.sps<-unique.sps[-is.na(unique.sps)]
+unique.sps<-unique.sps[-2]
+
+store.results.14<-array(NA,dim=c(length(unique.sps),2))
+colnames(store.results.14)<-c("means","sd")
+i=1
+for(i in 1:nrow(store.results)){
+  print(i)
+  spsi<-unique.sps[i]
+  position.1<- which(four$only.sps==spsi)[1]
+  position.2<- which(four$only.sps==spsi)[2]
+  
+  temp.vector<-four$AirT[position.1:position.2]
+  #Air.temp1<-subset(ten,only.sps==spsi & only.phase==1)[1,"AirT"]
+  #Air.temp2<-subset(ten,only.sps==spsi & only.phase==2)[1,"AirT"]
+  
+  store.results.14[i,1]<-mean(temp.vector)
+  #store.results[i,2]<-range(temp.vector)[2]-range(temp.vector)[1]
+  store.results.14[i,2]<-sd(temp.vector)
+}
+
   
 ten.mean<- ten %>%
   summarise_each(funs(mean,sd), AirT)
