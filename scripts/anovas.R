@@ -27,6 +27,8 @@ d<-read.csv("input/Budburst.DF.csv",header=TRUE)
 
 d$DOY<-yday(d$Date)
 d$chilling<- as.numeric(as.character(substr(d$chill, 6, 6)))
+d$chilling<-as.numeric(as.character(
+  ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
 d$force<-as.numeric(as.character(ifelse((d$warm=="warm"), 20, 15)))
 d$photoperiod<- as.numeric(as.character(ifelse((d$photo=="short"), 8, 12)))
 phases<-c("4","7")
@@ -50,7 +52,20 @@ hf<-d.hf%>%
   group_by(sp) %>% 
   do(tidy(aov(risk~chilling + force + photoperiod + (chilling*force) + 
                       (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+hf.sp<-d.hf%>%
+  group_by(sp) %>% 
+  do(tidy(lm(risk~ sp + chilling + force + photoperiod + (chilling*force) + 
+                (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
 write.csv(hf, "~/Documents/git/springfreeze/output/dan.hf.anova.csv", row.names=FALSE)
+mod<-lmer(risk~chilling + force + photoperiod + (1|sp), data=d.hf)
+mod1<-lmer(risk~chilling + force + photoperiod + chilling*force + chilling*photoperiod +
+             force*photoperiod + (1|sp), data=d.hf)
+
+# Make .csv file with number of individs per spp per tx HF
+df.hf<-as.data.frame(table(d.hf$sp,d.hf$treatcode))%>%
+  rename(species=Var1)%>%
+  rename(tx=Var2)
+write.csv(df.hf, "~/Documents/git/springfreeze/output/danfs.tx.hf.csv", row.names=FALSE)
 
 ## Saint-Hipp Data
 d.sh<-d%>%
@@ -66,4 +81,13 @@ sh<-d.sh%>%
   group_by(sp) %>% 
   do(tidy(aov(risk~chilling + force + photoperiod + (chilling*force) + 
                 (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+mod<-lmer(risk~chilling + force + photoperiod + (1|sp), data=d.sh)
+mod1<-lmer(risk~chilling + force + photoperiod + chilling*force + chilling*photoperiod +
+             force*photoperiod + (1|sp), data=d.sh)
 write.csv(sh, "~/Documents/git/springfreeze/output/dan.sh.anova.csv", row.names=FALSE)
+
+# Make .csv file with number of individs per spp per tx SH
+df.sh<-as.data.frame(table(d.sh$sp,d.sh$treatcode))%>%
+  rename(species=Var1)%>%
+  rename(tx=Var2)
+write.csv(df.sh, "~/Documents/git/springfreeze/output/danfs.tx.sh.csv", row.names=FALSE)
