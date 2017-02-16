@@ -17,6 +17,7 @@ library(ggplot2)
 library(lubridate)
 library(arm)
 library(car)
+library(broom)
 #packageurl <- "https://cran.r-project.org/src/contrib/Archive/pbkrtest/pbkrtest_0.4-4.tar.gz" 
 #install.packages(packageurl, repos=NULL, type="source")
 
@@ -35,115 +36,34 @@ d<-d %>%
 d$tleaf<- factor(d$tleaf, levels = c(4,7), 
                         labels = c("Budburst","Leaves"))
 
-d.sp<-d%>%
+## Harvard Forest Data
+d.hf<-d%>%
   filter(site=="HF") %>%
   group_by(sp, id, tleaf)%>%
   arrange(id)%>%
   filter(row_number()==1) %>%
   spread(tleaf, DOY)
-d.sp$risk<-d.sp$Leaves-d.sp$Budburst 
-d.sp<-filter(d.sp,risk>0)
+d.hf$risk<-d.hf$Leaves-d.hf$Budburst 
+d.hf<-filter(d.hf,risk>0)
 
-spp<-unique(d.sp$sp)
-for (i in 1:length(spp)){
-  mod<-aov(risk~sp[i]+chilling+ force+photoperiod, data=d.sp)
-}
-summary.lm(mod)
-for(i in 1:length(unique(d.sp$sp))){
-  d.sp<-filter(d.sp, sp==i)
-  species<-aov(risk[i]~chilling[i] + force[i] + photoperiod[i], data=d.sp)
-}
+hf<-d.hf%>%
+  group_by(sp) %>% 
+  do(tidy(aov(risk~chilling + force + photoperiod + (chilling*force) + 
+                      (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+write.csv(hf, "~/Documents/git/springfreeze/output/dan.hf.anova.csv", row.names=FALSE)
 
-+ (chilling*force) + 
-  (chilling*photoperiod) + (force*photoperiod),data=each)
-print(species)
-species<-as.data.frame(table(d$sp))
-
-#ACEPEN
-d.ace<- d%>%
-  filter(sp=="ACEPEN") %>%
-  filter(site=="HF") %>%
+## Saint-Hipp Data
+d.sh<-d%>%
+  filter(site=="SH") %>%
   group_by(sp, id, tleaf)%>%
   arrange(id)%>%
   filter(row_number()==1) %>%
   spread(tleaf, DOY)
-d.ace$Risk <- d.ace$Leaves - d.ace$Budburst
-d.ace<-filter(d.ace, Risk > 0)
+d.sh$risk<-d.sh$Leaves-d.sh$Budburst 
+d.sh<-filter(d.sh,risk>0)
 
-acepen<-aov(Risk~chilling + force + photoperiod + (chilling*force) + 
-             (chilling*photoperiod) + (force*photoperiod), data=d.ace)
-acepen.tx<-aov(Risk~treatcode, data=d.ace)
-summary.lm(acepen)
-summary.lm(acepen.tx)
-
-# ACERUB
-for(i in 1:length(unique(d$sp))){
-  d.sp<-filter(sp==sp[i]) %>%
-    filter(site=="HF") %>%
-    group_by(sp, id, tleaf)%>%
-    arrange(id)%>%
-    filter(row_number()==1) %>%
-    spread(tleaf, DOY)
-  d.sp$Risk <- d.sp$Leaves - d.sp$Budburst
-  d.sp<-filter(d.sp, Risk > 0)
-  print(i)
-}
-
-d.sp<-d%>%
-  filter(site=="HF") %>%
-  group_by(sp, id, tleaf)%>%
-  arrange(id)%>%
-  filter(row_number()==1) %>%
-  spread(tleaf, DOY)
-d.sp$risk<-d.sp$Leaves-d.sp$Budburst 
-d.sp<-filter(d.sp,Risk>0)
-mod<-aov(Risk~sp+chilling+force+photoperiod, data=d.sp)
-d.rub<- d%>%
-  filter(sp=="ACERUB") %>%
-  filter(site=="HF") %>%
-  group_by(sp, id, tleaf)%>%
-  arrange(id)%>%
-  filter(row_number()==1) %>%
-  spread(tleaf, DOY)
-d.rub$Risk <- d.rub$Leaves - d.rub$Budburst
-d.rub<-filter(d.rub, Risk > 0)
-
-acerub<-aov(Risk~chilling + force + photoperiod + (chilling*force) + 
-              (chilling*photoperiod) + (force*photoperiod), data=d.rub)
-acerub.tx<-aov(Risk~treatcode, data=d.rub)
-summary.lm(acerub)
-summary.lm(acerub.tx)
-#LONCAN - not enough data
-# POPGRA
-d.pop<- d%>%
-  filter(sp=="POPGRA") %>%
-  filter(site=="HF") %>%
-  group_by(sp, id, tleaf)%>%
-  arrange(id)%>%
-  filter(row_number()==1) %>%
-  spread(tleaf, DOY)
-d.pop$Risk <- d.pop$Leaves - d.pop$Budburst
-d.pop<-filter(d.pop, Risk > 0)
-
-popgra<-aov(Risk~chilling + force + photoperiod + (chilling*force) + 
-              (chilling*photoperiod) + (force*photoperiod), data=d.pop)
-popgra.tx<-aov(Risk~treatcode, data=d.pop)
-summary.lm(popgra)
-summary.lm(popgra.tx)
-
-# PRUPEN
-d.pru<- d%>%
-  filter(sp=="PRUPEN") %>%
-  filter(site=="HF") %>%
-  group_by(sp, id, tleaf)%>%
-  arrange(id)%>%
-  filter(row_number()==1) %>%
-  spread(tleaf, DOY)
-d.pru$Risk <- d.pru$Leaves - d.pru$Budburst
-d.pru<-filter(d.pru, Risk > 0)
-
-prupen<-aov(Risk~chilling + force + photoperiod + (chilling*force) + 
-              (chilling*photoperiod) + (force*photoperiod), data=d.pru)
-prupen.tx<-aov(Risk~treatcode, data=d.pru)
-summary.lm(prupen)
-summary.lm(prupen.tx)
+sh<-d.sh%>%
+  group_by(sp) %>% 
+  do(tidy(aov(risk~chilling + force + photoperiod + (chilling*force) + 
+                (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+write.csv(sh, "~/Documents/git/springfreeze/output/dan.sh.anova.csv", row.names=FALSE)
