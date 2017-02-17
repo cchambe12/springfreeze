@@ -26,9 +26,9 @@ setwd("~/Documents/git/springfreeze")
 d<-read.csv("input/Budburst.DF.csv",header=TRUE)
 
 d$DOY<-yday(d$Date)
-d$chilling<- as.numeric(as.character(substr(d$chill, 6, 6)))
-d$chilling<-as.numeric(as.character(
-  ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
+d$chilling<- as.factor(substr(d$chill, 6, 6))
+#d$chilling<-as.numeric(as.character(
+  #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
 d$force<-as.numeric(as.character(ifelse((d$warm=="warm"), 20, 15)))
 d$photoperiod<- as.numeric(as.character(ifelse((d$photo=="short"), 8, 12)))
 phases<-c("4","7")
@@ -50,14 +50,19 @@ d.hf<-filter(d.hf,risk>0)
 
 hf<-d.hf%>%
   group_by(sp) %>% 
-  do(tidy(aov(risk~chilling + force + photoperiod + (chilling*force) + 
+  do(tidy(lm(risk~chilling + force + photoperiod + (chilling*force) + 
                       (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+
+model<-lm(risk~chilling+force+photoperiod,data=d.hf,type="II")
+model1<-lm(risk~chilling+force+photoperiod+(chilling*force) + 
+             (chilling*photoperiod) + (force*photoperiod),data=d.hf,type="II")
+Anova(model)
 hf.sp<-d.hf%>%
   group_by(sp) %>% 
   do(tidy(lm(risk~ sp + chilling + force + photoperiod + (chilling*force) + 
                 (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
 write.csv(hf, "~/Documents/git/springfreeze/output/dan.hf.anova.csv", row.names=FALSE)
-mod<-lmer(risk~chilling + force + photoperiod + (1|sp), data=d.hf)
+mod<-lmer(risk~chilling + force + photoperiod, data=d.hf)
 mod1<-lmer(risk~chilling + force + photoperiod + chilling*force + chilling*photoperiod +
              force*photoperiod + (1|sp), data=d.hf)
 
@@ -81,8 +86,8 @@ sh<-d.sh%>%
   group_by(sp) %>% 
   do(tidy(aov(risk~chilling + force + photoperiod + (chilling*force) + 
                 (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
-mod<-lmer(risk~chilling + force + photoperiod + (1|sp), data=d.sh)
-mod1<-lmer(risk~chilling + force + photoperiod + chilling*force + chilling*photoperiod +
+mod2<-lmer(risk~chilling + force + photoperiod + (1|sp), data=d.sh)
+mod3<-lmer(risk~chilling + force + photoperiod + chilling*force + chilling*photoperiod +
              force*photoperiod + (1|sp), data=d.sh)
 write.csv(sh, "~/Documents/git/springfreeze/output/dan.sh.anova.csv", row.names=FALSE)
 
