@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{gensymb}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(stargazer)
+library(ggmap)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(grid)
+library(rworldmap)
+library(gridExtra)
+@
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Regional Differences in Vegetative Risk?}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Number of False Springs across two latitudinal gradients from 1986-2016: the plot on the left is the North American transect and the plot on the right is the European transect. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 30 year time frame. False spring events were calculated by using just meteorological data. Growing degree days were considered anything over 10$^{\circ}$C. A false spring event would not count if it was before early to mid March and if there were not at least 40 growing degree days before the daily mean temperature went below 0$^{\circ}$C.}
+\includegraphics[width=18cm, height=10cm]{..//figure/lat.pdf} %Lat.Map.R save as 8.5x5.5
+\end{center}
+\end{figure}
+
+
+<<label=eurlat, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Weather_Latitude.R")
+europe<-read.csv("..//input/europe.lat.csv", header=TRUE)
+america<-read.csv("..//input/america.lat.csv", header=TRUE)
+am.lm<-lm(Latitude~False.Springs, data=america)
+eur.lm<-lm(Latitude~False.Springs, data=europe)
+
+stargazer(am.lm, eur.lm, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs. 1) is from the North American transect and 2) is from the European transect.")
+@
+
+
+
+\end{document}

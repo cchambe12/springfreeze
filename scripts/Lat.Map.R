@@ -17,6 +17,7 @@ library(mapproj)
 library(grid)
 library(rworldmap)
 library(gridExtra)
+library(cowplot)
 
 # Upload US map
 usa <- map_data("usa")
@@ -68,7 +69,7 @@ eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y 
                                            color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
 
 eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") + 
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs")  + theme(legend.position="none") +
   guides(size=FALSE)
   
  
@@ -100,6 +101,18 @@ grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, 
   
 plot1 <- am.map
 plot2 <- eur.map
+legend <- get_legend(eur.map)
+blankPlot <- ggplot()+geom_blank(aes(1,1)) + 
+  cowplot::theme_nothing()
+# 3. Remove the legend from the box plot
+#+++++++++++++++++++++++
+eur.map <- eur.map + theme(legend.position="none")
+grid.arrange(am.map, eur.map, legend, ncol=3, widths=c(2.8, 2.8, 0.8))
+grid.arrange(am.map, eur.map, legend, ncol=2, nrow = 2, 
+             layout_matrix = rbind(c(1,2), c(3,3)),
+             widths = c(2.7, 2.7), heights = c(2.5, 0.2))
+
+plot_grid(plot1, eur.map, labels=c("A", "B"), ncol = 2, nrow = 1)
 
 grid_arrange_shared_legend(plot1, plot2, ncol = 2,
                            widths = c(2.8, 2.8), heights = 2.2)
