@@ -1,4 +1,4 @@
-\begin{thebibliography}{54}
+\begin{thebibliography}{57}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -138,6 +138,12 @@ Kodra, E., Steinhaeuser, K. \& Ganguly, A.R. (2011) {Persisting cold extremes
   under 21st-century warming scenarios}. \emph{Geophysical Research Letters}
   \textbf{38}, 1--5.
 
+\bibitem[{Laube \emph{et~al.}(2013)Laube, Sparks, Estrella, H{\"o}fler, Ankerst
+  \& Menzel}]{Laube2013}
+Laube, J., Sparks, T.H., Estrella, N., H{\"o}fler, J., Ankerst, D.P. \& Menzel,
+  A. (2013) Chilling outweighs photoperiod in preventing precocious spring
+  development. \emph{Global Change Biology} \textbf{20}, 170--182.
+
 \bibitem[{Lenz \emph{et~al.}(2016)Lenz, Hoch, K{\"{o}}rner \&
   Vitasse}]{Lenz2016}
 Lenz, A., Hoch, G., K{\"{o}}rner, C. \& Vitasse, Y. (2016) {Convergence of
@@ -216,6 +222,11 @@ Nugent, J., R.N. (2005) Calculating growing degree days .
 O'Keefe, J. (2014) {Phenology of Woody Species at Harvard Forest since 1990}.
   Tech. rep.
 
+\bibitem[{Partanen(2004)}]{Partanen2004}
+Partanen, J. (2004) Dependence of photoperiodic response of growth cessation on
+  the stage of development in picea abies and betula pendula seedlings.
+  \emph{Forest Ecology and Management} \textbf{188}, 137--148.
+
 \bibitem[{Pearce(2001)}]{Pearce2001}
 Pearce, R. (2001) Plant freezing and damage. \emph{Annals of Botany}
   \textbf{87}, 417--424.
@@ -280,6 +291,12 @@ USA-NPN (2016{\natexlab{b}}) {USA National Phenology Network Extended Spring
 Vavrus, S., Walsh, J.E., Chapman, W.L. \& Portis, D. (2006) {The behavior of
   extreme cold air outbreaks under greenhouse warming}. \emph{International
   Journal of Climatology} \textbf{26}, 1133--1147.
+
+\bibitem[{Vihera-aarnio \emph{et~al.}(2006)Vihera-aarnio, Hakkinen \&
+  Junttila}]{Viheraaarnio2006}
+Vihera-aarnio, A., Hakkinen, R. \& Junttila, O. (2006) Critical night length
+  for bud set and its variation in two photoperiodic ecotypes of betula
+  pendula. \emph{Tree Physiology} \textbf{26}, 1013--1018.
 
 \bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch \&
   K{\"{o}}rner}]{Vitasse2014}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 JAN 2017 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 FEB 2017 11:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,38 +802,45 @@ Package pdftex.def Info: figure/fsifig-1.pdf used on input line 129.
 File: figure/treespotters-1.pdf Graphic file (type pdf)
 
 <use figure/treespotters-1.pdf>
-Package pdftex.def Info: figure/treespotters-1.pdf used on input line 170.
+Package pdftex.def Info: figure/treespotters-1.pdf used on input line 168.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
  [7] [8 <./figure/treespotters-1.pdf>]
 <figure/chilling-1.pdf, id=49, 505.89pt x 505.89pt>
 File: figure/chilling-1.pdf Graphic file (type pdf)
 
 <use figure/chilling-1.pdf>
-Package pdftex.def Info: figure/chilling-1.pdf used on input line 179.
+Package pdftex.def Info: figure/chilling-1.pdf used on input line 177.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
  [9] [10 <./figure/chilling-1.pdf>] [11]
 <figure/forest-1.pdf, id=65, 505.89pt x 505.89pt>
 File: figure/forest-1.pdf Graphic file (type pdf)
  <use figure/forest-1.pdf>
-Package pdftex.def Info: figure/forest-1.pdf used on input line 229.
+Package pdftex.def Info: figure/forest-1.pdf used on input line 227.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
 [12] [13 <./figure/forest-1.pdf>]
-<..//figure/lat_maps.pdf, id=78, 505.89pt x 361.35pt>
-File: ..//figure/lat_maps.pdf Graphic file (type pdf)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 244.
 
-<use ..//figure/lat_maps.pdf>
-Package pdftex.def Info: ..//figure/lat_maps.pdf used on input line 247.
-(pdftex.def)             Requested size: 377.62633pt x 269.73816pt.
- [14 <..//figure/lat_maps.pdf>] [15]
+<..//figure/lat.pdf, id=78, 614.295pt x 397.485pt>
+File: ..//figure/lat.pdf Graphic file (type pdf)
+ <use ..//figure/lat.pdf>
+Package pdftex.def Info: ..//figure/lat.pdf used on input line 245.
+(pdftex.def)             Requested size: 512.17993pt x 284.5332pt.
+
+Overfull \hbox (40.14882pt too wide) in paragraph at lines 245--246
+ [] 
+ []
+
+[14 <..//figure/lat.pdf>] [15]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 290.
+(caption)                outside box or environment on input line 288.
 See the caption package documentation for explanation.
 
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 334.
-[16] [17] [18] [19] (./Outline.bbl [20]
+ mdframed uses option nobreak mdframed on input line 332.
+[16] [17] (./Outline.bbl
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 54.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
@@ -842,39 +849,37 @@ File: ts1aer.fd
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 54.
 
-[21] [22] [23]) [24] (./Outline.aux)
+[18] [19] [20] [21]) [22] (./Outline.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15160 strings out of 493014
- 303207 string characters out of 6133351
- 325731 words of memory out of 5000000
- 18494 multiletter control sequences out of 15000+600000
- 44043 words of font info for 93 fonts, out of 8000000 for 9000
+ 15163 strings out of 493014
+ 303357 string characters out of 6133351
+ 325905 words of memory out of 5000000
+ 18504 multiletter control sequences out of 15000+600000
+ 38058 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,10n,42p,10379b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Outline.pdf (24 pages, 369524 bytes).
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Outline.pdf (22 pages, 347823 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 160 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
