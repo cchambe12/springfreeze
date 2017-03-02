@@ -48,23 +48,23 @@ d.hf<-d%>%
 d.hf$risk<-d.hf$Leaves-d.hf$Budburst 
 d.hf<-filter(d.hf,risk>0)
 
-hf<-d.hf%>%
-  group_by(sp) %>% 
-  do(tidy(lm(risk~chilling + force + photoperiod + (chilling*force) + 
-                      (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+#hf<-d.hf%>%
+  #group_by(sp) %>% 
+  #do(tidy(lm(risk~chilling + force + photoperiod + (chilling*force) + 
+                      #(chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
+
+species<-unique(d.hf$sp)
+for(i in 1:length(species)){
+  model<-lm(risk[i]~chilling[i]+force[i]+photoperiod[i],data=d.hf)
+  print(i)
+}
+
 
 model<-lm(risk~chilling+force+photoperiod,data=d.hf,type="II")
 model1<-lm(risk~chilling+force+photoperiod+(chilling*force) + 
              (chilling*photoperiod) + (force*photoperiod),data=d.hf,type="II")
 Anova(model)
-hf.sp<-d.hf%>%
-  group_by(sp) %>% 
-  do(tidy(lm(risk~ sp + chilling + force + photoperiod + (chilling*force) + 
-                (chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
-write.csv(hf, "~/Documents/git/springfreeze/output/dan.hf.anova.csv", row.names=FALSE)
-mod<-lmer(risk~chilling + force + photoperiod, data=d.hf)
-mod1<-lmer(risk~chilling + force + photoperiod + chilling*force + chilling*photoperiod +
-             force*photoperiod + (1|sp), data=d.hf)
+Anova(model)
 
 # Make .csv file with number of individs per spp per tx HF
 df.hf<-as.data.frame(table(d.hf$sp,d.hf$treatcode))%>%
