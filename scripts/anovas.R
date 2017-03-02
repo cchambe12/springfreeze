@@ -18,6 +18,7 @@ library(lubridate)
 library(arm)
 library(car)
 library(broom)
+library(lme4)
 #packageurl <- "https://cran.r-project.org/src/contrib/Archive/pbkrtest/pbkrtest_0.4-4.tar.gz" 
 #install.packages(packageurl, repos=NULL, type="source")
 
@@ -39,26 +40,49 @@ d$tleaf<- factor(d$tleaf, levels = c(4,7),
                         labels = c("Budburst","Leaves"))
 
 ## Harvard Forest Data
+spp<-c("ACEPEN", "ACERUB", "BETALL", "BETPAP", "ILEMUC", "POPGRA", "QUERUB")
 d.hf<-d%>%
   filter(site=="HF") %>%
+  filter(sp %in% spp) %>%
   group_by(sp, id, tleaf)%>%
   arrange(id)%>%
   filter(row_number()==1) %>%
   spread(tleaf, DOY)
 d.hf$risk<-d.hf$Leaves-d.hf$Budburst 
 d.hf<-filter(d.hf,risk>0)
-
+d.hf<-na.omit(d.hf)
 #hf<-d.hf%>%
   #group_by(sp) %>% 
   #do(tidy(lm(risk~chilling + force + photoperiod + (chilling*force) + 
                       #(chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
 
+species <- unique(d.hf$sp)
+
+models<-lmList(risk~chilling+force+photoperiod|sp,data=d.hf)
+models<-na.omit(models)
+Anova(models)
+models <- sapply(species, function(my) {
+  lm(risk~chilling+force+photoperiod,data=d.hf)
+})
+
+ANOVA.tables <- sapply(models, aov, simplify=FALSE)
+
+
+storing<- list()
 species<-unique(d.hf$sp)
 for(i in 1:length(species)){
-  model<-lm(risk[i]~chilling[i]+force[i]+photoperiod[i],data=d.hf)
-  print(i)
+  #dat=subset=d.hf$sp[i]
+  storing[[i]]<-lm(risk~chilling+force+photoperiod,data=d.hf, subset=d.hf$sp[i])
 }
 
+storing.anovas<-list() #list(list()) - try second time
+for(i in 1:length(species)){
+  for(j in 1:length(species)){
+    #if(i!=j){
+    storing.anovas[[i]]<-anova(storing[[i]],storing[[j]])
+    #}
+  }
+}
 
 model<-lm(risk~chilling+force+photoperiod,data=d.hf,type="II")
 model1<-lm(risk~chilling+force+photoperiod+(chilling*force) + 
