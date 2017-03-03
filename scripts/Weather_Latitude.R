@@ -742,3 +742,6 @@ eur.lm<-lm(europe$Latitude~europe$False.Springs)
 display(eur.lm)
 am.lm<-lm(america$Latitude~america$False.Springs)
 display(am.lm)
+
+am.lm<-lm(america$Latitude~america$fifty)
+display(am.lm)

@@ -22,7 +22,7 @@ america<-read.csv("NOAA_Am50.csv", header=TRUE)
 # Anthony, KS, USA: 37.15611N -98.01667
 am1<-america %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "ANTHONY KS US") %>%
+  filter(STATION_NAME == "CHATTANOOGA LOVELL FIELD AIRPORT TN US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -59,7 +59,7 @@ chat.count<-as.data.frame(table(chat.count$year))
 # Anthony, KS, USA: 37.15611N -98.01667
 am2<-america %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "ANTHONY KS US") %>%
+  filter(STATION_NAME == "NASHVILLE INTERNATIONAL AIRPORT TN US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -96,7 +96,7 @@ nash.count<-as.data.frame(table(nash.count$year))
 # West Point, NE, USA: 41.85N -96.71667E
 am3<-america %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "WEST POINT NE US") %>%
+  filter(STATION_NAME == "LOUISVILLE INTERNATIONAL AIRPORT KY US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -133,7 +133,7 @@ lou.count<-as.data.frame(table(lou.count$year))
 # Brookings NE, USA: 44.31667N -96.76667E
 am4<-america %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "BROOKINGS 2 NE SD US") %>%
+  filter(STATION_NAME == "") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%

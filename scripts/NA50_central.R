@@ -40,7 +40,7 @@ am1<- am1 %>%
 am1$doy<-yday(am1$date)
 am1$year<-substr(am1$date,0,4)
 am1<- am1 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am1$gdd <- am1$Tmax - 5
 am1$gdd <-ifelse(am1$gdd>0, am1$gdd, 0)
@@ -50,7 +50,7 @@ am1$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am1$fs<- ifelse((am1$count >= 250 & am1$frz == "freeze"), TRUE, NA)
+am1$fs<- ifelse((am1$count >= 300 & am1$frz == "freeze"), TRUE, NA)
 
 anth.count<- dplyr::select(am1, year, fs)
 anth.count<-na.omit(anth.count)
@@ -77,7 +77,7 @@ am3<- am3 %>%
 am3$doy<-yday(am3$date)
 am3$year<-substr(am3$date,0,4)
 am3<- am3 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am3$gdd <- am3$Tmax - 5
 am3$gdd <-ifelse(am3$gdd>0, am3$gdd, 0)
@@ -87,7 +87,7 @@ am3$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am3$fs<- ifelse((am3$count >= 250 & am3$frz == "freeze"), TRUE, NA)
+am3$fs<- ifelse((am3$count >= 300 & am3$frz == "freeze"), TRUE, NA)
 
 west.count<- dplyr::select(am3, year, fs)
 west.count<-na.omit(west.count)
@@ -114,7 +114,7 @@ am4<- am4 %>%
 am4$doy<-yday(am4$date)
 am4$year<-substr(am4$date,0,4)
 am4<- am4 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am4$gdd <- am4$Tmax - 5
 am4$gdd <-ifelse(am4$gdd>0, am4$gdd, 0)
@@ -124,7 +124,7 @@ am4$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am4$fs<- ifelse((am4$count >= 250 & am4$frz == "freeze"), TRUE, NA)
+am4$fs<- ifelse((am4$count >= 300 & am4$frz == "freeze"), TRUE, NA)
 
 bro.count<- dplyr::select(am4, year, fs)
 bro.count<-na.omit(bro.count)
@@ -151,7 +151,7 @@ am5<- am5 %>%
 am5$doy<-yday(am5$date)
 am5$year<-substr(am5$date,0,4)
 am5<- am5 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am5$gdd <- am5$Tmax - 5
 am5$gdd <-ifelse(am5$gdd>0, am5$gdd, 0)
@@ -161,7 +161,7 @@ am5$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am5$fs<- ifelse((am5$count >= 250 & am5$frz == "freeze"), TRUE, NA)
+am5$fs<- ifelse((am5$count >= 300 & am5$frz == "freeze"), TRUE, NA)
 
 abe.count<- dplyr::select(am5, year, fs)
 abe.count<-na.omit(abe.count)
@@ -188,7 +188,7 @@ am7<- am7 %>%
 am7$doy<-yday(am7$date)
 am7$year<-substr(am7$date,0,4)
 am7<- am7 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am7$gdd <- am7$Tmax - 5
 am7$gdd <-ifelse(am7$gdd>0, am7$gdd, 0)
@@ -198,7 +198,7 @@ am7$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am7$fs<- ifelse((am7$count >= 250 & am7$frz == "freeze"), TRUE, NA)
+am7$fs<- ifelse((am7$count >= 300 & am7$frz == "freeze"), TRUE, NA)
 
 pem.count<- dplyr::select(am7, year, fs)
 pem.count<-na.omit(pem.count)
@@ -225,7 +225,7 @@ am8<- am8 %>%
 am8$doy<-yday(am8$date)
 am8$year<-substr(am8$date,0,4)
 am8<- am8 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am8$gdd <- am8$Tmax - 5
 am8$gdd <-ifelse(am8$gdd>0, am8$gdd, 0)
@@ -235,7 +235,7 @@ am8$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am8$fs<- ifelse((am8$count >= 250 & am8$frz == "freeze"), TRUE, NA)
+am8$fs<- ifelse((am8$count >= 300 & am8$frz == "freeze"), TRUE, NA)
 
 has.count<- dplyr::select(am8, year, fs)
 has.count<-na.omit(has.count)
@@ -262,7 +262,7 @@ am9<- am9 %>%
 am9$doy<-yday(am9$date)
 am9$year<-substr(am9$date,0,4)
 am9<- am9 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am9$gdd <- am9$Tmax - 5
 am9$gdd <-ifelse(am9$gdd>0, am9$gdd, 0)
@@ -272,7 +272,7 @@ am9$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am9$fs<- ifelse((am9$count >= 250 & am9$frz == "freeze"), TRUE, NA)
+am9$fs<- ifelse((am9$count >= 300 & am9$frz == "freeze"), TRUE, NA)
 
 yan.count<- dplyr::select(am9, year, fs)
 yan.count<-na.omit(yan.count)
@@ -298,7 +298,7 @@ am10<- am10 %>%
 am10$doy<-yday(am10$date)
 am10$year<-substr(am10$date,0,4)
 am10<- am10 %>%
-  filter(doy >= 60) %>%
+  filter(doy >= 75) %>%
   filter(doy <= 150)
 am10$gdd <- am10$Tmax - 5
 am10$gdd <-ifelse(am10$gdd>0, am10$gdd, 0)
@@ -308,7 +308,7 @@ am10$count <- ave(
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 
-am10$fs<- ifelse((am10$count >= 250 & am10$frz == "freeze"), TRUE, NA)
+am10$fs<- ifelse((am10$count >= 300 & am10$frz == "freeze"), TRUE, NA)
 
 gra.count<- dplyr::select(am10, year, fs)
 gra.count<-na.omit(gra.count)
