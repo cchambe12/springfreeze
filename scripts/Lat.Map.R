@@ -68,8 +68,8 @@ europeCoords <- do.call("rbind", europeCoords)
 eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y = lat, group=region), 
                                            color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
 
-eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=False.Springs, color=False.Springs)) + 
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs")  + theme(legend.position="none") +
+eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=new, color=new)) + 
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs")  +
   guides(size=FALSE)
   
  

@@ -409,7 +409,4 @@ europe<-read.csv("input/europe.lat.csv", header=TRUE)
 eur.lm<-lm(europe$Latitude~europe$new)
 display(eur.lm)
 
-eur<-lm(europe$Latitude~europe$False.Springs)
-display(eur)
-ggplot(europe, aes(y=new, x=Latitude)) + geom_point() + geom_smooth(method="loess")
-ggplot(europe, aes(y=False.Springs, x=Latitude)) + geom_point() + geom_smooth(method="loess")
+eur<-ggplot(europe, aes(y=new, x=Latitude)) + geom_point() + geom_smooth(method="lm")

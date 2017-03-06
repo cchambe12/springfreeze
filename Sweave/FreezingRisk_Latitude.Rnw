@@ -55,24 +55,29 @@ library(gridExtra)
 \renewcommand{\labelitemi}{$-$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Regional Differences in Vegetative Risk?}
+\section*{Latitudinal Gradient and False Spring Risk}
 
 \begin{figure} [H]
 \begin{center}
-\caption{Number of False Springs (False Spring occurs when: \(Tmean <=-3 \text{ after } (GDD>=40 \text{ \& } DOY>=60) \) 
-across two latitudinal gradients from 1986-2016: the plot on the left is the North American transect and the plot on the right is the European transect. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 30 year time frame. False spring events were calculated by using just meteorological data from NOAA climate data (https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND). Growing degree days were considered anything over 10$^{\circ}$C. A false spring event would not count if it was before early March \citep{Augspurger2013} and if there were not at least 40 growing degree days before the daily mean temperature went below 0$^{\circ}$C.}
-\includegraphics[width=18cm, height=10cm]{..//figure/lat.pdf} %Lat.Map.R save as 8.5x5.5
+\caption{Number of False Springs (False Spring occurs when: \(Tmin <=-3 \text{ after } (GDD>=250 \text{ \& } DOY>=75) \)) across a latitudinal gradient in Europe from 1965-2015. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 50 year time frame. False spring events were calculated by using meteorological data from NOAA climate data (https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND). Growing degree days were considered anything over 5$^{\circ}$C. A false spring event would not count if it was before mid March \citep{Augspurger2013} and if there were not at least 250 growing degree days before the daily minimum temperature went below -3$^{\circ}$C.}
+\includegraphics[width=18cm, height=10cm]{..//figure/FSI_eurmap.pdf} %Lat.Map.R save as 8.5x5.5
 \end{center}
 \end{figure}
 
 <<label=eurlat, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
 read_chunk("..//scripts/Weather_Latitude.R")
 europe<-read.csv("..//input/europe.lat.csv", header=TRUE)
-america<-read.csv("..//input/america.lat.csv", header=TRUE)
-am.lm<-lm(Latitude~False.Springs, data=america)
-eur.lm<-lm(Latitude~False.Springs, data=europe)
+eur.lm<-lm(Latitude~new, data=europe)
 
-stargazer(am.lm, eur.lm, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs. 1) is from the North American transect and 2) is from the European transect.")
+stargazer(eur.lm, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs.")
+@
+
+<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating number of false springs over a fifty year period (from 1965 to 2015) across a latitudinal gradient. ", fig.pos="H">>=
+read_chunk("..//scripts/Eur50.R")
+europe<-read.csv("input/europe.lat.csv", header=TRUE)
+
+eur<-ggplot(europe, aes(y=new, x=Latitude)) + geom_point() + geom_smooth(method="lm")
+plot(eur)
 @
 
 \bibliography{..//refs/SpringFreeze.bib}

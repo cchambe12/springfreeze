@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 MAR 2017 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 MAR 2017 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**FSI_LatitudeAndClimate.tex
-(./FSI_LatitudeAndClimate.tex
+**FreezingRisk_Latitude.tex
+(./FreezingRisk_Latitude.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -765,8 +765,8 @@ Package caption Info: float package is loaded.
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(./FSI_LatitudeAndClimate.aux)
-\openout1 = `FSI_LatitudeAndClimate.aux'.
+(./FreezingRisk_Latitude.aux)
+\openout1 = `FreezingRisk_Latitude.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
@@ -851,50 +851,70 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 88.
 \c__siunitx_mathtt_int=\count167
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 100.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 99.
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 100.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 99.
 
-<..//figure/lat.pdf, id=1, 614.295pt x 397.485pt>
-File: ..//figure/lat.pdf Graphic file (type pdf)
- <use ..//figure/lat.pdf>
-Package pdftex.def Info: ..//figure/lat.pdf used on input line 101.
-(pdftex.def)             Requested size: 512.17993pt x 284.5332pt.
+<..//figure/FSI_eurmap.pdf, id=1, 505.89pt x 361.35pt>
+File: ..//figure/FSI_eurmap.pdf Graphic file (type pdf)
 
-Overfull \hbox (40.14882pt too wide) in paragraph at lines 101--102
+<use ..//figure/FSI_eurmap.pdf>
+Package pdftex.def Info: ..//figure/FSI_eurmap.pdf used on input line 100.
+(pdftex.def)             Requested size: 512.15677pt x 284.53156pt.
+
+Overfull \hbox (40.12566pt too wide) in paragraph at lines 100--101
  [] 
  []
 
-(./FSI_LatitudeAndClimate.bbl) [1
+LaTeX Font Info:    Try loading font information for T1+aett on input line 137.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 137.
+
+<figure/fsifig-1.pdf, id=2, 505.89pt x 505.89pt>
+File: figure/fsifig-1.pdf Graphic file (type pdf)
+ <use figure/fsifig-1.pdf>
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 138.
+(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
+
+[1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..//fig
-ure/lat.pdf>] [2]
-(./FSI_LatitudeAndClimate.aux) ) 
+ure/FSI_eurmap.pdf>] [2] (./FreezingRisk_Latitude.bbl) [3 <./figure/fsifig-1.pd
+f>] (./FreezingRisk_Latitude.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 15532 strings out of 493014
- 306340 string characters out of 6133351
- 331552 words of memory out of 5000000
- 18884 multiletter control sequences out of 15000+600000
- 28734 words of font info for 64 fonts, out of 8000000 for 9000
+ 15565 strings out of 493014
+ 306918 string characters out of 6133351
+ 331559 words of memory out of 5000000
+ 18910 multiletter control sequences out of 15000+600000
+ 29055 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,43p,10394b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb>
-Output written on FSI_LatitudeAndClimate.pdf (2 pages, 239526 bytes).
+ 37i,10n,43p,10393b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on FreezingRisk_Latitude.pdf (3 pages, 153313 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 82 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
