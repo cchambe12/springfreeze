@@ -19,6 +19,7 @@ library(lubridate)
 # Set Working Directory
 setwd("~/Desktop")
 america<-read.csv("NOAA_Am50.csv", header=TRUE)
+amer<-read.csv("NOAA_Am50_2.csv", header=TRUE)
 # Anthony, KS, USA: 37.15611N -98.01667
 am1<-america %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
@@ -42,7 +43,7 @@ am1$year<-substr(am1$date,0,4)
 am1<- am1 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am1$gdd <- am1$Tmax - 5
+am1$gdd <- am1$Tmax - 10
 am1$gdd <-ifelse(am1$gdd>0, am1$gdd, 0)
 am1$frz<- ifelse((am1$Tmin<=-3), "freeze", "thaw")
 am1$count <- ave(
@@ -79,7 +80,7 @@ am2$year<-substr(am2$date,0,4)
 am2<- am2 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am2$gdd <- am2$Tmax - 5
+am2$gdd <- am2$Tmax - 10
 am2$gdd <-ifelse(am2$gdd>0, am2$gdd, 0)
 am2$frz<- ifelse((am2$Tmin<=-3), "freeze", "thaw")
 am2$count <- ave(
@@ -116,7 +117,7 @@ am3$year<-substr(am3$date,0,4)
 am3<- am3 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am3$gdd <- am3$Tmax - 5
+am3$gdd <- am3$Tmax - 10
 am3$gdd <-ifelse(am3$gdd>0, am3$gdd, 0)
 am3$frz<- ifelse((am3$Tmin<=-3), "freeze", "thaw")
 am3$count <- ave(
@@ -131,9 +132,9 @@ lou.count<-na.omit(lou.count)
 lou.count<-as.data.frame(table(lou.count$year))
 
 # Brookings NE, USA: 44.31667N -96.76667E
-am4<-america %>%
+am4<-amer %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "") %>%
+  filter(STATION_NAME == "CINCINNATI NORTHERN KENTUCKY INTERNATIONAL AIRPORT KY US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -153,7 +154,7 @@ am4$year<-substr(am4$date,0,4)
 am4<- am4 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am4$gdd <- am4$Tmax - 5
+am4$gdd <- am4$Tmax - 10
 am4$gdd <-ifelse(am4$gdd>0, am4$gdd, 0)
 am4$frz<- ifelse((am4$Tmin<=-3), "freeze", "thaw")
 am4$count <- ave(
@@ -168,9 +169,9 @@ cin.count<-na.omit(cin.count)
 cin.count<-as.data.frame(table(cin.count$year))
 
 # Aberdeen, SD, USA: 45.45N -98.4333E
-am5<-america %>%
+am5<-amer %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "ABERDEEN REGIONAL AIRPORT SD US") %>%
+  filter(STATION_NAME == "FORT WAYNE INTERNATIONAL AIRPORT IN US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -190,7 +191,7 @@ am5$year<-substr(am5$date,0,4)
 am5<- am5 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am5$gdd <- am5$Tmax - 5
+am5$gdd <- am5$Tmax - 10
 am5$gdd <-ifelse(am5$gdd>0, am5$gdd, 0)
 am5$frz<- ifelse((am5$Tmin<=-3), "freeze", "thaw")
 am5$count <- ave(
@@ -205,9 +206,9 @@ fort.count<-na.omit(fort.count)
 fort.count<-as.data.frame(table(fort.count$year))
 
 # Pembina, ND, USA: 48.96667N -97.2333E
-am6<-america %>%
+am6<-amer %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "PEMBINA ND US") %>%
+  filter(STATION_NAME == "SAULT STE MARIE SANDERSON FIELD MI US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -227,7 +228,7 @@ am6$year<-substr(am6$date,0,4)
 am6<- am6 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am6$gdd <- am6$Tmax - 5
+am6$gdd <- am6$Tmax - 10
 am6$gdd <-ifelse(am6$gdd>0, am6$gdd, 0)
 am6$frz<- ifelse((am6$Tmin<=-3), "freeze", "thaw")
 am6$count <- ave(
@@ -242,9 +243,9 @@ ssm.count<-na.omit(ssm.count)
 ssm.count<-as.data.frame(table(ssm.count$year))
 
 # Pembina, ND, USA: 48.96667N -97.2333E
-am7<-america %>%
+am7<-amer %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "PEMBINA ND US") %>%
+  filter(STATION_NAME == "FLINT BISHOP INTERNATIONAL AIRPORT MI US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -264,7 +265,7 @@ am7$year<-substr(am7$date,0,4)
 am7<- am7 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am7$gdd <- am7$Tmax - 5
+am7$gdd <- am7$Tmax - 10
 am7$gdd <-ifelse(am7$gdd>0, am7$gdd, 0)
 am7$frz<- ifelse((am7$Tmin<=-3), "freeze", "thaw")
 am7$count <- ave(
@@ -279,9 +280,9 @@ flint.count<-na.omit(flint.count)
 flint.count<-as.data.frame(table(flint.count$year))
 
 # Hastings, NE, USA: 40.58333N -98.35
-am8<-america %>%
+am8<-amer %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "HASTINGS 4 N NE US") %>%
+  filter(STATION_NAME == "HOUGHTON LAKE ROSCOMMON CO AIRPORT MI US") %>%
   rename(Tmean = TAVG) %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
@@ -301,7 +302,7 @@ am8$year<-substr(am8$date,0,4)
 am8<- am8 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am8$gdd <- am8$Tmax - 5
+am8$gdd <- am8$Tmax - 10
 am8$gdd <-ifelse(am8$gdd>0, am8$gdd, 0)
 am8$frz<- ifelse((am8$Tmin<=-3), "freeze", "thaw")
 am8$count <- ave(
@@ -338,7 +339,7 @@ am9$year<-substr(am9$date,0,4)
 am9<- am9 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am9$gdd <- am9$Tmax - 5
+am9$gdd <- am9$Tmax - 10
 am9$gdd <-ifelse(am9$gdd>0, am9$gdd, 0)
 am9$frz<- ifelse((am9$Tmin<=-3), "freeze", "thaw")
 am9$count <- ave(
@@ -353,9 +354,9 @@ bank.count<-na.omit(bank.count)
 bank.count<-as.data.frame(table(bank.count$year))
 
 # Grand Forks, ND, USA: 47.9333N -97.08333E
-am10<-america %>%
+am10<-amer %>%
   dplyr::select(STATION_NAME,DATE, TMIN, TMAX) %>%
-  filter(STATION_NAME == "GRAND FORKS UNIVERSITY NWS ND US") %>%
+  filter(STATION_NAME == "PELLSTON REGIONAL AIRPORT MI US") %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
   rename(date = DATE)
@@ -374,9 +375,13 @@ am10$year<-substr(am10$date,0,4)
 am10<- am10 %>%
   filter(doy >= 75) %>%
   filter(doy <= 150)
-am10$gdd <- am10$Tmax - 5
+am10$gdd <- am10$Tmax - 10
 am10$gdd <-ifelse(am10$gdd>0, am10$gdd, 0)
 am10$frz<- ifelse((am10$Tmin<=-3), "freeze", "thaw")
+am10$count <- ave(
+  am10$gdd, am10$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
 am10$count <- ave(
   am10$gdd, am10$year, 
   FUN=function(x) cumsum(c(0, head(x, -1)))
@@ -387,3 +392,24 @@ am10$fs<- ifelse((am10$count >= 250 & am10$frz == "freeze"), TRUE, NA)
 pell.count<- dplyr::select(am10, year, fs)
 pell.count<-na.omit(pell.count)
 pell.count<-as.data.frame(table(pell.count$year))
+
+# Clear workspace
+rm(list=ls()) # remove everything currently held in the R memory
+options(stringsAsFactors=FALSE)
+graphics.off()
+
+# Load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(arm)
+
+## See if significant
+setwd("~/Documents/git/springfreeze")
+mich<-read.csv("input/mich.lat.csv", header=TRUE)
+
+mich.lm<-lm(mich$Latitude~mich$FS.5)
+display(mich.lm)
+
+
+ggplot(mich, aes(x=Latitude, y=FS.5)) + geom_point() + geom_smooth(method="loess")

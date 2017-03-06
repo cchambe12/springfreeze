@@ -313,3 +313,24 @@ am10$fs<- ifelse((am10$count >= 300 & am10$frz == "freeze"), TRUE, NA)
 gra.count<- dplyr::select(am10, year, fs)
 gra.count<-na.omit(gra.count)
 gra.count<-as.data.frame(table(gra.count$year))
+
+# Clear workspace
+rm(list=ls()) # remove everything currently held in the R memory
+options(stringsAsFactors=FALSE)
+graphics.off()
+
+# Load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(arm)
+
+## See if significant
+setwd("~/Documents/git/springfreeze")
+america<-read.csv("input/america.lat.csv", header=TRUE)
+
+am.lm<-lm(america$Latitude~america$fifty)
+display(am.lm)
+
+
+ggplot(america, aes(x=Latitude, y=fifty)) + geom_point() + geom_smooth(method="loess")
