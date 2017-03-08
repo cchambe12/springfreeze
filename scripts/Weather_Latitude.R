@@ -22,21 +22,32 @@ america<- read.csv("input/northamerica.csv", header=TRUE)
 italy<- read.csv("input/italy.csv", header=TRUE)
 kansas<- read.csv("input/kansas.csv", header=TRUE)
 hf<- read.csv("input/WeatherData.csv", header=TRUE)
-
+d<-read.csv("input/method.test.csv",header=TRUE)
+# cleaning dataframes
+hf<-rename(hf, year=Year)
+d<-d%>%
+  dplyr::select(year, bb_obs)
+d<- as.data.frame(rapply(object = d, f = round, classes = "numeric", how = "replace", digits = 0)) 
+df<-left_join(hf, d)
+df<-df%>%
+  dplyr::select(year, JD, bb_obs, count) %>%
+  filter(year>=1990)
+df$doy<-ifelse(df$JD==df$bb_obs, df$JD, NA)
+df<-na.omit(df)
+mean<-mean(df$count)
 # Harvard Forest
 # To double check my script is accurate
 hf<- filter(hf, Site == "hf")
 hf$gdd <- hf$AirT - 5
-hf$gdd <-ifelse(hf$gdd>0, hf$gdd, NA)
-hf$warm<- ifelse(!is.na(hf$gdd), 1, 0)
-hf$frz<- ifelse((hf$AirTMin<=-2), "freeze", "thaw")
+hf$gdd <-ifelse(hf$gdd>0, hf$gdd, 0)
 hf$count <- ave(
-  hf$warm, hf$Year, 
+  hf$gdd, hf$Year, 
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 hf<- hf %>%
-  filter(JD >= 60) %>%
+  filter(JD >= 75) %>%
   filter(JD <= 181)
+hf$frz<- ifelse((hf$AirTMin<=-2), "freeze", "thaw")
 hf$fs<- ifelse((hf$count >= 100 & hf$frz == "freeze"), TRUE, NA)
 
 hf.count<- dplyr::select(hf, Year, fs)
