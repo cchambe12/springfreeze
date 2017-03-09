@@ -20,7 +20,7 @@ library(ggplot2)
 setwd("~/Documents/git/springfreeze/input")
 
 budburst<-read.csv("hf003-06-mean-spp.csv",header=TRUE, sep=",")
-budburst<-filter(budburst, year>2000)
+
 
 sp <- budburst %>%
   dplyr::select(year, species, bb.jd) %>%

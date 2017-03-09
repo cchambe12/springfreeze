@@ -16,23 +16,28 @@ library(tidyr)
 library(mapproj)
 library(grid)
 library(rworldmap)
-library(gridExtra)
-library(cowplot)
+
 
 # Upload US map
 usa <- map_data("usa")
 states <- map_data("state")
+canada<-map("worldHires","Canada", xlim=c(-141,-53), ylim=c(40,85), col="gray90", fill=TRUE)
 
 gg1<- NAmap <- ggplot() + geom_polygon(data = usa, 
                                        aes(x=long, y = lat, group = group), 
                                        fill = "white", 
                                        color="black") +
   geom_polygon(data = states, aes(x=long, y = lat, group = group), 
-               fill = "white", color="grey") 
+               fill = "white", color="grey") + geom_polygon(data = canada, 
+                                                            aes(x=long, y = lat, group = group), 
+                                                            fill = "white", 
+                                                            color="grey")
 
 # Upload Data
 usa<-read.csv("~/Documents/git/springfreeze/input/america.lat.csv", header=TRUE)
 europe<-read.csv("~/Documents/git/springfreeze/input/europe.lat.csv", header=TRUE)
+mich<-read.csv("~/Documents/git/springfreeze/input/mich.lat.csv", header=TRUE)
+west<-read.csv("~/Documents/git/springfreeze/input/west.lat.csv", header=TRUE)
 
 # USA Map
 gg1 + 
@@ -40,7 +45,13 @@ gg1 +
   geom_point(data = usa, aes(x = Longitude, y = Latitude), size = 3) + 
   geom_point(fill=factor(usa$False.Springs)) + theme(legend.position="none")
 
-am.map <- gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=False.Springs,color=False.Springs)) +
+am.map <- gg1 + geom_point(data = usa, aes(Longitude, Latitude, size=hf.gdd,color=hf.gdd)) +
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") +
+  guides(size=FALSE)
+am.map1<- am.map + geom_point(data = mich, aes(Longitude, Latitude, size=hf.gdd,color=hf.gdd)) +
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") +
+  guides(size=FALSE)
+am.map2<- am.map1 + geom_point(data = west, aes(Longitude, Latitude, size=hf.gdd,color=hf.gdd)) +
   scale_color_gradient(low="red", high="blue", name="Number of False Springs") + theme(legend.position="none") +
   guides(size=FALSE)
 
@@ -68,8 +79,8 @@ europeCoords <- do.call("rbind", europeCoords)
 eur <- ggplot(europeCoords) + geom_polygon(data = europeCoords, aes(x = long, y = lat, group=region), 
                                            color="grey", fill="white") + coord_map(xlim = c(-13, 35),  ylim = c(32, 71))
 
-eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=new, color=new)) + 
-  scale_color_gradient(low="red", high="blue", name="Number of False Springs")  +
+eur.map <- eur + geom_point(data = europe, aes(Longitude, Latitude, size=hf.gdd, color=hf.gdd)) + 
+  scale_color_gradient(low="red", high="blue", name="Number of False Springs")  + theme(legend.position="none") +
   guides(size=FALSE)
   
  
@@ -99,16 +110,15 @@ grid_arrange_shared_legend <- function(..., ncol = length(list(...)), nrow = 1, 
     
 }
   
-plot1 <- am.map
+plot1 <- am.map2
 plot2 <- eur.map
 legend <- get_legend(eur.map)
 blankPlot <- ggplot()+geom_blank(aes(1,1)) + 
   cowplot::theme_nothing()
 # 3. Remove the legend from the box plot
-#+++++++++++++++++++++++
 eur.map <- eur.map + theme(legend.position="none")
-grid.arrange(am.map, eur.map, legend, ncol=3, widths=c(2.8, 2.8, 0.8))
-grid.arrange(am.map, eur.map, legend, ncol=2, nrow = 2, 
+grid.arrange(am.map2, eur.map, legend, ncol=3, widths=c(2.8, 2.8, 0.8))
+grid.arrange(am.map2, eur.map, legend, ncol=2, nrow = 2, 
              layout_matrix = rbind(c(1,2), c(3,3)),
              widths = c(2.7, 2.7), heights = c(2.5, 0.2))
 
@@ -116,4 +126,26 @@ plot_grid(plot1, eur.map, labels=c("A", "B"), ncol = 2, nrow = 1)
 
 grid_arrange_shared_legend(plot1, plot2, ncol = 2,
                            widths = c(2.8, 2.8), heights = 2.2)
+
+# Clear workspace
+rm(list=ls()) # remove everything currently held in the R memory
+options(stringsAsFactors=FALSE)
+graphics.off()
+
+# Load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(arm)
+
+## See if significant
+setwd("~/Documents/git/springfreeze")
+all<-read.csv("input/all.lat.csv", header=TRUE)
+
+all.lm<-lm(all$Latitude~all$hf.gdd+all$Longitude)
+summary(all.lm)
+
+
+ggplot(all, aes(x=Latitude, y=hf.gdd)) + geom_point() + geom_smooth(method="loess")
+
 
