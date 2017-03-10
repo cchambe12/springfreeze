@@ -39,16 +39,18 @@ fs<-as.data.frame(table(d$year))%>%
   rename(fs=Freq)
 lat<-as.data.frame(table(d$Latitude))%>%
   rename(Latitude=Var1)%>%
-  rename(lat=Freq) 
+  rename(false.spring=Freq) 
 lat$Latitude<-as.numeric(as.character(lat$Latitude))
 d1<-full_join(d,fs,by="year")
 d1<-full_join(d1,lat,by="Latitude")
 d1$year<-as.numeric(as.character(d1$year))
+write.csv(d1, file="~/Documents/git/springfreeze/output/latitude.analysis.csv", row.names=FALSE)
 
 # Initial Plots
 ggplot(d1, aes(x=year, y=fs)) + geom_point(aes(color=Latitude))
-ggplot(d1, aes(x=Latitude, y=lat)) + geom_point(aes(color=year))
+ggplot(d1, aes(x=Latitude, y=false.spring)) + geom_point(aes(color=d1$region)) + 
+  geom_smooth(method="loess")
 
 # relationships?
 mod<-lm(fs~year,data=d1)
-mod1<-lm(lat~Latitude + year:Latitude, data=d1)
+mod1<-lm(lat~Latitude + region, data=d1)

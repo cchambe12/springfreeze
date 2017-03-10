@@ -16,6 +16,7 @@ library(tidyr)
 library(mapproj)
 library(grid)
 library(rworldmap)
+library(gridExtra)
 
 
 # Upload US map

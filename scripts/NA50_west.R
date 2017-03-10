@@ -21,6 +21,8 @@ setwd("~/Documents/git/springfreeze/input")
 america<-read.csv("NOAA_data.csv", header=TRUE)
 amer<-read.csv("NOAA_data2.csv", header=TRUE)
 am<-read.csv("NOAA_data3.csv", header=TRUE)
+a<-read.csv("NOAA_data4.csv", header=TRUE)
+
 # Anthony, KS, USA: 37.15611N -98.01667
 am1<-america %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
@@ -345,3 +347,77 @@ am9$fs<- ifelse((am9$count >= 150 & am9$frz == "freeze" & am9$count<=400), TRUE,
 med.count<- dplyr::select(am9, year, fs)
 med.count<-na.omit(med.count)
 med.count<-as.data.frame(table(med.count$year))
+
+# Anthony, KS, USA: 37.15611N -98.01667
+am10<-a %>%
+  dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "PASO ROBLES MUNICIPAL AIRPORT CA US") %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+am10$year <- substr(am10$date, 0, 4)
+am10<- am10 %>%
+  filter(year>=1965) %>%
+  filter(year<2016)
+am10$month<- substr(am10$date, 5, 6)
+am10$day<- substr(am10$date, 7,8)
+am10<- am10 %>%
+  dplyr::select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  dplyr::select(date, Tmin, Tmax)
+am10$doy<-yday(am10$date)
+am10$year<-substr(am10$date,0,4)
+am10$Tmean <- (am10$Tmax + am10$Tmin)/2
+am10$gdd <- am10$Tmean - 5
+am10$gdd <-ifelse(am10$gdd>0, am10$gdd, 0)
+am10$frz<- ifelse((am10$Tmin<=-5), "freeze", "thaw")
+am10$count <- ave(
+  am10$gdd, am10$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+am10<- am10 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+
+am10$fs<- ifelse((am10$count >= 150 & am10$frz == "freeze" & am10$count<=400), TRUE, NA)
+
+paso.count<- dplyr::select(am10, year, fs)
+paso.count<-na.omit(paso.count)
+paso.count<-as.data.frame(table(paso.count$year))
+
+# Anthony, KS, USA: 37.15611N -98.01667
+am11<-a %>%
+  dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
+  filter(STATION_NAME == "DAGGETT AIRPORT CA US") %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+am11$year <- substr(am11$date, 0, 4)
+am11<- am11 %>%
+  filter(year>=1965) %>%
+  filter(year<2016)
+am11$month<- substr(am11$date, 5, 6)
+am11$day<- substr(am11$date, 7,8)
+am11<- am11 %>%
+  dplyr::select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  dplyr::select(date, Tmin, Tmax)
+am11$doy<-yday(am11$date)
+am11$year<-substr(am11$date,0,4)
+am11$Tmean <- (am11$Tmax + am11$Tmin)/2
+am11$gdd <- am11$Tmean - 5
+am11$gdd <-ifelse(am11$gdd>0, am11$gdd, 0)
+am11$frz<- ifelse((am11$Tmin<=-5), "freeze", "thaw")
+am11$count <- ave(
+  am11$gdd, am11$year, 
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+am11<- am11 %>%
+  filter(doy >= 60) %>%
+  filter(doy <= 210)
+
+am11$fs<- ifelse((am11$count >= 150 & am11$frz == "freeze" & am11$count<=400), TRUE, NA)
+
+dag.count<- dplyr::select(am11, year, fs)
+dag.count<-na.omit(dag.count)
+dag.count<-as.data.frame(table(dag.count$year))

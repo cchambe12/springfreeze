@@ -19,6 +19,7 @@ library(lubridate)
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
 lat<-read.csv("input/NOAA_Eur50.csv", header=TRUE)
+latitude<-read.csv("input/NOAA_data5.csv", header=TRUE)
 
 # Augsburg, Germany: 48.4264N 10.9431E
 lat1<-lat %>%
@@ -345,7 +346,7 @@ jen.count<-na.omit(jen.count)
 jen.count<-as.data.frame(table(jen.count$year))
 
 # Flyvestation, Denmark: 57.093N 9.849E - PROBABLY DON'T WANT TO INCLUDE!!
-lat11<-lat %>%
+lat11<-latitude %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
   filter(STATION_NAME == "FLYVESTATION AALBORG DA") %>%
   rename(Tmean = TAVG) %>%
@@ -354,7 +355,7 @@ lat11<-lat %>%
   rename(date = DATE)
 lat11$year <- substr(lat11$date, 0, 4)
 lat11<- lat11 %>% 
-  filter(year>=1965) %>%
+  filter(year>=1973) %>%
   filter(year<2016)
 lat11$month<- substr(lat11$date, 5, 6)
 lat11$day<- substr(lat11$date, 7,8)

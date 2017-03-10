@@ -1,0 +1,123 @@
+"Station","Latitude","Longitude","region","year","frost","fs","false.spring"
+"Chattanooga",35.0311,-85.2014,"south",1965,1,2,11
+"Chattanooga",35.0311,-85.2014,"south",1967,1,5,11
+"Chattanooga",35.0311,-85.2014,"south",1972,1,2,11
+"Chattanooga",35.0311,-85.2014,"south",1986,1,5,11
+"Chattanooga",35.0311,-85.2014,"south",1988,1,4,11
+"Chattanooga",35.0311,-85.2014,"south",1993,1,3,11
+"Chattanooga",35.0311,-85.2014,"south",1996,1,3,11
+"Chattanooga",35.0311,-85.2014,"south",1998,1,4,11
+"Chattanooga",35.0311,-85.2014,"south",2002,1,7,11
+"Chattanooga",35.0311,-85.2014,"south",2005,1,3,11
+"Chattanooga",35.0311,-85.2014,"south",2009,1,1,11
+"Nashville",36.1189,-86.689,"south",1965,1,2,16
+"Nashville",36.1189,-86.689,"south",1966,1,5,16
+"Nashville",36.1189,-86.689,"south",1967,1,5,16
+"Nashville",36.1189,-86.689,"south",1971,1,2,16
+"Nashville",36.1189,-86.689,"south",1972,1,2,16
+"Nashville",36.1189,-86.689,"south",1975,1,1,16
+"Nashville",36.1189,-86.689,"south",1982,1,2,16
+"Nashville",36.1189,-86.689,"south",1983,1,2,16
+"Nashville",36.1189,-86.689,"south",1986,1,5,16
+"Nashville",36.1189,-86.689,"south",1992,1,3,16
+"Nashville",36.1189,-86.689,"south",1996,1,3,16
+"Nashville",36.1189,-86.689,"south",1998,1,4,16
+"Nashville",36.1189,-86.689,"south",2002,1,7,16
+"Nashville",36.1189,-86.689,"south",2005,1,3,16
+"Nashville",36.1189,-86.689,"south",2008,1,2,16
+"Nashville",36.1189,-86.689,"south",2013,1,1,16
+"Louisville",38.1811,-85.7391,"south",1966,1,5,12
+"Louisville",38.1811,-85.7391,"south",1967,1,5,12
+"Louisville",38.1811,-85.7391,"south",1974,1,4,12
+"Louisville",38.1811,-85.7391,"south",1976,1,6,12
+"Louisville",38.1811,-85.7391,"south",1982,1,2,12
+"Louisville",38.1811,-85.7391,"south",1983,1,2,12
+"Louisville",38.1811,-85.7391,"south",1986,1,5,12
+"Louisville",38.1811,-85.7391,"south",1992,1,3,12
+"Louisville",38.1811,-85.7391,"south",1997,1,5,12
+"Louisville",38.1811,-85.7391,"south",1998,1,4,12
+"Louisville",38.1811,-85.7391,"south",2002,1,7,12
+"Louisville",38.1811,-85.7391,"south",2006,1,1,12
+"Cincinnati",39.0444,-84.67,"midwest",1973,1,1,10
+"Cincinnati",39.0444,-84.67,"midwest",1974,1,4,10
+"Cincinnati",39.0444,-84.67,"midwest",1976,1,6,10
+"Cincinnati",39.0444,-84.67,"midwest",1986,1,5,10
+"Cincinnati",39.0444,-84.67,"midwest",1989,1,2,10
+"Cincinnati",39.0444,-84.67,"midwest",1990,1,5,10
+"Cincinnati",39.0444,-84.67,"midwest",1995,1,1,10
+"Cincinnati",39.0444,-84.67,"midwest",1997,1,5,10
+"Cincinnati",39.0444,-84.67,"midwest",2000,1,2,10
+"Cincinnati",39.0444,-84.67,"midwest",2007,1,4,10
+"Fort.Wayne",40.9705,-85.2063,"midwest",1976,1,6,2
+"Fort.Wayne",40.9705,-85.2063,"midwest",2007,1,4,2
+"Flint",42.967,-83.7494,"midwest",2012,1,4,1
+"Pellston",45.56,-84.7927,"midwest",1990,1,5,2
+"Pellston",45.56,-84.7927,"midwest",2010,1,1,2
+"Medford, OR",42.3811,-122.8722,"west",1966,1,5,8
+"Medford, OR",42.3811,-122.8722,"west",1967,1,5,8
+"Medford, OR",42.3811,-122.8722,"west",1969,1,1,8
+"Medford, OR",42.3811,-122.8722,"west",1974,1,4,8
+"Medford, OR",42.3811,-122.8722,"west",1976,1,6,8
+"Medford, OR",42.3811,-122.8722,"west",1985,1,3,8
+"Medford, OR",42.3811,-122.8722,"west",2002,1,7,8
+"Medford, OR",42.3811,-122.8722,"west",2012,1,4,8
+"Dallesport, WA",45.6194,-121.1661,"west",1996,1,3,2
+"Dallesport, WA",45.6194,-121.1661,"west",2007,1,4,2
+"Yakima",46.5683,-120.5428,"west",1968,1,3,3
+"Yakima",46.5683,-120.5428,"west",1981,1,5,3
+"Yakima",46.5683,-120.5428,"west",1985,1,3,3
+"Wenatchee Panghorn ",47.3977,-120.2013,"west",2011,1,1,1
+"Yankton, SD",42.88333,-97.35,"midwest",1966,1,5,16
+"Yankton, SD",42.88333,-97.35,"midwest",1967,1,5,16
+"Yankton, SD",42.88333,-97.35,"midwest",1968,1,3,16
+"Yankton, SD",42.88333,-97.35,"midwest",1986,1,5,16
+"Yankton, SD",42.88333,-97.35,"midwest",1987,1,1,16
+"Yankton, SD",42.88333,-97.35,"midwest",1988,1,4,16
+"Yankton, SD",42.88333,-97.35,"midwest",1989,1,2,16
+"Yankton, SD",42.88333,-97.35,"midwest",1990,1,5,16
+"Yankton, SD",42.88333,-97.35,"midwest",1991,1,5,16
+"Yankton, SD",42.88333,-97.35,"midwest",1992,1,3,16
+"Yankton, SD",42.88333,-97.35,"midwest",2000,1,2,16
+"Yankton, SD",42.88333,-97.35,"midwest",2003,1,2,16
+"Yankton, SD",42.88333,-97.35,"midwest",2004,1,1,16
+"Yankton, SD",42.88333,-97.35,"midwest",2007,1,4,16
+"Yankton, SD",42.88333,-97.35,"midwest",2014,1,1,16
+"Yankton, SD",42.88333,-97.35,"midwest",2015,1,2,16
+"Grand Forks, ND",47.9333,-97.08333,"midwest",1968,1,3,5
+"Grand Forks, ND",47.9333,-97.08333,"midwest",1976,1,6,5
+"Grand Forks, ND",47.9333,-97.08333,"midwest",2005,1,3,5
+"Grand Forks, ND",47.9333,-97.08333,"midwest",2012,1,4,5
+"Grand Forks, ND",47.9333,-97.08333,"midwest",2015,1,2,5
+"Pembina",48.9711,-97.2416,"midwest",1993,1,3,1
+"Kempten, GM",47.7242,10.3364,"europe",1974,1,4,6
+"Kempten, GM",47.7242,10.3364,"europe",1977,1,4,6
+"Kempten, GM",47.7242,10.3364,"europe",1981,1,5,6
+"Kempten, GM",47.7242,10.3364,"europe",1991,1,5,6
+"Kempten, GM",47.7242,10.3364,"europe",1997,1,5,6
+"Kempten, GM",47.7242,10.3364,"europe",2002,1,7,6
+"Augsburg, GM",48.4264,10.9431,"europe",1981,1,5,2
+"Augsburg, GM",48.4264,10.9431,"europe",2002,1,7,2
+"Bamberg, GM",49.8753,10.9217,"europe",1976,1,6,6
+"Bamberg, GM",49.8753,10.9217,"europe",1977,1,4,6
+"Bamberg, GM",49.8753,10.9217,"europe",1991,1,5,6
+"Bamberg, GM",49.8753,10.9217,"europe",1997,1,5,6
+"Bamberg, GM",49.8753,10.9217,"europe",2002,1,7,6
+"Bamberg, GM",49.8753,10.9217,"europe",2012,1,4,6
+"Jena, GM",50.9267,11.5842,"europe",1993,1,3,3
+"Jena, GM",50.9267,11.5842,"europe",2003,1,2,3
+"Jena, GM",50.9267,11.5842,"europe",2008,1,2,3
+"Hannover, GM",52.4656,9.6794,"europe",1977,1,4,4
+"Hannover, GM",52.4656,9.6794,"europe",1981,1,5,4
+"Hannover, GM",52.4656,9.6794,"europe",1988,1,4,4
+"Hannover, GM",52.4656,9.6794,"europe",1990,1,5,4
+"Bremen, GM",53.0464,8.7992,"europe",1981,1,5,5
+"Bremen, GM",53.0464,8.7992,"europe",1988,1,4,5
+"Bremen, GM",53.0464,8.7992,"europe",1990,1,5,5
+"Bremen, GM",53.0464,8.7992,"europe",1991,1,5,5
+"Bremen, GM",53.0464,8.7992,"europe",1997,1,5,5
+"Hamburg, GM",53.635,9.99,"europe",1991,1,5,2
+"Hamburg, GM",53.635,9.99,"europe",1998,1,4,2
+"Daggett, CA",35.8536,-116.7858,"west",1966,1,5,1
+"Paso Robles, CA",35.67,-120.6283,"west",1971,1,2,3
+"Paso Robles, CA",35.67,-120.6283,"west",1977,1,4,3
+"Paso Robles, CA",35.67,-120.6283,"west",1985,1,3,3

@@ -96,14 +96,14 @@
 
 \begin{figure} [H]
 \begin{center}
-\caption{Number of False Springs (False Spring occurs when: \(Tmin <=-3 \text{ after } (GDD>=250 \text{ \& } DOY>=75) \)) across a latitudinal gradient in Europe from 1965-2015. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 50 year time frame. False spring events were calculated by using meteorological data from NOAA climate data (https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND). Growing degree days were considered anything over 5$^{\circ}$C. A false spring event would not count if it was before mid March \citep{Augspurger2013} and if there were not at least 250 growing degree days before the daily minimum temperature went below -3$^{\circ}$C.}
-\includegraphics[width=18cm, height=10cm]{..//figure/FSI_eurmap.pdf} %Lat.Map.R save as 8.5x5.5
+\caption{Number of False Springs (False Spring occurs when: \(Tmin <=-5 \text{ after } (GDD>=100 \text{ \& } GDD<=400 \text{ \& } DOY>=60) \)) across four latitudinal gradients from 1965-2015: three gradients across North America and one in Europe. More red dots have fewer false springs, whereas blue dots have more false springs. The size of the dot corresponds to frequency of false springs over the 50 year time frame. False spring events were calculated by using meteorological data from NOAA climate data (https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND). Growing degree days were considered anything over 5$^{\circ}$C. A false spring event would not count if it was before mid March \citep{Augspurger2013} and if there were not at least 250 growing degree days before the daily minimum temperature went below -3$^{\circ}$C.}
+\includegraphics{..//figure/all_map.pdf} %Lat.Map.R save as 8.5x5.5
 \end{center}
 \end{figure}
 
 
 % Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Mar 06, 2017 - 17:16:05
+% Date and time: Fri, Mar 10, 2017 - 13:06:31
 \begin{table}[!htbp] \centering 
   \caption{The results from a linear regression model analyzing the relationship between latitude and frequency of false springs.} 
   \label{} 
@@ -114,16 +114,24 @@
 \cline{2-2} 
 \\[-1.8ex] & Latitude \\ 
 \hline \\[-1.8ex] 
- new & $-$0.692$^{**}$ \\ 
-  & (0.213) \\ 
-  Constant & 55.952$^{***}$ \\ 
-  & (1.291) \\ 
+ hf.gdd & $-$0.252 \\ 
+  & (0.196) \\ 
+  regioneurope & $-$3.012 \\ 
+  & (3.081) \\ 
+  regionmidwest & $-$12.352$^{***}$ \\ 
+  & (3.004) \\ 
+  regionsouth & $-$16.768$^{***}$ \\ 
+  & (4.385) \\ 
+  regionwest & $-$12.820$^{***}$ \\ 
+  & (3.178) \\ 
+  Constant & 56.483$^{***}$ \\ 
+  & (2.768) \\ 
  \hline \\[-1.8ex] 
-Observations & 10 \\ 
-R$^{2}$ & 0.568 \\ 
-Adjusted R$^{2}$ & 0.515 \\ 
-Residual Std. Error & 2.651 (df = 8) \\ 
-F Statistic & 10.538$^{**}$ (df = 1; 8) \\ 
+Observations & 36 \\ 
+R$^{2}$ & 0.711 \\ 
+Adjusted R$^{2}$ & 0.662 \\ 
+Residual Std. Error & 3.914 (df = 30) \\ 
+F Statistic & 14.736$^{***}$ (df = 5; 30) \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
@@ -131,10 +139,7 @@ F Statistic & 10.538$^{**}$ (df = 1; 8) \\
 \end{table} 
 
 
-\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in file(file, "{}rt"{}): cannot open the connection}}\end{kframe}\begin{figure}[H]
+\begin{figure}[H]
 \includegraphics[width=\maxwidth]{figure/fsifig-1} \caption[A scatterplot indicating number of false springs over a fifty year period (from 1965 to 2015) across a latitudinal gradient]{A scatterplot indicating number of false springs over a fifty year period (from 1965 to 2015) across a latitudinal gradient. }\label{fig:fsifig}
 \end{figure}
 
