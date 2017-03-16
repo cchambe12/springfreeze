@@ -54,3 +54,10 @@ ggplot(d1, aes(x=Latitude, y=false.spring)) + geom_point(aes(color=d1$region)) +
 # relationships?
 mod<-lm(fs~year,data=d1)
 mod1<-lm(lat~Latitude + region, data=d1)
+
+d$continent<-ifelse(d$region=="europe",0,1)
+
+mod2<-lmer(fs~year+(1|Station), data=d)
+mod3<-lmer(fs~Latitude+Longitude+(1|year), data=d)
+
+
