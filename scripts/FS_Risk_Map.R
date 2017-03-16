@@ -11,6 +11,7 @@ library(lattice)
 library(chron)
 library(ncdf4)
 library(RColorBrewer)
+library(raster)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze/input")
