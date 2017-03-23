@@ -93,11 +93,14 @@ leaves<- y1 %>%
   summarise_each(funs(mean), Leaves) %>%
   arrange(species)
 
+sd<- y1 %>%
+  dplyr::select(species, sd, sd.leaf)
 
 basic<- full_join(bud, leaves)
 basic$Risk<- basic$Leaves - basic$Budburst
+basic<-full_join(basic, sd)
 
-#basic$code <- reorder(basic$species, basic$Budburst)
+basic$code <- reorder(basic$species, basic$Budburst)
 
 #df<-basic %>%
   #gather(Phenophase, DOY, -Risk, -species)
@@ -106,10 +109,11 @@ basic$Risk<- basic$Leaves - basic$Budburst
   #summarise_each(funs(sd), DOY)
 
 
-ts.timeline<-ggplot((basic), aes(x=Budburst, y=species), stat="identity") + geom_point(aes(x= basic$Budburst)) + 
+ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_point() + 
   geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point(aes(col=species)) + xlab("Budburst to Leaf Out") +
-  ylab("Species") 
+  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point() + xlab("Budburst to Leaf Out") +
+  ylab("Species") +geom_errorbarh(aes(xmin=Budburst-sd, xmax=Budburst+sd, col="coral"), height=.0) + 
+  geom_errorbarh(aes(xmin=Leaves-sd.leaf, xmax=Leaves+sd.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
 
 ts<-ggplot((y2), aes(x=species, y=DOY)) + geom_point(aes(col=Phenophase)) + 
