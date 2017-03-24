@@ -101,6 +101,7 @@ basic$Risk<- basic$Leaves - basic$Budburst
 basic<-full_join(basic, sd)
 
 basic$code <- reorder(basic$species, basic$Budburst)
+y2$code <- reorder(y2$species, y2$DOY)
 
 #df<-basic %>%
   #gather(Phenophase, DOY, -Risk, -species)
@@ -116,8 +117,9 @@ ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_po
   geom_errorbarh(aes(xmin=Leaves-sd.leaf, xmax=Leaves+sd.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
 
-ts<-ggplot((y2), aes(x=species, y=DOY)) + geom_point(aes(col=Phenophase)) + 
-  xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0)
+ts<-ggplot((y2), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) + 
+  xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0) +
+  scale_x_discrete(labels = c("ACESAC","AESFLA","BETALL","BETNIG","CARGLA","CAROVA","FAGGRA","POPDEL","QUEALB","QUERUB","TILAME"))
 plot(ts)
 
 
