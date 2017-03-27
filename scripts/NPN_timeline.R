@@ -245,4 +245,4 @@ ts<-ggplot((y10), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) +
 plot(ts)
 
 lm10<-lmer(Risk~Budburst + Latitude + (1|species), data=df10)
-display(lm160)
+display(lm10)
