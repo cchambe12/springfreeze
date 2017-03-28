@@ -125,6 +125,6 @@ plot(ts)
 
 ggplot((basic), aes( x= Budburst, y=Risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=species))
 
-lmodel<-lm(Risk~Budburst,data=basic)
-lme1<-lm(Risk~species, data=y2)
-display(lme1)
+lm1<-lm(Risk~Budburst,data=basic)
+lm2<-lm(Risk~species, data=y2)
+display(lm1);display(lm2)

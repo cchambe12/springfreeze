@@ -28,7 +28,7 @@ pheno16<-sixteen%>%
   dplyr::select(Site_ID, Genus, Species, Individual_ID, Phenophase_Description, First_Yes_DOY, First_Yes_Year, Latitude, Longitude, NumYs_in_Series) %>%
   unite(species, Genus, Species, sep="_") %>%
   filter(Phenophase_Description %in% phases) %>%
-  filter(Latitude>35 & Latitude<50)%>%
+  filter(Latitude>40 & Latitude<45)%>%
   rename(Year = First_Yes_Year) %>%
   filter(NumYs_in_Series>1)
 
@@ -78,6 +78,10 @@ basic$Risk<- basic$Leaves - basic$Budburst
 basic<-full_join(basic, stand_dev)
 basic$code <- reorder(basic$species, basic$Budburst)
 basic<-na.omit(basic)
+basic$stand_dev<-ifelse(basic$stand_dev> (basic$Risk*2), NA, basic$stand_dev)
+basic$stand_dev.leaf<-ifelse(basic$stand_dev.leaf> (basic$Risk*2), NA, basic$stand_dev.leaf)
+basic<-filter(basic, species != "Populus_tremuloides")
+basic<-na.omit(basic)
 ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_point(aes(x= basic$Budburst)) + 
   geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
   geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point() + xlab("Budburst to Leaf Out") +
@@ -85,22 +89,38 @@ ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_po
   geom_errorbarh(aes(xmin=Leaves-stand_dev.leaf, xmax=Leaves+stand_dev.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
 
+
 y$code <- reorder(y$species, y$DOY)
 y$stand_dev<-ifelse(y$stand_dev==0, NA, y$stand_dev)
+y$stand_dev<-ifelse(y$stand_dev> (y$Risk*2), NA, y$stand_dev)
+y$stand_dev.leaf<-ifelse(y$stand_dev.leaf> (y$Risk*2), NA, y$stand_dev.leaf)
+y<-filter(y, species != "Populus_tremuloides")
+y<-na.omit(y)
 y<-na.omit(y)
 
 ts<-ggplot((y), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) + 
   xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-stand_dev, ymax=DOY+stand_dev, col=Phenophase), width=.0) +
-  scale_x_discrete(labels = abbreviate)
-  #scale_x_discrete(labels = c("POPDEL","FRAAME", "MALSPP", "PRUSER","ACERUB", "BETALL", "BETPAP", "FAGGRA",
-                              #"QUERUB", "BETNIG", "QUEALB", "ULMAME", "ACESAC", "POPTRE"))
+  scale_x_discrete(labels = c("SAMRAC","PRUVIR","MALSPP","VIBACE","ULMAME","CARGLA","FAGGRA","AESFLA","CAROVA",
+                              "BETLEN","PRUSER","VIBLAN","QUEVEL","TILAME","BETNIG","HAMVIR","QUERUB","JUGNIG","QUEALB",
+                            "ACERUB"))
 plot(ts)
 
 # Analysis 2016
-hist(coef(lm16)$species[,1],)
+df2<-df
+df2$stand_dev<-ifelse(df2$stand_dev> (df2$Risk*2), NA, df2$stand_dev)
+df2$stand_dev.leaf<-ifelse(df2$stand_dev.leaf> (df2$Risk*2), NA, df2$stand_dev.leaf)
+df2<-filter(df2, species != "Populus_tremuloides")
+df2<-na.omit(df2)
 
-lm16<-lmer(Risk~Budburst + Latitude + (1|species), data=df)
-display(lm16)
+lmer16<-lmer(Risk~Budburst + Latitude + (1|species), data=df2)
+lm16<-lm(Risk~Budburst + Latitude,data=df2)
+display(lmer16);display(lm16)
+hist(df2$Budburst)
+
+ggplot((df2), aes(x=Budburst, y=Risk)) + xlab("Day of Budburst") + ylab("Duration of Vegetative Risk") +
+  geom_point(aes(col=as.factor(species))) + 
+  geom_smooth(aes(col=as.factor(species)),method="lm", se=FALSE) 
+  theme(legend.position="none")
 
 coef(lm16)$species[,1]
 ranef(lm16)$species[,1]

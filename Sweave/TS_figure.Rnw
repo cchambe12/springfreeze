@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(stargazer)
+library(ggmap)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(grid)
+library(rworldmap)
+library(gridExtra)
+@
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{US-NPN Timeline Figures}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was downloaded from the US-NPN data download tool (http://data.usanpn.org/observations/get-started) and observations were constrained to deciduous broadleaf trees that were observed within 40$^{\circ}$ to 45$^{\circ}$ latitude. The standard deviation is represented in coral for budburst and green for leaf out. }
+\includegraphics{..//figure/NPN_2016.pdf} 
+\includegraphics{..//figure/NPN_2016_sd.pdf} 
+\end{center}
+\end{figure}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was downloaded from the US-NPN data download tool (http://data.usanpn.org/observations/get-started) and observations were collected from the Arnold Aboretum - Tree Spotters program. The standard deviation is represented in coral for budburst and green for leaf out. }
+\includegraphics{..//figure/TS_2016.pdf} 
+\includegraphics{..//figure/TS_2016_sd.pdf} 
+\end{center}
+\end{figure}
+
+\end{document}
