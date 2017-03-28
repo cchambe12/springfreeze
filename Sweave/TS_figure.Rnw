@@ -72,4 +72,16 @@ library(gridExtra)
 \end{center}
 \end{figure}
 
+<<label=eurlat, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/NPN_timeline.R")
+npn<-read.csv("..//output/npn_2016_data.csv", header=TRUE)
+npn.lm<-lm(Risk~Budburst,data=npn)
+read_chunk("..//scripts/ts.timeline.R")
+ts<-read.csv("..//output/ts_2016_data.csv", header=TRUE)
+ts.lm<-lm(Risk~Budburst,data=ts)
+
+stargazer(npn.lm,ts.lm, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between day of budburst and duration of vegetative risk. 1) is from the US-NPN data and 2) is from the Tree Spotters program.")
+@
+
+
 \end{document}

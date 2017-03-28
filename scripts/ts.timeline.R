@@ -119,12 +119,14 @@ plot(ts.timeline)
 
 ts<-ggplot((y2), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) + 
   xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0) +
-  scale_x_discrete(labels = c("ACESAC","AESFLA","BETALL","BETNIG","CARGLA","CAROVA","FAGGRA","POPDEL","QUEALB","QUERUB","TILAME"))
+  scale_x_discrete(labels = c("ACESAC","AESFLA","BETALL","BETNIG","CARGLA","CAROVA","FAGGRA","POPDEL","QUEALB","QUERUB","TILAME")) +
+  theme(legend.position="none")
 plot(ts)
 
 
 ggplot((basic), aes( x= Budburst, y=Risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=species))
 
+write.csv(basic,"output/ts_2016_data.csv", row.names = FALSE)
 lm1<-lm(Risk~Budburst,data=basic)
 lm2<-lm(Risk~species, data=y2)
 display(lm1);display(lm2)

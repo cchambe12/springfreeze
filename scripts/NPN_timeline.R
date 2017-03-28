@@ -102,7 +102,7 @@ ts<-ggplot((y), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) +
   xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-stand_dev, ymax=DOY+stand_dev, col=Phenophase), width=.0) +
   scale_x_discrete(labels = c("SAMRAC","PRUVIR","MALSPP","VIBACE","ULMAME","CARGLA","FAGGRA","AESFLA","CAROVA",
                               "BETLEN","PRUSER","VIBLAN","QUEVEL","TILAME","BETNIG","HAMVIR","QUERUB","JUGNIG","QUEALB",
-                            "ACERUB"))
+                            "ACERUB")) + theme(legend.position="none")
 plot(ts)
 
 # Analysis 2016
@@ -111,6 +111,7 @@ df2$stand_dev<-ifelse(df2$stand_dev> (df2$Risk*2), NA, df2$stand_dev)
 df2$stand_dev.leaf<-ifelse(df2$stand_dev.leaf> (df2$Risk*2), NA, df2$stand_dev.leaf)
 df2<-filter(df2, species != "Populus_tremuloides")
 df2<-na.omit(df2)
+write.csv(df2,"output/npn_2016_data.csv",row.names = FALSE)
 
 lmer16<-lmer(Risk~Budburst + Latitude + (1|species), data=df2)
 lm16<-lm(Risk~Budburst + Latitude,data=df2)
