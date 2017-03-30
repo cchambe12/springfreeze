@@ -19,6 +19,7 @@ library(arm)
 library(car)
 library(broom)
 library(lme4)
+library(xtable)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -60,7 +61,7 @@ table<-hf %>% rowwise %>% do(Anova(.$mod))
 myspp <- unique(d.hf$sp)
 for(i in c(1:length(myspp))) {
   subby<-subset(d.hf, sp=myspp[i])
-  myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod,data=subby))
+  myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod,data=d.hf[which(sp==i)])) 
   print(myanova)
 }
 
