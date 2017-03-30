@@ -19,15 +19,13 @@ library(arm)
 library(car)
 library(broom)
 library(lme4)
-#packageurl <- "https://cran.r-project.org/src/contrib/Archive/pbkrtest/pbkrtest_0.4-4.tar.gz" 
-#install.packages(packageurl, repos=NULL, type="source")
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
 d<-read.csv("input/Budburst.DF.csv",header=TRUE)
 
 d$DOY<-yday(d$Date)
-d$chilling<- as.factor(substr(d$chill, 6, 6))
+d$chilling<- substr(d$chill, 6, 6)
 #d$chilling<-as.numeric(as.character(
   #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
 d$force<-as.numeric(as.character(ifelse((d$warm=="warm"), 20, 15)))
@@ -40,10 +38,10 @@ d$tleaf<- factor(d$tleaf, levels = c(4,7),
                         labels = c("Budburst","Leaves"))
 
 ## Harvard Forest Data
-spp<-c("ACEPEN", "ACERUB", "BETALL", "BETPAP", "ILEMUC", "POPGRA", "QUERUB")
+#spp<-c("ACEPEN", "ACERUB", "BETALL", "BETPAP", "ILEMUC", "POPGRA", "QUERUB")
 d.hf<-d%>%
   filter(site=="HF") %>%
-  filter(sp %in% spp) %>%
+  #filter(sp %in% spp) %>%
   group_by(sp, id, tleaf)%>%
   arrange(id)%>%
   filter(row_number()==1) %>%
@@ -51,23 +49,30 @@ d.hf<-d%>%
 d.hf$risk<-d.hf$Leaves-d.hf$Budburst 
 d.hf<-filter(d.hf,risk>0)
 d.hf<-na.omit(d.hf)
-#hf<-d.hf%>%
-  #group_by(sp) %>% 
-  #do(tidy(lm(risk~chilling + force + photoperiod + (chilling*force) + 
-                      #(chilling*photoperiod) + (force*photoperiod), data=.), type="II"))
 
-species <- unique(d.hf$sp)
+# dplyr version
+hf<-d.hf%>%
+  group_by(sp) %>% 
+  do(mod=lm(risk~as.factor(chilling) + force + photoperiod, data=d.hf))
+table<-hf %>% rowwise %>% do(Anova(.$mod))
 
-models<-lmList(risk~chilling+force+photoperiod|sp,data=d.hf)
-models<-na.omit(models)
-Anova(models)
-models <- sapply(species, function(my) {
-  lm(risk~chilling+force+photoperiod,data=d.hf)
-})
+# Lizzie's version
+myspp <- unique(d.hf$sp)
+for(i in c(1:length(myspp))) {
+  subby<-subset(d.hf, sp=myspp[i])
+  myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod,data=subby))
+  print(myanova)
+}
 
-ANOVA.tables <- sapply(models, aov, simplify=FALSE)
+# sapply version
+models <- sapply(myspp, function(my) {
+  lm(risk~chilling+force+photoperiod, data=d.hf, sp==myspp)
+}, simplify=FALSE)
 
+ANOVA.tables <- sapply(models, anova, simplify=FALSE)
+table<-as.data.frame(list(ANOVA.tables))
 
+# Nacho's version
 storing<- list()
 species<-unique(d.hf$sp)
 for(i in 1:length(species)){
