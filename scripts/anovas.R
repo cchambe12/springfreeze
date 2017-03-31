@@ -60,8 +60,8 @@ table<-hf %>% rowwise %>% do(Anova(.$mod))
 # Lizzie's version
 myspp <- unique(d.hf$sp)
 for(i in c(1:length(myspp))) {
-  subby<-subset(d.hf, sp=myspp[i])
-  myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod,data=d.hf[which(sp==i)])) 
+  subby<-subset(d.hf, sp==myspp[i])
+  myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod, data=subby))
   print(myanova)
 }
 
