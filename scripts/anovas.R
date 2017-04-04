@@ -39,10 +39,8 @@ d$tleaf<- factor(d$tleaf, levels = c(4,7),
                         labels = c("Budburst","Leaves"))
 
 ## Harvard Forest Data
-#spp<-c("ACEPEN", "ACERUB", "BETALL", "BETPAP", "ILEMUC", "POPGRA", "QUERUB")
 d.hf<-d%>%
   filter(site=="HF") %>%
-  #filter(sp %in% spp) %>%
   group_by(sp, id, tleaf)%>%
   arrange(id)%>%
   filter(row_number()==1) %>%
@@ -50,6 +48,14 @@ d.hf<-d%>%
 d.hf$risk<-d.hf$Leaves-d.hf$Budburst 
 d.hf<-filter(d.hf,risk>0)
 d.hf<-na.omit(d.hf)
+
+d.total<-as.data.frame(table(d.hf$sp)) %>%
+  rename(sp=Var1)%>%
+  rename(total=Freq)
+d.total$total<-ifelse(d.total$total>3, d.total$total, NA)
+d.total<-na.omit(d.total)
+spp<-as.character(d.total$sp)
+d.hf<-filter(d.hf, sp %in% spp)
 
 # dplyr version
 hf<-d.hf%>%
@@ -64,6 +70,7 @@ for(i in c(1:length(myspp))) {
   myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod, data=subby))
   print(myanova)
 }
+table<-as.data.frame(list(myanova))
 
 # sapply version
 models <- sapply(myspp, function(my) {
