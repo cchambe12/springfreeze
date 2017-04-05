@@ -52,10 +52,23 @@ d.hf<-na.omit(d.hf)
 d.total<-as.data.frame(table(d.hf$sp)) %>%
   rename(sp=Var1)%>%
   rename(total=Freq)
-d.total$total<-ifelse(d.total$total>3, d.total$total, NA)
+d.total$total<-ifelse(d.total$total>=3, d.total$total, NA)
 d.total<-na.omit(d.total)
 spp<-as.character(d.total$sp)
 d.hf<-filter(d.hf, sp %in% spp)
+
+# keep condensing species list -- error from chilling, only one chilling tx for some species
+d.sp<-d.hf %>%
+  ungroup(d.hf)%>%
+  dplyr::select(sp, chilling)
+d.sp<-unique(d.sp)
+d.sp<-as.data.frame(table(d.sp$sp)) %>%
+  rename(sp=Var1)%>%
+  rename(total=Freq)
+d.sp$total<-ifelse(d.sp$total>1, d.sp$total, NA)
+d.sp<-na.omit(d.sp)
+species<-as.character(d.sp$sp)
+d.hf<-filter(d.hf, sp %in% species)
 
 # dplyr version
 hf<-d.hf%>%
@@ -63,14 +76,27 @@ hf<-d.hf%>%
   do(mod=lm(risk~as.factor(chilling) + force + photoperiod, data=d.hf))
 table<-hf %>% rowwise %>% do(Anova(.$mod))
 
-# Lizzie's version
+# Lizzie's version: 
 myspp <- unique(d.hf$sp)
+mylist<-list()
 for(i in c(1:length(myspp))) {
   subby<-subset(d.hf, sp==myspp[i])
-  myanova<-Anova(lm(risk~as.factor(chilling)+force+photoperiod, data=subby))
+  myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod, data=subby))
   print(myanova)
+  mylist[[i]] <- as.data.frame(table(myanova))
 }
-table<-as.data.frame(list(myanova))
+
+# with all two way interactions
+myspp <- unique(d.hf$sp)
+mylist<-list()
+for(i in c(1:length(myspp))) {
+  subby<-subset(d.hf, sp==myspp[i])
+  myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod + as.factor(chilling)*force +
+                      as.factor(chilling)*photoperiod + force*photoperiod, data=subby))
+  print(myanova)
+  mylist[[i]] <- as.data.frame(table(myanova))
+}
+
 
 # sapply version
 models <- sapply(myspp, function(my) {
