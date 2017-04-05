@@ -1,3 +1,9 @@
+## Making new plots for Dan's data - using fewer species based on ANOVAs ##
+
+## 5 Apr 2017 - Cat
+# Using Dan's Data!!
+
+# Clear workspace
 rm(list=ls()) # remove everything currently held in the R memory
 options(stringsAsFactors=FALSE)
 graphics.off()
