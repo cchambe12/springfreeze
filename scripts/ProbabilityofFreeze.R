@@ -66,6 +66,7 @@ gm<-gm.count %>%
   dplyr::select(-count, -year) 
 gm<-gm%>% filter (! duplicated(month))
 gm$site<-"Germany"
+gm.count$site<-"Germany"
 
 # Yakima Airport: March 22-Apr 30
 am8<-amer %>%
@@ -80,6 +81,7 @@ am8<- am8 %>%
   filter(year<2016)
 am8$month<- substr(am8$date, 5, 6)
 am8$day<- substr(am8$date, 7,8)
+am8$weeknum <- as.numeric(format(am8$date, "%U"))
 am8<- am8 %>%
   dplyr::select(-date)%>%
   unite(date, year, month, day, sep="-") %>%
@@ -98,8 +100,6 @@ am8$count <- ave(
 am8<- am8 %>%
   filter(doy >= 80) %>%
   filter(doy <= 120)
-am8$week<- am8 %>%
-  
   
 
 wash.count<- am8 %>%
@@ -113,5 +113,16 @@ wash<-wash.count %>%
   dplyr::select(-count, -year) 
 wash<-wash%>% filter (! duplicated(month))
 wash$site<-"Washington"
+wash.count$site<-"Washington"
 
 d<-full_join(gm, wash)
+df<-full_join(gm.count,wash.count)
+
+limits <- aes(ymax = mean + stand_dev, ymin=mean - stand_dev)
+
+ggplot((d), aes(x=month, y=mean, col=site)) + geom_point() +
+  geom_pointrange(limits)
+
+qplot(site, count, data = df, 
+      geom = "boxplot", color=month) + 
+  xlab("Site")+ylab("Mean number of freeze days")
