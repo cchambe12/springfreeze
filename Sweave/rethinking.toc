@@ -1,9 +1,0 @@
-\contentsline {section}{\numberline {1}Introduction}{4}
-\contentsline {section}{\numberline {2}Climatic Implications: How climate change is affecting spring freezing events}{5}
-\contentsline {section}{\numberline {3}Determining Spring Onset}{8}
-\contentsline {section}{\numberline {4}Determining the Duration of Vegetative Risk}{10}
-\contentsline {subsection}{\numberline {4.1}Tree Spotters Data}{11}
-\contentsline {subsection}{\numberline {4.2}Experimental Chilling Data}{12}
-\contentsline {subsection}{\numberline {4.3}Harvard Forest Observational Data}{16}
-\contentsline {section}{\numberline {5}Conclusion}{17}
-\contentsline {section}{References}{20}
