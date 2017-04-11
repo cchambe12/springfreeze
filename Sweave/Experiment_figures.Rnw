@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(lubridate)
+library(car)
+@
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{US-NPN Timeline Figures}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out. }
+\includegraphics{..//output/Dan_TXandSp.pdf} 
+\end{center}
+\end{figure}
+
+
+<<label=eurlat, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/anovas.R")
+d<-read.csv("..//input/Budburst.DF.csv",header=TRUE)
+
+d$DOY<-yday(d$Date)
+d$chilling<- substr(d$chill, 6, 6)
+#d$chilling<-as.numeric(as.character(
+  #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
+d$force<-as.numeric(as.character(ifelse((d$warm=="warm"), 20, 15)))
+d$photoperiod<- as.numeric(as.character(ifelse((d$photo=="short"), 8, 12)))
+phases<-c("4","7")
+d<-d %>%
+  dplyr::select(id, sp, site, tleaf, DOY, chilling, force, photoperiod, treatcode) %>%
+  filter(tleaf %in% phases)
+d$tleaf<- factor(d$tleaf, levels = c(4,7), 
+                        labels = c("Budburst","Leaves"))
+
+## Harvard Forest Data
+d.hf<-d%>%
+  filter(site=="HF") %>%
+  group_by(sp, id, tleaf)%>%
+  arrange(id)%>%
+  filter(row_number()==1) %>%
+  spread(tleaf, DOY)
+d.hf$risk<-d.hf$Leaves-d.hf$Budburst 
+d.hf<-filter(d.hf,risk>0)
+d.hf<-na.omit(d.hf)
+
+d.total<-as.data.frame(table(d.hf$sp)) %>%
+  rename(sp=Var1)%>%
+  rename(total=Freq)
+d.total$total<-ifelse(d.total$total>=3, d.total$total, NA)
+d.total<-na.omit(d.total)
+spp<-as.character(d.total$sp)
+d.hf<-filter(d.hf, sp %in% spp)
+
+# keep condensing species list -- error from chilling, only one chilling tx for some species
+d.sp<-d.hf %>%
+  ungroup(d.hf)%>%
+  dplyr::select(sp, chilling)
+d.sp<-unique(d.sp)
+d.sp<-as.data.frame(table(d.sp$sp)) %>%
+  rename(sp=Var1)%>%
+  rename(total=Freq)
+d.sp$total<-ifelse(d.sp$total>1, d.sp$total, NA)
+d.sp<-na.omit(d.sp)
+species<-as.character(d.sp$sp)
+d.hf<-filter(d.hf, sp %in% species)
+myspp <- unique(d.hf$sp)
+mylist<-list()
+for(i in c(1:length(myspp))) {
+  subby<-subset(d.hf, sp==myspp[i])
+  myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod, data=subby))
+  print(myanova)
+  mylist[[i]] <- as.data.frame(table(myanova))
+}
+
+
+xtable(myanova, title ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.")
+@
+
+
+\end{document}

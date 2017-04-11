@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(stargazer)
+library(ggmap)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(grid)
+library(rworldmap)
+library(gridExtra)
+@
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{US-NPN Timeline Figures}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Risk of a false spring event across for four archetypal climate regions. Using weeks when temperate forest spring onset has been seen in historical data (references are from journals and US-NPN SI-x dataset).}
+\includegraphics{..//output/RegionalRisk_by_Week.pdf} 
+\includegraphics{..//output/Boxplot_RegRisk_Week.pdf} 
+\end{center}
+\end{figure}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Risk of a false spring event across for four archetypal climate regions. Using months when temperate forest spring onset has been seen in historical data (references are from journals and US-NPN SI-x dataset).}
+\includegraphics{..//output/RegionalRisk_by_Month.pdf}
+\includegraphics{..//output/Boxplot_RegRisk_Month.pdf} 
+\end{center}
+\end{figure}
+
+
+\end{document}

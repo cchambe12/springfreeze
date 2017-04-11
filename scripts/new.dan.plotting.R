@@ -111,7 +111,7 @@ y2<- dplyr::select(y2, -pheno)
 y2$code <- reorder(y2$ID, y2$DOY)
 
 dan<-ggplot((y2), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) + 
-  xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0) +
+  xlab("Species") + ylab("Day of Year") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0) +
   scale_x_discrete() +
   theme(legend.position="none")
 plot(dan)
@@ -143,9 +143,9 @@ basic$sd.leaf<-ifelse(basic$sd.leaf>0, basic$sd.leaf, NA)
 basic<-na.omit(basic)
 
 ts.timeline<-ggplot((basic), aes(x=Budburst, y=ID), stat="identity") + 
-  geom_point(aes(x=basic$Budburst, col="coral")) +
-  geom_point(aes(x=basic$Leaves, col="forestgreen")) + theme(legend.position="none") + 
-    xlab("Budburst to Leaf Out") +
-  ylab("Species") +geom_errorbarh(aes(xmin=Budburst-sd, xmax=Budburst+sd, col="coral"), height=.0) + 
+  geom_point(aes(x=basic$Budburst, col="royalblue4")) +
+  geom_point(aes(x=basic$Leaves, col="forestgreen"))  + 
+    xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
+  ylab("Species") +geom_errorbarh(aes(xmin=Budburst-sd, xmax=Budburst+sd, col="royalblue4"), height=.0) + 
   geom_errorbarh(aes(xmin=Leaves-sd.leaf, xmax=Leaves+sd.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
