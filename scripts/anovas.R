@@ -83,7 +83,7 @@ for(i in c(1:length(myspp))) {
   subby<-subset(d.hf, sp==myspp[i])
   myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod, data=subby))
   print(myanova)
-  mylist[[i]] <- as.data.frame(table(myanova))
+  mylist[[myspp[i]]] <- myanova
 }
 
 # with all two way interactions
@@ -94,7 +94,7 @@ for(i in c(1:length(myspp))) {
   myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod + as.factor(chilling)*force +
                       as.factor(chilling)*photoperiod + force*photoperiod, data=subby))
   print(myanova)
-  mylist[[i]] <- as.data.frame(table(myanova))
+  mylist[[myspp[i]]] <- as.data.frame(table(myanova))
 }
 
 
