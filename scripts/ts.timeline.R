@@ -109,13 +109,14 @@ y2$code <- reorder(y2$species, y2$DOY)
   #group_by(species)%>%
   #summarise_each(funs(sd), DOY)
 
-
-ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + geom_point() + 
-  geom_segment(aes(y = species, yend = species, x = Budburst, xend = Leaves)) + 
-  geom_point(aes(x=basic$Leaves)) + theme(legend.position="none") + geom_point() + xlab("Budburst to Leaf Out") +
-  ylab("Species") +geom_errorbarh(aes(xmin=Budburst-sd, xmax=Budburst+sd, col="coral"), height=.0) + 
+ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") + 
+  geom_point(aes(x=basic$Budburst, col="royalblue4")) +
+  geom_point(aes(x=basic$Leaves, col="forestgreen"))  + 
+  xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
+  ylab("Species") +geom_errorbarh(aes(xmin=Budburst-sd, xmax=Budburst+sd, col="royalblue4"), height=.0) + 
   geom_errorbarh(aes(xmin=Leaves-sd.leaf, xmax=Leaves+sd.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
+
 
 ts<-ggplot((y2), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) + 
   xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0) +
