@@ -12,6 +12,7 @@ library(tidyr)
 library(ggplot2)
 library(arm)
 library(data.table)
+library(car)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -47,31 +48,39 @@ ts.timeline<-ggplot((df), aes(x=bday, y=ID), stat="identity") +
 plot(ts.timeline)
 
 ### Prep data for Anovas
-dxx$DOY<-yday(dxx$Date)
+dxx<-d
 dxx$chilling<- substr(dxx$chill, 6, 6)
 #d$chilling<-as.numeric(as.character(
 #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
 dxx$force<-as.numeric(as.character(ifelse((dxx$warm=="warm"), 20, 15)))
 dxx$photoperiod<- as.numeric(as.character(ifelse((dxx$photo=="short"), 8, 12)))
 dxx<-dxx %>%
-  dplyr::select(id, sp, site, tleaf, DOY, chilling, force, photoperiod, treatcode)
+  dplyr::select(id, sp, site, lday, bday, chilling, force, photoperiod, treatcode)
+dxx$risk<-dxx$lday-dxx$bday 
+
+dxx<-d%>%
+  group_by(sp, id, tleaf)%>%
+  arrange(id)%>%
+  filter(row_number()==1) %>%
+  spread(tleaf, DOY)
+
 
 
 # Run anovas for each species
-myspp <- unique(d.hf$sp)
+myspp <- unique(dxx$sp)
 mylist<-list()
 for(i in c(1:length(myspp))) {
-  subby<-subset(d.hf, sp==myspp[i])
+  subby<-subset(dxx, sp==myspp[i])
   myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod, data=subby))
   print(myanova)
   mylist[[myspp[i]]] <- myanova
 }
 
 # with all two way interactions
-myspp <- unique(d.hf$sp)
+myspp <- unique(dxx$sp)
 mylist<-list()
 for(i in c(1:length(myspp))) {
-  subby<-subset(d.hf, sp==myspp[i])
+  subby<-subset(dxx, sp==myspp[i])
   myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod + as.factor(chilling)*force +
                       as.factor(chilling)*photoperiod + force*photoperiod, data=subby))
   print(myanova)
