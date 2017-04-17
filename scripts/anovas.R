@@ -33,7 +33,7 @@ d$force<-as.numeric(as.character(ifelse((d$warm=="warm"), 20, 15)))
 d$photoperiod<- as.numeric(as.character(ifelse((d$photo=="short"), 8, 12)))
 phases<-c("4","7")
 d<-d %>%
-  dplyr::select(id, sp, site, tleaf, DOY, chilling, force, photoperiod, treatcode) %>%
+  dplyr::select(id, sp, site, bday, lday, chilling, force, photoperiod, treatcode) %>%
   filter(tleaf %in% phases)
 d$tleaf<- factor(d$tleaf, levels = c(4,7), 
                         labels = c("Budburst","Leaves"))

@@ -17,7 +17,37 @@ library(data.table)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
-d<-read.csv("input/Budburst.DF.csv",header=TRUE)
+d<-read.csv("input/Budburst.clean.csv",header=TRUE)
+
+########### NEW EDITION - CAT 17 APRIL 2017 ####################
+tx<-c("CS0", "WL1")
+d<- d %>%
+  dplyr::select(ind, treatcode, lday, bday, site) %>%
+  filter(treatcode %in% tx)
+  
+d<-na.omit(d)
+d$species<-substr(d$ind, 1, 6)
+d<-d%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+df<-d%>%unite(ID, species, treatcode, sep="_")
+
+df$mean<-ave(df$bday, df$ID)
+df$sd<-ave(df$bday, df$ID, FUN=sd)
+df$mean.leaf<-ave(df$lday, df$ID)
+df$sd.leaf<-ave(df$lday, df$ID, FUN=sd)  
+
+df<-df%>%
+  group_by(mean, ID)%>%
+  arrange(ID)%>%
+  filter(row_number()==1) 
+
+ts.timeline<-ggplot((df), aes(x=bday, y=ID), stat="identity") + 
+  geom_point(aes(x=df$bday, col="royalblue4")) +
+  geom_point(aes(x=df$lday, col="forestgreen"))  + 
+  xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
+  ylab("Species") +geom_errorbarh(aes(xmin=bday-sd, xmax=bday+sd, col="royalblue4"), height=.0) + 
+  geom_errorbarh(aes(xmin=lday-sd.leaf, xmax=lday+sd.leaf, col="forestgreen"), height=.0)
+plot(ts.timeline)
+
 
 d$DOY<-yday(d$Date)
 d$chilling<- substr(d$chill, 6, 6)
