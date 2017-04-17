@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 APR 2017 13:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 APR 2017 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -851,53 +851,37 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 88.
 \c__siunitx_mathtt_int=\count167
 
-<..//output/Dan_TXandSp.pdf, id=1, 632.3625pt x 391.4625pt>
+<..//output/Dan_TXandSp.pdf, id=1, 513.92pt x 391.4625pt>
 File: ..//output/Dan_TXandSp.pdf Graphic file (type pdf)
 
 <use ..//output/Dan_TXandSp.pdf>
 Package pdftex.def Info: ..//output/Dan_TXandSp.pdf used on input line 99.
-(pdftex.def)             Requested size: 377.62633pt x 233.77426pt.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 124.
-
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-
-LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 124.
-
-
-Overfull \hbox (10.04799pt too wide) in paragraph at lines 124--124
-[]\T1/aett/m/n/10 ## Er-ror in Anova.lm(lm(risk ~ as.factor(chilling) + force +
- pho-tope-riod, : resid-ual df = 0[] 
- []
-
-[1
+(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
+ [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..//out
-put/Dan_TXandSp.pdf>] [2] (./Experiment_figures.aux)
+put/Dan_TXandSp.pdf>] [2] [3]
 
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+LaTeX Warning: Float too large for page by 1439.74629pt on input line 526.
 
- ) 
+[4] [5] (./Experiment_figures.aux) ) 
 Here is how much of TeX's memory you used:
- 15511 strings out of 493014
- 306261 string characters out of 6133351
- 329511 words of memory out of 5000000
- 18880 multiletter control sequences out of 15000+600000
- 17810 words of font info for 44 fonts, out of 8000000 for 9000
+ 15485 strings out of 493014
+ 305830 string characters out of 6133351
+ 353511 words of memory out of 5000000
+ 18859 multiletter control sequences out of 15000+600000
+ 17131 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,9n,42p,10390b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Experiment_figures.pdf (2 pages, 72187 bytes).
+ 37i,10n,42p,10390b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr9.pfb>
+Output written on Experiment_figures.pdf (5 pages, 69829 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 42 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

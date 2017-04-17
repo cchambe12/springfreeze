@@ -49,20 +49,14 @@ plot(ts.timeline)
 
 ### Prep data for Anovas
 dxx<-d
-dxx$chilling<- substr(dxx$chill, 6, 6)
+dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
 #d$chilling<-as.numeric(as.character(
 #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
-dxx$force<-as.numeric(as.character(ifelse((dxx$warm=="warm"), 20, 15)))
-dxx$photoperiod<- as.numeric(as.character(ifelse((dxx$photo=="short"), 8, 12)))
+dxx$warm<-as.numeric(as.character(dxx$warm))
+dxx$photo<-as.numeric(as.character(dxx$photo))
 dxx<-dxx %>%
-  dplyr::select(id, sp, site, lday, bday, chilling, force, photoperiod, treatcode)
+  dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
 dxx$risk<-dxx$lday-dxx$bday 
-
-dxx<-d%>%
-  group_by(sp, id, tleaf)%>%
-  arrange(id)%>%
-  filter(row_number()==1) %>%
-  spread(tleaf, DOY)
 
 
 
@@ -71,10 +65,12 @@ myspp <- unique(dxx$sp)
 mylist<-list()
 for(i in c(1:length(myspp))) {
   subby<-subset(dxx, sp==myspp[i])
-  myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod, data=subby))
+  myanova<-Anova(lm(risk~chilling + warm + photo, data=subby))
   print(myanova)
   mylist[[myspp[i]]] <- myanova
 }
+
+
 
 # with all two way interactions
 myspp <- unique(dxx$sp)
