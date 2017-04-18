@@ -1,9 +1,24 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Ault \emph{et~al.}(2015)Ault, Zurita-Milla \& Schwartz}]{Ault2015}
+Ault, T.R., Zurita-Milla, R. \& Schwartz, M.D. (2015) {A
+  Matlab{\{}{\textcopyright}{\}} toolbox for calculating spring indices from
+  daily meteorological data}. \emph{Computers {\{}{\&}{\}} Geosciences}
+  \textbf{83}, 46--53.
 
 \bibitem[{Schaber \& Badeck(2005)}]{Schaber2005}
 Schaber, J. \& Badeck, F.W. (2005) Plant phenology in germany over the 20th
   century. \emph{Regional Environmental Change} \textbf{5}, 37--46.
+
+\bibitem[{Schwartz(1993)}]{Schwartz1993}
+Schwartz, M.D. (1993) Assessing the onset of spring: A climatological
+  perspective. \emph{Physical Geography} \textbf{14(6)}, 536--550.
+
+\bibitem[{Schwartz \emph{et~al.}(2006)Schwartz, Ahas \& Aasa}]{Schwartz2006}
+Schwartz, M.D., Ahas, R. \& Aasa, A. (2006) {Onset of spring starting earlier
+  across the Northern Hemisphere}. \emph{Global Change Biology} \textbf{12},
+  343--351.
 
 \bibitem[{Soudani \emph{et~al.}(2012)Soudani, Hmimina, Delpierre, Pontailler,
   Aubinet, Bonal, Caquet, de~Grandcourt, Burban, Flechard \&
