@@ -58,17 +58,9 @@ library(gridExtra)
 
 \begin{figure} [H]
 \begin{center}
-\caption{Risk of a false spring event across for four archetypal climate regions. Using weeks when temperate forest spring onset has been seen in historical data (references are from journals and US-NPN SI-x dataset).}
-\includegraphics{..//output/RegionalRisk_by_Week.pdf} 
-\includegraphics{..//output/Boxplot_RegRisk_Week.pdf} 
-\end{center}
-\end{figure}
-
-\begin{figure} [H]
-\begin{center}
-\caption{Risk of a false spring event across for four archetypal climate regions. Using months when temperate forest spring onset has been seen in historical data (references are from journals and US-NPN SI-x dataset).}
-\includegraphics{..//output/RegionalRisk_by_Month.pdf}
-\includegraphics{..//output/Boxplot_RegRisk_Month.pdf} 
+\caption{Risk of a false spring event across five archetypal climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leaf out date and was divided into biweekly segments \citep{} and US-NPN SI-x dataset). Number of False Springs (False Spring occurs when: \(Tmin <=-5 \text{ after } (GDD>=100 \text{ \& } GDD<=400 \text{ \& } DOY>=60) \)) across four latitudinal gradients from 1965-2015: }
+\includegraphics{..//output/RegionalRisk_by_biweekly.pdf}
+\includegraphics{..//output/Boxplot_RegRisk_biweekly.pdf} 
 \end{center}
 \end{figure}
 

@@ -25,6 +25,7 @@ lat<-read.csv("input/NOAA_Eur50.csv", header=TRUE)
 amer<-read.csv("input/NOAA_data2.csv", header=TRUE)
 nc<-read.csv("input/N.Carolina.csv", header=TRUE)
 new<-read.csv("input/Newport.csv", header=TRUE)
+mid<-read.csv("input/midwest.csv", header=TRUE)
 
 ## Plots by week
 
@@ -49,7 +50,6 @@ lat2$doy<-yday(lat2$date)
 lat2$year<-substr(lat2$date,0,4)
 lat2$month<-substr(lat2$date, 6,7)
 lat2$week<-strftime(lat2$date,format="%W")
-lat2$week<- as.numeric(as.character(lat2$week)) - 12
 lat2$Tmean <- (lat2$Tmax + lat2$Tmin)/2
 lat2$gdd <- lat2$Tmean - 5
 lat2$gdd <-ifelse(lat2$gdd>0, lat2$gdd, 0)
@@ -61,6 +61,7 @@ lat2$count <- ave(
 lat2<- lat2 %>%
   filter(doy >= 90) %>%
   filter(doy <= 120)
+lat2$week<- as.numeric(as.character(lat2$week)) - 11
 
 gm.count<- lat2 %>%
   dplyr::select(year, week, count) %>%
@@ -74,6 +75,56 @@ gm<-gm.count %>%
 gm<-gm%>% filter (! duplicated(week))
 gm$site<-"Germany"
 gm.count$site<-"Germany"
+
+# Waterville, ME: DOY 100-150
+water<-mid %>%
+  dplyr::select(STATION_NAME,DATE, TMIN, TMAX) %>%
+  filter(STATION_NAME == "WATERVILLE WWTP ME US") %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+water$year <- substr(water$date, 0, 4)
+water<- water %>%
+  filter(year>=1965) %>%
+  filter(year<2016)
+water$month<- substr(water$date, 5, 6)
+water$day<- substr(water$date, 7,8)
+water<- water %>%
+  dplyr::select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  dplyr::select(date, Tmin, Tmax)
+water$doy<-yday(water$date)
+water$year<-substr(water$date,0,4)
+water$month<-substr(water$date, 6,7)
+water$week<-strftime(water$date,format="%W")
+water$Tmean <- (water$Tmax + water$Tmin)/2
+water$gdd <- water$Tmean - 5
+water$gdd <-ifelse(water$gdd>0, water$gdd, 0)
+water$frz<- ifelse((water$Tmin<=-2.2), 1, 0)
+water$count <- ave(
+  water$frz, water$week, water$year,
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+water<- water %>%
+  filter(doy >= 100) %>%
+  filter(doy <= 150)
+water$week<- as.numeric(as.character(water$week)) - 13
+water$Tmin<-ifelse(water$Tmin==-9999, NA, water$Tmin)
+water<-na.omit(water)
+
+
+water.count<- water %>%
+  dplyr::select(year, week, count) %>%
+  group_by(year, week)%>%
+  filter(row_number(week)==n())
+water.count$mean<-ave(water.count$count, water.count$week)
+water.count$stand_dev<-ave(water.count$count, water.count$week, FUN=sd)
+maine<-water.count %>%
+  ungroup(water.count) %>%
+  dplyr::select(-count, -year) 
+maine<-maine%>% filter (! duplicated(week))
+maine$site<-"Maine"
+water.count$site<-"Maine"
 
 # Yakima Airport: March 22-Apr 30
 am8<-amer %>%
@@ -96,7 +147,6 @@ am8$doy<-yday(am8$date)
 am8$year<-substr(am8$date,0,4)
 am8$month<-substr(am8$date, 6,7)
 am8$week<-strftime(am8$date,format="%W")
-am8$week<- as.numeric(as.character(am8$week)) - 10
 am8$Tmean <- (am8$Tmax + am8$Tmin)/2
 am8$gdd <- am8$Tmean - 5
 am8$gdd <-ifelse(am8$gdd>0, am8$gdd, 0)
@@ -108,6 +158,7 @@ am8$count <- ave(
 am8<- am8 %>%
   filter(doy >= 80) %>%
   filter(doy <= 120)
+am8$week<- as.numeric(as.character(am8$week)) - 10
 
 wash.count<- am8 %>%
   dplyr::select(year, week, count) %>%
@@ -144,7 +195,6 @@ nc1$doy<-yday(nc1$date)
 nc1$year<-substr(nc1$date,0,4)
 nc1$month<-substr(nc1$date, 6,7)
 nc1$week<-strftime(nc1$date,format="%W")
-nc1$week<- as.numeric(as.character(nc1$week)) - 6
 nc1$Tmean <- (nc1$Tmax + nc1$Tmin)/2
 nc1$gdd <- nc1$Tmean - 5
 nc1$gdd <-ifelse(nc1$gdd>0, nc1$gdd, 0)
@@ -156,6 +206,7 @@ nc1$count <- ave(
 nc1<- nc1 %>%
   filter(doy >= 50) %>%
   filter(doy <= 100)
+nc1$week<- as.numeric(as.character(nc1$week)) - 6
 nc1$Tmin<-ifelse(nc1$Tmin==-9999, NA, nc1$Tmin)
 nc1<-na.omit(nc1)
 
@@ -194,7 +245,6 @@ ren$doy<-yday(ren$date)
 ren$year<-substr(ren$date,0,4)
 ren$month<-substr(ren$date, 6,7)
 ren$week<-strftime(ren$date,format="%W")
-ren$week<- as.numeric(as.character(ren$week)) - 13
 ren$Tmean <- (ren$Tmax + ren$Tmin)/2
 ren$gdd <- ren$Tmean - 5
 ren$gdd <-ifelse(ren$gdd>0, ren$gdd, 0)
@@ -206,6 +256,7 @@ ren$count <- ave(
 ren<- ren %>%
   filter(doy >= 95) %>%
   filter(doy <= 130)
+ren$week<- as.numeric(as.character(ren$week)) - 12
 
 ren.count<- ren %>%
   dplyr::select(year,week, count) %>%
@@ -224,9 +275,11 @@ ren.count$site<-"France"
 d<-full_join(gm, wash)
 d<-full_join(d, nc2)
 d<-full_join(d, ren1)
+d<-full_join(d, maine)
 df<-full_join(gm.count,wash.count)
 df<-full_join(df, nc.count)
 df<-full_join(df, ren.count)
+df<-full_join(df, water.count)
 
 limits <- aes(ymax = mean + stand_dev, ymin=mean - stand_dev)
 
@@ -240,49 +293,100 @@ qplot(site, count, data = df,
 #####################################################################
 ## Plots by Month
 # Bamberg,Germany: DOY 90-120
-lat2<-lat %>%
+lat1<-lat %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
   filter(STATION_NAME == "BAMBERG GM") %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
   rename(date = DATE)
-lat2$year <- substr(lat2$date, 0, 4)
-lat2<- lat2 %>%
+lat1$year <- substr(lat1$date, 0, 4)
+lat1<- lat1 %>%
   filter(year>=1965) %>%
   filter(year<2016)
-lat2$month<- substr(lat2$date, 5, 6)
-lat2$day<- substr(lat2$date, 7,8)
-lat2<- lat2 %>%
+lat1$month<- substr(lat1$date, 5, 6)
+lat1$day<- substr(lat1$date, 7,8)
+lat1<- lat1 %>%
   dplyr::select(-date)%>%
   unite(date, year, month, day, sep="-") %>%
   dplyr::select(date, Tmin, Tmax)
-lat2$doy<-yday(lat2$date)
-lat2$year<-substr(lat2$date,0,4)
-lat2$month<-substr(lat2$date, 6,7)
-lat2$Tmean <- (lat2$Tmax + lat2$Tmin)/2
-lat2$gdd <- lat2$Tmean - 5
-lat2$gdd <-ifelse(lat2$gdd>0, lat2$gdd, 0)
-lat2$frz<- ifelse((lat2$Tmin<=-2.2), 1, 0)
-lat2$count <- ave(
-  lat2$frz, lat2$month, lat2$year,
+lat1$doy<-yday(lat1$date)
+lat1$day<-substr(lat1$date,9,10)
+lat1$year<-substr(lat1$date,0,4)
+lat1$month<-substr(lat1$date, 6,7)
+lat1$biweek<-ifelse(lat1$day<=15,1,2)
+lat1<-lat1%>%unite(biweekly,month,biweek, sep="_")
+lat1$Tmean <- (lat1$Tmax + lat1$Tmin)/2
+lat1$gdd <- lat1$Tmean - 5
+lat1$gdd <-ifelse(lat1$gdd>0, lat1$gdd, 0)
+lat1$frz<- ifelse((lat1$Tmin<=-2.2), 1, 0)
+lat1$count <- ave(
+  lat1$frz, lat1$biweekly, lat1$year,
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
-lat2<- lat2 %>%
+lat1<- lat1 %>%
   filter(doy >= 90) %>%
   filter(doy <= 120)
 
-gm.count<- lat2 %>%
-  dplyr::select(year, month, count) %>%
-  group_by(year, month)%>%
-  filter(row_number(month)==n())
-gm.count$mean<-ave(gm.count$count, gm.count$month)
-gm.count$stand_dev<-ave(gm.count$count, gm.count$month, FUN=sd)
+gm.count<- lat1 %>%
+  dplyr::select(year, biweekly, count) %>%
+  group_by(year, biweekly)%>%
+  filter(row_number(biweekly)==n())
+gm.count$mean<-ave(gm.count$count, gm.count$biweekly)
+gm.count$stand_dev<-ave(gm.count$count, gm.count$biweekly, FUN=sd)
 gm<-gm.count %>%
   ungroup(gm.count) %>%
   dplyr::select(-count, -year) 
-gm<-gm%>% filter (! duplicated(month))
+gm<-gm%>% filter (! duplicated(biweekly))
 gm$site<-"Germany"
 gm.count$site<-"Germany"
+
+# Waterville, ME: DOY 100-150
+water<-mid %>%
+  dplyr::select(STATION_NAME,DATE, TMIN, TMAX) %>%
+  filter(STATION_NAME == "WATERVILLE WWTP ME US") %>%
+  rename(Tmin = TMIN) %>%
+  rename(Tmax = TMAX) %>%
+  rename(date = DATE)
+water$year <- substr(water$date, 0, 4)
+water<- water %>%
+  filter(year>=1965) %>%
+  filter(year<2016)
+water$month<- substr(water$date, 5, 6)
+water$day<- substr(water$date, 7,8)
+water<- water %>%
+  dplyr::select(-date)%>%
+  unite(date, year, month, day, sep="-") %>%
+  dplyr::select(date, Tmin, Tmax)
+water$doy<-yday(water$date)
+water$year<-substr(water$date,0,4)
+water$month<-substr(water$date, 6,7)
+water$day<-substr(water$date, 9,10)
+water$biweek<-ifelse(water$day<=15,1,2)
+water<-water%>%unite(biweekly,month,biweek, sep="_")
+water$Tmean <- (water$Tmax + water$Tmin)/2
+water$gdd <- water$Tmean - 5
+water$gdd <-ifelse(water$gdd>0, water$gdd, 0)
+water$frz<- ifelse((water$Tmin<=-2.2), 1, 0)
+water$count <- ave(
+  water$frz, water$biweekly, water$year,
+  FUN=function(x) cumsum(c(0, head(x, -1)))
+)
+water<- water %>%
+  filter(doy >= 100) %>%
+  filter(doy <= 150)
+
+water.count<- water %>%
+  dplyr::select(year, biweekly, count) %>%
+  group_by(year, biweekly)%>%
+  filter(row_number(biweekly)==n())
+water.count$mean<-ave(water.count$count, water.count$biweekly)
+water.count$stand_dev<-ave(water.count$count, water.count$biweekly, FUN=sd)
+maine<-water.count %>%
+  ungroup(water.count) %>%
+  dplyr::select(-count, -year) 
+maine<-maine%>% filter (! duplicated(biweekly))
+maine$site<-"Maine"
+water.count$site<-"Maine"
 
 # Yakima Airport: March 22-Apr 30
 am8<-amer %>%
@@ -304,12 +408,15 @@ am8<- am8 %>%
 am8$doy<-yday(am8$date)
 am8$year<-substr(am8$date,0,4)
 am8$month<-substr(am8$date, 6,7)
+am8$day<-substr(am8$date, 9,10)
+am8$biweek<-ifelse(am8$day<=15,1,2)
+am8<-am8%>%unite(biweekly,month,biweek, sep="_")
 am8$Tmean <- (am8$Tmax + am8$Tmin)/2
 am8$gdd <- am8$Tmean - 5
 am8$gdd <-ifelse(am8$gdd>0, am8$gdd, 0)
 am8$frz<- ifelse((am8$Tmin<=-2.2), 1, 0)
 am8$count <- ave(
-  am8$frz, am8$month, am8$year,
+  am8$frz, am8$biweekly, am8$year,
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 am8<- am8 %>%
@@ -317,15 +424,15 @@ am8<- am8 %>%
   filter(doy <= 120)
 
 wash.count<- am8 %>%
-  dplyr::select(year, month, count) %>%
-  group_by(year, month)%>%
-  filter(row_number(month)==n())
-wash.count$mean<-ave(wash.count$count, wash.count$month)
-wash.count$stand_dev<-ave(wash.count$count, wash.count$month, FUN=sd)
+  dplyr::select(year, biweekly, count) %>%
+  group_by(year, biweekly)%>%
+  filter(row_number(biweekly)==n())
+wash.count$mean<-ave(wash.count$count, wash.count$biweekly)
+wash.count$stand_dev<-ave(wash.count$count, wash.count$biweekly, FUN=sd)
 wash<-wash.count %>%
   ungroup(wash.count) %>%
   dplyr::select(-count, -year) 
-wash<-wash%>% filter (! duplicated(month))
+wash<-wash%>% filter (! duplicated(biweekly))
 wash$site<-"Washington"
 wash.count$site<-"Washington"
 
@@ -350,12 +457,15 @@ nc1<- nc1 %>%
 nc1$doy<-yday(nc1$date)
 nc1$year<-substr(nc1$date,0,4)
 nc1$month<-substr(nc1$date, 6,7)
+nc1$day<-substr(nc1$date,9,10)
+nc1$biweek<-ifelse(nc1$day<=15,1,2)
+nc1<-nc1%>%unite(biweekly,month,biweek, sep="_")
 nc1$Tmean <- (nc1$Tmax + nc1$Tmin)/2
 nc1$gdd <- nc1$Tmean - 5
 nc1$gdd <-ifelse(nc1$gdd>0, nc1$gdd, 0)
 nc1$frz<- ifelse((nc1$Tmin<=-2.2), 1, 0)
 nc1$count <- ave(
-  nc1$frz, nc1$month, nc1$year,
+  nc1$frz, nc1$biweekly, nc1$year,
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 nc1<- nc1 %>%
@@ -365,15 +475,15 @@ nc1$Tmin<-ifelse(nc1$Tmin==-9999, NA, nc1$Tmin)
 nc1<-na.omit(nc1)
 
 nc.count<- nc1 %>%
-  dplyr::select(year, month, count) %>%
-  group_by(year, month)%>%
-  filter(row_number(month)==n())
-nc.count$mean<-ave(nc.count$count, nc.count$month)
-nc.count$stand_dev<-ave(nc.count$count, nc.count$month, FUN=sd)
+  dplyr::select(year, biweekly, count) %>%
+  group_by(year, biweekly)%>%
+  filter(row_number(biweekly)==n())
+nc.count$mean<-ave(nc.count$count, nc.count$biweekly)
+nc.count$stand_dev<-ave(nc.count$count, nc.count$biweekly, FUN=sd)
 nc2<-nc.count %>%
   ungroup(nc.count) %>%
   dplyr::select(-count, -year) 
-nc2<-nc2%>% filter (! duplicated(month))
+nc2<-nc2%>% filter (! duplicated(biweekly))
 nc2$site<-"North Carolina"
 nc.count$site<-"North Carolina"
 
@@ -398,12 +508,15 @@ ren<- ren %>%
 ren$doy<-yday(ren$date)
 ren$year<-substr(ren$date,0,4)
 ren$month<-substr(ren$date, 6,7)
+ren$day<-substr(ren$date,9,10)
+ren$biweek<-ifelse(ren$day<=15,1,2)
+ren<-ren%>%unite(biweekly,month,biweek, sep="_")
 ren$Tmean <- (ren$Tmax + ren$Tmin)/2
 ren$gdd <- ren$Tmean - 5
 ren$gdd <-ifelse(ren$gdd>0, ren$gdd, 0)
 ren$frz<- ifelse((ren$Tmin<=-2.2), 1, 0)
 ren$count <- ave(
-  ren$frz, ren$month, ren$year,
+  ren$frz, ren$biweekly, ren$year,
   FUN=function(x) cumsum(c(0, head(x, -1)))
 )
 ren<- ren %>%
@@ -411,15 +524,15 @@ ren<- ren %>%
   filter(doy <= 130)
 
 ren.count<- ren %>%
-  dplyr::select(year,month, count) %>%
-  group_by(year, month)%>%
-  filter(row_number(month)==n())
-ren.count$mean<-ave(ren.count$count, ren.count$month)
-ren.count$stand_dev<-ave(ren.count$count, ren.count$month, FUN=sd)
+  dplyr::select(year,biweekly, count) %>%
+  group_by(year, biweekly)%>%
+  filter(row_number(biweekly)==n())
+ren.count$mean<-ave(ren.count$count, ren.count$biweekly)
+ren.count$stand_dev<-ave(ren.count$count, ren.count$biweekly, FUN=sd)
 ren1<-ren.count %>%
   ungroup(ren.count) %>%
   dplyr::select(-count, -year) 
-ren1<-ren1%>% filter (! duplicated(month))
+ren1<-ren1%>% filter (! duplicated(biweekly))
 ren1$site<-"France"
 ren.count$site<-"France"
 
@@ -427,16 +540,18 @@ ren.count$site<-"France"
 d<-full_join(gm, wash)
 d<-full_join(d, nc2)
 d<-full_join(d, ren1)
+d<-full_join(d, maine)
 df<-full_join(gm.count,wash.count)
 df<-full_join(df, nc.count)
 df<-full_join(df, ren.count)
+df<-full_join(df, water.count)
 
 limits <- aes(ymax = mean + stand_dev, ymin=mean - stand_dev)
 
-ggplot((d), aes(x=month, y=mean, col=site)) + geom_point() +
+ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() +
   geom_pointrange(limits) 
 
 qplot(site, count, data = df, 
-      geom = "boxplot", color=month) + 
+      geom = "boxplot", color=biweekly) + 
   xlab("Site")+ylab("Mean number of freeze days")
 
