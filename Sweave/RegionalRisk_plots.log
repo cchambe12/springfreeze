@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 APR 2017 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 APR 2017 10:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -850,60 +850,54 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <7> not available
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <5> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 88.
 \c__siunitx_mathtt_int=\count167
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <9> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 98.
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 98.
 
-<..//output/RegionalRisk_by_Week.pdf, id=1, 632.3625pt x 391.4625pt>
-File: ..//output/RegionalRisk_by_Week.pdf Graphic file (type pdf)
+<..//output/RegionalRisk_by_biweekly.pdf, id=1, 513.92pt x 391.4625pt>
+File: ..//output/RegionalRisk_by_biweekly.pdf Graphic file (type pdf)
 
-<use ..//output/RegionalRisk_by_Week.pdf>
-Package pdftex.def Info: ..//output/RegionalRisk_by_Week.pdf used on input line
- 99.
-(pdftex.def)             Requested size: 377.62633pt x 233.77426pt.
+<use ..//output/RegionalRisk_by_biweekly.pdf>
+Package pdftex.def Info: ..//output/RegionalRisk_by_biweekly.pdf used on input 
+line 99.
+(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
 
-<..//output/Boxplot_RegRisk_Week.pdf, id=2, 632.3625pt x 391.4625pt>
-File: ..//output/Boxplot_RegRisk_Week.pdf Graphic file (type pdf)
+<..//output/Boxplot_RegRisk_biweekly.pdf, id=2, 513.92pt x 391.4625pt>
+File: ..//output/Boxplot_RegRisk_biweekly.pdf Graphic file (type pdf)
 
-<use ..//output/Boxplot_RegRisk_Week.pdf>
-Package pdftex.def Info: ..//output/Boxplot_RegRisk_Week.pdf used on input line
- 100.
-(pdftex.def)             Requested size: 377.62633pt x 233.77426pt.
-
-<..//output/RegionalRisk_by_Month.pdf, id=3, 632.3625pt x 391.4625pt>
-File: ..//output/RegionalRisk_by_Month.pdf Graphic file (type pdf)
-
-<use ..//output/RegionalRisk_by_Month.pdf>
-Package pdftex.def Info: ..//output/RegionalRisk_by_Month.pdf used on input lin
-e 107.
-(pdftex.def)             Requested size: 377.62633pt x 233.77426pt.
-
-<..//output/Boxplot_RegRisk_Month.pdf, id=4, 632.3625pt x 391.4625pt>
-File: ..//output/Boxplot_RegRisk_Month.pdf Graphic file (type pdf)
-
-<use ..//output/Boxplot_RegRisk_Month.pdf>
-Package pdftex.def Info: ..//output/Boxplot_RegRisk_Month.pdf used on input lin
-e 108.
-(pdftex.def)             Requested size: 377.62633pt x 233.77426pt.
+<use ..//output/Boxplot_RegRisk_biweekly.pdf>
+Package pdftex.def Info: ..//output/Boxplot_RegRisk_biweekly.pdf used on input 
+line 100.
+(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
  [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..//out
-put/RegionalRisk_by_Week.pdf> <..//output/Boxplot_RegRisk_Week.pdf>] [2 <..//ou
-tput/RegionalRisk_by_Month.pdf> <..//output/Boxplot_RegRisk_Month.pdf>] (./Regi
-onalRisk_plots.aux) ) 
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \vbox (88.22334pt too high) has occurred while \output is active []
+
+
+[2 <..//output/RegionalRisk_by_biweekly.pdf> <..//output/Boxplot_RegRisk_biweek
+ly.pdf>] (./RegionalRisk_plots.bbl) [3] (./RegionalRisk_plots.aux) ) 
 Here is how much of TeX's memory you used:
- 15499 strings out of 493014
- 306417 string characters out of 6133351
- 328511 words of memory out of 5000000
- 18870 multiletter control sequences out of 15000+600000
- 17131 words of font info for 42 fonts, out of 8000000 for 9000
+ 15540 strings out of 493014
+ 306671 string characters out of 6133351
+ 327713 words of memory out of 5000000
+ 18890 multiletter control sequences out of 15000+600000
+ 28223 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,10390b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr9.pfb>
-Output written on RegionalRisk_plots.pdf (2 pages, 61871 bytes).
+ 38i,6n,47p,10390b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on RegionalRisk_plots.pdf (3 pages, 100413 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

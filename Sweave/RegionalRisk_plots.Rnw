@@ -58,11 +58,11 @@ library(gridExtra)
 
 \begin{figure} [H]
 \begin{center}
-\caption{Risk of a false spring event across five archetypal climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leaf out date and was divided into biweekly segments \citep{} and US-NPN SI-x dataset). Number of False Springs (False Spring occurs when: \(Tmin <=-5 \text{ after } (GDD>=100 \text{ \& } GDD<=400 \text{ \& } DOY>=60) \)) across four latitudinal gradients from 1965-2015: }
+\caption{Risk of a false spring event across five archetypal climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{SI-x2016, Soudani2012, Schaber2005}. We calculated the mean number of days that were -2.2$^{\circ}$C or below for each two week period that fell within the budburst to leafout timeframe in each region. }
 \includegraphics{..//output/RegionalRisk_by_biweekly.pdf}
 \includegraphics{..//output/Boxplot_RegRisk_biweekly.pdf} 
 \end{center}
 \end{figure}
 
-
+\bibliography{..//refs/SpringFreeze.bib}
 \end{document}
