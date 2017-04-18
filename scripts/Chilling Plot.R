@@ -39,7 +39,11 @@ df<-df%>%
   arrange(ID)%>%
   filter(row_number()==1) 
 
-ts.timeline<-ggplot((df), aes(x=bday, y=ID), stat="identity") + 
+#df$risk<-df$lday-df$bday
+#df$code<-reorder(df$ID, df$risk)
+df$code<-reorder(df$ID, df$bday)
+
+ts.timeline<-ggplot((df), aes(x=bday, y=code), stat="identity") + 
   geom_point(aes(x=df$bday, col="royalblue4")) +
   geom_point(aes(x=df$lday, col="forestgreen"))  + 
   xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
@@ -77,8 +81,8 @@ myspp <- unique(dxx$sp)
 mylist<-list()
 for(i in c(1:length(myspp))) {
   subby<-subset(dxx, sp==myspp[i])
-  myanova<-Anova(lm(risk~as.factor(chilling)+ force + photoperiod + as.factor(chilling)*force +
-                      as.factor(chilling)*photoperiod + force*photoperiod, data=subby))
+  myanova<-Anova(lm(risk~chilling+ warm + photo + chilling*warm +
+                      chilling*photo + warm*photo, data=subby))
   print(myanova)
   mylist[[myspp[i]]] <- as.data.frame(table(myanova))
 }
