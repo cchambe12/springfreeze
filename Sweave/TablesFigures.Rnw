@@ -1,0 +1,219 @@
+\documentclass{article}
+%\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(car)
+library(lubridate)
+@
+
+\begin{document}
+\title{Rethinking False Spring Risk}
+\author{Chamberlain, Wolkovich}
+\date{\today}
+\maketitle 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\LARGE\textbf{Tables and Figures}
+\end{center}
+\section{Determining Spring Onset}
+<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
+read_chunk("..//scripts/John.okeefe.R")
+method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+
+FSI.table<- method %>%
+  dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
+  rename(okeefe = FSI_okeefe) %>%
+  rename(phenocam = FSI_cam) %>%
+  rename(npn = FSI_npn) %>%
+  filter(year>=2008) %>%
+  filter(year<2015)
+blend<-FSI.table %>% 
+  gather(Method, FSI, -year) %>%
+  arrange(year)
+
+methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
+  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
+  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
+  geom_line(aes(x=year, y=FSI, col=Method))
+plot(methodplot)
+@
+
+\section*{Species Differences and Vegetative Risk}
+\subsection*{Treespotters Data}
+\begin{figure} [H]
+\begin{center}
+\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was downloaded from the US-NPN data download tool (http://data.usanpn.org/observations/get-started) and observations were collected from the Arnold Aboretum - Tree Spotters program. The standard deviation is represented in coral for budburst and green for leaf out. }
+\includegraphics{..//figure/TS_2016.pdf} 
+\end{center}
+\end{figure}
+
+<<label=treespot, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/ts.timeline.R")
+ts<-read.csv("..//output/ts_2016_data.csv", header=TRUE)
+ts.lm<-lm(Risk~Budburst,data=ts)
+
+xtable(ts.lm, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between day of budburst and duration of vegetative risk. 1) is from the US-NPN data and 2) is from the Tree Spotters program.")
+@
+
+\subsection*{Dan's Data}
+\begin{figure} [H]
+\begin{center}
+\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out. }
+\includegraphics{..//output/Dan_TXandSp.pdf} 
+\end{center}
+\end{figure}
+
+
+<<label=expchill, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/anovas.R")
+d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
+
+dxx<-d
+dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
+dxx$warm<-as.numeric(as.character(dxx$warm))
+dxx$photo<-as.numeric(as.character(dxx$photo))
+dxx<-dxx %>%
+  dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
+dxx$risk<-dxx$lday-dxx$bday 
+
+# Run anovas for each species
+myspp <- unique(dxx$sp)
+mylist<-list()
+for(i in c(1:length(myspp))) {
+  subby<-subset(dxx, sp==myspp[i])
+  myanova<-Anova(lm(risk~chilling + warm + photo, data=subby))
+  print(myanova)
+  mylist[[myspp[i]]] <- myanova
+}
+
+
+xtableList(mylist, title ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.")
+@
+
+\subsection*{Harvard Forest Data}
+<<label=forest, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from collected from Harvard Forest.", fig.pos="H">>=
+read_chunk("..//scripts/hf.timeline.R")
+
+timeline<-read.csv("..//input/hf003-06-mean-spp.csv", header=TRUE)
+
+years<-c("2010", "2014")
+timeline<-timeline %>%
+  dplyr::select(year, species, bb.jd, l75.jd) %>%
+  filter(year%in%years)
+timeline<-na.omit(timeline)
+timeline$risk <- timeline$l75.jd - timeline$bb.jd
+df<- timeline %>%
+  unite(sp.year, species, year, remove=FALSE)
+df$si[df$year=="2010"] <- "early"
+df$si[df$year=="2014"] <- "late"
+
+
+df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
+  geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
+  geom_point(aes(x=l75.jd, col=si)) + geom_point(aes(col=si)) +
+  xlab("Budburst to Leaf Out") +
+  ylab("Species")
+plot(df.plot)
+@
+
+
+\section*{Regional Differences in Vegetative Risk?}
+\begin{figure} [H]
+\begin{center}
+\caption{Risk of a false spring event across five archetypal climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{SI-x2016, Soudani2012, Schaber2005}. We calculated the mean number of days that were -2.2$^{\circ}$C \citep{Ault2015, Schwartz2006, Schwartz1993} or below for each two week period that fell within the budburst to leafout timeframe in each region. }
+\includegraphics{..//output/RegionalRisk_by_biweekly.pdf}
+\includegraphics{..//output/Boxplot_RegRisk_biweekly.pdf} 
+\end{center}
+\end{figure}
+
+\section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
+
+\section*{Conclusion - Box}
+\captionsetup[table]{textformat=empty,labelformat=empty}
+\captionof{table}{Key Indicators for Modeling False Spring Risk and Damage}
+\begin{siderules}
+\textbf {Box 1: Key Indicators for Modeling False Spring Risk and Damage}\\
+In order to properly evaluate the expected level of damage sustained from a false spring event
+key indicators should be included in the model.
+\renewcommand{\theenumi}{\Roman{enumi}}
+\renewcommand{\theenumii}{\roman{enumii}}
+\begin{enumerate}
+  \item Life Stage of the Individual(s) \citep{Caffarra2011}
+  \begin{enumerate}
+    \item Seedlings and saplings will begin budburst earlier than adults
+    \item The duration of vegetative risk may vary between life stages
+    \item Long-term effects may vary
+  \end{enumerate}
+  \item Location Within a Forest \citep{Augspurger2013}
+  \begin{enumerate}
+    \item Individuals along the forest edge are more likely to experience a false spring
+    \item Level of damage is likely to be higher at forest edges
+  \end{enumerate}
+  \item Amount of Winter Chilling (Flynn \& Wolkovich, 2017?)
+  \begin{enumerate}
+    \item Will affect the timing of budburst in the spring
+    \item Will affect the duration of vegetative risk
+  \end{enumerate}
+  \item Proximity to Water %\citep{Gu2008}
+  \begin{enumerate}
+    \item Large bodies of water are expected to act as a buffer to spring freezes
+  \end{enumerate}
+  \item Precipitation Prior to Budburst \citep{Anderegg2013}
+  \begin{enumerate}
+    \item Will a drought increase cavitation and heighten damage from a false spring?
+    \item Or will a drought decrease the risk of damage due to a lower chance of intracellular frost damage?
+  \end{enumerate}
+  \item Freeze Duration and Intensity
+  \begin{enumerate}
+    \item How should we define freezing temperatures?
+    \item At what point is a freezing event severely damaging and xylem embolism occurs?
+    \item How long must a false spring be to cause xylem embolism?
+  \end{enumerate}
+  \item Range of the Species
+  \begin{enumerate}
+    \item Species that have a more northern range may be more photoperiod than temperature sensitive 
+  \end{enumerate}
+\end{enumerate}
+\end{siderules}
+
+\bibliography{..//refs/SpringFreeze.bib}
+\end{document}
