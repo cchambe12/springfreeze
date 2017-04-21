@@ -1,0 +1,497 @@
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{US-NPN Timeline Figures}
+
+\begin{figure} [H]
+\begin{center}
+\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out. }
+\includegraphics{..//output/Dan_TXandSp.pdf} 
+\end{center}
+\end{figure}
+
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\caption{Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.} 
+\begin{tabular}{rrrrr}
+  \hline
+ & ACEPEN.Sum.Sq & ACEPEN.Df & ACEPEN.F.value & ACEPEN.Pr..F. \\ 
+  \hline
+1 & 119.12 & 1.00 & 1.92 & 0.17 \\ 
+  2 & 4883.47 & 1.00 & 78.90 & 0.00 \\ 
+  3 & 1300.30 & 1.00 & 21.01 & 0.00 \\ 
+  4 & 6684.85 & 108.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & ACERUB.Sum.Sq & ACERUB.Df & ACERUB.F.value & ACERUB.Pr..F. \\ 
+  \hline
+1 & 0.62 & 1.00 & 0.01 & 0.92 \\ 
+  2 & 1742.33 & 1.00 & 26.35 & 0.00 \\ 
+  3 & 462.88 & 1.00 & 7.00 & 0.01 \\ 
+  4 & 6611.18 & 100.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & ACESAC.Sum.Sq & ACESAC.Df & ACESAC.F.value & ACESAC.Pr..F. \\ 
+  \hline
+1 & 15.54 & 1.00 & 0.22 & 0.64 \\ 
+  2 & 269.90 & 1.00 & 3.78 & 0.06 \\ 
+  3 & 224.83 & 1.00 & 3.15 & 0.08 \\ 
+  4 & 4574.75 & 64.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & ALNINC.Sum.Sq & ALNINC.Df & ALNINC.F.value & ALNINC.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 1025.10 & 1.00 & 5.96 & 0.02 \\ 
+  3 & 198.55 & 1.00 & 1.15 & 0.29 \\ 
+  4 & 6709.50 & 39.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & AROMEL.Sum.Sq & AROMEL.Df & AROMEL.F.value & AROMEL.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 374.08 & 1.00 & 40.04 & 0.00 \\ 
+  3 & 126.75 & 1.00 & 13.57 & 0.01 \\ 
+  4 & 84.08 & 9.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & BETALL.Sum.Sq & BETALL.Df & BETALL.F.value & BETALL.Pr..F. \\ 
+  \hline
+1 & 287.15 & 1.00 & 5.32 & 0.02 \\ 
+  2 & 1464.43 & 1.00 & 27.11 & 0.00 \\ 
+  3 & 617.15 & 1.00 & 11.43 & 0.00 \\ 
+  4 & 7183.30 & 133.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & BETLEN.Sum.Sq & BETLEN.Df & BETLEN.F.value & BETLEN.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 1383.03 & 1.00 & 18.88 & 0.00 \\ 
+  3 & 539.58 & 1.00 & 7.37 & 0.01 \\ 
+  4 & 1464.97 & 20.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & BETPAP.Sum.Sq & BETPAP.Df & BETPAP.F.value & BETPAP.Pr..F. \\ 
+  \hline
+1 & 4.55 & 1.00 & 0.06 & 0.81 \\ 
+  2 & 1780.62 & 1.00 & 21.68 & 0.00 \\ 
+  3 & 1104.06 & 1.00 & 13.45 & 0.00 \\ 
+  4 & 10510.45 & 128.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & CORCOR.Sum.Sq & CORCOR.Df & CORCOR.F.value & CORCOR.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 941.67 & 1.00 & 14.26 & 0.00 \\ 
+  3 & 660.25 & 1.00 & 10.00 & 0.00 \\ 
+  4 & 2707.30 & 41.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & FAGGRA.Sum.Sq & FAGGRA.Df & FAGGRA.F.value & FAGGRA.Pr..F. \\ 
+  \hline
+1 & 60.29 & 1.00 & 1.37 & 0.25 \\ 
+  2 & 722.34 & 1.00 & 16.36 & 0.00 \\ 
+  3 & 2.08 & 1.00 & 0.05 & 0.83 \\ 
+  4 & 2913.91 & 66.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & FRANIG.Sum.Sq & FRANIG.Df & FRANIG.F.value & FRANIG.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 1094.34 & 1.00 & 23.11 & 0.00 \\ 
+  3 & 519.11 & 1.00 & 10.96 & 0.00 \\ 
+  4 & 1799.04 & 38.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & HAMVIR.Sum.Sq & HAMVIR.Df & HAMVIR.F.value & HAMVIR.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 92.04 & 1.00 & 3.37 & 0.08 \\ 
+  3 & 5.04 & 1.00 & 0.18 & 0.67 \\ 
+  4 & 573.88 & 21.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & ILEMUC.Sum.Sq & ILEMUC.Df & ILEMUC.F.value & ILEMUC.Pr..F. \\ 
+  \hline
+1 & 25.63 & 1.00 & 1.05 & 0.31 \\ 
+  2 & 2262.82 & 1.00 & 92.28 & 0.00 \\ 
+  3 & 1036.16 & 1.00 & 42.26 & 0.00 \\ 
+  4 & 3334.91 & 136.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & KALANG.Sum.Sq & KALANG.Df & KALANG.F.value & KALANG.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 1362.43 & 1.00 & 10.22 & 0.02 \\ 
+  3 & 1145.83 & 1.00 & 8.60 & 0.02 \\ 
+  4 & 933.00 & 7.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & LONCAN.Sum.Sq & LONCAN.Df & LONCAN.F.value & LONCAN.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 264.73 & 1.00 & 9.72 & 0.00 \\ 
+  3 & 506.70 & 1.00 & 18.61 & 0.00 \\ 
+  4 & 871.35 & 32.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & LYOLIG.Sum.Sq & LYOLIG.Df & LYOLIG.F.value & LYOLIG.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 2028.26 & 1.00 & 44.70 & 0.00 \\ 
+  3 & 76.41 & 1.00 & 1.68 & 0.21 \\ 
+  4 & 862.11 & 19.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & NYSSYL.Sum.Sq & NYSSYL.Df & NYSSYL.F.value & NYSSYL.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 1269.62 & 1.00 & 31.36 & 0.00 \\ 
+  3 & 317.40 & 1.00 & 7.84 & 0.01 \\ 
+  4 & 809.78 & 20.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & POPGRA.Sum.Sq & POPGRA.Df & POPGRA.F.value & POPGRA.Pr..F. \\ 
+  \hline
+1 & 37.71 & 1.00 & 0.55 & 0.46 \\ 
+  2 & 2412.42 & 1.00 & 34.88 & 0.00 \\ 
+  3 & 1013.13 & 1.00 & 14.65 & 0.00 \\ 
+  4 & 6777.91 & 98.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & PRUPEN.Sum.Sq & PRUPEN.Df & PRUPEN.F.value & PRUPEN.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 1976.57 & 1.00 & 25.22 & 0.00 \\ 
+  3 & 402.76 & 1.00 & 5.14 & 0.03 \\ 
+  4 & 3448.60 & 44.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & QUEALB.Sum.Sq & QUEALB.Df & QUEALB.F.value & QUEALB.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 310.08 & 1.00 & 1.81 & 0.22 \\ 
+  3 & 56.37 & 1.00 & 0.33 & 0.58 \\ 
+  4 & 1370.35 & 8.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & QUERUB.Sum.Sq & QUERUB.Df & QUERUB.F.value & QUERUB.Pr..F. \\ 
+  \hline
+1 & 9.36 & 1.00 & 0.24 & 0.63 \\ 
+  2 & 697.68 & 1.00 & 17.82 & 0.00 \\ 
+  3 & 370.05 & 1.00 & 9.45 & 0.00 \\ 
+  4 & 4972.54 & 127.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & QUEVEL.Sum.Sq & QUEVEL.Df & QUEVEL.F.value & QUEVEL.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 0.66 & 1.00 & 0.02 & 0.90 \\ 
+  3 & 3.05 & 1.00 & 0.08 & 0.78 \\ 
+  4 & 615.94 & 16.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & RHAFRA.Sum.Sq & RHAFRA.Df & RHAFRA.F.value & RHAFRA.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 426.51 & 1.00 & 6.16 & 0.02 \\ 
+  3 & 113.90 & 1.00 & 1.64 & 0.22 \\ 
+  4 & 1246.57 & 18.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & RHOPRI.Sum.Sq & RHOPRI.Df & RHOPRI.F.value & RHOPRI.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 676.10 & 1.00 & 3.73 & 0.07 \\ 
+  3 & 717.19 & 1.00 & 3.95 & 0.06 \\ 
+  4 & 3445.54 & 19.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & SPIALB.Sum.Sq & SPIALB.Df & SPIALB.F.value & SPIALB.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 54.14 & 1.00 & 1.22 & 0.28 \\ 
+  3 & 23.87 & 1.00 & 0.54 & 0.47 \\ 
+  4 & 1240.03 & 28.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Apr 21 08:39:06 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+ & VACMYR.Sum.Sq & VACMYR.Df & VACMYR.F.value & VACMYR.Pr..F. \\ 
+  \hline
+1 &  & 0.00 &  &  \\ 
+  2 & 549.82 & 1.00 & 15.60 & 0.00 \\ 
+  3 & 62.38 & 1.00 & 1.77 & 0.19 \\ 
+  4 & 1480.58 & 42.00 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\end{document}

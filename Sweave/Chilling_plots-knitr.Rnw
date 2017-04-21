@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{Sweave}
+
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{tabularx}
@@ -57,32 +57,10 @@ library(car)
 \end{center}
 \end{figure}
 
+<<label=eurlat, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Chilling Plot.R")
 
-<<label=eurlat, results = "hide", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
-read_chunk("..//scripts/anovas.R")
-d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
-
-dxx<-d
-dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
-dxx$warm<-as.numeric(as.character(dxx$warm))
-dxx$photo<-as.numeric(as.character(dxx$photo))
-dxx<-dxx %>%
-  dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
-dxx$risk<-dxx$lday-dxx$bday 
-
-# Run anovas for each species
-myspp <- unique(dxx$sp)
-mylist<-list()
-for(i in c(1:length(myspp))) {
-  subby<-subset(dxx, sp==myspp[i])
-  myanova<-Anova(lm(risk~chilling + warm + photo, data=subby))
-  print(myanova)
-  mylist[[myspp[i]]] <- myanova
-}
-
-
-xtableList(mylist, caption ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
-@
+xtable(myanova, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
 
 
 \end{document}

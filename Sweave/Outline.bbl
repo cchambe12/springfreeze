@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{48}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -40,20 +40,6 @@ Ault, T.R., Henebry, G.M., de~Beurs, K.M., Schwartz, M.D., Betancourt, J.L. \&
   Moore, D. (2013) {The False Spring of 2012, Earliest in North American
   Record}. \emph{Eos, Transactions American Geophysical Union} \textbf{94},
   181--182.
-
-\bibitem[{Ault \emph{et~al.}(2015{\natexlab{a}})Ault, Schwartz, Zurita-Milla,
-  Weltzin \& Betancourt}]{Ault2015a}
-Ault, T.R., Schwartz, M.D., Zurita-Milla, R., Weltzin, J.F. \& Betancourt, J.L.
-  (2015{\natexlab{a}}) {Trends and natural variability of spring onset in the
-  coterminous united states as evaluated by a new gridded dataset of spring
-  indices}. \emph{Journal of Climate} \textbf{28}, 8363--8378.
-
-\bibitem[{Ault \emph{et~al.}(2015{\natexlab{b}})Ault, Zurita-Milla \&
-  Schwartz}]{Ault2015}
-Ault, T.R., Zurita-Milla, R. \& Schwartz, M.D. (2015{\natexlab{b}}) {A
-  Matlab{\{}{\textcopyright}{\}} toolbox for calculating spring indices from
-  daily meteorological data}. \emph{Computers {\{}{\&}{\}} Geosciences}
-  \textbf{83}, 46--53.
 
 \bibitem[{Basler \& K{\"{o}}rner(2012)}]{Basler2012}
 Basler, D. \& K{\"{o}}rner, C. (2012) {Photoperiod sensitivity of bud burst in
@@ -177,18 +163,6 @@ McCreary, D.D., Lavender, D.P. \& Hermann, R.K. (1990) {Predicted global
   warming and Douglas-fir chilling requirements}. \emph{Annales des Sciences
   Forestieres} \textbf{47}, 325--330.
 
-\bibitem[{Menne \emph{et~al.}()Menne, Durre, Korzeniewski, McNeal, Thomas, Yin,
-  Anthony, Ray, Vose, Gleason \& Houston}]{Menne2012b}
-Menne, M., Durre, I., Korzeniewski, B., McNeal, S., Thomas, K., Yin, X.,
-  Anthony, S., Ray, R., Vose, R., Gleason, B. \& Houston, T. (????) Global
-  historical climatology network - daily (ghcn-daily), version 3.
-
-\bibitem[{Menne \emph{et~al.}(2012)Menne, Durre, Vose, Gleason \&
-  Houston}]{Menne2012}
-Menne, M., Durre, I., Vose, R., Gleason, B. \& Houston, T. (2012) An overview
-  of the global historical climatology network-daily database. \emph{Journal of
-  Atmospheric and Oceanic Technology} \textbf{29}, 897--910.
-
 \bibitem[{Morin \emph{et~al.}(2007)Morin, Ameglio, Ahas, Kurz-Besson, Lanta,
   Lebourgeois, Miglietta \& Chuine}]{Morin2007}
 Morin, X., Ameglio, T., Ahas, R., Kurz-Besson, C., Lanta, V., Lebourgeois, F.,
@@ -214,13 +188,6 @@ Muffler, L., Beierkuhnlein, C., Aas, G., Jentsch, A., Schweiger, A.H., Zohner,
 Norgaard~Nielsen, C.C. \& Rasmussen, H.N. (2009) Frost hardening and
   dehardening in abies procera and other conifers under differing temperature
   regimes and warm-spell treatments. \emph{Forestry} \textbf{82}, 43--59.
-
-\bibitem[{Nugent, J.(2005)}]{Nugent2005}
-Nugent, J., R.N. (2005) Calculating growing degree days .
-
-\bibitem[{O'Keefe(2014)}]{OKeefe2014}
-O'Keefe, J. (2014) {Phenology of Woody Species at Harvard Forest since 1990}.
-  Tech. rep.
 
 \bibitem[{Partanen(2004)}]{Partanen2004}
 Partanen, J. (2004) Dependence of photoperiodic response of growth cessation on
@@ -261,30 +228,14 @@ Richardson, A. \& O'Keefe, J. (2009) \emph{Phenological differences between
 Sakai, A. \& Larcher, W. (1987) \emph{Frost Survival of Plants}.
   Springer-Verlag.
 
-\bibitem[{Schwartz(1997)}]{Schwartz1997}
-Schwartz, M.D. (1997) {Spring Index Models: An approach to connecting Satellite
-  and surface phenology}. \emph{Phenology of Seasonal climates}, pp. 23--38.
-
-\bibitem[{Schwartz \emph{et~al.}(2013)Schwartz, Ault \&
-  Betancourt}]{Schwartz2013}
-Schwartz, M.D., Ault, T.R. \& Betancourt, J.L. (2013) {Spring onset variations
-  and trends in the continental United States: Past and regional assessment
-  using temperature-based indices}. \emph{International Journal of Climatology}
-  \textbf{33}, 2917--2922.
-
 \bibitem[{Taschler \emph{et~al.}(2004)Taschler, Beikircher \&
   Neuner}]{Taschler2004}
 Taschler, D., Beikircher, B. \& Neuner, G. (2004) Frost resistance and ice
   nucleation in leaves of five woody timberline species measured in situ during
   shoot expansion. \emph{Tree Physiology} \textbf{24}, 331--337.
 
-\bibitem[{USA-NPN(2016{\natexlab{a}})}]{SI-x2016}
-USA-NPN (2016{\natexlab{a}}) {USA National Phenology Network Data Visualizer
-  Tool}.
-
-\bibitem[{USA-NPN(2016{\natexlab{b}})}]{USA-NPN2016}
-USA-NPN (2016{\natexlab{b}}) {USA National Phenology Network Extended Spring
-  Indices}.
+\bibitem[{USA-NPN(2016)}]{USA-NPN2016}
+USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
 
 \bibitem[{Vavrus \emph{et~al.}(2006)Vavrus, Walsh, Chapman \&
   Portis}]{Vavrus2006}

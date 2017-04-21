@@ -13,6 +13,7 @@ library(ggplot2)
 library(arm)
 library(data.table)
 library(car)
+library(xtable)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -74,6 +75,8 @@ for(i in c(1:length(myspp))) {
   mylist[[myspp[i]]] <- myanova
 }
 
+#write.csv(mylist, "anovatable.csv", row.names=FALSE)
+#xtableList(mylist, caption ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
 
 
 # with all two way interactions
@@ -81,9 +84,9 @@ myspp <- unique(dxx$sp)
 mylist<-list()
 for(i in c(1:length(myspp))) {
   subby<-subset(dxx, sp==myspp[i])
-  myanova<-Anova(lm(risk~chilling+ warm + photo + chilling*warm +
+  menova<-Anova(lm(risk~chilling+ warm + photo + chilling*warm +
                       chilling*photo + warm*photo, data=subby))
-  print(myanova)
-  mylist[[myspp[i]]] <- as.data.frame(table(myanova))
+  print(menova)
+  mylister[[myspp[i]]] <- as.data.frame(table(menova))
 }
 

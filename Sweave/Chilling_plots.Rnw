@@ -57,31 +57,66 @@ library(car)
 \end{center}
 \end{figure}
 
-
-<<label=eurlat, results = "hide", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
-read_chunk("..//scripts/anovas.R")
-d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
-
-dxx<-d
-dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
-dxx$warm<-as.numeric(as.character(dxx$warm))
-dxx$photo<-as.numeric(as.character(dxx$photo))
-dxx<-dxx %>%
-  dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
-dxx$risk<-dxx$lday-dxx$bday 
-
-# Run anovas for each species
-myspp <- unique(dxx$sp)
-mylist<-list()
-for(i in c(1:length(myspp))) {
-  subby<-subset(dxx, sp==myspp[i])
-  myanova<-Anova(lm(risk~chilling + warm + photo, data=subby))
-  print(myanova)
-  mylist[[myspp[i]]] <- myanova
-}
+<<label=eurlat, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Anova.Tables.R")
+d<-read.csv("..//output/anovatable.csv", colClasses="numeric")
 
 
-xtableList(mylist, caption ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
+d.acepen <- d[,1:4]
+d.acerub<- d[,5:8]
+d.acesac <- d[,9:12]
+d.alninc <- d[,13:16]
+d.aromel <- d[,17:20]
+d.betall <- d[,21:24]
+d.betlen <- d[,25:28]
+d.betpap <- d[,29:32]
+d.corcor <- d[,33:36]
+d.faggra <- d[,37:40]
+d.franig <- d[,41:44]
+d.hamvir <- d[,45:48]
+d.ilemuc <- d[,49:52]
+d.kalang <- d[,53:56]
+d.loncan <- d[,57:60]
+d.lyolig <- d[,61:64]
+d.nyssyl <- d[,65:68]
+d.popgra <- d[,69:72]
+d.prupen <- d[,73:76]
+d.quealb <- d[,77:80]
+d.querub <- d[,81:84]
+d.quevel <- d[,85:88]
+d.rhafra <- d[,89:92]
+d.rhopri <- d[,93:96]
+d.spialb <- d[,97:100]
+d.vacmyr <- d[,101:104]
+
+dx<-xtable(d.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
+print(dx , include.rownames=TRUE, caption.placement="top")
+xtable(d.acerub)
+xtable(d.acesac)
+xtable(d.alninc)
+xtable(d.aromel)
+xtable(d.betall)
+xtable(d.betlen)
+xtable(d.betpap)
+xtable(d.corcor)
+xtable(d.faggra)
+xtable(d.franig)
+xtable(d.hamvir)
+xtable(d.ilemuc)
+xtable(d.kalang)
+xtable(d.loncan)
+xtable(d.lyolig)
+xtable(d.nyssyl)
+xtable(d.popgra)
+xtable(d.prupen)
+xtable(d.quealb)
+xtable(d.querub)
+xtable(d.quevel)
+xtable(d.rhafra)
+xtable(d.rhopri)
+xtable(d.spialb)
+xtable(d.vacmyr)
+
 @
 
 
