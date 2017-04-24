@@ -63,7 +63,7 @@ dxx<-dxx %>%
   dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
 dxx$risk<-dxx$lday-dxx$bday 
 
-
+Anova(lm(risk~chilling + warm + photo, data=dxx))
 
 # Run anovas for each species
 myspp <- unique(dxx$sp)
