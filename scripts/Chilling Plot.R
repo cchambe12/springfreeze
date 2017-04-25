@@ -52,6 +52,42 @@ ts.timeline<-ggplot((df), aes(x=bday, y=code), stat="identity") +
   geom_errorbarh(aes(xmin=lday-sd.leaf, xmax=lday+sd.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
 
+
+############## Looking at WL0 instead because has all species - CAT 25 APRIL 2017 #####################
+d<-read.csv("input/Budburst.clean.csv",header=TRUE)
+
+tx<-c("CS0", "WL0")
+dx<- d %>%
+  dplyr::select(ind, treatcode, lday, bday, site) %>%
+  filter(treatcode %in% tx)
+
+dx<-na.omit(dx)
+dx$species<-substr(dx$ind, 1, 6)
+dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+df<-dx%>%unite(ID, species, treatcode, sep="_")
+
+df$mean<-ave(df$bday, df$ID)
+df$sd<-ave(df$bday, df$ID, FUN=sd)
+df$mean.leaf<-ave(df$lday, df$ID)
+df$sd.leaf<-ave(df$lday, df$ID, FUN=sd)  
+
+df<-df%>%
+  group_by(mean, ID)%>%
+  arrange(ID)%>%
+  filter(row_number()==1) 
+
+df$code<-reorder(df$ID, df$bday)
+
+df$risk<-df$lday-df$bday
+df$riskcode<-reorder(df$ID, df$risk)
+chillplot<-ggplot((df), aes(x=bday, y=code), stat="identity") + 
+  geom_point(aes(x=df$bday, col="royalblue4")) +
+  geom_point(aes(x=df$lday, col="forestgreen"))  + 
+  xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
+  ylab("Species") +geom_errorbarh(aes(xmin=bday-sd, xmax=bday+sd, col="royalblue4"), height=.0) + 
+  geom_errorbarh(aes(xmin=lday-sd.leaf, xmax=lday+sd.leaf, col="forestgreen"), height=.0)
+plot(chillplot)
+
 ### Prep data for Anovas
 dxx<-d
 dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))

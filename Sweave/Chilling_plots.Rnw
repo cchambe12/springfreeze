@@ -89,7 +89,7 @@ d.rhopri <- d[,93:96]
 d.spialb <- d[,97:100]
 d.vacmyr <- d[,101:104]
 
-dx<-xtable(d.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
+dx<-xtable(d.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE, digits=-3)
 row.names(dx)<-c("chilling","forcing", "photoperiod", "Residuals")
 print(dx , include.rownames=TRUE, caption.placement="top")
 acerub<-xtable(d.acerub, digits=-3)
