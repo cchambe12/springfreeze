@@ -48,7 +48,7 @@ library(car)
 \renewcommand{\thefigure}{\arabic{figure}}
 \renewcommand{\labelitemi}{$-$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{US-NPN Timeline Figures}
+\section*{Chilling Experiment Figures}
 
 \begin{figure} [H]
 \begin{center}
