@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 APR 2017 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 14:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -863,26 +863,22 @@ Package pdftex.def Info: ..//output/RegionalRisk_by_biweekly.pdf used on input
 line 98.
 (pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
 
-<..//output/Boxplot_RegRisk_biweekly.pdf, id=2, 513.92pt x 391.4625pt>
+<..//output/Boxplot_RegRisk_biweekly.pdf, id=2, 505.89pt x 361.35pt>
 File: ..//output/Boxplot_RegRisk_biweekly.pdf Graphic file (type pdf)
 
 <use ..//output/Boxplot_RegRisk_biweekly.pdf>
 Package pdftex.def Info: ..//output/Boxplot_RegRisk_biweekly.pdf used on input 
 line 99.
-(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
+(pdftex.def)             Requested size: 377.62633pt x 269.73816pt.
+ [1
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--101
-
- []
-
-[1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \vbox (54.54007pt too high) has occurred while \output is active []
+]
+Overfull \vbox (36.63142pt too high) has occurred while \output is active []
 
 
-[2 <..//output/RegionalRisk_by_biweekly.pdf> <..//output/Boxplot_RegRisk_biweek
-ly.pdf>] (./RegionalRisk_plots.bbl) [3] (./RegionalRisk_plots.aux) ) 
+[2{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..//o
+utput/RegionalRisk_by_biweekly.pdf> <..//output/Boxplot_RegRisk_biweekly.pdf>]
+(./RegionalRisk_plots.bbl) [3] (./RegionalRisk_plots.aux) ) 
 Here is how much of TeX's memory you used:
  15550 strings out of 493014
  306855 string characters out of 6133351
@@ -890,19 +886,19 @@ Here is how much of TeX's memory you used:
  18900 multiletter control sequences out of 15000+600000
  28223 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,47p,10390b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local
-/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on RegionalRisk_plots.pdf (3 pages, 114447 bytes).
+ 38i,6n,47p,10390b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/
+2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on RegionalRisk_plots.pdf (3 pages, 112901 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
