@@ -550,8 +550,21 @@ df<-full_join(df, water.count)
 
 limits <- aes(ymax = mean + stand_dev, ymin=mean - stand_dev)
 
-ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() +
-  geom_pointrange(limits) 
+d$biweekly<-ifelse(d$biweekly=="02_2", "Feb 15 - Feb 29", d$biweekly)
+d$biweekly<-ifelse(d$biweekly=="03_1", "Mar 1 - Mar 14", d$biweekly)
+d$biweekly<-ifelse(d$biweekly=="03_2", "Mar 15 - Mar 31", d$biweekly)
+d$biweekly<-ifelse(d$biweekly=="04_1", "Apr 1 - Apr 14", d$biweekly)
+d$biweekly<-ifelse(d$biweekly=="04_2", "Apr 15 - Apr 30", d$biweekly)
+d$biweekly<-ifelse(d$biweekly=="05_1", "May 1 - May 14", d$biweekly)
+d$biweekly<-ifelse(d$biweekly=="05_2", "May 15 - May 31", d$biweekly)
+
+d$biweekly <- factor(d$biweekly, levels=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
+                                            "Apr 15 - Apr 30","May 1 - May 14","May 15 - May 31"))
+limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum", "plum", 
+              "lightblue", "lightblue", "lightblue", "lightblue",
+              "pink", "pink", "pink", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine")
+ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week Period") + ylab("Average Number of days per two week period below -2.2C") + 
+  geom_line(aes(x=biweekly, y=mean, col=site, group=site)) + geom_linerange(limits, col=limitcolor)
 
 df$biweekly<-ifelse(df$biweekly=="02_2", "Feb 15 - Feb 29", df$biweekly)
 df$biweekly<-ifelse(df$biweekly=="03_1", "Mar 1 - Mar 14", df$biweekly)
@@ -560,6 +573,7 @@ df$biweekly<-ifelse(df$biweekly=="04_1", "Apr 1 - Apr 14", df$biweekly)
 df$biweekly<-ifelse(df$biweekly=="04_2", "Apr 15 - Apr 30", df$biweekly)
 df$biweekly<-ifelse(df$biweekly=="05_1", "May 1 - May 14", df$biweekly)
 df$biweekly<-ifelse(df$biweekly=="05_2", "May 15 - May 31", df$biweekly)
+
 
 #df_table <- table(df$biweekly)
 #df_levels <- names(df_table)[order(df_table)]
