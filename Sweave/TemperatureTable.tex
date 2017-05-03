@@ -1,0 +1,129 @@
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+%\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\title{Rethinking False Spring Risk}
+\author{Chamberlain, Wolkovich}
+\date{\today}
+\maketitle 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
+\begin{center}
+\captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:title} 
+\begin{tabular}{c c c c c c c}
+\hline
+\textbf{Sector} & \textbf{Phenophase} & \textbf{Species} & \textbf{Temperature ($^{\circ}$C)} & \textbf{Type} & \textbf{Notes} & \textbf{Source} \\
+\hline
+Ecological & Budburst to Leafout & Sorbus aucuparia & -7.4 & 50\% lethality & experiment designed to measure specific temperature threshold by species & %\citep{Lenz2013, Lenz2016} \\
+Ecological & Budburst to Leafout & Prunus avium & -8.5 & 50\% lethality & experiment designed to measure specific temperature threshold by species & %\citep{Lenz2013, Lenz2016}\\
+Ecological & Budburst to Leafout & Tilia platyphyllos & -7.4 & 50\% lethality & experiment designed to measure specific temperature threshold by species & %\citep{Lenz2013, Lenz2016}\\
+Ecological & Budburst to Leafout & Acer pseudoplatanus & -6.7 & 50\% lethality & experiment designed to measure specific temperature threshold by species & %\citep{Lenz2013, Lenz2016}\\
+Ecological & Budburst to Leafout & Fagus sylvatica & -4.8 & 50\% lethality & experiment designed to measure specific temperature threshold by species & %\citep{Lenz2013, Lenz2016}\\
+Ecological & Spring Onset & All plant functional types & -2.2 & hard & Date of spring onset - Last hard freeze date = damage index & %\citep{Schwartz93\\
+Ecological & Spring Onset & All plant functional types & -1.7 & soft & varying degress of damage across edges and interiors of forests & %\citep{Augspurger2013} \\
+Ecological & All phenophases & All plant functional types & 2 SD below winter TAVG & cold-air outbreaks & 2 or more days at 2+ standard deviations below averge winter temperature & %\cite{Vavrus2006} \\
+Ecological & After budburst & Eucalyptus pauciflora & -5.8 & climate change & elevated CO2 study indicates higher levels of CO2 at same temperature cause greater damage to leaves & %\cite{Barker2005} \\
+Ecological & After budburst & All plant functional types & -2.2 & damaging & use 7 day threshold between last freeze day after date of budburst as significant & %\cite{Peterson2014} \\
+Agrinomical & After budburst & All plant functional types & 2 & Risk threshold & tissue temperature can be 1-3 degrees lower on clear, still nights & %\cite{Cannell1986} \\
+Agrinomical & Flowers & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & tissue temperature can be 1-3 degrees lower on clear, still nights & Longstroth, 2013 \\
+Agrinomical & Budburst & Rosaceae & -7.2 & 10\% lethality & specifically apple and pear trees & Longstroth, 2012\\
+Agrinomical & Budburst & Rosaceae & -13.3 & 90\% lethality & specifically apple and pear trees & Longstroth, 2012 \\
+Agrinomical & All phenophases & All plant functional types & Radiation Frost & Frost formation when temperature matches dew point & Occurs on calm, clear nights and boudary-layer inversion occurs & Barlow et al., 2015; Andresen, 2009 \\
+Agrinomical & Flowers & Wheat & -4 to -5 & 10-90\% lethality & if nighttime temperature drops by 1℃, reaches 90\% lethality & Barlow et al., 2015 \\
+Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & From -4$^{\circ}$C to -7$^{\circ}$C during vegetative growth, 0-100\% lethality & Barlow et al., 2015 \\
+Agrinomical & Vegetative & Rice & 4.7 & lethal limit & minimum temperature for 100\% lethality & Sanchez et al., 2014 \\
+Agrinomical & Vegetative & Corn & -1.8 & lethal limit & minimum temperature for 100\% lethality & Sanchez et al., 2014\\
+Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & minimum temperature for 100\% lethality & Sanchez et al., 2014 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\bibliography{..//refs/SpringFreeze.bib}
+\end{document}

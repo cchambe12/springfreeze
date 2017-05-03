@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 MAY 2017 18:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 MAY 2017 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**TablesFigures.tex
-(./TablesFigures.tex
+**TemperatureTable.tex
+(./TemperatureTable.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -590,8 +590,8 @@ Package caption Info: float package is loaded.
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(./TablesFigures.aux)
-\openout1 = `TablesFigures.aux'.
+(./TemperatureTable.aux)
+\openout1 = `TemperatureTable.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
@@ -656,105 +656,130 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 90.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 90.
- <figure/fsifig-1.pdf, id=1, 505.89pt x 505.89pt>
-File: figure/fsifig-1.pdf Graphic file (type pdf)
- <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 101.
-(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
-[1
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.104 Ecological &
+                   Budburst to Leafout & Prunus avium & -8.5 & 50\% lethalit...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<..//figure/TS_2016.pdf, id=11, 505.89pt x 361.35pt>
-File: ..//figure/TS_2016.pdf Graphic file (type pdf)
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.105 Ecological & Budburst to Leafout &
+                                         Tilia platyphyllos & -7.4 & 50\% le...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-<use ..//figure/TS_2016.pdf>
-Package pdftex.def Info: ..//figure/TS_2016.pdf used on input line 111.
-(pdftex.def)             Requested size: 377.62633pt x 269.73816pt.
- [2 <./figure/fsifig-1.pdf>]
-<..//output/Dan_TXandSp.pdf, id=21, 513.92pt x 391.4625pt>
-File: ..//output/Dan_TXandSp.pdf Graphic file (type pdf)
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.106 ...dburst to Leafout & Acer pseudoplatanus &
+                                                   -6.7 & 50\% lethality & e...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-<use ..//output/Dan_TXandSp.pdf>
-Package pdftex.def Info: ..//output/Dan_TXandSp.pdf used on input line 134.
-(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
- [3 <..//figure/TS_2016.pdf>] [4 <..//output/Dan_TXandSp.pdf>] [5] [6]
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.107 ...rst to Leafout & Fagus sylvatica & -4.8 &
+                                                   50\% lethality & experime...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-LaTeX Warning: Float too large for page by 1439.74629pt on input line 561.
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.108 ...ll plant functional types & -2.2 & hard &
+                                                   Date of spring onset - La...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-<figure/forest-1.pdf, id=46, 505.89pt x 505.89pt>
-File: figure/forest-1.pdf Graphic file (type pdf)
- <use figure/forest-1.pdf>
-Package pdftex.def Info: figure/forest-1.pdf used on input line 566.
-(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.109 ...e across edges and interiors of forests &
+                                                   %\citep{Augspurger2013} \\
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-[7]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 573.
- <..//output/RegionalRisk_by_biweekly.pdf, id=51, 513.92pt x 391.4625pt>
-File: ..//output/RegionalRisk_by_biweekly.pdf Graphic file (type pdf)
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.111 Ecological &
+                   After budburst & Eucalyptus pauciflora & -5.8 & climate c...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-<use ..//output/RegionalRisk_by_biweekly.pdf>
-Package pdftex.def Info: ..//output/RegionalRisk_by_biweekly.pdf used on input 
-line 574.
-(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.112 Ecological & After budburst &
+                                    All plant functional types & -2.2 & dama...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-<..//output/Boxplot_RegRisk_biweekly.pdf, id=52, 505.89pt x 361.35pt>
-File: ..//output/Boxplot_RegRisk_biweekly.pdf Graphic file (type pdf)
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.113 ...r budburst & All plant functional types &
+                                                   2 & Risk threshold & tiss...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
-<use ..//output/Boxplot_RegRisk_biweekly.pdf>
-Package pdftex.def Info: ..//output/Boxplot_RegRisk_biweekly.pdf used on input 
-line 575.
-(pdftex.def)             Requested size: 377.62633pt x 269.73816pt.
- [8 <./figure/forest-1.pdf>]
-Overfull \vbox (86.83417pt too high) has occurred while \output is active []
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.114 ... & Flowers & Vaccinium spp. & -4.4 to 0 &
+                                                   sprinkler protection thre...
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
+Missing character: There is no â in font cmr10!
+Missing character: There is no „ in font cmr10!
+Missing character: There is no ƒ in font cmr10!
 
-[9 <..//output/RegionalRisk_by_biweekly.pdf> <..//output/Boxplot_RegRisk_biweek
-ly.pdf>]
+Overfull \hbox (1929.2227pt too wide) in paragraph at lines 99--125
+ [] 
+ []
 
-Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 582.
-See the caption package documentation for explanation.
+(./TemperatureTable.bbl [1
 
-Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 626.
-[10] (./TablesFigures.bbl [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
-) [12] [13]
-(./TablesFigures.aux) ) 
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) [2] (.
+/TemperatureTable.aux) ) 
 Here is how much of TeX's memory you used:
- 13829 strings out of 493014
- 284185 string characters out of 6133351
- 335494 words of memory out of 5000000
- 17241 multiletter control sequences out of 15000+600000
- 13099 words of font info for 48 fonts, out of 8000000 for 9000
+ 13731 strings out of 493014
+ 282251 string characters out of 6133351
+ 313113 words of memory out of 5000000
+ 17161 multiletter control sequences out of 15000+600000
+ 11054 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,47p,10385b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9
-.pfb>
-Output written on TablesFigures.pdf (13 pages, 197345 bytes).
+ 37i,8n,42p,10388b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti10.pfb>
+Output written on TemperatureTable.pdf (2 pages, 103705 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

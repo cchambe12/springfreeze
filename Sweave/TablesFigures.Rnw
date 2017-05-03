@@ -154,8 +154,6 @@ df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes
   ylab("Species")
 plot(df.plot)
 @
-
-
 \section*{Regional Differences in Vegetative Risk?}
 \begin{figure} [H]
 \begin{center}
@@ -165,7 +163,6 @@ plot(df.plot)
 \end{center}
 \end{figure}
 
-\section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
 
 \section*{Conclusion - Box}
 \captionsetup[table]{textformat=empty,labelformat=empty}
