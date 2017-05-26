@@ -28,6 +28,10 @@ dx<- d %>%
 dx<-na.omit(dx)
 dx$species<-substr(dx$ind, 1, 6)
 dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+small.spp<-dx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
+spp<-unique(small.spp$species)
+dx<-dx%>% filter(species %in% spp)
+
 df<-dx%>%unite(ID, species, treatcode, sep="_")
 
 df$mean<-ave(df$bday, df$ID)
@@ -43,6 +47,14 @@ df<-df%>%
 #df$risk<-df$lday-df$bday
 #df$code<-reorder(df$ID, df$risk)
 df$code<-reorder(df$ID, df$bday)
+dx<-dx%>%unite(ID, species, treatcode, sep="_")
+dx<-dx%>%dplyr::select(-site, -ind)
+dx$mean<-ave(dx$bday, dx$species, dx$treatcode)
+dx<-dx%>%
+  group_by(mean, species)%>%
+  arrange(species)%>%
+  filter(row_number()==1) 
+dx$code<-reorder(dx$species, dx$bday)
 
 ts.timeline<-ggplot((df), aes(x=bday, y=code), stat="identity") + 
   geom_point(aes(x=df$bday, col="royalblue4")) +
@@ -50,6 +62,13 @@ ts.timeline<-ggplot((df), aes(x=bday, y=code), stat="identity") +
   xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
   ylab("Species") +geom_errorbarh(aes(xmin=bday-sd, xmax=bday+sd, col="royalblue4"), height=.0) + 
   geom_errorbarh(aes(xmin=lday-sd.leaf, xmax=lday+sd.leaf, col="forestgreen"), height=.0)
+plot(ts.timeline)
+
+ts.timeline<-ggplot((dx), aes(x=bday, y=code), stat="identity") + 
+  geom_point(aes(x=dx$bday, col="royalblue4")) +
+  geom_point(aes(x=dx$lday, col="forestgreen"))  + 
+  xlab("Day of Year") +scale_color_manual(labels = c("Leafout","Budburst"), values = c("forestgreen","royalblue4")) +
+  ylab("Species") +  geom_segment(aes(y = code, yend = code, x = bday, xend = lday, col=treatcode))
 plot(ts.timeline)
 
 
@@ -65,6 +84,7 @@ dx<-na.omit(dx)
 dx$species<-substr(dx$ind, 1, 6)
 dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
 df<-dx%>%unite(ID, species, treatcode, sep="_")
+
 
 df$mean<-ave(df$bday, df$ID)
 df$sd<-ave(df$bday, df$ID, FUN=sd)
