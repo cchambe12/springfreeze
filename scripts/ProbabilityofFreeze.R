@@ -18,6 +18,10 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(lubridate)
+library(gridExtra)
+library(gtable)
+library(reshape2)
+library(grid)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -26,6 +30,7 @@ amer<-read.csv("input/NOAA_data2.csv", header=TRUE)
 nc<-read.csv("input/N.Carolina.csv", header=TRUE)
 new<-read.csv("input/Newport.csv", header=TRUE)
 mid<-read.csv("input/midwest.csv", header=TRUE)
+france<-read.csv("input/Lyon.csv", header=TRUE)
 
 ## Plots by week
 
@@ -489,9 +494,9 @@ nc.count$site<-"North Carolina"
 
 
 # Rennes, France: Apr 5 - May 10
-ren<-new %>%
+ren<-france %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
-  filter(STATION_NAME == "RENNES FR") %>%
+  filter(STATION_NAME == "BRON LYON AEROPORT FR") %>%
   rename(Tmin = TMIN) %>%
   rename(Tmax = TMAX) %>%
   rename(date = DATE)
@@ -565,6 +570,14 @@ limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum
               "pink", "pink", "pink", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine")
 ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week Period") + ylab("Average Number of days per two week period below -2.2C") + 
   geom_line(aes(x=biweekly, y=mean, col=site, group=site)) + geom_linerange(limits, col=limitcolor)
+
+ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
+                                                                "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")))) +
+         geom_point() + xlab("Two Week Period") + ylab("Average Number of days per two week period below -2.2C") + 
+  geom_line(aes(x=biweekly, y=mean,  color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
+                                                                   "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")), group=site)) + 
+  geom_linerange(aes(ymax = mean + stand_dev, ymin=mean - stand_dev), stat="density", position=position_dodge(.1), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range")
+
 
 df$biweekly<-ifelse(df$biweekly=="02_2", "Feb 15 - Feb 29", df$biweekly)
 df$biweekly<-ifelse(df$biweekly=="03_1", "Mar 1 - Mar 14", df$biweekly)

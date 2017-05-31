@@ -40,7 +40,7 @@ Current List of Tables and Figures
 John.okeefe.R
 
 2. Regional Risk
-/figure/Boxplot_RegRisk_biweekly.pdf
+/figure/“RegionalRisk_by_biweekly.pdf
 ProbabilityofFreeze.R
 
 3. Dan's Chilling Plot
