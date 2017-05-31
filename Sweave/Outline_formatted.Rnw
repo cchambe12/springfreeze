@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(stargazer)
+@
+
+\begin{document}
+\title{Rethinking False Spring Risk}
+\author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$}
+\date{\today}
+\maketitle 
+ 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+\begin{enumerate}
+\item Introduce False Spring Concept
+\begin {enumerate}
+\item Plants growing in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to growth. 
+\item Individuals that leaf out before the last frost are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. 
+\item Therefore, temperate deciduous tree species must have plastic phenological responses in the spring in order to optimize photosynthesis and minimize frost or drought risk \citep{Polgar2011}. 
+\item These late spring freezing events are known as false springs. False spring events can result in highly adverse ecological and economic consequences \citep{Ault2013, Knudson2012}.
+\end{enumerate}
+\item Introduce Climate Change and Importance of False Spring Studies
+\begin{enumerate}
+\item Climate change is expected to increase damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Martin2010, Inouye2008, Cannell1986}. 
+\item Temperate forest species around the world are initiating leaf out about 4.6 days earlier per degree Celsius \citep{Polgar2014, Wolkovich2012}. 
+\item It is anticipated that there will be a decrease in false spring frequency overall but the magnitude of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Allstadt2015, Kodra2011}. 
+\item Multiple studies have documented false spring events in recent years \citep{Augspurger2013, Knudson2012, Augspurger2009, Gu2008} and some have linked this to climate change \citep{Muffler2016, Xin2016, Allstadt2015, Ault2013}. 
+\item Due to these reasons, it is crucial for researchers to properly evaluate the effects of false spring events on temperate forests and agricultural crops in order to make more accurate predictions on future trends.
+\end{enumerate}
+
+\item Introduce Current False Spring Index Equation
+\begin{enumerate}
+\item Different species respond differently to late spring freezing events. 
+\item The level of damage sustained by plants from a false spring also varies across phenophases. 
+\item Various studies have assessed the risk of damage or the intensity of particular false spring events but at this time false spring studies fail to incorporate all potential factors that could affect the level of frost damage risk. 
+\item A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. 
+\item Currently, FSI evaluates day of budburst, number of growing degree days, and day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
+\item \[ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst) \]
+\item If FSI is a positive number and greater than 7, then crown dieback is more likely to occur. 
+\item False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events. 
+\item In contrast to these simplifications, we argue that a wealth of factors greatly impacts plants' frost spring risk such that simple indices will most likely lead to inaccurate predictions and ultimately do little to advance the field. 
+\end{enumerate}
+
+\item State the Purpose of the Paper
+\begin{enumerate}
+\item In this paper we aim to highlight the complexity of factors driving a plant's false spring risk. 
+\item We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), proximity to water \citep{Gu2008}, level of precipitation prior to the freezing event \citep{Anderegg2013}, freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. 
+\item The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field.  
+\end{enumerate}
+\end{enumerate}
+
+
+
+\bibliography{..//refs/SpringFreeze.bib}
+\end{document}

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 MAY 2017 08:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 MAY 2017 08:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Outline.tex
-(./Outline.tex
+**Outline_formatted.tex
+(./Outline_formatted.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -712,12 +712,8 @@ Package caption Info: float package is loaded.
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(./Outline.aux
-
-LaTeX Warning: Label `' multiply defined.
-
-)
-\openout1 = `Outline.aux'.
+(./Outline_formatted.aux)
+\openout1 = `Outline_formatted.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
@@ -733,7 +729,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
 LaTeX Font Info:    ... okay on input line 86.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 86.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 86.
@@ -791,120 +788,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] <figure/fsifig-1.pdf, id=16, 505.89pt x 505.89pt>
-File: figure/fsifig-1.pdf Graphic file (type pdf)
-
-<use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 129.
-(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [3] [4 <./figure/fsifig-1.pdf>] [5] [6]
-<figure/treespotters-1.pdf, id=36, 505.89pt x 505.89pt>
-File: figure/treespotters-1.pdf Graphic file (type pdf)
-
-<use figure/treespotters-1.pdf>
-Package pdftex.def Info: figure/treespotters-1.pdf used on input line 168.
-(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [7] [8 <./figure/treespotters-1.pdf>]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 179.
-
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-
-LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 179.
-
-<figure/chilling-1.pdf, id=49, 505.89pt x 505.89pt>
-File: figure/chilling-1.pdf Graphic file (type pdf)
-
-<use figure/chilling-1.pdf>
-Package pdftex.def Info: figure/chilling-1.pdf used on input line 180.
-(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [9] [10 <./figure/chilling-1.pdf>]
-Overfull \hbox (4.808pt too wide) in paragraph at lines 190--191
-[]\T1/aett/m/n/10 ## Warn-ing in file(con, "r"): can-not open file '..//scripts
-/dans.timeline.R': No such file
- []
-
-[11] <figure/forest-1.pdf, id=66, 505.89pt x 505.89pt>
-File: figure/forest-1.pdf Graphic file (type pdf)
-
-<use figure/forest-1.pdf>
-Package pdftex.def Info: figure/forest-1.pdf used on input line 235.
-(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [12] [13 <./figure/forest-1.pdf>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 252.
-
-
-LaTeX Warning: File `..//figure/lat.pdf' not found on input line 253.
-
-
-! Package pdftex.def Error: File `..//figure/lat.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.253 ...th=18cm, height=10cm]{..//figure/lat.pdf}
-                                                   %Lat.Map.R save as 8.5x5.5
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (40.25919pt too wide) in paragraph at lines 253--254
- [] 
- []
-
-[14]
-Overfull \hbox (20.52797pt too wide) in paragraph at lines 262--263
-[]\T1/aett/bx/n/10 ## Warn-ing in file(con, "r"): can-not open file '..//script
-s/Weather_Latitude.R': No such file
- []
-
-[15]
-
-Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 301.
-See the caption package documentation for explanation.
-
-Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 345.
-[16] [17] (./Outline.bbl [18] [19] [20]) [21] (./Outline.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+(./Outline_formatted.bbl [2] [3]) [4] (./Outline_formatted.aux) ) 
 Here is how much of TeX's memory you used:
- 15134 strings out of 493014
- 302784 string characters out of 6133351
- 325380 words of memory out of 5000000
- 18475 multiletter control sequences out of 15000+600000
- 38044 words of font info for 86 fonts, out of 8000000 for 9000
+ 14952 strings out of 493014
+ 299895 string characters out of 6133351
+ 321697 words of memory out of 5000000
+ 18323 multiletter control sequences out of 15000+600000
+ 27898 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,42p,10379b,569s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Outline.pdf (21 pages, 241027 bytes).
+ 37i,8n,42p,10389b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Outline_formatted.pdf (4 pages, 127921 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 57 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
