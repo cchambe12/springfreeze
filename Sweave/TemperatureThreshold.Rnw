@@ -72,9 +72,9 @@ Ecological & 9-15 & Acer pseudoplatanus & -6.7 & 50\% lethality & \cite{Lenz2016
 \hline
 Ecological & 9-15 & Fagus sylvatica & -4.8 & 50\% lethality & \cite{Lenz2016}\\
 \hline
-Ecological & Spring Onset & All & -2.2 & hard & \cite{Schwartz1993}\\
+Ecological & 9+ & All & -2.2 & hard & \cite{Schwartz1993}\\
 \hline
-Ecological & Spring Onset & All & -1.7 & soft & \cite{Augspurger2013} \\
+Ecological & 9+ & All & -1.7 & soft & \cite{Augspurger2013} \\
 \hline
 Ecological & All & All & 2 SD below winter TAVG & cold-air outbreaks & \cite{Vavrus2006} \\
 \hline
