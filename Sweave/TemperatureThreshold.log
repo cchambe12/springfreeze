@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 JUN 2017 16:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  5 JUN 2017 18:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -725,10 +725,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (4.3794pt too wide) in paragraph at lines 103--148
- [] 
- []
-
 [2
 
 ] (./TemperatureThreshold.bbl) [3
@@ -736,10 +732,10 @@ Overfull \hbox (4.3794pt too wide) in paragraph at lines 103--148
 
 ] (./TemperatureThreshold.aux) ) 
 Here is how much of TeX's memory you used:
- 14251 strings out of 493014
- 290182 string characters out of 6133351
- 327029 words of memory out of 5000000
- 17662 multiletter control sequences out of 15000+600000
+ 14264 strings out of 493014
+ 290433 string characters out of 6133351
+ 327236 words of memory out of 5000000
+ 17675 multiletter control sequences out of 15000+600000
  11715 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,42p,10392b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -755,7 +751,7 @@ nts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb>
-Output written on TemperatureThreshold.pdf (3 pages, 140693 bytes).
+Output written on TemperatureThreshold.pdf (3 pages, 142809 bytes).
 PDF statistics:
  58 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream

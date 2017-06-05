@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Augspurger(2013)}]{Augspurger2013}
@@ -13,6 +13,12 @@ Barker, D., Loveys, B., Egerton, J., Gorton, H., Williams, W. \& Ball, M.
   and reduces spring growth. \emph{Plant, Cell and Environment} \textbf{28},
   1506--1515.
 
+\bibitem[{Barlow \emph{et~al.}(2015)Barlow, Christy, O'Leary, Riffkin \&
+  Nuttall}]{Barlow2015}
+Barlow, K., Christy, B., O'Leary, G., Riffkin, P. \& Nuttall, J. (2015)
+  Simulating the impact of extreme heat and frost events on wheat crop
+  production: A review. \emph{Field Crops Research} \textbf{171}, 109--119.
+
 \bibitem[{Cannell \& Smith(1986)}]{Cannell1986}
 Cannell, M. \& Smith, R. (1986) {Climatic Warming , Spring Budburst and Forest
   Damage on Trees Author ( s ): M . G . R . Cannell and R . I . Smith Published
@@ -26,10 +32,24 @@ Lenz, A., Hoch, G., K{\"{o}}rner, C. \& Vitasse, Y. (2016) {Convergence of
   leaf-out towards minimum risk of freezing damage in temperate trees}.
   \emph{Functional Ecology} pp. 1--11.
 
+\bibitem[{Longstroth(2012)}]{Longstroth2012}
+Longstroth, M. (2012) Protect blueberries from spring freezes by using
+  sprinklers. url.
+
+\bibitem[{Longstroth(2013)}]{Longstroth2013}
+Longstroth, M. (2013) Assessing frost and freeze damage to flowers and buds of
+  fruit trees. url.
+
 \bibitem[{Peterson \& Abatzoglou(2014)}]{Peterson2014}
 Peterson, A.G. \& Abatzoglou, J.T. (2014) {Observed changes in false springs
   over the contiguous United States}. \emph{Geophysical Research Letters}
   \textbf{41}, 2156--2162.
+
+\bibitem[{S{\'a}nchez \emph{et~al.}(2013)S{\'a}nchez, Rasmussen \&
+  Porter}]{Sanchez2013}
+S{\'a}nchez, B., Rasmussen, A. \& Porter, J.R. (2013) Temperatures and the
+  growth and development of maize and rice: a review. \emph{Global Change
+  Biology} \textbf{20}, 408--417.
 
 \bibitem[{Schwartz(1993)}]{Schwartz1993}
 Schwartz, M.D. (1993) Assessing the onset of spring: A climatological

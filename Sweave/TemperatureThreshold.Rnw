@@ -84,23 +84,23 @@ Ecological & 9+ & All & -2.2 & 7 day threshold & \cite{Peterson2014} \\
 \hline
 Agrinomical & 9+ & All & 2 & Risk threshold for clear nights & \cite{Cannell1986} \\
 \hline
-Agrinomical & Floral & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & Longstroth, 2013 \\
+Agrinomical & Floral & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & \cite{Longstroth2012} \\
 \hline
-Agrinomical & 9 & Rosaceae & -7.2 & 10\% lethality & Longstroth, 2012\\
+Agrinomical & 9 & Rosaceae & -7.2 & 10\% lethality & \cite{Longstroth2013}\\
 \hline
-Agrinomical & 9 & Rosaceae & -13.3 & 90\% lethality & Longstroth, 2012 \\
+Agrinomical & 9 & Rosaceae & -13.3 & 90\% lethality & \cite{Longstroth2013} \\
 \hline
-Agrinomical & All & All & Varies & Radiation Frost & Barlow et al., 2015; Andresen, 2009 \\
+Agrinomical & All & All & Varies & Radiation Frost & \cite{Barlow2015} \\
 \hline
-Agrinomical & Floral & Wheat & -4 to -5 & 10-90\% lethality & Barlow et al., 2015 \\
+Agrinomical & Floral & Wheat & -4 to -5 & 10-90\% lethality & \cite{Barlow2015} \\
 \hline
-Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & Barlow et al., 2015 \\
+Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & \cite{Barlow2015} \\
 \hline
-Agrinomical & Vegetative & Rice & 4.7 & lethal limit & Sanchez et al., 2014 \\
+Agrinomical & Vegetative & Rice & 4.7 & lethal limit & \cite{Sanchez2013} \\
 \hline
-Agrinomical & Vegetative & Corn & -1.8 & lethal limit & Sanchez et al., 2014\\
+Agrinomical & Vegetative & Corn & -1.8 & lethal limit & \cite{Sanchez2013}\\
 \hline
-Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & Sanchez et al., 2014 \\
+Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & \cite{Sanchez2013} \\
 \hline
 \end{tabular}
 \end{center}
