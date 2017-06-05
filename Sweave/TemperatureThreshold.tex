@@ -55,6 +55,8 @@
 \usepackage{tabularx}
 \usepackage{siunitx}
 \usepackage{mdframed}
+\usepackage{geometry}
+\usepackage{pdflscape}
 \usepackage{natbib}
 \bibliographystyle{..//refs/styles/besjournals.bst}
 \usepackage[small]{caption}
@@ -94,19 +96,58 @@
 \renewcommand{\labelitemi}{$-$}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
+\begin{landscape}
 \begin{center}
 \captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:title} 
+\footnotesize
 \begin{tabular}{|c | c | c | c | c | c|}
 \hline
-\textbf{Sector} & \textbf{Phenophase} & \textbf{Species} & \textbf{Temperature ($^{\circ}$C)} & \textbf{Type} & \textbf{Source} \\
+\textbf{Sector} & \textbf{BBCH} & \textbf{Species} & \textbf{Temperature ($^{\circ}$C)} & \textbf{Type} & \textbf{Source} \\
 \hline
-Ecological & Budburst to Leafout & Sorbus aucuparia & -7.4 & 50\% lethality &  \citep{Lenz2013, Lenz2016} \\
+Ecological & 9-15 & Sorbus aucuparia & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Prunus avium & -8.5 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Tilia platyphyllos & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Acer pseudoplatanus & -6.7 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9-15 & Fagus sylvatica & -4.8 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & Spring Onset & All & -2.2 & hard & \cite{Schwartz1993}\\
+\hline
+Ecological & Spring Onset & All & -1.7 & soft & \cite{Augspurger2013} \\
+\hline
+Ecological & All & All & 2 SD below winter TAVG & cold-air outbreaks & \cite{Vavrus2006} \\
+\hline
+Ecological & 9+ & Eucalyptus pauciflora & -5.8 & elevated CO2 and temperature threshold & \cite{Barker2005} \\
+\hline
+Ecological & 9+ & All & -2.2 & 7 day threshold & \cite{Peterson2014} \\
+\hline
+Agrinomical & 9+ & All & 2 & Risk threshold for clear nights & \cite{Cannell1986} \\
+\hline
+Agrinomical & Floral & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & Longstroth, 2013 \\
+\hline
+Agrinomical & 9 & Rosaceae & -7.2 & 10\% lethality & Longstroth, 2012\\
+\hline
+Agrinomical & 9 & Rosaceae & -13.3 & 90\% lethality & Longstroth, 2012 \\
+\hline
+Agrinomical & All & All & Varies & Radiation Frost & Barlow et al., 2015; Andresen, 2009 \\
+\hline
+Agrinomical & Floral & Wheat & -4 to -5 & 10-90\% lethality & Barlow et al., 2015 \\
+\hline
+Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & Barlow et al., 2015 \\
+\hline
+Agrinomical & Vegetative & Rice & 4.7 & lethal limit & Sanchez et al., 2014 \\
+\hline
+Agrinomical & Vegetative & Corn & -1.8 & lethal limit & Sanchez et al., 2014\\
+\hline
+Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & Sanchez et al., 2014 \\
 \hline
 \end{tabular}
 \end{center}
-
-
-
+\end{landscape}
+\restoregeometry
 
 \bibliography{..//refs/SpringFreeze.bib}
 \end{document}
