@@ -338,6 +338,10 @@ gm.count<- lat1 %>%
   filter(row_number(biweekly)==n())
 gm.count$mean<-ave(gm.count$count, gm.count$biweekly)
 gm.count$stand_dev<-ave(gm.count$count, gm.count$biweekly, FUN=sd)
+gm.high<-gm.count%>%group_by(biweekly)%>%summarise(high=max(count))%>%ungroup(gm.count)
+gm.low<-gm.count%>%group_by(biweekly)%>%summarise(low=min(count))%>%ungroup(gm.count)
+gm.count<-full_join(gm.count, gm.high)
+gm.count<-full_join(gm.count, gm.low)
 gm<-gm.count %>%
   ungroup(gm.count) %>%
   dplyr::select(-count, -year) 
@@ -386,6 +390,10 @@ water.count<- water %>%
   filter(row_number(biweekly)==n())
 water.count$mean<-ave(water.count$count, water.count$biweekly)
 water.count$stand_dev<-ave(water.count$count, water.count$biweekly, FUN=sd)
+water.high<-water.count%>%group_by(biweekly)%>%summarise(high=max(count))%>%ungroup(water.count)
+water.low<-water.count%>%group_by(biweekly)%>%summarise(low=min(count))%>%ungroup(water.count)
+water.count<-full_join(water.count, water.high)
+water.count<-full_join(water.count, water.low)
 maine<-water.count %>%
   ungroup(water.count) %>%
   dplyr::select(-count, -year) 
@@ -434,6 +442,10 @@ wash.count<- am8 %>%
   filter(row_number(biweekly)==n())
 wash.count$mean<-ave(wash.count$count, wash.count$biweekly)
 wash.count$stand_dev<-ave(wash.count$count, wash.count$biweekly, FUN=sd)
+wash.high<-wash.count%>%group_by(biweekly)%>%summarise(high=max(count))%>%ungroup(wash.count)
+wash.low<-wash.count%>%group_by(biweekly)%>%summarise(low=min(count))%>%ungroup(wash.count)
+wash.count<-full_join(wash.count, wash.high)
+wash.count<-full_join(wash.count, wash.low)
 wash<-wash.count %>%
   ungroup(wash.count) %>%
   dplyr::select(-count, -year) 
@@ -485,6 +497,10 @@ nc.count<- nc1 %>%
   filter(row_number(biweekly)==n())
 nc.count$mean<-ave(nc.count$count, nc.count$biweekly)
 nc.count$stand_dev<-ave(nc.count$count, nc.count$biweekly, FUN=sd)
+nc.high<-nc.count%>%group_by(biweekly)%>%summarise(high=max(count))%>%ungroup(nc.count)
+nc.low<-nc.count%>%group_by(biweekly)%>%summarise(low=min(count))%>%ungroup(nc.count)
+nc.count<-full_join(nc.count, nc.high)
+nc.count<-full_join(nc.count, nc.low)
 nc2<-nc.count %>%
   ungroup(nc.count) %>%
   dplyr::select(-count, -year) 
@@ -534,6 +550,10 @@ ren.count<- ren %>%
   filter(row_number(biweekly)==n())
 ren.count$mean<-ave(ren.count$count, ren.count$biweekly)
 ren.count$stand_dev<-ave(ren.count$count, ren.count$biweekly, FUN=sd)
+ren.high<-ren.count%>%group_by(biweekly)%>%summarise(high=max(count))%>%ungroup(ren.count)
+ren.low<-ren.count%>%group_by(biweekly)%>%summarise(low=min(count))%>%ungroup(ren.count)
+ren.count<-full_join(ren.count, ren.high)
+ren.count<-full_join(ren.count, ren.low)
 ren1<-ren.count %>%
   ungroup(ren.count) %>%
   dplyr::select(-count, -year) 
@@ -563,6 +583,9 @@ d$biweekly<-ifelse(d$biweekly=="04_2", "Apr 15 - Apr 30", d$biweekly)
 d$biweekly<-ifelse(d$biweekly=="05_1", "May 1 - May 14", d$biweekly)
 d$biweekly<-ifelse(d$biweekly=="05_2", "May 15 - May 31", d$biweekly)
 
+d$high<-as.numeric(as.character(d$high))
+d$low<-as.numeric(as.character(d$low))
+
 d$biweekly <- factor(d$biweekly, levels=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                             "Apr 15 - Apr 30","May 1 - May 14","May 15 - May 31"))
 limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum", "plum", 
@@ -573,10 +596,12 @@ ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week P
 
 ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
                                                                 "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")))) +
-         geom_point() + xlab("Two Week Period") + ylab("Average Number of days per two week period below -2.2C") + 
+         geom_point() + xlab("Two Week Period") + ylab("Number of days below -2.2C per two week period") + 
   geom_line(aes(x=biweekly, y=mean,  color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
                                                                    "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")), group=site)) + 
-  geom_linerange(aes(ymax = mean + stand_dev, ymin=mean - stand_dev), stat="density", position=position_dodge(.1), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range")
+  geom_linerange(aes(ymax = d$high, ymin=d$low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range")
+
+ggplot(data = df, aes(x=biweekly, y=count)) + geom_boxplot(aes(fill=site))
 
 
 df$biweekly<-ifelse(df$biweekly=="02_2", "Feb 15 - Feb 29", df$biweekly)

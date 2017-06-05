@@ -113,4 +113,4 @@ grid.arrange(am.map, eur.map, legend, ncol=2, nrow = 2,
 plot_grid(plot1, eur.map, labels=c("A", "B"), ncol = 2, nrow = 1)
 
 grid_arrange_shared_legend(plot1, plot2, ncol = 2,
-                           widths = c(4, 2.5), heights = 2.2)
+                           widths = c(5, 2), heights = 1.5)
