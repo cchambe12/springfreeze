@@ -97,7 +97,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Definition and Threat
 \begin{enumerate}
-\item Episodic spring frosts present the most risk to frost damage for temperate forest plants \citep{Sakai1987}.
+\item Temperate forest plants are most at risk to frost damage from episodic spring frosts  \citep{Sakai1987}. 
 \item Abnormally warm conditions in the late winter or early spring can cause budburst to initiate early in trees and shrubs.
 \item Freezing temperatures following a warm spell could result in plant damage or even death \citep{Ludlum1968, Mock2007}.
 \item False springs are defined by two phases: rapid vegetative growth prior to a freeze and a post freeze setback \citep{Gu2008}.
@@ -112,7 +112,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Ecodormancy is the period of time when growth can occur but the external environment is not conducive to growth (e.g. too cold) \citep{Basler2012}.
 \item Therefore, warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because trees have not yet left the endodormancy phase.
 \item Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing degree days between budburst and the last freeze date \citep{Augspurger2013}.
-\item A damaging false spring is currently defined as having more than 7 days between budburst and the last freeze date, using Equation 1 \citep{Peterson2014}.
+\item A damaging false spring is currently defined as having 7 or more days between budburst and the last freeze date, using Equation 1 \citep{Peterson2014}.
 \item The 7 day parameter exposes less resistant foliate phenophases to a false spring, thus putting the plant at a higher risk of damage. 
 \item Once budburst has initiated, buds cannot respond to cold temperatures and freeze resistance is greatly reduced \citep{Taschler2004, Lenz2013, Vitasse2014}.
 \item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
@@ -131,7 +131,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 \end{enumerate}
 
-
+%%%%%%%%%% DETERMINING SPRING ONSET %%%%%%%%%%%%%
 
 
 \bibliography{..//refs/SpringFreeze.bib}
