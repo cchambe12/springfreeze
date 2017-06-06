@@ -5,6 +5,8 @@
 \usepackage{tabularx}
 \usepackage{siunitx}
 \usepackage{mdframed}
+\usepackage{geometry}
+\usepackage{pdflscape}
 \usepackage{natbib}
 \bibliographystyle{..//refs/styles/besjournals.bst}
 \usepackage[small]{caption}
@@ -39,6 +41,7 @@ library(xtable)
 library(arm)
 library(car)
 library(lubridate)
+library(grid)
 @
 
 \begin{document}
@@ -81,8 +84,8 @@ plot(methodplot)
 \subsection*{Treespotters Data}
 \begin{figure} [H]
 \begin{center}
-\caption{Day of budburst and the day of leaf out for native tree species in New England. Data was downloaded from the US-NPN data download tool (http://data.usanpn.org/observations/get-started) and observations were collected from the Arnold Aboretum - Tree Spotters program. The standard deviation is represented in coral for budburst and green for leaf out. }
-\includegraphics{..//figure/TS_2016.pdf} 
+\caption{Duration of vegetative risk for 9 native tree species in New England. Data was downloaded from the US-NPN data download tool (http://data.usanpn.org/observations/get-started) and observations were collected from the Arnold Aboretum - Tree Spotters program.  }
+\includegraphics{..//figure/TreeSpot.pdf} 
 \end{center}
 \end{figure}
 
@@ -98,43 +101,58 @@ xtable(ts.lm, no.space=TRUE, title ="The results from a linear regression model 
 \begin{figure} [H]
 \begin{center}
 \caption{Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out. }
-\includegraphics{..//output/Dan_TXandSp.pdf} 
+\includegraphics{..//figure/Exp_plot.pdf} 
 \end{center}
 \end{figure}
 
 
-<<label=expchill, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
-read_chunk("..//scripts/anovas.R")
-d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
+%<<label=expchill, results = "asis", echo=FALSE, fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+%read_chunk("..//scripts/anovas.R")
+%d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
 
-dxx<-d
-dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
-dxx$warm<-as.numeric(as.character(dxx$warm))
-dxx$photo<-as.numeric(as.character(dxx$photo))
-dxx<-dxx %>%
-  dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
-dxx$risk<-dxx$lday-dxx$bday 
+%dxx<-d
+%dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
+%dxx$warm<-as.numeric(as.character(dxx$warm))
+%dxx$photo<-as.numeric(as.character(dxx$photo))
+%dxx<-dxx %>%
+  %dplyr::select(id, sp, site, lday, bday, chilling, warm, photo, treatcode)
+%dxx$risk<-dxx$lday-dxx$bday 
 
-# Run anovas for each species
-myspp <- unique(dxx$sp)
-mylist<-list()
-for(i in c(1:length(myspp))) {
-  subby<-subset(dxx, sp==myspp[i])
-  myanova<-Anova(lm(risk~chilling + warm + photo, data=subby))
-  print(myanova)
-  mylist[[myspp[i]]] <- myanova
-}
+%# Run anovas for each species
+%myspp <- unique(dxx$sp)
+%mylist<-list()
+%for(i in c(1:length(myspp))) {
+ % subby<-subset(dxx, sp==myspp[i])
+  %myanova<-Anova(lm(risk~chilling + warm + photo, data=subby))
+  %print(myanova)
+  %mylist[[myspp[i]]] <- myanova
+%}
 
 
-xtableList(mylist, title ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.")
-@
+%xtableList(mylist, title ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.")
+%@
 
 \subsection*{Harvard Forest Data}
 <<label=forest, results = "asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A timeline plot indicating the duration of vegetative risk for each species from collected from Harvard Forest.", fig.pos="H">>=
 read_chunk("..//scripts/hf.timeline.R")
 
 timeline<-read.csv("..//input/hf003-06-mean-spp.csv", header=TRUE)
+weather<-read.csv("..//input/WeatherData.csv", header=TRUE)
 
+# Sort Weather Data
+years<- c(2010, 2014)
+
+w<-weather %>%
+  filter(Year %in% years) %>%
+  filter(JD >= 107) %>%
+  filter(JD <= 158)
+
+climate<-ggplot((w), aes(x=JD, y=AirT)) + xlab("Day of Year") + ylab("Mean Daily Temperature (C)") +
+  geom_point(aes(col=factor(Year)))+
+  geom_line(aes(x=JD, y=AirT, col=factor(Year))) + scale_shape_manual(values=c("#999999", "#56B4E9"),
+                                                                     name="Year") +
+  scale_color_manual(labels = c("2010", "2014"), values = c("purple3", "royalblue3")) +
+  labs(color="Year")
 years<-c("2010", "2014")
 timeline<-timeline %>%
   dplyr::select(year, species, bb.jd, l75.jd) %>%
@@ -145,23 +163,83 @@ df<- timeline %>%
   unite(sp.year, species, year, remove=FALSE)
 df$si[df$year=="2010"] <- "early"
 df$si[df$year=="2014"] <- "late"
+df$code <- reorder(df$species, df$bb.jd)
 
+df$bb.jd<-as.numeric(as.character(df$bb.jd))
+df$l75.jd<-as.numeric(as.character(df$l75.jd))
 
-df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
-  geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
-  geom_point(aes(x=l75.jd, col=si)) + geom_point(aes(col=si)) +
-  xlab("Budburst to Leaf Out") +
-  ylab("Species")
-plot(df.plot)
+hf<-ggplot(df, aes(x = code,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
+  geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x = code,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("2010", "2014", "Leafout", "Budburst"), values = c("purple3", "royalblue3", "green4", "darkolivegreen3")) +
+  xlab("Species") +coord_flip() + labs(color="Phenophase and Year", title="Harvard Forest Data")
+
+grid.newpage()
+grid.draw(rbind(ggplotGrob(hf), ggplotGrob(climate), size="first"))
 @
 \section*{Regional Differences in Vegetative Risk?}
 \begin{figure} [H]
 \begin{center}
 \caption{Risk of a false spring event across five archetypal climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{SI-x2016, Soudani2012, Schaber2005}. We calculated the mean number of days that were -2.2$^{\circ}$C \citep{Ault2015, Schwartz2006, Schwartz1993} or below for each two week period that fell within the budburst to leafout timeframe in each region. }
-\includegraphics{..//output/RegionalRisk_by_biweekly.pdf}
-\includegraphics{..//output/Boxplot_RegRisk_biweekly.pdf} 
+\includegraphics{..//figure/RegionalRisk_by_biweekly.pdf}
+\includegraphics{..//figure/RegionalRisk_map.pdf}
 \end{center}
 \end{figure}
+
+\section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
+\begin{landscape}
+\begin{center}
+\captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:title} 
+\footnotesize
+\begin{tabular}{|c | c | c | c | c | c|}
+\hline
+\textbf{Sector} & \textbf{BBCH} & \textbf{Species} & \textbf{Temperature ($^{\circ}$C)} & \textbf{Type} & \textbf{Source} \\
+\hline
+Ecological & 9-15 & Sorbus aucuparia & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Prunus avium & -8.5 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Tilia platyphyllos & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Acer pseudoplatanus & -6.7 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9-15 & Fagus sylvatica & -4.8 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9+ & All & -2.2 & hard & \cite{Schwartz1993}\\
+\hline
+Ecological & 9+ & All & -1.7 & soft & \cite{Augspurger2013} \\
+\hline
+Ecological & All & All & 2 SD below winter TAVG & cold-air outbreaks & \cite{Vavrus2006} \\
+\hline
+Ecological & 9+ & Eucalyptus pauciflora & -5.8 & elevated CO2 and temperature threshold & \cite{Barker2005} \\
+\hline
+Ecological & 9+ & All & -2.2 & 7 day threshold & \cite{Peterson2014} \\
+\hline
+Agrinomical & 9+ & All & 2 & Risk threshold for clear nights & \cite{Cannell1986} \\
+\hline
+Agrinomical & Floral & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & \cite{Longstroth2012} \\
+\hline
+Agrinomical & 9 & Rosaceae & -7.2 & 10\% lethality & \cite{Longstroth2013}\\
+\hline
+Agrinomical & 9 & Rosaceae & -13.3 & 90\% lethality & \cite{Longstroth2013} \\
+\hline
+Agrinomical & All & All & Varies & Radiation Frost & \cite{Barlow2015} \\
+\hline
+Agrinomical & Floral & Wheat & -4 to -5 & 10-90\% lethality & \cite{Barlow2015} \\
+\hline
+Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & \cite{Barlow2015} \\
+\hline
+Agrinomical & Vegetative & Rice & 4.7 & lethal limit & \cite{Sanchez2013} \\
+\hline
+Agrinomical & Vegetative & Corn & -1.8 & lethal limit & \cite{Sanchez2013}\\
+\hline
+Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & \cite{Sanchez2013} \\
+\hline
+\end{tabular}
+\end{center}
+\end{landscape}
+\restoregeometry
+
 
 
 \section*{Conclusion - Box}
@@ -173,6 +251,7 @@ In order to properly evaluate the expected level of damage sustained from a fals
 key indicators should be included in the model.
 \renewcommand{\theenumi}{\Roman{enumi}}
 \renewcommand{\theenumii}{\roman{enumii}}
+\scriptsize
 \begin{enumerate}
   \item Life Stage of the Individual(s) \citep{Caffarra2011}
   \begin{enumerate}

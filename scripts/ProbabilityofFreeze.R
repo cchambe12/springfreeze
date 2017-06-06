@@ -599,7 +599,8 @@ ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("France: April 5
          geom_point() + xlab("Two Week Period") + ylab("Number of days below -2.2C per two week period") + 
   geom_line(aes(x=biweekly, y=mean,  color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
                                                                    "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")), group=site)) + 
-  geom_linerange(aes(ymax = d$high, ymin=d$low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range")
+  geom_linerange(aes(ymax = d$high, ymin=d$low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
+  theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1))
 
 ggplot(data = df, aes(x=biweekly, y=count)) + geom_boxplot(aes(fill=site))
 

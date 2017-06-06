@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 MAY 2017 18:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 JUN 2017 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -562,12 +562,43 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@zref@counter=\count142
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count143
+\Gm@cntv=\count144
+\c@Gm@tempcnt=\count145
+\Gm@bindingoffset=\dimen160
+\Gm@wd@mp=\dimen161
+\Gm@odd@mp=\dimen162
+\Gm@even@mp=\dimen163
+\Gm@layoutwidth=\dimen164
+\Gm@layoutheight=\dimen165
+\Gm@layouthoffset=\dimen166
+\Gm@layoutvoffset=\dimen167
+\Gm@dimlist=\toks20
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip123
 \bibsep=\skip124
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count143
+\c@NAT@ctr=\count146
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
@@ -575,15 +606,15 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen160
-\captionmargin@=\dimen161
-\captionwidth=\dimen162
-\caption@tempdima=\dimen163
-\caption@indent=\dimen164
-\caption@parindent=\dimen165
-\caption@hangindent=\dimen166
+\captionmargin=\dimen168
+\captionmargin@=\dimen169
+\captionwidth=\dimen170
+\caption@tempdima=\dimen171
+\caption@indent=\dimen172
+\caption@parindent=\dimen173
+\caption@hangindent=\dimen174
 )
-\c@ContinuedFloat=\count144
+\c@ContinuedFloat=\count147
 Package caption Info: float package is loaded.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/upquote/upquote.sty
@@ -593,32 +624,32 @@ tim
 (./TablesFigures.aux)
 \openout1 = `TablesFigures.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
-\scratchdimen=\dimen167
+\scratchcounter=\count148
+\scratchdimen=\dimen175
 \scratchbox=\box56
-\nofMPsegments=\count146
-\nofMParguments=\count147
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count148
-\MPscratchDim=\dimen168
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count149
+\nofMParguments=\count150
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count151
+\MPscratchDim=\dimen176
+\MPnumerator=\count152
+\makeMPintoPDFobject=\count153
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -642,84 +673,115 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \AtBeginShipoutBox=\box57
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03111pt
+* \textheight=624.25352pt
+* \oddsidemargin=-1.13791pt
+* \evensidemargin=-1.13791pt
+* \topmargin=-42.67912pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__siunitx_mathsf_int=\count151
+\c__siunitx_mathsf_int=\count154
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 86.
+(Font)              <7> on input line 88.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 86.
-\c__siunitx_mathtt_int=\count152
+(Font)              <5> on input line 88.
+\c__siunitx_mathtt_int=\count155
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 90.
+(Font)              <12> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 90.
+(Font)              <8> on input line 92.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 90.
- <figure/fsifig-1.pdf, id=1, 505.89pt x 505.89pt>
+(Font)              <6> on input line 92.
+<figure/fsifig-1.pdf, id=1, 505.89pt x 505.89pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
  <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 101.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 103.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<..//figure/TS_2016.pdf, id=11, 505.89pt x 361.35pt>
-File: ..//figure/TS_2016.pdf Graphic file (type pdf)
+<..//figure/TreeSpot.pdf, id=11, 505.89pt x 361.35pt>
+File: ..//figure/TreeSpot.pdf Graphic file (type pdf)
 
-<use ..//figure/TS_2016.pdf>
-Package pdftex.def Info: ..//figure/TS_2016.pdf used on input line 111.
+<use ..//figure/TreeSpot.pdf>
+Package pdftex.def Info: ..//figure/TreeSpot.pdf used on input line 113.
 (pdftex.def)             Requested size: 377.62633pt x 269.73816pt.
  [2 <./figure/fsifig-1.pdf>]
-<..//output/Dan_TXandSp.pdf, id=21, 513.92pt x 391.4625pt>
-File: ..//output/Dan_TXandSp.pdf Graphic file (type pdf)
+<..//figure/Exp_plot.pdf, id=21, 513.92pt x 391.4625pt>
+File: ..//figure/Exp_plot.pdf Graphic file (type pdf)
 
-<use ..//output/Dan_TXandSp.pdf>
-Package pdftex.def Info: ..//output/Dan_TXandSp.pdf used on input line 134.
+<use ..//figure/Exp_plot.pdf>
+Package pdftex.def Info: ..//figure/Exp_plot.pdf used on input line 136.
 (pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
- [3 <..//figure/TS_2016.pdf>] [4 <..//output/Dan_TXandSp.pdf>] [5] [6]
-
-LaTeX Warning: Float too large for page by 1439.74629pt on input line 561.
-
-<figure/forest-1.pdf, id=46, 505.89pt x 505.89pt>
+ [3 <..//figure/TreeSpot.pdf>]
+<figure/forest-1.pdf, id=32, 505.89pt x 505.89pt>
 File: figure/forest-1.pdf Graphic file (type pdf)
  <use figure/forest-1.pdf>
-Package pdftex.def Info: figure/forest-1.pdf used on input line 566.
+Package pdftex.def Info: figure/forest-1.pdf used on input line 169.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
-[7]
+[4 <..//figure/Exp_plot.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 573.
- <..//output/RegionalRisk_by_biweekly.pdf, id=51, 513.92pt x 391.4625pt>
-File: ..//output/RegionalRisk_by_biweekly.pdf Graphic file (type pdf)
+(Font)              <9> on input line 176.
 
-<use ..//output/RegionalRisk_by_biweekly.pdf>
-Package pdftex.def Info: ..//output/RegionalRisk_by_biweekly.pdf used on input 
-line 574.
-(pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
+<..//figure/RegionalRisk_by_biweekly.pdf, id=41, 722.7pt x 361.35pt>
+File: ..//figure/RegionalRisk_by_biweekly.pdf Graphic file (type pdf)
 
-<..//output/Boxplot_RegRisk_biweekly.pdf, id=52, 505.89pt x 361.35pt>
-File: ..//output/Boxplot_RegRisk_biweekly.pdf Graphic file (type pdf)
+<use ..//figure/RegionalRisk_by_biweekly.pdf>
+Package pdftex.def Info: ..//figure/RegionalRisk_by_biweekly.pdf used on input 
+line 177.
+(pdftex.def)             Requested size: 377.62633pt x 188.81285pt.
 
-<use ..//output/Boxplot_RegRisk_biweekly.pdf>
-Package pdftex.def Info: ..//output/Boxplot_RegRisk_biweekly.pdf used on input 
-line 575.
-(pdftex.def)             Requested size: 377.62633pt x 269.73816pt.
- [8 <./figure/forest-1.pdf>]
-Overfull \vbox (86.83417pt too high) has occurred while \output is active []
+<..//figure/RegionalRisk_map.pdf, id=42, 722.7pt x 397.485pt>
+File: ..//figure/RegionalRisk_map.pdf Graphic file (type pdf)
 
+<use ..//figure/RegionalRisk_map.pdf>
+Package pdftex.def Info: ..//figure/RegionalRisk_map.pdf used on input line 178
+.
+(pdftex.def)             Requested size: 377.62633pt x 207.69412pt.
+ [5 <./figure/forest-1.pdf>] [6 <..//figure/RegionalRisk_by_biweekly.pdf> <..//
+figure/RegionalRisk_map.pdf>] [7
 
-[9 <..//output/RegionalRisk_by_biweekly.pdf> <..//output/Boxplot_RegRisk_biweek
-ly.pdf>]
+]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 582.
+(caption)                outside box or environment on input line 240.
 See the caption package documentation for explanation.
 
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 626.
-[10] (./TablesFigures.bbl [11]
+ mdframed uses option nobreak mdframed on input line 285.
+(./TablesFigures.bbl
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
@@ -729,32 +791,39 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
-) [12] [13]
+ [8
+
+
+] [9]) [10]
 (./TablesFigures.aux) ) 
 Here is how much of TeX's memory you used:
- 13829 strings out of 493014
- 284185 string characters out of 6133351
- 335494 words of memory out of 5000000
- 17241 multiletter control sequences out of 15000+600000
- 13099 words of font info for 48 fonts, out of 8000000 for 9000
+ 14364 strings out of 493014
+ 292262 string characters out of 6133351
+ 327704 words of memory out of 5000000
+ 17757 multiletter control sequences out of 15000+600000
+ 14109 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,47p,10385b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,47p,10385b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9
-.pfb>
-Output written on TablesFigures.pdf (13 pages, 197345 bytes).
+fonts/cm/cmbx8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on TablesFigures.pdf (10 pages, 370064 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 140 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

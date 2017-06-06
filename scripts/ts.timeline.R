@@ -99,6 +99,9 @@ sd<- y1 %>%
 basic<- full_join(bud, leaves)
 basic$Risk<- basic$Leaves - basic$Budburst
 basic<-full_join(basic, sd)
+spp<- c("Carya_ovata", "Quercus_rubra", "Carya_glabra", "Acer_saccharum", "Populus_deltoides",
+            "Betula_nigra", "Tilia_americana", "Aesculus_flava", "Betula_alleghaniensis")
+basic<-basic%>%filter(species %in% spp)
 
 basic$code <- reorder(basic$species, basic$Budburst)
 y2$code <- reorder(y2$species, y2$DOY)
@@ -117,6 +120,12 @@ ts.timeline<-ggplot((basic), aes(x=Budburst, y=code), stat="identity") +
   geom_errorbarh(aes(xmin=Leaves-sd.leaf, xmax=Leaves+sd.leaf, col="forestgreen"), height=.0)
 plot(ts.timeline)
 
+ts<-ggplot(basic, aes(x = code,ymin = Budburst, ymax = Leaves, group=species )) +
+  geom_point(aes(y=Budburst, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=Leaves, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x = code,ymin = Budburst, ymax = Leaves), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("Leafout", "Budburst"), values = c("green4", "darkolivegreen3")) +
+  xlab("Species") +coord_flip()
+plot(ts)
 
 ts<-ggplot((y2), aes(x=code, y=DOY)) + geom_point(aes(col=Phenophase)) + 
   xlab("Day of Year") + ylab("Species") + geom_errorbar(aes(ymin=DOY-sd, ymax=DOY+sd, col=Phenophase), width=.0) +

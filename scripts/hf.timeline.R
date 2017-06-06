@@ -26,9 +26,9 @@ weather<-read.csv("input/WeatherData.csv", header=TRUE)
 years<- c(2010, 2014)
 
 w<-weather %>%
-  filter(Year==2010) %>%
+  filter(Year %in% years) %>%
   filter(JD >= 107) %>%
-  filter(JD <= 145)
+  filter(JD <= 158)
 w14<-weather %>%
   filter(Year==2014) %>%
   filter(JD>=130) %>%
@@ -37,7 +37,9 @@ w14<-weather %>%
 climate<-ggplot((w), aes(x=JD, y=AirT)) + xlab("Day of Year") + ylab("Mean Daily Temperature (C)") +
   geom_point(aes(col=factor(Year)))+
   geom_line(aes(x=JD, y=AirT, col=factor(Year))) + scale_shape_manual(values=c("#999999", "#56B4E9"),
-                                                                     name="Year")
+                                                                     name="Year") +
+  scale_color_manual(labels = c("2010", "2014"), values = c("purple3", "royalblue3")) +
+  labs(color="Year")
 climate
 
 # Add Risk and only Two Years
@@ -53,8 +55,9 @@ df$si[df$year=="2010"] <- "early"
 df$si[df$year=="2014"] <- "late"
 #df<-na.omit(df)
 
+
 # Make a graph!
-#df$code <- reorder(df$sp.year, df$bb.jd)
+df$code <- reorder(df$species, df$bb.jd)
 
 df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
   geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
@@ -62,6 +65,20 @@ df.plot<-ggplot((df), aes(x=bb.jd, y=sp.year), stat="identity") + geom_point(aes
   xlab("Budburst to Leaf Out") +
   ylab("Species")
 plot(df.plot)
+
+df$bb.jd<-as.numeric(as.character(df$bb.jd))
+df$l75.jd<-as.numeric(as.character(df$l75.jd))
+
+hf<-ggplot(df, aes(x = code,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
+  geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x = code,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("2010", "2014", "Leafout", "Budburst"), values = c("purple3", "royalblue3", "green4", "darkolivegreen3")) +
+  xlab("Species") +coord_flip() + labs(color="Phenophase and Year", title="Harvard Forest Data")
+plot(hf)
+
+grid.newpage()
+grid.draw(rbind(ggplotGrob(hf), ggplotGrob(climate), size="first"))
+
 
 ggplot((df), aes( x=bb.jd, y=risk)) + geom_smooth(method="lm", se=FALSE) + geom_point(aes(col=si))
 
@@ -206,11 +223,11 @@ mod<-lm(risk~AirT, data = risk.climate.df)
 summary(mod)
 
 ## Attempt to make overlapping graph
-risk.plot<- ggplot((risk.climate.df), aes(x=JD, y=sp.year), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
+risk.climate.df<-full_join(risk.climate, df)
+risk.plot<- ggplot((risk.climate.df), aes(x=JD, y=species), stat="identity") + geom_point(aes(x= df$bb.jd)) + 
   geom_segment(aes(y = sp.year, yend = sp.year, x = bb.jd, xend = l75.jd, col=si)) +
   geom_point(aes(x=l75.jd, col=si)) + geom_point(aes(col=si)) +
   xlab("Budburst to Leaf Out") +
   ylab("Species")
 weather.plot<- ggplot((risk.climate.df), aes(x=JD, AirT))
-grid.newpage()
-grid.draw(rbind(ggplotGrob(risk.plot), ggplotGrob(weather.plot), size = "last"))
+
