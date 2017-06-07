@@ -12,17 +12,25 @@ library(tidyr)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
-d<-read.csv("output/anovatable.csv",header=TRUE, colClasses="numeric")
+d<-read.csv("output/anovatable.csv",header=TRUE)
+dxx<-read.csv("output/interactions.csv",header=TRUE)
 
+d.acepen <- d[,2:5]
+d.acerub<- d[,6:9]
+d.acesac <- d[,10:13]
+d.betall <- d[,14:17]
+d.betpap <- d[,18:21]
+d.faggra <- d[,22:25]
+d.ilemuc <- d[,26:39]
+d.popgra <- d[,30:33]
+d.querub <- d[,34:37]
 
-d.acepen <- d[,1:4]
-d.acerub<- d[,5:8]
-d.acesac <- d[,9:12]
-d.betall <- d[,21:24]
-d.betpap <- d[,29:32]
-d.faggra <- d[,37:40]
-d.ilemuc <- d[,49:52]
-d.popgra <- d[,69:72]
-d.querub <- d[,81:84]
-
-
+dxx.acepen <- dxx[,1:4]
+dxx.acerub<- dxx[,5:8]
+dxx.acesac <- dxx[,9:12]
+dxx.betall <- dxx[,13:16]
+dxx.betpap <- dxx[,17:20]
+dxx.faggra <- dxx[,21:24]
+dxx.ilemuc <- dxx[,25:28]
+dxx.popgra <- dxx[,29:32]
+dxx.querub <- dxx[,33:36]

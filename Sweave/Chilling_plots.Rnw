@@ -41,7 +41,7 @@ library(xtable)
 library(arm)
 library(lubridate)
 library(car)
-library(stargazer)
+library(tibble)
 @
 \begin{document}
 
@@ -60,85 +60,160 @@ library(stargazer)
 
 <<label=eurlat, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
 read_chunk("..//scripts/Anova.Tables.R")
-d<-read.csv("..//output/anovatable.csv", colClasses="numeric")
+d<-read.csv("..//output/anovatable.csv")
 
+d.acepen <- d[,2:5]
+d.acerub<- d[,6:9]
+d.acesac <- d[,10:13]
+d.betall <- d[,14:17]
+d.betpap <- d[,18:21]
+d.faggra <- d[,22:25]
+d.ilemuc <- d[,26:29]
+d.popgra <- d[,30:33]
+d.querub <- d[,34:37]
 
-d.acepen <- d[,1:4]
-d.acerub<- d[,5:8]
-d.acesac <- d[,9:12]
-d.betall <- d[,21:24]
-d.betpap <- d[,29:32]
-d.faggra <- d[,37:40]
-d.ilemuc <- d[,49:52]
-d.popgra <- d[,69:72]
-d.querub <- d[,81:84]
-
-dx<-xtable(d.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE, digits=-3)
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+dx<-xtable(d.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.",floating=FALSE)
 row.names(dx)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(dx , include.rownames=TRUE, caption.placement="top")
-acerub<-xtable(d.acerub, digits=-3)
+print(xtable(dx), add.to.row = addtorow,caption.placement="top", include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+acerub<-xtable(d.acerub)
 row.names(acerub)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(acerub)
-acesac<-xtable(d.acesac, digits=-3)
+print(acerub, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACESAC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+acesac<-xtable(d.acesac)
 row.names(acesac)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(acesac)
-betall<-xtable(d.betall, digits=-3)
+print(acesac, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETALL & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+betall<-xtable(d.betall)
 row.names(betall)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(betall)
-betpap<-xtable(d.betpap, digits=-3)
+print(betall, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETPAP & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+betpap<-xtable(d.betpap)
 row.names(betpap)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(betpap)
-faggra<-xtable(d.faggra, digits=-3)
+print(betpap, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+faggra<-xtable(d.faggra)
 row.names(faggra)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(faggra)
-ilemuc<-xtable(d.ilemuc, digits=-3)
+print(faggra, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+ilemuc<-xtable(d.ilemuc)
 row.names(ilemuc)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(ilemuc)
-popgra<-xtable(d.popgra, digits=-3)
+print(ilemuc, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("POPGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+popgra<-xtable(d.popgra)
 row.names(popgra)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(popgra)
-querub<-xtable(d.querub, digits=-3)
+print(popgra, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("QUERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+querub<-xtable(d.querub)
 row.names(querub)<-c("chilling","forcing", "photoperiod", "Residuals")
-print(querub)
+print(querub, add.to.row = addtorow, include.colnames=FALSE)
 
 @
 
-<<label=anova, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
-read_chunk("..//scripts/Chilling Plot.R")
-d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
+<<label=interxns, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Anova.Tables.R")
+dxx<-read.csv("..//output/interactions.csv",header=TRUE)
 
-### Prep data for Anovas
-dxx<-d
-dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
-#d$chilling<-as.numeric(as.character(
-#ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
-dxx$warm<-as.numeric(as.character(dxx$warm))
-dxx$photo<-as.numeric(as.character(dxx$photo))
-dxx$species<-substr(dxx$ind, 1, 6)
-dxx<-dxx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
-small.spp<-dxx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
-spp<-unique(small.spp$species)
-dxx<-dxx%>% filter(species %in% spp)
-dxx<-dxx %>%
-  dplyr::select(id, species, site, lday, bday, chilling, warm, photo, treatcode)
-dxx$risk<-dxx$lday-dxx$bday 
+dxx.acepen <- dxx[,1:4]
+dxx.acerub<- dxx[,5:8]
+dxx.acesac <- dxx[,9:12]
+dxx.betall <- dxx[,13:16]
+dxx.betpap <- dxx[,17:20]
+dxx.faggra <- dxx[,21:24]
+dxx.ilemuc <- dxx[,25:28]
+dxx.popgra <- dxx[,29:32]
+dxx.querub <- dxx[,33:36]
 
-Anova(lm(risk~chilling + warm + photo, data=dxx))
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+df<-xtable(dxx.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects and all interactions for each species.",floating=FALSE)
+row.names(df)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(xtable(df), add.to.row = addtorow,caption.placement="top", include.colnames=FALSE)
 
-# Run anovas for each species
-myspp <- unique(dxx$species)
-mylist<-list()
-for(i in c(1:length(myspp))) {
-  subby<-subset(dxx, species==myspp[i])
-  myanova<-aov(lm(risk~chilling + warm + photo, data=subby))
-  print(myanova)
-  mylist[[myspp[i]]] <- myanova
-}
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+acer<-xtable(dxx.acerub)
+row.names(acer)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(acer, add.to.row = addtorow, include.colnames=FALSE)
 
-stargazer(mylist, no.space=TRUE, title ="The results from a linear regression model analyzing the relationship between day of budburst and duration of vegetative risk. 1) is from the US-NPN data and 2) is from the Tree Spotters program.")
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACESAC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+aces<-xtable(dxx.acesac)
+row.names(aces)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(aces, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETALL & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+beta<-xtable(dxx.betall)
+row.names(beta)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(beta, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETPAP & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+betp<-xtable(dxx.betpap)
+row.names(betp)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(betp, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+fagus<-xtable(dxx.faggra)
+row.names(fagus)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(fagus, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+ilem<-xtable(dxx.ilemuc)
+row.names(ilem)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(ilem, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("POPGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+popg<-xtable(dxx.popgra)
+row.names(popg)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(popg, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("QUERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+quer<-xtable(dxx.querub)
+row.names(quer)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(quer, add.to.row = addtorow, include.colnames=FALSE)
 
 @
-
-
 
 \end{document}

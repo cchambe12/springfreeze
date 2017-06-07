@@ -15,6 +15,7 @@ library(data.table)
 library(car)
 library(xtable)
 library(broom)
+library(tibble)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -49,6 +50,10 @@ chill<-ggplot(dx, aes(x = code,ymin = bday, ymax = lday, group=interaction(speci
   xlab("Species") +coord_flip()
 plot(chill)
 
+dx$risk= dx$lday - dx$bday
+risk<-ggplot(dx, aes(x=bday, y=risk)) + geom_point(aes(col=treatcode)) + geom_smooth(aes(x=bday, y=risk, col=treatcode, fill=treatcode), method= "loess")
+plot(risk)
+
 
 ### Prep data for Anovas
 dxx<-d
@@ -78,22 +83,35 @@ for(i in c(1:length(myspp))) {
   mylist[[myspp[i]]] <- myanova
 }
 
-# Still working on output! Trying to find better way to show results and fix results
-novas<-as.data.frame(mylist, row.names = make.unique(rownames(mylist)))
-novas<-write.table(mylist, file="novas.csv", row.names=FALSE)
-
-write.csv(mylist, "anovatable.csv", row.names=FALSE)
-#xtableList(mylist, caption ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
-
-
-# with all two way interactions
-myspp <- unique(dxx$sp)
+myspp <- unique(dxx$species)
 mylist<-list()
 for(i in c(1:length(myspp))) {
-  subby<-subset(dxx, sp==myspp[i])
-  menova<-Anova(lm(risk~chilling+ warm + photo + chilling*warm +
-                      chilling*photo + warm*photo, data=subby))
+  subby<-subset(dxx, species==myspp[i])
+  myanova<-Anova(lm(risk~as.factor(chilling)+ as.factor(warm) + as.factor(photo), data=subby))
+  print(myanova)
+  mylist[[myspp[i]]] <- myanova
+}
+nov1<-as_tibble(mylist)
+
+# Still working on output! Trying to find better way to show results and fix results
+novas<-as.data.frame(mylist, row.names = make.unique(rownames(mylist)))
+#novas<-write.table(mylist, file="output/novas.csv")
+
+#write.csv(mylist, "output/anovatable.csv", row.names=FALSE)
+#xtableList(mylist, caption ="Anova results for Risk by chilling, forcing, and photoperiod effects for each species.", floating=FALSE)
+
+Anova(lm(risk~as.factor(chilling)+ as.factor(warm) + as.factor(photo) + as.factor(chilling)*as.factor(warm) +
+           as.factor(chilling)*as.factor(photo) + as.factor(warm)*as.factor(photo) data=dxx))
+
+# with all two way interactions
+myspps <- unique(dxx$species)
+mylister<-list()
+for(i in c(1:length(myspps))) {
+  subbiest<-subset(dxx, species==myspps[i])
+  menova<-Anova(lm(risk~as.factor(chilling)+ as.factor(warm) + as.factor(photo) + as.factor(chilling)*as.factor(warm) +
+                     as.factor(chilling)*as.factor(photo) + as.factor(warm)*as.factor(photo), data=subbiest))
   print(menova)
-  mylister[[myspp[i]]] <- as.data.frame(table(menova))
+  mylister[[myspps[i]]] <- menova
 }
 
+#write.csv(mylister, "output/interactions.csv", row.names=FALSE)
