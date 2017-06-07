@@ -112,7 +112,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Ecodormancy is the period of time when growth can occur but the external environment is not conducive to growth (e.g. too cold) \citep{Basler2012}.
 \item Therefore, warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because trees have not yet left the endodormancy phase.
 \item Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing degree days between budburst and the last freeze date \citep{Augspurger2013}.
-\item A damaging false spring is currently defined as having 7 or more days between budburst and the last freeze date, using Equation 1 \citep{Peterson2014}.
+\item A damaging false spring is currently defined as having 7 or more days between budburst and the last freeze date (Equation \ref{eq:1}) \citep{Peterson2014}.
 \item The 7 day parameter exposes less resistant foliate phenophases to a false spring, thus putting the plant at a higher risk of damage. 
 \item Once budburst has initiated, buds cannot respond to cold temperatures and freeze resistance is greatly reduced \citep{Taschler2004, Lenz2013, Vitasse2014}.
 \item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
@@ -143,13 +143,13 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 \item Methodologies
 \begin{enumerate}
-\item A suitable methodology for determining spring onset is crucial in order to establish an effective model for false spring risk, especially since the current false spring equation only uses two inputs: date of spring onset and date of last freeze. 
-\item If the date of spring onset is inaccurate, the level of risk determined by Equation 1 could render erroneous results. 
+\item A suitable methodology for determining spring onset is crucial in order to establish an effective model for false spring risk, especially since the current false spring equation only uses two inputs: date of spring onset and date of last freeze (Equation \ref{eq:1}. 
+\item If the date of spring onset is inaccurate, the level of risk determined by the current equation (Equation \ref{eq:1}) could render erroneous results. 
 \item There are many methods available to ascertain the first day of spring.
 \item Spring onset can be calculated through observational data, PhenoCam or remote-sensing data, or through the USA National Phenology Network's (USA-NPN) Extended Spring Index (SI-x) tool \citep{USA-NPN2016}.
 \item Studies often use observation data to evaluate spring onset to target budburst more precisely, however, it can be difficult or even impossible for large-scale studies. 
 \item PhenoCam and remote-sensing data is suitable for canopy tree species, whereas USA-NPN SI-x is more applicable for understory species. 
-\item The three methodologies to determine spring onset were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted in Equation 1 to calculate FSI values from 2008 to 2014 (Fig. 1).
+\item The three methodologies to determine spring onset were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted into the FSI equation (Equation \ref{eq:1}) to calculate FSI values from 2008 to 2014 (Figure \ref{fsifig}).
 
 
 <<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
@@ -175,9 +175,9 @@ plot(methodplot)
 @
 
 \item Observational FSI values and USA-NPN FSI values are highly comparable and are justifiable methods for determining potenial false spring risk.
-\item PhenoCam data is also comparable to the other two methods, however, it would be more useful for canopy species, which is evident from the results seen in 2012 (Fig. 1).
+\item PhenoCam data is also comparable to the other two methods, however, it would be more useful for canopy species, which is evident from the results seen in 2012 (Figure \ref{fsifig}).
 \item In 2012, a false spring event was reported through many regions of the US due to warm temperatures occuring in March \citep{Ault2015}.
-\item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepany in results for 2012 (Fig. 1).
+\item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepany in results for 2012 (Figure \ref{fsifig}).
 \item Researchers should use the USA-NPN dataset for understory species, PhenoCam or remote-sensing data for late successional species, and observational data for a wide array of plant functional types.
 \end{enumerate}
 \end{enumerate}
