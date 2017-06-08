@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  7 JUN 2017 12:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  8 JUN 2017 08:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,28 +857,34 @@ File: ..//figure/Exp_plot.pdf Graphic file (type pdf)
 <use ..//figure/Exp_plot.pdf>
 Package pdftex.def Info: ..//figure/Exp_plot.pdf used on input line 99.
 (pdftex.def)             Requested size: 377.62633pt x 287.6468pt.
+ <figure/dan-1.pdf, id=2, 505.89pt x 505.89pt>
+File: figure/dan-1.pdf Graphic file (type pdf)
+
+<use figure/dan-1.pdf>
+Package pdftex.def Info: figure/dan-1.pdf used on input line 104.
+(pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <..//fig
-ure/Exp_plot.pdf>] [2] [3] [4] [5]
-(./Chilling_plots.aux) ) 
+ure/Exp_plot.pdf>] [2 <./figure/dan-1.pdf>] [3]
+[4] [5] [6] (./Chilling_plots.aux) ) 
 Here is how much of TeX's memory you used:
- 15485 strings out of 493014
- 305779 string characters out of 6133351
- 356507 words of memory out of 5000000
- 18859 multiletter control sequences out of 15000+600000
+ 15493 strings out of 493014
+ 305891 string characters out of 6133351
+ 356515 words of memory out of 5000000
+ 18864 multiletter control sequences out of 15000+600000
  17131 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,42p,10386b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr9.pfb>
-Output written on Chilling_plots.pdf (5 pages, 63469 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr9.pfb>
+Output written on Chilling_plots.pdf (6 pages, 72436 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

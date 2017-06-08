@@ -89,6 +89,7 @@ leaf<- leaf.avg%>%
 
 # Harvard Forest
 # To double check my script is accurate
+hf<- filter(hf, Year>=2009)
 hf<- filter(hf, Site == "hf")
 hf$gdd <- hf$AirT - 5
 hf$gdd <-ifelse(hf$gdd>0, hf$gdd, 0)
@@ -105,7 +106,7 @@ d<- as.data.frame(rapply(object = d, f = round, classes = "numeric", how = "repl
 df<-left_join(hf, d)
 df<-df%>%
   dplyr::select(year, JD, mean, count) %>%
-  filter(year>=1990)
+  filter(year>=2009)
 df$doy<-ifelse(df$JD==df$mean, df$JD, NA)
 df<-na.omit(df)
 mean<-mean(df$count)
@@ -116,7 +117,7 @@ leaf.df<- as.data.frame(rapply(object = leaf.df, f = round, classes = "numeric",
 df2<-left_join(hf, leaf.df)
 df2<-df2%>%
   dplyr::select(year, JD, mean, count) %>%
-  filter(year>=1990)
+  filter(year>=2009)
 df2$doy<-ifelse(df2$JD==df2$mean, df2$JD, NA)
 df2<-na.omit(df2)
 mean2<-mean(df2$count)
@@ -128,3 +129,12 @@ hf$fs<- ifelse((hf$count >= 100 & hf$frz == "freeze" & hf$count<=400), TRUE, NA)
 hf.count<- dplyr::select(hf, year, fs)
 hf.count<-na.omit(hf.count)
 hf.count<-as.data.frame(table(hf.count$year))
+
+## Make a curve with GDD for 2010 and 2014
+years<-c(2010,2014)
+hf<-hf%>%filter(year %in%years)
+hf<-hf %>%
+  filter(JD >= 107) %>%
+  filter(JD <= 158)
+
+ggplot((hf), aes(JD, count, col=factor(year))) + geom_line(aes(x=JD, y=count, col=factor(year)), alpha=0.2, size=4 )

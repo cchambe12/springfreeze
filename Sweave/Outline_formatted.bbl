@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{62}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -88,11 +88,34 @@ Cavender-Bares, J., Gonz{\'a}lez-Rodr{\'\i}guez, A., Eaton, D.A.R., Hipp,
   american live oaks (quercussubsectionvirentes): a genomic and population
   genetics approach. \emph{Molecular Ecology} \textbf{24}, 3668--3687.
 
+\bibitem[{Chuine(2010)}]{Chuine2010}
+Chuine, I. (2010) Why does phenology drive species distribution?
+  \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}
+  \textbf{365}, 3149--3160.
+
+\bibitem[{Chuine \emph{et~al.}(2001)Chuine, Aitken \& Ying}]{Chuine2001}
+Chuine, I., Aitken, S.N. \& Ying, C.C. (2001) Temperature thresholds of shoot
+  elongation in provenances ofpinus contorta. \emph{Canadian Journal of Forest
+  Research} \textbf{31}, 1444--1455.
+
 \bibitem[{Cleland \emph{et~al.}(2006)Cleland, Chiariello, Loarie, Mooney \&
   Field}]{Cleland2006}
 Cleland, E., Chiariello, N., Loarie, S., Mooney, H. \& Field, C. (2006) Diverse
   responses of phenology to global changes in a grassland ecosystem.
   \emph{PNAS} \textbf{103}, 13740--13744.
+
+\bibitem[{Donnelly \emph{et~al.}(2017)Donnelly, Yu, Caffarra, Hanes, Liang,
+  Desai, Liu \& Schwartz}]{Donnelly2017}
+Donnelly, A., Yu, R., Caffarra, A., Hanes, J.M., Liang, L., Desai, A.R., Liu,
+  L. \& Schwartz, M.D. (2017) Interspecific and interannual variation in the
+  duration of spring phenophases in a northern mixed forest. \emph{Agricultural
+  and Forest Meteorology} \textbf{243}, 55--67.
+
+\bibitem[{Fu \emph{et~al.}(2012)Fu, Campioli, {Van Oijen}, Deckmyn \&
+  Janssens}]{Fu2012}
+Fu, Y.H., Campioli, M., {Van Oijen}, M., Deckmyn, G. \& Janssens, I.A. (2012)
+  \emph{{Bayesian comparison of six different temperature-based budburst models
+  for four temperate tree species}}, vol. 230.
 
 \bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post, Kaiser, Yang, Nemani,
   Pallardy \& Meyers}]{Gu2008}
@@ -104,6 +127,13 @@ Gu, L., Hanson, P.J., Post, W.M., Kaiser, D.P., Yang, B., Nemani, R., Pallardy,
 Hofmann, M. \& Bruelheide, H. (2015) {Frost hardiness of tree species is
   independent of phenology and macroclimatic niche}. \emph{Journal of
   Biosciences} \textbf{40}, 147--157.
+
+\bibitem[{Howe \emph{et~al.}(2003)Howe, Aitken, Neale, Jermstad, Wheeler \&
+  Chen}]{Howe2003}
+Howe, G.T., Aitken, S.N., Neale, D.B., Jermstad, K.D., Wheeler, N.C. \& Chen,
+  T.H. (2003) From genotype to phenotype: unraveling the complexities of cold
+  adaptation in forest trees. \emph{Canadian Journal of Botany} \textbf{81},
+  1247--1266.
 
 \bibitem[{Hufkens \emph{et~al.}(2012)Hufkens, Friedl, Keenan, Sonnentag,
   Bailey, O'Keefe \& Richardson}]{Hufkens2012}
@@ -169,6 +199,12 @@ Martin, M., Gavazov, K., K{\"{o}}rner, C., Hattenschwiler, S. \& Rixen, C.
   plants under elevated atmospheric co 2. \emph{Global Change Biology}
   \textbf{16}, 1057--1070.
 
+\bibitem[{McCreary \emph{et~al.}(1990)McCreary, Lavender \&
+  Hermann}]{McCreary1990}
+McCreary, D.D., Lavender, D.P. \& Hermann, R.K. (1990) {Predicted global
+  warming and Douglas-fir chilling requirements}. \emph{Annales des Sciences
+  Forestieres} \textbf{47}, 325--330.
+
 \bibitem[{Mock \emph{et~al.}(2007)Mock, Mojzisek, McWaters, Chenoweth \&
   Stahle}]{Mock2007}
 Mock, C.J., Mojzisek, J., McWaters, M., Chenoweth, M. \& Stahle, D.W. (2007)
@@ -184,12 +220,23 @@ Morin, X., Ameglio, T., Ahas, R., Kurz-Besson, C., Lanta, V., Lebourgeois, F.,
   provenances of three european oak species. \emph{Tree Physiology}
   \textbf{27}, 817--825.
 
+\bibitem[{Morin \emph{et~al.}(2009)Morin, Lechowicz, Augspurger, O'keefe, Viner
+  \& Chuine}]{Morin2009}
+Morin, X., Lechowicz, M.J., Augspurger, C., O'keefe, J., Viner, D. \& Chuine,
+  I. (2009) {Leaf phenology in 22 North American tree species during the 21st
+  century}. \emph{Global Change Biology} \textbf{15}, 961--975.
+
 \bibitem[{Muffler \emph{et~al.}(2016)Muffler, Beierkuhnlein, Aas, Jentsch,
   Schweiger, Zohner \& Kreyling}]{Muffler2016}
 Muffler, L., Beierkuhnlein, C., Aas, G., Jentsch, A., Schweiger, A.H., Zohner,
   C. \& Kreyling, J. (2016) Distribution ranges and spring phenology explain
   late frost sensitivity in 170 woody plants from the northern hemisphere.
   \emph{Global Ecology and Biogeography} \textbf{25}, 1061--1071.
+
+\bibitem[{Myking \& Heide(1995)}]{Myking1995}
+Myking, T. \& Heide, O.M. (1995) Dormancy release and chilling requirement of
+  buds of latitudinal ecotypes of betula pendula and b. pubescens. \emph{Tree
+  Physiology} \textbf{15}, 697--704.
 
 \bibitem[{Norgaard~Nielsen \& Rasmussen(2009)}]{Nielsen2009}
 Norgaard~Nielsen, C.C. \& Rasmussen, H.N. (2009) Frost hardening and
@@ -230,13 +277,27 @@ Polgar, C.A. \& Primack, R.B. (2011) {Leaf-out phenology of temperate woody
   plants: From trees to ecosystems}. \emph{New Phytologist} \textbf{191},
   926--941.
 
+\bibitem[{Prev{\'e}y \emph{et~al.}(2017)Prev{\'e}y, Velland, R{\"u}ger,
+  Hollister, Bjorkman, Myers-Smith, Elmendorf, Clark, Cooper, Elberling, Fosaa,
+  Henry, H{\o}ye, J{\'o}nsd{\'o}ttir, Klanderua, L{\'e}vesque, Mauritz, Molau,
+  Natali, Oberbauer, Panchen, Post, Rumpf, Schmidt, Schuur, Semechuk, Troxler,
+  Welker \& Rixen}]{Prevey2017}
+Prev{\'e}y, J., Velland, M., R{\"u}ger, N., Hollister, R., Bjorkman, A.,
+  Myers-Smith, I., Elmendorf, S., Clark, K., Cooper, E., Elberling, B., Fosaa,
+  A., Henry, G., H{\o}ye, T., J{\'o}nsd{\'o}ttir, I., Klanderua, K.,
+  L{\'e}vesque, E., Mauritz, M., Molau, U., Natali, S., Oberbauer, S., Panchen,
+  Z., Post, E., Rumpf, S., Schmidt, N., Schuur, E., Semechuk, P., Troxler, T.,
+  Welker, J. \& Rixen, C. (2017) Greater temperature sensitivity of plant
+  phenology at colder sites: implications for convergence across northern
+  latitudes. \emph{Global Change Biology} \textbf{23}, 2660--2671.
+
 \bibitem[{Richardson \& O'Keefe(2009)}]{Richardson2009}
 Richardson, A. \& O'Keefe, J. (2009) \emph{Phenological differences between
   understory and overstory: a case study using the long-term harvard forest
   records}, pp. 87--117. Springer.
 
-\bibitem[{Richardson()}]{Richardson2015}
-Richardson, A.D. (????) Phenocam images and canopy phenology at harvard forest
+\bibitem[{Richardson(2015)}]{Richardson2015}
+Richardson, A.D. (2015) Phenocam images and canopy phenology at harvard forest
   since 2008.
 
 \bibitem[{Sakai \& Larcher(1987)}]{Sakai1987}

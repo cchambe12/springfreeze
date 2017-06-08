@@ -58,6 +58,41 @@ library(tibble)
 \end{center}
 \end{figure}
 
+<<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out.", fig.pos="H">>=
+read_chunk("..//scripts/Chilling Plot.R")
+d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
+
+tx<-c("CS0", "WL1")
+dx<- d %>%
+  dplyr::select(ind, treatcode, lday, bday, site) %>%
+  filter(treatcode %in% tx)
+
+dx<-na.omit(dx)
+dx$species<-substr(dx$ind, 1, 6)
+dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+small.spp<-dx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
+spp<-unique(small.spp$species)
+dx<-dx%>% filter(species %in% spp)
+
+dx<-dx%>%dplyr::select(-site, -ind)
+dx$mean<-ave(dx$bday, dx$species, dx$treatcode)
+dx<-dx%>%
+  group_by(mean, species)%>%
+  arrange(species)%>%
+  filter(row_number()==1)
+dx<-dx%>%group_by(species, treatcode) %>% arrange(species, desc(treatcode))
+dx$code<-reorder(dx$species, dx$bday)
+
+chill<-ggplot(dx, aes(x = code,ymin = bday, ymax = lday, group=interaction(species, treatcode) )) +
+  geom_point(aes(y=bday, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=lday, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x = code,ymin = bday, ymax = lday, col=treatcode), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("CS0","Leafout", "Budburst", "WL1"), values = c("purple3", "green4", "darkolivegreen3", "royalblue3")) +
+  xlab("Species") +coord_flip()
+plot(chill)
+@
+
+
+
 <<label=eurlat, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
 read_chunk("..//scripts/Anova.Tables.R")
 d<-read.csv("..//output/anovatable.csv")

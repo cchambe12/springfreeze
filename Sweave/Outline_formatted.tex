@@ -85,7 +85,7 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \title{Rethinking False Spring Risk}
-\author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$}
+\author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$}
 \date{\today}
 \maketitle 
  
@@ -155,7 +155,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Ecodormancy is the period of time when growth can occur but the external environment is not conducive to growth (e.g. too cold) \citep{Basler2012}.
 \item Therefore, warm temperatures earlier in the year (i.e. in February) do not seem to affect species, most likely because trees have not yet left the endodormancy phase.
 \item Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing degree days between budburst and the last freeze date \citep{Augspurger2013}.
-\item A damaging false spring is currently defined as having 7 or more days between budburst and the last freeze date, using Equation 1 \citep{Peterson2014}.
+\item A damaging false spring is currently defined as having 7 or more days between budburst and the last freeze date (Equation \ref{eq:1}) \citep{Peterson2014}.
 \item The 7 day parameter exposes less resistant foliate phenophases to a false spring, thus putting the plant at a higher risk of damage. 
 \item Once budburst has initiated, buds cannot respond to cold temperatures and freeze resistance is greatly reduced \citep{Taschler2004, Lenz2013, Vitasse2014}.
 \item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
@@ -186,13 +186,13 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 \item Methodologies
 \begin{enumerate}
-\item A suitable methodology for determining spring onset is crucial in order to establish an effective model for false spring risk, especially since the current false spring equation only uses two inputs: date of spring onset and date of last freeze. 
-\item If the date of spring onset is inaccurate, the level of risk determined by Equation 1 could render erroneous results. 
+\item A suitable methodology for determining spring onset is crucial in order to establish an effective model for false spring risk, especially since the current false spring equation only uses two inputs: date of spring onset and date of last freeze (Equation \ref{eq:1}). 
+\item If the date of spring onset is inaccurate, the level of risk determined by the current equation (Equation \ref{eq:1}) could render erroneous results. 
 \item There are many methods available to ascertain the first day of spring.
 \item Spring onset can be calculated through observational data, PhenoCam or remote-sensing data, or through the USA National Phenology Network's (USA-NPN) Extended Spring Index (SI-x) tool \citep{USA-NPN2016}.
 \item Studies often use observation data to evaluate spring onset to target budburst more precisely, however, it can be difficult or even impossible for large-scale studies. 
 \item PhenoCam and remote-sensing data is suitable for canopy tree species, whereas USA-NPN SI-x is more applicable for understory species. 
-\item The three methodologies to determine spring onset were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted in Equation 1 to calculate FSI values from 2008 to 2014 (Fig. 1).
+\item The three methodologies to determine spring onset were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted into the FSI equation (Equation \ref{eq:1}) to calculate FSI values from 2008 to 2014 (Figure \ref{fig:fsifig}).
 
 
 \begin{figure}[H]
@@ -202,9 +202,9 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 
 \item Observational FSI values and USA-NPN FSI values are highly comparable and are justifiable methods for determining potenial false spring risk.
-\item PhenoCam data is also comparable to the other two methods, however, it would be more useful for canopy species, which is evident from the results seen in 2012 (Fig. 1).
+\item PhenoCam data is also comparable to the other two methods, however, it would be more useful for canopy species, which is evident from the results seen in 2012 (Figure \ref{fig:fsifig}).
 \item In 2012, a false spring event was reported through many regions of the US due to warm temperatures occuring in March \citep{Ault2015}.
-\item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepany in results for 2012 (Fig. 1).
+\item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepany in results for 2012 (Figure \ref{fig:fsifig}).
 \item Researchers should use the USA-NPN dataset for understory species, PhenoCam or remote-sensing data for late successional species, and observational data for a wide array of plant functional types.
 \end{enumerate}
 \end{enumerate}
@@ -240,9 +240,42 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item It is anticipated that these more opportunistic individuals that initiate budburst earlier in the spring with the shifts in climate would attempt to limit freezing risk by decreasing the duration of vegetative risk and progress to full leaf expansion faster.
 \item The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout and species with short durations of vegetative risk often sustain higher levels of damage \citep {Augspurger2009}.
 \item It is hypothesized that if the duration of vegetative risk is longer, then the buds and leaves will be heartier against frosts, however this still has yet to be tested thoroughly.
-\item We assess the interaction between duration of vegetative risk and false spring events using three datasets: from a citizen science program, a growth chamber chilling experiment, and long-term observational data.
+\item We assess the interaction between duration of vegetative risk and false spring events using two datasets: from a growth chamber chilling experiment and long-term observational data.
 \end {enumerate}
-\item Tree Spotters Data
+
+
+\item Dan's Data
+\begin{enumerate}
+\item Deciduous trees and shrubs require a certain number of chilling units in order to leave the endodormancy phase. 
+\item This helps protect temperate plants against stochastic warm spells in the winter so that they do not break dormancy too early in the season.
+\item Chilling units differ across species and across habitats.
+\item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} due to the shorter growing season and selective pressure to initiate budburst as soon as temperatures are conducive to growth \citep{Prevey2017}. % Lizzie, should I avoid this Prevey reference?
+\item With anthropogenic climate change, it is possible that certain species will have insufficient winter chilling (especially at lower latitudes) resulting in higher spring forcing requirements \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}.
+\item Similarly, spring forcing temperature and photoperiod length requirements for budburst to occur vary among species and habitats.
+\item This is evident throught he high levels of genetic diversity for spring budburst to occur across temperate forest tree species \citep{Chuine2001}.
+\item Data from a growth chamber experiment were used to compare 9 temperate forest species between two treatments: high chilling hours, long photoperiod and high forcing temperatures (WL1) against no additional chilling, short photoperiod and low forcing temperatures (CS0) (Flynn and Wolkovich, 2017?).
+
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/dan-1} \caption[Day of budburst and the day of leaf out for native tree species in New England]{Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out.}\label{fig:dan}
+\end{figure}
+
+
+
+
+\item According to the results, individuals that initiate budburst earlier in the season (i.e. {\textit {Betula papyrifera}} (Marsh.) and {\textit{Ilex mucronata}} (L.)) tend to begin budburst early regardless of treatment, but the treatment does affect the duration of vegetative risk significantly (Figure \ref{fig:dan}).
+\item As the season progresses, treatment does not affect the duration of vegetation as much, however, the day of budburst tends to initiate later in the season with the weaker treatment effects (i.e. CS0).
+\item Anova results indicate forcing temperatures and photoperiod length determine the duration of vegetative risk more than chilling requirements, which may be due to studying species within similar latitudinal range limits. 
+\item Further studies are essential to investigate the interplay between chilling, forcing, and photoperiod effects on the duration of vegetative risk, especially for species occupying habitats more susceptible to false spring events. 
+\end{enumerate}
+
+
+\item Harvard Forest Data
+\begin{enumerate}
+\item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
+\item It is therefore expected that high variation in spring temperatures may result in longer durations of vegetative risk.
+\item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
+\item By comparing the durations of vegetative risk to the average daily temperatures for each year, we found that... %%%% NEED TO CALCULATE!!!!!
+\end{enumerate}
 
 \end {enumerate}
 
@@ -252,4 +285,308 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 
 \bibliography{..//refs/SpringFreeze.bib}
+
+
+\section*{Supplemental Information}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 149.41 &   2 & 1.20 & 0.30 \\ 
+  forcing & 4909.59 &   1 & 78.94 & 0.00 \\ 
+  photoperiod & 1309.59 &   1 & 21.06 & 0.00 \\ 
+  Residuals & 6654.56 & 107 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 0.62 &   2 & 0.00 & 1.00 \\ 
+  forcing & 1731.00 &   1 & 25.92 & 0.00 \\ 
+  photoperiod & 462.78 &   1 & 6.93 & 0.01 \\ 
+  Residuals & 6611.17 &  99 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACESAC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 65.41 &   2 & 0.46 & 0.64 \\ 
+  forcing & 259.14 &   1 & 3.61 & 0.06 \\ 
+  photoperiod & 231.41 &   1 & 3.22 & 0.08 \\ 
+  Residuals & 4524.88 &  63 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETALL & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 525.95 &   2 & 5.00 & 0.01 \\ 
+  forcing & 1463.30 &   1 & 27.81 & 0.00 \\ 
+  photoperiod & 632.83 &   1 & 12.03 & 0.00 \\ 
+  Residuals & 6944.50 & 132 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETPAP & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 6.00 &   2 & 0.04 & 0.96 \\ 
+  forcing & 1776.23 &   1 & 21.47 & 0.00 \\ 
+  photoperiod & 1105.08 &   1 & 13.35 & 0.00 \\ 
+  Residuals & 10509.00 & 127 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 144.41 &   2 & 1.66 & 0.20 \\ 
+  forcing & 611.20 &   1 & 14.04 & 0.00 \\ 
+  photoperiod & 1.05 &   1 & 0.02 & 0.88 \\ 
+  Residuals & 2829.78 &  65 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 26.49 &   2 & 0.54 & 0.59 \\ 
+  forcing & 2262.34 &   1 & 91.61 & 0.00 \\ 
+  photoperiod & 1035.85 &   1 & 41.94 & 0.00 \\ 
+  Residuals & 3334.05 & 135 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  POPGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 54.63 &   2 & 0.39 & 0.68 \\ 
+  forcing & 2405.73 &   1 & 34.52 & 0.00 \\ 
+  photoperiod & 1019.78 &   1 & 14.63 & 0.00 \\ 
+  Residuals & 6760.98 &  97 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  QUERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 35.61 &   2 & 0.45 & 0.64 \\ 
+  forcing & 680.83 &   1 & 17.34 & 0.00 \\ 
+  photoperiod & 369.53 &   1 & 9.41 & 0.00 \\ 
+  Residuals & 4946.29 & 126 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 104.66 &   2 & 0.87 & 0.42 \\ 
+  forcing & 4745.38 &   1 & 79.18 & 0.00 \\ 
+  photoperiod & 1306.03 &   1 & 21.79 & 0.00 \\ 
+  chilling:forcing & 63.31 &   2 & 0.53 & 0.59 \\ 
+  chilling:photoperiod & 181.96 &   2 & 1.52 & 0.22 \\ 
+  forcing:photoperiod & 257.63 &   1 & 4.30 & 0.04 \\ 
+  Residuals & 6113.18 & 102 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 1.53 &   2 & 0.01 & 0.99 \\ 
+  forcing & 1721.25 &   1 & 26.13 & 0.00 \\ 
+  photoperiod & 381.81 &   1 & 5.80 & 0.02 \\ 
+  chilling:forcing & 358.58 &   2 & 2.72 & 0.07 \\ 
+  chilling:photoperiod & 37.69 &   2 & 0.29 & 0.75 \\ 
+  forcing:photoperiod & 17.35 &   1 & 0.26 & 0.61 \\ 
+  Residuals & 6191.98 &  94 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACESAC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 65.78 &   2 & 0.45 & 0.64 \\ 
+  forcing & 204.31 &   1 & 2.83 & 0.10 \\ 
+  photoperiod & 267.24 &   1 & 3.70 & 0.06 \\ 
+  chilling:forcing & 76.27 &   2 & 0.53 & 0.59 \\ 
+  chilling:photoperiod & 164.28 &   2 & 1.14 & 0.33 \\ 
+  forcing:photoperiod & 0.05 &   1 & 0.00 & 0.98 \\ 
+  Residuals & 4194.28 &  58 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETALL & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 526.41 &   2 & 5.57 & 0.00 \\ 
+  forcing & 1463.33 &   1 & 30.95 & 0.00 \\ 
+  photoperiod & 632.83 &   1 & 13.38 & 0.00 \\ 
+  chilling:forcing & 66.32 &   2 & 0.70 & 0.50 \\ 
+  chilling:photoperiod & 226.18 &   2 & 2.39 & 0.10 \\ 
+  forcing:photoperiod & 612.56 &   1 & 12.95 & 0.00 \\ 
+  Residuals & 6005.50 & 127 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETPAP & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 6.07 &   2 & 0.04 & 0.96 \\ 
+  forcing & 1765.57 &   1 & 21.22 & 0.00 \\ 
+  photoperiod & 1101.18 &   1 & 13.24 & 0.00 \\ 
+  chilling:forcing & 71.38 &   2 & 0.43 & 0.65 \\ 
+  chilling:photoperiod & 62.92 &   2 & 0.38 & 0.69 \\ 
+  forcing:photoperiod & 233.62 &   1 & 2.81 & 0.10 \\ 
+  Residuals & 10148.80 & 122 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 145.37 &   2 & 1.64 & 0.20 \\ 
+  forcing & 595.26 &   1 & 13.40 & 0.00 \\ 
+  photoperiod & 0.42 &   1 & 0.01 & 0.92 \\ 
+  chilling:forcing & 39.45 &   2 & 0.44 & 0.64 \\ 
+  chilling:photoperiod & 83.56 &   2 & 0.94 & 0.40 \\ 
+  forcing:photoperiod & 35.33 &   1 & 0.80 & 0.38 \\ 
+  Residuals & 2665.38 &  60 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 28.03 &   2 & 0.60 & 0.55 \\ 
+  forcing & 2277.73 &   1 & 97.37 & 0.00 \\ 
+  photoperiod & 1033.49 &   1 & 44.18 & 0.00 \\ 
+  chilling:forcing & 16.09 &   2 & 0.34 & 0.71 \\ 
+  chilling:photoperiod & 106.28 &   2 & 2.27 & 0.11 \\ 
+  forcing:photoperiod & 171.89 &   1 & 7.35 & 0.01 \\ 
+  Residuals & 3041.00 & 130 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  POPGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 50.56 &   2 & 0.37 & 0.69 \\ 
+  forcing & 2390.66 &   1 & 35.16 & 0.00 \\ 
+  photoperiod & 1016.39 &   1 & 14.95 & 0.00 \\ 
+  chilling:forcing & 45.72 &   2 & 0.34 & 0.72 \\ 
+  chilling:photoperiod & 152.02 &   2 & 1.12 & 0.33 \\ 
+  forcing:photoperiod & 296.37 &   1 & 4.36 & 0.04 \\ 
+  Residuals & 6254.69 &  92 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Thu Jun  8 10:25:46 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  QUERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 35.70 &   2 & 0.46 & 0.63 \\ 
+  forcing & 668.59 &   1 & 17.39 & 0.00 \\ 
+  photoperiod & 364.39 &   1 & 9.48 & 0.00 \\ 
+  chilling:forcing & 174.11 &   2 & 2.26 & 0.11 \\ 
+  chilling:photoperiod & 110.91 &   2 & 1.44 & 0.24 \\ 
+  forcing:photoperiod & 15.92 &   1 & 0.41 & 0.52 \\ 
+  Residuals & 4652.62 & 121 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
 \end{document}
