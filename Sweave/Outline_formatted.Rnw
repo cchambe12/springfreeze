@@ -304,7 +304,7 @@ weather<-read.csv("input/WeatherData.csv", header=TRUE)
 \item Discuss genetic clines along latitudinal gradients.
 \end {enumerate}
 
-\begin{figure} [H] \label{hf}
+\begin{figure} [H] \label{reg}
 \begin{center}
 \caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, Soudani2012, NPN2016 }} %% Add White citation
 \includegraphics{..//figure/RegionalRisk.pdf}

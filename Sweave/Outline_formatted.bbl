@@ -1,4 +1,4 @@
-\begin{thebibliography}{62}
+\begin{thebibliography}{70}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
@@ -46,6 +46,19 @@ Ault, T.R., Zurita-Milla, R. \& Schwartz, M.D. (2015) {A
   Matlab{\{}{\textcopyright}{\}} toolbox for calculating spring indices from
   daily meteorological data}. \emph{Computers {\{}{\&}{\}} Geosciences}
   \textbf{83}, 46--53.
+
+\bibitem[{Barker \emph{et~al.}(2005)Barker, Loveys, Egerton, Gorton, Williams
+  \& Ball}]{Barker2005}
+Barker, D., Loveys, B., Egerton, J., Gorton, H., Williams, W. \& Ball, M.
+  (2005) Co2 enrichment predisposes foliage of a eucalypt to freezing injury
+  and reduces spring growth. \emph{Plant, Cell and Environment} \textbf{28},
+  1506--1515.
+
+\bibitem[{Barlow \emph{et~al.}(2015)Barlow, Christy, O'Leary, Riffkin \&
+  Nuttall}]{Barlow2015}
+Barlow, K., Christy, B., O'Leary, G., Riffkin, P. \& Nuttall, J. (2015)
+  Simulating the impact of extreme heat and frost events on wheat crop
+  production: A review. \emph{Field Crops Research} \textbf{171}, 109--119.
 
 \bibitem[{Basler \& K{\"{o}}rner(2012)}]{Basler2012}
 Basler, D. \& K{\"{o}}rner, C. (2012) {Photoperiod sensitivity of bud burst in
@@ -181,6 +194,14 @@ Lenz, A., Hoch, G., Vitasse, Y. \& K{\"{o}}rner, C. (2013) {European deciduous
   along elevational gradients}. \emph{New Phytologist} \textbf{200},
   1166--1175.
 
+\bibitem[{Longstroth(2012)}]{Longstroth2012}
+Longstroth, M. (2012) Protect blueberries from spring freezes by using
+  sprinklers. url.
+
+\bibitem[{Longstroth(2013)}]{Longstroth2013}
+Longstroth, M. (2013) Assessing frost and freeze damage to flowers and buds of
+  fruit trees. url.
+
 \bibitem[{Ludlum(1968)}]{Ludlum1968}
 Ludlum, D.M. (1968) \emph{Early American Winters: 1604-1820}. 3, American
   Meteorological Society.
@@ -308,11 +329,34 @@ Sakai, A. \& Larcher, W. (1987) \emph{Frost Survival of Plants}.
 Samish, R. (1954) Dormancy in woody plants. \emph{Annual Review of Plant
   Physiology and Plant Molecular Biology} \textbf{5}, 183--204.
 
+\bibitem[{S{\'a}nchez \emph{et~al.}(2013)S{\'a}nchez, Rasmussen \&
+  Porter}]{Sanchez2013}
+S{\'a}nchez, B., Rasmussen, A. \& Porter, J.R. (2013) Temperatures and the
+  growth and development of maize and rice: a review. \emph{Global Change
+  Biology} \textbf{20}, 408--417.
+
+\bibitem[{Schaber \& Badeck(2005)}]{Schaber2005}
+Schaber, J. \& Badeck, F.W. (2005) Plant phenology in germany over the 20th
+  century. \emph{Regional Environmental Change} \textbf{5}, 37--46.
+
 \bibitem[{Scheifinger \emph{et~al.}(2003)Scheifinger, Menzel, Koch \&
   Peter}]{Scheifinger2003}
 Scheifinger, H., Menzel, A., Koch, E. \& Peter, C. (2003) Trends of spring time
   frost events and phenological dates in central europe. \emph{Theoretical and
   Applied Climatology} \textbf{74}, 41--51.
+
+\bibitem[{Schwartz(1993)}]{Schwartz1993}
+Schwartz, M.D. (1993) Assessing the onset of spring: A climatological
+  perspective. \emph{Physical Geography} \textbf{14(6)}, 536--550.
+
+\bibitem[{Soudani \emph{et~al.}(2012)Soudani, Hmimina, Delpierre, Pontailler,
+  Aubinet, Bonal, Caquet, de~Grandcourt, Burban, Flechard \&
+  et~al.}]{Soudani2012}
+Soudani, K., Hmimina, G., Delpierre, N., Pontailler, J.Y., Aubinet, M., Bonal,
+  D., Caquet, B., de~Grandcourt, A., Burban, B., Flechard, C. \& et~al. (2012)
+  Ground-based network of ndvi measurements for tracking temporal dynamics of
+  canopy structure and vegetation phenology in different biomes. \emph{Remote
+  Sensing of Environment} \textbf{123}, 234--245.
 
 \bibitem[{Taschler \emph{et~al.}(2004)Taschler, Beikircher \&
   Neuner}]{Taschler2004}

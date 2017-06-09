@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 JUN 2017 11:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 JUN 2017 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -523,6 +523,40 @@ Package: translator 2010/06/12 ver 1.10
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/beamer/translator/translator-lang
 uage-mappings.tex)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count138
+\Gm@cntv=\count139
+\c@Gm@tempcnt=\count140
+\Gm@bindingoffset=\dimen160
+\Gm@wd@mp=\dimen161
+\Gm@odd@mp=\dimen162
+\Gm@even@mp=\dimen163
+\Gm@layoutwidth=\dimen164
+\Gm@layoutheight=\dimen165
+\Gm@layouthoffset=\dimen166
+\Gm@layoutvoffset=\dimen167
+\Gm@dimlist=\toks20
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
@@ -546,7 +580,7 @@ Package etexcmds Info: Could not find \expanded.
 )))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count138
+\etb@tempcnta=\count141
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
 Package: zref-abspage 2016/05/16 v2.25 Module abspage for zref (HO)
@@ -559,10 +593,6 @@ Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -579,14 +609,14 @@ Package zref Info: New property: page on input line 761.
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
 )
-\c@abspage=\count139
+\c@abspage=\count142
 Package zref Info: New property: abspage on input line 62.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip56
-\c@mdf@globalstyle@cnt=\count140
+\c@mdf@globalstyle@cnt=\count143
 \mdf@skipabove@length=\skip57
 \mdf@skipbelow@length=\skip58
 \mdf@leftmargin@length=\skip59
@@ -662,7 +692,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip120
 \mdfsubtitleheight=\skip121
 \mdfsubsubtitleheight=\skip122
-\c@mdfcountframes=\count141
+\c@mdfcountframes=\count144
 
 ****** mdframed patching \endmdf@trivlist
 
@@ -678,10 +708,10 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 . 
 . Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
 .................................................
-\mdf@envdepth=\count142
-\c@mdf@env@i=\count143
-\c@mdf@env@ii=\count144
-\c@mdf@zref@counter=\count145
+\mdf@envdepth=\count145
+\c@mdf@env@i=\count146
+\c@mdf@env@ii=\count147
+\c@mdf@zref@counter=\count148
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
@@ -689,7 +719,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip123
 \bibsep=\skip124
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count146
+\c@NAT@ctr=\count149
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
@@ -697,15 +727,15 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen160
-\captionmargin@=\dimen161
-\captionwidth=\dimen162
-\caption@tempdima=\dimen163
-\caption@indent=\dimen164
-\caption@parindent=\dimen165
-\caption@hangindent=\dimen166
+\captionmargin=\dimen168
+\captionmargin@=\dimen169
+\captionwidth=\dimen170
+\caption@tempdima=\dimen171
+\caption@indent=\dimen172
+\caption@parindent=\dimen173
+\caption@hangindent=\dimen174
 )
-\c@ContinuedFloat=\count147
+\c@ContinuedFloat=\count150
 Package caption Info: float package is loaded.
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/upquote/upquote.sty
@@ -715,39 +745,39 @@ tim
 (./Outline_formatted.aux)
 \openout1 = `Outline_formatted.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 88.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    ... okay on input line 88.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count148
-\scratchdimen=\dimen167
+\scratchcounter=\count151
+\scratchdimen=\dimen175
 \scratchbox=\box57
-\nofMPsegments=\count149
-\nofMParguments=\count150
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count151
-\MPscratchDim=\dimen168
-\MPnumerator=\count152
-\makeMPintoPDFobject=\count153
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count152
+\nofMParguments=\count153
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count154
+\MPscratchDim=\dimen176
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
+\everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -770,56 +800,119 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/local/texlive/2016/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=472.03111pt
+* \textheight=624.25352pt
+* \oddsidemargin=-1.13791pt
+* \evensidemargin=-1.13791pt
+* \topmargin=-42.67912pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 \AtBeginShipoutBox=\box58
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__siunitx_mathsf_int=\count154
+\c__siunitx_mathsf_int=\count157
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 86.
+(Font)              <7> on input line 88.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 86.
-\c__siunitx_mathtt_int=\count155
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 90.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 90.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 90.
- [1
+(Font)              <5> on input line 88.
+\c__siunitx_mathtt_int=\count158
+! Undefined control sequence.
+l.89 \SweaveOpts
+                {concordance=TRUE}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
-Overfull \hbox (7.6231pt too wide) in paragraph at lines 170--171
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 93.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 93.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 93.
+
+[2] [3] [4]
+Overfull \hbox (7.6231pt too wide) in paragraph at lines 173--174
 []\T1/aer/m/n/10 Drought and des-ic-ca-tion within the xylem mim-ick the ad-ver
 se ef-fects of false spring events (Cavender-
  []
 
-[4] <figure/fsifig-1.pdf, id=25, 505.89pt x 505.89pt>
+[5] <figure/fsifig-1.pdf, id=28, 505.89pt x 505.89pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 199.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 202.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [5] [6 <./figure/fsifig-1.pdf>] [7]
-Overfull \hbox (2.94177pt too wide) in paragraph at lines 232--233
+ [6] [7 <./figure/fsifig-1.pdf>] [8]
+Overfull \hbox (2.94177pt too wide) in paragraph at lines 235--236
 []\T1/aer/m/n/10 Especially strong freez-ing events (i.e. > -8.6$[]$C), could r
 e-sult in meris-temic tis-sue, wood parenchyma
  []
 
-[8] <figure/dan-1.pdf, id=45, 505.89pt x 505.89pt>
+[9] <figure/dan-1.pdf, id=48, 505.89pt x 505.89pt>
 File: figure/dan-1.pdf Graphic file (type pdf)
  <use figure/dan-1.pdf>
-Package pdftex.def Info: figure/dan-1.pdf used on input line 259.
+Package pdftex.def Info: figure/dan-1.pdf used on input line 262.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
-[9] [10 <./figure/dan-1.pdf>]
-<..//figure/HF_gddTime.pdf, id=57, 578.16pt x 578.16pt>
+[10] [11 <./figure/dan-1.pdf>]
+
+LaTeX Warning: Reference `fig:hf' on page 12 undefined on input line 280.
+
+<..//figure/HF_gddTime.pdf, id=60, 578.16pt x 578.16pt>
 File: ..//figure/HF_gddTime.pdf Graphic file (type pdf)
 
 <use ..//figure/HF_gddTime.pdf>
-Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 285.
+Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 288.
 (pdftex.def)             Requested size: 377.62633pt x 377.6257pt.
- [11] (./Outline_formatted.bbl [12 <..//figure/HF_gddTime.pdf>]
+ [12]
+
+Package natbib Warning: Citation `NPN2016 ' on page 13 undefined on input line 
+306.
+
+
+Package natbib Warning: Citation `NPN2016 ' on page 13 undefined on input line 
+306.
+
+<..//figure/RegionalRisk.pdf, id=65, 650.43pt x 794.97pt>
+File: ..//figure/RegionalRisk.pdf Graphic file (type pdf)
+
+<use ..//figure/RegionalRisk.pdf>
+Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 307.
+(pdftex.def)             Requested size: 377.62633pt x 461.556pt.
+ [13 <..//figure/HF_gddTime.pdf>]
+(./Outline_formatted.bbl [14 <..//figure/RegionalRisk.pdf>]
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 46.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
@@ -828,34 +921,48 @@ File: ts1aer.fd
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 46.
 
-[13] [14] [15] [16]) [17] [18] [19] [20] [21] (./Outline_formatted.aux) ) 
+[15] [16] [17] [18] [19]) [20] [21] [22] [23] [24] [25
+
+]
+
+Package natbib Warning: There were undefined citations.
+
+(./Outline_formatted.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 15141 strings out of 493014
- 303221 string characters out of 6133351
- 351449 words of memory out of 5000000
- 18496 multiletter control sequences out of 15000+600000
- 31293 words of font info for 72 fonts, out of 8000000 for 9000
+ 15701 strings out of 493014
+ 311600 string characters out of 6133351
+ 367586 words of memory out of 5000000
+ 19018 multiletter control sequences out of 15000+600000
+ 44353 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,42p,10389b,721s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/
-local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Outline_formatted.pdf (21 pages, 217142 bytes).
+ 37i,8n,45p,10389b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Outline_formatted.pdf (25 pages, 300243 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
+ 186 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

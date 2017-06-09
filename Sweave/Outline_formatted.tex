@@ -54,6 +54,8 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{pdflscape}
 \usepackage{mdframed}
 \usepackage{natbib}
 \bibliographystyle{..//refs/styles/besjournals.bst}
@@ -84,6 +86,7 @@
 
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
 \author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$}
 \date{\today}
@@ -274,7 +277,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
 \item It is therefore expected that high variation in spring temperatures (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk.
 \item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
-\item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall. 
+\item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:hf}). 
 \item This could potentially be due to photoperiodic effects. 
 timeline<-read.csv("input/hf003-06-mean-spp.csv", header=TRUE)
 weather<-read.csv("input/WeatherData.csv", header=TRUE)
@@ -287,8 +290,24 @@ weather<-read.csv("input/WeatherData.csv", header=TRUE)
 \end{figure}
 
 \end{enumerate}
-
 \end {enumerate}
+
+%%%%%%%%%%%%%%%%%%%% Regional Differences in False Spring Risk %%%%%%%%%%%%%%
+\section*{Regional Differences in False Spring Risk}
+\begin{enumerate}
+\item Introduce concept of regional differences
+\begin {enumerate}
+\item Statement about varying durations of vegetative risk because of forest tree species demographics and climatic regimes.
+\item Discuss genetic clines along latitudinal gradients.
+\end {enumerate}
+
+\begin{figure} [H] \label{reg}
+\begin{center}
+\caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, Soudani2012, NPN2016 }} %% Add White citation
+\includegraphics{..//figure/RegionalRisk.pdf}
+\end{center}
+\end{figure}
+\end{enumerate}
 
 
 
@@ -300,7 +319,7 @@ weather<-read.csv("input/WeatherData.csv", header=TRUE)
 
 \section*{Supplemental Information}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -315,7 +334,7 @@ chilling & 149.41 &   2 & 1.20 & 0.30 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -330,7 +349,7 @@ chilling & 0.62 &   2 & 0.00 & 1.00 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -345,7 +364,7 @@ chilling & 65.41 &   2 & 0.46 & 0.64 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -360,7 +379,7 @@ chilling & 525.95 &   2 & 5.00 & 0.01 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -375,7 +394,7 @@ chilling & 6.00 &   2 & 0.04 & 0.96 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -390,7 +409,7 @@ chilling & 144.41 &   2 & 1.66 & 0.20 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -405,7 +424,7 @@ chilling & 26.49 &   2 & 0.54 & 0.59 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -420,7 +439,7 @@ chilling & 54.63 &   2 & 0.39 & 0.68 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -437,7 +456,7 @@ chilling & 35.61 &   2 & 0.45 & 0.64 \\
 
 
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:58 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -455,7 +474,7 @@ chilling & 104.66 &   2 & 0.87 & 0.42 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -473,7 +492,7 @@ chilling & 1.53 &   2 & 0.01 & 0.99 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -491,7 +510,7 @@ chilling & 65.78 &   2 & 0.45 & 0.64 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -509,7 +528,7 @@ chilling & 526.41 &   2 & 5.57 & 0.00 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -527,7 +546,7 @@ chilling & 6.07 &   2 & 0.04 & 0.96 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -545,7 +564,7 @@ chilling & 145.37 &   2 & 1.64 & 0.20 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -563,7 +582,7 @@ chilling & 28.03 &   2 & 0.60 & 0.55 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -581,7 +600,7 @@ chilling & 50.56 &   2 & 0.37 & 0.69 \\
 \end{tabular}
 \end{table}
 % latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 11:08:40 2017
+% Fri Jun  9 16:16:59 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -598,6 +617,62 @@ chilling & 35.70 &   2 & 0.46 & 0.63 \\
    \hline
 \end{tabular}
 \end{table}
+
+
+\section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
+\begin{landscape}
+\begin{center}
+\captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:title} 
+\footnotesize
+\begin{tabular}{|c | c | c | c | c | c|}
+\hline
+\textbf{Sector} & \textbf{BBCH} & \textbf{Species} & \textbf{Temperature ($^{\circ}$C)} & \textbf{Type} & \textbf{Source} \\
+\hline
+Ecological & 9-15 & Sorbus aucuparia & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Prunus avium & -8.5 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Tilia platyphyllos & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Acer pseudoplatanus & -6.7 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9-15 & Fagus sylvatica & -4.8 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9+ & All & -2.2 & hard & \cite{Schwartz1993}\\
+\hline
+Ecological & 9+ & All & -1.7 & soft & \cite{Augspurger2013} \\
+\hline
+Ecological & All & All & 2 SD below winter TAVG & cold-air outbreaks & \cite{Vavrus2006} \\
+\hline
+Ecological & 9+ & Eucalyptus pauciflora & -5.8 & elevated CO2 and temperature threshold & \cite{Barker2005} \\
+\hline
+Ecological & 9+ & All & -2.2 & 7 day threshold & \cite{Peterson2014} \\
+\hline
+Agrinomical & 9+ & All & 2 & Risk threshold for clear nights & \cite{Cannell1986} \\
+\hline
+Agrinomical & Floral & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & \cite{Longstroth2012} \\
+\hline
+Agrinomical & 9 & Rosaceae & -7.2 & 10\% lethality & \cite{Longstroth2013}\\
+\hline
+Agrinomical & 9 & Rosaceae & -13.3 & 90\% lethality & \cite{Longstroth2013} \\
+\hline
+Agrinomical & All & All & Varies & Radiation Frost & \cite{Barlow2015} \\
+\hline
+Agrinomical & Floral & Wheat & -4 to -5 & 10-90\% lethality & \cite{Barlow2015} \\
+\hline
+Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & \cite{Barlow2015} \\
+\hline
+Agrinomical & Vegetative & Rice & 4.7 & lethal limit & \cite{Sanchez2013} \\
+\hline
+Agrinomical & Vegetative & Corn & -1.8 & lethal limit & \cite{Sanchez2013}\\
+\hline
+Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & \cite{Sanchez2013} \\
+\hline
+\end{tabular}
+\end{center}
+\end{landscape}
+\restoregeometry
+
 
 
 \end{document}
