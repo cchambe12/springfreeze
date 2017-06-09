@@ -509,7 +509,7 @@ nc2$site<-"North Carolina"
 nc.count$site<-"North Carolina"
 
 
-# Rennes, France: Apr 5 - May 10
+# Lyon, France: Apr 5 - May 10
 ren<-france %>%
   dplyr::select(STATION_NAME,DATE, TAVG, TMIN, TMAX) %>%
   filter(STATION_NAME == "BRON LYON AEROPORT FR") %>%
@@ -594,13 +594,41 @@ limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum
 ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week Period") + ylab("Average Number of days per two week period below -2.2C") + 
   geom_line(aes(x=biweekly, y=mean, col=site, group=site)) + geom_linerange(limits, col=limitcolor)
 
-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
+risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
                                                                 "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")))) +
          geom_point() + xlab("Two Week Period") + ylab("Number of days below -2.2C per two week period") + 
   geom_line(aes(x=biweekly, y=mean,  color=factor(site, labels = c("France: April 5 - May 10", "Germany: March 31 - April 30", "Maine: April 10 - May 30", 
                                                                    "North Carolina: February 21 - April 4", "Washington: March 22 - April 30")), group=site)) + 
   geom_linerange(aes(ymax = d$high, ymin=d$low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
-  theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1))
+  theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), legend.position=c(0.8,0.91),
+        legend.key.size=unit(0.3, "cm"))
+
+## Make a dataframe:
+
+x<- data.frame("Site"=c( "France", "Germany", "Maine", "North Carolina","Washington"), "Earliest"=c( 90,90, 100, 50, 80), 
+               "Early" = c( 100, 112, 115, 80,115), "Late" = c( 115, 127, 120, 90, 120), "Latest" = c( 120,140, 150, 100, 130))
+
+fix<-x%>%
+  gather("time", "doy", Earliest, Early, Late, Latest) %>%
+  arrange(desc(Site))
+
+fix$biweekly<-ifelse((fix$doy>=46 & fix$doy <=60), "Feb 15 - Feb 29", fix$doy)
+fix$biweekly<-ifelse((fix$doy>=61 & fix$doy <=73), "Mar 1 - Mar 14", fix$biweekly)
+fix$biweekly<-ifelse((fix$doy>=74 & fix$doy <=91), "Mar 15 - Mar 31", fix$biweekly)
+fix$biweekly<-ifelse((fix$doy>=92 & fix$doy <=106), "Apr 1 - Apr 14", fix$biweekly)
+fix$biweekly<-ifelse((fix$doy>=107 & fix$doy <=121), "Apr 15 - Apr 30", fix$biweekly)
+fix$biweekly<-ifelse((fix$doy>=122 & fix$doy <=136), "May 1 - May 14", fix$biweekly)
+fix$biweekly<-ifelse((fix$doy>=137 & fix$doy <=152), "May 15 - May 31", fix$biweekly)
+
+fix$doy<-as.numeric(as.character(fix$doy))
+
+time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x=Site)) + coord_flip() +
+  scale_y_continuous(breaks=c(46,60, 73, 91, 106, 121, 136, 152), label=c("Feb 15", "Feb 29", "Mar 15", "Mar 31",
+                                                                       "Apr 15", "Apr 30", "May 15", "May 31")) +
+  theme(legend.position=c(0.1,0.15), legend.key.size=unit(0.4, "cm")) + ylab("Day of Year")
+
+
+grid.draw(rbind(ggplotGrob(risk), ggplotGrob(time), size="last"))
 
 ggplot(data = df, aes(x=biweekly, y=count)) + geom_boxplot(aes(fill=site))
 
