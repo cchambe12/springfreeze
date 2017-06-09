@@ -272,9 +272,20 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Harvard Forest Data
 \begin{enumerate}
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
-\item It is therefore expected that high variation in spring temperatures may result in longer durations of vegetative risk.
+\item It is therefore expected that high variation in spring temperatures (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk.
 \item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
-\item By comparing the durations of vegetative risk to the average daily temperatures for each year, we found that... %%%% NEED TO CALCULATE!!!!!
+\item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall. 
+\item This could potentially be due to photoperiodic effects. 
+timeline<-read.csv("input/hf003-06-mean-spp.csv", header=TRUE)
+weather<-read.csv("input/WeatherData.csv", header=TRUE)
+
+\begin{figure} [H] \label{hf}
+\begin{center}
+\caption{A comparison of two years of observational data investigating the effects of growing degree days on the duration of vegetative risk. The average duration of vegetative risk for 2010 was 21 +/- 3.39 days versus 17.1 +/- 1.96 days in 2014.}
+\includegraphics{..//figure/HF_gddTime.pdf}
+\end{center}
+\end{figure}
+
 \end{enumerate}
 
 \end {enumerate}
@@ -288,8 +299,8 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 
 \section*{Supplemental Information}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -303,8 +314,8 @@ chilling & 149.41 &   2 & 1.20 & 0.30 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -318,8 +329,8 @@ chilling & 0.62 &   2 & 0.00 & 1.00 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -333,8 +344,8 @@ chilling & 65.41 &   2 & 0.46 & 0.64 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -348,8 +359,8 @@ chilling & 525.95 &   2 & 5.00 & 0.01 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -363,8 +374,8 @@ chilling & 6.00 &   2 & 0.04 & 0.96 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -378,8 +389,8 @@ chilling & 144.41 &   2 & 1.66 & 0.20 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -393,8 +404,8 @@ chilling & 26.49 &   2 & 0.54 & 0.59 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -408,8 +419,8 @@ chilling & 54.63 &   2 & 0.39 & 0.68 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -425,8 +436,8 @@ chilling & 35.61 &   2 & 0.45 & 0.64 \\
 \end{table}
 
 
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -443,8 +454,8 @@ chilling & 104.66 &   2 & 0.87 & 0.42 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -461,8 +472,8 @@ chilling & 1.53 &   2 & 0.01 & 0.99 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -479,8 +490,8 @@ chilling & 65.78 &   2 & 0.45 & 0.64 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -497,8 +508,8 @@ chilling & 526.41 &   2 & 5.57 & 0.00 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -515,8 +526,8 @@ chilling & 6.07 &   2 & 0.04 & 0.96 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -533,8 +544,8 @@ chilling & 145.37 &   2 & 1.64 & 0.20 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -551,8 +562,8 @@ chilling & 28.03 &   2 & 0.60 & 0.55 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}
@@ -569,8 +580,8 @@ chilling & 50.56 &   2 & 0.37 & 0.69 \\
    \hline
 \end{tabular}
 \end{table}
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Thu Jun  8 10:25:46 2017
+% latex table generated in R 3.2.2 by xtable 1.8-2 package
+% Fri Jun  9 11:08:40 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{rrrrr}

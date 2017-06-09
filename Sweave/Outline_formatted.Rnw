@@ -37,7 +37,8 @@ library(tidyr)
 library(ggplot2)
 library(xtable)
 library(arm)
-library(stargazer)
+library(grid)
+library(lubridate)
 @
 
 \begin{document}
@@ -274,9 +275,20 @@ plot(chill)
 \item Harvard Forest Data
 \begin{enumerate}
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
-\item It is therefore expected that high variation in spring temperatures may result in longer durations of vegetative risk.
+\item It is therefore expected that high variation in spring temperatures (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk.
 \item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
-\item By comparing the durations of vegetative risk to the average daily temperatures for each year, we found that... %%%% NEED TO CALCULATE!!!!!
+\item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:hf}). 
+\item This could potentially be due to photoperiodic effects. 
+timeline<-read.csv("input/hf003-06-mean-spp.csv", header=TRUE)
+weather<-read.csv("input/WeatherData.csv", header=TRUE)
+
+\begin{figure} [H] \label{hf}
+\begin{center}
+\caption{A comparison of two years of observational data investigating the effects of growing degree days on the duration of vegetative risk. The average duration of vegetative risk for 2010 was 21 +/- 3.39 days versus 17.1 +/- 1.96 days in 2014.}
+\includegraphics{..//figure/HF_gddTime.pdf}
+\end{center}
+\end{figure}
+
 \end{enumerate}
 
 \end {enumerate}
