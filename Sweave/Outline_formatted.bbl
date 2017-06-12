@@ -1,5 +1,14 @@
-\begin{thebibliography}{70}
+\begin{thebibliography}{77}
 \providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Alberto \emph{et~al.}(2013)Alberto, Aitken, Al{\'\i}a,
+  Gonz{\'a}lez-Mart{\'\i}nez, H{\"a}nninen, Kremer, Lef{\`e}vre, Lenormand,
+  Yeaman, Whetten \& et~al.}]{Alberto2013}
+Alberto, F.J., Aitken, S.N., Al{\'\i}a, R., Gonz{\'a}lez-Mart{\'\i}nez, S.C.,
+  H{\"a}nninen, H., Kremer, A., Lef{\`e}vre, F., Lenormand, T., Yeaman, S.,
+  Whetten, R. \& et~al. (2013) Potential for evolutionary responses to climate
+  change - evidence from tree populations. \emph{Global Change Biology}
+  \textbf{19}, 1645--1661.
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
   \& Radeloff}]{Allstadt2015}
@@ -130,6 +139,14 @@ Fu, Y.H., Campioli, M., {Van Oijen}, M., Deckmyn, G. \& Janssens, I.A. (2012)
   \emph{{Bayesian comparison of six different temperature-based budburst models
   for four temperate tree species}}, vol. 230.
 
+\bibitem[{Gauzere \emph{et~al.}(2017)Gauzere, Delzon, Davi, Bonhomme, Garcia~de
+  Cortazar-Atauri \& Chuine}]{Gauzere2017}
+Gauzere, J., Delzon, S., Davi, H., Bonhomme, M., Garcia~de Cortazar-Atauri, I.
+  \& Chuine, I. (2017) Integrating interactive effects of chilling and
+  photoperiod in phenological process-based models. a case study with two
+  european tree species: \textit{Fagus sylvatica} and \textit{Quercus petraea}.
+  \emph{Agricultural and Forest Meteorology} pp. 9--20.
+
 \bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post, Kaiser, Yang, Nemani,
   Pallardy \& Meyers}]{Gu2008}
 Gu, L., Hanson, P.J., Post, W.M., Kaiser, D.P., Yang, B., Nemani, R., Pallardy,
@@ -174,6 +191,11 @@ Knudson, W. (2012) The economic impact of the spring's weather on the fruit and
 Kodra, E., Steinhaeuser, K. \& Ganguly, A.R. (2011) {Persisting cold extremes
   under 21st-century warming scenarios}. \emph{Geophysical Research Letters}
   \textbf{38}, 1--5.
+
+\bibitem[{Labe \emph{et~al.}(2016)Labe, Ault \& Zurita-Milla}]{Labe2016}
+Labe, Z., Ault, T. \& Zurita-Milla, R. (2016) Identifying anomalously early
+  spring onsets in the cesm large ensemble project. \emph{Climate Dynamics}
+  \textbf{48}, 3949--3966.
 
 \bibitem[{Laube \emph{et~al.}(2013)Laube, Sparks, Estrella, H{\"o}fler, Ankerst
   \& Menzel}]{Laube2013}
@@ -272,6 +294,13 @@ O'Keefe, J. (2014) {Phenology of Woody Species at Harvard Forest since 1990}.
 Partanen, J. (2004) Dependence of photoperiodic response of growth cessation on
   the stage of development in picea abies and betula pendula seedlings.
   \emph{Forest Ecology and Management} \textbf{188}, 137--148.
+
+\bibitem[{Pau \emph{et~al.}(2011)Pau, Wolkovich, Cook, Davies, Kraft, Bolmgren,
+  Betancourt \& Cleland}]{Wolkovich2011}
+Pau, S., Wolkovich, E., Cook, B., Davies, J., Kraft, N., Bolmgren, K.,
+  Betancourt, J. \& Cleland, E. (2011) Predicting phenology by integrating
+  ecology, evolution and climate science. \emph{Global Change Biology}
+  \textbf{17}, 3633--3643.
 
 \bibitem[{Pearce(2001)}]{Pearce2001}
 Pearce, R. (2001) Plant freezing and damage. \emph{Annals of Botany}
@@ -379,12 +408,27 @@ Vihera-aarnio, A., Hakkinen, R. \& Junttila, O. (2006) Critical night length
   for bud set and its variation in two photoperiodic ecotypes of betula
   pendula. \emph{Tree Physiology} \textbf{26}, 1013--1018.
 
+\bibitem[{Vitasse \emph{et~al.}(2011)Vitasse, Francois, Delpierre, Dufrene,
+  Kremer, Chuine \& Delzon}]{Vitasse2011}
+Vitasse, Y., Francois, C., Delpierre, N., Dufrene, E., Kremer, A., Chuine, I.
+  \& Delzon, S. (2011) Assessing the effects of climate change on the phenology
+  of european temperate trees. \emph{Agricultural and Forest Meteorology}
+  \textbf{151}, 969--980.
+
 \bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch \&
   K{\"{o}}rner}]{Vitasse2014}
 Vitasse, Y., Lenz, A., Hoch, G. \& K{\"{o}}rner, C. (2014) {Earlier leaf-out
   rather than difference in freezing resistance puts juvenile trees at greater
   risk of damage than adult trees}. \emph{Journal of Ecology} \textbf{102},
   981--988.
+
+\bibitem[{WHITE \emph{et~al.}(2009)WHITE, de~BEURS, DIDAN, INOUYE, RICHARDSON,
+  JENSEN, O'KEEFE, ZHANG, NEMANI, van LEEUWEN \& et~al.}]{White2009}
+WHITE, M.A., de~BEURS, K.M., DIDAN, K., INOUYE, D.W., RICHARDSON, A.D., JENSEN,
+  O.P., O'KEEFE, J., ZHANG, G., NEMANI, R.R., van LEEUWEN, W.J.D. \& et~al.
+  (2009) Intercomparison, interpretation, and assessment of spring phenology in
+  north america estimated from remote sensing for 1982-2006. \emph{Global
+  Change Biology} \textbf{15}, 2335--2359.
 
 \bibitem[{Wolkovich \emph{et~al.}(2012)Wolkovich, Cook, Allen, Crimmins,
   Betancourt, Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren, Mazer,
@@ -406,5 +450,11 @@ Xin, Q. (2016) {A risk-benefit model to simulate vegetation spring onset in
 Yu, H., Luedeling, E. \& Xu, J. (2010) Winter and spring warming result in
   delayed spring phenology on the tibetan plateau. \emph{Proc Natl Acad Sci U S
   A} \textbf{107}, 22151--6.
+
+\bibitem[{Zohner \emph{et~al.}(2016)Zohner, Benito, Svenning \&
+  Renner}]{Zohner2016}
+Zohner, C.M., Benito, B.M., Svenning, J.C. \& Renner, S.S. (2016) Day length
+  unlikely to constrain climate-driven shifts in leaf-out times of northern
+  woody plants. \emph{Nature Climate Change} \textbf{6}, 1120--1123.
 
 \end{thebibliography}

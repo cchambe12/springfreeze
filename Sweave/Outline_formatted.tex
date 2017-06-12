@@ -86,7 +86,6 @@
 
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
 \title{Rethinking False Spring Risk}
 \author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$}
 \date{\today}
@@ -172,8 +171,8 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Freezing tolerance in plants is usually against extracellular freezing or freezing dehydration \citep{Burke1976}.
 \item Drought and desiccation within the xylem mimick the adverse effects of false spring events \citep{Cavender2015}.
 \item Dry winters typically result in new, frost-tolerant shoots due to the decreased water content and osmotic potential from the reduced number of accumulated solutes \citep{Morin2007, Hofmann2015}.
-\item Therefore, it is hypothesized that increased bud dehydration results in increased frost hardiness \citep{Beck2007, Nielsen2009, Poirier2010, Kathke2011, Hofmann2015}.
-\item However, more studies are needed to investigate the interplay between false spring events and precipiation and how that relationship impacts the level of damage a plant sustains. 
+\item Therefore, it is hypothesized that increased bud dehydration results in increased frost hardiness \citep{Beck2007, Nielsen2009, Poirier2010, Kathke2011, Hofmann2015}, although long-term drought stress can lead to accumulated xylem damage and decreased false spring tolerance \citep{Anderegg2013}.
+\item More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship impacts the level and type of damage a plant sustains and what the long-term implications may be. 
 \end{enumerate}
 \end{enumerate}
 
@@ -277,352 +276,42 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
 \item It is therefore expected that high variation in spring temperatures (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk.
 \item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
-\item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:hf}). 
+\item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:forest}). 
 \item This could potentially be due to photoperiodic effects. 
-timeline<-read.csv("input/hf003-06-mean-spp.csv", header=TRUE)
-weather<-read.csv("input/WeatherData.csv", header=TRUE)
+\end{enumerate}
+\end {enumerate}
 
-\begin{figure} [H] \label{hf}
+\begin{figure} [H] 
 \begin{center}
-\caption{A comparison of two years of observational data investigating the effects of growing degree days on the duration of vegetative risk. The average duration of vegetative risk for 2010 was 21 +/- 3.39 days versus 17.1 +/- 1.96 days in 2014.}
+\caption{A comparison of two years of observational data investigating the effects of growing degree days on the duration of vegetative risk. The average duration of vegetative risk for 2010 was 21 +/- 3.39 days versus 17.1 +/- 1.96 days in 2014.}\label{fig:forest}
 \includegraphics{..//figure/HF_gddTime.pdf}
 \end{center}
 \end{figure}
 
-\end{enumerate}
-\end {enumerate}
+
 
 %%%%%%%%%%%%%%%%%%%% Regional Differences in False Spring Risk %%%%%%%%%%%%%%
-\section*{Regional Differences in False Spring Risk}
+\section*{Regional Differences in False Spring Risk and Temperature Thresholds}
 \begin{enumerate}
 \item Introduce concept of regional differences
 \begin {enumerate}
 \item Statement about varying durations of vegetative risk because of forest tree species demographics and climatic regimes.
-\item Discuss genetic clines along latitudinal gradients.
+\item Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to outcompete photosensitive species as spring forcing temperatures continue to increase \cite{Vitasse2011,Gauzere2017}.
+\item However, the climatic implications of increasing forcing temperatures could potentially lead to earlier dates of budburst and enhance the risk for frost or drought risk. 
+\item These shifts in climatic regimes could vary in intensity across regions: habitats currently at risk of false spring damage could become low risk regions over time. 
+\item There are discrepancies in defining a false spring event, especially with understanding damaging freezing temperatures.
+\item Some regions and species may be more able to tolerate lower temperature thresholds than others (Table \ref{tab:temperature}).
+\item It is crucial to gain an understanding on which climatic parameters result in false spring events, what habitats are at risk now, and what habitats will be at risk in the future. 
+\item It is anticipated that most habitats will trend towards earlier spring onsets, however, the dates of last freezes will not occur at the same rate, rendering some regions to be more susceptible to false spring events in the future \citep{Labe2016}.
+\item By determining the range of budburst dates for the dominant species in five archetypal climate regions, we were able to elucidate the current spatial variation of false spring risk (Figure \ref{fig:regional}).
+\item We assessed the number of freezing days \citep{Schwartz1993} that occurred on average over the past 50 years within those range of dates and found that Maine has the highest risk for frost damage and Lyon, France as the lowest. 
+\item Current studies focus on latitudinal and photoperiodic effects \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Gauzere2017}, however, future research should aim to integrate spatiotemporal effects more when investigating false spring risk.
 \end {enumerate}
-
-\begin{figure} [H] \label{reg}
-\begin{center}
-\caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, Soudani2012, NPN2016 }} %% Add White citation
-\includegraphics{..//figure/RegionalRisk.pdf}
-\end{center}
-\end{figure}
 \end{enumerate}
 
-
-
-
-
-
-\bibliography{..//refs/SpringFreeze.bib}
-
-
-\section*{Supplemental Information}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 149.41 &   2 & 1.20 & 0.30 \\ 
-  forcing & 4909.59 &   1 & 78.94 & 0.00 \\ 
-  photoperiod & 1309.59 &   1 & 21.06 & 0.00 \\ 
-  Residuals & 6654.56 & 107 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ACERUB & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 0.62 &   2 & 0.00 & 1.00 \\ 
-  forcing & 1731.00 &   1 & 25.92 & 0.00 \\ 
-  photoperiod & 462.78 &   1 & 6.93 & 0.01 \\ 
-  Residuals & 6611.17 &  99 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ACESAC & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 65.41 &   2 & 0.46 & 0.64 \\ 
-  forcing & 259.14 &   1 & 3.61 & 0.06 \\ 
-  photoperiod & 231.41 &   1 & 3.22 & 0.08 \\ 
-  Residuals & 4524.88 &  63 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  BETALL & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 525.95 &   2 & 5.00 & 0.01 \\ 
-  forcing & 1463.30 &   1 & 27.81 & 0.00 \\ 
-  photoperiod & 632.83 &   1 & 12.03 & 0.00 \\ 
-  Residuals & 6944.50 & 132 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  BETPAP & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 6.00 &   2 & 0.04 & 0.96 \\ 
-  forcing & 1776.23 &   1 & 21.47 & 0.00 \\ 
-  photoperiod & 1105.08 &   1 & 13.35 & 0.00 \\ 
-  Residuals & 10509.00 & 127 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 144.41 &   2 & 1.66 & 0.20 \\ 
-  forcing & 611.20 &   1 & 14.04 & 0.00 \\ 
-  photoperiod & 1.05 &   1 & 0.02 & 0.88 \\ 
-  Residuals & 2829.78 &  65 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 26.49 &   2 & 0.54 & 0.59 \\ 
-  forcing & 2262.34 &   1 & 91.61 & 0.00 \\ 
-  photoperiod & 1035.85 &   1 & 41.94 & 0.00 \\ 
-  Residuals & 3334.05 & 135 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  POPGRA & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 54.63 &   2 & 0.39 & 0.68 \\ 
-  forcing & 2405.73 &   1 & 34.52 & 0.00 \\ 
-  photoperiod & 1019.78 &   1 & 14.63 & 0.00 \\ 
-  Residuals & 6760.98 &  97 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  QUERUB & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 35.61 &   2 & 0.45 & 0.64 \\ 
-  forcing & 680.83 &   1 & 17.34 & 0.00 \\ 
-  photoperiod & 369.53 &   1 & 9.41 & 0.00 \\ 
-  Residuals & 4946.29 & 126 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:58 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 104.66 &   2 & 0.87 & 0.42 \\ 
-  forcing & 4745.38 &   1 & 79.18 & 0.00 \\ 
-  photoperiod & 1306.03 &   1 & 21.79 & 0.00 \\ 
-  chilling:forcing & 63.31 &   2 & 0.53 & 0.59 \\ 
-  chilling:photoperiod & 181.96 &   2 & 1.52 & 0.22 \\ 
-  forcing:photoperiod & 257.63 &   1 & 4.30 & 0.04 \\ 
-  Residuals & 6113.18 & 102 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ACERUB & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 1.53 &   2 & 0.01 & 0.99 \\ 
-  forcing & 1721.25 &   1 & 26.13 & 0.00 \\ 
-  photoperiod & 381.81 &   1 & 5.80 & 0.02 \\ 
-  chilling:forcing & 358.58 &   2 & 2.72 & 0.07 \\ 
-  chilling:photoperiod & 37.69 &   2 & 0.29 & 0.75 \\ 
-  forcing:photoperiod & 17.35 &   1 & 0.26 & 0.61 \\ 
-  Residuals & 6191.98 &  94 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ACESAC & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 65.78 &   2 & 0.45 & 0.64 \\ 
-  forcing & 204.31 &   1 & 2.83 & 0.10 \\ 
-  photoperiod & 267.24 &   1 & 3.70 & 0.06 \\ 
-  chilling:forcing & 76.27 &   2 & 0.53 & 0.59 \\ 
-  chilling:photoperiod & 164.28 &   2 & 1.14 & 0.33 \\ 
-  forcing:photoperiod & 0.05 &   1 & 0.00 & 0.98 \\ 
-  Residuals & 4194.28 &  58 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  BETALL & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 526.41 &   2 & 5.57 & 0.00 \\ 
-  forcing & 1463.33 &   1 & 30.95 & 0.00 \\ 
-  photoperiod & 632.83 &   1 & 13.38 & 0.00 \\ 
-  chilling:forcing & 66.32 &   2 & 0.70 & 0.50 \\ 
-  chilling:photoperiod & 226.18 &   2 & 2.39 & 0.10 \\ 
-  forcing:photoperiod & 612.56 &   1 & 12.95 & 0.00 \\ 
-  Residuals & 6005.50 & 127 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  BETPAP & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 6.07 &   2 & 0.04 & 0.96 \\ 
-  forcing & 1765.57 &   1 & 21.22 & 0.00 \\ 
-  photoperiod & 1101.18 &   1 & 13.24 & 0.00 \\ 
-  chilling:forcing & 71.38 &   2 & 0.43 & 0.65 \\ 
-  chilling:photoperiod & 62.92 &   2 & 0.38 & 0.69 \\ 
-  forcing:photoperiod & 233.62 &   1 & 2.81 & 0.10 \\ 
-  Residuals & 10148.80 & 122 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 145.37 &   2 & 1.64 & 0.20 \\ 
-  forcing & 595.26 &   1 & 13.40 & 0.00 \\ 
-  photoperiod & 0.42 &   1 & 0.01 & 0.92 \\ 
-  chilling:forcing & 39.45 &   2 & 0.44 & 0.64 \\ 
-  chilling:photoperiod & 83.56 &   2 & 0.94 & 0.40 \\ 
-  forcing:photoperiod & 35.33 &   1 & 0.80 & 0.38 \\ 
-  Residuals & 2665.38 &  60 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 28.03 &   2 & 0.60 & 0.55 \\ 
-  forcing & 2277.73 &   1 & 97.37 & 0.00 \\ 
-  photoperiod & 1033.49 &   1 & 44.18 & 0.00 \\ 
-  chilling:forcing & 16.09 &   2 & 0.34 & 0.71 \\ 
-  chilling:photoperiod & 106.28 &   2 & 2.27 & 0.11 \\ 
-  forcing:photoperiod & 171.89 &   1 & 7.35 & 0.01 \\ 
-  Residuals & 3041.00 & 130 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  POPGRA & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 50.56 &   2 & 0.37 & 0.69 \\ 
-  forcing & 2390.66 &   1 & 35.16 & 0.00 \\ 
-  photoperiod & 1016.39 &   1 & 14.95 & 0.00 \\ 
-  chilling:forcing & 45.72 &   2 & 0.34 & 0.72 \\ 
-  chilling:photoperiod & 152.02 &   2 & 1.12 & 0.33 \\ 
-  forcing:photoperiod & 296.37 &   1 & 4.36 & 0.04 \\ 
-  Residuals & 6254.69 &  92 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-% latex table generated in R 3.2.2 by xtable 1.8-2 package
-% Fri Jun  9 16:16:59 2017
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrrrr}
-  \hline
-  QUERUB & Sum.Sq & Df & F value & Pr(>F) \\
- \hline
-chilling & 35.70 &   2 & 0.46 & 0.63 \\ 
-  forcing & 668.59 &   1 & 17.39 & 0.00 \\ 
-  photoperiod & 364.39 &   1 & 9.48 & 0.00 \\ 
-  chilling:forcing & 174.11 &   2 & 2.26 & 0.11 \\ 
-  chilling:photoperiod & 110.91 &   2 & 1.44 & 0.24 \\ 
-  forcing:photoperiod & 15.92 &   1 & 0.41 & 0.52 \\ 
-  Residuals & 4652.62 & 121 &  &  \\ 
-   \hline
-\end{tabular}
-\end{table}
-
-
-\section*{Temperature Thresholds for Damage: Agricultural vs Ecological}
 \begin{landscape}
 \begin{center}
-\captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:title} 
+\captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:temperature} 
 \footnotesize
 \begin{tabular}{|c | c | c | c | c | c|}
 \hline
@@ -672,6 +361,335 @@ Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & \cite{Sanchez2013} \\
 \end{center}
 \end{landscape}
 \restoregeometry
+
+
+\begin{figure} [H] 
+\begin{center}
+\includegraphics{..//figure/RegionalRisk.pdf}
+\caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, White2009, Soudani2012, USA-NPN2016}.}\label{fig:regional} 
+\end{center}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%% DISCUSSION AND CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Conclusion}
+\begin{enumerate}
+\item Phenology is closely linked to climatic regimes \citep{Wolkovich2011} and is therefore a key indicator for the phenotypic variation for cold adpated traits and false spring risk avoidance.
+\item Understanding the variation of spring onset across regions and within habitats as well as the rate of budburst will permit greater insight into false spring risk.
+\item Tree species with smaller and more fragemented distribution ranges are more prone to genetic drift due to geographic barriers and higher susceptibility to stochastic events (i.e. frost and drought) \citep{Alberto2013} so gathering data on species at risk is essential. 
+\item Climate change could increase the level of damage from spring frost events, especially in certain regions or for particular species, due to earlier spring onset and greater fluctuations in temperature \citep{Martin2010}. 
+\item Therefore, it is essential that temperate forest tree species maintain continuous ranges in order to successfully track the changes in climate and to utilize photoperiodic and temperature cues simultaneously rather than rely strickly on photoperiodism especially along range edges \citep{Zohner2016, Gauzere2017}.
+\item Future studies are necessary to investigate the relationship between phenological plasticity, the level of damage sustained from false spring events, and the duration of vegetative risk. 
+\end{enumerate}
+
+
+
+
+\bibliography{..//refs/SpringFreeze.bib}
+
+
+\section*{Supplemental Information}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 149.41 &   2 & 1.20 & 0.30 \\ 
+  forcing & 4909.59 &   1 & 78.94 & 0.00 \\ 
+  photoperiod & 1309.59 &   1 & 21.06 & 0.00 \\ 
+  Residuals & 6654.56 & 107 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 0.62 &   2 & 0.00 & 1.00 \\ 
+  forcing & 1731.00 &   1 & 25.92 & 0.00 \\ 
+  photoperiod & 462.78 &   1 & 6.93 & 0.01 \\ 
+  Residuals & 6611.17 &  99 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACESAC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 65.41 &   2 & 0.46 & 0.64 \\ 
+  forcing & 259.14 &   1 & 3.61 & 0.06 \\ 
+  photoperiod & 231.41 &   1 & 3.22 & 0.08 \\ 
+  Residuals & 4524.88 &  63 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETALL & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 525.95 &   2 & 5.00 & 0.01 \\ 
+  forcing & 1463.30 &   1 & 27.81 & 0.00 \\ 
+  photoperiod & 632.83 &   1 & 12.03 & 0.00 \\ 
+  Residuals & 6944.50 & 132 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETPAP & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 6.00 &   2 & 0.04 & 0.96 \\ 
+  forcing & 1776.23 &   1 & 21.47 & 0.00 \\ 
+  photoperiod & 1105.08 &   1 & 13.35 & 0.00 \\ 
+  Residuals & 10509.00 & 127 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 144.41 &   2 & 1.66 & 0.20 \\ 
+  forcing & 611.20 &   1 & 14.04 & 0.00 \\ 
+  photoperiod & 1.05 &   1 & 0.02 & 0.88 \\ 
+  Residuals & 2829.78 &  65 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 26.49 &   2 & 0.54 & 0.59 \\ 
+  forcing & 2262.34 &   1 & 91.61 & 0.00 \\ 
+  photoperiod & 1035.85 &   1 & 41.94 & 0.00 \\ 
+  Residuals & 3334.05 & 135 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  POPGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 54.63 &   2 & 0.39 & 0.68 \\ 
+  forcing & 2405.73 &   1 & 34.52 & 0.00 \\ 
+  photoperiod & 1019.78 &   1 & 14.63 & 0.00 \\ 
+  Residuals & 6760.98 &  97 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  QUERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 35.61 &   2 & 0.45 & 0.64 \\ 
+  forcing & 680.83 &   1 & 17.34 & 0.00 \\ 
+  photoperiod & 369.53 &   1 & 9.41 & 0.00 \\ 
+  Residuals & 4946.29 & 126 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 104.66 &   2 & 0.87 & 0.42 \\ 
+  forcing & 4745.38 &   1 & 79.18 & 0.00 \\ 
+  photoperiod & 1306.03 &   1 & 21.79 & 0.00 \\ 
+  chilling:forcing & 63.31 &   2 & 0.53 & 0.59 \\ 
+  chilling:photoperiod & 181.96 &   2 & 1.52 & 0.22 \\ 
+  forcing:photoperiod & 257.63 &   1 & 4.30 & 0.04 \\ 
+  Residuals & 6113.18 & 102 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 1.53 &   2 & 0.01 & 0.99 \\ 
+  forcing & 1721.25 &   1 & 26.13 & 0.00 \\ 
+  photoperiod & 381.81 &   1 & 5.80 & 0.02 \\ 
+  chilling:forcing & 358.58 &   2 & 2.72 & 0.07 \\ 
+  chilling:photoperiod & 37.69 &   2 & 0.29 & 0.75 \\ 
+  forcing:photoperiod & 17.35 &   1 & 0.26 & 0.61 \\ 
+  Residuals & 6191.98 &  94 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ACESAC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 65.78 &   2 & 0.45 & 0.64 \\ 
+  forcing & 204.31 &   1 & 2.83 & 0.10 \\ 
+  photoperiod & 267.24 &   1 & 3.70 & 0.06 \\ 
+  chilling:forcing & 76.27 &   2 & 0.53 & 0.59 \\ 
+  chilling:photoperiod & 164.28 &   2 & 1.14 & 0.33 \\ 
+  forcing:photoperiod & 0.05 &   1 & 0.00 & 0.98 \\ 
+  Residuals & 4194.28 &  58 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETALL & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 526.41 &   2 & 5.57 & 0.00 \\ 
+  forcing & 1463.33 &   1 & 30.95 & 0.00 \\ 
+  photoperiod & 632.83 &   1 & 13.38 & 0.00 \\ 
+  chilling:forcing & 66.32 &   2 & 0.70 & 0.50 \\ 
+  chilling:photoperiod & 226.18 &   2 & 2.39 & 0.10 \\ 
+  forcing:photoperiod & 612.56 &   1 & 12.95 & 0.00 \\ 
+  Residuals & 6005.50 & 127 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:57 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  BETPAP & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 6.07 &   2 & 0.04 & 0.96 \\ 
+  forcing & 1765.57 &   1 & 21.22 & 0.00 \\ 
+  photoperiod & 1101.18 &   1 & 13.24 & 0.00 \\ 
+  chilling:forcing & 71.38 &   2 & 0.43 & 0.65 \\ 
+  chilling:photoperiod & 62.92 &   2 & 0.38 & 0.69 \\ 
+  forcing:photoperiod & 233.62 &   1 & 2.81 & 0.10 \\ 
+  Residuals & 10148.80 & 122 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:57 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 145.37 &   2 & 1.64 & 0.20 \\ 
+  forcing & 595.26 &   1 & 13.40 & 0.00 \\ 
+  photoperiod & 0.42 &   1 & 0.01 & 0.92 \\ 
+  chilling:forcing & 39.45 &   2 & 0.44 & 0.64 \\ 
+  chilling:photoperiod & 83.56 &   2 & 0.94 & 0.40 \\ 
+  forcing:photoperiod & 35.33 &   1 & 0.80 & 0.38 \\ 
+  Residuals & 2665.38 &  60 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:57 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 28.03 &   2 & 0.60 & 0.55 \\ 
+  forcing & 2277.73 &   1 & 97.37 & 0.00 \\ 
+  photoperiod & 1033.49 &   1 & 44.18 & 0.00 \\ 
+  chilling:forcing & 16.09 &   2 & 0.34 & 0.71 \\ 
+  chilling:photoperiod & 106.28 &   2 & 2.27 & 0.11 \\ 
+  forcing:photoperiod & 171.89 &   1 & 7.35 & 0.01 \\ 
+  Residuals & 3041.00 & 130 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:57 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  POPGRA & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 50.56 &   2 & 0.37 & 0.69 \\ 
+  forcing & 2390.66 &   1 & 35.16 & 0.00 \\ 
+  photoperiod & 1016.39 &   1 & 14.95 & 0.00 \\ 
+  chilling:forcing & 45.72 &   2 & 0.34 & 0.72 \\ 
+  chilling:photoperiod & 152.02 &   2 & 1.12 & 0.33 \\ 
+  forcing:photoperiod & 296.37 &   1 & 4.36 & 0.04 \\ 
+  Residuals & 6254.69 &  92 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Mon Jun 12 10:49:57 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrr}
+  \hline
+  QUERUB & Sum.Sq & Df & F value & Pr(>F) \\
+ \hline
+chilling & 35.70 &   2 & 0.46 & 0.63 \\ 
+  forcing & 668.59 &   1 & 17.39 & 0.00 \\ 
+  photoperiod & 364.39 &   1 & 9.48 & 0.00 \\ 
+  chilling:forcing & 174.11 &   2 & 2.26 & 0.11 \\ 
+  chilling:photoperiod & 110.91 &   2 & 1.44 & 0.24 \\ 
+  forcing:photoperiod & 15.92 &   1 & 0.41 & 0.52 \\ 
+  Residuals & 4652.62 & 121 &  &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
 
 
 
