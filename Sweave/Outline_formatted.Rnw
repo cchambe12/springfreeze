@@ -60,14 +60,15 @@ library(lubridate)
 \item Introduce False Spring Concept
 \begin {enumerate}
 \item Plants growing in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to growth. 
-\item Individuals that leaf out before the last frost are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. 
+\item Individuals that leaf out before the last frost date are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. 
 \item Therefore, temperate deciduous tree species must have plastic phenological responses in the spring in order to optimize photosynthesis and minimize frost or drought risk \citep{Polgar2011}. 
-\item These late spring freezing events are known as false springs. False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}.
+\item These late spring freezing events are known as false springs. 
+\item False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}.
 \end{enumerate}
 \item Introduce Climate Change and Importance of False Spring Studies
 \begin{enumerate}
 \item Climate change is expected to increase damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Cannell1986, Inouye2008, Martin2010}. 
-\item Temperate forest species around the world are initiating leaf out about 4.6 days earlier per degree Celsius \citep{Wolkovich2012, Polgar2014}. 
+\item Temperate forest species around the world are initiating leafout about 4.6 days earlier per degree Celsius \citep{Wolkovich2012, Polgar2014}. 
 \item It is anticipated that there will be a decrease in false spring frequency overall but the magnitude of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Kodra2011, Allstadt2015}. 
 \item Multiple studies have documented false spring events in recent years \citep{Gu2008, Augspurger2009, Knudson2012, Augspurger2013} and some have linked this to climate change \citep{Ault2013, Allstadt2015, Muffler2016, Xin2016}. 
 \item Due to these reasons, it is crucial for researchers to properly evaluate the effects of false spring events on temperate forests and agricultural crops in order to make more accurate predictions on future trends.
@@ -90,7 +91,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item State the Purpose of the Paper
 \begin{enumerate}
 \item In this paper we aim to highlight the complexity of factors driving a plant's false spring risk. 
-\item We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), proximity to water \citep{Gu2008}, level of precipitation prior to the freezing event \citep{Anderegg2013}, freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. 
+\item We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), level of precipitation prior to the freezing event \citep{Anderegg2013}, freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. 
 \item The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field.  
 \end{enumerate}
 \end{enumerate}
@@ -119,7 +120,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item The 7 day parameter exposes less resistant foliate phenophases to a false spring, thus putting the plant at a higher risk of damage. 
 \item Once budburst has initiated, buds cannot respond to cold temperatures and freeze resistance is greatly reduced \citep{Taschler2004, Lenz2013, Vitasse2014}.
 \item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
-\item However, the definition is still largely under debate. 
+\item However, these definitions are still largely under debate. 
 \end{enumerate}
 
 \item Damage and drought
@@ -130,7 +131,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Drought and desiccation within the xylem mimick the adverse effects of false spring events \citep{Cavender2015}.
 \item Dry winters typically result in new, frost-tolerant shoots due to the decreased water content and osmotic potential from the reduced number of accumulated solutes \citep{Morin2007, Hofmann2015}.
 \item Therefore, it is hypothesized that increased bud dehydration results in increased frost hardiness \citep{Beck2007, Nielsen2009, Poirier2010, Kathke2011, Hofmann2015}, although long-term drought stress can lead to accumulated xylem damage and decreased false spring tolerance \citep{Anderegg2013}.
-\item More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship impacts the level and type of damage a plant sustains and what the long-term implications may be. 
+\item More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship impacts the level and type of damage a plant sustains.
 \end{enumerate}
 \end{enumerate}
 
@@ -139,9 +140,9 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Elucidate the difference between spring onset and study species
 \begin{enumerate}
-\item Spring forest phenology essentially progresses through successional stages: understory species, seedlings and saplings typically initiate budburst first in order to exploit open canopies and early growth, whereas late successional species may start later in the season to avoid frost or drought risk \citep{Richardson2009, Xin2016}.
-\item Therefore, habitat type plays a large role in the overall spring onset of a specific ecological region. 
-\item Pure grasslands or young forest will, overall, have earlier budburst dates than large stands of canopy trees and mixed forests may have a spring onset date somewhere between the two.
+\item Spring forest phenology typically progresses through successional stages: understory species, seedlings and saplings typically initiate budburst first in order to exploit open canopies and early growth, whereas late successional species may start later in the season to avoid frost or drought risk \citep{Richardson2009, Xin2016}.
+\item Therefore, habitat type plays a large role in the overall spring onset for a specific ecological region. 
+\item Pure grasslands or young forest will, overall, have earlier budburst dates than large stands of canopy trees, and mixed forests may have a spring onset date somewhere between the two.
 \item False spring studies should first assess the forest demographics and functional groups of the study species in order to effectively estimate the date of spring onset.
 \end{enumerate}
 \item Methodologies
@@ -201,12 +202,15 @@ plot(methodplot)
 \item Reproductive phases are generally more sensitive to false spring events than vegetative phases and developing leaves are more susceptible to damage than opening buds or expanding shoots \citep{Augspurger2009, Lenz2013}.
 \item However, trees that suffer severe vegetative growth damage will suffer greater long-term effects from the loss of photosynthetic tissue than trees that lose one year of reproductive growth. 
 \item Spring freezing events that occur during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree and shrub species \citep{Sakai1987}.
-\item Therefore, phenophase is a crucial indicator for how much damage a plant will sustain from a freezing event.
+\item Therefore, spring phenology is a crucial indicator for how much damage a plant will sustain from a freezing event.
 \item Seedlings and saplings initiate budburst before canopy closure in order to benefit from the increased light levels \citep {Augspurger2008}, which puts them at greater risk to false spring damag than adult trees \citep{Vitasse2014}.
 \item Younger plants are mre likely to sustain lasting damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism.
 \item For xylem embolism to occur, extreme cavitation must first be present.
 \item Extensive cavitation in the xylem requires more intensive freezing events than freezing events that damage seedling and sapling leaf buds.
 \item Especially strong freezing events (i.e. > -8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Sakai1987, Augspurger2011, Lenz2013}.
+\item In a year that could have an especially late false spring event, understory species could have fully leafed out and escaped the risk of frost damage but the canopy species could be affected.
+\item This could potentially leading to crown dieback for the larger tree species, enhanced sun exposure to understory species and subsequently damage to the smaller species. 
+\item False spring events could therefore adversely affect other trophic levels if fruit and seed development is impacted \citep{Gu2008}.
 \end{enumerate}
 \item Species Differences
 \begin {enumerate}
@@ -229,7 +233,7 @@ plot(methodplot)
 \item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} due to the shorter growing season and selective pressure to initiate budburst as soon as temperatures are conducive to growth \citep{Prevey2017}. % Lizzie, should I avoid this Prevey reference?
 \item With anthropogenic climate change, it is possible that certain species will have insufficient winter chilling (especially at lower latitudes) resulting in higher spring forcing requirements \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}.
 \item Similarly, spring forcing temperature and photoperiod length requirements for budburst to occur vary among species and habitats.
-\item This is evident throught he high levels of genetic diversity for spring budburst to occur across temperate forest tree species \citep{Chuine2001}.
+\item This is evident through the high levels of genetic diversity for spring budburst to occur across temperate forest tree species \citep{Chuine2001}.
 \item Data from a growth chamber experiment were used to compare 9 temperate forest species between two treatments: high chilling hours, long photoperiod and high forcing temperatures (WL1) against no additional chilling, short photoperiod and low forcing temperatures (CS0) (Flynn and Wolkovich, 2017?).
 
 <<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out.", fig.pos="H">>=
@@ -281,7 +285,7 @@ plot(chill)
 \item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
 \item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:forest}). 
 \item This could potentially be due to photoperiodic effects.
-\item Forcing temperature requirements, like chilling requirements, are key phenotypic traits for many temperate tree species \citep{Kramer2017}, which may explain the similarity in growing degree days and budburst date between the two years. 
+\item Forcing temperature requirements, like chilling requirements, are key phenotypic traits for many temperate tree species \citep{Kramer2017}, which may explain the similarity in the relationship between growing degree days and budburst date across the two years. 
 \end{enumerate}
 \end {enumerate}
 
