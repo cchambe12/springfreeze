@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 17:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -890,13 +890,18 @@ Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 287.
 File: ..//figure/RegionalRisk.pdf Graphic file (type pdf)
 
 <use ..//figure/RegionalRisk.pdf>
-Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 368.
-(pdftex.def)             Requested size: 377.62633pt x 251.7534pt.
+Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 369.
+(pdftex.def)             Requested size: 455.24167pt x 369.87997pt.
  [15
 
 
  <..//figure/RegionalRisk.pdf>]
-(./Outline_formatted.bbl
+Overfull \hbox (2.31305pt too wide) in paragraph at lines 387--388
+[]\T1/aer/m/n/10 Plants have higher freeze tol-er-ance af-ter ex-po-sure to low
+ tem-per-a-tures over a pe-riod of time (Thomashow,
+ []
+
+(./Outline_formatted.bbl [16]
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 55.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
@@ -905,14 +910,14 @@ File: ts1aer.fd
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 55.
 
-[16] [17] [18] [19] [20] [21]) [22] [23] [24] [25] [26]
+[17] [18] [19] [20] [21] [22]) [23] [24] [25] [26] [27]
 (./Outline_formatted.aux) ) 
 Here is how much of TeX's memory you used:
- 15713 strings out of 493014
- 311940 string characters out of 6133351
- 366255 words of memory out of 5000000
- 19036 multiletter control sequences out of 15000+600000
- 41205 words of font info for 86 fonts, out of 8000000 for 9000
+ 15728 strings out of 493014
+ 312159 string characters out of 6133351
+ 367514 words of memory out of 5000000
+ 19047 multiletter control sequences out of 15000+600000
+ 44851 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,49p,10389b,667s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/
@@ -925,18 +930,19 @@ fonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Outline_formatted.pdf (26 pages, 306986 bytes).
+/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Outline_formatted.pdf (27 pages, 316341 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 192 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
