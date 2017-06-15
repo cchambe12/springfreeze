@@ -91,7 +91,7 @@ leaf<- leaf.avg%>%
 # To double check my script is accurate
 hf<- filter(hf, Year>=2009)
 hf<- filter(hf, Site == "hf")
-hf$gdd <- hf$AirT - 5
+hf$gdd <- hf$AirT - 5 # Can be 0 here if want 0 degC as threshold
 hf$gdd <-ifelse(hf$gdd>0, hf$gdd, 0)
 hf$count <- ave(
   hf$gdd, hf$Year, 
