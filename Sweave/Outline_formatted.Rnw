@@ -61,7 +61,7 @@ library(lubridate)
 \begin {enumerate}
 \item Plants growing in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to growth. 
 \item Individuals that leaf out before the last frost date are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. 
-\item Therefore, temperate deciduous tree species must have plastic phenological responses in the spring in order to optimize photosynthesis and minimize frost or drought risk \citep{Polgar2011}. 
+\item Therefore, temperate deciduous tree species must have plastic phenological responses in the spring in order to optimize photosynthesis and minimize frost or drought risk \citep{Polgar2011}.  %EMW: I think you can skip this here, the points above are plenty for an intro. Maybe save this for later if it fits?
 \item These late spring freezing events are known as false springs. 
 \item False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}.
 \end{enumerate}
@@ -70,22 +70,27 @@ library(lubridate)
 \item Climate change is expected to increase damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Cannell1986, Inouye2008, Martin2010}. 
 \item Temperate forest species around the world are initiating leafout about 4.6 days earlier per degree Celsius \citep{Wolkovich2012, Polgar2014}. 
 \item It is anticipated that there will be a decrease in false spring frequency overall but the magnitude of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Kodra2011, Allstadt2015}. 
-\item Multiple studies have documented false spring events in recent years \citep{Gu2008, Augspurger2009, Knudson2012, Augspurger2013} and some have linked this to climate change \citep{Ault2013, Allstadt2015, Muffler2016, Xin2016}. 
+\item Already, multiple studies have documented false spring events in recent years \citep{Gu2008, Augspurger2009, Knudson2012, Augspurger2013} and some have linked this to climate change \citep{Ault2013, Allstadt2015, Muffler2016, Xin2016}. 
 \item Due to these reasons, it is crucial for researchers to properly evaluate the effects of false spring events on temperate forests and agricultural crops in order to make more accurate predictions on future trends.
 \end{enumerate}
 
-\item Introduce Current False Spring Index Equation
+\item Introduce How Researchers Currently Estimate False Spring (incl. Current False Spring Index Equation)
 \begin{enumerate}
-\item Different species respond differently to late spring freezing events. 
-\item The level of damage sustained by plants from a false spring also varies across phenophases. 
-\item Various studies have assessed the risk of damage or the intensity of particular false spring events but at this time false spring studies fail to incorporate all potential factors that could affect the level of frost damage risk. 
+\item Growing interest in False Spring has led to lots of work on it ... 
 \item A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. 
 \item Currently, FSI evaluates day of budburst, number of growing degree days, and day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
 \begin{equation} \label{eq:1}
 FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{equation}
-\item False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events. 
+\item This FSI, however, makes a suite of assumptions (False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events), including:
+\begin{enumerate}
+\item Different species respond the same to late spring freezing events. 
+\item The level of damage sustained by plants from a false spring is constant across phenophases. 
+\end{enumerate}
+\end{enumerate}
 \item In contrast to these simplifications, we argue that a wealth of factors greatly impacts plants' frost spring risk such that simple indices will most likely lead to inaccurate predictions and ultimately do little to advance the field. 
+\begin{enumerate}
+\item Give quick list here and simple evidence of some of the big factors you will discuss... 
 \end{enumerate}
 
 \item State the Purpose of the Paper
@@ -97,6 +102,13 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 
 %%%%%%%%%% DEFINING FALSE SPRING %%%%%%%%%%%%%
+
+% Possible re-ordering framework %
+% (1) How frosts hurt plants (1 paragraph)
+% (2) How plants deal with this (include brief discussion of cues for temperate plant leafout): (a) avoidance, (b) tolerance
+% (3) How False Spring is currently defined
+% (4) Major issues with how False Spring is currently defined: (a) assumes way to much consistency across species, (b) ignore vegetative risk reality
+
 \section*{Defining False Spring}
 \begin{enumerate}
 \item Definition and Threat
@@ -123,7 +135,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item However, these definitions are still largely under debate. 
 \end{enumerate}
 
-\item Damage and drought
+\item Damage and drought 
 \begin{enumerate}
 \item Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Pearce2001, Beck2004, Hofmann2015}.
 \item Intracellular ice formation often results in defoliaiton and increased xylem cavitation or embolism in the stem.
@@ -135,7 +147,8 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 \end{enumerate}
 
-%%%%%%%%%% DETERMINING SPRING ONSET %%%%%%%%%%%%%
+%%%%%%%%%% DETERMINING SPRING ONSET in temperate plant communities %%%%%%%%%%%%%
+% Focus on species groupings (like functional types etc.?) and then more on individual species ... 
 \section*{Determining Spring Onset}
 \begin{enumerate}
 \item Elucidate the difference between spring onset and study species
@@ -188,6 +201,8 @@ plot(methodplot)
 \end{enumerate}
 
 %%%%%%%%%% Understanding (Defining?) Vegetative Risk %%%%%%%%%%%%%
+% Keep working in species differences, now add in phenophases and return to concept of tolerance .... 
+
 \section*{Defining Vegetative Risk}
 \begin{enumerate}
 \item Define Vegetative Risk
@@ -203,8 +218,8 @@ plot(methodplot)
 \item However, trees that suffer severe vegetative growth damage will suffer greater long-term effects from the loss of photosynthetic tissue than trees that lose one year of reproductive growth. 
 \item Spring freezing events that occur during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree and shrub species \citep{Sakai1987}.
 \item Therefore, spring phenology is a crucial indicator for how much damage a plant will sustain from a freezing event.
-\item Seedlings and saplings initiate budburst before canopy closure in order to benefit from the increased light levels \citep {Augspurger2008}, which puts them at greater risk to false spring damag than adult trees \citep{Vitasse2014}.
-\item Younger plants are mre likely to sustain lasting damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism.
+\item Seedlings and saplings initiate budburst before canopy closure in order to benefit from the increased light levels \citep {Augspurger2008}, which puts them at greater risk to false spring damage than adult trees \citep{Vitasse2014}.
+\item Younger plants are more likely to sustain lasting damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism.
 \item For xylem embolism to occur, extreme cavitation must first be present.
 \item Extensive cavitation in the xylem requires more intensive freezing events than freezing events that damage seedling and sapling leaf buds.
 \item Especially strong freezing events (i.e. > -8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Sakai1987, Augspurger2011, Lenz2013}.
@@ -223,7 +238,6 @@ plot(methodplot)
 \item It is hypothesized that if the duration of vegetative risk is longer, then the buds and leaves will be heartier against frosts, however this still has yet to be tested thoroughly.
 \item We assess the interaction between duration of vegetative risk and false spring events using two datasets: from a growth chamber chilling experiment and long-term observational data.
 \end {enumerate}
-
 
 \item Dan's Data
 \begin{enumerate}
