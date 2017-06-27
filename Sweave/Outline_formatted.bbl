@@ -1,5 +1,11 @@
-\begin{thebibliography}{80}
+\begin{thebibliography}{84}
 \providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
+  Stinchcombe}]{Agrawal2004}
+Agrawal, A.A., Conner, J.K. \& Stinchcombe, J.R. (2004) Evolution of plant
+  resistance and tolerance to frost damage. \emph{Ecology Letters} \textbf{7},
+  1199--1208.
 
 \bibitem[{Alberto \emph{et~al.}(2013)Alberto, Aitken, Al{\'\i}a,
   Gonz{\'a}lez-Mart{\'\i}nez, H{\"a}nninen, Kremer, Lef{\`e}vre, Lenormand,
@@ -74,6 +80,11 @@ Basler, D. \& K{\"{o}}rner, C. (2012) {Photoperiod sensitivity of bud burst in
   14 temperate forest tree species}. \emph{Agricultural and Forest Meteorology}
   \textbf{165}, 73--81.
 
+\bibitem[{Basler \& Korner(2014)}]{Basler2014}
+Basler, D. \& Korner, C. (2014) Photoperiod and temperature responses of bud
+  swelling and bud burst in four temperate forest tree species. \emph{Tree
+  Physiology} \textbf{34}, 377--388.
+
 \bibitem[{Beck \emph{et~al.}(2007)Beck, Fettig, Knake, Hartig \&
   Bhattarai}]{Beck2007}
 Beck, E.H., Fettig, S., Knake, C., Hartig, K. \& Bhattarai, T. (2007) Specific
@@ -110,13 +121,6 @@ Cannell, M. \& Smith, R. (1986) {Climatic Warming , Spring Budburst and Forest
   http://www.jstor.org/stable/2403090 JSTOR is a not-for-profit service that
   helps schol}. \emph{Journal of Applied Ecology} \textbf{23}, 177--191.
 
-\bibitem[{Cavender-Bares \emph{et~al.}(2015)Cavender-Bares,
-  Gonz{\'a}lez-Rodr{\'\i}guez, Eaton, Hipp, Beulke \& Manos}]{Cavender2015}
-Cavender-Bares, J., Gonz{\'a}lez-Rodr{\'\i}guez, A., Eaton, D.A.R., Hipp,
-  A.A.L., Beulke, A. \& Manos, P.S. (2015) Phylogeny and biogeography of the
-  american live oaks (quercussubsectionvirentes): a genomic and population
-  genetics approach. \emph{Molecular Ecology} \textbf{24}, 3668--3687.
-
 \bibitem[{Chuine(2010)}]{Chuine2010}
 Chuine, I. (2010) Why does phenology drive species distribution?
   \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}
@@ -133,12 +137,30 @@ Cleland, E., Chiariello, N., Loarie, S., Mooney, H. \& Field, C. (2006) Diverse
   responses of phenology to global changes in a grassland ecosystem.
   \emph{PNAS} \textbf{103}, 13740--13744.
 
+\bibitem[{Cleland \emph{et~al.}(2007)Cleland, Chuine, Menzel, Mooney \&
+  Schwartz}]{Cleland2007}
+Cleland, E.E., Chuine, I., Menzel, A., Mooney, H.A. \& Schwartz, M.D. (2007)
+  {Shifting plant phenology in response to global change}. \emph{Trends in
+  Ecology and Evolution} \textbf{22}, 357--365.
+
 \bibitem[{Donnelly \emph{et~al.}(2017)Donnelly, Yu, Caffarra, Hanes, Liang,
   Desai, Liu \& Schwartz}]{Donnelly2017}
 Donnelly, A., Yu, R., Caffarra, A., Hanes, J.M., Liang, L., Desai, A.R., Liu,
   L. \& Schwartz, M.D. (2017) Interspecific and interannual variation in the
   duration of spring phenophases in a northern mixed forest. \emph{Agricultural
   and Forest Meteorology} \textbf{243}, 55--67.
+
+\bibitem[{Edwards \emph{et~al.}(2017)Edwards, Chatelet, Spriggs, Johnson,
+  Schlutius \& Donoghue}]{Edwards2017}
+Edwards, E.J., Chatelet, D.S., Spriggs, E.L., Johnson, E.S., Schlutius, C. \&
+  Donoghue, M.J. (2017) Correlation, causation, and the evolution of leaf
+  teeth: A reply to givnish and kriebel. \emph{Am J Bot} \textbf{104},
+  509--515.
+
+\bibitem[{Essiamah \& Eschrich(1986)}]{Essiamah1986}
+Essiamah, S. \& Eschrich, W. (1986) Water uptake in deciduous trees during
+  winter and the role of conducting tissues in spring reactivation. \emph{IAWA
+  Bulletin} \textbf{7}, 31--38.
 
 \bibitem[{Fu \emph{et~al.}(2012)Fu, Campioli, {Van Oijen}, Deckmyn \&
   Janssens}]{Fu2012}
