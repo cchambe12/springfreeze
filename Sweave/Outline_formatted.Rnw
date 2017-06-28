@@ -60,7 +60,7 @@ library(lubridate)
 \item Introduce False Spring Concept
 \begin {enumerate}
 \item Plants growing in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to growth. 
-\item Individuals that leaf out before the last frost date are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. 
+\item Individuals that leaf out before the last freeze date are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. 
 \item These late spring freezing events are known as false springs. 
 \item False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}.
 \end{enumerate}
@@ -95,7 +95,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item State the Purpose of the Paper
 \begin{enumerate}
 \item In this paper we aim to highlight the complexity of factors driving a plant's false spring risk. 
-\item We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), level of precipitation prior to the freezing event \citep{Anderegg2013}, freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. 
+\item We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich 2017?), freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. 
 \item The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field.  
 \end{enumerate}
 \end{enumerate}
@@ -117,7 +117,6 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Pearce2001, Beck2004, Hofmann2015}.
 \item Bud swelling in the spring is caused by increased water content \citep{Essiamah1986}, making buds more susceptible to intracellular freezing. 
 \item Intracellular ice formation can cause defoliation, xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}.
-\item Freezing tolerance in plants is usually against extracellular freezing or freezing dehydration \citep{Burke1976}.
 \item Species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damaging events such as false springs \citep{Scheifinger2003}.
 \end {enumerate}
 
@@ -284,30 +283,32 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 %%%% NEEDS SOOOOOO MUCH WORK!!!!! %%%%%%%%%%%%%%%%%
 
 \section*{Conclusion}
+\begin{enumerate}
+\item Significance of False Spring events
+\begin{enumerate}
+\item As global change progresses and atmospheric CO$_{\text{2}}$ increases, false spring damage will likely worsen and low temperature thresholds will decrease (Table \ref{tab:temperature}) \citep{Beerling2001, Barker2005}.
+\item Plants have higher freeze tolerance after exposure to low temperatures over a period of time \citep{Thomashow1999} so shorter dormancy lengths coupled with elevated CO$_{\text{2}}$ levels could result in highly adverse effects. 
+\item Ecosystem dynamics and risk of damage can vary from year to year and the timing between last freeze date and date of spring onset may become less consistent. 
+\item With warm temperatures advancing in the spring but last spring freeze dates staying the same, there could potentially be more damaging events in the future, especially in high risk regions \citep{Gu2008, Inouye2008}.
+\item This shift in timing could result in more events where understory species leaf out prior to the last freeze and escape frost damage but canopy species may be at higher risk, thus potentially resulting in crown dieback for the larger tree species and subsequently enhanced sun exposure and damage to understory species.
+\item False spring events could also adversely affect other trophic levels if fruit and seed development is impacted \citep{Gu2008}, making false spring studies even more ecologically significant.
+\end{enumerate}
 
-\item In a year that could have an especially late false spring event, understory species could have fully leafed out and escaped the risk of frost damage but the canopy species could be affected.
-\item This could potentially lead to crown dieback for the larger tree species, enhanced sun exposure to understory species and subsequently sun damage to the understory species. 
-\item False spring events could also adversely affect other trophic levels if fruit and seed development is impacted \citep{Gu2008}.
-
-
+\item Introduce Phenology
 \begin{enumerate}
 \item Phenology is closely linked to climatic regimes \citep{Wolkovich2011} and is therefore a key indicator in phenotypic variation for cold adpated traits and false spring risk avoidance.
 \item Understanding the variation of spring onset across regions and within habitats as well as the rate of budburst will permit greater insight into false spring risk.
-\item Tree species with smaller and more fragemented distribution ranges are more prone to genetic drift due to geographic barriers and higher susceptibility to stochastic events (i.e. frost and drought) \citep{Alberto2013} so gathering data on species at risk is essential. 
-\item Climate change could increase the level of damage from spring frost events, especially in certain regions or for particular species, due to earlier spring onset and greater fluctuations in temperature \citep{Martin2010}. 
+\item Tree species with smaller and more fragemented distribution ranges are more at risk to stochastic events (i.e. frost and drought) \citep{Alberto2013}. 
 \item Therefore, it is essential that temperate forest tree species maintain continuous ranges in order to successfully track the changes in climate and to utilize photoperiodic and temperature cues simultaneously rather than rely strickly on photoperiodism especially along range edges \citep{Zohner2016, Gauzere2017}.
-\item Ecosystem dynamics and risk of damage can vary from year to year and the timing of the last spring freeze in relation to higher spring forcing temperatures may become less consistent. 
-\item Fewer freezing events does not necessarily mean there will be less false spring damage.
-\item With warm temperatures advancing in the spring but last spring freeze dates staying the same, there could potentially be more damaging events in the future, especially in high risk regions \citep{Gu2008, Inouye2008}.
-\item As global change progresses and atmospheric CO$_{\text{2}}$ increases, false spring damage will likely be intensified and low temperature thresholds will decrease (Table \ref{tab:temperature}) \citep{Beerling2001, Barker2005}.
-\item Plants have higher freeze tolerance after exposure to low temperatures over a period of time \citep{Thomashow1999} so shorter dormancy lengths coupled with elevated CO$_{\text{2}}$ levels could result in highly adverse effects. 
-\item Global change will also likely result in less snow accumulation and decreased snowpack in the early spring, which could cause increased exposure of fine roots to freezing temperatures, further augmenting the detrimental effects of false spring events. 
-\item Future studies are necessary to investigate the relationship between anthropogenic climate change, phenological plasticity, the level of damage sustained from false spring events, and the duration of vegetative risk. 
-\item In a year that could have an especially late false spring event, understory species could have fully leafed out and escaped the risk of frost damage but the canopy species could be affected.
-\item This could potentially lead to crown dieback for the larger tree species, enhanced sun exposure to understory species and subsequently sun damage to the understory species. 
-\item False spring events could also adversely affect other trophic levels if fruit and seed development is impacted \citep{Gu2008}.
+\item Future studies are necessary to investigate the relationship between anthropogenic climate change, spatiotemporal factors, the duration of vegetative risk, and the level of damage sustained from false spring events
 \end{enumerate}
 
+\item Drive home importance of new equation
+\begin{enumerate}
+\item With only utilizing two simple metrics (last freeze date and spring onset date), researchers fail to assess the myriad of factors essential in determining false spring risk and damage. 
+\item Need to work on...
+\end{enumerate}
+\end{enumerate}
 
 
 

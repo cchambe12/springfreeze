@@ -53,6 +53,8 @@ library(lubridate)
 \section*{Extra!}
 \begin{enumerate}
 
+level of precipitation prior to the freezing event \citep{Anderegg2013}
+
 \item Therefore, temperate deciduous tree species must have plastic phenological responses in the spring in order to optimize photosynthesis and minimize frost or drought risk \citep{Polgar2011}. 
 
 \item Abnormally warm conditions in the late winter or early spring can cause budburst to initiate early in trees and shrubs.
@@ -81,6 +83,18 @@ library(lubridate)
 
 \item Observational FSI values and USA-NPN FSI values are highly comparable and are justifiable methods for determining potenial false spring risk.
 \item PhenoCam data is also comparable to the other two methods, however, it would be more useful for canopy species, which is evident from the results seen in 2012 (Figure \ref{fig:fsifig}).
+
+\item In a year that could have an especially late false spring event, understory species could have fully leafed out and escaped the risk of frost damage but the canopy species could be affected.
+
+\item Global change will also likely result in less snow accumulation and decreased snowpack in the early spring, which could cause increased exposure of fine roots to freezing temperatures, further augmenting the detrimental effects of false spring events. 
+
+\item Climate change could increase the level of damage from spring frost events, especially in certain regions or for particular species, due to earlier spring onset and greater fluctuations in temperature \citep{Martin2010}. 
+
+\item In a year that could have an especially late false spring event, understory species could have fully leafed out and escaped the risk of frost damage but the canopy species could be affected.
+\item This could potentially lead to crown dieback for the larger tree species, enhanced sun exposure to understory species and subsequently sun damage to the understory species. 
+\item False spring events could also adversely affect other trophic levels if fruit and seed development is impacted \citep{Gu2008}.
+
+\item Freezing tolerance in plants is usually against extracellular freezing or freezing dehydration \citep{Burke1976}.
 
 \end{enumerate}
 
