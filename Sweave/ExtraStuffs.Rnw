@@ -64,6 +64,24 @@ library(lubridate)
 \item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
 \item However, these definitions are still largely under debate. 
 
+
+
+\item For xylem embolism to occur, extreme cavitation must first be present.
+
+\item Younger plants are more likely to sustain lasting damage to the leaf buds and vegetative growth, whereas adult trees are at risk of xylem embolism.
+\item Extensive cavitation in the xylem requires more intensive freezing events than freezing events that damage seedling and sapling leaf buds.
+\item Especially strong freezing events (i.e. > -8.6$^{\circ}$C), could result in meristemic tissue, wood parenchyma and phloem damage \citep{Sakai1987, Augspurger2011, Lenz2013}.
+
+\item For these reasons, a greater understanding of false spring damage as climate change progresses is necessary.
+
+\item Habitat type and species demographics impacts the overall spring onset date for a specific ecological region. 
+\item Spring onset date can vary by functional group, species demographics, or habitat type.
+\item Pure grasslands or young forest will, overall, have earlier budburst dates than large stands of canopy trees.
+\item Mixed forests may have an overall spring onset date somewhere between the two.
+
+\item Observational FSI values and USA-NPN FSI values are highly comparable and are justifiable methods for determining potenial false spring risk.
+\item PhenoCam data is also comparable to the other two methods, however, it would be more useful for canopy species, which is evident from the results seen in 2012 (Figure \ref{fig:fsifig}).
+
 \end{enumerate}
 
 
