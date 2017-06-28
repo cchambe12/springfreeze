@@ -1,0 +1,411 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(grid)
+library(lubridate)
+@
+
+\begin{document}
+\title{Rethinking False Spring Risk}
+\author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$}
+\date{\today}
+\maketitle 
+ 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+Plants growing in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to growth. Individuals that leaf out before the last freeze date are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. These late spring freezing events are known as false springs. False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}. 
+
+Climate change is expected to increase damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Cannell1986, Inouye2008, Martin2010}. Temperate forest species around the world are initiating leafout about 4.6 days earlier per degree Celsius \citep{Wolkovich2012, Polgar2014}. It is anticipated that there will be a decrease in false spring frequency overall but the magnitude of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Kodra2011, Allstadt2015}. Already, multiple studies have documented false spring events in recent years \citep{Gu2008, Augspurger2009, Knudson2012, Augspurger2013} and some have linked this to climate change \citep{Ault2013, Allstadt2015, Muffler2016, Xin2016}. Due to these reasons, it is crucial for researchers to properly evaluate the effects of false spring events on temperate forests and agriculutural crops in order to make more accurate predictions on future trends.
+
+Growing interest in false spring has led to lots of work on it. A False Spring Index (FSI) signifies the likelihood of damage to occur from a late spring freeze. Currently, FSI is evaluated by the day of budburst and the day of last spring freeze through a simple equation as seen below \citep{Marino2011}.
+\begin{equation} \label{eq:1}
+FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
+\end{equation}
+This equation, however, makes a suite of assumptions (False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events), including: 
+\begin{enumerate}
+\item Different species respond the same to late spring freezing events and \item The level of damage sustained by plants from a false spring is constant across phenophases.
+\end{enumerate}
+
+In this paper we aim to highlight the complexity of factors driving a plant's false spring risk. We outline in particular how life stage of the individual \citep{Caffarra2011}, location within a forest or canopy \citep{Augspurger2013}, winter chilling hours (Flynn \& Wolkovich, 2017?), freeze duration/intensity, and range limits of the species \citep{Martin2010} unhinge simple metrics of false spring. The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field. 
+
+\section* {Defining False Spring}
+Temperate forest plants are most at risk to frost damage from episodic spring frosts \citep{Sakai1987}. Freezing temperatures following a warm spell could result in plant damage or even death \citep{Ludlum1968, Mock2007}. Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Pearce2001, Beck2004, Hofmann2015}. Bud swelling in the spring is caused by increased water content \citep{Essiamah1986}, making buds more susceptible to intracellular freezing. Intracellular ice formation can cause defoliation, xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}. Species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damage from stochastic events such as false springs \citep{Scheifinger2003}.
+
+Temperate deciduous tree species optimize growth and minimize spring freeze damage by using three cues to initiate budburst: low winter temperatures, warm spring temperatures, and longer photoperiods \citep{Cleland2007, Polgar2011}. Deciduousness and the evolution of two dormancy phases (i.e. endodormancy and ecodormancy) in temperate forest trees has permitted species to occupy more northern ecological niches and decrease the risk of false spring damage \citep{Samish1954}. Endodormancy is the period of time when growth can occur but the external environment is not conducive to growth (e.g. too cold) \citep{Basler2012}. Therefore, warm temperatures earlier in the year (i.e. in February) do not seem to affects species, most likely because trees have not yet left the endodormancy phase. Likewise, photoperiod sensitivity is a common false spring avoidance strategy: species that respond to photoperiod cues more than warm spring temperatures will likely delay budburst and evade false spring events \citep{Basler2014}.
+
+Some temperate forest species have evolved to be more tolerant of spring freezing temperatures. Many temperate forest trees have toothed or lobed leaves, which could permit greater `packability' into winter buds. This increased packability likely reduces the metabolic requirements for spring budburst to occur and increases teh rate of leaf out \citep{Edwards2017}. Temperate forest tree leaves generally have more trichomes (i.e. small, unicellular hairs), giving young leaves greater protection against false springs once budburst has already initiated \citep{Agrawal2004}. Finally, many temperate forest plants can respond to environmental cues. Dry winters typically result in new, frost-tolerant shoots due to the decreased water content and osmotic potential from the reduced number of accumulated solutes \citep{Morin2007, Hofmann2015}. Therefore, it is hypothesized that increased bud dehydration results in increased frost hardiness \citep{Beck2007, Nielsen2009, Poirier2010, Kathke2011, Hofmann2015}, although long-term drought stress can lead to accumulated xylem damage and decreased false spring tolerance \citep{Anderegg2013}. More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship affects false spring tolerance. 
+
+False springs are defined by two phases: rapid vegetative growth prior to a freeze and a post freeze setback \citep{Gu2008}. Frost damage usually occurs when there is a warmer than average March, a freezing April, and enough growing degree days between budburst and the last freeze date \citep{Augspurger2013}. A damaging false spring is currently defined as having 7 or more days between budburst and the last freeze date (Equation \ref{eq:1}) \citep{Peterson2014}. The 7 day parameter exposes less resistant foliate phenophases to a false spring, thus putting the plant at higher risk of damage. Once budburst has initiated, buds cannot respond to cold temperatures and freeze resistance is greatly reduced \citep{Taschler2004, Lenz2013, Vitasse2014}.
+
+The current definition of a false spring fails to incorporate the different avoidance and tolerance strategies commonly seen in temperate forest species. The FSI equation and 7 day parameter assumes consistency across species, functional group, life stage, habitat type, and other climatic regimes, which is largely inadequate. A new approach that integrates these other crucial factors is necessary to accurately determine current false spring damage and future spring freeze risk.
+
+\section*{Determining Spring Onset and Last Freeze Date in Temperate Plant Communities}
+Spring phenology in temperate forests typically progresses by functional group: understory species and young trees tend to initiate budburst first, whereas late successional species may start later in the season \citep{Richardson2009, Xin2016}. Seedlings and saplings are more opportunistic and initiate budburst before canopy closure in order to benefit from the increased light levels \citep{Augspurger2008}, which potentially puts understory species at greater risk to false spring damage than adult trees \citep{Vitasse2014}. Therefore, false spring studies should first assess the forest demographics and functional groups of the study species in order to effectively estimate the date of spring onset.
+
+A suitable methodology for determining spring onset is cruicial in order to establish an effective model for false spring risk, especially since the current false spring equation (Equation \ref{eq:1}) could render erroneous results. There are many methods available to ascertain the first day of spring. Spring onset can be calculated through observational data, PhenoCam or remote-sensing data, or through the USA National Phenology Network's (USA-NPN) Extended Spring Index (SI-x) tool \citep{USA-NPN2016}. Studies often use observational data to evaluate spring onset to target budburst more precisely, however, it can be difficult or even impossible for large-scale studies. PhenoCam and remote-sensing data is suitable for canopy tree species, whereas USA-NPN SI-x is more applicable for understory species. The three methodologies to determine spring onset were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted into the FSI equation (Equation \ref{eq:1}) to calculate FSI values from 2008 to 2014 (Figure \ref{fig:fsifig}). In 2012, a false spring event was reported through many regions of the US due to warm temperatures occuring in March \citep{Ault2015}. These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepany in results for 2012 (Figure \ref{fig:fsifig}). Researchers should use the USA-NPN dataset for understory species, PhenoCam or remote-sensing data for late successional species, and observational data for a wide array of plant functional types.
+
+<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
+read_chunk("..//scripts/John.okeefe.R")
+method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+
+FSI.table<- method %>%
+  dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
+  rename(okeefe = FSI_okeefe) %>%
+  rename(phenocam = FSI_cam) %>%
+  rename(npn = FSI_npn) %>%
+  filter(year>=2008) %>%
+  filter(year<2015)
+blend<-FSI.table %>% 
+  gather(Method, FSI, -year) %>%
+  arrange(year)
+
+methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
+  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
+  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
+  geom_line(aes(x=year, y=FSI, col=Method))
+plot(methodplot)
+
+@
+
+
+The false spring equation also requires a last freeze date input. There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}. However, these definitions are still largely under debate. There are numerous definitions of freezes and various requirements for damaging spring temperatures (Table \ref{tab:temperature}), making it extremely difficult to determine when the last freeze date is in the spring. Future false spring equations must integrate species, life stage, and habitat differences in temperature thresholds in order to accurately determine level of damage sustained by a false spring event.
+ 
+\begin{landscape}
+\begin{center}
+\captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:temperature} 
+\footnotesize
+\begin{tabular}{|c | c | c | c | c | c|}
+\hline
+\textbf{Sector} & \textbf{BBCH} & \textbf{Species} & \textbf{Temperature ($^{\circ}$C)} & \textbf{Type} & \textbf{Source} \\
+\hline
+Ecological & 9-15 & Sorbus aucuparia & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Prunus avium & -8.5 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Tilia platyphyllos & -7.4 & 50\% lethality & \cite{Lenz2016} \\
+\hline
+Ecological & 9-15 & Acer pseudoplatanus & -6.7 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9-15 & Fagus sylvatica & -4.8 & 50\% lethality & \cite{Lenz2016}\\
+\hline
+Ecological & 9+ & All & -2.2 & hard & \cite{Schwartz1993}\\
+\hline
+Ecological & 9+ & All & -1.7 & soft & \cite{Augspurger2013} \\
+\hline
+Ecological & All & All & 2 SD below winter TAVG & cold-air outbreaks & \cite{Vavrus2006} \\
+\hline
+Ecological & 9+ & Eucalyptus pauciflora & -5.8 & elevated CO2 and temperature threshold & \cite{Barker2005} \\
+\hline
+Ecological & 9+ & All & -2.2 & 7 day threshold & \cite{Peterson2014} \\
+\hline
+Agrinomical & 9+ & All & 2 & Risk threshold for clear nights & \cite{Cannell1986} \\
+\hline
+Agrinomical & Floral & Vaccinium spp. & -4.4 to 0 & sprinkler protection threshold & \cite{Longstroth2012} \\
+\hline
+Agrinomical & 9 & Rosaceae & -7.2 & 10\% lethality & \cite{Longstroth2013}\\
+\hline
+Agrinomical & 9 & Rosaceae & -13.3 & 90\% lethality & \cite{Longstroth2013} \\
+\hline
+Agrinomical & All & All & Varies & Radiation Frost & \cite{Barlow2015} \\
+\hline
+Agrinomical & Floral & Wheat & -4 to -5 & 10-90\% lethality & \cite{Barlow2015} \\
+\hline
+Agrinomical & Vegetative & Wheat & -7 for 2hrs & 100\% lethality & \cite{Barlow2015} \\
+\hline
+Agrinomical & Vegetative & Rice & 4.7 & lethal limit & \cite{Sanchez2013} \\
+\hline
+Agrinomical & Vegetative & Corn & -1.8 & lethal limit & \cite{Sanchez2013}\\
+\hline
+Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & \cite{Sanchez2013} \\
+\hline
+\end{tabular}
+\end{center}
+\end{landscape}
+\restoregeometry
+
+
+\section*{Defining Vegetative Risk}
+Different species respond differently to anthropogenic climate change. Most species are expected to begin leafout earlier in the season with warming spring temperatures but some species may have the opposite response \citep{Cleland2006, Yu2010, Xin2016}. Studies indicate that species growing at more northern latitudes tend to respond greater to photoperiod than species growing further south \citep {Partanen2004, Viheraaarnio2006, Caffarra2011}. Similarly, late successional species exhibit greater photoperiod sensitivies than pioneer or understory species \citep{Basler2012} and they also require more chilling in the winter and greater forcing temperatures in the spring to initiate budburst \citep{Laube2013}. It is anticipated that these more opportunistic individuals that initiate budburst earlier in the spring would attempt to limit freezing risk by increasing the rate of budburst and progress to full leaf expansion faster.
+
+Reproductive phases are generally more sensitive to false spring events than vegetative phases. \citep{Augspurger2009, Lenz2013}. However, false spring events that occur during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree and shrub species because plants will suffer greater long-term effects from the loss of photosynthetic tissue than trees that lose one year of reproductive growth \citep{Sakai1987}. Plants at certain vegetative phenophases (i.e. before full leafout of the entire plant) are more likely to sustain damage from a false spring than individuals past the leafout phenophase. Therefore, spring phenology is a crucial indicator for how much damage a plant will sustain from a freezing event.
+
+Freezing tolerance steadily decreases after budburst begins until the leaf is fully unfolded, with leafout being the most susceptible to false spring damage \citep {Lenz2016}. The rate of budburst and the length of time between budburst and leafout is essential for predicting level of damage from a false spring event. We will refer to the timing of these collective phenophases (i.e. budburst to leafout) as the duration of vegetative risk. The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout. Species with short durations of vegetative risk often sustain higher levels of damage \citep {Augspurger2009}. It is hypothesized that if the duration of vegetative risk is longer, then the buds and leaves will be heartier against frosts, however this still has yet to be tested thoroughly. We assess the interaction between duration of vegetative risk and false spring events using two datasets: from a growth chamber chilling experiment and long-term observational data.
+
+\subsection*{Dan's Data} % Need title
+Deciduous trees and shrubs require a certain number of chilling units in order to leave the endodormancy phase. This helps protect temperate plants against stochastic warm spells in the winter so that they do not break dormancy too early in the season. Chilling units differ across species and across habitats. Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. % Lizzie, should I avoid this Prevey reference? 
+With anthropogenic climate change, it is possible that certain species will have insufficient winter chilling (especially at lower latitudes) resulting in higher spring forcing requirements \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. Similarly, spring forcing temperature and photoperiod cues for budburst to occur vary among species and habitats, which is evident through the high levels of genetic diversity across temperate forest tree species \citep{Chuine2001}. Data from a growth chamber experiment were used to compare 9 temperate forest species between two treatments: high chilling hours, long photoperiod and high forcing temperatures (WL1) against no additional chilling, short photoperiod and low forcing temperatures (CS0) (Flynn and Wolkovich, 2017?).
+
+According to the results, individuals that initiate budburst earlier in the season (i.e. {\textit {Betula papyrifera}} (Marsh.) and {\textit{Ilex mucronata}} (L.)) tend to initiate budburst early regardless of treatment, but the treatment does affect the duration of vegetative risk significantly (Figure \ref{fig:dan}). As the season progresses, treatment does not affect the duration of vegetative risk as much, however, the day of budburst tends to be later in the season with the weaker treatment effects (i.e. CS0). Anova results indicate forcing temperatures and photoperiod length determine the duration of vegetative risk more than chilling requirements. This could indicate that chilling influences budburst and leafout similarly, while photoperiod and forcing temperatures have varying effects on the two phenophases. Further studies are essential to investigate the interplay between chilling, forcing, and photoperiod effects on the duration of vegetative risk, especially for species occupying habitats more susceptible to false spring events.
+
+<<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out.", fig.pos="H">>=
+read_chunk("..//scripts/Chilling Plot.R")
+d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
+
+tx<-c("CS0", "WL1")
+dx<- d %>%
+  dplyr::select(ind, treatcode, lday, bday, site) %>%
+  filter(treatcode %in% tx)
+
+dx<-na.omit(dx)
+dx$species<-substr(dx$ind, 1, 6)
+dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+small.spp<-dx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
+spp<-unique(small.spp$species)
+dx<-dx%>% filter(species %in% spp)
+
+dx<-dx%>%dplyr::select(-site, -ind)
+dx$mean<-ave(dx$bday, dx$species, dx$treatcode)
+dx<-dx%>%
+  group_by(mean, species)%>%
+  arrange(species)%>%
+  filter(row_number()==1)
+dx<-dx%>%group_by(species, treatcode) %>% arrange(species, desc(treatcode))
+dx$code<-reorder(dx$species, dx$bday)
+
+chill<-ggplot(dx, aes(x = code,ymin = bday, ymax = lday, group=interaction(species, treatcode) )) +
+  geom_point(aes(y=bday, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=lday, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x = code,ymin = bday, ymax = lday, col=treatcode), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("CS0","Leafout", "Budburst", "WL1"), values = c("purple3", "green4", "darkolivegreen3", "royalblue3")) +
+  xlab("Species") +coord_flip()
+plot(chill)
+
+@
+
+
+\subsection*{Observational Data} %Needs new title!
+Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}. It is therefore expected that high variation in spring temperatures (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk. Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014). By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:forest}). This could potentially be due to photoperiodic effects. Forcing temperature requirements, like chilling requirements, are key phenotypic traits for many temperate tree species \citep{Kramer2017}, which may explain the similarity in the relationship between growing degree days and budburst date across the two years.
+
+\begin{figure} [H] 
+\begin{center}
+\includegraphics{..//figure/HF_gddTime.pdf}
+\caption{A comparison of two years of observational data investigating the effects of growing degree days on the duration of vegetative risk. The average duration of vegetative risk for 2010 was 21 +/- 3.39 days versus 17.1 +/- 1.96 days in 2014.}\label{fig:forest}
+\end{center}
+\end{figure}
+
+\section*{Regional Differences in False Spring Risk and Temperature Thresholds}
+Climatic variation across regions results in varying durations of vegetative risk due to different photoperiod lengths and forcing temperatures. Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to outcompete photosensitive species as spring forcing temperatures continue to increase \cite{Vitasse2011,Gauzere2017}. However, the climatic implications of increasing forcing temperatures could potentially lead to earlier dates of budburst and enhance the risk for frost or drought risk. These shifts in climatic regimes could vary in intensity across regions (i.e. habitats currently at risk of false spring damage could become low risk regions over time). There are discrepancies in defining a false spring event, especially with understanding damaging freezing temperatures. Some regions and species may be more able to tolerate lower temperature thresholds than others (Table \ref{tab:temperature}). It is crucial to gain an understanding on which climatic parameters result in false spring events and also to understand what habitats are at risk now and what habitats will be at risk in the future. It is anticipated that most habitats will trend towards earlier spring onsets, however, last freeze dates will not occur at the same rate, rendering some regions to be more susceptible to false spring events in the future \citep{Labe2016}. 
+
+By determining the average time of budburst to leafout dates for the dominant species in five archetypal climate regions, we were able to estimate the current spatial variation of false spring risk (Figure \ref{fig:regional}). We assessed the number of freeze days (-2.2$^{\circ}$C) \citep{Schwartz1993} that occurred on average over the past 50 years within the date ranges for each region. We found that Maine has the highest risk for frost damage and Lyon, France as the lowest (Figure \ref{fig:regional}). Current studies focus on latitudinal and photoperiodic effects \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Gauzere2017}, however, future research should aim to integrate spatiotemporal effects more when investigating false spring risk.
+
+\begin{figure} [H] 
+\begin{center}
+\includegraphics[width=16cm, height=13cm]{..//figure/RegionalRisk.pdf} 
+\caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, White2009, Soudani2012, USA-NPN2016}.}\label{fig:regional} 
+\end{center}
+\end{figure}
+
+\section*{Conclusion}
+As global change progresses and atmospheric CO$_{\text{2}}$ increases, false spring damage will likely worsen and low temperature thresholds will decrease (Table \ref{tab:temperature}) \citep{Beerling2001, Barker2005}. Plants have higher freeze tolerance after exposure to low temperatures over a period of time \citep{Thomashow1999} so shorter dormancy lengths coupled with elevated CO$_{\text{2}}$ levels could result in highly adverse effects. Ecosystem dynamics and risk of damage can vary from year to year and the timing between last freeze date and date of spring onset may become less consistent. With warm temperatures advancing in the spring but last spring freeze dates staying the same, there could potentially be more damaging events in the future, especially in high risk regions \citep{Gu2008, Inouye2008}. This shift in timing could result in more events where understory species leaf out prior to the last freeze and escape frost damage but canopy species may be at higher risk, thus potentially resulting in crown dieback for the larger tree species and subsequently enhanced sun exposure and damage to understory species. False spring events could also adversely affect other trophic levels if fruit and seed development is impacted \citep{Gu2008}, making false spring studies even more ecologically significant.
+
+Phenology is closely linked to climatic regimes \citep{Wolkovich2011} and is therefore a key indicator in phenotypic variation for cold adpated traits and false spring risk avoidance. Understanding the variation of spring onset across regions and within habitats as well as the rate of budburst will permit greater insight into false spring risk. Tree species with smaller and more fragemented distribution ranges are more at risk to stochastic events (i.e. frost and drought) \citep{Alberto2013}. Therefore, it is essential that temperate forest tree species maintain continuous ranges in order to successfully track the changes in climate and to utilize photoperiodic and temperature cues simultaneously rather than rely strickly on photoperiodism especially along range edges \citep{Zohner2016, Gauzere2017}. Future studies are necessary to investigate the relationship between anthropogenic climate change, spatiotemporal factors, the duration of vegetative risk, and the level of damage sustained from false spring events
+
+By utilizing only two simple metrics (last freeze date and spring onset date), researchers fail to assess the myriad of factors essential in determining false spring risk and damage. Future studies are necessary to gain an understanding with relationships between species, functional group, phenophase, and region and the differences in false spring damage. It is also essential that a temperature threshold is established for all functional types and phenophases across regions in order to effectively predict false spring risk in the future. An integrated approach to assessing past and future spring freeze damage must be realized as global climate change progresses in order to mitigate the adverse ecological and economic effects of false springs.
+
+\bibliography{..//refs/SpringFreeze.bib}
+
+\section*{Supplemental Information}
+<<label=anova, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Anova.Tables.R")
+d<-read.csv("..//output/anovatable.csv")
+
+d.acepen <- d[,2:5]
+d.acerub<- d[,6:9]
+d.acesac <- d[,10:13]
+d.betall <- d[,14:17]
+d.betpap <- d[,18:21]
+d.faggra <- d[,22:25]
+d.ilemuc <- d[,26:29]
+d.popgra <- d[,30:33]
+d.querub <- d[,34:37]
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+dx<-xtable(d.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects for each species.",floating=FALSE)
+row.names(dx)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(xtable(dx), add.to.row = addtorow,caption.placement="top", include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+acerub<-xtable(d.acerub)
+row.names(acerub)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(acerub, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACESAC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+acesac<-xtable(d.acesac)
+row.names(acesac)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(acesac, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETALL & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+betall<-xtable(d.betall)
+row.names(betall)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(betall, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETPAP & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+betpap<-xtable(d.betpap)
+row.names(betpap)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(betpap, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+faggra<-xtable(d.faggra)
+row.names(faggra)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(faggra, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+ilemuc<-xtable(d.ilemuc)
+row.names(ilemuc)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(ilemuc, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("POPGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+popgra<-xtable(d.popgra)
+row.names(popgra)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(popgra, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("QUERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+querub<-xtable(d.querub)
+row.names(querub)<-c("chilling","forcing", "photoperiod", "Residuals")
+print(querub, add.to.row = addtorow, include.colnames=FALSE)
+
+@
+
+<<label=interxns, results = "asis", echo=FALSE, warning=FALSE,fig.cap="The results from a linear regression model analyzing the relationship between latitude and frequency of false springs", fig.pos="H">>=
+read_chunk("..//scripts/Anova.Tables.R")
+dxx<-read.csv("..//output/interactions.csv",header=TRUE)
+
+dxx.acepen <- dxx[,1:4]
+dxx.acerub<- dxx[,5:8]
+dxx.acesac <- dxx[,9:12]
+dxx.betall <- dxx[,13:16]
+dxx.betpap <- dxx[,17:20]
+dxx.faggra <- dxx[,21:24]
+dxx.ilemuc <- dxx[,25:28]
+dxx.popgra <- dxx[,29:32]
+dxx.querub <- dxx[,33:36]
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACEPEN & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+df<-xtable(dxx.acepen, caption ="Anova results for duration of vegetative risk by chilling, forcing, and photoperiod effects and all interactions for each species.",floating=FALSE)
+row.names(df)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(xtable(df), add.to.row = addtorow,caption.placement="top", include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+acer<-xtable(dxx.acerub)
+row.names(acer)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(acer, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ACESAC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+aces<-xtable(dxx.acesac)
+row.names(aces)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(aces, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETALL & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+beta<-xtable(dxx.betall)
+row.names(beta)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(beta, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("BETPAP & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+betp<-xtable(dxx.betpap)
+row.names(betp)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(betp, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("FAGGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+fagus<-xtable(dxx.faggra)
+row.names(fagus)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(fagus, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("ILEMUC & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+ilem<-xtable(dxx.ilemuc)
+row.names(ilem)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(ilem, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("POPGRA & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+popg<-xtable(dxx.popgra)
+row.names(popg)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(popg, add.to.row = addtorow, include.colnames=FALSE)
+
+addtorow <- list()
+addtorow$pos <- list(0)
+addtorow$command <- c("QUERUB & Sum.Sq & Df & F value & Pr(>F) \\\\\n") 
+quer<-xtable(dxx.querub)
+row.names(quer)<-c("chilling","forcing", "photoperiod", "chilling:forcing", "chilling:photoperiod", "forcing:photoperiod", "Residuals")
+print(quer, add.to.row = addtorow, include.colnames=FALSE)
+
+@
+
+
+
+
+\end{document}

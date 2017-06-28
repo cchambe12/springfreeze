@@ -77,7 +77,7 @@ library(lubridate)
 \begin{enumerate}
 \item Growing interest in False Spring has led to lots of work on it ... 
 \item A False Spring Index (FSI) signifies the likelihood of a damage to occur from a late spring freeze. 
-\item Currently, FSI evaluates day of budburst, number of growing degree days, and day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
+\item Currently, FSI is evaluated by the day of budburst and the day of last spring freeze through a simple equation as seen below \citep{Marino2011}. 
 \begin{equation} \label{eq:1}
 FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{equation}
@@ -89,7 +89,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 \item In contrast to these simplifications, we argue that a wealth of factors greatly impacts plants' frost spring risk such that simple indices will most likely lead to inaccurate predictions and ultimately do little to advance the field. 
 \begin{enumerate}
-\item Give quick list here and simple evidence of some of the big factors you will discuss... 
+\item Give quick list here and simple evidence of some of the big factors you will discuss... % not sure how to make this different from the second to last line of the next paragraph. Need to work on!
 \end{enumerate}
 
 \item State the Purpose of the Paper
@@ -131,13 +131,13 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Likewise, photoperiod sensitivity is a common false spring avoidance strategy: species that respond to photoperiod cues more than warm spring temperatures will likely delay budburst and evade false spring events \citep{Basler2014}.
 \\
 \item Some temperate forest species have evolved to be more tolerant of spring freezing temperatures.
-\item Many temperate forest trees to have toothed or lobed leaves, which could permit greater packability into winter buds.
+\item Many temperate forest trees have toothed or lobed leaves, which could permit greater packability into winter buds.
 \item This increased packability likely reduces the metabolic requirements for spring budburst to occur and increases the rate of leaf out \citep{Edwards2017}.
-\item Temperate forest tree leaves also generally have more trichomes (i.e. small, unicellular hairs), giving leaves greater protection against false springs once budburst has already initiated \citep{Agrawal2004}.
+\item Temperate forest tree leaves also generally have more trichomes (i.e. small, unicellular hairs), giving young leaves greater protection against false springs once budburst has already initiated \citep{Agrawal2004}.
 \item Finally, many temperate forest plants can respond to environmental cues.
 \item Dry winters typically result in new, frost-tolerant shoots due to the decreased water content and osmotic potential from the reduced number of accumulated solutes \citep{Morin2007, Hofmann2015}.
 \item Therefore, it is hypothesized that increased bud dehydration results in increased frost hardiness \citep{Beck2007, Nielsen2009, Poirier2010, Kathke2011, Hofmann2015}, although long-term drought stress can lead to accumulated xylem damage and decreased false spring tolerance \citep{Anderegg2013}.
-\item More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship impacts false spring tolerance.
+\item More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship affects false spring tolerance.
 \end{enumerate}
 
 \item Current Definition
@@ -152,7 +152,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Major Issues with Current Definition
 \begin{enumerate}
 \item The current definition of a false spring fails to incorporate the different avoidance and tolerance strategies commonly seen in temperate forest species.
-\item The fales spring equation and 7 day parameter assumes consistency across species, functional group, life stage, habitat type, and other climatic regimes, which is largely inadequate. 
+\item The FSI equation and 7 day parameter assumes consistency across species, functional group, life stage, habitat type, and other climatic regimes, which is largely inadequate. 
 \item A new approach that integrates these other crucial factors is necessary to accurately determine current false spring damage and future spring freeze risk. 
 \end{enumerate}
 \end{enumerate}
@@ -162,13 +162,12 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 % Focus on species groupings (like functional types etc.?) and then more on individual species ... 
 %% Maybe start with equation and the two inputs then break down why spring onset can't be defined and that last freeze date is uncertain
 
-\section*{Determining Spring Onset in Temperate Plant Communities and Last Freeze Date}
+\section*{Determining Spring Onset and Last Freeze Date in Temperate Plant Communities}
 \begin{enumerate}
 \item Elucidate the difference between spring onset and study species
 \begin{enumerate}
 \item Spring phenology in temperate forests typically progresses by functional group: understory species and young trees tend to initiate budburst first, whereas late successional species may start later in the season \citep{Richardson2009, Xin2016}.
-\item Seedlings and saplings are more opportunistic and initiate budburst before canopy closure in order to benefit from the increased light levels \citep {Augspurger2008}
-\item This potentially puts understory species at greater risk to false spring damage than adult trees \citep{Vitasse2014}.
+\item Seedlings and saplings are more opportunistic and initiate budburst before canopy closure in order to benefit from the increased light levels \citep {Augspurger2008}, which potentially puts understory species at greater risk to false spring damage than adult trees \citep{Vitasse2014}.
 \item Therefore, false spring studies should first assess the forest demographics and functional groups of the study species in order to effectively estimate the date of spring onset.
 \end{enumerate}
 
@@ -305,8 +304,10 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 \item Drive home importance of new equation
 \begin{enumerate}
-\item With only utilizing two simple metrics (last freeze date and spring onset date), researchers fail to assess the myriad of factors essential in determining false spring risk and damage. 
-\item Need to work on...
+\item By utilizing only two simple metrics (last freeze date and spring onset date), researchers fail to assess the myriad of factors essential in determining false spring risk and damage. 
+\item Future studies are necessary to gain an understanding with relationships between species, functional group, phenophase, and region and the differences in false spring damage. 
+\item It is also essential that a temperature threshold is established for all functional types and phenophases across regions in order to effectively predict false spring risk in the future.
+\item An integrated approach to assessing past and future spring freeze damage must be realized as global climate change progresses in order to mitigate the adverse ecological and economic effects of false springs.
 \end{enumerate}
 \end{enumerate}
 
