@@ -66,7 +66,7 @@ library(lubridate)
 \end{enumerate}
 \item Introduce Climate Change and Importance of False Spring Studies
 \begin{enumerate}
-\item Climate change is expected to increase damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Cannell1986, Inouye2008, Martin2010}. 
+\item Climate change is expected to cause an increase in damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Cannell1986, Inouye2008, Martin2010}. 
 \item Temperate forest species around the world are initiating leafout about 4.6 days earlier per degree Celsius \citep{Wolkovich2012, Polgar2014}. 
 \item It is anticipated that there will be a decrease in false spring frequency overall but the magnitude of temperature variation is likely to increase, therefore amplifying the expected intensity of false spring events \citep{Kodra2011, Allstadt2015}. 
 \item Already, multiple studies have documented false spring events in recent years \citep{Gu2008, Augspurger2009, Knudson2012, Augspurger2013} and some have linked this to climate change \citep{Ault2013, Allstadt2015, Muffler2016, Xin2016}. 
@@ -214,7 +214,6 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 \item Frost Tolerance
 \begin{enumerate}
-\item Freezing tolerance steadily decreases after budburst begins until the leaf is fully unfolded, with leafout being the most susceptible to false spring damage \citep {Lenz2016}.
 \item The rate of budburst and the length of time between budburst and leafout is essential for predicting level of damage from a false spring event.
 \item We will refer to the timing of these collective phenophases (i.e. budburst to leafout) as the duration of vegetative risk.
 \item The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout.
@@ -228,7 +227,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 %%%%%%%%%%%%% NEEDS TO BE WORKED ON! %%%%%%%%%%%%%%%%%%%%%
 \item Dan's Data
 \begin{enumerate}
-\item Deciduous trees and shrubs require a certain number of chilling units in order to leave the endodormancy phase. 
+\item Deciduous trees and shrubs require a certain number of chilling hours in order to leave the endodormancy phase. 
 \item This helps protect temperate plants against stochastic warm spells in the winter so that they do not break dormancy too early in the season.
 \item Chilling units differ across species and across habitats.
 \item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. % Lizzie, should I avoid this Prevey reference?
@@ -264,7 +263,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Introduce concept of regional differences
 \begin {enumerate}
 \item Climatic variation across regions results in varying durations of vegetative risk due to different photoperiod lengths and forcing temperatures.
-\item Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to outcompete photosensitive species as spring forcing temperatures continue to increase \cite{Vitasse2011,Gauzere2017}.
+\item Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to outcompete photosensitive species as spring forcing temperatures continue to increase \citep{Vitasse2011,Gauzere2017}.
 \item However, the climatic implications of increasing forcing temperatures could potentially lead to earlier dates of budburst and enhance the risk for frost or drought risk. 
 \item These shifts in climatic regimes could vary in intensity across regions (i.e. habitats currently at risk of false spring damage could become low risk regions over time). 
 \item There are discrepancies in defining a false spring event, especially with understanding damaging freezing temperatures.

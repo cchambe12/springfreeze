@@ -96,6 +96,8 @@ level of precipitation prior to the freezing event \citep{Anderegg2013}
 
 \item Freezing tolerance in plants is usually against extracellular freezing or freezing dehydration \citep{Burke1976}.
 
+\item Freezing tolerance steadily decreases after budburst begins until the leaf is fully unfolded, with leafout being the most susceptible to false spring damage \citep {Lenz2016}.
+
 \end{enumerate}
 
 
