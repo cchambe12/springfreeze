@@ -137,7 +137,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Finally, many temperate forest plants can respond to environmental cues.
 \item Dry winters typically result in new, frost-tolerant shoots due to the decreased water content and osmotic potential from the reduced number of accumulated solutes \citep{Morin2007, Hofmann2015}.
 \item Therefore, it is hypothesized that increased bud dehydration results in increased frost hardiness \citep{Beck2007, Nielsen2009, Poirier2010, Kathke2011, Hofmann2015}, although long-term drought stress can lead to accumulated xylem damage and decreased false spring tolerance \citep{Anderegg2013}.
-\item More studies are needed to investigate the interplay between false spring events and precipiation and how that relationship affects false spring tolerance.
+\item More studies are needed to investigate the interplay between false spring events and precipitation and how that relationship affects false spring tolerance.
 \end{enumerate}
 
 \item Current Definition
@@ -158,7 +158,6 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 
 %%%%%%%%%% DETERMINING SPRING ONSET in temperate plant communities %%%%%%%%%%%%%
-%%%%%%%%%%%% STILL NEEDS A LOT OF WORK! %%%%%%%%%%%%%%%%
 % Focus on species groupings (like functional types etc.?) and then more on individual species ... 
 %% Maybe start with equation and the two inputs then break down why spring onset can't be defined and that last freeze date is uncertain
 
@@ -180,8 +179,8 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Studies often use observational data to evaluate spring onset to target budburst more precisely, however, it can be difficult or even impossible for large-scale studies. 
 \item PhenoCam and remote-sensing data is suitable for canopy tree species, whereas USA-NPN SI-x is more applicable for understory species. 
 \item The three methodologies to determine spring onset were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted into the FSI equation (Equation \ref{eq:1}) to calculate FSI values from 2008 to 2014 (Figure \ref{fig:fsifig}).
-\item In 2012, a false spring event was reported through many regions of the US due to warm temperatures occuring in March \citep{Ault2015}.
-\item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepany in results for 2012 (Figure \ref{fig:fsifig}).
+\item In 2012, a false spring event was reported through many regions of the US due to warm temperatures occurring in March \citep{Ault2015}.
+\item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepancy in results for 2012 (Figure \ref{fig:fsifig}).
 \item Researchers should use the USA-NPN dataset for understory species, PhenoCam or remote-sensing data for late successional species, and observational data for a wide array of plant functional types.
 \end{enumerate}
 \item Last Freeze Date
@@ -201,7 +200,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Different species respond differently to anthropogenic climate change.
 \item Most species are expected to begin leafout earlier in the season with warming spring temperatures but some species may have the opposite response \citep{Cleland2006, Yu2010, Xin2016}.
 \item Studies indicate that species growing at more northern latitudes tend to respond greater to photoperiod than species growing further south \citep {Partanen2004, Viheraaarnio2006, Caffarra2011}.
-\item Similarly, late successional species exhibit greater photoperiod sensitivies than pioneer or understory species \citep{Basler2012} and they also require more chilling in the winter and greater forcing temperatures in the spring to initiate budburst \citep{Laube2013}.
+\item Similarly, late successional species exhibit greater photoperiod sensitivities than pioneer or understory species \citep{Basler2012} and they also require more chilling in the winter and greater forcing temperatures in the spring to initiate budburst \citep{Laube2013}.
 \item It is anticipated that these more opportunistic individuals that initiate budburst earlier in the spring would attempt to limit freezing risk by increasing the rate of budburst and progress to full leaf expansion faster.
 \end{enumerate}
 
@@ -218,7 +217,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item We will refer to the timing of these collective phenophases (i.e. budburst to leafout) as the duration of vegetative risk.
 \item The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout.
 \item Species with short durations of vegetative risk often sustain higher levels of damage \citep {Augspurger2009}.
-\item It is hypothesized that if the duration of vegetative risk is longer, then the buds and leaves will be heartier against frosts, however this still has yet to be tested thoroughly.
+\item It is hypothesized that if the duration of vegetative risk is longer, then the buds and leaves will be heartier against frosts, however this has yet to be tested thoroughly.
 \item We assess the interaction between duration of vegetative risk and false spring events using two datasets: from a growth chamber chilling experiment and long-term observational data.
 \end {enumerate}
 \end {enumerate}
@@ -263,7 +262,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Introduce concept of regional differences
 \begin {enumerate}
 \item Climatic variation across regions results in varying durations of vegetative risk due to different photoperiod lengths and forcing temperatures.
-\item Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to outcompete photosensitive species as spring forcing temperatures continue to increase \citep{Vitasse2011,Gauzere2017}.
+\item Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to out compete photosensitive species as spring forcing temperatures continue to increase \citep{Vitasse2011,Gauzere2017}.
 \item However, the climatic implications of increasing forcing temperatures could potentially lead to earlier dates of budburst and enhance the risk for frost or drought risk. 
 \item These shifts in climatic regimes could vary in intensity across regions (i.e. habitats currently at risk of false spring damage could become low risk regions over time). 
 \item There are discrepancies in defining a false spring event, especially with understanding damaging freezing temperatures.
@@ -278,7 +277,6 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%% DISCUSSION AND CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% NEEDS SOOOOOO MUCH WORK!!!!! %%%%%%%%%%%%%%%%%
 
 \section*{Conclusion}
 \begin{enumerate}
@@ -294,10 +292,10 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 \item Introduce Phenology
 \begin{enumerate}
-\item Phenology is closely linked to climatic regimes \citep{Wolkovich2011} and is therefore a key indicator in phenotypic variation for cold adpated traits and false spring risk avoidance.
+\item Phenology is closely linked to climatic regimes \citep{Wolkovich2011} and is therefore a key indicator in phenotypic variation for cold adapted traits and false spring risk avoidance.
 \item Understanding the variation of spring onset across regions and within habitats as well as the rate of budburst will permit greater insight into false spring risk.
-\item Tree species with smaller and more fragemented distribution ranges are more at risk to stochastic events (i.e. frost and drought) \citep{Alberto2013}. 
-\item Therefore, it is essential that temperate forest tree species maintain continuous ranges in order to successfully track the changes in climate and to utilize photoperiodic and temperature cues simultaneously rather than rely strickly on photoperiodism especially along range edges \citep{Zohner2016, Gauzere2017}.
+\item Tree species with smaller and more fragmented distribution ranges are more at risk to stochastic events (i.e. frost and drought) \citep{Alberto2013}. 
+\item Therefore, it is essential that temperate forest tree species maintain continuous ranges in order to successfully track the changes in climate and to utilize photoperiodic and temperature cues simultaneously rather than rely strictly on photoperiodism especially along range edges \citep{Zohner2016, Gauzere2017}.
 \item Future studies are necessary to investigate the relationship between anthropogenic climate change, spatiotemporal factors, the duration of vegetative risk, and the level of damage sustained from false spring events
 \end{enumerate}
 
