@@ -64,6 +64,7 @@ library(lubridate)
 \item These late spring freezing events are known as false springs. 
 \item False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}.
 \end{enumerate}
+
 \item Introduce Climate Change and Importance of False Spring Studies
 \begin{enumerate}
 \item Climate change is expected to cause an increase in damage from false spring events around the world due to earlier spring onset and greater fluctuations in temperature \citep{Cannell1986, Inouye2008, Martin2010}. 
@@ -86,9 +87,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Different species respond the same to late spring freezing events. 
 \item The level of damage sustained by plants from a false spring is constant across phenophases. 
 \end{enumerate}
-\end{enumerate}
 \item In contrast to these simplifications, we argue that a wealth of factors greatly impacts plants' frost spring risk such that simple indices will most likely lead to inaccurate predictions and ultimately do little to advance the field. 
-\begin{enumerate}
 \item Give quick list here and simple evidence of some of the big factors you will discuss... % not sure how to make this different from the second to last line of the next paragraph. Need to work on!
 \end{enumerate}
 
@@ -132,7 +131,6 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 
 Re-WORK this to move out any specifics on seedlings/saplings etc. (anything that gets at variation) ... 
 \section*{Determining Spring Onset and Last Freeze Date in Temperate Plant Communities}
-\begin{enumerate}
 \item Elucidate the difference between spring onset and study species 
 \begin{enumerate}
 \item Spring phenology in temperate forests typically progresses by functional group: understory species and young trees tend to initiate budburst first, whereas late successional species may start later in the season \citep{Richardson2009, Xin2016}.
@@ -140,7 +138,7 @@ Re-WORK this to move out any specifics on seedlings/saplings etc. (anything that
 \item Therefore, false spring studies should first assess the forest demographics and functional groups of the study species in order to effectively estimate the date of spring onset.
 \end{enumerate}
 
-{\bf Okay, we apply this definition to some datasets .... but they differ! Why? Because species differ}
+{\textbf Okay, we apply this definition to some datasets .... but they differ! Why? Because species differ}
 
 \item Methodologies: False spring is defined dependent on metholodology for onset, make sure your methodology matches your question 
 \begin{enumerate}
@@ -155,6 +153,7 @@ Re-WORK this to move out any specifics on seedlings/saplings etc. (anything that
 \item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepancy in results for 2012 (Figure \ref{fig:fsifig}).
 \item Researchers should use the USA-NPN dataset for understory species, PhenoCam or remote-sensing data for late successional species, and observational data for a wide array of plant functional types.
 \end{enumerate}
+
 \item Last Freeze Date: Also critical
 \begin{enumerate}
 \item The false spring equation also requires a last freeze date input.
@@ -171,13 +170,11 @@ Now we say, but WAIT! All this assumes plants as a monolith, when the reality is
 \item The FSI equation and 7 day parameter assumes consistency across species, functional group, life stage, habitat type, and other climatic regimes, which is largely inadequate. 
 \item A new approach that integrates these other crucial factors is necessary to accurately determine current false spring damage and future spring freeze risk. 
 \end{enumerate}
-\end{enumerate}
 
 \item Avoidance and Tolerance of False Springs: Understanding how species avoid/tolerate false springs 
 \begin {enumerate}
 % One paragraph on avoidance 
 \item Plants have evolved multiple strategies to avoid False Springs % which must be considered in any false spring definition 
-\begin {enumerate}
 \item Temperate deciduous tree species optimize growth and minimize spring freeze damage by using three cues to initiate budburst: low winter temperatures, warm spring temperatures, and longer photoperiods \citep{Cleland2007, Polgar2011}.
 \item Deciduousness and the evolution of two dormancy phases (i.e. endodormancy and ecodormancy) in temperate forest trees has permitted species to occupy more northern ecological niches and decrease the risk of false spring damage \citep{Samish1954}. (Figure that describes cues and endo/eco dormancy to condense some of this.)
 \item Endodormancy is the period of winter when temperate trees are inhibited from growing, regardless of the outdoor environment. False springs CANNOT occur. 
@@ -205,11 +202,12 @@ Now we say, but WAIT! All this assumes plants as a monolith, when the reality is
 % Focus on species groupings (like functional types etc.?) and then more on individual species ... 
 %% Maybe start with equation and the two inputs then break down why spring onset can't be defined and that last freeze date is uncertain
 
-\
+
 
 %%%%%%%%%% Understanding (Defining?) Vegetative Risk %%%%%%%%%%%%%
 % Keep working in species differences, now add in phenophases and return to concept of tolerance .... 
 \section*{Defining Vegetative Risk} % This section maybe needs species differences somewhere else? 
+\begin{enumerate}
 \item Species Differences: They matter 
 \begin {enumerate}
 \item Different species respond differently to anthropogenic climate change.
@@ -241,6 +239,7 @@ Now we say, but WAIT! All this assumes plants as a monolith, when the reality is
 % Could move up Harvard Forest, which is about FORCING and near-term climate change impacts 
 % Then talk about Dan's data as Forcing X photo X chilling  ... and longer-term nonlinearities with climate change 
 %%%%%%%%%%%%% NEEDS TO BE WORKED ON! %%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
 \item Dan's Data: Take home messages: Wraps back to physiology and answers questions about how those cues impact bb and leafout and how it varies by species *and* also, gives us insight into what climate change may alter
 \begin{enumerate}
 % \item Deciduous trees and shrubs require a certain number of chilling hours in order to leave the endodormancy phase. 
