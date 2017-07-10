@@ -115,7 +115,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Temperate forest plants are most at risk to frost damage from episodic spring frosts \citep{Sakai1987}. 
 \item Freezing temperatures following a warm spell could result in plant damage or even death \citep{Ludlum1968, Mock2007}.
 \item Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Pearce2001, Beck2004, Hofmann2015}.
-\item Intracellular ice formation can cause defoliation, xylem embolism and decreased xylem conductivity which can result in crown dieback \citep{Gu2008}. %% Can we discuss keeping this line? There's a point that I would like to make later about how crown dieback from a false spring could cause increased sun exposure to understorey plants meaning false spring events can almost have a domino effect.
+\item Intracellular ice formation can cause defoliation, which can result in crown dieback \citep{Gu2008}. %% There's a point that I would like to make later about how crown dieback from a false spring could cause increased sun exposure to understorey plants meaning false spring events can almost have a domino effect.
 \end {enumerate}
 
 \item Current Definition
@@ -126,6 +126,12 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item The 7 day parameter exposes less resistant foliate phenophases to a false spring, thus putting the plant at a higher risk of damage. 
 \item Once budburst has initiated, buds cannot respond to cold temperatures and freeze resistance is greatly reduced \citep{Taschler2004, Lenz2013, Vitasse2014}.
 \end{enumerate}
+
+%%%%%%%%%%%%% FIX HERE %%%%%%%%%%%%%%%%%%%%%%%%%
+\item Here's the definition - let's apply it
+\begin{enumerate} % transition into species differences
+\item Therefore, false spring studies should first assess the forest demographics and functional groups of the study species in order to effectively estimate the date of spring onset.
+\end{enumerate}
 \end{enumerate}
 
 %Re-WORK this to move out any specifics on seedlings/saplings etc. (anything that gets at variation) ... 
@@ -134,9 +140,10 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Elucidate the difference between spring onset and study species 
 \begin{enumerate}
 \item Spring phenology in temperate forests typically progresses by functional group: understory species and young trees tend to initiate budburst first, whereas late successional species may start later in the season \citep{Richardson2009, Xin2016}.
-\item Therefore, false spring studies should first assess the forest demographics and functional groups of the study species in order to effectively estimate the date of spring onset.
-\end{enumerate}
 
+\end{enumerate}
+%%%%%%%%%%%%%% MOVE SWIFTLY!!! %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %{\textbf Okay, we apply this definition to some datasets .... but they differ! Why? Because species differ}
 %%%%%%%%%% DETERMINING SPRING ONSET in temperate plant communities %%%%%%%%%%%%%
 % Focus on species groupings (like functional types etc.?) and then more on individual species ... 
@@ -145,24 +152,18 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Methodologies: False spring is defined dependent on metholodology for onset, make sure your methodology matches your question 
 \begin{enumerate}
 \item A suitable methodology for determining spring onset is crucial in order to establish an effective model for false spring risk, especially since the current false spring equation only uses two inputs: date of spring onset and date of last freeze (Equation \ref{eq:1}). 
-\item If the date of spring onset is inaccurate, the level of risk determined by the current equation (Equation \ref{eq:1}) could render erroneous results. 
-\item There are many methods available to ascertain the first day of spring.
+%\item If the date of spring onset is inaccurate, the level of risk determined by the current equation (Equation \ref{eq:1}) could render erroneous results. 
+%\item There are many methods available to ascertain the first day of spring.
 \item Spring onset can be calculated through observational data, PhenoCam or remote-sensing data, or through the USA National Phenology Network's (USA-NPN) Extended Spring Index (SI-x) tool \citep{USA-NPN2016}.
 \item These three methodologies were compared using observational data from Harvard Forest \citep{Okeefe2014}, PhenoCam data from Harvard Forest \citep{Richardson2015}, and USA-NPN SI-x \citep{USA-NPN2016} and then inputted into the FSI equation (Equation \ref{eq:1}) to calculate FSI values from 2008 to 2014 (Figure \ref{fig:fsifig}).
+% Short example paragraph below %
 \item In 2012, a false spring event was reported through many regions of the US due to warm temperatures occurring in March \citep{Ault2015}.
 \item These high temperatures would most likely be too early for larger canopy species to initiate budburst but they would affect smaller understory species as is seen by the discrepancy in results for 2012 (Figure \ref{fig:fsifig}).
 \item The risk of a false spring, therefore, varies across habitat type and species composition since spring onset is not consistent across functional groups. % One point that I would like to make over the course of the paper is that these smaller species are opportunistic now and are willing to take the false spring risk, but with spring advancing and last freeze date staying the same, these little guys are no longer taking that risk, the big guns are, which could be really shocking to the canopy folks and potentially severely detrimental to the entire system. 
 \end{enumerate}
-
-\item Last Freeze Date: Also critical
-\begin{enumerate}
-\item The false spring equation also requires a last freeze date input.
-\item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
-\item There are numerous definitions of freezes and various requirements for damaging spring temperatures (Table \ref{tab:temperature}), making it extremely difficult to determine when the last spring freeze date is.
-\item Future false spring equations must integrate species, life stage, and habitat differences in temperature thresholds in order to accurately determine level of damage sustained by a false spring event.
 \end{enumerate}
 
-%Now we say, but WAIT! All this assumes plants as a monolith, when the reality is much more complex based on basic physiology and based on species differences 
+% Two versions - one after "we apply this to some datasets" (reiterate, be more clear to species) and here -Now we say, but WAIT! All this assumes plants as a monolith, when the reality is much more complex based on basic physiology and based on species differences 
 \item Major Issues with Current Definition
 \begin{enumerate}
 \item The current definition of a false spring also fails to incorporate the different avoidance and tolerance strategies commonly seen in temperate forest species.
@@ -233,6 +234,8 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 % Could move up Harvard Forest, which is about FORCING and near-term climate change impacts 
 % Then talk about Dan's data as Forcing X photo X chilling  ... and longer-term nonlinearities with climate change 
 %%% Should I talk more about oscillating temperatures or cut that part? %%%%%
+
+%%%% REFINE DAN'S and HF! Keep cleaning! %%%%%%
 \item Harvard Forest Data: Climate change may be similar to an earlier year -- susceptibility to multiple freezes 
 \begin{enumerate}
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.

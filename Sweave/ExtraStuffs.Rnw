@@ -53,7 +53,16 @@ library(lubridate)
 \section*{Extra!}
 \begin{enumerate}
 
-\item Species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damaging events such as false springs (might need to move this sentence now!) \citep{Scheifinger2003}.
+%%% Want this in the paper but not sure where to put it %%%%%%%
+\item Last Freeze Date: Also critical
+\begin{enumerate}
+\item The false spring equation also requires a last freeze date input.
+\item There are two types of freezes: a ``hard freeze" at -2.2$^{\circ}$C and a ``soft freeze" at -1.7$^{\circ}$C \citep{Vavrus2006, Kodra2011, Augspurger2013}.
+\item There are numerous definitions of freezes and various requirements for damaging spring temperatures (Table \ref{tab:temperature}), making it extremely difficult to determine when the last spring freeze date is.
+\item Future false spring equations must integrate species, life stage, and habitat differences in temperature thresholds in order to accurately determine level of damage sustained by a false spring event.
+\end{enumerate}
+
+\item Species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damaging events such as false springs (might need to move this sentence now!) \citep{Scheifinger2003}. %% Probably will work in the conclusion!
 
 Current studies focus on latitudinal and photoperiodic effects \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Gauzere2017}, however, f
 
