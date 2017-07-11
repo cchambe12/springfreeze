@@ -45,7 +45,7 @@ library(lubridate)
 
 \begin{document}
 \title{Rethinking False Spring Risk}
-\author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$}
+\author{C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$, E. M. Wolkovich $^{1,2}$}
 \date{\today}
 \maketitle 
  
@@ -239,9 +239,15 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Harvard Forest Data: Climate change may be similar to an earlier year -- susceptibility to multiple freezes 
 \begin{enumerate}
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
+\item Species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damaging events such as false springs \citep{Scheifinger2003}.
+\item These earlier, and potentially longer, springs could expose temperate forest plants to multiple false spring events during these sensitive foliate phenophases. 
+
+\end{enumerate}
+\begin{enumerate}
 \item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
 \item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:forest}). 
-\item With climate change progressing, these earlier, and potentially longer, springs could expose temperate forest plants to multiple false spring events during these sensitive foliate phenophases. 
+\end{enumerate}
+
 \end{enumerate}
 
 
@@ -254,13 +260,16 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 % \item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. % Lizzie, should I avoid this Prevey reference?
 \item Anthropogenic climate change could cause certain species to have insufficient winter chilling (especially at lower latitudes) resulting in higher spring forcing requirements \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. 
 \item Similarly, spring forcing temperature and photoperiod cues for budburst to occur vary among species and habitats, which is evident through the high levels of genetic diversity across temperate forest tree species \citep{Chuine2001}.
+\item Species distributions are largely driven by phenology \citep{Chuine2001} and photoinsensitive species are likely to out compete photosensitive species as spring forcing temperatures continue to increase \citep{Vitasse2011,Gauzere2017}.
+
+
 \item Data from a growth chamber experiment were used to compare 9 temperate forest species between two treatments: high chilling hours, long photoperiod and high forcing temperatures (WL1) against no additional chilling, short photoperiod and low forcing temperatures (CS0) (Flynn and Wolkovich, 2017?).
 
 \item According to the results, individuals that initiate budburst earlier in the season (i.e. {\textit {Betula papyrifera}} (Marsh.) and {\textit{Ilex mucronata}} (L.)) tend to initiate budburst early regardless of treatment, but the treatment does affect the duration of vegetative risk significantly (Figure \ref{fig:dan}).
 \item As the season progresses, treatment does not affect the duration of vegetative risk as much, however, the day of budburst tends to be later in the season with the weaker treatment effects (i.e. CS0).
 \item Anova results indicate forcing temperatures and photoperiod length determine the duration of vegetative risk more than chilling requirements.
 \item This could indicate that chilling influences budburst and leafout similarly, while photoperiod and forcing temperatures have varying effects on the two phenophases.
-\item With a changing climate, forcing temperatures will increase while photoperiod cues will remain stagnant, potentially elongating the duration of vegetative risk and exposing at risk plants to more intense false spring events or even multiple freezes. %% NEEDS FIXING!!
+\item With a changing climate, forcing temperatures will increase while photoperiod cues will remain stagnant, potentially elongating the duration of vegetative risk and exposing at risk plants to more intense false spring events.%% NEEDS FIXING!!
 \item Further studies are essential to investigate the interplay between chilling, forcing, and photoperiod effects on the duration of vegetative risk, especially for species occupying habitats more susceptible to false spring events. 
 \end{enumerate}
 \end {enumerate}
