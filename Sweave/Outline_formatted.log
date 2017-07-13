@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  7 JUL 2017 09:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 JUL 2017 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,12 +853,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (7.42235pt too wide) in paragraph at lines 365--366
+Overfull \hbox (7.42235pt too wide) in paragraph at lines 380--381
 []\T1/aer/m/n/10 It is also es-sen-tial that a tem-per-a-ture thresh-old is es-
 tab-lished for all func-tional types and phenophases
  []
 
-(./Outline_formatted.bbl
+(./Outline_formatted.bbl [11]
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 45.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
@@ -867,51 +867,51 @@ File: ts1aer.fd
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 45.
 
-[11] [12] [13] [14] [15]) <figure/fsifig-1.pdf, id=63, 505.89pt x 505.89pt>
+[12] [13] [14] [15] [16]) <figure/fsifig-1.pdf, id=66, 505.89pt x 505.89pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 375.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 390.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [16] <figure/dan-1.pdf, id=67, 505.89pt x 505.89pt>
+ [17] <figure/dan-1.pdf, id=70, 505.89pt x 505.89pt>
 File: figure/dan-1.pdf Graphic file (type pdf)
 
 <use figure/dan-1.pdf>
-Package pdftex.def Info: figure/dan-1.pdf used on input line 381.
+Package pdftex.def Info: figure/dan-1.pdf used on input line 396.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [17 <./figure/fsifig-1.pdf>]
-<..//figure/HF_gddTime.pdf, id=77, 578.16pt x 578.16pt>
+ [18 <./figure/fsifig-1.pdf>]
+<..//figure/HF_gddTime.pdf, id=80, 578.16pt x 578.16pt>
 File: ..//figure/HF_gddTime.pdf Graphic file (type pdf)
 
 <use ..//figure/HF_gddTime.pdf>
-Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 388.
+Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 403.
 (pdftex.def)             Requested size: 377.62633pt x 377.6257pt.
- [18 <./figure/dan-1.pdf>]
-<..//figure/CuesAndFS.pdf, id=86, 845.04686pt x 597.50786pt>
+ [19 <./figure/dan-1.pdf>]
+<..//figure/CuesAndFS.pdf, id=90, 845.04686pt x 597.50786pt>
 File: ..//figure/CuesAndFS.pdf Graphic file (type pdf)
 
 <use ..//figure/CuesAndFS.pdf>
-Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 395.
+Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 410.
 (pdftex.def)             Requested size: 377.62633pt x 267.00702pt.
- [19 <..//figure/HF_gddTime.pdf>] [20 <..//figure/CuesAndFS.pdf>] [21
+ [20 <..//figure/HF_gddTime.pdf>] [21 <..//figure/CuesAndFS.pdf>] [22
 
 ]
-<..//figure/RegionalRisk.pdf, id=183, 867.24pt x 578.16pt>
+<..//figure/RegionalRisk.pdf, id=186, 867.24pt x 578.16pt>
 File: ..//figure/RegionalRisk.pdf Graphic file (type pdf)
 
 <use ..//figure/RegionalRisk.pdf>
-Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 456.
+Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 471.
 (pdftex.def)             Requested size: 455.24167pt x 369.87997pt.
- [22
+ [23
 
 
- <..//figure/RegionalRisk.pdf>] [23]
-[24] [25] [26] (./Outline_formatted.aux) ) 
+ <..//figure/RegionalRisk.pdf>] [24]
+[25] [26] [27] (./Outline_formatted.aux) ) 
 Here is how much of TeX's memory you used:
- 15713 strings out of 493014
- 311883 string characters out of 6133351
- 365727 words of memory out of 5000000
- 19031 multiletter control sequences out of 15000+600000
+ 15716 strings out of 493014
+ 311952 string characters out of 6133351
+ 365801 words of memory out of 5000000
+ 19034 multiletter control sequences out of 15000+600000
  44851 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,49p,10389b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -935,10 +935,10 @@ m/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm10
 00.pfb>
-Output written on Outline_formatted.pdf (26 pages, 333874 bytes).
+Output written on Outline_formatted.pdf (27 pages, 334245 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
+ 270 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -106,7 +106,7 @@ level of precipitation prior to the freezing event \citep{Anderegg2013}
 
 \item Global change will also likely result in less snow accumulation and decreased snowpack in the early spring, which could cause increased exposure of fine roots to freezing temperatures, further augmenting the detrimental effects of false spring events. 
 
-\item Climate change could increase the level of damage from spring frost events, especially in certain regions or for particular species, due to earlier spring onset and greater fluctuations in temperature \citep{Martin2010}. 
+ 
 
 \item In a year that could have an especially late false spring event, understory species could have fully leafed out and escaped the risk of frost damage but the canopy species could be affected.
 \item This could potentially lead to crown dieback for the larger tree species, enhanced sun exposure to understory species and subsequently sun damage to the understory species. 
@@ -132,12 +132,17 @@ level of precipitation prior to the freezing event \citep{Anderegg2013}
 
 , although long-term drought stress can lead to accumulated xylem damage and decreased false spring tolerance \citep{Anderegg2013}.
 
-\item It is therefore expected that high variation in spring temperatures (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk.
+\item Forcing temperature requirements, like chilling requirements, are key phenotypic traits for many temperate tree species \citep{Kramer2017}, which may explain the similarity in the relationship between growing degree days and budburst date across the two years.
 
-\item Forcing temperature requirements, like chilling requirements, are key phenotypic traits for many temperate tree species \citep{Kramer2017}, which may explain the similarity in the relationship between growing degree days and budburst date across the two years. 
+\item These earlier and longer springs could expose more temperate forest species to multiple false spring events during these sensitive foliate phenophases. 
 
 \item Endodormancy is the period of winter when temperate trees are inhibited from growing, regardless of the outdoor environment. False springs CANNOT occur. 
 \item Ecodormancy is the period of time when growth can occur but the external environment is not conducive to growth (e.g. too cold) \citep{Basler2012}. False spring can occur when plants are at this stage. 
+
+\item Deciduous trees and shrubs require a certain number of chilling hours in order to leave the endodormancy phase. 
+\ item This helps protect temperate plants against stochastic warm spells in the winter so that they do not break dormancy too early in the season.
+\item Chilling units differ across species and across habitats.
+\item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. % Lizzie, should I avoid this Prevey reference?
 
 \end{enumerate}
 
