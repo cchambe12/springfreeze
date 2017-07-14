@@ -257,9 +257,12 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Tell the interaction of cues story
 \begin{enumerate}
-\item Anthropogenic climate change could cause certain species to have insufficient winter chilling (especially at lower latitudes) resulting in higher spring forcing requirements \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. 
-\item Similarly, spring forcing temperature and photoperiod cues for budburst to occur vary among species and habitats, which is evident through the high levels of genetic diversity across temperate forest tree species \citep{Chuine2001}.
-\item 
+\item Spring forcing temperatures and daylength requirements vary among species and habitats in order for budburst to occur.
+\item Since species distributions are largely driven by phenology \citep{Chuine2001}, species less reliant on photoperiod cues are likely to outcompete species that are as spring forcing temperatures continue to increase \citep{Vitasse2011, Gauzere2017}.
+\item As climate change progresses, higher spring forcing temperatures may be required due to potentially insufficient winter chilling, especially at lower latitudes \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. 
+\item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. 
+\item Anthropogenic climate change will cause changes in winter and spring temperatures, resulting in greater differences in spring phenology cue requirements across species and habitats. 
+\item This interaction of cues and how climate change will affect that interaction is crucial to understand in order to recognize the species that will be affected and to understand which species will likely become more at risk of false spring events in the future. 
 
 \end{enumerate}
 
@@ -270,8 +273,8 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item According to the results, individuals that initiate budburst earlier in the season (i.e. {\textit {Betula papyrifera}} (Marsh.) and {\textit{Ilex mucronata}} (L.)) tend to initiate budburst early regardless of treatment, but the treatment does affect the duration of vegetative risk significantly (Figure \ref{fig:dan}).
 \item As the season progresses, treatment does not affect the duration of vegetative risk as much, however, the day of budburst tends to be later in the season with the weaker treatment effects (i.e. CS0).
 \item Anova results indicate forcing temperatures and photoperiod length determine the duration of vegetative risk more than chilling requirements.
-\item This could indicate that chilling influences budburst and leafout similarly, while photoperiod and forcing temperatures have varying effects on the two phenophases.
 \item With a changing climate, forcing temperatures will increase while photoperiod cues will remain stagnant, potentially elongating the duration of vegetative risk and exposing at risk plants to more intense false spring events or even multiple freezes. %% NEEDS FIXING!!
+\item This could indicate that chilling influences budburst and leafout similarly, while photoperiod and forcing temperatures have varying effects on the two phenophases.
 \item Further studies are essential to investigate the interplay between chilling, forcing, and photoperiod effects on the duration of vegetative risk, especially for species occupying habitats more susceptible to false spring events. 
 \end{enumerate}
 \end {enumerate}
