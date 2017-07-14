@@ -45,7 +45,7 @@ library(lubridate)
 
 \begin{document}
 \title{Rethinking False Spring Risk}
-\author{C. J. Chamberlain $^{1,2}$, E. M. Wolkovich $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$}
+\author{C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$, E. M. Wolkovich $^{1,2}$}
 \date{\today}
 \maketitle 
  
