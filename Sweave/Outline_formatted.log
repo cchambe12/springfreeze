@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 JUL 2017 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 JUL 2017 08:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,7 +853,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3] [4] [5] [6] [7] [8] [9] [10]
-Overfull \hbox (7.42235pt too wide) in paragraph at lines 383--384
+Overfull \hbox (7.42235pt too wide) in paragraph at lines 382--383
 []\T1/aer/m/n/10 It is also es-sen-tial that a tem-per-a-ture thresh-old is es-
 tab-lished for all func-tional types and phenophases
  []
@@ -871,27 +871,27 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 393.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 392.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
  [17] <figure/dan-1.pdf, id=70, 505.89pt x 505.89pt>
 File: figure/dan-1.pdf Graphic file (type pdf)
 
 <use figure/dan-1.pdf>
-Package pdftex.def Info: figure/dan-1.pdf used on input line 399.
+Package pdftex.def Info: figure/dan-1.pdf used on input line 398.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
  [18 <./figure/fsifig-1.pdf>]
 <..//figure/HF_gddTime.pdf, id=80, 578.16pt x 578.16pt>
 File: ..//figure/HF_gddTime.pdf Graphic file (type pdf)
 
 <use ..//figure/HF_gddTime.pdf>
-Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 406.
+Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 405.
 (pdftex.def)             Requested size: 377.62633pt x 377.6257pt.
  [19 <./figure/dan-1.pdf>]
 <..//figure/CuesAndFS.pdf, id=90, 845.04686pt x 597.50786pt>
 File: ..//figure/CuesAndFS.pdf Graphic file (type pdf)
 
 <use ..//figure/CuesAndFS.pdf>
-Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 413.
+Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 412.
 (pdftex.def)             Requested size: 377.62633pt x 267.00702pt.
  [20 <..//figure/HF_gddTime.pdf>] [21 <..//figure/CuesAndFS.pdf>] [22
 
@@ -900,7 +900,7 @@ Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 413.
 File: ..//figure/RegionalRisk.pdf Graphic file (type pdf)
 
 <use ..//figure/RegionalRisk.pdf>
-Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 474.
+Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 473.
 (pdftex.def)             Requested size: 455.24167pt x 369.87997pt.
  [23
 
@@ -908,10 +908,10 @@ Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 474.
  <..//figure/RegionalRisk.pdf>] [24]
 [25] [26] [27] (./Outline_formatted.aux) ) 
 Here is how much of TeX's memory you used:
- 15728 strings out of 493014
- 312165 string characters out of 6133351
- 366324 words of memory out of 5000000
- 19046 multiletter control sequences out of 15000+600000
+ 15719 strings out of 493014
+ 312009 string characters out of 6133351
+ 365900 words of memory out of 5000000
+ 19037 multiletter control sequences out of 15000+600000
  44851 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,49p,10389b,573s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -935,7 +935,7 @@ m/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm10
 00.pfb>
-Output written on Outline_formatted.pdf (27 pages, 336337 bytes).
+Output written on Outline_formatted.pdf (27 pages, 334891 bytes).
 PDF statistics:
  270 PDF objects out of 1000 (max. 8388607)
  186 compressed objects within 2 object streams

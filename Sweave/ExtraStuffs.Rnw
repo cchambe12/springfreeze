@@ -62,6 +62,8 @@ library(lubridate)
 \item Future false spring equations must integrate species, life stage, and habitat differences in temperature thresholds in order to accurately determine level of damage sustained by a false spring event.
 \end{enumerate}
 
+\item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. 
+
 
 Current studies focus on latitudinal and photoperiodic effects \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Gauzere2017}, however, f
 

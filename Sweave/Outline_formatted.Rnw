@@ -114,7 +114,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Temperate forest plants are most at risk to frost damage from episodic spring frosts \citep{Sakai1987}. 
 \item Freezing temperatures following a warm spell could result in plant damage or even death \citep{Ludlum1968, Mock2007}.
-\item Freezing damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Pearce2001, Beck2004, Hofmann2015}.
+\item Freeze damage can occur directly via intracellular ice formation or indirectly via freezing dehydration \citep{Pearce2001, Beck2004, Hofmann2015}.
 \item Intracellular ice formation can cause defoliation, which can result in crown dieback \citep{Gu2008}. %% There's a point that I would like to make later about how crown dieback from a false spring could cause increased sun exposure to understorey plants meaning false spring events can almost have a domino effect.
 \end {enumerate}
 
@@ -178,7 +178,7 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 %%%%%%%%%%%%%% COME BACK TO THIS!!! %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \item Deciduousness and the evolution of dormancy in temperate forest trees has permitted species to occupy more northern ecological niches and decrease the risk of false spring damage \citep{Samish1954}.
 \item Therefore, warm temperatures earlier in the year (i.e. in February) will not result in early budburst due to insufficient chilling \citep{Basler2012}.
-\item Likewise, photoperiod sensitivity is a common false spring avoidance strategy: species that respond to photoperiod cues more than warm spring temperatures will likely delay budburst and evade false spring events \citep{Basler2014}.
+\item Likewise, photoperiod sensitivity is a common false spring avoidance strategy: species that respond to photoperiod cues more than warm spring temperatures will likely delay budburst and evade false spring events (as spring continues to advance earlier in the year) \citep{Basler2014}.
 \end {enumerate}
 \item Tolerance
 % One paragraph on tolerance 
@@ -239,15 +239,15 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \item Tell the forcing temperature story
 \begin{enumerate}
 \item Forcing temperatures in the spring affect the duration of vegetative risk: years with lower forcing temperatures and fewer growing degree days will have longer durations of vegetative risk \citep{Donnelly2017}.
-\item Species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damage from false springs \citep{Scheifinger2003}.
-\item It is also anticipated that there will be greater fluctuations in spring forcing temperatures \citep{Martin2010}.
+\item With spring advancing, it is anticipated that there will be greater fluctuations in spring forcing temperatures \citep{Martin2010}.
 \item This high variation in temperature (i.e. oscillating above and below the development threshold) may result in longer durations of vegetative risk across more species.
+\item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
 \end{enumerate}
 \item Harvard Forest Data
 \begin{enumerate}
-\item Using observational data from Harvard Forest \citep{Okeefe2014}, we compared two years of data: one year that had an unusually early spring onset (2010) and another year that an unusually late spring onset (2014).
 \item By comparing the durations of vegetative risk to the growing degree days for each year, we found that the number of growing degree days were highly comparable for both years, however, in 2010, the duration of vegetative risk was slightly longer overall (Figure \ref{fig:forest}). 
 \item With climate change progressing, it is likely there will be more years like 2010 in the future and that the durations of vegetative risk will continue to extend. %% can expand later 
+\item Therfore, species that are better able to phenologically track the shifts in spring advancement due to climate change are more likely to sustain damage from false springs \citep{Scheifinger2003}.
 \end{enumerate}
 \end{enumerate}
 
@@ -257,10 +257,9 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Tell the interaction of cues story
 \begin{enumerate}
-\item Spring forcing temperatures and daylength requirements vary among species and habitats in order for budburst to occur.
-\item Since species distributions are largely driven by phenology \citep{Chuine2001}, species less reliant on photoperiod cues are likely to outcompete species that are as spring forcing temperatures continue to increase \citep{Vitasse2011, Gauzere2017}.
+\item Spring forcing temperatures and daylength requirements for budburst to occur vary among species and habitats.
+\item Since species distributions are largely driven by phenology \citep{Chuine2001}, species less reliant on photoperiod cues are likely to outcompete species that are reliant on photoperiod cues as spring forcing temperatures continue to initiate earlier \citep{Vitasse2011, Gauzere2017}.
 \item As climate change progresses, higher spring forcing temperatures may be required due to potentially insufficient winter chilling, especially at lower latitudes \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. 
-\item Species growing at higher latitudes are more likely to have lower chilling requirements to break dormancy \citep{Myking1995, Howe2003} in order to optimize growing season length \citep{Prevey2017}. 
 \item Anthropogenic climate change will cause changes in winter and spring temperatures, resulting in greater differences in spring phenology cue requirements across species and habitats. 
 \item This interaction of cues and how climate change will affect that interaction is crucial to understand in order to recognize the species that will be affected and to understand which species will likely become more at risk of false spring events in the future. 
 
@@ -271,11 +270,11 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Data from a growth chamber experiment were used to compare 9 temperate forest species between two treatments: high chilling hours, long photoperiod and high forcing temperatures (WL1) against no additional chilling, short photoperiod and low forcing temperatures (CS0) (Flynn and Wolkovich, 2017?).
 \item According to the results, individuals that initiate budburst earlier in the season (i.e. {\textit {Betula papyrifera}} (Marsh.) and {\textit{Ilex mucronata}} (L.)) tend to initiate budburst early regardless of treatment, but the treatment does affect the duration of vegetative risk significantly (Figure \ref{fig:dan}).
-\item As the season progresses, treatment does not affect the duration of vegetative risk as much, however, the day of budburst tends to be later in the season with the weaker treatment effects (i.e. CS0).
+\item As the season progresses, treatment does not affect the duration of vegetative risk as much but the day of budburst tends to be later in the season with the weaker treatment effects (i.e. CS0).
 \item Anova results indicate forcing temperatures and photoperiod length determine the duration of vegetative risk more than chilling requirements.
-\item With a changing climate, forcing temperatures will increase while photoperiod cues will remain stagnant, potentially elongating the duration of vegetative risk and exposing at risk plants to more intense false spring events or even multiple freezes. %% NEEDS FIXING!!
-\item This could indicate that chilling influences budburst and leafout similarly, while photoperiod and forcing temperatures have varying effects on the two phenophases.
-\item Further studies are essential to investigate the interplay between chilling, forcing, and photoperiod effects on the duration of vegetative risk, especially for species occupying habitats more susceptible to false spring events. 
+\item This could suggest that chilling influences budburst and leafout similarly, while photoperiod and forcing temperatures have varying effects on the two phenophases.
+\item With a changing climate, forcing temperatures will increase while photoperiod cues will remain stagnant, potentially elongating the duration of vegetative risk and exposing at risk plants to more intense false spring events or even multiple events in one year. %% NEEDS FIXING!!
+\item Further studies are essential to investigate the interplay between chilling, forcing, and photoperiod cues on the duration of vegetative risk, especially for species occupying ecological niches more susceptible to false spring events. 
 \end{enumerate}
 \end {enumerate}
 \end{enumerate}
@@ -290,20 +289,20 @@ FSI = Julian Date (Last Spring Freeze) - Julian Date (Budburst)
 \begin{enumerate}
 \item Introduce concept of regional differences
 \begin {enumerate}
-\item Climatic variation across regions results in varying durations of vegetative risk due to different photoperiod lengths and forcing temperatures.
 \item There have been numerous studies investigating the relationship between budburst and photoperiod by using latitudinal gradients \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Zohner2016, Gauzere2017}, however most studies fail to integrate longitudinal variation or regional effects.
 \item Chilling and forcing are key drivers of budburst and leafout and can vary significantly across a  longitudinal gradient while maintaining the same photoperiodic effects. %% needs some work!
+\item Climatic variation across regions results in varying durations of vegetative risk due to different chilling and forcing temperatures.
 \item For this reason, it is important to include climate regime extremes (e.g. annual minima and annual maxima) in future studies.
 \item It is essential to recognize the differences in continental vs. coastal habitats and the amplitude and variation in temperature extremes across regions in order to properly assess spring plant phenology and false spring risk.
 \end{enumerate}
 \item Regional differences and Risk more in depth
 \begin{enumerate}
-\item The climatic implications of increasing forcing temperatures could potentially lead to earlier dates of budburst and enhance the risk for frost or drought risk.
+\item The climatic implications of advancing forcing temperatures could potentially lead to earlier dates of budburst and enhance the risk for frost or drought risk.
 \item These shifts in climatic regimes could vary in intensity across regions (i.e. habitats currently at risk of false spring damage could become low risk regions over time). 
 \item There are discrepancies in defining a false spring event, especially with understanding damaging freezing temperatures.
 \item Some regions and species may be more able to tolerate lower temperature thresholds than others (Table \ref{tab:temperature}).
-\item It is crucial to gain an understanding on which climatic parameters result in false spring events and also to understand what habitats are at risk now and what habitats will be at risk in the future. 
-\item It is anticipated that most habitats will trend towards earlier spring onsets, however, last freeze dates will not occur at the same rate, rendering some regions to be more susceptible to false spring events in the future \citep{Labe2016}.
+\item It is crucial to gain an understanding on which climatic parameters result in false spring events and how these parameters may vary across regions. 
+\item It is anticipated that most regions will have earlier spring onsets, however, last freeze dates will not occur at the same rate, rendering some regions and species to be more susceptible to false spring events in the future \citep{Labe2016}.
 \item By determining the average time of budburst to leafout dates for the dominant species in five archetypal climate regions, we were able to estimate the current spatial variation of false spring risk (Figure \ref{fig:regional}).
 \item We assessed the number of freeze days (-2.2$^{\circ}$C) \citep{Schwartz1993} that occurred on average over the past 50 years within the date ranges for each region.
 \item We found that Maine has the highest risk for frost damage and Lyon, France as the lowest (Figure \ref{fig:regional}). 
