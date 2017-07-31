@@ -16,6 +16,7 @@ library(car)
 library(xtable)
 library(broom)
 library(tibble)
+library(lme4)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -70,6 +71,10 @@ dxx<-dxx%>% filter(species %in% spp)
 dxx<-dxx %>%
   dplyr::select(id, species, site, lday, bday, chilling, warm, photo, treatcode)
 dxx$risk<-dxx$lday-dxx$bday 
+
+mod1<-lmer(risk~chilling + warm + photo + (chilling|species) +
+             (warm|species) + (photo|species), data=dxx)
+summary(mod1)
 
 Anova(lm(risk~chilling + warm + photo, data=dxx))
 
