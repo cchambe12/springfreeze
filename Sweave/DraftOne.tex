@@ -101,7 +101,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Abstract}
-Trees and shrubs growing in temperate environments are at risk of being exposed to late spring freezes, or false springs, which can be detrimental to growth. False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events. For these reasons, a greater understanding of false spring damage as climate change progresses is necessary. Future false spring equations must integrate species, life stage, and habitat differences in temperature thresholds in order to accurately determine level of damage sustained by a false spring event.
+Trees and shrubs growing in temperate environments are at risk of being exposed to late spring freezes, or false spring events, which can be damaging ecologically and economically. False spring studies largely simplify the various ecological elements that could predict the level of plant damage from late spring freezing events. For these reasons, a greater understanding of false spring damage as climate change progresses is necessary. Future false spring equations must integrate species, life stage, and habitat differences in temperature thresholds in order to accurately determine level of damage sustained by a false spring event and researchers must integrate a more systematic approach to investigate false spring events in order to advance the field.
 
 \section{Introduction}
 Plants growing in temperate environments are at risk of being exposed to late spring freezes, which can be detrimental to growth. Individuals that leaf out before the last freeze date are at risk of leaf loss, damaging wood tissue, and slowed or stalled canopy development \citep{Gu2008, Hufkens2012}. These late spring freezing events are known as false springs. False spring events can result in highly adverse ecological and economic consequences \citep{Knudson2012, Ault2013}.
@@ -246,10 +246,36 @@ The risk of false spring damage can vary from year to year and the timing betwee
 
 By utilizing only two simple metrics (last freeze date and spring onset date), researchers fail to assess the myriad of factors essential in determining false spring risk and damage. Future studies are necessary to gain an understanding with relationships between species, functional group, phenophase, and region and the differences in false spring damage. It is also essential that a temperature threshold is established for all functional types and phenophases across regions in order to effectively predict false spring risk in the future. An integrated approach to assessing past and future spring freeze damage must be realized as global climate change progresses in order to mitigate the adverse ecological and economic effects of false springs.
 
-
-
-
-
-
 \bibliography{..//refs/SpringFreeze.bib}
+
+\section*{Supplement}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## lmer(formula = risk ~ chilling + warm + photo + (chilling + warm + 
+##     photo | species), data = dxx)
+##             coef.est coef.se
+## (Intercept) 53.35     6.15  
+## chilling    -0.10     0.36  
+## warm        -1.54     0.19  
+## photo       -1.19     0.15  
+## 
+## Error terms:
+##  Groups   Name        Std.Dev. Corr              
+##  species  (Intercept) 17.27                      
+##           chilling     0.61    -0.73             
+##           warm         0.50    -1.00  0.78       
+##           photo        0.29    -0.98  0.84  0.99 
+##  Residual              7.44                      
+## ---
+## number of obs: 996, groups: species, 9
+## AIC = 6896.2, DIC = 6861.6
+## deviance = 6863.9
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+
+
 \end{document}

@@ -73,11 +73,11 @@ dxx<-dxx %>%
 dxx$risk<-dxx$lday-dxx$bday 
 
 mod1<-lmer(risk~chilling + warm + photo + (chilling + warm + photo|species), data=dxx)
-summary(mod1)
+arm::display(mod1)
 
 mod.inter<-lmer(risk~chilling + warm + photo + chilling*warm + 
                   chilling*photo + warm*photo + (chilling + warm + photo|species), data=dxx)
-summary(mod.inter)
+arm::display(mod.inter)
 
 Anova(lm(risk~chilling + warm + photo, data=dxx))
 
