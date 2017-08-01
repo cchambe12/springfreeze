@@ -624,10 +624,10 @@ fix$biweekly<-ifelse((fix$doy>=137 & fix$doy <=152), "May 15 - May 31", fix$biwe
 
 fix$doy<-as.numeric(as.character(fix$doy))
 
-time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x=Site), width=0.2) + coord_flip() +
+time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x=Site, fill=Site), width=0.2) + coord_flip() +
   scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                                                        "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"), position="top") +
-  theme(legend.position=c(0.05,0.3), legend.key.size=unit(0.4, "cm"), aspect.ratio=0.3,
+  theme(legend.position=c(0.06,0.3), legend.key.size=unit(0.4, "cm"), aspect.ratio=0.3,
         panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), plot.margin=unit(c(-.2,.5,.2,.5),"cm")) + 
   ylab("") + xlab("") 
 

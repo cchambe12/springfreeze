@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  31 JUL 2017 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 AUG 2017 10:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,48 +872,52 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 94.
  [1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<figure/fsifig-1.pdf, id=14, 505.89pt x 505.89pt>
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<figure/fsifig-1.pdf, id=19, 505.89pt x 505.89pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
  <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 122.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 125.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
 
-[2] [3 <./figure/fsifig-1.pdf>]
-<..//figure/CuesAndFS.pdf, id=29, 845.04686pt x 597.50786pt>
+[3] [4 <./figure/fsifig-1.pdf>]
+<..//figure/CuesAndFS.pdf, id=32, 845.04686pt x 597.50786pt>
 File: ..//figure/CuesAndFS.pdf Graphic file (type pdf)
 
 <use ..//figure/CuesAndFS.pdf>
-Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 137.
+Package pdftex.def Info: ..//figure/CuesAndFS.pdf used on input line 140.
 (pdftex.def)             Requested size: 377.62633pt x 267.00702pt.
- [4] [5 <..//figure/CuesAndFS.pdf>] [6]
-<..//figure/HF_gddTime.pdf, id=116, 578.16pt x 578.16pt>
+ [5] [6 <..//figure/CuesAndFS.pdf>] [7]
+<..//figure/HF_gddTime.pdf, id=120, 578.16pt x 578.16pt>
 File: ..//figure/HF_gddTime.pdf Graphic file (type pdf)
 
 <use ..//figure/HF_gddTime.pdf>
-Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 158.
+Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 161.
 (pdftex.def)             Requested size: 377.62633pt x 377.6257pt.
- [7] [8 <..//figure/HF_gddTime.pdf>]
-<figure/dan-1.pdf, id=129, 505.89pt x 505.89pt>
+ [8] [9 <..//figure/HF_gddTime.pdf>]
+<figure/dan-1.pdf, id=132, 505.89pt x 505.89pt>
 File: figure/dan-1.pdf Graphic file (type pdf)
  <use figure/dan-1.pdf>
-Package pdftex.def Info: figure/dan-1.pdf used on input line 169.
+Package pdftex.def Info: figure/dan-1.pdf used on input line 172.
 (pdftex.def)             Requested size: 472.03111pt x 472.03983pt.
- [9]
-[10 <./figure/dan-1.pdf>] [11] [12
+ [10]
+[11 <./figure/dan-1.pdf>] [12]
+Overfull \hbox (26.37784pt too wide) in paragraph at lines 188--233
+ [] 
+ []
 
-]
-<..//figure/RegionalRisk.pdf, id=151, 867.24pt x 578.16pt>
-File: ..//figure/RegionalRisk.pdf Graphic file (type pdf)
+[13
 
-<use ..//figure/RegionalRisk.pdf>
-Package pdftex.def Info: ..//figure/RegionalRisk.pdf used on input line 234.
-(pdftex.def)             Requested size: 455.24167pt x 369.87997pt.
- [13
+] <..//figure/Boxplot_RegRisk_biweekly.pdf, id=155, 794.97pt x 578.16pt>
+File: ..//figure/Boxplot_RegRisk_biweekly.pdf Graphic file (type pdf)
+
+<use ..//figure/Boxplot_RegRisk_biweekly.pdf>
+Package pdftex.def Info: ..//figure/Boxplot_RegRisk_biweekly.pdf used on input 
+line 239.
+(pdftex.def)             Requested size: 455.2604pt x 369.87997pt.
+ [14
 
 
- <..//figure/RegionalRisk.pdf>]
-(./DraftOne.bbl
+ <..//figure/Boxplot_RegRisk_biweekly.pdf>] (./DraftOne.bbl
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 36.
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
@@ -922,12 +926,12 @@ File: ts1aer.fd
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 36.
 
-[14] [15] [16] [17] [18]) [19] (./DraftOne.aux) ) 
+[15] [16] [17] [18] [19]) [20] (./DraftOne.aux) ) 
 Here is how much of TeX's memory you used:
- 15941 strings out of 493014
- 315265 string characters out of 6133351
- 345837 words of memory out of 5000000
- 19246 multiletter control sequences out of 15000+600000
+ 15944 strings out of 493014
+ 315376 string characters out of 6133351
+ 345862 words of memory out of 5000000
+ 19249 multiletter control sequences out of 15000+600000
  48172 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,8n,49p,10380b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -951,10 +955,10 @@ sfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmti8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-supe
 r/sfrm1000.pfb>
-Output written on DraftOne.pdf (19 pages, 329153 bytes).
+Output written on DraftOne.pdf (20 pages, 311345 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
+ 248 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

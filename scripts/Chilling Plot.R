@@ -72,9 +72,12 @@ dxx<-dxx %>%
   dplyr::select(id, species, site, lday, bday, chilling, warm, photo, treatcode)
 dxx$risk<-dxx$lday-dxx$bday 
 
-mod1<-lmer(risk~chilling + warm + photo + (chilling|species) +
-             (warm|species) + (photo|species), data=dxx)
+mod1<-lmer(risk~chilling + warm + photo + (chilling + warm + photo|species), data=dxx)
 summary(mod1)
+
+mod.inter<-lmer(risk~chilling + warm + photo + chilling*warm + 
+                  chilling*photo + warm*photo + (chilling + warm + photo|species), data=dxx)
+summary(mod.inter)
 
 Anova(lm(risk~chilling + warm + photo, data=dxx))
 
