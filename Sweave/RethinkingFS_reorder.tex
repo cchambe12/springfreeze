@@ -1,4 +1,54 @@
-\documentclass{article}
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage{Sweave}
 \usepackage{float}
 \usepackage{graphicx}
@@ -34,18 +84,9 @@
 ]{siderules}
 
 %% R Script
-<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
-  options(stringsAsFactors=FALSE)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(xtable)
-library(arm)
-library(grid)
-library(lubridate)
-library(stargazer)
-@
 
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \title{Rethinking False Spring Risk}
 \author{C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$, E. M. Wolkovich $^{1,2}$}
@@ -131,56 +172,39 @@ By utilizing only two simple metrics (last freeze date and spring onset date), r
 
 \bibliography{..//refs/SpringFreeze.bib}
 
-<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.", fig.pos="H">>=
-read_chunk("..//scripts/John.okeefe.R")
-method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/fsifig-1} \caption[A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study]{A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. PhenoCam FSI values are red, Observed FSI values are blue, and USA-NPN FSI values are green.}\label{fig:fsifig}
+\end{figure}
 
-FSI.table<- method %>%
-  dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
-  rename(observational = FSI_okeefe) %>%
-  rename(phenocam = FSI_cam) %>%
-  rename(npn = FSI_npn) %>%
-  filter(year>=2008) %>%
-  filter(year<2015)
-blend<-FSI.table %>% 
-  gather(Method, FSI, -year) %>%
-  arrange(year)
 
-methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
-  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
-  geom_line(aes(x=year, y=FSI, col=Method))
-plot(methodplot)
-
-@
 
 
 \section*{Supplement}
-<<label=lmer, results=TRUE, echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Linear Mixed Effects Model results for duration of vegetative risk across 9 native tree species to New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments.", fig.pos="H">>=
-
-read_chunk("..//scripts/Chilling Plot.R")
-d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
-
-### Prep data for Anovas
-dxx<-d
-dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
-#d$chilling<-as.numeric(as.character(
-#ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
-dxx$warm<-as.numeric(as.character(dxx$warm))
-dxx$photo<-as.numeric(as.character(dxx$photo))
-dxx$species<-substr(dxx$ind, 1, 6)
-dxx<-dxx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
-small.spp<-dxx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
-spp<-unique(small.spp$species)
-dxx<-dxx%>% filter(species %in% spp)
-dxx<-dxx %>%
-  dplyr::select(id, species, site, lday, bday, chilling, warm, photo, treatcode)
-dxx$risk<-dxx$lday-dxx$bday 
-
-mod1<-lmer(risk~chilling + warm + photo + (chilling + warm + photo|species), data=dxx)
-display(mod1)
-
-@
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## lmer(formula = risk ~ chilling + warm + photo + (chilling + warm + 
+##     photo | species), data = dxx)
+##             coef.est coef.se
+## (Intercept) 53.35     6.15  
+## chilling    -0.10     0.36  
+## warm        -1.54     0.19  
+## photo       -1.19     0.15  
+## 
+## Error terms:
+##  Groups   Name        Std.Dev. Corr              
+##  species  (Intercept) 17.27                      
+##           chilling     0.61    -0.73             
+##           warm         0.50    -1.00  0.78       
+##           photo        0.29    -0.98  0.84  0.99 
+##  Residual              7.44                      
+## ---
+## number of obs: 996, groups: species, 9
+## AIC = 6896.2, DIC = 6861.6
+## deviance = 6863.9
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 
 \begin{figure} [H] 
 \begin{center}
@@ -196,39 +220,11 @@ display(mod1)
 \end{center}
 \end{figure}
 
-<<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out.", fig.pos="H">>=
-read_chunk("..//scripts/Chilling Plot.R")
-d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
+\begin{figure}[H]
+\includegraphics[width=\maxwidth]{figure/dan-1} \caption[Day of budburst and the day of leaf out for native tree species in New England]{Day of budburst and the day of leaf out for native tree species in New England. Data was collected from a growth chamber experiment using any combination of two photoperiod treatments, two forcing treatments, and three chilling treatments. The standard deviation is represented in blue for budburst and green for leaf out.}\label{fig:dan}
+\end{figure}
 
-tx<-c("CS0", "WL1")
-dx<- d %>%
-  dplyr::select(ind, treatcode, lday, bday, site) %>%
-  filter(treatcode %in% tx)
 
-dx<-na.omit(dx)
-dx$species<-substr(dx$ind, 1, 6)
-dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
-small.spp<-dx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
-spp<-unique(small.spp$species)
-dx<-dx%>% filter(species %in% spp)
-
-dx<-dx%>%dplyr::select(-site, -ind)
-dx$mean<-ave(dx$bday, dx$species, dx$treatcode)
-dx<-dx%>%
-  group_by(mean, species)%>%
-  arrange(species)%>%
-  filter(row_number()==1)
-dx<-dx%>%group_by(species, treatcode) %>% arrange(species, desc(treatcode))
-dx$code<-reorder(dx$species, dx$bday)
-
-chill<-ggplot(dx, aes(x = code,ymin = bday, ymax = lday, group=interaction(species, treatcode) )) +
-  geom_point(aes(y=bday, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=lday, col="darkgreen"), position = position_dodge(.5)) +
-  geom_linerange(aes(x = code,ymin = bday, ymax = lday, col=treatcode), position=position_dodge(.5)) +  ylab("Day of Year") +
-  scale_color_manual(labels = c("CS0","Leafout", "Budburst", "WL1"), values = c("#00C094", "green4", "darkolivegreen3", "#F8766D")) +
-  xlab("Species") +coord_flip()
-plot(chill)
-
-@
 
 \begin{landscape}
 \begin{center}
