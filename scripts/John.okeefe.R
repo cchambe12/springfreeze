@@ -163,3 +163,15 @@ pearson
 #glance(pearson)
 pearson.long<-cor(FSI.long, method="pearson")
 pearson.long
+
+######### Edits made by Cat ####################
+### To make a new figure for Rethinking manuscript
+## 15 September 2017
+spp.12<-budburst$species[which(budburst$year==2012)]
+dvr.spp<-c("BEPA", "FAGR", "ACPE", "PRSE", "ACSA", "POGR", "BEAL", "ACRU")
+d.2012<-budburst%>%filter(year==2012)%>%filter(species %in% dvr.spp)
+
+leaves<-budburst[(!is.na(budburst$l75.jd)),]
+leaves<-leaves%>%filter(year==2012)
+unique(leaves$species)
+

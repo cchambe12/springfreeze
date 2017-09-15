@@ -225,7 +225,7 @@ dx$code<-reorder(dx$species, dx$bday)
 
 chill<-ggplot(dx, aes(x = code,ymin = bday, ymax = lday, group=interaction(species, treatcode) )) +
   geom_point(aes(y=bday, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=lday, col="darkgreen"), position = position_dodge(.5)) +
-  geom_linerange(aes(x = code,ymin = bday, ymax = lday, col=treatcode), position=position_dodge(.5)) +  ylab("Day of Year") +
+  geom_linerange(aes(x = code,ymin = bday, ymax = lday, col=treatcode), position=position_dodge(.5)) +  ylab("Days from Start of Experiment") +
   scale_color_manual(labels = c("CS0","Leafout", "Budburst", "WL1"), values = c("#00C094", "green4", "darkolivegreen3", "#F8766D")) +
   xlab("Species") +coord_flip()
 plot(chill)
