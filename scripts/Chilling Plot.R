@@ -123,3 +123,4 @@ for(i in c(1:length(myspps))) {
 }
 
 #write.csv(mylister, "output/interactions.csv", row.names=FALSE)
+#write.csv(dxx, file="~/Documents/git/springfreeze/output/dvrdata_danf.csv", row.names=FALSE)

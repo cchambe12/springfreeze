@@ -14,7 +14,7 @@ data {
   int<lower=0> N;
   int<lower=0> n_sp;
   int<lower=1, upper=n_sp> sp[N];
-  vector[N] lday;
+  vector[N] risk;
   vector[N] warm;
   vector[N] photo;
   vector[N] chill1; 
@@ -159,7 +159,7 @@ model {
 	b_inter_pc2_ncp ~ normal(0, 15);
 
 	
-	dvr ~ normal(y_hat, sigma_y);
+	risk ~ normal(y_hat, sigma_y);
 
 }
 

@@ -75,7 +75,7 @@ coeff <- c(1, warmdiff, photodiff, chill1diff, chill2diff,
 )
 
 
-bb <- rnorm(n = length(warm), mean = mm %*% coeff, sd = 1) # should be able to do sd = mm %*% sd.coeff as well, with a different sd for each parameter.
+bb <- rnorm(n = length(warm), mean = 15, sd = 5) # should be able to do sd = mm %*% sd.coeff as well, with a different sd for each parameter.
 
 (fake <- data_frame(bb, warm, photo, chill1, chill2))
 
@@ -104,7 +104,7 @@ for(i in 1:nsp){ # loop over species, as these are the random effect modeled
              rnorm(1, photochill2, photochill2.sd)
   )
   
-  bb <- rnorm(n = length(warm), mean = mm %*% coeff, sd = 0.1)
+  bb <- rnorm(n = length(warm), mean = 12, sd = 1)
   
   fakex <- data.frame(bb, sp = i, warm, photo, chill1, chill2)
       
@@ -127,6 +127,6 @@ summary(lm(bb ~ (warm+photo+chill1+chill2)^2, data = fake)) # double sanity chec
 #summary(lmer(bb ~ (site|sp) + (warm|sp) + (photo|sp) + (chill1|sp) + (chill2|sp), data = fake)) # too hard for lmer.
 
 save(list=c("fake"), file = "Fake Budburst.RData")
-
+#write.csv(fake, file="~/Documents/git/springfreeze/output/fakedata_exp.csv", row.names = FALSE)
 
 
