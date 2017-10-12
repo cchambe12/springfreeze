@@ -12,15 +12,15 @@ runstan = TRUE # set to TRUE to actually run stan models. FALSE if loading from 
 
 # Analysis of bud burst experiment 2015. 
 
-library(memisc) # for getSummary 
-library(xtable)
-library(scales) # for alpha
+#library(memisc) # for getSummary 
+#library(xtable)
+#library(scales) # for alpha
 library(ggplot2)
 library(rstan)
-library(caper) # for pgls
 library(png) # readPNG for Fig 1
 library(rstanarm)
 library(shinystan)
+library(bayesplot)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
@@ -90,6 +90,16 @@ treeshrub = as.numeric(treeshrub)
 unique(dxb$chill1)
 unique(dxb$chill2)
 
+risk = dxb$risk # dvr as response 
+warm = as.numeric(dxb$warm)
+sp = as.numeric(dxb$sp) 
+photo = as.numeric(dxb$photo)
+chill1 = as.numeric(dxb$chill1)
+chill2 = as.numeric(dxb$chill2)
+N = length(risk) 
+n_sp = length(unique(dxb$sp))
+
+datalist.b<-list(risk=risk, warm=warm, sp=sp, photo=photo, chill1=chill1, chill2=chill2, N=N, n_sp=n_sp)
 # 1. Budburst day. 
 if(runstan){
   datalist.b <- list(risk = dxb$risk, # dvr as response 
@@ -98,23 +108,27 @@ if(runstan){
                      photo = as.numeric(dxb$photo), 
                      chill1 = as.numeric(dxb$chill1),
                      chill2 = as.numeric(dxb$chill2),
-                     N = nrow(dxb), 
+                     N = length(risk), 
                      n_sp = length(unique(dxb$sp))
   )
   
-    doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', 
-                 data = datalist.b, warmup=2000, iter = 4000, chains = 4,
-                 control = list(adapt_delta = 0.9))
+    doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improves!!
+                 data = datalist.b, warmup=1500, iter = 2000, chains = 2,
+                 control = list(adapt_delta = 0.99))
                  #               , max_treedepth = 15)) 
   
 }
 
 
 # yb = dxb$bday # for shinystan posterior checks
-# launch_shinystan(doym.b) 
+launch_shinystan(doym.b) 
 
 sumerb <- summary(doym.b)$summary
 sumerb[grep("mu_", rownames(sumerb)),]
+
+betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2",
+                                     "b_warm", "b_photo", "b_chill1", "b_chill2"))
+mcmc_intervals(betas[,1:4])
 
 # For Simon Joly:
 range(sumerb[,"n_eff"])

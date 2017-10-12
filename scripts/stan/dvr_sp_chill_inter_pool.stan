@@ -125,16 +125,16 @@ model {
 	mu_b_inter_sc1 ~ normal(0, 35);	
 	mu_b_inter_sc2 ~ normal(0, 35);	*/
 	
-	sigma_b_warm ~ normal(0, 10); // Start big at 10, go smaller if introduces problems
-	sigma_b_photo ~ normal(0, 10); 
-	sigma_b_chill1 ~ normal(0, 10);
-	sigma_b_chill2 ~ normal(0, 10);
+	sigma_b_warm ~ normal(0, 5); // Start big at 10, go smaller if introduces problems
+	sigma_b_photo ~ normal(0, 5); 
+	sigma_b_chill1 ~ normal(0, 5);
+	sigma_b_chill2 ~ normal(0, 5);
 
-	sigma_b_inter_wp ~ normal(0, 10);
-	sigma_b_inter_wc1 ~ normal(0, 10);	
-	sigma_b_inter_wc2 ~ normal(0, 10);	
-	sigma_b_inter_pc1 ~ normal(0, 10);	
-	sigma_b_inter_pc2 ~ normal(0, 10);
+	sigma_b_inter_wp ~ normal(0, 5);
+	sigma_b_inter_wc1 ~ normal(0, 5);	
+	sigma_b_inter_wc2 ~ normal(0, 5);	
+	sigma_b_inter_pc1 ~ normal(0, 5);	
+	sigma_b_inter_pc2 ~ normal(0, 5);
 
 	a_sp ~ normal(mu_a, sigma_a);  
 	
