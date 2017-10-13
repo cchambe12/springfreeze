@@ -12,34 +12,35 @@ runstan = TRUE # set to TRUE to actually run stan models. FALSE if loading from 
 
 # Analysis of bud burst experiment 2015. 
 
-#library(memisc) # for getSummary 
-#library(xtable)
-#library(scales) # for alpha
+library(memisc) # for getSummary 
+library(xtable)
+library(scales) # for alpha
 library(ggplot2)
 library(rstan)
 library(png) # readPNG for Fig 1
 library(rstanarm)
 library(shinystan)
 library(bayesplot)
+library(dplyr)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
-#dx<-read.csv("output/dvrdata_danf.csv", header=TRUE)
+dx<-read.csv("output/dvrdata_danf.csv", header=TRUE)
 dx<-read.csv("output/fakedata_exp.csv", header=TRUE)
 
 # Prep 
-
-#dx$sp <- as.numeric(as.factor(dx$sp))
-dx$risk<-dx$bb
-#dx$chill<-dx$chilling
-levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); #levels(dx$chill) = 1:3
+dx$sp <- as.numeric(as.factor(dx$sp))
+dx$site <- as.numeric(as.factor(dx$site))
+dx$risk<-dx$lday-dx$bday
+dx$chill<-dx$chilling
+levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = 1:3; levels(dx$site) = 1:2
 dx$warm <- as.numeric(dx$warm)
 dx$photo <- as.numeric(dx$photo)
-#dx$chill <- as.numeric(dx$chill)
-
+dx$chill <- as.numeric(dx$chill)
+dx$site<- as.numeric(dx$site)
 # Chill dummy variables
-#dx$chill1 = ifelse(dx$chill == 2, 1, 0) 
-#dx$chill2 = ifelse(dx$chill == 3, 1, 0) 
+dx$chill1 = ifelse(dx$chill == 1, 1, 0) 
+dx$chill2 = ifelse(dx$chill == 2, 1, 0) 
 
 with(dx, table(chill1, chill2)) # all three levels in here
 
@@ -87,19 +88,25 @@ treeshrub = as.numeric(treeshrub)
 #dxb$photo[dxb$photo==1] <- 0
 #dxb$photo[dxb$photo==2] <- 1
 
+unique(dxb$site)
+dxb$site[dxb$site==1] <- 0
+dxb$site[dxb$site==2] <- 1
+
 unique(dxb$chill1)
 unique(dxb$chill2)
 
 risk = dxb$risk # dvr as response 
 warm = as.numeric(dxb$warm)
+site = as.numeric(dxb$site)
 sp = as.numeric(dxb$sp) 
 photo = as.numeric(dxb$photo)
 chill1 = as.numeric(dxb$chill1)
 chill2 = as.numeric(dxb$chill2)
 N = length(risk) 
 n_sp = length(unique(dxb$sp))
+n_site = length(unique(dxb$site))
 
-datalist.b<-list(risk=risk, warm=warm, sp=sp, photo=photo, chill1=chill1, chill2=chill2, N=N, n_sp=n_sp)
+datalist.b<-list(risk=risk, warm=warm, site=site, sp=sp, photo=photo, chill1=chill1, chill2=chill2, N=N, n_sp=n_sp, n_site=n_site)
 # 1. Budburst day. 
 if(runstan){
   datalist.b <- list(risk = dxb$risk, # dvr as response 
@@ -112,7 +119,7 @@ if(runstan){
                      n_sp = length(unique(dxb$sp))
   )
   
-    doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improves!!
+    doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improve!!
                  data = datalist.b, warmup=1500, iter = 2000, chains = 2,
                  control = list(adapt_delta = 0.99))
                  #               , max_treedepth = 15)) 
@@ -126,9 +133,10 @@ launch_shinystan(doym.b)
 sumerb <- summary(doym.b)$summary
 sumerb[grep("mu_", rownames(sumerb)),]
 
-betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2",
-                                     "b_warm", "b_photo", "b_chill1", "b_chill2"))
-mcmc_intervals(betas[,1:4])
+betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2", "mu_b_inter_wp", "mu_b_inter_wc1",
+                                    "mu_b_inter_wc2", "mu_b_inter_pc1", "mu_b_inter_pc2", "b_inter_wp_ncp", "b_inter_wc1_ncp", "b_inter_wc2_ncp",
+                                     "b_warm", "b_photo", "b_chill1", "b_chill2", "b_inter_pc1_ncp", "b_inter_pc2_ncp"))
+mcmc_intervals(betas[,1:10])
 
 # For Simon Joly:
 range(sumerb[,"n_eff"])
@@ -136,6 +144,7 @@ summary(sumerb[,"n_eff"])
 length(sumerb[(sumerb[,"n_eff"])<15988,"n_eff"])
 length(sumerb[,"n_eff"])
 
+#write.csv(sumerb, file="~/Documents/git/springfreeze/output/model_results.csv", row.names = FALSE)
 # Also, I think AROMEL and ALNINC (Zohner spp) are 4-5 (double-check photoperiod effect)
 # sumerb[grep("b_photo", rownames(sumerb)),]
 
