@@ -29,6 +29,7 @@ dx<-read.csv("output/dvrdata_danf.csv", header=TRUE)
 dx<-read.csv("output/fakedata_exp.csv", header=TRUE)
 
 # Prep 
+dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
 dx$sp <- as.numeric(as.factor(dx$sp))
 dx$site <- as.numeric(as.factor(dx$site))
 dx$risk<-dx$lday-dx$bday
@@ -136,8 +137,10 @@ sumerb[grep("mu_", rownames(sumerb)),]
 betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2", "mu_b_inter_wp", "mu_b_inter_wc1",
                                     "mu_b_inter_wc2", "mu_b_inter_pc1", "mu_b_inter_pc2", "b_inter_wp_ncp", "b_inter_wc1_ncp", "b_inter_wc2_ncp",
                                      "b_warm", "b_photo", "b_chill1", "b_chill2", "b_inter_pc1_ncp", "b_inter_pc2_ncp"))
-mcmc_intervals(betas[,1:10])
+mcmc_intervals(betas[,1:9])
 
+save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/dvr_sp_chill_realdata.Rda")
+save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/dvr_sp_chill_fakedata.Rda")
 # For Simon Joly:
 range(sumerb[,"n_eff"])
 summary(sumerb[,"n_eff"])

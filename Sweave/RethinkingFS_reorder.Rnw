@@ -44,6 +44,7 @@ library(arm)
 library(grid)
 library(lubridate)
 library(stargazer)
+library(gridExtra)
 @
 
 \begin{document}
@@ -105,9 +106,9 @@ Some temperate forest species have evolved to be more tolerant of spring freezin
 \section {Defining Vegetative Risk: Complexities due to Species' Strategies and Climate}
 Phenology and frost tolerance are intertwined. Flowering and fruiting phenophases are generally more sensitive to false spring events than vegetative phases \citep{Augspurger2009, Lenz2013}. Damage to flowers and fruits can hinder reproductive growth for that entire season. However, false spring events that occur during the vegetative growth phenophases impose the greatest freezing threat to deciduous tree and shrub species because plants will suffer greater long-term effects from the loss of photosynthetic tissue, which could impact multiple years of growth \citep{Sakai1987}. Plants at certain vegetative phenophases (i.e. before full leafout of the entire plant) are more likely to sustain damage from a false spring than individuals past the leafout phenophase. Spring phenology is a crucial measure for how much damage a plant will sustain from a freezing event.
 
-Phenophases are crucial indicators for false spring damage. Freezing tolerance steadily decreases after budburst begins until the leaf is fully unfolded \citep{Lenz2016}. Therefore, the rate of budburst and the length of time between budburst and leafout is essential for predicting level of damage from a false spring event. We will refer to the timing of these collective phenophases (i.e. budburst to leafout) as the duration of vegetative risk. The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout. One study suggests that species with short durations of vegetative risk often sustain higher levels of damage but if the duration of vegetative risk is longer, then the buds and leaves will be more tolerant against frosts \citep{Augspurger2009}, however this has yet to be tested thoroughly. 
+Freezing tolerance steadily decreases after budburst begins until the leaf is fully unfolded \citep{Lenz2016}. Therefore, the rate of budburst and the length of time between budburst and leafout is essential for predicting level of damage from a false spring event. We will refer to the timing of these collective phenophases (i.e. budburst to leafout) as the duration of vegetative risk. The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout. One hypothesis suggests that species with short durations of vegetative risk often sustain higher levels of damage but if the duration of vegetative risk is longer, then the buds and leaves will be more tolerant against frosts \citep{Augspurger2009}, however this has yet to be tested thoroughly. 
 
-Different species respond differently to anthropogenic climate change, which causes differences in spring phenologies. Most species are expected to begin leafout earlier in the season with warming spring temperatures but some species may have the opposite response due to less winter chilling or decreased photoperiod cues \citep{Cleland2006, Yu2010, Xin2016}. Studies indicate that species growing at more northern latitudes tend to respond more to photoperiod than species growing further south and, subsequently, these species may have a longer duration of vegetative risk \citep {Partanen2004, Viheraaarnio2006, Caffarra2011}. Furthermore, larger canopy species exhibit greater photoperiod sensitivities than shade tolerant or understory species \citep{Basler2012} and they also, generally, require more chilling in the winter and greater forcing temperatures in the spring to initiate budburst \citep{Laube2013}. Individuals that initiate budburst earlier in the spring may attempt to limit freezing risk by decreasing the duration of vegetative risk. We assessed climate data across Europe, long-term observational data, and experimental data to gain a better understanding of the the interaction between duration of vegetative risk and false spring events.  
+Different species respond differently to anthropogenic climate change, which causes differences in spring phenologies. Most species are expected to begin leafout earlier in the season with warming spring temperatures but some species may have the opposite response due to less winter chilling or decreased photoperiod cues \citep{Cleland2006, Yu2010, Xin2016}. Studies indicate that species growing at more northern latitudes tend to respond more to photoperiod than species growing further south and, subsequently, these species may have a longer durations of vegetative risk \citep {Partanen2004, Viheraaarnio2006, Caffarra2011}. Furthermore, larger canopy species exhibit greater photoperiod sensitivities than shade tolerant or understory species \citep{Basler2012} and they also, generally, require more chilling in the winter and greater forcing temperatures in the spring to initiate budburst \citep{Laube2013}. Individuals that initiate budburst earlier in the spring may attempt to limit freezing risk by decreasing the duration of vegetative risk. We assessed climate data across Europe, long-term observational data, and experimental data to gain a better understanding of the the interaction between duration of vegetative risk and false spring events.  
 
 \subsection {Predictable Regional Differences in Climate, Species Response and False Spring Risk}
 False spring risk varies regionally. By determining the average time of budburst to leafout dates for the dominant species in five archetypal climate regions, we were able to estimate the current spatial variation of false spring risk (Figure \ref{fig:regional}). We assessed the number of freeze days (-2.2$^{\circ}$C) \citep{Schwartz1993} that occurred on average over the past 50 years within the average durations of vegetative risk for each region. We found that some regions had a much higher risk of false spring (i.e. Maine) than others (i.e. Lyon) (Figure \ref{fig:regional}). Future research should aim to integrate spatiotemporal effects and regional differences when investigating false spring risk and duration of vegetative risk in order to make better predictions as climate change progresses.
@@ -232,6 +233,38 @@ plot(chill)
 
 @
 
+<<label=risk, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A figure showing the differences in spring phenology and false spring risk across two species: \\textit{Ilex mucronata} and \\textit{Betula alleghaniensis}. We mapped a possible false spring event based on historic weather data and compared it to the observational data collected at Harvard Forest (O'Keefe, 2014). In this scenario, the \\textit{Ilex mucronata} would be exposed to a false spring event, whereas the \\textit{Betula alleghaniensis} would avoid it entirely.", fig.pos="H">>=
+read_chunk("..//scripts/Spp_FSIgraphic.R")
+ile<-read.csv("..//output/ilemuc.csv",header=TRUE)
+bet<-read.csv("..//output/betall.csv",header=TRUE)
+
+ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
+  annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
+  xlab("Day of Year") + ylab("Frost Damage Risk") +
+  annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
+  annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
+  annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
+  annotate("text", x = 96, y = 11, label = "BB") +
+  annotate("text", x = 99, y = 11, label = "LO")
+betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
+  annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
+  xlab("Day of Year") + ylab("Frost Damage Risk") +
+  annotate("text", x = 140, y = 18, label = "Betula alleghaniensis", fontface = "italic") +
+  annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
+  annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
+  annotate("text", x = 124, y = 11, label = "BB") +
+  annotate("text", x = 140, y = 11, label = "LO")
+
+grid.arrange(ilemuc, betall, ncol=1, nrow=2)
+@
+
+\begin{figure} [H] 
+\begin{center}
+\includegraphics[width=16cm, height=13cm]{..//figure/Boxplot_RegRisk_biweekly.pdf} 
+\caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, White2009, Soudani2012, USA-NPN2016}.}\label{fig:regional} 
+\end{center}
+\end{figure}
+
 \begin{landscape}
 \begin{center}
 \captionof{table}{Comparing damaging spring temperature thresholds in ecological and agronomical studies across various species and phenophases.} \label{tab:temperature} 
@@ -284,12 +317,5 @@ Agrinomical & Vegetative & Wheat & -17.2 & lethal limit & \cite{Sanchez2013} \\
 \end{center}
 \end{landscape}
 \restoregeometry
-
-\begin{figure} [H] 
-\begin{center}
-\includegraphics[width=16cm, height=13cm]{..//figure/Boxplot_RegRisk_biweekly.pdf} 
-\caption{A comparison of false spring risk across five climate regions. The data was subsetted for each region based on earliest historical spring onset date to the latest historical leafout date and was divided into biweekly time periods \citep{Schaber2005, White2009, Soudani2012, USA-NPN2016}.}\label{fig:regional} 
-\end{center}
-\end{figure}
 
 \end{document}

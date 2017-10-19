@@ -15,6 +15,7 @@ ile$risk<-ifelse(ile$doy==95, 6.5, ile$risk)
 ile$risk<-ifelse(ile$doy==100, 7, ile$risk)
 ile$risk<-ifelse(ile$doy>=75 & ile$doy<=94, 3, ile$risk)
 ile$risk<-ifelse(ile$doy>=101, 4, ile$risk)
+write.csv(ile, file = "~/Documents/git/springfreeze/output/ilemuc.csv", row.names = FALSE)
 
 bet<-data.frame(doy, phase=NA, risk=NA)
 bet$phase<-ifelse(bet$doy==122, "BB", bet$phase)
@@ -24,6 +25,7 @@ bet$risk<-ifelse(bet$doy==123, 6.5, bet$risk)
 bet$risk<-ifelse(bet$doy==141, 7, bet$risk)
 bet$risk<-ifelse(bet$doy>=75 & bet$doy<=122, 3, bet$risk)
 bet$risk<-ifelse(bet$doy>=142, 4, bet$risk)
+write.csv(bet, file = "~/Documents/git/springfreeze/output/betall.csv", row.names = FALSE)
 
 ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
   annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
