@@ -47,7 +47,11 @@ dx$code<-reorder(dx$species, dx$bday)
 df<-dx%>%dplyr::select(species, treatcode, mean)
 df<-spread(df, treatcode, mean)
 df$diff<-as.numeric(df$CS0-df$WL1)
-df$code<-reorder(df$species, df$WL1)
+bb<-dx%>%dplyr::select(species, treatcode, bday)%>%filter(treatcode=="CS0")
+#bb<-bb[!duplicated(bb$species),]
+df<-cbind(df, bb)
+df$code<-reorder(df$species, df$bday)
+
 
 chill<-ggplot(dx, aes(x = code,ymin = bday, ymax = lday, group=interaction(species, treatcode) )) +
   geom_point(aes(y=bday, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=lday, col="darkgreen"), position = position_dodge(.5)) +
@@ -62,6 +66,8 @@ chill.small<-ggplot(df, aes(x = code,ymin = WL1, ymax = CS0, group=species)) +
   scale_color_manual(labels = c("DVR_CS0", "DVR_WL1"), values = c("purple3", "green4")) +
   xlab("Species") +coord_flip()
 plot(chill.small)
+
+diff<-ggplot(df, aes(x=factor(code), y=diff)) + geom_point() +ylab("Difference in DVR between Treatments") + xlab("Species")
 
 dx$risk= dx$lday - dx$bday
 risk<-ggplot(dx, aes(x=bday, y=risk)) + geom_point(aes(col=treatcode)) + geom_smooth(aes(x=bday, y=risk, col=treatcode, fill=treatcode), method= "loess")
