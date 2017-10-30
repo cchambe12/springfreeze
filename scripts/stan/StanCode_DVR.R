@@ -121,8 +121,8 @@ if(runstan){
                      n_sp = length(unique(dxb$sp))
   )
   
-    doym.b <- stan('scripts/stan/risk_site_sp_poola.stan', ### change when divergent transitions improve!!
-                 data = datalist.b, warmup=2000, iter = 4000, chains = 4,
+    doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improve!!
+                 data = datalist.b, warmup=3000, iter = 3000, chains = 4,
                  control = list(adapt_delta = 0.99))
                  #               , max_treedepth = 15)) 
   
@@ -140,7 +140,7 @@ betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_
 mcmc_intervals(betas[,1:4])
 
 save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/risk_site_sp_fakedata.Rda")
-save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/dvr_sp_chill_fakedata.Rda")
+save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/dvr_sp_chill_realdata_issues.Rda")
 # For Simon Joly:
 range(sumerb[,"n_eff"])
 summary(sumerb[,"n_eff"])
