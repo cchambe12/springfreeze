@@ -107,14 +107,17 @@ prep$year<-as.numeric(prep$year)
 dx$year<-as.numeric(dx$year)
 d<-inner_join(prep, dx)
 
-mod.gdd<-lmer(risk~gdd+as.factor(year)*budburst+(1|species), data=d)
+mod.gdd<-lmer(risk~gdd+as.factor(year)+(1|species), data=d)
 arm::display(mod.gdd)
 
 mod2<- lmer(risk~gdd + (1|year) + (1|species),data=dx)
 arm::display(mod2)  
   
-mod3<- lmer(risk~gdd*year+(1|species), data=dx)  
+mod3<- lmer(risk~gdd*as.factor(year)+(1|species), data=dx)  
 arm::display(mod3)    
   
+
+class(d$year)
+
   
 
