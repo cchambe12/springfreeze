@@ -1,4 +1,4 @@
-\begin{thebibliography}{72}
+\begin{thebibliography}{74}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
@@ -352,8 +352,21 @@ Taschler, D., Beikircher, B. \& Neuner, G. (2004) Frost resistance and ice
   nucleation in leaves of five woody timberline species measured in situ during
   shoot expansion. \emph{Tree Physiology} \textbf{24}, 331--337.
 
+\bibitem[{Thompson \emph{et~al.}(2013)Thompson, Beardall, Beringer, Grace \&
+  Sardina}]{Thompson2013}
+Thompson, R.M., Beardall, J., Beringer, J., Grace, M. \& Sardina, P. (2013)
+  Means and extremes: building variability into community-level climate change
+  experiments. \emph{Ecology Letters} \textbf{16}, 799--806.
+
 \bibitem[{USA-NPN(2016)}]{USA-NPN2016}
 USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
+
+\bibitem[{Vasseur \emph{et~al.}(2014)Vasseur, DeLong, Gilbert, Greig, Harley,
+  McCann, Savage, Tunney \& I.}]{Vasseur2014}
+Vasseur, D.A., DeLong, J.P., Gilbert, B., Greig, H.S., Harley, C., McCann,
+  K.S., Savage, V., Tunney, T.D. \& I., O.M. (2014) Increased temperature
+  variation poses a greater risk to species than climate warming.
+  \emph{Proceedings of the Royal Society} \textbf{281}, 1--8.
 
 \bibitem[{Vavrus \emph{et~al.}(2006)Vavrus, Walsh, Chapman \&
   Portis}]{Vavrus2006}
