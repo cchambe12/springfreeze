@@ -192,7 +192,7 @@ display(mod1)
 \end{center}
 \end{figure}
 
-<<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="The difference in duration of vegetative risk across species, comparing two treatments. Data was collected from a growth chamber experiment where one treatment had no additional overwinter chilling, low spring forcing temperatures, and shorter spring daylengths and the other had additional overwinter chilling, high spring forcing temperatures, and longer spring daylenghts. The standard error is ", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
+<<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="This figure is comparing difference in duration of vegetative risk across two treatments for each species collected for the experiment. Data was collected from a growth chamber experiment where one treatment had no additional overwinter chilling, low spring forcing temperatures, and shorter spring daylengths and the other had additional overwinter chilling, high spring forcing temperatures, and longer spring daylenghts. The standard error is represented by the bars around each point.", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
 read_chunk("..//scripts/DVR_diffplot.R")
 d<-read.csv("..//input/Budburst.clean.csv",header=TRUE)
 

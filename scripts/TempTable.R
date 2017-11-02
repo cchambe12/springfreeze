@@ -33,8 +33,8 @@ d$alph<-ifelse(d$sector=="Agrinomic", 1, 2)
 d$set<-reorder(d$study, d$alph)
 ggplot(d, aes(x=set, y=temperature)) + 
          geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd, color=sector), alpha=0.3) + 
-         geom_point(aes(shape=phase, color=sector)) + xlab("Temperature Threshold") +
-  ylab("Study, Taxonomic group, Freeze Definition") + 
+         geom_point(aes(shape=phase, color=sector)) + ylab("Temperature Threshold") +
+  xlab("Study, Taxonomic group, Freeze Definition") + 
   geom_hline(yintercept=0, linetype=2) + coord_flip() + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), axis.line = element_line(colour = "black")) 
