@@ -37,14 +37,15 @@ dx<-dx%>% filter(species %in% spp)
 
 dx<-dx%>%dplyr::select(-site, -ind)
 dx$mean<-ave(dx$bday, dx$species, dx$treatcode)
+dx$sd<-ave(dx$bday, dx$species, dx$treatcode, FUN=sd)
 dx<-dx%>%
-  group_by(mean, species)%>%
+  group_by(mean, species, sd)%>%
   arrange(species)%>%
   filter(row_number()==1)
 dx<-dx%>%group_by(species, treatcode) %>% arrange(species, desc(treatcode))
 dx$code<-reorder(dx$species, dx$bday)
 
-df<-dx%>%dplyr::select(species, treatcode, mean)
+df<-dx%>%dplyr::select(species, treatcode, mean, sd)
 df<-spread(df, treatcode, mean)
 df$diff<-as.numeric(df$CS0-df$WL1)
 bb<-dx%>%dplyr::select(species, treatcode, bday)%>%filter(treatcode=="CS0")

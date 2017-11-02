@@ -13,9 +13,6 @@ graphics.off()
 library(dplyr)
 library(tidyr)
 library(ggplot2)
-library(rstanarm)
-library(shinystan)
-library(bayesplot)
 
 ## Let's make the data...
 d<- data.frame(study=c("Lenz2016: Sorbus aucuparia (50%)", "Lenz2016: Prunus avium (50%)", "Lenz2016: Tilia platyphyllos (50%)", 
@@ -32,5 +29,12 @@ d<- data.frame(study=c("Lenz2016: Sorbus aucuparia (50%)", "Lenz2016: Prunus avi
                              -5.5, 4.7, -1.8, -17.2),
                sd=c(4, 5, 3, 4, 3, 0, 0, 0, 0, 1, 2.2, 0, 0, 0.5, 1.5, 1.3, 1.9, 1.2))
 
-ggplot(d, aes(x=study, y=temperature)) + geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd, color=sector)) + geom_point(aes(shape=phase, color=sector)) +
-  coord_flip()
+d$alph<-ifelse(d$sector=="Agrinomic", 1, 2)
+d$set<-reorder(d$study, d$alph)
+ggplot(d, aes(x=set, y=temperature)) + 
+         geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd, color=sector), alpha=0.3) + 
+         geom_point(aes(shape=phase, color=sector)) + xlab("Temperature Threshold") +
+  ylab("Study, Taxonomic group, Freeze Definition") + 
+  geom_hline(yintercept=0, linetype=2) + coord_flip() + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) 

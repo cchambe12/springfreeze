@@ -1,0 +1,56 @@
+## Most updated script for Dan's experiment plots
+# Cat - 1 November 2017
+
+# Clear workspace
+rm(list=ls()) # remove everything currently held in the R memory
+options(stringsAsFactors=FALSE)
+graphics.off()
+
+# Load libraries
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+# Set Working Directory
+setwd("~/Documents/git/springfreeze")
+d<-read.csv("input/Budburst.clean.csv",header=TRUE)
+
+tx<-c("CS0", "WL1")
+dx<- d %>%
+  dplyr::select(ind, treatcode, lday, bday, site) %>%
+  filter(treatcode %in% tx)
+  
+## Omit Viburnum due to budburst date issues
+dx<-na.omit(dx)
+dx$species<-substr(dx$ind, 1, 6)
+dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+small.spp<-dx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
+spp<-unique(small.spp$species)
+dx<-dx%>% filter(species %in% spp)
+dx<-dplyr::select(dx, -ind, -site)
+
+
+### Start determining risk for each treatment
+dxx<-dx
+dxx$risk<-dxx$lday-dxx$bday
+dxx$dvr<-ave(dxx$risk, dxx$species, dxx$treatcode)
+dxx$dvr.sd<-ave(dxx$risk, dxx$species, dxx$treatcode, FUN=sd)/sqrt(length(unique(dxx$dvr)))
+dxx<-dplyr::select(dxx, species, treatcode, dvr, dvr.sd)
+dxx<-dxx[!duplicated(dxx),]
+dxx$tx.sd<-paste(dxx$treatcode, "se", sep="_")
+dm<-dxx%>%dplyr::select(species, treatcode, dvr)%>%spread(treatcode, dvr)
+ds<-dxx%>%dplyr::select(species, tx.sd, dvr.sd)%>%spread(tx.sd, dvr.sd)
+dxx<-inner_join(dm, ds)
+dxx$diff<-dxx$CS0-dxx$WL1
+dxx$diff.sd<-sqrt((dxx$CS0_se)^2+(dxx$WL1_se)^2) 
+df<-dx%>%filter(treatcode=="WL1")%>%dplyr::select(treatcode, bday, species)
+df$bday<-ave(df$bday, df$species, df$treatcode)
+df<-df[!duplicated(df),]
+df$code<-reorder(df$species, df$bday)
+dxx$code<-df$code
+
+diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() + 
+    geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
+  ylab("Difference in DVR between Treatments") + xlab("Species") + coord_cartesian(ylim=c(0,25))
+plot(diff)
+  
