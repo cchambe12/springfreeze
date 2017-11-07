@@ -46,11 +46,25 @@ dxx$diff.sd<-sqrt((dxx$CS0_se)^2+(dxx$WL1_se)^2)
 df<-dx%>%filter(treatcode=="WL1")%>%dplyr::select(treatcode, bday, species)
 df$bday<-ave(df$bday, df$species, df$treatcode)
 df<-df[!duplicated(df),]
+
+
+df$species<-ifelse(df$species=="ILEMUC", "I. mucronata", df$species)
+df$species<-ifelse(df$species=="ACEPEN", "A. pensylvanicum", df$species)
+df$species<-ifelse(df$species=="BETALL", "B.alleghaniensis", df$species)
+df$species<-ifelse(df$species=="BETPAP", "B.papyrifera", df$species)
+df$species<-ifelse(df$species=="ACERUB", "A.rubrum", df$species)
+df$species<-ifelse(df$species=="POPGRA", "P.grandidentata", df$species)
+df$species<-ifelse(df$species=="QUERUB", "Q.rubra", df$species)
+df$species<-ifelse(df$species=="ACESAC", "A.saccharum", df$species)
+df$species<-ifelse(df$species=="FAGGRA", "F.grandifolia", df$species)
+
 df$code<-reorder(df$species, df$bday)
 dxx$code<-df$code
 
 diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() + 
     geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
-  ylab("Difference in DVR between Treatments") + xlab("Species") + coord_cartesian(ylim=c(0,25))
+  ylab(expression(Delta*" DVR in cold long vs. short cool treatments")) + coord_cartesian(ylim=c(0,25)) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
+        axis.text.x = element_text(face = "italic"), axis.text=element_text(size=5)) 
 plot(diff)
   

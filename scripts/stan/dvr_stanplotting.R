@@ -72,6 +72,7 @@ bb.stan$chill <- bb.stan$chill/240
 
 # Load fitted stan model: no interactions
 load("~/Documents/git/springfreeze/scripts/stan/dvr_sp_chill_realdata.Rda")
+load("~/Documents/git/freezingexperiment/analyses/output/buds_2level_real.Rda")
 m1.bb <- doym.b
 # summary(m1.bb)
 
@@ -108,3 +109,12 @@ lresp <- ggplot(subby, aes(x=chill2, y=risk)) + geom_point(aes(colour=sp)) +
   geom_smooth(aes(x=chill2, y=risk),method="lm") + theme(legend.position="none")
 
 grid.arrange(cresp, fresp, presp, lresp, ncol=4, nrow=1)
+
+cresp <- ggplot(ospr.stan, aes(x=tx, y=dvr)) + geom_point(aes(colour=ind)) + 
+  geom_smooth(aes(x=tx, y=dvr),method="lm") + theme(legend.position="none")
+fresp <- ggplot(ospr.stan, aes(x=sp, y=dvr)) + geom_point(aes(colour=ind)) + 
+  geom_smooth(aes(x=sp, y=dvr),method="lm") + theme(legend.position="none")
+
+grid.arrange(cresp, fresp, ncol=2, nrow=1)
+
+

@@ -227,17 +227,30 @@ dxx$diff.sd<-sqrt((dxx$CS0_se)^2+(dxx$WL1_se)^2)
 df<-dx%>%filter(treatcode=="WL1")%>%dplyr::select(treatcode, bday, species)
 df$bday<-ave(df$bday, df$species, df$treatcode)
 df<-df[!duplicated(df),]
+
+df$species<-ifelse(df$species=="ILEMUC", "I. mucronata", df$species)
+df$species<-ifelse(df$species=="ACEPEN", "A. pensylvanicum", df$species)
+df$species<-ifelse(df$species=="BETALL", "B.alleghaniensis", df$species)
+df$species<-ifelse(df$species=="BETPAP", "B.papyrifera", df$species)
+df$species<-ifelse(df$species=="ACERUB", "A.rubrum", df$species)
+df$species<-ifelse(df$species=="POPGRA", "P.grandidentata", df$species)
+df$species<-ifelse(df$species=="QUERUB", "Q.rubra", df$species)
+df$species<-ifelse(df$species=="ACESAC", "A.saccharum", df$species)
+df$species<-ifelse(df$species=="FAGGRA", "F.grandifolia", df$species)
+
 df$code<-reorder(df$species, df$bday)
 dxx$code<-df$code
 
 diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() + 
     geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
-  ylab("Difference in DVR between Treatments") + xlab("Species") + coord_cartesian(ylim=c(0,25))
+  ylab(expression(Delta*" DVR in cold long vs. short cool treatments")) + coord_cartesian(ylim=c(0,25)) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
+        axis.text.x = element_text(face = "italic"), axis.text=element_text(size=5)) 
 plot(diff)
 
 @
 
-<<label=risk, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A figure showing the differences in spring phenology and false spring risk across two species: \\textit{Ilex mucronata} and \\textit{Betula alleghaniensis}. We mapped a possible false spring event based on historic weather data and compared it to the observational data collected at Harvard Forest (O'Keefe, 2014). In this scenario, the \\textit{Ilex mucronata} would be exposed to a false spring event, whereas the \\textit{Betula alleghaniensis} would avoid it entirely.", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
+<<label=risk, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A figure showing the differences in spring phenology and false spring risk across two species: \\textit{Ilex mucronata} and \\textit{Betula alleghaniensis}. We mapped a possible false spring event based on historic weather data and compared it to the observational data collected at Harvard Forest (O'Keefe, 2014). In this scenario, the \\textit{Ilex mucronata} would be exposed to a false spring event, whereas the \\textit{Betula alleghaniensis} would avoid it entirely. DVR stands for Duration of Vegetative Risk.", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
 read_chunk("..//scripts/Spp_FSIgraphic.R")
 ile<-read.csv("..//output/ilemuc.csv",header=TRUE)
 bet<-read.csv("..//output/betall.csv",header=TRUE)
@@ -248,16 +261,14 @@ ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
   annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
   annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
-  annotate("text", x = 96, y = 11, label = "BB") +
-  annotate("text", x = 99, y = 11, label = "LO")
+  annotate("text", x = 97.5, y = 11, label = "DVR")
 betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
   annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
   xlab("Day of Year") + ylab("Frost Damage Risk") +
   annotate("text", x = 140, y = 18, label = "Betula alleghaniensis", fontface = "italic") +
   annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
   annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
-  annotate("text", x = 124, y = 11, label = "BB") +
-  annotate("text", x = 140, y = 11, label = "LO")
+  annotate("text", x = 132.5, y = 11, label = "DVR")
 
 grid.arrange(ilemuc, betall, ncol=1, nrow=2)
 @
@@ -265,29 +276,31 @@ grid.arrange(ilemuc, betall, ncol=1, nrow=2)
 <<label=temp, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A comparison of damaging spring freezing temperature thresholds across ecological and agrinomic studies. Each study is listed on the y axis along with the taxonimic group of focus. In parenthases is the freezing definition used within that study (e.g. 100 is 100 lethality). Each point is the best estimate recorded for the temperature threshold with standard deviation if indicated in the study. The shape of the point represents the phenophases of interest and the colors indicate the type of study (i.e. agrinomic or ecological).", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
 read_chunk("..//scripts/TempTable.R")
 
-d<- data.frame(study=c("Lenz2016: Sorbus aucuparia (50%)", "Lenz2016: Prunus avium (50%)", "Lenz2016: Tilia platyphyllos (50%)", 
-                       "Lenz2016: Acer pseudoplatanus (50%)", "Lenz2016: Fagus sylvatica (50%)", "Schwartz1993: All species (hard)", 
-                       "Augspurger2013: All species (soft)", "Barker2005: Eucalyptus pauciflora", "Peterson2014: All species",
-                       "Cannell1986: All species", "Longstroth2012: Vaccinium spp.", "Longstroth2013: Rosaceae (10%)", "Longstroth2013: Rosaceae (90%)",
-                       "Barlow2015: Wheat (10-90%)", "Barlow2015: Wheat (100%)", "Sanchez2013: Rice (100%)", "Sanchez2013: Corn (100%)", "Sanchez: Wheat (100%)"), 
+d<- data.frame(study=c("Sorbus aucuparia - 50% (Lenz et al., 2016)", "Prunus avium - 50% (Lenz et al., 2016)", "Tilia platyphyllos - 50% (Lenz et al., 2016)", 
+                       "Acer pseudoplatanus - 50% (Lenz et al., 2016)", "Fagus sylvatica - 50% (Lenz et al., 2016)", "All species - hard freeze (Schwartz, 1993))", 
+                       "All species - soft freeze (Augspurger, 2013)", "Eucalyptus pauciflora (Barker et al., 2005)", "All species (Peterson & Abatzoglou, 2014)",
+                       "All species (Cannell & Smith, 1986)", "Vaccinium spp. (Longstroth, 2012)", "Rosaceae - 10% (Longstroth, 2013)", "Rosaceae - 90% (Longstroth, 2013)",
+                       "Wheat - 10 to 90% (Barlow et al., 2015)", "Wheat - 100% (Barlow et al., 2015)", "Rice - 100% (Sanchez et al., 2013)", "Corn - 100% (Sanchez et al., 2013)", "Wheat - 100% (Sanchez et al., 2013)"), 
                phase=c("Vegetative", "Vegetative", "Vegetative", "Vegetative", "Vegetative", "Both", "Both", "Both", "Both", "Both",
                        "Floral", "Vegetative", "Vegetative", "Floral", "Vegetative", "Vegetative", "Vegetative", "Vegetative"),
                sector=c("Ecologicial", "Ecologicial", "Ecologicial", "Ecologicial", "Ecologicial", "Ecologicial",
-                        "Ecologicial", "Ecologicial", "Ecologicial", "Agrinomic", "Agrinomic", "Agrinomic", "Agrinomic",
-                        "Agrinomic", "Agrinomic", "Agrinomic", "Agrinomic", "Agrinomic"),
+                        "Ecologicial", "Ecologicial", "Ecologicial", "Agronomic", "Agronomic", "Agronomic", "Agronomic",
+                        "Agronomic", "Agronomic", "Agronomic", "Agronomic", "Agronomic"),
                temperature=c(-7.4, -8.5, -7.4, -6.7, -4.8, -2.2, -1.7, -5.8, -2.2, 2, -2.2, -7.2, -13.3, -4.5,
                              -5.5, 4.7, -1.8, -17.2),
                sd=c(4, 5, 3, 4, 3, 0, 0, 0, 0, 1, 2.2, 0, 0, 0.5, 1.5, 1.3, 1.9, 1.2))
 
-d$alph<-ifelse(d$sector=="Agrinomic", 1, 2)
-d$set<-reorder(d$study, d$alph)
-temp<-ggplot(d, aes(x=set, y=temperature)) + 
+d$alph<-ifelse(d$sector=="Agronomic", 1, 2)
+d$dataset<-reorder(d$study, d$alph)
+d$dataset <- factor(d$dataset, levels = d$dataset[order(d$sector, d$temperature)])
+my.xlab = expression(paste("Temperature Threshold ", degree,"C"))
+temp<-ggplot(d, aes(x=dataset, y=temperature)) + 
          geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd, color=sector), alpha=0.3) + 
-         geom_point(aes(shape=phase, color=sector)) + xlab("Temperature Threshold") +
-  ylab("Study, Taxonomic group, Freeze Definition") + 
+         geom_point(aes(shape=phase, color=sector)) + ylab(my.xlab) + theme(axis.title.y=element_blank()) +
   geom_hline(yintercept=0, linetype=2) + coord_flip() + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-        panel.background = element_blank(), axis.line = element_line(colour = "black")) 
+        panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
+  ylim(c(-20, 10))
 plot(temp)
 @
 \end{document}

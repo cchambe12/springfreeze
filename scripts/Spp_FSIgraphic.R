@@ -33,15 +33,13 @@ ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
   annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
   annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
-  annotate("text", x = 96, y = 11, label = "BB") +
-  annotate("text", x = 99, y = 11, label = "LO")
+  annotate("text", x = 97.5, y = 11, label = "DVR")
 betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
   annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
   xlab("Day of Year") + ylab("Frost Damage Risk") +
   annotate("text", x = 140, y = 18, label = "Betula alleghaniensis", fontface = "italic") +
   annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
   annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
-  annotate("text", x = 124, y = 11, label = "BB") +
-  annotate("text", x = 140, y = 11, label = "LO")
+  annotate("text", x = 132.5, y = 11, label = "DVR") 
 
 grid.arrange(ilemuc, betall, ncol=1, nrow=2)
