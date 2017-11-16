@@ -1,4 +1,4 @@
-\begin{thebibliography}{63}
+\begin{thebibliography}{65}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
@@ -333,11 +333,23 @@ Vitasse, Y., Lenz, A., Hoch, G. \& K{\"{o}}rner, C. (2014{\natexlab{a}})
   trees at greater risk of damage than adult trees}. \emph{Journal of Ecology}
   \textbf{102}, 981--988.
 
-\bibitem[{Vitasse \emph{et~al.}(2014{\natexlab{b}})Vitasse, Lenz \&
+\bibitem[{Vitasse \emph{et~al.}(2014{\natexlab{b}})Vitasse, Lenz, Hoch \&
+  K{\"{o}}rner}]{Vitasse2014}
+Vitasse, Y., Lenz, A., Hoch, G. \& K{\"{o}}rner, C. (2014{\natexlab{b}})
+  {Earlier leaf-out rather than difference in freezing resistance puts juvenile
+  trees at greater risk of damage than adult trees}. \emph{Journal of Ecology}
+  \textbf{102}, 981--988.
+
+\bibitem[{Vitasse \emph{et~al.}(2014{\natexlab{c}})Vitasse, Lenz \&
   K{\"{o}}rner}]{Vitasse2014a}
-Vitasse, Y., Lenz, A. \& K{\"{o}}rner, C. (2014{\natexlab{b}}) {The interaction
+Vitasse, Y., Lenz, A. \& K{\"{o}}rner, C. (2014{\natexlab{c}}) {The interaction
   between freezing tolerance and phenology in temperate deciduous trees.}
   \emph{Frontiers in plant science} \textbf{5}, 541.
+
+\bibitem[{Vitra \emph{et~al.}(2017)Vitra, Lenz \& Vitasse}]{Vitra2017}
+Vitra, A., Lenz, A. \& Vitasse, Y. (2017) Frost hardening and dehardening
+  potential in temperate trees from winter to budburst. \emph{New Phytologist}
+  \textbf{216}, 113--123.
 
 \bibitem[{Wolkovich \emph{et~al.}(2012)Wolkovich, Cook, Allen, Crimmins,
   Betancourt, Travers, Pau, Regetz, Davies, Kraft, Ault, Bolmgren, Mazer,

@@ -29,14 +29,30 @@ d<- data.frame(study=c("Sorbus aucuparia - 50% (Lenz et al., 2016)", "Prunus avi
                              -5.5, 4.7, -1.8, -17.2),
                sd=c(4, 5, 3, 4, 3, 0, 0, 0, 0, 1, 2.2, 0, 0, 0.5, 1.5, 1.3, 1.9, 1.2))
 
+mylabels <- c(expression(paste(italic("Sorbus aucuparia"), "- 50% (Lenz et al., 2016")), 
+              expression(paste(italic("Prunus avium"), "- 50% (Lenz et al., 2016)")), 
+              expression(paste(italic("Tilia platyphyllos"), "- 50% (Lenz et al., 2016)")), 
+              expression(paste(italic("Acer pseudoplatanus"), "- 50% (Lenz et al., 2016)")),
+              expression(paste(italic("Fagus sylvatica"),  "- 50% (Lenz et al., 2016)")),
+              "All species - hard freeze (Schwartz, 1993))", "All species - soft freeze (Augspurger, 2013)",
+              expression(paste(italic("Eucalyptus pauciflora"), "(Barker et al., 2005)")),
+              "All species (Peterson & Abatzoglou, 2014)", "All species (Cannell & Smith, 1986)",
+              expression(paste(italic("Vaccinium spp."), "(Longstroth, 2012)")),
+              expression(paste(italic("Rosaceae"), "- 10% (Longstroth, 2013)")),
+              expression(paste(italic("Rosaceae"), "- 90% (Longstroth, 2013)")),
+              "Wheat - 10 to 90% (Barlow et al., 2015)", "Wheat - 100% (Barlow et al., 2015)",
+              "Rice - 100% (Sanchez et al., 2013)", "Corn - 100% (Sanchez et al., 2013)", "Wheat - 100% (Sanchez et al., 2013)") 
+
+
 d$alph<-ifelse(d$sector=="Agronomic", 1, 2)
 d$dataset<-reorder(d$study, d$alph)
 d$dataset <- factor(d$dataset, levels = d$dataset[order(d$sector, d$temperature)])
 my.xlab = expression(paste("Temperature Threshold ", degree,"C"))
+quartz()
 ggplot(d, aes(x=dataset, y=temperature)) + 
          geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd, color=sector), alpha=0.3) + 
          geom_point(aes(shape=phase, color=sector)) + ylab(my.xlab) + theme(axis.title.y=element_blank()) +
-  geom_hline(yintercept=0, linetype=2) + coord_flip() + 
+  geom_hline(yintercept=0, linetype=2) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-        panel.background = element_blank(), axis.line = element_line(colour = "black")) + 
-  ylim(c(-20, 10))
+        panel.background = element_blank(), axis.line = element_line(colour = "black"), 
+        axis.text.y= element_text(breaks=mylabels)) + ylim(c(-20, 10)) + coord_flip()

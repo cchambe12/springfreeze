@@ -65,6 +65,6 @@ diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() +
     geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
   ylab(expression(Delta*" DVR in cold long vs. short cool treatments")) + coord_cartesian(ylim=c(0,25)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
-        axis.text.x = element_text(face = "italic"), axis.text=element_text(size=5)) 
+        axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10))
 plot(diff)
   
