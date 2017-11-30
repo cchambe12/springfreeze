@@ -92,27 +92,31 @@ for(i in c(1:nrow(gdd))){
   for(j in c(1:nrow(count)))
     gdd$l75.gdd[i]<-ifelse(gdd$l75.jd[i]==count$doy[j] & gdd$year[i]==count$year[j], count$count[j], gdd$l75.gdd[i])  
 }
+gdd$bb.gdd<-ifelse(gdd$year==1997 & gdd$bb.jd==129 & gdd$species=="ACSA", 45, gdd$bb.gdd)
+gdd$bb.gdd<-ifelse(gdd$year==1999 & gdd$bb.jd==129 & gdd$species =="FRAM", 108, gdd$bb.gdd)
+gdd$bb.gdd<-ifelse(gdd$year==1992 & gdd$bb.jd==140 & gdd$species=="QUAL", 154, gdd$bb.gdd)
+gdd$l75.gdd<-ifelse(gdd$year==1998 & gdd$l75.jd==135 & gdd$species=="BEAL", 186, gdd$l75.gdd)
 gdd$agdd<-gdd$l75.gdd-gdd$bb.gdd
 
 gx<-full_join(dxx, gdd)
 years<-c("2010", "2014")
 gx<-filter(gx, year%in%years)
-gx$z.agdd<-scale(gx$agdd, center=TRUE, scale=FALSE)
-gx$z.year<-scale(gx$year, center=TRUE, scale=FALSE)
-gx$z.bb<-scale(gx$bb.jd, center=TRUE, scale=FALSE)
-m1<-lm(risk~afrzs+z.year+z.agdd, data=gx)
-display(m1)
-m2<-lm(l75.gdd~bb.jd+afrzs, data=gx)
-display(m2)
-m3<-lm(bb.jd~afrzs+agdd, data=gx)
-display(m3)
-m4<-lm(risk~agdd+afrzs,data=gx)
-display(m4)
+#gx$z.agdd<-scale(gx$agdd, center=TRUE, scale=FALSE)
+#gx$z.year<-scale(gx$year, center=TRUE, scale=FALSE)
+#gx$z.bb<-scale(gx$bb.jd, center=TRUE, scale=FALSE)
+#m1<-lm(risk~afrzs+z.year+z.agdd, data=gx)
+#display(m1)
+#m2<-lm(l75.gdd~bb.jd+afrzs, data=gx)
+#display(m2)
+#m3<-lm(bb.jd~afrzs+agdd, data=gx)
+#display(m3)
+#m4<-lm(risk~agdd+afrzs,data=gx)
+#display(m4)
 
 
-fit1<-stan_glm(risk~bb.gdd+bb.jd, data=gx)
-fit1
-plot(fit1, pars="beta")
+#fit1<-stan_glm(risk~bb.gdd+bb.jd, data=gx)
+#fit1
+#plot(fit1, pars="beta")
 
 
 w$bb<-NA
@@ -140,36 +144,36 @@ for(i in unique(fs$sp.year)){
 }
 
 
-gdd$z.agdd<-scale(gdd$agdd, center=TRUE, scale=FALSE)
-gdd$z.bb<-scale(gdd$bb.jd, center=TRUE, scale=FALSE)
-gdd$z.year<-scale(gdd$year, center=TRUE, scale=FALSE)
-gdd$z.risk<-scale(gdd$risk, center=TRUE, scale=FALSE)
-gdd$z.bbgdd<-scale(gdd$bb.gdd, center=TRUE, scale=FALSE)
-gdd$mean<-ave(gdd$bb.jd, gdd$year)
-gdd$z.mean<-scale(gdd$mean, center=TRUE, scale=FALSE)
-gdd$m.risk<-ave(gdd$risk, gdd$year)
+#gdd$z.agdd<-scale(gdd$agdd, center=TRUE, scale=FALSE)
+#gdd$z.bb<-scale(gdd$bb.jd, center=TRUE, scale=FALSE)
+#gdd$z.year<-scale(gdd$year, center=TRUE, scale=FALSE)
+#gdd$z.risk<-scale(gdd$risk, center=TRUE, scale=FALSE)
+#gdd$z.bbgdd<-scale(gdd$bb.gdd, center=TRUE, scale=FALSE)
+#gdd$mean<-ave(gdd$bb.jd, gdd$year)
+#gdd$z.mean<-scale(gdd$mean, center=TRUE, scale=FALSE)
+#gdd$m.risk<-ave(gdd$risk, gdd$year)
 
 dg<-dplyr::select(gdd, -z.agdd, -z.bb, -z.year, -z.risk, -z.bbgdd)
 dg$mean<-ave(dg$bb.jd, dg$year)
 
-mod1<-stan_glm(risk~agdd+mean, data=gdd)
-mod1
-plot(mod1, pars="beta")
+#mod1<-stan_glm(risk~agdd+mean, data=gdd)
+#mod1
+#plot(mod1, pars="beta")
 
 avg<-dplyr::select()
 
-gdd$year<-as.numeric(gdd$year)
-m1<-lm(m.risk~year, data=gdd)
-display(m1)
+#gdd$year<-as.numeric(gdd$year)
+#m1<-lm(m.risk~year, data=gdd)
+#display(m1)
 
-m2<-lm(risk~bb.jd, data=gdd)
-display(m2)
+#m2<-lm(risk~bb.jd, data=gdd)
+#display(m2)
 
-m3<-lm(agdd~risk+bb.jd, data=gdd)
-display(m3)
+#m3<-lm(agdd~risk+bb.jd, data=gdd)
+#display(m3)
 
 
-years<-c("1996", "2012")
+years<-c("1997", "2012")
 
 ggplot(gdd, x=species, y=bb.gdd) + geom_boxplot(aes(x=species, y=bb.gdd))
 
@@ -182,37 +186,111 @@ w.yr<-w%>%
   filter(year%in% years)%>%
   dplyr::select(year, doy, AirTMin)%>%
   filter(doy>=110)%>%
-  filter(doy<=155)
+  filter(doy<=172)
 w.yr$fs<-ifelse(w.yr$AirTMin<=-2, w.yr$AirTMin, NA)
 w.yr<-w.yr[!is.na(w.yr$fs),]
 
 
+gdd.yr<-filter(gdd, year%in%years)
 gdd$ord<- reorder(gdd$species, gdd$risk)
 gdd.yr$code <- reorder(gdd.yr$species, gdd.yr$year)
 gdd.yr$ord<- reorder(gdd.yr$code, gdd.yr$bb.jd)
-gdd.yr<-filter(gdd, year%in%years)
+
 
 gdd.yr$m.risk<-ave(gdd.yr$risk, gdd.yr$year)
 
 hf<-ggplot(gdd.yr, aes(x=ord,ymin = bb.gdd, ymax = l75.gdd, group=interaction(species, year) )) +
   geom_point(aes(y=bb.gdd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.gdd, col="darkgreen"), position = position_dodge(.5)) +
   geom_linerange(aes(x=ord,ymin = bb.gdd, ymax = l75.gdd, col=factor(year)), position=position_dodge(.5)) +  ylab("GDDs")  +
-  scale_color_manual(labels = c("1996", "2012", "Leafout GDD", "Budburst GDD"), 
-                       values = c("#F8766D", "#00BFC4", "green4", "darkolivegreen3")) + 
-  xlab("Species") +coord_flip() + labs(color="Phenophase and Year") + geom_hline(yintercept=c(84, 121), color="#F8766D",
-                                                                                 linetype=2) +
-  geom_hline(yintercept=196, color="#00BFC4", linetype=2)
+  scale_color_manual(labels = c("1997","2012", "Leafout GDD", "Budburst GDD"), 
+                       values = c("#F8766D","#00BFC4", "green4", "darkolivegreen3")) + 
+  xlab("Species") +coord_flip() + labs(color="Phenophase and Year")+ geom_hline(yintercept=196, color="#00BFC4", linetype=2)
 plot(hf)
 
 hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
   geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
   geom_linerange(aes(x=ord,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
-  scale_color_manual(labels = c("1996", "2012", "Leafout", "Budburst"), values = c("#F8766D", "#00BFC4", "green4", "darkolivegreen3")) +
-  xlab("Species") +coord_flip() + labs(color="Phenophase and Year")
+  scale_color_manual(labels = c("1997","2012", "Leafout", "Budburst"), values = c("#F8766D","#00BFC4", "green4", "darkolivegreen3")) +
+  xlab("Species") +coord_flip() + labs(color="Phenophase and Year")  +
+  geom_hline(yintercept=120, color="#00BFC4", linetype=2)
 plot(hf.bb)
 
 
 gdd.yr$z.agdd<-scale(gdd.yr$agdd, center=TRUE, scale=FALSE)
-m1<-stan_glm(risk~agdd+bb.jd+as.factor(year), data=gdd.yr)
-m1
-plot(m1, pars="beta")
+#m1<-stan_glm(risk~agdd+bb.jd+as.factor(year), data=gdd.yr)
+#m1
+#plot(m1, pars="beta")
+
+a.gd<-gdd[!is.na(gdd$agdd),]
+a.gd$y.gd<-ave(a.gd$agdd, a.gd$year)
+a.hist<-a.gd%>%dplyr::select(y.gd, year)
+a.hist<-a.hist[!duplicated(a.hist),]
+
+colors<-c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70")
+
+ggplot(a.hist, aes(x=as.factor(year), y=y.gd)) + geom_bar(fill=colors,stat="identity")
+
+bb.gd<-gdd[!is.na(gdd$bb.gdd),]
+bb.gd$b.gd<-ave(bb.gd$bb.gdd, bb.gd$year)
+bb.hist<-bb.gd%>%dplyr::select(b.gd, year)
+bb.hist<-bb.hist[!duplicated(bb.hist),]
+
+colors<-c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70", "firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70")
+
+ggplot(bb.hist, aes(x=as.factor(year), y=b.gd)) + geom_bar(fill=colors,stat="identity")
+
+
+bb<-gdd[!is.na(gdd$bb.jd),]
+bb$bb<-ave(bb$bb.jd, bb$year)
+bhis<-bb%>%dplyr::select(bb, year)
+bhis<-bhis[!duplicated(bhis),]
+
+colors<-c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70")
+
+ggplot(bhis, aes(x=as.factor(year), y=bb)) + geom_bar(fill=colors,stat="identity")
+
+lo<-gdd[!is.na(gdd$l75.jd),]
+lo$lo<-ave(lo$l75.jd, lo$year)
+lhis<-lo%>%dplyr::select(lo, year)
+lhis<-lhis[!duplicated(lhis),]
+
+colors<-c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70")
+
+ggplot(lhis, aes(x=as.factor(year), y=lo)) + geom_bar(fill=colors,stat="identity")
+
+lgd<-gdd[!is.na(gdd$l75.jd),]
+lgd$lo.gdd<-ave(lgd$l75.jd, lgd$year)
+lg.his<-lgd%>%dplyr::select(lo.gdd, year)
+lg.his<-lg.his[!duplicated(lg.his),]
+
+colors<-c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70")
+
+ggplot(lg.his, aes(x=as.factor(year), y=lo.gdd)) + geom_bar(fill=colors,stat="identity")
+
+
+gdd$bb.lo<-ave(gdd$risk, gdd$year)
+g.hist<-gdd%>%dplyr::select(bb.lo, year)
+g.hist<-g.hist[!duplicated(g.hist),]
+
+colors<-c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+          "gray70","firebrick4", "gray70", "gray70")
+
+ggplot(g.hist, aes(x=as.factor(year), y=bb.lo)) + geom_bar(fill=colors,stat="identity")
+
