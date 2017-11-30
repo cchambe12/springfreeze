@@ -148,6 +148,6 @@ summary(lm(risk ~ (site+warm+photo+chill1+chill2)^2, data = fake)) # double sani
 #summary(lmer(bb ~ (site|sp) + (warm|sp) + (photo|sp) + (chill1|sp) + (chill2|sp), data = fake)) # too hard for lmer.
 
 save(list=c("fake"), file = "Fake Budburst.RData")
-#write.csv(fake, file="~/Documents/git/springfreeze/output/fakedata_exp.csv", row.names = FALSE)
+#write.csv(fake, file="~/Documents/git/springfreeze/output/fakedata_dvr.csv", row.names = FALSE)
 
 

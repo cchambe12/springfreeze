@@ -12,12 +12,8 @@ runstan = TRUE # set to TRUE to actually run stan models. FALSE if loading from 
 
 # Analysis of bud burst experiment 2015. 
 
-library(memisc) # for getSummary 
-library(xtable)
-library(scales) # for alpha
 library(ggplot2)
 library(rstan)
-library(png) # readPNG for Fig 1
 library(rstanarm)
 library(shinystan)
 library(bayesplot)
@@ -26,7 +22,7 @@ library(dplyr)
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
 dx<-read.csv("output/dvrdata_danf.csv", header=TRUE)
-dx<-read.csv("output/fakedata_exp.csv", header=TRUE)
+dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
 
 # Prep 
 dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
@@ -55,17 +51,17 @@ dxb <- dx[!is.na(dx$risk),]
 # write.csv(leafoutdays, "output/leafoutdays.csv", row.names=TRUE)
 
 # Groups
-if(FALSE){
-colz = c("brown", "blue3")
+#if(FALSE){
+#colz = c("brown", "blue3")
 
-shrubs = c("VIBLAN","RHAFRA","RHOPRI","SPIALB","VACMYR","VIBCAS", "AROMEL","ILEMUC", "KALANG", "LONCAN", "LYOLIG")
-trees = c("ACEPEN", "ACERUB", "ACESAC", "ALNINC", "BETALL", "BETLEN", "BETPAP", "CORCOR", "FAGGRA", "FRANIG", "HAMVIR", "NYSSYL", "POPGRA", "PRUPEN", "QUEALB" , "QUERUB", "QUEVEL")
+#shrubs = c("VIBLAN","RHAFRA","RHOPRI","SPIALB","VACMYR","VIBCAS", "AROMEL","ILEMUC", "KALANG", "LONCAN", "LYOLIG")
+#trees = c("ACEPEN", "ACERUB", "ACESAC", "ALNINC", "BETALL", "BETLEN", "BETPAP", "CORCOR", "FAGGRA", "FRANIG", "HAMVIR", "NYSSYL", "POPGRA", "PRUPEN", "QUEALB" , "QUERUB", "QUEVEL")
 
-treeshrub = levels(dx$sp)
-treeshrub[treeshrub %in% shrubs] = 1
-treeshrub[treeshrub %in% trees] = 2
-treeshrub = as.numeric(treeshrub)
-}
+#treeshrub = levels(dx$sp)
+#treeshrub[treeshrub %in% shrubs] = 1
+#treeshrub[treeshrub %in% trees] = 2
+#treeshrub = as.numeric(treeshrub)
+#}
 # <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
 
 # Analyses:
@@ -128,6 +124,12 @@ if(runstan){
   
 }
 
+fit1<-stan_glmer(risk~ photo + chill1 + warm +chill2+photo:warm+photo:chill1+photo:chill2+
+                 warm:chill1+warm:chill2+ (1|sp), data=dxb)
+fit1
+pp_check(fit1)
+rstanarm::pp_check(fit1, stat = "max")
+plot(fit1, pars="beta")
 
 # yb = dxb$bday # for shinystan posterior checks
 launch_shinystan(doym.b) 

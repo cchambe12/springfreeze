@@ -59,19 +59,19 @@ w$freezes<-ave(
 #w$year<-as.numeric(substr(w$Date, 1, 4))
 
 
-dxx<-d
-dxx$fs.lo<-NA
-for(i in c(1:nrow(w))){
-  for(j in c(1:nrow(dxx)))
-      dxx$fs.lo[j]<-ifelse(dxx$l75.jd[j]==w$doy[i] & dxx$year[j]==w$year[i], w$freezes[i], dxx$fs.lo[j])
-}
-dxx$fs.bb<-NA
-for(i in c(1:nrow(w))){
-  for(j in c(1:nrow(dxx)))
-    dxx$fs.bb[j]<-ifelse(dxx$bb.jd[j]==w$doy[i] & dxx$year[j]==w$year[i], w$freezes[i], dxx$fs.bb[j])
-}
-dxx$afrzs<-dxx$fs.lo-dxx$fs.bb
-dxx$risk<-dxx$l75.jd-dxx$bb.jd
+#dxx<-d
+#dxx$fs.lo<-NA
+#for(i in c(1:nrow(w))){
+#  for(j in c(1:nrow(dxx)))
+#      dxx$fs.lo[j]<-ifelse(dxx$l75.jd[j]==w$doy[i] & dxx$year[j]==w$year[i], w$freezes[i], dxx$fs.lo[j])
+#}
+#dxx$fs.bb<-NA
+#for(i in c(1:nrow(w))){
+#  for(j in c(1:nrow(dxx)))
+#    dxx$fs.bb[j]<-ifelse(dxx$bb.jd[j]==w$doy[i] & dxx$year[j]==w$year[i], w$freezes[i], dxx$fs.bb[j])
+#}
+#dxx$afrzs<-dxx$fs.lo-dxx$fs.bb
+#dxx$risk<-dxx$l75.jd-dxx$bb.jd
 
 
 dx<-inner_join(df,w)
@@ -98,9 +98,9 @@ gdd$bb.gdd<-ifelse(gdd$year==1992 & gdd$bb.jd==140 & gdd$species=="QUAL", 154, g
 gdd$l75.gdd<-ifelse(gdd$year==1998 & gdd$l75.jd==135 & gdd$species=="BEAL", 186, gdd$l75.gdd)
 gdd$agdd<-gdd$l75.gdd-gdd$bb.gdd
 
-gx<-full_join(dxx, gdd)
+#gx<-full_join(dxx, gdd)
 years<-c("2010", "2014")
-gx<-filter(gx, year%in%years)
+#gx<-filter(gx, year%in%years)
 #gx$z.agdd<-scale(gx$agdd, center=TRUE, scale=FALSE)
 #gx$z.year<-scale(gx$year, center=TRUE, scale=FALSE)
 #gx$z.bb<-scale(gx$bb.jd, center=TRUE, scale=FALSE)
