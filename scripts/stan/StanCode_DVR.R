@@ -27,15 +27,17 @@ dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
 # Prep 
 dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
 dx$sp <- as.numeric(as.factor(dx$sp))
-dx$site <- as.numeric(as.factor(dx$site))
+#dx$site <- as.numeric(as.factor(dx$site))
 dx$risk<-dx$lday-dx$bday
 dx<-dx[!is.na(dx$risk),]
 dx$chill<-dx$chilling
-levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = 1:3; levels(dx$site) = 1:2
+levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = 1:3
 dx$warm <- as.numeric(dx$warm)
+dx$warm<-ifelse(dx$warm==15, 0, 1)
 dx$photo <- as.numeric(dx$photo)
+dx$photo<-ifelse(dx$photo==8, 0, 1)
 dx$chill <- as.numeric(dx$chill)
-dx$site<- as.numeric(dx$site)
+#dx$site<- as.numeric(dx$site)
 # Chill dummy variables
 dx$chill1 = ifelse(dx$chill == 1, 1, 0) 
 dx$chill2 = ifelse(dx$chill == 2, 1, 0) 
@@ -44,67 +46,37 @@ with(dx, table(chill1, chill2)) # all three levels in here
 
 dxb <- dx[!is.na(dx$risk),]
 
-#bdaymean <- t(with(dxb, tapply(risk, list(sp), mean, na.rm=T)))
-
-#leafoutdays <- data.frame(bdaymean)
-#colnames(leafoutdays) <- c("DVR.HF")
-# write.csv(leafoutdays, "output/leafoutdays.csv", row.names=TRUE)
-
-# Groups
-#if(FALSE){
-#colz = c("brown", "blue3")
-
-#shrubs = c("VIBLAN","RHAFRA","RHOPRI","SPIALB","VACMYR","VIBCAS", "AROMEL","ILEMUC", "KALANG", "LONCAN", "LYOLIG")
-#trees = c("ACEPEN", "ACERUB", "ACESAC", "ALNINC", "BETALL", "BETLEN", "BETPAP", "CORCOR", "FAGGRA", "FRANIG", "HAMVIR", "NYSSYL", "POPGRA", "PRUPEN", "QUEALB" , "QUERUB", "QUEVEL")
-
-#treeshrub = levels(dx$sp)
-#treeshrub[treeshrub %in% shrubs] = 1
-#treeshrub[treeshrub %in% trees] = 2
-#treeshrub = as.numeric(treeshrub)
-#}
-# <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
-
-# Analyses:
-# 1. Day of bud burst by all factors, stan 
-# 2. Day of leaf out by all factors, stan
-# 3. Effects on bud burst/leaf-out day for species: 
-#  - Traits (wood density, sla, N, stomata when we have it), 
-#  - Phylogeny
-
-# Supplemental analyses
-# Correlate order of leaf-out/bud burst in chambers to each other
-# Correlate order of leaf-out in chambers to O'Keefe observational data
 
 # <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
 # Important: Fixing the 1/2 issue to 0/1 here
 # <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
-#unique(dxb$warm)
+unique(dxb$warm)
 #dxb$warm[dxb$warm==1] <- 0
 #dxb$warm[dxb$warm==2] <- 1
 
-#unique(dxb$photo)
+unique(dxb$photo)
 #dxb$photo[dxb$photo==1] <- 0
 #dxb$photo[dxb$photo==2] <- 1
 
-unique(dxb$site)
-dxb$site[dxb$site==1] <- 0
-dxb$site[dxb$site==2] <- 1
+#unique(dxb$site)
+#dxb$site[dxb$site==1] <- 0
+#dxb$site[dxb$site==2] <- 1
 
 unique(dxb$chill1)
 unique(dxb$chill2)
 
 risk = dxb$risk # dvr as response 
-warm = as.numeric(dxb$warm)
-site = as.numeric(dxb$site)
+warm = dxb$warm
+#site = as.numeric(dxb$site)
 sp = as.numeric(dxb$sp) 
-photo = as.numeric(dxb$photo)
+photo = dxb$photo
 chill1 = as.numeric(dxb$chill1)
 chill2 = as.numeric(dxb$chill2)
 N = length(risk) 
 n_sp = length(unique(dxb$sp))
-n_site = length(unique(dxb$site))
+#n_site = length(unique(dxb$site))
 
-datalist.b<-list(risk=risk, warm=warm, site=site, sp=sp, photo=photo, chill1=chill1, chill2=chill2, N=N, n_sp=n_sp, n_site=n_site)
+datalist.b<-list(risk=risk, warm=warm, sp=sp, photo=photo, chill1=chill1, chill2=chill2, N=N, n_sp=n_sp)
 # 1. Budburst day. 
 if(runstan){
   datalist.b <- list(risk = dxb$risk, # dvr as response 
