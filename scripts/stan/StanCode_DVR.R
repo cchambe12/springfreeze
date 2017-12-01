@@ -90,7 +90,7 @@ if(runstan){
   )
   
     doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improve!!
-                 data = datalist.b, warmup=3000, iter = 3000, chains = 4,
+                 data = datalist.b, warmup=1500, iter = 2000, chains = 2,
                  control = list(adapt_delta = 0.99))
                  #               , max_treedepth = 15)) 
   
