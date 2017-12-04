@@ -11,11 +11,6 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(arm)
-library(data.table)
-library(car)
-library(xtable)
-library(broom)
-library(tibble)
 library(lme4)
 
 # Set Working Directory
@@ -77,19 +72,26 @@ plot(risk)
 
 ### Prep data for Anovas
 dxx<-d
-dxx$chilling<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
+dxx$chill<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
 #d$chilling<-as.numeric(as.character(
 #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))
-dxx$warm<-as.numeric(as.character(dxx$warm))
-dxx$photo<-as.numeric(as.character(dxx$photo))
-dxx$species<-substr(dxx$ind, 1, 6)
-dxx<-dxx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
-small.spp<-dxx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
-spp<-unique(small.spp$species)
-dxx<-dxx%>% filter(species %in% spp)
-dxx<-dxx %>%
-  dplyr::select(id, species, site, lday, bday, chilling, warm, photo, treatcode)
+#dxx$warm<-as.numeric(as.character(dxx$warm))
+#dxx$photo<-as.numeric(as.character(dxx$photo))
+#dxx$species<-substr(dxx$ind, 1, 6)
+#dxx<-dxx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+#small.spp<-dxx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
+#spp<-unique(small.spp$species)
+#dxx<-dxx%>% filter(species %in% spp)
+#dxx<-dxx %>%
+  #dplyr::select(id, species, site, lday, bday, chilling, warm, photo, treatcode)
+
+dxx<-dplyr::select(dxx, id, sp, site, ind, warm, photo, chill, lday, bday)
+dxx<-dxx[!is.na(dxx$lday),]
+dxx<-dxx[!is.na(dxx$bday),]
 dxx$risk<-dxx$lday-dxx$bday 
+dxx<-dxx[(dxx$risk>0),]
+#write.csv(dxx, file="~/Documents/git/springfreeze/output/danfdata.csv", row.names = FALSE)
+
 
 mod1<-lmer(risk~chilling + warm + photo + (chilling + warm + photo|species), data=dxx)
 arm::display(mod1)

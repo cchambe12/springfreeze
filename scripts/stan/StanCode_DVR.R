@@ -21,16 +21,14 @@ library(dplyr)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
-dx<-read.csv("output/dvrdata_danf.csv", header=TRUE)
+dx<-read.csv("output/danfdata.csv", header=TRUE)
 dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
 
 # Prep 
-dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
+#dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
 dx$sp <- as.numeric(as.factor(dx$sp))
 #dx$site <- as.numeric(as.factor(dx$site))
-dx$risk<-dx$lday-dx$bday
 dx<-dx[!is.na(dx$risk),]
-dx$chill<-dx$chilling
 levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = 1:3
 dx$warm <- as.numeric(dx$warm)
 dx$warm<-ifelse(dx$warm==15, 0, 1)
@@ -64,7 +62,6 @@ unique(dxb$photo)
 
 unique(dxb$chill1)
 unique(dxb$chill2)
-dxb<-filter(dxb, risk>0)
 
 risk = dxb$risk # dvr as response 
 warm = dxb$warm
@@ -102,10 +99,10 @@ fit1<-stan_glmer(risk~ photo + chill1 + warm +chill2+photo:warm+photo:chill1+pho
 fit1
 pp_check(fit1)
 rstanarm::pp_check(fit1, stat = "max")
-plot(fit1, pars="beta")
+plot(doym.b, pars=c("mu_b_warm", "mu_b_photo", "mu_b_chill1", "mu_b_chill2"))
 
 # yb = dxb$bday # for shinystan posterior checks
-launch_shinystan(fit1) 
+launch_shinystan(doym.b) 
 
 sumerb <- summary(doym.b)$summary
 sumerb[grep("mu_", rownames(sumerb)),]
