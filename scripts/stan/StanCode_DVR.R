@@ -64,6 +64,7 @@ unique(dxb$photo)
 
 unique(dxb$chill1)
 unique(dxb$chill2)
+dxb<-filter(dxb, risk>0)
 
 risk = dxb$risk # dvr as response 
 warm = dxb$warm
@@ -90,7 +91,7 @@ if(runstan){
   )
   
     doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improve!!
-                 data = datalist.b, warmup=1500, iter = 2000, chains = 2,
+                 data = datalist.b, warmup=2000, iter = 3000, chains = 4,
                  control = list(adapt_delta = 0.99))
                  #               , max_treedepth = 15)) 
   
@@ -104,7 +105,7 @@ rstanarm::pp_check(fit1, stat = "max")
 plot(fit1, pars="beta")
 
 # yb = dxb$bday # for shinystan posterior checks
-launch_shinystan(doym.b) 
+launch_shinystan(fit1) 
 
 sumerb <- summary(doym.b)$summary
 sumerb[grep("mu_", rownames(sumerb)),]
