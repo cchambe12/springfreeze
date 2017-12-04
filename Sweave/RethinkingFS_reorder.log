@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 DEC 2017 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 DEC 2017 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -875,6 +875,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4] [5] [6]
+
+LaTeX Warning: Reference `fig:forest' on page 7 undefined on input line 181.
+
 [7] [8] (./RethinkingFS_reorder.bbl
 LaTeX Font Info:    Try loading font information for TS1+aer on input line 35.
 
@@ -890,58 +893,63 @@ File: figure/fsifig-1.pdf Graphic file (type pdf)
 <use figure/fsifig-1.pdf>
 Package pdftex.def Info: figure/fsifig-1.pdf used on input line 202.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
+ [13]
 Package color Info: Redefining color shadecolor on input line 213.
- [13 <./figure/fsifig-1.pdf>]
 LaTeX Font Info:    Try loading font information for T1+aett on input line 214.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-<..//figure/HF_gddTime.pdf, id=64, 578.16pt x 578.16pt>
-File: ..//figure/HF_gddTime.pdf Graphic file (type pdf)
+Underfull \vbox (badness 10000) detected at line 235
+ []
 
-<use ..//figure/HF_gddTime.pdf>
-Package pdftex.def Info: ..//figure/HF_gddTime.pdf used on input line 240.
-(pdftex.def)             Requested size: 377.62633pt x 377.6257pt.
- [14]
+[14 <./figure/fsifig-1.pdf>] <figure/hf-1.pdf, id=68, 433.62pt x 289.08pt>
+File: figure/hf-1.pdf Graphic file (type pdf)
+
+<use figure/hf-1.pdf>
+Package pdftex.def Info: figure/hf-1.pdf used on input line 240.
+(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
+ [15]
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 248.
+(Font)              using `T1/aett/m/n' instead on input line 252.
 
-<figure/dan-1.pdf, id=69, 433.62pt x 289.08pt>
+<figure/dan-1.pdf, id=72, 433.62pt x 289.08pt>
 File: figure/dan-1.pdf Graphic file (type pdf)
  <use figure/dan-1.pdf>
-Package pdftex.def Info: figure/dan-1.pdf used on input line 250.
+Package pdftex.def Info: figure/dan-1.pdf used on input line 254.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [15 <..//figure/HF_gddTime.pdf>] <figure/risk-1.pdf, id=78, 433.62pt x 289.08p
-t>
+ [16 <./figure/hf-1.pdf>] <figure/risk-1.pdf, id=81, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
 
 <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 261.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 265.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [16 <./figure/dan-1.pdf>]
-<figure/temp-1.pdf, id=92, 433.62pt x 289.08pt>
+ [17 <./figure/dan-1.pdf>]
+<figure/temp-1.pdf, id=95, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
  <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 272.
+Package pdftex.def Info: figure/temp-1.pdf used on input line 276.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[17 <./figure/risk-1.pdf>] [18 <./figure/temp-1.pdf>]
+[18 <./figure/risk-1.pdf>] [19 <./figure/temp-1.pdf>]
 (./RethinkingFS_reorder.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
  15909 strings out of 493014
- 314816 string characters out of 6133351
+ 314767 string characters out of 6133351
  343742 words of memory out of 5000000
- 19220 multiletter control sequences out of 15000+600000
+ 19221 multiletter control sequences out of 15000+600000
  42565 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,42p,10392b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,42p,10392b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -959,10 +967,10 @@ ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2016/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on RethinkingFS_reorder.pdf (18 pages, 269529 bytes).
+Output written on RethinkingFS_reorder.pdf (19 pages, 271237 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 177 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

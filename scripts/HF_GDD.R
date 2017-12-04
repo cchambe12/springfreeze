@@ -10,6 +10,8 @@ library(ggplot2)
 library(lubridate)
 library(rstanarm)
 library(arm)
+library(cowplot)
+library(grid)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -212,9 +214,42 @@ hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(s
   geom_linerange(aes(x=ord,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
   scale_color_manual(labels = c("1997","2012", "Leafout", "Budburst"), values = c("#F8766D","#00BFC4", "green4", "darkolivegreen3")) +
   xlab("Species") +coord_flip() + labs(color="Phenophase and Year")  +
-  geom_hline(yintercept=120, color="#00BFC4", linetype=2)
+  geom_hline(yintercept=120, color="#00BFC4", linetype=2) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"),
+        legend.justification = c(1,1), legend.text = element_text(size=10))
 plot(hf.bb)
 
+gdd$m.bb <- ave(gdd$bb.gdd, gdd$year)
+bbg<-dplyr::select(gdd, year, m.bb)
+bbg<-bbg[!duplicated(bbg),]
+bbg<- bbg[order(bbg$year), ]
+bbg$colors<- c("gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+               "gray70","firebrick4", "gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+               "gray70","gray70", "gray70", "gray70", "gray70", "gray70", "gray70", 
+               "gray70","firebrick4", "gray70", "gray70")
+
+
+hist<-ggplot(bbg, aes(x=m.bb)) + geom_histogram(aes(fill=colors), binwidth = 20, color="gray30", size=0.3) +
+  scale_fill_manual(values=c("firebrick4", "gray70"), name="Year",
+                    labels=c("1997 & 2012","Other Years")) +
+  xlab("Mean GDDs for Budburst") + ylab("Frequency") +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), 
+        legend.position = c(0.05,0.85), legend.text = element_text(size=8), legend.key.size = unit(0.5, "cm"),
+        axis.title=element_text(size=12), legend.title = element_text(size=8), axis.text=element_text(size=10))
+
+
+plot_grid(hf.bb, hist, labels = c('A', 'B'), align="h", scale=c(1, 0.5))
+
+vp <- viewport(width = 0.2, height = 0.3, x = 0.99,
+               y = unit(4, "lines"), just = c("right","bottom"))
+full <- function() {
+  print(hf.bb)
+  print(hist, vp = vp)
+}
+full()
+
+#write.csv(gdd.yr, file="~/Documents/git/springfreeze/output/hf_gdd.csv", row.names=FALSE)
+#write.csv(bbg, file="~/Documents/git/springfreeze/output/mean_bbgdd.csv", row.names=FALSE)
 
 gdd.yr$z.agdd<-scale(gdd.yr$agdd, center=TRUE, scale=FALSE)
 #m1<-stan_glm(risk~agdd+bb.jd+as.factor(year), data=gdd.yr)

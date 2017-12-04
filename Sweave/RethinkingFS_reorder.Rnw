@@ -207,12 +207,37 @@ display(mod1)
 
 @
 
-\begin{figure} [H] 
-\begin{center}
-\includegraphics{..//figure/HF_gddTime.pdf}
-\caption{A comparison of two years of observational data investigating the effects of growing degree days on the duration of vegetative risk. The average duration of vegetative risk for 2010 was 21 +/- 3.39 days versus 17.1 +/- 1.96 days in 2014.}\label{fig:forest}
-\end{center}
-\end{figure}
+<<label=hf, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Duration of vegetative risk across species for 1997 and 2012. In 1997, the aggregated GDDs to budburst were the lowest and the duration of vegetative risk for each species are short, whereas in 2012, the aggregated GDDs to budburst were the highest and the duration of vegetative risk is higher. The dotted line indicates a False Spring event in 2012. The histogram at the bottom right corner indicates the frequency of accumulated GDDs to budburst for each year and indicates that 1997 is the lowest and 2012 is the highest. ", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
+read_chunk("..//scripts/HF_GDD.R")
+gdd.yr<-read.csv("..//output/hf_gdd.csv",header=TRUE)
+bbg<-read.csv("..//output/mean_bbgdd.csv",header=TRUE)
+
+hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
+  geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x=ord,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("1997","2012", "Leafout", "Budburst"), values = c("#F8766D","#00BFC4", "green4", "darkolivegreen3")) +
+  xlab("Species") +coord_flip() + labs(color="Phenophase and Year")  +
+  geom_hline(yintercept=120, color="#00BFC4", linetype=2) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"),
+        legend.justification = c(1,1), legend.text = element_text(size=10))
+
+hist<-ggplot(bbg, aes(x=m.bb)) + geom_histogram(aes(fill=colors), binwidth = 20, color="gray30", size=0.3) +
+  scale_fill_manual(values=c("firebrick4", "gray70"), name="Year",
+                    labels=c("1997 & 2012","Other Years")) +
+  xlab("Mean GDDs for Budburst") + ylab("Frequency") +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), 
+        legend.position = c(0.05,0.85), legend.text = element_text(size=8), legend.key.size = unit(0.05, "cm"),
+        axis.title=element_text(size=10), legend.title = element_text(size=8), axis.text=element_text(size=8))
+
+vp <- viewport(width = 0.3, height = 0.4, x = 0.90,
+               y = unit(4, "lines"), just = c("right","bottom"))
+full <- function() {
+  print(hf.bb)
+  print(hist, vp = vp)
+}
+full()
+
+@
 
 <<label=dan, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="This figure is comparing difference in duration of vegetative risk across two treatments for each species collected for the experiment. Data was collected from a growth chamber experiment where one treatment had no additional overwinter chilling, low spring forcing temperatures, and shorter spring daylengths and the other had additional overwinter chilling, high spring forcing temperatures, and longer spring daylenghts. The standard error is represented by the bars around each point.", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
 read_chunk("..//scripts/DVR_diffplot.R")
