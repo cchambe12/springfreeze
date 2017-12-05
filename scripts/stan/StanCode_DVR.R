@@ -102,7 +102,7 @@ rstanarm::pp_check(fit1, stat = "max")
 plot(doym.b, pars=c("mu_b_warm", "mu_b_photo", "mu_b_chill1", "mu_b_chill2"))
 
 # yb = dxb$bday # for shinystan posterior checks
-launch_shinystan(doym.b) 
+launch_shinystan(fit1) 
 
 sumerb <- summary(doym.b)$summary
 sumerb[grep("mu_", rownames(sumerb)),]
@@ -140,12 +140,10 @@ col4fig <- c("mean","sd","25%","50%","75%","Rhat")
 col4table <- c("mean","sd","2.5%","50%","97.5%","Rhat")
 
 # manually to get right order
-mu_params <- c("mu_b_warm","mu_b_photo","mu_b_chill1","mu_b_chill2","mu_b_site",
+mu_params <- c("mu_b_warm","mu_b_photo","mu_b_chill1","mu_b_chill2",
                "mu_b_inter_wp",
                "mu_b_inter_wc1","mu_b_inter_wc2",
-               "mu_b_inter_pc1","mu_b_inter_pc2",
-               "mu_b_inter_ws","mu_b_inter_ps",
-               "mu_b_inter_sc1","mu_b_inter_sc2")
+               "mu_b_inter_pc1","mu_b_inter_pc2")
 
 meanzb <- sumerb[mu_params,col4fig]
 
@@ -153,16 +151,11 @@ rownames(meanzb) = c("Forcing Temperature",
                     "Photoperiod",
                     "Chilling 4°",
                     "Chilling 1.5°C",
-                    "Site",
                     "Forcing x Photoperiod",
                     "Forcing x Chilling 4°C",
                     "Forcing x Chilling 1.5°C",
                     "Photoperiod x Chilling 4°C",
-                    "Photoperiod x Chilling 1.5°C",
-                    "Forcing x Site",
-                    "Photoperiod x Site",
-                    "Site x Chilling 4°C",
-                    "Site x Chilling 1.5°C"
+                    "Photoperiod x Chilling 1.5°C"
                     )
 
 
@@ -173,11 +166,6 @@ row.names(meanzb.table) <- row.names(meanzb)
 # <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
 # ALERT: Fixing the 1/2 issue to 0/1 here
 # <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
-
-unique(dxl$site)
-dxl$site[dxl$site==1] <- 0
-dxl$site[dxl$site==2] <- 1
-
 unique(dxl$warm)
 dxl$warm[dxl$warm==1] <- 0
 dxl$warm[dxl$warm==2] <- 1
