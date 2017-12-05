@@ -1,4 +1,4 @@
-\begin{thebibliography}{57}
+\begin{thebibliography}{68}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
@@ -35,6 +35,19 @@ Ault, T.R., Henebry, G.M., de~Beurs, K.M., Schwartz, M.D., Betancourt, J.L. \&
 Ault, T.R., Zurita-Milla, R. \& Schwartz, M.D. (2015) {A Matlab{\textcopyright}
   toolbox for calculating spring indices from daily meteorological data}.
   \emph{Computers {\&} Geosciences} \textbf{83}, 46--53.
+
+\bibitem[{Barker \emph{et~al.}(2005)Barker, Loveys, Egerton, Gorton, Williams
+  \& Ball}]{Barker2005}
+Barker, D., Loveys, B., Egerton, J., Gorton, H., Williams, W. \& Ball, M.
+  (2005) Co2 enrichment predisposes foliage of a eucalypt to freezing injury
+  and reduces spring growth. \emph{Plant, Cell and Environment} \textbf{28},
+  1506--1515.
+
+\bibitem[{Barlow \emph{et~al.}(2015)Barlow, Christy, O'Leary, Riffkin \&
+  Nuttall}]{Barlow2015}
+Barlow, K., Christy, B., O'Leary, G., Riffkin, P. \& Nuttall, J. (2015)
+  Simulating the impact of extreme heat and frost events on wheat crop
+  production: A review. \emph{Field Crops Research} \textbf{171}, 109--119.
 
 \bibitem[{Basler \& K{\"{o}}rner(2012)}]{Basler2012}
 Basler, D. \& K{\"{o}}rner, C. (2012) {Photoperiod sensitivity of bud burst in
@@ -163,6 +176,14 @@ Lenz, A., Hoch, G., Vitasse, Y. \& K{\"{o}}rner, C. (2013) {European deciduous
   along elevational gradients}. \emph{New Phytologist} \textbf{200},
   1166--1175.
 
+\bibitem[{Longstroth(2012)}]{Longstroth2012}
+Longstroth, M. (2012) Protect blueberries from spring freezes by using
+  sprinklers. url.
+
+\bibitem[{Longstroth(2013)}]{Longstroth2013}
+Longstroth, M. (2013) Assessing frost and freeze damage to flowers and buds of
+  fruit trees. url.
+
 \bibitem[{Ludlum(1968)}]{Ludlum1968}
 Ludlum, D.M. (1968) \emph{Early American Winters: 1604-1820}. 3, Boston:
   American Meteorological Society.
@@ -215,6 +236,12 @@ Muffler, L., Beierkuhnlein, C., Aas, G., Jentsch, A., Schweiger, A.H., Zohner,
   late frost sensitivity in 170 woody plants from the northern hemisphere.
   \emph{Global Ecology and Biogeography} \textbf{25}, 1061--1071.
 
+\bibitem[{Myking \& Skroppa(2007)}]{Myking2007}
+Myking, T. \& Skroppa, T. (2007) {Variation in phenology and height increment
+  of northern \textit{Ulmus glabra} populations: Implications for
+  conservation}. \emph{Scandinavian Journal of Forest Research} \textbf{22},
+  369--374.
+
 \bibitem[{Norgaard~Nielsen \& Rasmussen(2009)}]{Nielsen2009}
 Norgaard~Nielsen, C.C. \& Rasmussen, H.N. (2009) {Frost hardening and
   dehardening in \textit{Abies procera} and other conifers under differing
@@ -251,6 +278,13 @@ Polgar, C., Gallinat, A. \& Primack, R.B. (2014) {Drivers of leaf-out phenology
   and their implications for species invasions: Insights from Thoreau's
   Concord}. \emph{New Phytologist} \textbf{202}, 106--115.
 
+\bibitem[{Prozherina \emph{et~al.}(2003)Prozherina, Freiwald, Rousi \&
+  Oksanen}]{Prozherina2003}
+Prozherina, N., Freiwald, V., Rousi, M. \& Oksanen, E. (2003) {Interactive
+  effect of springtime frost and elevated ozone on early growth, foliar
+  injuries and leaf structure of birch (\textit{Betula pendula})}. \emph{New
+  Phytologist} \textbf{159}, 623--636.
+
 \bibitem[{Richardson \& O'Keefe(2009)}]{Richardson2009}
 Richardson, A. \& O'Keefe, J. (2009) \emph{{Phenological differences between
   understory and overstory: a case study using the long-term harvard forest
@@ -269,11 +303,34 @@ Sakai, A. \& Larcher, W. (1987) \emph{Frost Survival of Plants}.
 Samish, R. (1954) Dormancy in woody plants. \emph{Annual Review of Plant
   Physiology and Plant Molecular Biology} \textbf{5}, 183--204.
 
+\bibitem[{S{\'a}nchez \emph{et~al.}(2013)S{\'a}nchez, Rasmussen \&
+  Porter}]{Sanchez2013}
+S{\'a}nchez, B., Rasmussen, A. \& Porter, J.R. (2013) Temperatures and the
+  growth and development of maize and rice: a review. \emph{Global Change
+  Biology} \textbf{20}, 408--417.
+
+\bibitem[{Schaber \& Badeck(2005)}]{Schaber2005}
+Schaber, J. \& Badeck, F.W. (2005) Plant phenology in germany over the 20th
+  century. \emph{Regional Environmental Change} \textbf{5}, 37--46.
+
 \bibitem[{Scheifinger \emph{et~al.}(2003)Scheifinger, Menzel, Koch \&
   Peter}]{Scheifinger2003}
 Scheifinger, H., Menzel, A., Koch, E. \& Peter, C. (2003) {Trends of spring
   time frost events and phenological dates in Central Europe}.
   \emph{Theoretical and Applied Climatology} \textbf{74}, 41--51.
+
+\bibitem[{Schwartz(1993)}]{Schwartz1993}
+Schwartz, M.D. (1993) Assessing the onset of spring: A climatological
+  perspective. \emph{Physical Geography} \textbf{14(6)}, 536--550.
+
+\bibitem[{Soudani \emph{et~al.}(2012)Soudani, Hmimina, Delpierre, Pontailler,
+  Aubinet, Bonal, Caquet, de~Grandcourt, Burban, Flechard \&
+  et~al.}]{Soudani2012}
+Soudani, K., Hmimina, G., Delpierre, N., Pontailler, J.Y., Aubinet, M., Bonal,
+  D., Caquet, B., de~Grandcourt, A., Burban, B., Flechard, C. \& et~al. (2012)
+  Ground-based network of ndvi measurements for tracking temporal dynamics of
+  canopy structure and vegetation phenology in different biomes. \emph{Remote
+  Sensing of Environment} \textbf{123}, 234--245.
 
 \bibitem[{Taschler \emph{et~al.}(2004)Taschler, Beikircher \&
   Neuner}]{Taschler2004}
@@ -307,6 +364,14 @@ Vitasse, Y., Lenz, A. \& K{\"{o}}rner, C. (2014{\natexlab{b}}) {The interaction
 Vitra, A., Lenz, A. \& Vitasse, Y. (2017) Frost hardening and dehardening
   potential in temperate trees from winter to budburst. \emph{New Phytologist}
   \textbf{216}, 113--123.
+
+\bibitem[{White \emph{et~al.}(2009)White, De~Beurs, Didan, Inouye, Richardson,
+  Jensen, O'Keefe, Zhang, Nemani, Van~Leeuwen \& Al.}]{White2009}
+White, M.A., De~Beurs, K.M., Didan, K., Inouye, D.W., Richardson, A.D., Jensen,
+  O.P., O'Keefe, J., Zhang, G., Nemani, R.R., Van~Leeuwen, W.J.D. \& Al., E.
+  (2009) Intercomparison, interpretation, and assessment of spring phenology in
+  north america estimated from remote sensing for 1982-2006. \emph{Global
+  Change Biology} \textbf{15}, 2335--2359.
 
 \bibitem[{Xin(2016)}]{Xin2016}
 Xin, Q. (2016) {A risk-benefit model to simulate vegetation spring onset in

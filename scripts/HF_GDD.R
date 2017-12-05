@@ -240,12 +240,13 @@ hist<-ggplot(bbg, aes(x=m.bb)) + geom_histogram(aes(fill=colors), binwidth = 20,
 
 plot_grid(hf.bb, hist, labels = c('A', 'B'), align="h", scale=c(1, 0.5))
 
-vp <- viewport(width = 0.2, height = 0.3, x = 0.99,
-               y = unit(4, "lines"), just = c("right","bottom"))
+vp <- viewport(width = 0.4, height = 0.4, x = 1.1,
+               y = unit(3, "lines"), just = c("right","bottom"))
 full <- function() {
   print(hf.bb)
   print(hist, vp = vp)
 }
+quartz()
 full()
 
 #write.csv(gdd.yr, file="~/Documents/git/springfreeze/output/hf_gdd.csv", row.names=FALSE)

@@ -22,6 +22,7 @@ library(gridExtra)
 library(gtable)
 library(reshape2)
 library(grid)
+library(egg)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -333,12 +334,14 @@ ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week P
 
 risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
                                                                 "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")))) +
-         geom_point() + xlab("") + ylab("Number of days below -2.2C per two week period") + 
+         geom_point() + ylab("Number of days below -2.2C per two week period") + 
   geom_line(aes(x=biweekly, y=mean,  color=factor(site, labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
                                                                    "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")), group=site)) + 
   geom_linerange(aes(ymax = d$high, ymin=d$low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
-  theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), legend.position=c(0.847,0.93),
-        legend.key.size=unit(0.3, "cm"), plot.margin=unit(c(.2,.5,-.3,.5),"cm")) +
+  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(), legend.position=c(0.6,0.90),
+        legend.key.size=unit(0.35, "cm"), plot.margin=unit(c(.2,.2,-.3,.5),"cm"), axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) +
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                                                                                                "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"))
 
@@ -370,15 +373,17 @@ time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x
   scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                                                        "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"), position="top") +
   theme(legend.position="none", aspect.ratio=0.3, 
-        panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), plot.margin=unit(c(-.2,.5,.2,.5),"cm")) + 
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(), plot.margin=unit(c(-.2,.5,.2,.5),"cm")) +
   ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site)))
 
 #c(0.08,0.22), legend.key.size=unit(0.3, "cm")
 #theme(legend.position=c(0.05,0.3), legend.key.size=unit(0.4, "cm"), aspect.ratio=0.3,
 #      +        panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), plot.margin=unit(c(-.2,.5,.2,.5),"cm"))
 
-grid.arrange(risk, time, ncol=1, nrow=2, respect=TRUE)
-grid.draw(rbind(ggplotGrob(risk), ggplotGrob(time)))
+ggarrange(risk, time, nrow=2)
+#grid.arrange(risk, time, ncol=1, nrow=2, respect=TRUE)
+
+#grid.draw(rbind(ggplotGrob(risk), ggplotGrob(time)))
 
 ggplot(data = df, aes(x=biweekly, y=count)) + geom_boxplot(aes(fill=site))
 
