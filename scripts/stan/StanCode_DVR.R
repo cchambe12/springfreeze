@@ -60,10 +60,13 @@ unique(dxb$photo)
 #dxb$site[dxb$site==1] <- 0
 #dxb$site[dxb$site==2] <- 1
 
+dxb<-filter(dxb, risk>0)
+dxb$z.risk<-scale(dxb$risk, center=TRUE, scale=TRUE) ## with 0s included and z-scored, 7 divergent transitions and max t statistic is off
+
 unique(dxb$chill1)
 unique(dxb$chill2)
 
-risk = dxb$risk # dvr as response 
+risk = as.numeric(dxb$risk) # dvr as response 
 warm = dxb$warm
 #site = as.numeric(dxb$site)
 sp = as.numeric(dxb$sp) 
@@ -88,13 +91,13 @@ if(runstan){
   )
   
     doym.b <- stan('scripts/stan/dvr_sp_chill_inter_pool.stan', ### change when divergent transitions improve!!
-                 data = datalist.b, warmup=2000, iter = 3000, chains = 4,
+                 data = datalist.b, warmup=1500, iter = 2000, chains = 2,
                  control = list(adapt_delta = 0.99))
                  #               , max_treedepth = 15)) 
   
 }
 
-fit1<-stan_glmer(risk~ photo + chill1 + warm +chill2+photo:warm+photo:chill1+photo:chill2+
+fit1<-stan_glmer(z.risk~ photo + chill1 + warm +chill2+photo:warm+photo:chill1+photo:chill2+
                  warm:chill1+warm:chill2+ (1|sp), data=dxb)
 fit1
 pp_check(fit1)
@@ -102,14 +105,16 @@ rstanarm::pp_check(fit1, stat = "max")
 plot(doym.b, pars=c("mu_b_warm", "mu_b_photo", "mu_b_chill1", "mu_b_chill2"))
 
 # yb = dxb$bday # for shinystan posterior checks
-launch_shinystan(fit1) 
+launch_shinystan(doym.b) 
 
 sumerb <- summary(doym.b)$summary
 sumerb[grep("mu_", rownames(sumerb)),]
 
 betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2",
                                      "b_warm", "b_photo", "b_chill1", "b_chill2"))
+betas <- as.matrix(doym.b, pars = mu_params)
 mcmc_intervals(betas[,1:4])
+mcmc_intervals(betas)
 
 save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/risk_site_sp_fakedata.Rda")
 save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/dvr_sp_chill_realdata_issues.Rda")
