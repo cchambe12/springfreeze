@@ -18,6 +18,9 @@ library(rstanarm)
 library(shinystan)
 library(bayesplot)
 library(dplyr)
+library(gridExtra)
+library(egg)
+library(xtable)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
@@ -97,12 +100,34 @@ if(runstan){
   
 }
 
-fit1<-stan_glmer(z.risk~ photo + chill1 + warm +chill2+photo:warm+photo:chill1+photo:chill2+
-                 warm:chill1+warm:chill2+ (1|sp), data=dxb)
+dxb$force<-dxb$warm
+fit1<-stan_glmer(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 + force:chill2 +
+                 photo:chill1 + photo:chill2 + (1|sp), data=dxb)
 fit1
 pp_check(fit1)
 rstanarm::pp_check(fit1, stat = "max")
 plot(doym.b, pars=c("mu_b_warm", "mu_b_photo", "mu_b_chill1", "mu_b_chill2"))
+beta<-plot(fit1, pars="beta")
+
+
+######################################################################################
+##################### Making two plots for manuscript ################################
+dxx<-read.csv("output/diffplot.csv", header=TRUE)
+
+diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() + 
+  geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
+  ylab(expression(Delta*" in DVR between treatments")) + coord_cartesian(ylim=c(0,25)) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
+        axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10))
+plot(diff)
+
+grid.arrange(diff, beta, ncol=2, nrow=1)
+ggarrange(diff, beta, ncol=2)
+
+
+######################################################################################
+######################################################################################
+
 
 # yb = dxb$bday # for shinystan posterior checks
 launch_shinystan(doym.b) 
@@ -301,6 +326,18 @@ dev.off();#system(paste("open", file.path(figpath, "Fig1_bb_lo.pdf"), "-a /Appli
 # Figure 2: random effects.
 # Photo x warm and chill1 x warm for bb and lo as 4 panels
 ###############
+# Groups
+colz = c("brown", "blue3")
+
+shrubs = c("VIBLAN","RHAFRA","RHOPRI","SPIALB","VACMYR","VIBCAS", "AROMEL","ILEMUC", "KALANG", "LONCAN", "LYOLIG")
+trees = c("ACEPEN", "ACERUB", "ACESAC", "ALNINC", "BETALL", "BETLEN", "BETPAP", "CORCOR", "FAGGRA", "FRANIG", "HAMVIR", "NYSSYL", "POPGRA", "PRUPEN", "QUEALB" , "QUERUB", "QUEVEL")
+
+treeshrub = levels(dx$sp)
+treeshrub[treeshrub %in% shrubs] = 1
+treeshrub[treeshrub %in% trees] = 2
+treeshrub = as.numeric(treeshrub)
+# <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <> <>
+
 
 # Tip for checking figure range needs:
 # range(sumerb[grep(paste("b_chill1","\\[",sep=""), rownames(sumerb)),1], na.rm=TRUE)
@@ -317,16 +354,64 @@ layout(matrix(c(1, 2, 3, # use layout instead of par(mfrow for more control of w
 plotblank = function(){plot(1:10, type="n",bty="n",xaxt="n",yaxt="n",ylab="",xlab="")}
 
 plotblank() 
-text(5,5, "Budburst \n Change (days) due to 5° warming", font = 2, srt = 90) # \n\n add two line breaks
+text(5,5, "DVR \n Change (days) due to 5° warming", font = 2, srt = 90) # \n\n add two line breaks
 
-plotlet( "b_photo", "b_warm",
+plotlet <- function(x, y, xlab=NULL, ylab=NULL, data, groups = NULL, ...){
+  if(is.null(xlab)) xlab = x; if(is.null(ylab)) ylab = y
+  if(is.null(groups)) { col.pch = "black"; col.lines = "grey50" }
+  else {
+    colz = c("brown", "blue3")
+    ccolz = rep(colz[1], length(groups))
+    ccolz[groups == 2] = colz[2]
+    col.pch = ccolz
+    col.lines = alpha(ccolz, 0.4)
+  }
+  
+  plot(
+    data[grep(paste(x,"\\[",sep=""), rownames(data)),1],
+    data[grep(paste(y,"\\[",sep=""), rownames(data)),1],
+    pch = "+",
+    ylab = ylab,
+    xlab = xlab,
+    col = col.pch,
+    ...
+  )
+  
+  abline(h=0, lty = 3, col = "grey60")
+  abline(v=0, lty = 3, col = "grey60")
+  
+  arrows(
+    data[grep(paste(x,"\\[",sep=""), rownames(data)),"mean"],
+    data[grep(paste(y,"\\[",sep=""), rownames(data)),"25%"],
+    data[grep(paste(x,"\\[",sep=""), rownames(data)),"mean"],
+    data[grep(paste(y,"\\[",sep=""), rownames(data)),"75%"],
+    length = 0, col = col.lines)
+  
+  arrows(
+    data[grep(paste(x,"\\[",sep=""), rownames(data)),"25%"],
+    data[grep(paste(y,"\\[",sep=""), rownames(data)),"mean"],
+    data[grep(paste(x,"\\[",sep=""), rownames(data)),"75%"],
+    data[grep(paste(y,"\\[",sep=""), rownames(data)),"mean"],
+    length = 0, col = col.lines)
+  
+  # match with species names
+  text( data[grep(paste(x,"\\[",sep=""), rownames(data)),1],
+        data[grep(paste(y,"\\[",sep=""), rownames(data)),1],
+        sort(unique(dx$sp)),
+        cex = 0.5, 
+        pos = 3,
+        col = col.pch)
+}
+
+
+plotlet( "photo", "force",
          #  ylab = "Advance due to 5° warming", 
          # xlab = "Advance due to 4 hr longer photoperiod", 
-         ylim = c(-27, 0.5),
-         xlim = c(-16, 0.5),
+         #ylim = c(-27, 0.5),
+         #xlim = c(-16, 0.5),
          #  xaxt="n", 
          group = treeshrub,
-         data = sumerb)
+         data = fit1)
 
 legend("topleft", bty = "n", inset = 0.035, legend = "A.", text.font=2)
 
@@ -337,7 +422,7 @@ legend("bottomright",
        inset = 0.02, 
        bg = 'white')
 
-plotlet("b_chill1", "b_warm", 
+plotlet("chill1", "force", 
         # ylab = "Advance due to 5° warming", 
         #  xlab = "Advance due to 30d 4° chilling", 
         ylim = c(-27, 0.5),
@@ -352,7 +437,7 @@ legend("topleft", bty = "n", inset = 0.035, legend = "B.", text.font=2)
 plotblank()
 text(5,5, "Leafout \n Change (days) due to 5° warming", font = 2, srt = 90)
 
-plotlet("b_photo", "b_warm", 
+plotlet("photo", "force", 
         #    ylab = "Advance due to 5° warming", 
         #     xlab = "Advance due to 4 hr longer photoperiod", 
         ylim = c(-27, 0.5),
