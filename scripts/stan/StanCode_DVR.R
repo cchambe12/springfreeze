@@ -107,8 +107,34 @@ fit1
 pp_check(fit1)
 rstanarm::pp_check(fit1, stat = "max")
 plot(doym.b, pars=c("mu_b_warm", "mu_b_photo", "mu_b_chill1", "mu_b_chill2"))
-beta<-plot(fit1, pars="beta")
 
+betas <- as.matrix(fit1, pars = c("force", "photo", "chill1", "chill2", "force:photo",
+                                  "force:chill1", "force:chill2", "photo:chill1", "photo:chill2"))
+beta<-mcmc_intervals(betas) + annotate("text", x = -13, y = 10, label = "B.", fontface = "bold")
+
+plot(fit1, pars="beta")
+legend("topleft", bty = "n",legend = "A.")
+
+dvr <- data.frame(site=unique(fdat$site))
+lp <- posterior_linpred(fit1,newdata=dvr,transform=TRUE)
+quantfun <- function(x){quantile(x,probs = c(0.025,0.25,0.5,0.75,0.975))}
+lp_quants <- t(apply(lp,FUN=quantfun,MARGIN=2))
+sites$lwr_025 <- lp_quants[,1]
+sites$lwr_25 <- lp_quants[,2]
+sites$median <- lp_quants[,3]
+sites$upr_75 <- lp_quants[,4]
+sites$upr_975 <- lp_quants[,5]
+
+##Plots the results.
+fig1 <- ggplot(dvr)+
+  geom_linerange(aes(x=risk,ymin=lwr_025,ymax=upr_975))+
+  geom_linerange(aes(x=risk,ymin=lwr_25,ymax=upr_75),lwd=1.5)+
+  geom_point(aes(x=risk,y=median),shape=21,fill="white")+
+  geom_abline(aes(intercept=0.1,slope=0),linetype="dotted")+
+  coord_flip()+
+  scale_y_continuous("Proportion with Flowers",limits=c(0,1))+
+  theme_bw()
+fig1
 
 ######################################################################################
 ##################### Making two plots for manuscript ################################
@@ -118,10 +144,11 @@ diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() +
   geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
   ylab(expression(Delta*" in DVR between treatments")) + coord_cartesian(ylim=c(0,25)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
-        axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10))
+        axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10)) +
+  annotate("text", x = 1, y = 25, label = "A.", fontface = "bold")
 plot(diff)
 
-grid.arrange(diff, beta, ncol=2, nrow=1)
+grid.draw(diff, beta, ncol=2)
 ggarrange(diff, beta, ncol=2)
 
 
@@ -137,8 +164,9 @@ sumerb[grep("mu_", rownames(sumerb)),]
 
 betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2",
                                      "b_warm", "b_photo", "b_chill1", "b_chill2"))
-betas <- as.matrix(doym.b, pars = mu_params)
-mcmc_intervals(betas[,1:4])
+betas <- as.matrix(fit1, pars = c("force", "photo", "chill1", "chill2", "force:photo",
+                                  "force:chill1", "force:chill2", "photo:chill1", "photo:chill2"))
+mcmc_intervals(betas) + annotate("text", x = -13, y = 10, label = "B.", fontface = "bold")
 mcmc_intervals(betas)
 
 save(doym.b, file="~/Documents/git/springfreeze/scripts/stan/risk_site_sp_fakedata.Rda")

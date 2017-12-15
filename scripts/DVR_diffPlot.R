@@ -70,3 +70,18 @@ diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() +
         axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10))
 plot(diff)
   
+
+ggplot(dxx, aes(x=CS0, y=WL1)) + geom_point(aes(size=diff), shape=21) + 
+  geom_linerange(aes(ymin=WL1-WL1_se, ymax=WL1+WL1_se), alpha=0.3) +
+  geom_errorbarh(aes(xmax = CS0+CS0_se, xmin = CS0-CS0_se, height = 0), alpha=0.3) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_text(aes(label=code), vjust=2) + xlab("DVR with weak treatment effects") + 
+  ylab("DVR with strong treatment effects") + 
+  scale_size_continuous(name=expression(Delta*" in DVR"))
+
+
+
+
+
+
+

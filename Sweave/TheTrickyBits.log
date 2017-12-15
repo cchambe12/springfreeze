@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 DEC 2017 10:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  15 DEC 2017 09:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,23 +905,26 @@ File: figure/hf-1.pdf Graphic file (type pdf)
  <use figure/hf-1.pdf>
 Package pdftex.def Info: figure/hf-1.pdf used on input line 162.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [7 <./figure/temp-1.pdf>] <figure/dan-1.pdf, id=69, 433.62pt x 289.08pt>
-File: figure/dan-1.pdf Graphic file (type pdf)
+ [7 <./figure/temp-1.pdf>]
+<..//figure/DVRdiff_twoplots.pdf, id=69, 844.15375pt x 597.23125pt>
+File: ..//figure/DVRdiff_twoplots.pdf Graphic file (type pdf)
 
-<use figure/dan-1.pdf>
-Package pdftex.def Info: figure/dan-1.pdf used on input line 173.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [8 <./figure/hf-1.pdf>] (./TheTrickyBits.bbl [9 <./figure/dan-1.pdf>] [10] [11
-]) [12] (./TheTrickyBits.aux)
+<use ..//figure/DVRdiff_twoplots.pdf>
+Package pdftex.def Info: ..//figure/DVRdiff_twoplots.pdf used on input line 173
+.
+(pdftex.def)             Requested size: 455.2566pt x 369.88768pt.
+ [8 <./figure/hf-1.pdf>]
+(./TheTrickyBits.bbl [9 <..//figure/DVRdiff_twoplots.pdf>] [10] [11]) [12]
+(./TheTrickyBits.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15810 strings out of 493014
- 312916 string characters out of 6133351
- 342733 words of memory out of 5000000
- 19128 multiletter control sequences out of 15000+600000
+ 15813 strings out of 493014
+ 313041 string characters out of 6133351
+ 342859 words of memory out of 5000000
+ 19131 multiletter control sequences out of 15000+600000
  40881 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,8n,42p,10385b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -939,10 +942,10 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on TheTrickyBits.pdf (12 pages, 226724 bytes).
+Output written on TheTrickyBits.pdf (12 pages, 228852 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 150 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

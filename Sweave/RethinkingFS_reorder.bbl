@@ -1,4 +1,4 @@
-\begin{thebibliography}{68}
+\begin{thebibliography}{69}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
@@ -83,6 +83,13 @@ Cannell, M. \& Smith, R. (1986) {Climatic Warming , Spring Budburst and Forest
 Chuine, I. (2010) Why does phenology drive species distribution?
   \emph{Philosophical Transactions of the Royal Society B: Biological Sciences}
   \textbf{365}, 3149--3160.
+
+\bibitem[{Chuine \emph{et~al.}(2016)Chuine, Bonhomme, Legave, Garc{\'\i}a~de
+  Cort{\'a}zar-Atauri, Charrier, Lacointe \& Am{\'e}glio}]{Chuine2016}
+Chuine, I., Bonhomme, M., Legave, J.M., Garc{\'\i}a~de Cort{\'a}zar-Atauri, I.,
+  Charrier, G., Lacointe, A. \& Am{\'e}glio, T. (2016) Can phenological models
+  predict tree phenology accurately in the future? the unrevealed hurdle of
+  endodormancy break. \emph{Global Change Biology} \textbf{22}, 3444--3460.
 
 \bibitem[{Cleland \emph{et~al.}(2006)Cleland, Chiariello, Loarie, Mooney \&
   Field}]{Cleland2006}
