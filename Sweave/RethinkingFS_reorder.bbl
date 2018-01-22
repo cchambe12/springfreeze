@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{73}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
@@ -69,6 +69,12 @@ Beck, E.H., Fettig, S., Knake, C., Hartig, K. \& Bhattarai, T. (2007) Specific
 Beck, E.H., Heim, R. \& Hansen, J. (2004) Plant resistance to cold stress:
   Mechanisms and environmental signals triggering frost hardening and
   dehardening. \emph{Journal of Biosciences} \textbf{29}, 449--459.
+
+\bibitem[{Burke \emph{et~al.}(1976)Burke, Gusta, Quamme, Weiser \&
+  Li}]{Burke1976}
+Burke, M., Gusta, L., Quamme, H., Weiser, C. \& Li, P. (1976) Freezing and
+  injury in plants. \emph{Annual Review of Plant Physiology} \textbf{27},
+  507--528.
 
 \bibitem[{Caffarra \& Donnelly(2011)}]{Caffarra2011}
 Caffarra, A. \& Donnelly, A. (2011) {The ecological significance of phenology
@@ -215,12 +221,19 @@ McCreary, D.D., Lavender, D.P. \& Hermann, R.K. (1990) {Predicted global
   warming and Douglas-fir chilling requirements}. \emph{Annales des Sciences
   Forestieres} \textbf{47}, 325--330.
 
-\bibitem[{MENZEL \emph{et~al.}(2006)MENZEL, SPARKS, ESTRELLA, KOCH, AASA, AHAS,
-  ALM-K{\"U}BLER, BISSOLLI, BRASLAVSK{\'A}, BRIEDE \& et~al.}]{Menzel2006}
-MENZEL, A., SPARKS, T.H., ESTRELLA, N., KOCH, E., AASA, A., AHAS, R.,
-  ALM-K{\"U}BLER, K., BISSOLLI, P., BRASLAVSK{\'A}, O., BRIEDE, A. \& et~al.
-  (2006) European phenological response to climate change matches the warming
-  pattern. \emph{Global Change Biology} \textbf{12}, 1969--1976.
+\bibitem[{Mehdipoor \& Zurita-Milla(2017)}]{Mehdipoor2017}
+Mehdipoor, H. \& Zurita-Milla, E.I.V.R. (2017) Continental-scale monitoring and
+  mapping of false spring: A cloud computing solution .
+
+\bibitem[{{Menzel, Annette and Sparks, Tim H. and Estrella, Nicole and Koch,
+  Elisabeth and Aasa, Anto and Ahas, Rein and Alm-K{\"u}bler, Kerstin and
+  Bissolli, Peter and Braslavsk{\'a}, Ol'ga and Briede, Agrita and et
+  al.}(2006)}]{Menzel2006}
+{Menzel, Annette and Sparks, Tim H. and Estrella, Nicole and Koch, Elisabeth
+  and Aasa, Anto and Ahas, Rein and Alm-K{\"u}bler, Kerstin and Bissolli, Peter
+  and Braslavsk{\'a}, Ol'ga and Briede, Agrita and et al.} (2006) European
+  phenological response to climate change matches the warming pattern.
+  \emph{Global Change Biology} \textbf{12}, 1969--1976.
 
 \bibitem[{Mock \emph{et~al.}(2007)Mock, Mojzisek, McWaters, Chenoweth \&
   Stahle}]{Mock2007}
