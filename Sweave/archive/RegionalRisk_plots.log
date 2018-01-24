@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 JAN 2018 11:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 JAN 2018 08:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -870,7 +870,7 @@ LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <6> not available
 Here is how much of TeX's memory you used:
  15504 strings out of 493014
  306071 string characters out of 6133351
- 328513 words of memory out of 5000000
+ 327513 words of memory out of 5000000
  18874 multiletter control sequences out of 15000+600000
  17952 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -880,7 +880,7 @@ lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmti9.pfb>
-Output written on RegionalRisk_plots.pdf (1 page, 51520 bytes).
+Output written on RegionalRisk_plots.pdf (1 page, 51138 bytes).
 PDF statistics:
  33 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream

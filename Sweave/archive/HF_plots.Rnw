@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setkeys{Gin}{width=0.8\textwidth}
+\setlength{\captionmargin}{20pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+@
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<<label=hf, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Duration of vegetative risk for 8 species at Harvard Forest, comparing 1997 and 2012. In 1997, the aggregated GDDs to budburst were the lowest and the durations of vegetative risk overall were shorter, whereas in 2012, the aggregated GDDs to budburst were the highest and the durations of vegetative risk were longer. The dotted line indicates a false spring event in 2012, which is defined as freezing temperatures (-2$^\\circ$C) occurring after budburst. The histogram at the bottom right corner indicates the frequency of accumulated GDDs to budburst for each year between 1990 and 2016. It indicates that 1997 was a thermally late year and 2012 was a thermally early year. ", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
+read_chunk("..//scripts/HF_GDD.R")
+gdd.yr<-read.csv("..//..//output/hf_gdd.csv",header=TRUE)
+bbg<-read.csv("..//..//output/mean_bbgdd.csv",header=TRUE)
+
+hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
+  geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
+  geom_linerange(aes(x=ord,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
+  scale_color_manual(labels = c("1997","2012", "Leafout", "Budburst"), values = c("#F8766D","#00BFC4", "green4", "darkolivegreen3")) +
+  xlab("Species") +coord_flip() + labs(color="Phenophase and Year")  +
+  geom_hline(yintercept=120, color="#00BFC4", linetype=2) +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"),
+        legend.justification = c(1,1), legend.text = element_text(size=10), legend.key=element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = c(1, 1, 0, 0))))
+
+hist<-ggplot(bbg, aes(x=m.bb)) + geom_histogram(aes(fill=colors), binwidth = 20, color="gray30", size=0.3) +
+  scale_fill_manual(values=c("firebrick4", "gray70"), name="Year",
+                    labels=c("1997 & 2012","Other Years")) +
+  xlab("Mean GDDs for Budburst") + ylab("Frequency") +
+  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), 
+        legend.position = c(0.3,1.05), legend.text = element_text(size=5), legend.key.size = unit(0.1, "cm"),
+        axis.title=element_text(size=8), legend.title = element_text(size=5), axis.text=element_text(size=6)) 
+
+vp <- viewport(width = 0.25, height = 0.25, x = 0.95,
+               y = unit(1.5, "lines"), just = c("right","bottom"))
+full <- function() {
+  print(hf.bb)
+  print(hist, vp = vp)
+}
+full()
+
+@
+
+
+\end{document}
