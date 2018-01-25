@@ -343,7 +343,8 @@ risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, 
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank()) +
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
-                                                                                                               "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"))
+                                                                                                               "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31")) + 
+  annotate("text", x = -13, y = 10, label = "Climate Data", fontface = "bold")
 
 #theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), legend.position=c(0.88,0.91),
 #      +        legend.key.size=unit(0.3, "cm"), plot.margin=unit(c(.2,.5,-.3,.5),"cm")
@@ -374,7 +375,7 @@ time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x
                                                                        "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"), position="top") +
   theme(legend.position="none", aspect.ratio=0.3, 
         panel.grid.major = element_blank(),panel.grid.minor = element_blank(), plot.margin=unit(c(-.2,.5,.2,.5),"cm")) +
-  ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site)))
+  ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site))) + annotate("text", x = -13, y = 10, label = "Phenology Data", fontface = "bold")
 
 #c(0.08,0.22), legend.key.size=unit(0.3, "cm")
 #theme(legend.position=c(0.05,0.3), legend.key.size=unit(0.4, "cm"), aspect.ratio=0.3,
