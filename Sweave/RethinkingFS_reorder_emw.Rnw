@@ -119,7 +119,7 @@ However, false spring events that occur during the vegetative growth phenophases
 
 There is also important variation within certain phenological phases. Most notably, within the vegetative phases of spring leafout, plants that have initiated budburst but have not fully leafed out are more likely to sustain damage from a false spring than individuals past the leafout phase. This is because freezing tolerance steadily decreases after budburst begins until the leaf is fully unfolded \citep{Lenz2016} (Figure \ref{fig:risk}). Therefore, the rate of budburst and the length of time between budburst and leafout is essential for predicting level of damage from a false spring event. We will refer to the timing of these phenophases --- budburst to leafout --- as the duration of vegetative risk. The duration of vegetative risk is usually extended if a freezing event occurs during the phenophases between budburst and full leafout \citep{Augspurger2009}, which could result in exposure to multiple frost events in one season.
 
-\section {How species' phenological cues shape vegetative risk}
+\section {How Species' Phenological Cues Shape Vegetative Risk}
 % I suggest several big changes to Fig 6:
 % (1) Consider moving it and the text up (as shown here) as in line with I?aki's comment.
 % (2) Make panel b the first panel and adjust the current-panel-a to show an easier to explain and defend climate change scenario: high force/low chill (no additional) versus low force/high chill (30 d at 1.5) -- use the 12 hour photoperiod in both examples. Make the current-panel-a become panel-b. See text below for how this would work and let me know what you think

@@ -50,13 +50,13 @@ df<-df[!duplicated(df),]
 
 df$species<-ifelse(df$species=="ILEMUC", "I. mucronata", df$species)
 df$species<-ifelse(df$species=="ACEPEN", "A. pensylvanicum", df$species)
-df$species<-ifelse(df$species=="BETALL", "B.alleghaniensis", df$species)
-df$species<-ifelse(df$species=="BETPAP", "B.papyrifera", df$species)
-df$species<-ifelse(df$species=="ACERUB", "A.rubrum", df$species)
-df$species<-ifelse(df$species=="POPGRA", "P.grandidentata", df$species)
-df$species<-ifelse(df$species=="QUERUB", "Q.rubra", df$species)
-df$species<-ifelse(df$species=="ACESAC", "A.saccharum", df$species)
-df$species<-ifelse(df$species=="FAGGRA", "F.grandifolia", df$species)
+df$species<-ifelse(df$species=="BETALL", "B. alleghaniensis", df$species)
+df$species<-ifelse(df$species=="BETPAP", "B. papyrifera", df$species)
+df$species<-ifelse(df$species=="ACERUB", "A. rubrum", df$species)
+df$species<-ifelse(df$species=="POPGRA", "P. grandidentata", df$species)
+df$species<-ifelse(df$species=="QUERUB", "Q. rubra", df$species)
+df$species<-ifelse(df$species=="ACESAC", "A. saccharum", df$species)
+df$species<-ifelse(df$species=="FAGGRA", "F. grandifolia", df$species)
 
 df$code<-reorder(df$species, df$bday)
 dxx$code<-df$code

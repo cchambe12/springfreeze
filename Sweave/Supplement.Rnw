@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+\usepackage{lineno}
+\linenumbers
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(grid)
+library(lubridate)
+library(stargazer)
+library(gridExtra)
+@
+
+\begin{document}
+\title{Supplement Information for: Rethinking False Spring Risk}
+\author{C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$ \& E. M. Wolkovich $^{1,2}$}
+\date{\today}
+\maketitle 
+%\tableofcontents
+ 
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+\setkeys{Gin}{width=0.8\textwidth}
+
+
+\subsection*{Defining False Spring: An example in one temperate plant community - \textit{methods for calculating FSI in Harvard Forest example}}
+The first method for collecting biological spring onset (i.e. budburst) was from observational data recorded for 33 tree species by Dr. John O'Keefe at Harvard Forest from 1990 to 2014 \citep{OKeefe2014}. Dr. O'Keefe defines budburst as 50\% green tip emergence. We subsetted this dataset to include only the tree species that were most consistently observed, which ended up being eight species. The second dataset was from PhenoCam data, which are field cameras placed in the Harvard Forest canopy that take real-time images of plant growth and are programmed to record initial green up. The final set was collected through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x) by accessing the "Spring Indices, Historic Annual" gridded layer and looking specifically at "First Leaf - Spring Onset" \citep{SI-x2016}. The SI-x value uses the time of leaf out using historical dates of budburst from honeysuckle and lilac clones around the U.S. and combines that information with daily recordings from local weather stations \citep{USA-NPN2016, Ault2015, Ault2015a, Schwartz2013, Schwartz1997}. Through assessing past years' weather and budburst, scientists are able to determine general weather trends that subsequently lead to leaf out. Based on these trends, SI-x values can be calculated from daily weather data \citep{USA-NPN2016}.
+\par
+The date of last spring freeze was gathered from the Fisher Meteorological Station which was downloaded from the Harvard Forest web page (data available online\footnote{http://harvardforest.fas.harvard.edu/meteorological-hydrological-stations}). The $T_{min}$ values were used and the last spring freeze was determined from the latest spring date that the temperature reached -2$^{\circ}$C or below. 
+\par
+PhenoCam data is not available for Harvard Forest until 2008 and observation data is only recorded through 2014, so this evaluation assesses FSI values from 2008 through 2014.
+The FSI values were calculated for each methodology using the formula based on the study performed by Marino et al. (2011).  
+\par %Lizzie, do I need to include this table?
+A Pearson Correlation was used to determine the strength of association between the three methods used in the study. As indicated in Table 1, the FSI values from the observed data and the SI-x NPN data are strongly correlated (r=0.9395), whereas the FSI values calculated using the PhenoCam data is not as strongly correlated to either the observed FSI values (r=0.4680) or the NPN FSI values (r=0.4242). Although, according to the Pearson correlation, all methods were considered to be significantly related. 
+
+<<label=pearson, results="asis", echo=FALSE, warning=FALSE, message=FALSE>>=
+pearson<-cor(FSI.table, method="pearson")
+print(xtable::xtable(pearson, caption="Pearson Correlation Coefficients indicating the strength of association between the FSI values calculated across all three methodologies."),comment=FALSE, caption.placement="top")
+@
+
+\subsection*{How Species' Phenological Cues Shape Vegetative Risk - \textit{methods for experiment}}
+%% Lizzie, how detailed should I get here?
+
+
+\subsection*{Predictable Regional Differences in Climate, Species Responses and False Spring Risk - \textit{climate data and phenology data}}
+We analyzed five archetypal regions across North America and Europe. We collected phenology data through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x) by accessing the "Spring Indices, Historic Annual" gridded layer and looking specifically at "First Leaf - Spring Onset" \citep{SI-x2016}. We looked at each SI-x value for each North American site (i.e. Waterville, ME, Yakima, WA, and Reidsville, NC) from 1981-2016 to evaluate the spread of spring onset dates for those regions. For the European sites (i.e. Bamberg, Germany and Lyon, France) we used phenology observation studies that assessed multiple years of \textit{in situ} budburst dates for the dominant species in those regions \citep{Soudani2012, White2009,Schaber2005}. We then collected climate data by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool (data available online\footnote{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}). Each location assesses 50 years of climate data. We then calculated the number of years that fell below -2.2$\circ$C within the budburst date range for each region. 
+
+\subsection*{Observed Changes in Duration of Vegetative Risk - \textit{methods for observations and GDDs}}
+The first method for collecting biological spring onset (i.e. budburst) was from observational data recorded for 33 tree species by Dr. John O'Keefe at Harvard Forest from 1990 to 2014 \citep{OKeefe2014}. Dr. O'Keefe defines budburst as 50\% green tip emergence. We subsetted this dataset to include only the tree species that were most consistently observed, which ended up being eight species (i.e. \textit{Acer pensylvanicum, A. rubrum, A. saccharum, Betula alleghaniensis, Fraxinus americana, Hamamelis virginiana, Quercus alba, Q. rubra}). Next, we calculated the year that required the least (1997) and greatest (2012) number of accumulated daily GDDs above 5$\circ$C and compared the durations of vegetative risk between the two years. 
+
+
+
+
+\end{document}

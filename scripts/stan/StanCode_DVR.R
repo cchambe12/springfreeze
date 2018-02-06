@@ -21,6 +21,7 @@ library(dplyr)
 library(gridExtra)
 library(brms)
 library(egg)
+library(ggstance)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
@@ -145,34 +146,39 @@ dfwide$sp<-as.factor(dfwide$sp)
 
 pd <- position_dodgev(height = -0.5)
 
-
+estimates<-c("Forcing", "Photoperiod", "Chilling 1.5°C", "Chilling 4°C", "Forcing x Photoperiod", 
+             "Forcing x Chilling 1.5°C", "Forcing x Chilling 4°C", "Photoperiod x Chilling 1.5°C", 
+             "Photoperiod x Chilling 4°C")
+dfwide$legend<-c("Overall Effects", "", "", "", "", "", "", "", "", "")
+estimates<-rev(estimates)
 fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=factor(sp), size=factor(rndm), alpha=factor(rndm)))+
-  geom_point(position =pd, size=4)+
-  geom_errorbarh(aes(xmin=(`2.5%`), xmax=(`95%`)), position=pd, size=.5, height =0)+
+  geom_point(position =pd)+
+  geom_errorbarh(aes(xmin=(`2.5%`), xmax=(`95%`)), position=pd, size=.5, height =0, width=0)+
   geom_vline(xintercept=0)+
-  scale_colour_manual(labels = expression("Fixed effects", italic("A. pensylvanicum"), italic("A. rubrum"), italic("A. saccharum"), italic("B. alleghaniensis"), 
-                                          italic("B. papyrifera"), italic("F. grandifolia"), italic("I. mucronata"),
-                                 italic("P. grandidentata"), italic("Q. rubra")),
-                      values=c("blue", "red", "orangered1","orangered3", "sienna4","sienna2", "green4", "green1", "purple2", "magenta2"))+
+  scale_colour_manual(values=c("blue", "firebrick3", "orangered1","orange3", "sienna4","sienna2", "green4", "green3", "purple2", "magenta3"),
+                      labels=c("Overall Effects", expression(italic("A. pensylvanicum"), italic("A. rubrum"), italic("A. saccharum"), 
+                                                             italic("B. alleghaniensis"),italic("B. papyrifera"), italic("F. grandifolia"), 
+                                                             italic("I. mucronata"),italic("P. grandidentata"), italic("Q. rubra"))))+
+  scale_size_manual(values=c(3, 1, 1, 1, 1, 1, 1, 1, 1, 1)) +
   scale_shape_manual(labels="", values=c("1"=16,"2"=16))+
-  scale_alpha_manual(values=c(1, 0.5))+
-  guides(alpha=FALSE) + #removes the legend 
+  scale_alpha_manual(values=c(1, 0.4)) +
+  guides(size=FALSE, alpha=FALSE) + #removes the legend 
   ggtitle(label = "A.")+ 
-  scale_y_discrete(limits = rev(unique(sort(dfwide$var)))) + ylab("") + 
-  labs(col="Effects") + theme(legend.text=element_text(size=10))
+  scale_y_discrete(limits = rev(unique(sort(dfwide$var))), labels=estimates) + ylab("") + 
+  labs(col="Effects") + theme(legend.position = c(0.15, 0.01), legend.title=element_blank())
 fig1
-
-
 
 ######################################################################################
 ##################### Making two plots for manuscript ################################
 dxx<-read.csv("output/diffplot.csv", header=TRUE)
 
-diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() + 
+diff<-ggplot(dxx, aes(x=factor(code), y=diff, col=factor(code))) + geom_point() + 
   geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
-  ylab(expression(Delta*" in DVR between treatments")) + coord_cartesian(ylim=c(0,25)) +
+  ylab(expression(atop(Delta*" in Duration of Vegetative Risk", paste("Between Treatments (days)")))) + coord_cartesian(ylim=c(0,25)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
-        axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10)) +
+        axis.text.x = element_text(face = "italic", angle=45, hjust=1),
+        axis.text=element_text(size=10), legend.position = "none") +
+  scale_colour_manual(values=c("firebrick3", "orangered1","orange3", "sienna4","sienna2", "green4", "green3", "purple2", "magenta3")) +
   ggtitle(label="B.")
 plot(diff)
 
