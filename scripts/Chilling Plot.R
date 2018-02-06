@@ -30,6 +30,13 @@ small.spp<-dx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
 spp<-unique(small.spp$species)
 dx<-dx%>% filter(species %in% spp)
 
+dx$risk<-dx$lday-dx$bday
+dx$force<-ifelse(dx$treatcode=="CS0", 0, 1)
+dx$photo<-ifelse(dx$treatcode=="CS0", 0, 1)
+dx$chill<-ifelse(dx$treatcode=="CS0", 0, 1)
+dx<-dx%>%dplyr::select(-treatcode, -lday, -bday, -site)
+#write.csv(dx, file="~/Documents/git/springfreeze/output/danf_short.csv", row.names=FALSE)
+
 dx<-dx%>%dplyr::select(-site, -ind)
 dx$mean<-ave(dx$bday, dx$species, dx$treatcode)
 dx$sd<-ave(dx$bday, dx$species, dx$treatcode, FUN=sd)
@@ -72,6 +79,11 @@ plot(risk)
 
 ### Prep data for Anovas
 dxx<-d
+dxx$species<-substr(dxx$ind, 1, 6)
+dxx<-dxx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN") # all entries for two species have the same budburst and leafout day, removed because probably from error
+small.spp<-dxx %>% dplyr::select(species, treatcode) %>% filter(treatcode=="WL1")
+spp<-unique(small.spp$species)
+dxx<-dxx%>% filter(species %in% spp)
 dxx$chill<- as.numeric(as.character(substr(dxx$chill, 6, 6)))
 #d$chilling<-as.numeric(as.character(
 #ifelse((d$chilling==0), 0, ifelse((d$chilling==1), 4, 1.5))))

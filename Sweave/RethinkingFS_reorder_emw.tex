@@ -1,4 +1,54 @@
-\documentclass{article}
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 \usepackage{Sweave}
 \usepackage{float}
 \usepackage{graphicx}
@@ -33,19 +83,9 @@
 ]{siderules}
 
 %% R Script
-<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
-  options(stringsAsFactors=FALSE)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(xtable)
-library(arm)
-library(grid)
-library(lubridate)
-library(stargazer)
-library(gridExtra)
-@
 
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \title{Rethinking False Spring Risk}
 \author{C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$ \& E. M. Wolkovich $^{1,2}$}
@@ -123,11 +163,11 @@ There is also important variation within certain phenological phases. Most notab
 % I suggest several big changes to Fig 6:
 % (1) Consider moving it and the text up (as shown here) as in line with I?aki's comment.
 % (2) Make panel b the first panel and adjust the current-panel-a to show an easier to explain and defend climate change scenario: high force/low chill (no additional) versus low force/high chill (30 d at 1.5) -- use the 12 hour photoperiod in both examples. Make the current-panel-a become panel-b. See text below for how this would work and let me know what you think
-Predictions of false spring critically depend on understanding what controls the duration of vegetative risk across species. For temperate species, the three major cues that control budburst \citep[e.g., low winter temperatures, warm spring temperatures, and increasing photoperiods]{Chuine2010} probably play a dominant role. One study, which examined how these cues impact budburst and leafout, shows that the duration of vegetative risk can vary by 21 days or more depending on the suite of cues a plant experiences (Figure \ref{fig:dan}). The experiment examined 9 temperate trees and shrubs using a fully crossed design of three levels of chilling (field chilling, field chilling plus 30 days at either 1 or 4 $\circ$C), two levels of forcing (20$\circ$C/10$\circ$C or 15$\circ$C/5$\circ$C day/night temperatures) and two levels of photoperiod (8 versus 12 hour days) resulting in 12 treatment combinations. Increased forcing, daylength and chilling all decreased the duration of vegetative risk with forcing causing the greatest decrease (10 days), followed by daylength (9 days), and chilling (2-3 days depending on the temperature), but the full effect of any one cue depended on the other cues due to important interactions---for example, the combined effect of warmer temperatures and longer days would be 14 days, because of -5 days interaction between the forcing and photoperiod cues. 
+Predictions of false spring critically depend on understanding what controls the duration of vegetative risk across species. For temperate species, the three major cues that control budburst \citep[e.g., low winter temperatures, warm spring temperatures, and increasing photoperiods ]{Chuine2010} probably play a dominant role. One study, which examined how these cues impact budburst and leafout, shows that the duration of vegetative risk can vary by XX days or more depending on the suite of cues a plant experiences (CITE whole figure). The experiment examined 11 temperate trees and shrubs using a fully crossed design of three levels of chilling (field chilling, field chilling plus 30 days at either 1 or 4 C), two levels of forcing (GIVE TEMPS) and two levels of photoperiod (8 versus 12 hour days) resulting in 12 treatment combinations. Increased forcing, daylength and chilling all decreased the duration of vegetative risk with forcing causing the greatest decrease (XX days), followed by daylength (XX days), and chilling (XX-XX depending on the temperature), but the full effect of any one cue depended on the other cues due to important interactions---for example, the combined effect of warmer temperatures and longer days would be XX days, because of -XX days interaction between the forcing and photoperiod cues. 
 
-Such cues may provide a starting point for predicting how climate change will alter the duration of vegetative risk. Robust predictions will require much more information, especially the emissions scenario realized over coming decades (\citep{IPCC2014}), but one potential outcome is that higher temperatures will increase forcing and decrease chilling in many locations (but see Guy et al. 2014). Under this scenario experimental results suggest a 11 day decrease in duration of vegetative risk (Figure \ref{dan}A). 
+Such cues may provide a starting point for predicting how climate change will alter the duration of vegetative risk. Robust predictions will require much more information, especially the emissions scenario realized over coming decades (CITE IPCC), but one potential outcome is that higher temperatures will increase forcing and decrease chilling in many locations (but see Guy et al. 2014). Under this scenario experimental results suggest XX response (CITE exact figure panel). 
 % May need to change next sentence depending on what we say just above... 
-This cue interaction could potentially elongate the duration of vegetative risk than if chilling conditions were not expected to decrease and, thus, expose at risk plants to more intense false spring events or even multiple events in one year. 
+This cue interaction could potentially elongate the duration of vegetative risk and expose at risk plants to more intense false spring events or even multiple events in one year. 
 
 Considering the interaction of cues and climate change further complicates understanding species future vulnerabilities to false spring events. Most species are expected to begin leafout earlier in the season with earlier warming spring temperatures but some species may have the opposite response due to less winter chilling or decreased photoperiod cues \citep{Cleland2006, Yu2010, Xin2016}. For example, as climate change progresses, higher spring forcing temperatures may be required for species experiencing insufficient winter chilling (due to warmer winter temperatures), especially at lower latitudes \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. Generally, individuals that initiate budburst earlier in the spring may attempt to limit freezing risk by decreasing the duration of vegetative risk in order to minimize the exposure of less frost tolerant phenophases. But with a changing climate and thus shifts in phenological cues (warm temperatures, winter chilling and photoperiod), this relationship may change. Further studies are essential to understand the interplay between chilling, forcing, and photoperiod cues on the duration of vegetative risk, especially for species occupying ecological niches more susceptible to false spring events. 
 
@@ -176,58 +216,27 @@ Temperate forest trees are most at risk to frost damage in the spring due to the
 \bibliography{..//refs/SpringFreeze.bib}
 
 
-<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. USA-NPN FSI values are red (USA-NPN, 2016), observed FSI values are green (O'Keefe, 2014), and PhenoCam FSI values are blue (Richardson, 2015).", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
-read_chunk("..//scripts/John.okeefe.R")
-method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
+\begin{figure}[H]
 
-FSI.table<- method %>%
-  dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
-  rename("O'Keefe" = FSI_okeefe) %>%
-  rename(Phenocam = FSI_cam) %>%
-  rename(NPN = FSI_npn) %>%
-  filter(year>=2008) %>%
-  filter(year<2015)
-blend<-FSI.table %>% 
-  gather(Method, FSI, -year) %>%
-  arrange(year)
+{\centering \includegraphics[width=\maxwidth]{figure/fsifig-1} 
 
-methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
-  ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
-  geom_line(aes(x=year, y=FSI, col=Method)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = "black"), legend.key=element_blank())
-plot(methodplot)
+}
 
-@
+\caption[A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study]{A scatterplot indicating FSI values from 2008 to 2014 for each methdology used in this study. USA-NPN FSI values are red (USA-NPN, 2016), observed FSI values are green (O'Keefe, 2014), and PhenoCam FSI values are blue (Richardson, 2015).}\label{fig:fsifig}
+\end{figure}
 
-<<label=risk, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A figure showing the differences in spring phenology and false spring risk across two species: \\textit{Ilex mucronata} (L.) and \\textit{Betula alleghaniensis} (Marsh.). We mapped a possible false spring event based on historic weather data and compared it to the observational data collected at Harvard Forest (O'Keefe, 2014). In this scenario, the \\textit{Ilex mucronata} would be exposed to a false spring event, whereas the \\textit{Betula alleghaniensis} would avoid it entirely. DVR stands for Duration of Vegetative Risk.", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
-read_chunk("..//scripts/Spp_FSIgraphic.R")
-ile<-read.csv("..//output/ilemuc.csv",header=TRUE)
-bet<-read.csv("..//output/betall.csv",header=TRUE)
 
-ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
-  annotate("rect", xmin=82, xmax=97, ymin=0.5
-           , ymax=6, alpha=0.1, color="red") +
-  xlab("Day of Year") + ylab("Frost Damage Risk") +
-  annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
-  annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
-  annotate("text", x = 90, y = 2.05, label = "Spring", fontface="bold") +
-  annotate("text", x = 97.5, y = 11.5, label = "DVR") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank()) + scale_y_discrete(limits=c("", "low",  "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))
-betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
-  annotate("rect", xmin=82, xmax=97, ymin=0.5, ymax=6, alpha=0.1, color="red") +
-  xlab("Day of Year") + ylab("Frost Damage Risk") +
-  annotate("text", x = 140, y = 18, label = "Betula alleghaniensis", fontface = "italic") +
-  annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
-  annotate("text", x = 90, y = 2.05, label = "Spring", fontface="bold") +
-  annotate("text", x = 132.5, y = 11.5, label = "DVR") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank()) + scale_y_discrete(limits=c("","low", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))
 
-grid.arrange(ilemuc, betall, ncol=1, nrow=2)
-@
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/risk-1} 
+
+}
+
+\caption{A figure showing the differences in spring phenology and false spring risk across two species: \textit{Ilex mucronata} (L.) and \textit{Betula alleghaniensis} (Marsh.). We mapped a possible false spring event based on historic weather data and compared it to the observational data collected at Harvard Forest (O'Keefe, 2014). In this scenario, the \textit{Ilex mucronata} would be exposed to a false spring event, whereas the \textit{Betula alleghaniensis} would avoid it entirely. DVR stands for Duration of Vegetative Risk.}\label{fig:risk}
+\end{figure}
+
+
 
 \begin{figure} [H] 
  -\begin{center}
@@ -236,91 +245,27 @@ grid.arrange(ilemuc, betall, ncol=1, nrow=2)
  -\end{center}
  -\end{figure}
 
-<<label=temp, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="A comparison of damaging spring freezing temperature thresholds across ecological and agronomic studies. Each study is listed on the y axis along with the taxonimic group of focus. Next to the species name is the freezing definition used within that study (e.g. 100\\% is 100\\% lethality). Each point is the best estimate recorded for the temperature threshold with standard deviation if indicated in the study. The shape of the point represents the phenophases of interest and the colors indicate the type of study (i.e. agronomic or ecological).", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
-read_chunk("..//scripts/TempTable.R")
+\begin{figure}[H]
 
-d<- data.frame(study=c("Sorbus aucuparia - 50% (Lenz et al., 2016)", "Prunus avium - 50% (Lenz et al., 2016)", "Tilia platyphyllos - 50% (Lenz et al., 2016)", 
-                       "Acer pseudoplatanus - 50% (Lenz et al., 2016)", "Fagus sylvatica - 50% (Lenz et al., 2016)", "All species - hard freeze (Schwartz, 1993))", 
-                       "All species - soft freeze (Augspurger, 2013)", "Eucalyptus pauciflora (Barker et al., 2005)", "All species (Peterson & Abatzoglou, 2014)",
-                       "All species (Cannell & Smith, 1986)", "Vaccinium spp. (Longstroth, 2012)", "Rosaceae - 10% (Longstroth, 2013)", "Rosaceae - 90% (Longstroth, 2013)",
-                       "Wheat - 10 to 90% (Barlow et al., 2015)", "Wheat - 100% (Barlow et al., 2015)", "Rice - 100% (Sanchez et al., 2013)", "Corn - 100% (Sanchez et al., 2013)", "Wheat - 100% (Sanchez et al., 2013)"), 
-               phase=c("Vegetative", "Vegetative", "Vegetative", "Vegetative", "Vegetative", "Both", "Both", "Both", "Both", "Both",
-                       "Floral", "Vegetative", "Vegetative", "Floral", "Vegetative", "Vegetative", "Vegetative", "Vegetative"),
-               sector=c("Ecologicial", "Ecologicial", "Ecologicial", "Ecologicial", "Ecologicial", "Ecologicial",
-                        "Ecologicial", "Ecologicial", "Ecologicial", "Agronomic", "Agronomic", "Agronomic", "Agronomic",
-                        "Agronomic", "Agronomic", "Agronomic", "Agronomic", "Agronomic"),
-               temperature=c(-7.4, -8.5, -7.4, -6.7, -4.8, -2.2, -1.7, -5.8, -2.2, 2, -2.2, -7.2, -13.3, -4.5,
-                             -5.5, 4.7, -1.8, -17.2),
-               sd=c(4, 5, 3, 4, 3, 0, 0, 0, 0, 1, 2.2, 0, 0, 0.5, 1.5, 1.3, 1.9, 1.2))
+{\centering \includegraphics[width=\maxwidth]{figure/temp-1} 
 
-
-d$alph<-ifelse(d$sector=="Agronomic", 1, 2)
-d$dataset<-reorder(d$study, d$alph)
-d$dataset <- factor(d$dataset, levels = d$dataset[order(d$sector, d$temperature)])
-my.xlab = expression(paste("Temperature Threshold ", degree,"C"))
-temp<-ggplot(d, aes(x=dataset, y=temperature)) + 
-         geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd, color=sector), alpha=0.3) + 
-         geom_point(aes(shape=phase, color=sector)) + ylab(my.xlab) + theme(axis.title.y=element_blank()) +
-  geom_hline(yintercept=0, linetype=2) +
-  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-        panel.background = element_blank(), 
-        axis.line = element_line(colour = "black"), legend.key=element_blank()) + 
-  ylim(c(-20, 10))
-                                     
-temp<- temp + scale_x_discrete(labels=c("All species - soft freeze (Augspurger, 2013)"="All species - soft freeze (Augspurger, 2013)",
-                        "All species (Peterson & Abatzoglou, 2014)"="All species (Peterson & Abatzoglou, 2014)",
-                        "All species - hard freeze (Schwartz, 1993))"="All species - hard freeze (Schwartz, 1993))",
-                        "Fagus sylvatica - 50% (Lenz et al., 2016)" = expression(paste(italic("Fagus sylvatica"),  "- 50% (Lenz et al., 2016)")),
-                        "Eucalyptus pauciflora (Barker et al., 2005)"=expression(paste(italic("Eucalyptus pauciflora"), "(Barker et al., 2005)")),
-                        "Acer pseudoplatanus - 50% (Lenz et al., 2016)"=expression(paste(italic("Acer pseudoplatanus"), "- 50% (Lenz et al., 2016)")),
-                        "Tilia platyphyllos - 50% (Lenz et al., 2016)"=expression(paste(italic("Tilia platyphyllos"), "- 50% (Lenz et al., 2016)")),
-                        "Sorbus aucuparia - 50% (Lenz et al., 2016"=expression(paste(italic("Sorbus aucuparia"), "- 50% (Lenz et al., 2016")),
-                        "Prunus avium - 50% (Lenz et al., 2016)"=expression(paste(italic("Prunus avium"), "- 50% (Lenz et al., 2016)")),
-                        "Rice - 100% (Sanchez et al., 2013)"="Rice - 100% (Sanchez et al., 2013)",
-                        "All species (Cannell & Smith, 1986)"="All species (Cannell & Smith, 1986)",
-                        "Corn - 100% (Sanchez et al., 2013)"="Corn - 100% (Sanchez et al., 2013)",
-                        "Vaccinium spp. (Longstroth, 2012)"=expression(paste(italic("Vaccinium spp."), "(Longstroth, 2012)")),
-                        "Wheat - 10 to 90% (Barlow et al., 2015)"="Wheat - 10 to 90% (Barlow et al., 2015)",
-                        "Wheat - 100% (Barlow et al., 2015)"="Wheat - 100% (Barlow et al., 2015)",
-                        "Rosaceae - 10% (Longstroth, 2013)"=expression(paste(italic("Rosaceae"), "- 10% (Longstroth, 2013)")),
-                        "Rosaceae - 90% (Longstroth, 2013)"=expression(paste(italic("Rosaceae"), "- 90% (Longstroth, 2013)")),
-                        "Wheat - 100% (Sanchez et al., 2013)"="Wheat - 100% (Sanchez et al., 2013)"))
-temp<-temp +coord_flip()
-plot(temp)
-@
-
-<<label=hf, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="Duration of vegetative risk for 8 species at Harvard Forest, comparing 1997 and 2012. In 1997, the aggregated GDDs to budburst were the lowest and the durations of vegetative risk overall were shorter, whereas in 2012, the aggregated GDDs to budburst were the highest and the durations of vegetative risk were longer. The dotted line indicates a false spring event in 2012, which is defined as freezing temperatures (-2$^\\circ$C) occurring after budburst. The histogram at the bottom right corner indicates the frequency of accumulated GDDs to budburst for each year between 1990 and 2016. It indicates that 1997 was a thermally late year and 2012 was a thermally early year. ", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
-read_chunk("..//scripts/HF_GDD.R")
-gdd.yr<-read.csv("..//output/hf_gdd.csv",header=TRUE)
-bbg<-read.csv("..//output/mean_bbgdd.csv",header=TRUE)
-
-hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
-  geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
-  geom_linerange(aes(x=ord,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
-  scale_color_manual(labels = c("1997","2012", "Leafout", "Budburst"), values = c("#F8766D","#00BFC4", "green4", "darkolivegreen3")) +
-  xlab("Species") +coord_flip() + labs(color="Phenophase and Year")  +
-  geom_hline(yintercept=120, color="#00BFC4", linetype=2) +
-  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"),
-        legend.justification = c(1,1), legend.text = element_text(size=10), legend.key=element_blank()) +
-  guides(color = guide_legend(override.aes = list(linetype = c(1, 1, 0, 0))))
-
-hist<-ggplot(bbg, aes(x=m.bb)) + geom_histogram(aes(fill=colors), binwidth = 20, color="gray30", size=0.3) +
-  scale_fill_manual(values=c("firebrick4", "gray70"), name="Year",
-                    labels=c("1997 & 2012","Other Years")) +
-  xlab("Mean GDDs for Budburst") + ylab("Frequency") +
-  theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), 
-        legend.position = c(0.3,1.05), legend.text = element_text(size=5), legend.key.size = unit(0.1, "cm"),
-        axis.title=element_text(size=8), legend.title = element_text(size=5), axis.text=element_text(size=6), legend.key=element_blank()) 
-
-vp <- viewport(width = 0.25, height = 0.25, x = 0.95,
-               y = unit(1.5, "lines"), just = c("right","bottom"))
-full <- function() {
-  print(hf.bb)
-  print(hist, vp = vp)
 }
-full()
 
-@
+\caption[A comparison of damaging spring freezing temperature thresholds across ecological and agronomic studies]{A comparison of damaging spring freezing temperature thresholds across ecological and agronomic studies. Each study is listed on the y axis along with the taxonimic group of focus. Next to the species name is the freezing definition used within that study (e.g. 100\% is 100\% lethality). Each point is the best estimate recorded for the temperature threshold with standard deviation if indicated in the study. The shape of the point represents the phenophases of interest and the colors indicate the type of study (i.e. agronomic or ecological).}\label{fig:temp}
+\end{figure}
+
+
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/hf-1} 
+
+}
+
+\caption[Duration of vegetative risk for 8 species at Harvard Forest, comparing 1997 and 2012]{Duration of vegetative risk for 8 species at Harvard Forest, comparing 1997 and 2012. In 1997, the aggregated GDDs to budburst were the lowest and the durations of vegetative risk overall were shorter, whereas in 2012, the aggregated GDDs to budburst were the highest and the durations of vegetative risk were longer. The dotted line indicates a false spring event in 2012, which is defined as freezing temperatures (-2$^\circ$C) occurring after budburst. The histogram at the bottom right corner indicates the frequency of accumulated GDDs to budburst for each year between 1990 and 2016. It indicates that 1997 was a thermally late year and 2012 was a thermally early year. }\label{fig:hf}
+\end{figure}
+
+
 
 \begin{figure} [H] 
  -\begin{center}

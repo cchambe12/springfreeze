@@ -19,13 +19,14 @@ library(shinystan)
 library(bayesplot)
 library(dplyr)
 library(gridExtra)
+library(brms)
 library(egg)
-library(xtable)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
 dx<-read.csv("output/danfdata.csv", header=TRUE)
 dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
+dx<-read.csv("output/danf_short.csv", header=TRUE)
 
 # Prep 
 #dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
@@ -64,7 +65,6 @@ unique(dxb$photo)
 #dxb$site[dxb$site==2] <- 1
 
 dxb<-filter(dxb, risk>0)
-dxb$z.risk<-scale(dxb$risk, center=TRUE, scale=TRUE) ## with 0s included and z-scored, 7 divergent transitions and max t statistic is off
 
 unique(dxb$chill1)
 unique(dxb$chill2)
@@ -104,37 +104,65 @@ dxb$force<-dxb$warm
 fit1<-stan_glmer(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 + force:chill2 +
                  photo:chill1 + photo:chill2 + (1|sp), data=dxb)
 fit1
-pp_check(fit1)
-rstanarm::pp_check(fit1, stat = "max")
-plot(doym.b, pars=c("mu_b_warm", "mu_b_photo", "mu_b_chill1", "mu_b_chill2"))
 
-betas <- as.matrix(fit1, pars = c("force", "photo", "chill1", "chill2", "force:photo",
-                                  "force:chill1", "force:chill2", "photo:chill1", "photo:chill2"))
-beta<-mcmc_intervals(betas) + annotate("text", x = -13, y = 10, label = "B.", fontface = "bold")
+fit.brm<-brm(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 +
+               force:chill2 + photo:chill1 + photo:chill2 + (1|sp) + (force-1|sp) + (photo-1|sp)
+             + (chill1-1|sp) + (chill2-1|sp) + (force:photo-1|sp) +
+               (force:chill1-1|sp) + (force:chill2-1|sp) + (photo:chill1-1|sp) +
+               (photo:chill2-1|sp), data=dxb)
+m<-fit.brm
+m.int<-posterior_interval(m)
+sum.m<-summary(m)
+cri.f<-as.data.frame(sum.m$fixed[,c("Estimate", "l-95% CI", "u-95% CI")])
+cri.f<-cri.f[-1,] #removing the intercept 
+fdf1<-as.data.frame(rbind(as.vector(cri.f[,1]), as.vector(cri.f[,2]), as.vector(cri.f[,3])))
+fdf2<-cbind(fdf1, c(0, 0, 0) , c("Estimate", "2.5%", "95%"))
+names(fdf2)<-c(rownames(cri.f), "sp", "perc")
 
-plot(fit1, pars="beta")
-legend("topleft", bty = "n",legend = "A.")
+cri.r<-(ranef(m, summary = TRUE, robust = FALSE,
+              probs = c(0.025, 0.975)))$sp
+cri.r2<-cri.r[, ,-1]
+cri.r2<-cri.r2[,-2,]
+dims<-dim(cri.r2)
+twoDimMat <- matrix(cri.r2, prod(dims[1:2]), dims[3])
+mat2<-cbind(twoDimMat, c(rep(1:9, length.out=27)), rep(c("Estimate", "2.5%", "95%"), each=9))
+df<-as.data.frame(mat2)
+names(df)<-c(rownames(cri.f), "sp", "perc")
+dftot<-rbind(fdf2, df)
+dflong<- tidyr::gather(dftot, var, value, force:`photo:chill2`, factor_key=TRUE)
 
-dvr <- data.frame(site=unique(fdat$site))
-lp <- posterior_linpred(fit1,newdata=dvr,transform=TRUE)
-quantfun <- function(x){quantile(x,probs = c(0.025,0.25,0.5,0.75,0.975))}
-lp_quants <- t(apply(lp,FUN=quantfun,MARGIN=2))
-sites$lwr_025 <- lp_quants[,1]
-sites$lwr_25 <- lp_quants[,2]
-sites$median <- lp_quants[,3]
-sites$upr_75 <- lp_quants[,4]
-sites$upr_975 <- lp_quants[,5]
+#adding the coef estiamtes to the random effect values 
+for (i in seq(from=1,to=nrow(dflong), by=30)) {
+  for (j in seq(from=3, to=29, by=1)) {
+    dflong$value[i+j]<- as.numeric(dflong$value[i+j]) + as.numeric(dflong$value[i])
+  }
+}
+dflong$rndm<-ifelse(dftot$sp>0, 2, 1)
+dfwide<-tidyr::spread(dflong, perc, value)
+dfwide[,4:6] <- as.data.frame(lapply(c(dfwide[,4:6]), as.numeric ))
+dfwide$sp<-as.factor(dfwide$sp)
+## plotting
 
-##Plots the results.
-fig1 <- ggplot(dvr)+
-  geom_linerange(aes(x=risk,ymin=lwr_025,ymax=upr_975))+
-  geom_linerange(aes(x=risk,ymin=lwr_25,ymax=upr_75),lwd=1.5)+
-  geom_point(aes(x=risk,y=median),shape=21,fill="white")+
-  geom_abline(aes(intercept=0.1,slope=0),linetype="dotted")+
-  coord_flip()+
-  scale_y_continuous("Proportion with Flowers",limits=c(0,1))+
-  theme_bw()
+pd <- position_dodgev(height = -0.5)
+
+
+fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=factor(sp), size=factor(rndm), alpha=factor(rndm)))+
+  geom_point(position =pd, size=4)+
+  geom_errorbarh(aes(xmin=(`2.5%`), xmax=(`95%`)), position=pd, size=.5, height =0)+
+  geom_vline(xintercept=0)+
+  scale_colour_manual(labels = expression("Fixed effects", italic("A. pensylvanicum"), italic("A. rubrum"), italic("A. saccharum"), italic("B. alleghaniensis"), 
+                                          italic("B. papyrifera"), italic("F. grandifolia"), italic("I. mucronata"),
+                                 italic("P. grandidentata"), italic("Q. rubra")),
+                      values=c("blue", "red", "orangered1","orangered3", "sienna4","sienna2", "green4", "green1", "purple2", "magenta2"))+
+  scale_shape_manual(labels="", values=c("1"=16,"2"=16))+
+  scale_alpha_manual(values=c(1, 0.5))+
+  guides(alpha=FALSE) + #removes the legend 
+  ggtitle(label = "A.")+ 
+  scale_y_discrete(limits = rev(unique(sort(dfwide$var)))) + ylab("") + 
+  labs(col="Effects") + theme(legend.text=element_text(size=10))
 fig1
+
+
 
 ######################################################################################
 ##################### Making two plots for manuscript ################################
@@ -145,11 +173,11 @@ diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() +
   ylab(expression(Delta*" in DVR between treatments")) + coord_cartesian(ylim=c(0,25)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
         axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10)) +
-  annotate("text", x = 1, y = 25, label = "A.", fontface = "bold")
+  ggtitle(label="B.")
 plot(diff)
 
-grid.draw(diff, beta, ncol=2)
-ggarrange(diff, beta, ncol=2)
+grid.draw(fig1, diff, ncol=2)
+ggarrange(fig1, diff, ncol=2)
 
 
 ######################################################################################
@@ -159,8 +187,8 @@ ggarrange(diff, beta, ncol=2)
 # yb = dxb$bday # for shinystan posterior checks
 launch_shinystan(doym.b) 
 
-sumerb <- summary(doym.b)$summary
-sumerb[grep("mu_", rownames(sumerb)),]
+sumer <- summary(fit1)
+sumer[grep("", rownames(sumer)),]
 
 betas <- as.matrix(doym.b, pars = c("mu_b_warm","mu_b_photo","mu_b_chill1", "mu_b_chill2",
                                      "b_warm", "b_photo", "b_chill1", "b_chill2"))
