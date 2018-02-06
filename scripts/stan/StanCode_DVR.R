@@ -149,23 +149,24 @@ pd <- position_dodgev(height = -0.5)
 estimates<-c("Forcing", "Photoperiod", "Chilling 1.5°C", "Chilling 4°C", "Forcing x Photoperiod", 
              "Forcing x Chilling 1.5°C", "Forcing x Chilling 4°C", "Photoperiod x Chilling 1.5°C", 
              "Photoperiod x Chilling 4°C")
-dfwide$legend<-c("Overall Effects", "", "", "", "", "", "", "", "", "")
+dfwide$legend<-factor(dfwide$sp,
+                      labels=c("Overall Effects","1","2","3","4","5","6","7","8","9"))
 estimates<-rev(estimates)
-fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=factor(sp), size=factor(rndm), alpha=factor(rndm)))+
+#write.csv(dfwide, file="~/Documents/git/springfreeze/output/df_modforplot.csv", row.names=FALSE)
+fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), alpha=factor(rndm)))+
   geom_point(position =pd)+
   geom_errorbarh(aes(xmin=(`2.5%`), xmax=(`95%`)), position=pd, size=.5, height =0, width=0)+
   geom_vline(xintercept=0)+
   scale_colour_manual(values=c("blue", "firebrick3", "orangered1","orange3", "sienna4","sienna2", "green4", "green3", "purple2", "magenta3"),
-                      labels=c("Overall Effects", expression(italic("A. pensylvanicum"), italic("A. rubrum"), italic("A. saccharum"), 
-                                                             italic("B. alleghaniensis"),italic("B. papyrifera"), italic("F. grandifolia"), 
-                                                             italic("I. mucronata"),italic("P. grandidentata"), italic("Q. rubra"))))+
-  scale_size_manual(values=c(3, 1, 1, 1, 1, 1, 1, 1, 1, 1)) +
+                      breaks=c("Overall Effects"))+
+  scale_size_manual(values=c(3, 2, 2, 2, 2, 2, 2, 2, 2, 2)) +
   scale_shape_manual(labels="", values=c("1"=16,"2"=16))+
   scale_alpha_manual(values=c(1, 0.4)) +
   guides(size=FALSE, alpha=FALSE) + #removes the legend 
   ggtitle(label = "A.")+ 
   scale_y_discrete(limits = rev(unique(sort(dfwide$var))), labels=estimates) + ylab("") + 
-  labs(col="Effects") + theme(legend.position = c(0.15, 0.01), legend.title=element_blank())
+  labs(col="Effects") + theme(legend.position = c(0.90, 0.95), legend.box.background = element_rect(), 
+                              legend.title=element_blank(), legend.key.size = unit(0.05, "cm"))
 fig1
 
 ######################################################################################
