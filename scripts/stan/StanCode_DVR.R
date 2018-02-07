@@ -161,21 +161,22 @@ fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), al
                       breaks=c("Overall Effects"))+
   scale_size_manual(values=c(3, 2, 2, 2, 2, 2, 2, 2, 2, 2)) +
   scale_shape_manual(labels="", values=c("1"=16,"2"=16))+
-  scale_alpha_manual(values=c(1, 0.4)) +
+  scale_alpha_manual(values=c(1, 0.5)) +
   guides(size=FALSE, alpha=FALSE) + #removes the legend 
   ggtitle(label = "A.")+ 
   scale_y_discrete(limits = rev(unique(sort(dfwide$var))), labels=estimates) + ylab("") + 
-  labs(col="Effects") + theme(legend.position = c(0.90, 0.95), legend.box.background = element_rect(), 
-                              legend.title=element_blank(), legend.key.size = unit(0.05, "cm"))
+  labs(col="Effects") + theme(legend.position = "none", legend.box.background = element_rect(), 
+                              legend.title=element_blank(), legend.key.size = unit(0.05, "cm")) +
+  xlab("Parameter Estimate (days)")
 fig1
 
 ######################################################################################
 ##################### Making two plots for manuscript ################################
 dxx<-read.csv("output/diffplot.csv", header=TRUE)
 
-diff<-ggplot(dxx, aes(x=factor(code), y=diff, col=factor(code))) + geom_point() + 
-  geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
-  ylab(expression(atop(Delta*" in Duration of Vegetative Risk", paste("Between Treatments (days)")))) + coord_cartesian(ylim=c(0,25)) +
+diff<-ggplot(dxx, aes(x=factor(code), y=diff, col=factor(code))) + geom_point(alpha=0.5) + 
+  geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.5) + 
+  ylab(expression(atop("Model Estimate of Change ", paste("in Duration of Vegetative Risk (days)")))) + coord_cartesian(ylim=c(0,25)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
         axis.text.x = element_text(face = "italic", angle=45, hjust=1),
         axis.text=element_text(size=10), legend.position = "none") +
