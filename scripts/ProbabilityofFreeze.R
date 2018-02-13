@@ -334,17 +334,18 @@ ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week P
 
 risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
                                                                 "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")))) +
-         geom_point() + ylab("Number of days below -2.2C per two week period") + 
-  geom_line(aes(x=biweekly, y=mean,  color=factor(site, labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
-                                                                   "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")), group=site)) + 
-  geom_linerange(aes(ymax = d$high, ymin=d$low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
-  theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank(), legend.position=c(0.6,0.90),
-        legend.key.size=unit(0.35, "cm"), plot.margin=unit(c(.2,.2,-.3,.5),"cm"), axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank()) +
+         geom_point(aes(color=factor(site), group=site)) + ylab("Number of days below -2.2C per two week period") + 
+  geom_line(aes(x=biweekly, y=mean,  color=factor(site), group=site)) + 
+  geom_linerange(aes( color=factor(site),ymax=high, ymin=low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
+  theme(panel.grid.minor = element_blank(), legend.position="none", axis.title.x=element_blank(), panel.grid.major = element_blank(), 
+                                           panel.background = element_blank(), 
+                                           axis.line.y = element_line(colour = "black", linetype = "solid"), legend.key=element_blank(),
+        axis.ticks.x=element_line(), plot.margin=unit(c(-.6,.5,.3,.5),"cm")) +
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
-                                                                                                               "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31")) + 
-  annotate("text", x = -13, y = 10, label = "Climate Data", fontface = "bold")
+                                                                                                               "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"),
+                   position="top") +scale_y_continuous(expand = c(0, 0.1)) + coord_cartesian(ylim=c(0:14)) +
+  annotate("text", x = 6, y = 12, label = "Climate Data", fontface = "bold")
+risk
 
 #theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), legend.position=c(0.88,0.91),
 #      +        legend.key.size=unit(0.3, "cm"), plot.margin=unit(c(.2,.5,-.3,.5),"cm")
@@ -372,16 +373,34 @@ fix2 <- transform(fix, Site = reorder(Site, order(Site, decreasing = TRUE)))
 fix$Site <- factor(fix$Site,levels=sort(unique(fix$Site), decreasing=FALSE))
 time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x=Site, fill=Site), width=0.2) + coord_flip() +
   scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
-                                                                       "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"), position="top") +
+                                                                       "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31")) +
   theme(legend.position="none", aspect.ratio=0.3, 
-        panel.grid.major = element_blank(),panel.grid.minor = element_blank(), plot.margin=unit(c(-.2,.5,.2,.5),"cm")) +
-  ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site))) + annotate("text", x = -13, y = 10, label = "Phenology Data", fontface = "bold")
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(), panel.background= element_blank(),plot.margin=unit(c(.2,.5,-.3,.5),"cm"),
+        axis.line = element_line()) +
+  ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site))) +
+  annotate("text", x=5.35, y=118, label="March 31 - April 30", fontface="bold", color="pink2") +
+  annotate("text", x=4.35, y=120, label="April 10 - May 30", fontface="bold", color="goldenrod") +
+  annotate("text", x=3.35, y=83, label="February 21 - April 4", fontface="bold", color="mediumaquamarine") +
+  annotate("text", x=2.35, y=107, label="April 5 - May 10", fontface="bold", color="lightblue4") +
+  annotate("text", x=1.35, y=109, label="March 22 - April 30", fontface="bold", color="plum2") +
+  annotate("text", x=5.4, y=60, label="Phenology Data", fontface="bold")
+time
+
+annotate("text", x = -13, y = 10, label = "Phenology Data", fontface = "bold")
+limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum", "plum", 
+              "lightblue", "lightblue", "lightblue", "lightblue",
+              "pink", "pink", "pink", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine")
+
+
+  labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
+             "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"))
 
 #c(0.08,0.22), legend.key.size=unit(0.3, "cm")
 #theme(legend.position=c(0.05,0.3), legend.key.size=unit(0.4, "cm"), aspect.ratio=0.3,
 #      +        panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), plot.margin=unit(c(-.2,.5,.2,.5),"cm"))
 
-ggarrange(risk, time, nrow=2)
+ggarrange(time, risk, nrow=2)
+
 #grid.arrange(risk, time, ncol=1, nrow=2, respect=TRUE)
 
 #grid.draw(rbind(ggplotGrob(risk), ggplotGrob(time)))
