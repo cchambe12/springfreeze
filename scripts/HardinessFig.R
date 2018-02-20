@@ -25,7 +25,7 @@ ggplot(hrdy, aes(x=month, y=hardy)) +
   geom_curve(aes(x = 8, y = -2, xend = 9, yend = -3), data = hrdy, col="yellowgreen", curvature = -0.1) +
   scale_y_continuous(breaks=c(2, 0, -5, -10, -15, -20, -25, -30, -35)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  xlab("Month") + ylab("Cold Hardiness") + 
+  xlab("Month") + ylab("Cold Hardiness (°C)") + 
   annotate("text", x = 2.25, y = -11.5, label = "Paradormancy", angle=318, size=3) +
   annotate("text", x = 4.15, y = -24, label = "Endodormancy", angle=310, size=3) +
   annotate("text", x = 6.45, y = -15.35, label = "Ecodormancy", angle=70, size=3) +
@@ -65,5 +65,5 @@ ggplot(hrdy, aes(x=month, y=hardy)) +
   geom_curve(aes(x = 8, y = -2, xend = 9, yend = -3), data = hrdy, curvature = -0.1) +
   scale_y_continuous(breaks=c(2, 0, -5, -10, -15, -20, -25, -30, -35)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black")) +
-  xlab("Month") + ylab("Cold Hardiness")
+  xlab("Month") + ylab("Cold Hardiness (°C)")
 

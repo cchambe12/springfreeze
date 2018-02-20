@@ -66,9 +66,10 @@
   \end{enumerate}
 \end{enumerate}
 
-Current word count: ~4000 \\
+Current word count: 3582 (including abstract) \\
+Without HF section: 3209 (including abstract)
 References: 71 \\
-Tables/Figures: 5 (1 box maybe) \\
+Tables/Figures: 6 \\
 
 
 
