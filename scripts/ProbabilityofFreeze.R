@@ -343,7 +343,7 @@ risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, 
         axis.ticks.x=element_line(), plot.margin=unit(c(-.6,.5,.3,.5),"cm")) +
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                                                                                                "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"),
-                   position="top") +scale_y_continuous(expand = c(0, 0.1)) + coord_cartesian(ylim=c(0.03:14)) +
+                   position="top") +scale_y_continuous(expand = c(0, 0.1)) + coord_cartesian(ylim=c(0.03:15)) +
   annotate("text", x = 6, y = 12, label = "Climate Data", fontface = "bold")
 risk
 
@@ -372,9 +372,9 @@ fix$doy<-as.numeric(as.character(fix$doy))
 fix2 <- transform(fix, Site = reorder(Site, order(Site, decreasing = TRUE)))
 fix$Site <- factor(fix$Site,levels=sort(unique(fix$Site), decreasing=FALSE))
 time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x=Site, fill=Site), width=0.2) + coord_flip() +
-  scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
-                                                                       "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31")) +
-  theme(legend.position="none", aspect.ratio=0.4, 
+  scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb15-Feb29", "Mar1-Mar14", "Mar15-Mar31", "Apr1-Apr14",
+                                                                       "Apr15-Apr30", "May1-May14", "May15-May31")) +
+  theme(legend.position="none", aspect.ratio=0.45, 
         panel.grid.major = element_blank(),panel.grid.minor = element_blank(), panel.background= element_blank(),plot.margin=unit(c(.2,.5,-.3,.5),"cm"),
         panel.border = element_rect(fill=NA)) +
   ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site))) +

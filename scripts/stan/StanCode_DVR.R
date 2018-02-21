@@ -28,6 +28,7 @@ source('scripts/stan/savestan.R')
 dx<-read.csv("output/danfdata.csv", header=TRUE)
 dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
 dx<-read.csv("output/danf_short.csv", header=TRUE)
+dfwide<-read.csv("output/df_modforplot.csv", header=TRUE)
 
 # Prep 
 #dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
@@ -155,7 +156,7 @@ estimates<-rev(estimates)
 #write.csv(dfwide, file="~/Documents/git/springfreeze/output/df_modforplot.csv", row.names=FALSE)
 fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), alpha=factor(rndm)))+
   geom_point(position =pd)+
-  geom_errorbarh(aes(xmin=(`2.5%`), xmax=(`95%`)), position=pd, size=.5, height =0, width=0)+
+  geom_errorbarh(aes(xmin=(X2.5.), xmax=(X95.)), position=pd, size=.5, height =0, width=0)+
   geom_vline(xintercept=0)+
   scale_colour_manual(values=c("blue", "firebrick3", "orangered1","orange3", "sienna4","sienna2", "green4", "green3", "purple2", "magenta3"),
                       breaks=c("Overall Effects"))+
@@ -167,7 +168,7 @@ fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), al
   scale_y_discrete(limits = rev(unique(sort(dfwide$var))), labels=estimates) + ylab("") + 
   labs(col="Effects") + theme(legend.position = "none", legend.box.background = element_rect(), 
                               legend.title=element_blank(), legend.key.size = unit(0.05, "cm")) +
-  xlab("Parameter Estimate (days)")
+  xlab(expression(atop("Model Estimate of Change ", paste("in Duration of Vegetative Risk (days)"))))
 fig1
 
 ######################################################################################
@@ -176,7 +177,7 @@ dxx<-read.csv("output/diffplot.csv", header=TRUE)
 
 diff<-ggplot(dxx, aes(x=factor(code), y=diff, col=factor(code))) + geom_point(alpha=0.5) + 
   geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.5) + 
-  ylab(expression(atop("Model Estimate of Change ", paste("in Duration of Vegetative Risk (days)")))) + coord_cartesian(ylim=c(0,25)) +
+  ylab(expression(atop("Change in Duration of Vegetative Risk (days)"))) + coord_cartesian(ylim=c(0,25)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
         axis.text.x = element_text(face = "italic", angle=45, hjust=1),
         axis.text=element_text(size=10), legend.position = "none") +
