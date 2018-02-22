@@ -263,6 +263,13 @@ grid.arrange(ilemuc, betall, ncol=1, nrow=2)
 
 \begin{figure} [H] 
  -\begin{center}
+ -\includegraphics[width=16cm, height=13cm]{..//figure/ExpFig_withRandom.pdf} 
+ -\caption{Results from the growth chamber experiment. (A) A plot of the model parameter estimates on the duration of vegetative risk. Spring forcing temperatures had the largest effect on the rate of leafout, with photoperiod also being a critical factor. Thus, while greater forcing or longer photoperiods alone will shorten the duration of vegetative risk by 10 and 9 days respectively, their combined effect would be 14 days due to a 5 day delay through their interaction (10 + 9 - 5 = 14). Data was collected from a growth chamber experiment where one treatment had no additional overwinter chilling, low spring forcing temperatures, and shorter spring daylengths and the other had additional overwinter chilling, high spring forcing temperatures, and longer spring daylengths. (B) A comparison of the durations of vegetative risk across two treatments for each species collected for the experiment. Species along the x-axis are ordered by day of budburst. The standard error is represented by the bars around each point. }\label{fig:dan} 
+ -\end{center}
+ -\end{figure}
+
+\begin{figure} [H] 
+ -\begin{center}
  -\includegraphics[width=16cm, height=18cm]{..//figure/RegRisk_flipped.pdf} 
  -\caption{False spring risk can vary dramatically across regions. Here we show the period when plants are most at risk to tissue loss -- between budburst and leafout (upper, lines represent the range with the thicker line representing the interquartile range) and the variation in the number of freeze days (-2.2$^{\circ}$C) (Schwartz, 1993) that occurred on average over the past 50 years for five different sites (lower, bars represent the range, points represent the mean). Data come from USA-NPN SI-x tool (1981-2016) and observational studies (1950-2016) for phenology (USA-NPN, 2016; Soudani et al., 2012; White et al., 2009; Schaber \& Badeck, 2005) and NOAA Climate Data Online tool for climate (from 1950-2016). } \label{fig:regional}  
  -\end{center}
@@ -320,13 +327,6 @@ temp<- temp + scale_x_discrete(labels=c("All species - soft freeze (Augspurger, 
 temp<-temp +coord_flip()
 plot(temp)
 @
-
-\begin{figure} [H] 
- -\begin{center}
- -\includegraphics[width=16cm, height=13cm]{..//figure/ExpFig_withRandom.pdf} 
- -\caption{Results from the growth chamber experiment. (A) A plot of the model parameter estimates on the duration of vegetative risk. Spring forcing temperatures had the largest effect on the rate of leafout, with photoperiod also being a critical factor. Thus, while greater forcing or longer photoperiods alone will shorten the duration of vegetative risk by 10 and 9 days respectively, their combined effect would be 14 days due to a 5 day delay through their interaction (10 + 9 - 5 = 14). Data was collected from a growth chamber experiment where one treatment had no additional overwinter chilling, low spring forcing temperatures, and shorter spring daylengths and the other had additional overwinter chilling, high spring forcing temperatures, and longer spring daylengths. (B) A comparison of the durations of vegetative risk across two treatments for each species collected for the experiment. Species along the x-axis are ordered by day of budburst. The standard error is represented by the bars around each point. }\label{fig:dan} 
- -\end{center}
- -\end{figure}
 
 
 \end{document}
