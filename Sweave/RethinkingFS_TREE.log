@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  20 FEB 2018 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 FEB 2018 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,7 +865,12 @@ LaTeX Font Info:    Try loading font information for T1+aess on input line 91.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 102--106
+Underfull \hbox (badness 10000) in paragraph at lines 92--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--107
 
  []
 
@@ -881,28 +886,28 @@ File: ts1aer.fd
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
 (Font)              Font shape `TS1/cmr/m/n' tried instead on input line 35.
 
-[8] [9] [10] [11]) <figure/fsifig-1.pdf, id=48, 433.62pt x 289.08pt>
+[8] [9] [10] [11] [12]) <figure/fsifig-1.pdf, id=51, 433.62pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 229.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 231.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [12]
+
 <..//figure/Hardiness_DVR.pdf, id=52, 963.6pt x 542.025pt>
 File: ..//figure/Hardiness_DVR.pdf Graphic file (type pdf)
 
 <use ..//figure/Hardiness_DVR.pdf>
-Package pdftex.def Info: ..//figure/Hardiness_DVR.pdf used on input line 250.
+Package pdftex.def Info: ..//figure/Hardiness_DVR.pdf used on input line 252.
 (pdftex.def)             Requested size: 426.77895pt x 256.08334pt.
 Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 257.
+ mdframed uses option nobreak mdframed on input line 259.
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 257.
+ mdframed uses option nobreak mdframed on input line 259.
 
 <figure/risk-1.pdf, id=53, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
  <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 262.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 264.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 [13 <./figure/fsifig-1.pdf>] [14 <..//figure/Hardiness_DVR.pdf>]
@@ -910,13 +915,13 @@ Package pdftex.def Info: figure/risk-1.pdf used on input line 262.
 File: ..//figure/RegRisk_flipped.pdf Graphic file (type pdf)
 
 <use ..//figure/RegRisk_flipped.pdf>
-Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 273.
+Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 275.
 
 (pdftex.def)             Requested size: 455.25241pt x 512.18188pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 274.
+(Font)              <9> on input line 276.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 274.
+(Font)              <6> on input line 276.
  [15 <./figure/risk-1.pdf>]
 Overfull \vbox (65.77823pt too high) has occurred while \output is active []
 
@@ -925,7 +930,7 @@ Overfull \vbox (65.77823pt too high) has occurred while \output is active []
 <figure/temp-1.pdf, id=134, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
  <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 280.
+Package pdftex.def Info: figure/temp-1.pdf used on input line 282.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 <..//figure/ExpFig_withRandom.pdf, id=135, 578.16pt x 433.62pt>
@@ -933,7 +938,7 @@ File: ..//figure/ExpFig_withRandom.pdf Graphic file (type pdf)
 
 <use ..//figure/ExpFig_withRandom.pdf>
 Package pdftex.def Info: ..//figure/ExpFig_withRandom.pdf used on input line 29
-1.
+3.
 (pdftex.def)             Requested size: 455.24165pt x 369.90204pt.
  [17 <./figure/temp-1.pdf>] [18 <..//figure/ExpFig_withRandom.pdf>] (./Rethinki
 ngFS_TREE.aux) ) 
@@ -960,7 +965,7 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
 /local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on RethinkingFS_TREE.pdf (18 pages, 8526230 bytes).
+Output written on RethinkingFS_TREE.pdf (18 pages, 8526885 bytes).
 PDF statistics:
  209 PDF objects out of 1000 (max. 8388607)
  151 compressed objects within 2 object streams
