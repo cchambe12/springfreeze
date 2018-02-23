@@ -209,6 +209,9 @@ hf<-ggplot(gdd.yr, aes(x=ord,ymin = bb.gdd, ymax = l75.gdd, group=interaction(sp
   xlab("Species") +coord_flip() + labs(color="Phenophase and Year")+ geom_hline(yintercept=196, color="#00BFC4", linetype=2)
 plot(hf)
 
+gdd.yr<-read.csv("output/hf_gdd.csv",header=TRUE)
+bbg<-read.csv("output/mean_bbgdd.csv",header=TRUE)
+
 hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(species, year) )) +
   geom_point(aes(y=bb.jd, col="forestgreen"), position = position_dodge(.5)) + geom_point(aes(y=l75.jd, col="darkgreen"), position = position_dodge(.5)) +
   geom_linerange(aes(x=ord,ymin = bb.jd, ymax = l75.jd, col=factor(year)), position=position_dodge(.5)) +  ylab("Day of Year") +
@@ -216,7 +219,12 @@ hf.bb<-ggplot(gdd.yr, aes(x=ord,ymin = bb.jd, ymax = l75.jd, group=interaction(s
   xlab("Species") +coord_flip() + labs(color="Phenophase and Year")  +
   geom_hline(yintercept=120, color="#00BFC4", linetype=2) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"),
-        legend.justification = c(1,1), legend.text = element_text(size=10))
+        legend.justification = c(1,1), legend.text = element_text(size=10), legend.key=element_blank()) +
+  guides(color = guide_legend(override.aes = list(linetype = c(1, 1, 0, 0)))) + scale_x_discrete(labels=c(
+    expression(italic("Quercus rubra")), expression(italic("Quercus alba")), expression(italic("Hamamelis virginiana")), expression(italic("Fraxinus americana")),
+    expression(italic("Betula alleghaniensis")), expression(italic("Acer saccharum")), expression(italic("Acer rubrum")), expression(italic("Acer pensylvanicum")))
+  )
+
 plot(hf.bb)
 
 gdd$m.bb <- ave(gdd$bb.gdd, gdd$year)
