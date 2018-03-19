@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ault \emph{et~al.}(2015{\natexlab{a}})Ault, Schwartz, Zurita-Milla,
@@ -14,49 +14,23 @@ Ault, T.R., Zurita-Milla, R. \& Schwartz, M.D. (2015{\natexlab{b}}) {A
   Matlab{\textcopyright} toolbox for calculating spring indices from daily
   meteorological data}. \emph{Computers {\&} Geosciences} \textbf{83}, 46--53.
 
-\bibitem[{Barker \emph{et~al.}(2005)Barker, Loveys, Egerton, Gorton, Williams
-  \& Ball}]{Barker2005}
-Barker, D., Loveys, B., Egerton, J., Gorton, H., Williams, W. \& Ball, M.
-  (2005) Co2 enrichment predisposes foliage of a eucalypt to freezing injury
-  and reduces spring growth. \emph{Plant, Cell and Environment} \textbf{28},
-  1506--1515.
-
-\bibitem[{Barlow \emph{et~al.}(2015)Barlow, Christy, O'Leary, Riffkin \&
-  Nuttall}]{Barlow2015}
-Barlow, K., Christy, B., O'Leary, G., Riffkin, P. \& Nuttall, J. (2015)
-  Simulating the impact of extreme heat and frost events on wheat crop
-  production: A review. \emph{Field Crops Research} \textbf{171}, 109--119.
-
 \bibitem[{Finn \emph{et~al.}(2007)Finn, Straszewski \& Peterson}]{Finn2007}
 Finn, G.A., Straszewski, A.E. \& Peterson, V. (2007) A general growth stage key
   for describing trees and woody plants. \emph{Annals of Applied Biology}
   \textbf{151}, 127--131.
 
-\bibitem[{Longstroth(2012)}]{Longstroth2012}
-Longstroth, M. (2012) Protect blueberries from spring freezes by using
-  sprinklers. url.
-
-\bibitem[{Longstroth(2013)}]{Longstroth2013}
-Longstroth, M. (2013) Assessing frost and freeze damage to flowers and buds of
-  fruit trees. url.
+\bibitem[{Flynn \& Wolkovich()}]{Flynn}
+Flynn, D. \& Wolkovich, E. (????) (in review) temperature and photoperiod drive
+  spring phenology across all species in a temperate forest community.
+  \emph{New Phytologist} .
 
 \bibitem[{O'Keefe(2014)}]{OKeefe2014}
 O'Keefe, J. (2014) {Phenology of Woody Species at Harvard Forest since 1990}.
   Tech. rep.
 
-\bibitem[{S{\'a}nchez \emph{et~al.}(2013)S{\'a}nchez, Rasmussen \&
-  Porter}]{Sanchez2013}
-S{\'a}nchez, B., Rasmussen, A. \& Porter, J.R. (2013) Temperatures and the
-  growth and development of maize and rice: a review. \emph{Global Change
-  Biology} \textbf{20}, 408--417.
-
 \bibitem[{Schaber \& Badeck(2005)}]{Schaber2005}
 Schaber, J. \& Badeck, F.W. (2005) Plant phenology in germany over the 20th
   century. \emph{Regional Environmental Change} \textbf{5}, 37--46.
-
-\bibitem[{Schwartz(1993)}]{Schwartz1993}
-Schwartz, M.D. (1993) Assessing the onset of spring: A climatological
-  perspective. \emph{Physical Geography} \textbf{14(6)}, 536--550.
 
 \bibitem[{Schwartz(1997)}]{Schwartz1997}
 Schwartz, M.D. (1997) {Spring Index Models: An approach to connecting Satellite

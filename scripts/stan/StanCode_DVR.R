@@ -156,7 +156,7 @@ estimates<-rev(estimates)
 #write.csv(dfwide, file="~/Documents/git/springfreeze/output/df_modforplot.csv", row.names=FALSE)
 fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), alpha=factor(rndm)))+
   geom_point(position =pd)+
-  geom_errorbarh(aes(xmin=(X2.5.), xmax=(X95.)), position=pd, size=.5, height =0, width=0)+
+  geom_errorbarh(aes(xmin=(`2.5%`), xmax=(`95%`)), position=pd, size=.5, height =0, width=0)+
   geom_vline(xintercept=0)+
   scale_colour_manual(values=c("blue", "firebrick3", "orangered1","orange3", "sienna4","sienna2", "green4", "green3", "purple2", "magenta3"),
                       breaks=c("Overall Effects"))+
@@ -186,6 +186,7 @@ diff<-ggplot(dxx, aes(x=factor(code), y=diff, col=factor(code))) + geom_point(al
 plot(diff)
 
 grid.draw(fig1, diff, ncol=2)
+quartz()
 ggarrange(fig1, diff, ncol=2)
 
 

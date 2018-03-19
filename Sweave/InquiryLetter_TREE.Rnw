@@ -1,0 +1,19 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[top=1.00in, bottom=1.0in, left=1.1in, right=1.1in]{geometry}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage[export]{adjustbox}
+
+% 1. Co-author names and affiliations.
+%2. A point-by-point summary (~300-600 words) outlining what will be discussed in the article and why it is timely.
+%3. A list of 10-20 key recent references (published in the past 2-4 years) that indicate the intended breadth and balance of the proposed article.
+
+\begin{document}
+
+\noindent \includegraphics[width=0.4\textwidth, right]{/Users/Lizzie/Documents/Professional/images/letterhead/arnold/AASmLogo2colr.jpg}
+\vspace{1ex}\\
+
+\noindent Dear Dr. Craze:
+\vspace{1.5ex}\\
+\noindent Please consider our manuscript titled `Rethinking False Spring' as an Opinion piece for \textit{Trends in Ecology and Evolution}. We believe that this piece will be of great interest to the broad readership of the journal because it examines the effects of late spring freezing events, also known as false springs, which can result in highly adverse ecological and economic consequences. 
+\end{document}

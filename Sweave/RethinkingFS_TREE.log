@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 FEB 2018 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 MAR 2018 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,99 +877,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--107
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] (./RethinkingFS_TREE.bbl
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 35.
-
-(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/ts1aer.fd
-File: ts1aer.fd 
-)
-LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 35.
-
-[8] [9] [10] [11] [12]) <figure/fsifig-1.pdf, id=51, 433.62pt x 289.08pt>
+[2] [3] [4] [5] [6] [7] (./RethinkingFS_TREE.bbl [8] [9] [10] [11])
+<figure/fsifig-1.pdf, id=47, 433.62pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
-
-<use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 231.
+ <use figure/fsifig-1.pdf>
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 230.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-<..//figure/Hardiness_DVR.pdf, id=52, 963.6pt x 542.025pt>
-File: ..//figure/Hardiness_DVR.pdf Graphic file (type pdf)
+[12] <figure/temp-1.pdf, id=51, 433.62pt x 289.08pt>
+File: figure/temp-1.pdf Graphic file (type pdf)
+ <use figure/temp-1.pdf>
+Package pdftex.def Info: figure/temp-1.pdf used on input line 241.
+(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-<use ..//figure/Hardiness_DVR.pdf>
-Package pdftex.def Info: ..//figure/Hardiness_DVR.pdf used on input line 252.
-(pdftex.def)             Requested size: 426.77895pt x 256.08334pt.
-Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 259.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 259.
-
-<figure/risk-1.pdf, id=53, 433.62pt x 289.08pt>
+[13 <./figure/fsifig-1.pdf>] <figure/risk-1.pdf, id=62, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
- <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 264.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[13 <./figure/fsifig-1.pdf>] [14 <..//figure/Hardiness_DVR.pdf>]
-<..//figure/ExpFig_withRandom.pdf, id=106, 578.16pt x 433.62pt>
+<use figure/risk-1.pdf>
+Package pdftex.def Info: figure/risk-1.pdf used on input line 253.
+(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
+ [14 <./figure/temp-1.pdf>]
+<..//figure/ExpFig_withRandom.pdf, id=76, 646.29112pt x 381.40732pt>
 File: ..//figure/ExpFig_withRandom.pdf Graphic file (type pdf)
 
 <use ..//figure/ExpFig_withRandom.pdf>
-Package pdftex.def Info: ..//figure/ExpFig_withRandom.pdf used on input line 27
-5.
-(pdftex.def)             Requested size: 455.24165pt x 369.90204pt.
- [15 <./figure/risk-1.pdf>]
-<..//figure/RegRisk_flipped.pdf, id=121, 632.3625pt x 632.3625pt>
-File: ..//figure/RegRisk_flipped.pdf Graphic file (type pdf)
-
-<use ..//figure/RegRisk_flipped.pdf>
-Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 282.
-
-(pdftex.def)             Requested size: 455.25241pt x 512.18188pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 283.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 283.
- [16 <..//figure/ExpFig_withRandom.pdf>]
-Overfull \vbox (65.77823pt too high) has occurred while \output is active []
-
-
-[17 <..//figure/RegRisk_flipped.pdf>]
-<figure/temp-1.pdf, id=148, 433.62pt x 289.08pt>
-File: figure/temp-1.pdf Graphic file (type pdf)
- <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 289.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
-
-[18 <./figure/temp-1.pdf>] (./RethinkingFS_TREE.aux) ) 
+Package pdftex.def Info: ..//figure/ExpFig_withRandom.pdf used on input line 26
+4.
+(pdftex.def)             Requested size: 455.24083pt x 284.52417pt.
+ [15 <./figure/risk-1.pdf>] [16 <..//figure/ExpFig_withRandom.pdf>] (./Rethinki
+ngFS_TREE.aux) ) 
 Here is how much of TeX's memory you used:
- 15884 strings out of 493014
- 314759 string characters out of 6133351
- 343990 words of memory out of 5000000
- 19212 multiletter control sequences out of 15000+600000
- 35927 words of font info for 70 fonts, out of 8000000 for 9000
+ 15826 strings out of 493014
+ 313713 string characters out of 6133351
+ 343888 words of memory out of 5000000
+ 19165 multiletter control sequences out of 15000+600000
+ 33740 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,42p,10389b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/
-texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1000.pfb>
-Output written on RethinkingFS_TREE.pdf (18 pages, 8526890 bytes).
+ 37i,6n,42p,10389b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on RethinkingFS_TREE.pdf (16 pages, 416710 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
+ 280 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
