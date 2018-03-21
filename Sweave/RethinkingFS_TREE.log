@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 MAR 2018 15:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 MAR 2018 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -908,8 +908,8 @@ Package pdftex.def Info: ..//figure/ExpFig_withRandom.pdf used on input line 26
 ngFS_TREE.aux) ) 
 Here is how much of TeX's memory you used:
  15826 strings out of 493014
- 313713 string characters out of 6133351
- 343888 words of memory out of 5000000
+ 313707 string characters out of 6133351
+ 343909 words of memory out of 5000000
  19165 multiletter control sequences out of 15000+600000
  33740 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -926,7 +926,7 @@ fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_TREE.pdf (16 pages, 416710 bytes).
+Output written on RethinkingFS_TREE.pdf (16 pages, 417826 bytes).
 PDF statistics:
  280 PDF objects out of 1000 (max. 8388607)
  206 compressed objects within 3 object streams

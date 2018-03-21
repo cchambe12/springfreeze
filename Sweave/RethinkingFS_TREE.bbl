@@ -77,10 +77,6 @@ Caffarra, A. \& Donnelly, A. (2011) {The ecological significance of phenology
   in four different tree species: Effects of light and temperature on bud
   burst}. \emph{International Journal of Biometeorology} \textbf{55}, 711--721.
 
-\bibitem[{Cannell \& Smith(1986)}]{Cannell1986}
-Cannell, M. \& Smith, R. (1986) {Climatic Warming , Spring Budburst and Forest
-  Damage on Trees}. \emph{Journal of Applied Ecology} \textbf{23}, 177--191.
-
 \bibitem[{Charrier \emph{et~al.}(2011)Charrier, Bonhomme, Lacointe \&
   Am{\'e}glio}]{Charrier2011}
 Charrier, G., Bonhomme, M., Lacointe, A. \& Am{\'e}glio, T. (2011) Are budburst
@@ -161,7 +157,7 @@ Laube, J., Sparks, T.H., Estrella, N., H{\"o}fler, J., Ankerst, D.P. \& Menzel,
   Vitasse}]{Lenz2016}
 Lenz, A., Hoch, G., K{\"{o}}rner, C. \& Vitasse, Y. (2016) {Convergence of
   leaf-out towards minimum risk of freezing damage in temperate trees}.
-  \emph{Functional Ecology} pp. 1--11.
+  \emph{Functional Ecology} \textbf{30}, 1--11.
 
 \bibitem[{Lenz \emph{et~al.}(2013)Lenz, Hoch, Vitasse \&
   K{\"{o}}rner}]{Lenz2013}
@@ -317,6 +313,11 @@ Vitasse, Y., Lenz, A. \& K{\"{o}}rner, C. (2014{\natexlab{b}}) {The interaction
   between freezing tolerance and phenology in temperate deciduous trees.}
   \emph{Frontiers in Plant Science} \textbf{5}, 541.
 
+\bibitem[{Vitra \emph{et~al.}(2017)Vitra, Lenz \& Vitasse}]{Vitra2017}
+Vitra, A., Lenz, A. \& Vitasse, Y. (2017) Frost hardening and dehardening
+  potential in temperate trees from winter to budburst. \emph{New Phytologist}
+  \textbf{216}, 113--123.
+
 \bibitem[{White \emph{et~al.}(2009)White, De~Beurs, Didan, Inouye, Richardson,
   Jensen, O'Keefe, Zhang, Nemani, Van~Leeuwen \& Al.}]{White2009}
 White, M.A., De~Beurs, K.M., Didan, K., Inouye, D.W., Richardson, A.D., Jensen,
@@ -329,7 +330,7 @@ White, M.A., De~Beurs, K.M., Didan, K., Inouye, D.W., Richardson, A.D., Jensen,
 Xin, Q. (2016) {A risk-benefit model to simulate vegetation spring onset in
   response to multi-decadal climate variability: Theoretical basis and
   applications from the field to the Northern Hemisphere}. \emph{Agriculture
-  and Forest Meteorology} pp. 139--163.
+  and Forest Meteorology} \textbf{228-229}, 139--163.
 
 \bibitem[{Yu \emph{et~al.}(2010)Yu, Luedeling \& Xu}]{Yu2010}
 Yu, H., Luedeling, E. \& Xu, J. (2010) {Winter and spring warming result in
