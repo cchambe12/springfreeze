@@ -42,13 +42,13 @@
 \nocite{Vitasse2014a}
 \nocite{Zohner2016}
 \nocite{Lenz2016}
-\nocite{Allstadt2015}
 \nocite{Hofmann2015}
 \nocite{Kollas2014}
-\nocite{Peterson2014}
+\nocite{Dolezal2016}
 \nocite{Xin2016}
 \nocite{Lenz2013}
 \nocite{Muffler2016}
+\nocite{Fu2015}
 \bibliography{..//refs/SpringFreeze.bib}
 
 \end{document}
