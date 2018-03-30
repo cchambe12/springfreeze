@@ -78,14 +78,6 @@ Lenz, A., Hoch, G., K{\"{o}}rner, C., and Vitasse, Y.
   temperate trees}.
 \newblock {\em Functional Ecology}{ \bf 30}, 1--11 (2016).
 
-\bibitem{Allstadt2015}
-Allstadt, A.~J., Vavrus, S.~J., Heglund, P.~J., Pidgeon, A.~M., Wayne, E., and
-  Radeloff, V.~C.
-\newblock {Spring plant phenology and false springs in the conterminous U. S.
-  during the 21st century}.
-\newblock {\em Environmental Research Letters (submitted)}{ \bf 10}(October),
-  104008 (2015).
-
 \bibitem{Hofmann2015}
 Hofmann, M. and Bruelheide, H.
 \newblock {Frost hardiness of tree species is independent of phenology and
@@ -98,11 +90,12 @@ Kollas, C., K{\"{o}}rner, C., and Randin, C.~F.
   limits of broad-leaved trees}.
 \newblock {\em Journal of Biogeography}{ \bf 41}(4), 773--783 (2014).
 
-\bibitem{Peterson2014}
-Peterson, A.~G. and Abatzoglou, J.~T.
-\newblock {Observed changes in false springs over the contiguous United
-  States}.
-\newblock {\em Geophysical Research Letters}{ \bf 41}(6), 2156--2162 (2014).
+\bibitem{Dolezal2016}
+Dolezal, J., Dvorsky, M., Kopecky, M., Liancourt, P., Hiiesalu, I., Macek, M.,
+  Altman, J., Chlumska, Z., Rehakova, K., Capkova, K., and et~al.
+\newblock Vegetation dynamics at the upper elevational limit of vascular plants
+  in himalaya.
+\newblock {\em Scientific Reports}{ \bf 6}(1), May  (2016).
 
 \bibitem{Xin2016}
 Xin, Q.
@@ -125,5 +118,19 @@ Muffler, L., Beierkuhnlein, C., Aas, G., Jentsch, A., Schweiger, A.~H., Zohner,
   sensitivity in 170 woody plants from the northern hemisphere.
 \newblock {\em Global Ecology and Biogeography}{ \bf 25}(9), 1061--1071, May
   (2016).
+
+\bibitem{Fu2015}
+Fu, Y.~H., Zhao, H., Piao, S., Peaucelle, M., Peng, S., Zhou, G., Ciais, P.,
+  Huang, M., Menzel, A., Pe{\~n}uelas, J., and et~al.
+\newblock Declining global warming effects on the phenology of spring leaf
+  unfolding.
+\newblock {\em Nature}{ \bf 526}(7571), 104--107, Sep  (2015).
+
+\bibitem{Xie2015}
+Xie, Y., Wang, X., and Silander, J.~A.
+\newblock Deciduous forest responses to temperature, precipitation, and drought
+  imply complex climate change impacts.
+\newblock {\em Proceedings of the National Academy of Sciences}{ \bf 112}(44),
+  13585--13590, Oct  (2015).
 
 \end{thebibliography}

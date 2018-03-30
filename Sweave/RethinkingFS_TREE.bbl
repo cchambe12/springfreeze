@@ -1,4 +1,4 @@
-\begin{thebibliography}{60}
+\begin{thebibliography}{65}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner \&
@@ -6,6 +6,10 @@
 Agrawal, A.A., Conner, J.K. \& Stinchcombe, J.R. (2004) Evolution of plant
   resistance and tolerance to frost damage. \emph{Ecology Letters} \textbf{7},
   1199--1208.
+
+\bibitem[{Aitken \& Bemmels(2015)}]{Aitken2015}
+Aitken, S.N. \& Bemmels, J.B. (2015) Time to get moving: assisted gene flow of
+  forest trees. \emph{Evolutionary Applications} \textbf{9}, 271--290.
 
 \bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon, Wayne
   \& Radeloff}]{Allstadt2015}
@@ -95,12 +99,26 @@ Cleland, E., Chiariello, N., Loarie, S., Mooney, H. \& Field, C. (2006) Diverse
   responses of phenology to global changes in a grassland ecosystem.
   \emph{PNAS} \textbf{103}, 13740--13744.
 
+\bibitem[{Dolezal \emph{et~al.}(2016)Dolezal, Dvorsky, Kopecky, Liancourt,
+  Hiiesalu, Macek, Altman, Chlumska, Rehakova, Capkova \& et~al.}]{Dolezal2016}
+Dolezal, J., Dvorsky, M., Kopecky, M., Liancourt, P., Hiiesalu, I., Macek, M.,
+  Altman, J., Chlumska, Z., Rehakova, K., Capkova, K. \& et~al. (2016)
+  Vegetation dynamics at the upper elevational limit of vascular plants in
+  himalaya. \emph{Scientific Reports} \textbf{6}.
+
 \bibitem[{Edwards \emph{et~al.}(2017)Edwards, Chatelet, Spriggs, Johnson,
   Schlutius \& Donoghue}]{Edwards2017}
 Edwards, E.J., Chatelet, D.S., Spriggs, E.L., Johnson, E.S., Schlutius, C. \&
   Donoghue, M.J. (2017) {Correlation, causation, and the evolution of leaf
   teeth: A reply to Givnish and Kriebel}. \emph{Am J Bot} \textbf{104},
   509--515.
+
+\bibitem[{Fu \emph{et~al.}(2015)Fu, Zhao, Piao, Peaucelle, Peng, Zhou, Ciais,
+  Huang, Menzel, Pe{\~n}uelas \& et~al.}]{Fu2015}
+Fu, Y.H., Zhao, H., Piao, S., Peaucelle, M., Peng, S., Zhou, G., Ciais, P.,
+  Huang, M., Menzel, A., Pe{\~n}uelas, J. \& et~al. (2015) Declining global
+  warming effects on the phenology of spring leaf unfolding. \emph{Nature}
+  \textbf{526}, 104--107.
 
 \bibitem[{Gauzere \emph{et~al.}(2017)Gauzere, Delzon, Davi, Bonhomme, Garcia~de
   Cortazar-Atauri \& Chuine}]{Gauzere2017}
@@ -115,6 +133,11 @@ Gauzere, J., Delzon, S., Davi, H., Bonhomme, M., Garcia~de Cortazar-Atauri, I.
 Gu, L., Hanson, P.J., Post, W.M., Kaiser, D.P., Yang, B., Nemani, R., Pallardy,
   S.G. \& Meyers, T. (2008) {The 2007 Eastern US Spring Freeze: Increased Cold
   Damage in a Warming World}. \emph{BioScience} \textbf{58}, 253.
+
+\bibitem[{Harrington \& Gould(2015)}]{Harrington2015}
+Harrington, C.A. \& Gould, P.J. (2015) Tradeoffs between chilling and forcing
+  in satisfying dormancy requirements for pacific northwest tree species.
+  \emph{Frontiers in Plant Science} \textbf{6}.
 
 \bibitem[{Hofmann \& Bruelheide(2015)}]{Hofmann2015}
 Hofmann, M. \& Bruelheide, H. (2015) {Frost hardiness of tree species is
@@ -165,6 +188,13 @@ Lenz, A., Hoch, G., Vitasse, Y. \& K{\"{o}}rner, C. (2013) {European deciduous
   trees exhibit similar safety margins against damage by spring freeze events
   along elevational gradients}. \emph{New Phytologist} \textbf{200},
   1166--1175.
+
+\bibitem[{Liu \emph{et~al.}(2018)Liu, Piao, Janssens, Fu, Peng, Lian, Ciais,
+  Myneni, Pe{\~n}uelas \& Wang}]{Liu2018}
+Liu, Q., Piao, S., Janssens, I.A., Fu, Y., Peng, S., Lian, X., Ciais, P.,
+  Myneni, R.B., Pe{\~n}uelas, J. \& Wang, T. (2018) Extension of the growing
+  season increases vegetation exposure to frost. \emph{Nature Communications}
+  \textbf{9}.
 
 \bibitem[{Longstroth(2012)}]{Longstroth2012}
 Longstroth, M. (2012) Protect blueberries from spring freezes by using
@@ -326,17 +356,17 @@ White, M.A., De~Beurs, K.M., Didan, K., Inouye, D.W., Richardson, A.D., Jensen,
   north america estimated from remote sensing for 1982-2006. \emph{Global
   Change Biology} \textbf{15}, 2335--2359.
 
+\bibitem[{Xie \emph{et~al.}(2015)Xie, Wang \& Silander}]{Xie2015}
+Xie, Y., Wang, X. \& Silander, J.A. (2015) Deciduous forest responses to
+  temperature, precipitation, and drought imply complex climate change impacts.
+  \emph{Proceedings of the National Academy of Sciences} \textbf{112},
+  13585--13590.
+
 \bibitem[{Xin(2016)}]{Xin2016}
 Xin, Q. (2016) {A risk-benefit model to simulate vegetation spring onset in
   response to multi-decadal climate variability: Theoretical basis and
   applications from the field to the Northern Hemisphere}. \emph{Agriculture
   and Forest Meteorology} \textbf{228-229}, 139--163.
-
-\bibitem[{Yu \emph{et~al.}(2010)Yu, Luedeling \& Xu}]{Yu2010}
-Yu, H., Luedeling, E. \& Xu, J. (2010) {Winter and spring warming result in
-  delayed spring phenology on the Tibetan Plateau}. \emph{Proceedings of the
-  National Academy of Sciences of the United States of America} \textbf{107},
-  22151--6.
 
 \bibitem[{Zohner \emph{et~al.}(2016)Zohner, Benito, Svenning \&
   Renner}]{Zohner2016}

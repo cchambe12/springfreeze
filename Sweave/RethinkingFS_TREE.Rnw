@@ -47,7 +47,7 @@ library(gridExtra)
 @
 
 \begin{document}
-\noindent \textbf{\large{Rethinking False Spring Risk}}
+\noindent \textbf{\Large{Rethinking False Spring Risk}}
 
 \noindent Authors:\\
 C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$ \& E. M. Wolkovich $^{1,2}$
@@ -63,7 +63,7 @@ $^*$Corresponding author: 248.953.0189; cchamberlain@g.harvard.edu\\
 \noindent \emph{Keywords:} false spring, phenology, freezing tolerance, climate change, forest communities
 %\tableofcontents
 \emph{Paper type:} Opinion\\
-\emph{Counts}: Total word count for the main body of the text:  2985; Abstract: 120; 6 figures (all in color). \\
+\emph{Counts}: Total word count for the main body of the text:  2791; Abstract: 120; 4 figures (all in color). \\
 
 \renewcommand{\thetable}{\arabic{table}}
 \renewcommand{\thefigure}{\arabic{figure}}
@@ -79,8 +79,8 @@ $^*$Corresponding author: 248.953.0189; cchamberlain@g.harvard.edu\\
 
 %EMW: Small tweak below, check I did not ruin word count or meaning!
 \section{Abstract}
-Temperate plants are at risk of being exposed to late spring freezes --- often called false springs --- which can be damaging ecologically and economically. As climate change may alter the prevalence and severity of false springs, our ability to accurately forecast such events has become more critical. Currently, many false spring studies simplify the ecological and physiological information needed for accurate predictions of the level of plant damage from late spring freezing events. Here we review the complexity of factors driving a plant's false spring risk. We highlight how species, life stage, and habitat differences contribute to the likelihood of occurrence and damage potential of false springs. %(The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field.)
-%EMW: You mention equation above, but have not told the audience about any equations, re-work the sentence/paragraph (probably best to remove 'equation').
+Temperate plants are at risk of being exposed to late spring freezes --- often called false springs --- which can be damaging ecologically and economically. As climate change may alter the prevalence and severity of false springs, our ability to accurately forecast such events has become more critical. Currently, many false spring studies simplify the ecological and physiological information needed for accurate predictions of the level of plant damage from late spring freezes. Here we review the complexity of factors driving a plant's false spring risk. We highlight how species, life stage, and habitat differences contribute to the damage potential of false springs. %(The ultimate intent is to demonstrate how an integrated view of false spring that incorporates these factors would rapidly advance progress in this field.)
+%EMW: You mention equation above, but have not told the audience about any equations, re-work the sentence/paragraph (probably best to remove 'equation'). %CJC: I had to delete 5 words but I tried to keep the content the same!
 Integrating these complexities could help rapidly advance forecasting of false springs in climate change and ecological studies.
 % In this paper we aim to highlight the complexity of factors driving a plant's false spring risk and provide a road map for improved metrics. First, we review the currently used definitions of false spring. Then, combining research from plant physiology, climatology and community ecology, we outline major gaps in current definitions.
 
@@ -122,7 +122,7 @@ will not result in early budburst due to insufficient chilling \citep{Basler2012
 % Given the diverse array of spring freezing defense mechanisms, predicting damage by false spring events requires a greater understanding of avoidance and tolerance strategies across species, especially with a changing climate.
 
 \section {Defining Vegetative Risk} % Complexities due to Species' Strategies and Climate
-Phenology and frost tolerance are intertwined --- with important variation occurring across different phenological phases. Flowering and fruiting are generally more sensitive to false spring events than vegetative phases \citep{Augspurger2009, Lenz2013}, but there is high variability in the temperature threshold of damage from false springs across species, including between agricultural and ecological studies (Figure \ref{fig:temp}). However, false spring events that occur during the vegetative growth phenophases may impose the greatest freezing threat to deciduous plant species. Plants will suffer greater long-term effects from the loss of photosynthetic tissue compared to floral and fruit tissue, which could impact multiple years of growth, reproduction, and canopy development \citep{Sakai1987, Vitasse2014}. 
+Phenology and frost tolerance are intertwined --- with important variation occurring across different phenological phases. Flowering and fruiting are generally more sensitive to false spring events than vegetative phases \citep{Augspurger2009, Lenz2013}, but there is high variability in the temperature threshold of damage from false springs across species, including between agricultural and ecological studies (Figure \ref{fig:temp}). However, false spring events that occur during the vegetative growth phenophases may impose the greatest freezing threat to deciduous plant species. Plants will suffer greater long-term effects from the loss of photosynthetic tissue compared to floral and fruit tissue, which could impact multiple years of growth, reproduction, and canopy development \citep{Vitasse2014, Xie2015}. 
 
 There is also important variation within certain phenological phases. Most notably, within the vegetative phases of spring leafout, plants that have initiated budburst but have not fully leafed out are more likely to sustain damage from a false spring than individuals past the leafout phase. This is because freezing tolerance is lowest after budburst begins until the leaf is fully unfolded \citep{Lenz2016}. Therefore, the rate of budburst and the length of time between budburst and leafout is essential for predicting the level of damage from a false spring event. We will refer to the timing between these phenophases --- budburst to leafout --- as the duration of vegetative risk (Figure \ref{fig:risk}). The duration of vegetative risk can be extended if a freezing event occurs during the phenophases between budburst and full leafout \citep{Augspurger2009}, which could result in exposure to multiple frost events in one season.
 
@@ -156,7 +156,7 @@ Individuals that initiate budburst earlier in the spring may attempt to limit fr
 \subsection {Predictable Regional Differences in Climate, Species Responses and False Spring Risk}
 Robust predictions must consider the full interplay of species cues and a specific location's climate. A single species may have varying cues across space: various studies that investigate latitudinal effects indicate that populations growing further north respond to a different interaction of cues than those growing further south. Thus, based on cues alone, different regions may have different durations of vegetative risk for the same species \citep {Partanen2004, Viheraaarnio2006, Caffarra2011}. Studies also show that different species within the same location can exhibit different sensitivities to the three cues \citep{Basler2012, Laube2013} thus further amplifying the myriad of climatic and phenological shifts that determine false spring risk in a region. %EMW: This sentence is about different species so I removed the end, which was a bit confusing in that regard. 
 
-Numerous studies have investigated how the relationship between budburst and major phenological cues varies across space, including across populations, by using latitudinal gradients \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Zohner2016, Gauzere2017}. Few, however, have integrated distance from the coast (but see \citep{Myking2007, Harrington2015, Aitken2015 }) or regional effects. Yet climate and thus false spring risk and phenological cues vary across regions. For example, consider five different regions within a temperate climate (Figure S1). Some regions may experience harsher winters and greater temperature variability throughout the year, and these more variable regions often have a much higher risk of false spring (i.e. Maine) than others (i.e. Lyon) (Figure S1). Understanding and integrating such spatiotemporal effects and regional differences when investigating false spring risk and duration of vegetative risk would help improve predictions as climate change progresses.
+Numerous studies have investigated how the relationship between budburst and major phenological cues varies across space, including across populations, by using latitudinal gradients \citep{Partanen2004, Viheraaarnio2006, Caffarra2011, Zohner2016, Gauzere2017}. Few, however, have integrated distance from the coast \citep [but see][]{Myking2007, Harrington2015, Aitken2015} or regional effects. Yet climate and thus false spring risk and phenological cues vary across regions. For example, consider five different regions within a temperate climate (Figure S1). Some regions may experience harsher winters and greater temperature variability throughout the year, and these more variable regions often have a much higher risk of false spring (i.e. Maine) than others (i.e. Lyon) (Figure S1). Understanding and integrating such spatiotemporal effects and regional differences when investigating false spring risk and duration of vegetative risk would help improve predictions as climate change progresses.
 % EMW: I think you should add some of the Guy studies that consider coastal vs. inland Populus, they deal with distance to coast, right? I think some Doug Fir studies do too. You can just write:
 % Few, however, have integrated distance from the coast or regional effects (but see X, Y, Z). 
 % And/or you could cite these studies as evidence that the cues vary with distance to coast. 
@@ -191,7 +191,7 @@ FSI.table<- method %>%
   dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
   rename("O'Keefe" = FSI_okeefe) %>%
   rename(Phenocam = FSI_cam) %>%
-  rename(SI-x = FSI_npn) %>%
+  rename("SI-x" = FSI_npn) %>%
   filter(year>=2008) %>%
   filter(year<2015)
 blend<-FSI.table %>% 

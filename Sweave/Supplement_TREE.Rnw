@@ -47,7 +47,7 @@ library(gridExtra)
 @
 
 \begin{document}
-\noindent \textbf{\large{Rethinking False Spring Risk}}
+\noindent \textbf{\large{Rethinking False Spring Risk: Supplement}}
 
 \noindent Authors:\\
 C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$ \& E. M. Wolkovich $^{1,2}$
@@ -82,7 +82,7 @@ We used data from a growth chamber experiment (Flynn \& Wolkovich, in review) to
 
 \subsection*{Predictable Regional Differences in Climate, Species Responses and False Spring Risk - \textit{climate data and phenology data}}
 %EMW: Include changes from above here below!
-We analyzed five archetypal regions across North America and Europe. We collected phenology data through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x) by accessing the ``Spring Indices, Historic Annual" gridded layer and looking specifically at ``First Leaf - Spring Onset" \citep{SI-x2016}. We looked at each SI-x value for each North American site (i.e. Waterville, ME, Yakima, WA, and Reidsville, NC) from 1981-2016 to evaluate the spread of spring onset dates for those regions. For the European sites (i.e. Bamberg, Germany and Lyon, France) we used phenology observation studies that assessed multiple years of \textit{in situ} budburst dates for the dominant species in those regions \citep{Soudani2012, White2009,Schaber2005}. We then collected climate data by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool (data available online\footnote{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}). We gathered 50 years of climate data for each location from NOAA, then calculated the number of years that fell below -2.2$^{\circ}$C within the budburst date range for each region. % EMW: These methods don't full agree with the caption or I could easily be missing something, but here you seem to refer to budburst only and in the caption you say between budburst and leafout. Make the two agree. 
+We analyzed five archetypal regions across North America and Europe. We collected phenology data through the USA National Phenology Network (USA-NPN), using their Data Visualization tool to gather Extended Spring Index values (SI-x) by accessing the ``Spring Indices, Historic Annual" gridded layer and looking specifically at ``First Leaf - Spring Onset" \citep{SI-x2016}. We looked at each SI-x value for each North American site (i.e. Waterville, ME, Yakima, WA, and Reidsville, NC) from 1981-2016 to evaluate the spread of spring onset dates for those regions. For the European sites (i.e. Bamberg, Germany and Lyon, France) we used phenology observation studies that assessed multiple years of \textit{in situ} budburst to leafout dates for the dominant species in those regions \citep{Soudani2012, White2009,Schaber2005}. We then collected climate data by downloading Daily Summary climate datasets from the NOAA Climate Data Online tool (data available online\footnote{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}). We gathered 50 years of climate data for each location from NOAA, then calculated the number of years that fell below -2.2$^{\circ}$C within the budburst to leafout date range for each region. % EMW: These methods don't full agree with the caption or I could easily be missing something, but here you seem to refer to budburst only and in the caption you say between budburst and leafout. Make the two agree. 
 
 \newpage
 \subsection*{Supplemental Figures}

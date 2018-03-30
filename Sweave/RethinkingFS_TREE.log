@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 MAR 2018 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 MAR 2018 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,41 +877,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--107
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] (./RethinkingFS_TREE.bbl [8] [9] [10] [11])
-<figure/fsifig-1.pdf, id=47, 433.62pt x 289.08pt>
+[2] [3] [4] [5] [6] [7] (./RethinkingFS_TREE.bbl [8] [9] [10] [11] [12])
+<figure/fsifig-1.pdf, id=50, 433.62pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
  <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 230.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 228.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[12] <figure/temp-1.pdf, id=51, 433.62pt x 289.08pt>
+[13] <figure/temp-1.pdf, id=55, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
  <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 241.
+Package pdftex.def Info: figure/temp-1.pdf used on input line 239.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[13 <./figure/fsifig-1.pdf>] <figure/risk-1.pdf, id=62, 433.62pt x 289.08pt>
+[14 <./figure/fsifig-1.pdf>] <figure/risk-1.pdf, id=65, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
 
 <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 253.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 251.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [14 <./figure/temp-1.pdf>]
-<..//figure/ExpFig_withRandom.pdf, id=76, 646.29112pt x 381.40732pt>
+ [15 <./figure/temp-1.pdf>]
+<..//figure/ExpFig_withRandom.pdf, id=79, 646.29112pt x 381.40732pt>
 File: ..//figure/ExpFig_withRandom.pdf Graphic file (type pdf)
 
 <use ..//figure/ExpFig_withRandom.pdf>
 Package pdftex.def Info: ..//figure/ExpFig_withRandom.pdf used on input line 26
-4.
+2.
 (pdftex.def)             Requested size: 455.24083pt x 284.52417pt.
- [15 <./figure/risk-1.pdf>] [16 <..//figure/ExpFig_withRandom.pdf>] (./Rethinki
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 263.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 263.
+ [16 <./figure/risk-1.pdf>] [17 <..//figure/ExpFig_withRandom.pdf>] (./Rethinki
 ngFS_TREE.aux) ) 
 Here is how much of TeX's memory you used:
- 15826 strings out of 493014
- 313707 string characters out of 6133351
- 343909 words of memory out of 5000000
- 19165 multiletter control sequences out of 15000+600000
- 33740 words of font info for 62 fonts, out of 8000000 for 9000
+ 15858 strings out of 493014
+ 314164 string characters out of 6133351
+ 344338 words of memory out of 5000000
+ 19192 multiletter control sequences out of 15000+600000
+ 35592 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,42p,10389b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
@@ -924,12 +928,13 @@ mr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_TREE.pdf (16 pages, 417826 bytes).
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on RethinkingFS_TREE.pdf (17 pages, 427595 bytes).
 PDF statistics:
- 280 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
+ 287 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
