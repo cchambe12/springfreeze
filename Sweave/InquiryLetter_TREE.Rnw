@@ -24,17 +24,17 @@
 
 \noindent{Dear Dr. Craze:}
 \vspace{3ex}\\
-\noindent Please consider our manuscript entitled `Rethinking False Spring' as an Opinion piece for \textit{Trends in Ecology and Evolution}. Climate change has brought renewed interest to a major factor that shapes the life history of most temperate and boreal plants: late spring freeze events, commonly called false springs. While increased interest has led to a growing number of studies, much of the research takes a simplified view of these events, which---we argue---can lead to poor and incorrect forecasting. Combining theory from ecology, climatology, physiology, biogeography and crop science we examine the effects of late spring freezing events -- or false springs -- and the complexity of factors that drive plants' risk to damage.\\
+\noindent Please consider our manuscript entitled `Rethinking False Spring' as an Opinion piece for \textit{Trends in Ecology and Evolution}. Climate change has brought renewed interest to a major factor that shapes the life history of many non-tropical plant species: late spring freeze events, commonly called false springs. While increased interest has led to a growing number of studies, much of the research takes a simplified view of these events, which---we argue---can lead to incorrect forecasting. Combining theory from ecology, climatology, physiology, biogeography and crop science we examine the effects of false springs, and the complexity of factors that drive plants' risk to frost damage.\\
 %EMW: I cut this sentence, it's good but I think we need to get sooner to what are these events and why to care about them.
 % The aim of the manuscript is to help advance forecasting in climate change and ecological studies. 
 
-\noindent Many non-tropical tree and shrub species are at risk of damage from late spring freezing events (false springs). However the extent of damage and the frequency and intensity of these events is still largely unknown. Due to shifts in climate, the onset of biological spring is advancing and tree and shrub species are initiating leafout 4-6 days earlier per $^{\circ}$C of warming \citep{Wolkovich2012, Polgar2014} but last spring freeze dates are not predicted to advance at the same rate as spring onset in some regions \citep{Labe2016}. Climate change can amplify the effects of false springs, which could result in highly adverse ecological and economic consequences \citep{Ault2013, Vitra2017}. \\
+\noindent Due to shifts in climate, the onset of biological spring is advancing and tree and shrub species are initiating leafout 4-6 days earlier per $^{\circ}$C of warming \citep{Wolkovich2012, Polgar2014, Fu2015} but last spring freeze dates are not predicted to advance at the same rate as spring onset in some regions \citep{Labe2016}. Many studies have reported false spring events in recent years and have linked these events to climate change \citep[e.g.][]{Augspurger2013, Menzel2015}. Continued climate change may amplify the effects of false springs, which could result in highly adverse ecological and economic consequences \citep{Ault2013, Vitra2017}. \\
 
-\noindent Many studies have reported false spring events in recent years and have linked these events to climate change \citep[e.g.][]{Augspurger2013, Menzel2015}. Recent false spring events have led to a growing body of research investigating the effects on temperate forests and agricultural crops. However, current definitions for false springs are generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This simple definition assumes consistency of damage across species, functional group, life stages, and other climatic regimes, ignoring that such factors can greatly impact plants' false spring risk. For example, many species can withstand spring freezes after full leafout through the evolution of plant strategies against frost and are thus most vulnerable only within the narrow temporal window of budburst to leafout. \\
+\noindent Recent false spring events have led to a growing body of research investigating the effects on temperate and agricultural plant species. Current definitions for false springs, however, are generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This simple definition assumes consistency of damage across species, functional group, life stages, and other climatic regimes, ignoring that such factors can greatly impact plants' false spring risk. For example, many species can withstand spring freezes after full leafout through the evolution of plant strategies that tolerate frost, and are thus most vulnerable only within the narrow temporal window of budburst to leafout. \\
 
-\noindent This manuscript is especially timely because new methods are essential to properly evaluate the effects of false spring events across the diverse species and climate regimes, especially under climate change. The manuscript will demonstrate how an integrated view of false spring that incorporates the complexity factors would rapidly advance progress in this field, improve predictions of spring freeze risk under a changing climate, and, potentially, provide novel insights to how plants respond to and are shaped by spring frost. \\
+\noindent This manuscript is especially timely because new methods are essential to properly evaluate and predict the effects of false spring events across diverse species and climate regimes, especially under climate change. The manuscript will demonstrate how an integrated view of false spring that incorporates the complexity of factors underlying plant strategies to frost would rapidly advance progress in this field, including improved predictions of spring freeze risk under a changing climate, and, novel insights into how plants respond to and are shaped by spring frost. \\
 
-\noindent Our author team provides an international and interdisciplinary approach to false spring research. Because our manuscript cuts across the fields of ecology, crop science, biogeography and climatology our authorship list is slightly longer than allowed -- at four authors -- we found this was necessary to bring a robust perspective from each field. We hope that you will find it suitable for publication in \textit{Trends in Ecology and Evolution}. \\
+\noindent Our author team provides an international and interdisciplinary approach to false spring research. Because our manuscript cuts across the fields of ecology, crop science, biogeography and climatology our authorship list is slightly longer than allowed -- at four authors -- we found this was necessary to bring a robust perspective from each field. We hope that you will find it suitable for consideration in \textit{Trends in Ecology and Evolution}. \\
 
 \noindent Please find a list of key references below. This Opinion piece is not under consideration for publication elsewhere. Thank you for your consideration. \\
 
@@ -54,6 +54,7 @@
 \newpage
 \nocite{Vitasse2014}
 \nocite{Vitasse2014a}
+\nocite{Xie2015}
 \nocite{Zohner2016}
 \nocite{Lenz2016}
 \nocite{Hofmann2015}
@@ -62,8 +63,6 @@
 \nocite{Xin2016}
 \nocite{Lenz2013}
 \nocite{Muffler2016}
-\nocite{Fu2015}
-\nocite{Xie2015}
 \bibliography{..//refs/SpringFreeze.bib}
 
 \end{document}
