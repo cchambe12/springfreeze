@@ -95,18 +95,20 @@ method<-read.csv("method.test.csv",header=TRUE,sep=",")
 #attach(method)
 
 bb.table<-method %>%
-  dplyr::select(year,last_frz,bb_npn, sm.bb) %>%
+  dplyr::select(year,frz_2.2,bb_npn, sm.bb, bb_cam) %>%
   filter(year>=2008)%>%
   filter(year<2015)%>%
-  rename("Last Freeze"=last_frz)%>%
+  rename("Last Freeze"=frz_2.2)%>%
   rename("Observed"=sm.bb)%>%
   rename("SI-x"=bb_npn)
 
-FSI.table<- method %>% 
-  dplyr::select(year, FSI_npn, FSI_okeefe, FSI_cam) %>%
-  rename(okeefe = FSI_okeefe)%>%
-  rename(phenocam = FSI_cam) %>%
-  rename(npn = FSI_npn) %>%
+bb.table$okeefe<-bb.table$`Last Freeze`-bb.table$Observed
+bb.table$phenocam<-bb.table$`Last Freeze`-bb.table$bb_cam
+bb.table$npn<-bb.table$`Last Freeze`-bb.table$`SI-x`
+
+
+FSI.table<- bb.table %>% 
+  dplyr::select(year, npn, okeefe, phenocam)%>%
   filter(year>=2008) %>%
   filter(year<2015)
 bb.long<- method%>%
@@ -116,9 +118,13 @@ bb.long<- method%>%
 blend<-FSI.table %>% 
   gather(Method, FSI, -year) %>%
   arrange(year)
-blend.long<-FSI.long%>%
-  gather(Method,FSI,-year)%>%
+
+blend<-FSI.table %>% 
+  gather(Method, FSI, -year) %>%
   arrange(year)
+#blend.long<-FSI.long%>%
+#  gather(Method,FSI,-year)%>%
+#  arrange(year)
 
 ggplot(blend, (aes(Method, FSI)), xlab="Method", ylab="FSI") + 
   geom_boxplot(fill=c("#F8766D","#00C094","#00B6EB","#A58AFF"))
