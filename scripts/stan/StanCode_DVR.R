@@ -26,9 +26,9 @@ library(ggstance)
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
 dx<-read.csv("output/danfdata.csv", header=TRUE)
-dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
-dx<-read.csv("output/danf_short.csv", header=TRUE)
-dfwide<-read.csv("output/df_modforplot.csv", header=TRUE)
+#dx<-read.csv("output/fakedata_dvr.csv", header=TRUE)
+#dx<-read.csv("output/danf_short.csv", header=TRUE)
+#dfwide<-read.csv("output/df_modforplot.csv", header=TRUE)
 
 # Prep 
 #dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
@@ -102,16 +102,19 @@ if(runstan){
   
 }
 
-dxb$force<-dxb$warm
+#dxb$force<-dxb$warm
 fit1<-stan_glmer(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 + force:chill2 +
                  photo:chill1 + photo:chill2 + (1|sp), data=dxb)
 fit1
 
+dxb$force<-dxb$warm
 fit.brm<-brm(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 +
                force:chill2 + photo:chill1 + photo:chill2 + (1|sp) + (force-1|sp) + (photo-1|sp)
              + (chill1-1|sp) + (chill2-1|sp) + (force:photo-1|sp) +
                (force:chill1-1|sp) + (force:chill2-1|sp) + (photo:chill1-1|sp) +
                (photo:chill2-1|sp), data=dxb)
+
+
 m<-fit.brm
 m.int<-posterior_interval(m)
 sum.m<-summary(m)
@@ -167,7 +170,8 @@ fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), al
   ggtitle(label = "A.")+ 
   scale_y_discrete(limits = rev(unique(sort(dfwide$var))), labels=estimates) + ylab("") + 
   labs(col="Effects") + theme(legend.position = "none", legend.box.background = element_rect(), 
-                              legend.title=element_blank(), legend.key.size = unit(0.05, "cm")) +
+                              legend.title=element_blank(), legend.key.size = unit(0.05, "cm"), 
+                              panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank()) +
   xlab(expression(atop("Model Estimate of Change ", paste("in Duration of Vegetative Risk (days)"))))
 fig1
 
@@ -177,7 +181,7 @@ dxx<-read.csv("output/diffplot.csv", header=TRUE)
 
 diff<-ggplot(dxx, aes(x=factor(code), y=diff, col=factor(code))) + geom_point(alpha=0.5) + 
   geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.5) + 
-  ylab(expression(atop("Change in Duration of Vegetative Risk (days)"))) + coord_cartesian(ylim=c(0,25)) +
+  ylab(expression(atop("Change in Duration of Vegetative Risk (days)")))  +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
         axis.text.x = element_text(face = "italic", angle=45, hjust=1),
         axis.text=element_text(size=10), legend.position = "none") +

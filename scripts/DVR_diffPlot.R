@@ -15,7 +15,7 @@ library(ggplot2)
 setwd("~/Documents/git/springfreeze")
 d<-read.csv("input/Budburst.clean.csv",header=TRUE)
 
-tx<-c("CS0", "WL1")
+tx<-c("CL0", "WL1")
 dx<- d %>%
   dplyr::select(ind, treatcode, lday, bday, site) %>%
   filter(treatcode %in% tx)
@@ -41,8 +41,8 @@ dxx$tx.sd<-paste(dxx$treatcode, "se", sep="_")
 dm<-dxx%>%dplyr::select(species, treatcode, dvr)%>%spread(treatcode, dvr)
 ds<-dxx%>%dplyr::select(species, tx.sd, dvr.sd)%>%spread(tx.sd, dvr.sd)
 dxx<-inner_join(dm, ds)
-dxx$diff<-dxx$CS0-dxx$WL1
-dxx$diff.sd<-sqrt((dxx$CS0_se)^2+(dxx$WL1_se)^2) 
+dxx$diff<-dxx$CL0-dxx$WL1
+dxx$diff.sd<-sqrt((dxx$CL0_se)^2+(dxx$WL1_se)^2) 
 df<-dx%>%filter(treatcode=="WL1")%>%dplyr::select(treatcode, bday, species)
 df$bday<-ave(df$bday, df$species, df$treatcode)
 df<-df[!duplicated(df),]
@@ -65,7 +65,7 @@ dxx$code<-df$code
 
 diff<-ggplot(dxx, aes(x=factor(code), y=diff)) + geom_point() + 
     geom_linerange(aes(ymin=diff-diff.sd, ymax=diff+diff.sd), alpha=0.3) + 
-  ylab(expression(Delta*" in DVR between treatments")) + coord_cartesian(ylim=c(0,25)) +
+  ylab(expression(Delta*" in DVR between treatments")) + coord_cartesian(ylim=c(0,15)) +
   theme(panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank(),
         axis.text.x = element_text(face = "italic", angle=45, vjust=0.5), axis.text=element_text(size=10))
 plot(diff)

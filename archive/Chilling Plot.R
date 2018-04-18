@@ -19,9 +19,15 @@ d<-read.csv("input/Budburst.clean.csv",header=TRUE)
 
 ########### NEW EDITION - CAT 26 May 2017 ####################
 tx<-c("CS0", "WL1")
+tcheck<-c("CL0", "WL1")
 dx<- d %>%
   dplyr::select(ind, treatcode, lday, bday, site) %>%
   filter(treatcode %in% tx)
+dcheck<- d %>%
+  dplyr::select(ind, treatcode, lday, bday, site) %>%
+  filter(treatcode %in% tcheck)
+
+dx<-dcheck
 
 dx<-na.omit(dx)
 dx$species<-substr(dx$ind, 1, 6)
@@ -31,9 +37,9 @@ spp<-unique(small.spp$species)
 dx<-dx%>% filter(species %in% spp)
 
 dx$risk<-dx$lday-dx$bday
-dx$force<-ifelse(dx$treatcode=="CS0", 0, 1)
-dx$photo<-ifelse(dx$treatcode=="CS0", 0, 1)
-dx$chill<-ifelse(dx$treatcode=="CS0", 0, 1)
+dx$force<-ifelse(dx$treatcode=="CL0", 0, 1)
+dx$photo<-ifelse(dx$treatcode=="CL0", 0, 1)
+dx$chill<-ifelse(dx$treatcode=="CL0", 0, 1)
 dx<-dx%>%dplyr::select(-treatcode, -lday, -bday, -site)
 #write.csv(dx, file="~/Documents/git/springfreeze/output/danf_short.csv", row.names=FALSE)
 
