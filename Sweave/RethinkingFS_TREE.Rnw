@@ -204,14 +204,16 @@ FSI.table<- bb.table %>%
   filter(year<2015)
 blend<-FSI.table %>% 
   gather(Method, FSI, -year) %>%
-  arrange(year)
+  arrange(year) 
 
 methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
   ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(col=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF")) +
+  geom_point(aes(col=Method, shape=Method)) + scale_color_manual(values=c("#F8766D","#00C094","#00B6EB","#A58AFF"), labels=c("SI-x", "O`Keefe", "Phenocam")) +
   geom_line(aes(x=year, y=FSI, col=Method)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), 
-        axis.line = element_line(colour = "black"), legend.key=element_blank())
+        axis.line = element_line(colour = "black"), legend.key=element_blank())  + geom_hline(yintercept=0, linetype="dotted") + geom_hline(yintercept=7, linetype="dotted") + 
+  scale_shape_manual(labels = c("SI-x", "O`Keefe", "Phenocam"),
+                     values = c(16, 17, 15))
 plot(methodplot)
 
 @
