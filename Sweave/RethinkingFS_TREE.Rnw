@@ -57,11 +57,11 @@ $^{1}$Arnold Arboretum of Harvard University, 1300 Centre Street, Boston, Massac
 $^{2}$Organismic \& Evolutionary Biology, Harvard University, 26 Oxford Street, Cambridge, Massachusetts, USA; \\
 $^{3}$NASA Goddard Institute for Space Studies, New York, New York, USA; \\
 $^{4}$French National Institute for Agricultural Research, INRA, US1116 AgroClim, F-84914 Avignon, France\\
-$^{5}$Forest \& Conservation Sciences, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4
+$^{5}$Forest \& Conservation Sciences, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4\\
 \vspace{2ex}
 $^*$Corresponding author: 248.953.0189; cchamberlain@g.harvard.edu\\
 
-\noindent \emph{Keywords:} false spring, phenology, freezing tolerance, climate change, forest communities
+\noindent \emph{Keywords:} false spring, phenology, freezing tolerance, climate change, forest communities \\
 %\tableofcontents
 \emph{Paper type:} Opinion\\
 \emph{Counts}: Total word count for the main body of the text:  2791; Abstract: 120; 4 figures (all in color). \\
@@ -184,7 +184,7 @@ Temperate forest trees are most at risk to frost damage in the spring due to the
 \bibliography{..//refs/SpringFreeze.bib}
 
 
-<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="FSI values from 2008 to 2014 vary across methdologies. To calculate spring onset, we used the USA-NPN Extended Spring Index tool for the USA-NPN FSI values, which are in red (USA-NPN, 2016), long-term ground observational data for the observed FSI values, which are in green (O'Keefe, 2014), and near-surface remote-sensing canopy data for the PhenoCam FSI values, which are in blue (Richardson, 2015).", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
+<<label=fsifig, results="asis", echo=FALSE, warning=FALSE, message=FALSE, fig.cap="FSI values from 2008 to 2014 vary across methdologies. To calculate spring onset, we used the USA-NPN Extended Spring Index tool for the USA-NPN FSI values, which are in red (USA-NPN, 2016), long-term ground observational data for the observed FSI values, which are in green (O'Keefe, 2014), and near-surface remote-sensing canopy data for the PhenoCam FSI values, which are in blue (Richardson, 2015). The dotted line at 0 indicates a false spring and a dotted line at 7 indicates the 7 day threshold frequently used in false spring definitions.", fig.pos="H", fig.width=6, fig.height=4, fig.align='center'>>=
 #read_chunk("..//scripts/John.okeefe.R")
 method<-read.csv("..//input/method.test.csv",header=TRUE,sep=",")
 
@@ -303,7 +303,7 @@ grid.arrange(ilemuc, betall, ncol=1, nrow=2)
 \begin{figure} [H] 
  -\begin{center}
  -\includegraphics[width=16cm, height=10cm]{..//figure/DVR_diffplots_nophoto.pdf} 
- -\caption{Change in duration of vegetative risk under different experimental conditions. (A) A plot of the model parameter estimates on the duration of vegetative risk (means $\pm$ 95\% credible intervals, slightly larger blue circles represent the overall mean estimate, while each species estimate is shown below and colored as shown in B). Spring forcing temperatures had the largest effect on the rate of leafout, with photoperiod also being an important factor. Thus, while greater forcing or longer photoperiods alone will shorten the duration of vegetative risk by 10 and 9 days respectively, their combined effect would be 14 days due to a 5 day delay through their interaction (10 + 9 - 5 = 14). (B) A comparison of the durations of vegetative risk (means $\pm$ standard error) across two treatments (high chilling and warm forcing temperatures vs. low chilling and low forcing) for each species collected for the experiment. Species along the x-axis are ordered by day of budburst.}\label{fig:dan} 
+ -\caption{Change in duration of vegetative risk under different experimental conditions. (A) A plot of the model parameter estimates on the duration of vegetative risk (means $\pm$ 95\% credible intervals, slightly larger blue circles represent the overall mean estimate, while each species estimate is shown below and colored as shown in B). Spring forcing temperatures had the largest effect on the rate of leafout, with photoperiod also being an important factor. Thus, while greater forcing or longer photoperiods alone will shorten the duration of vegetative risk by 10 and 9 days respectively, their combined effect would be 14 days due to a 5 day delay through their interaction (10 + 9 - 5 = 14). (B) A comparison of the durations of vegetative risk (means $\pm$ standard error) across two treatments (high chilling and high forcing temperatures vs. low chilling and low forcing) for each species collected for the experiment. Species along the x-axis are ordered by day of budburst. \textit{Betula alleghaniensis} was the only species that had a shorter duration of vegetative risk under the low chilling and low forcing treatment. }\label{fig:dan} 
  -\end{center}
  -\end{figure}
 % Need to say which treatments. 
