@@ -44,7 +44,19 @@
 \vspace{1.5ex}\\
 \noindent Catherine Chamberlain\\
 \noindent PhD Candidate\\
-\noindent Harvard University
+\noindent Harvard University\\
+\vspace{1.5ex}\\
+\noindent Authors:\\
+C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$ \& E. M. Wolkovich $^{1,2,5}$
+\vspace{2ex}\\
+\emph{Author affiliations:}\\
+$^{1}$Arnold Arboretum of Harvard University, 1300 Centre Street, Boston, Massachusetts, USA; \\
+$^{2}$Organismic \& Evolutionary Biology, Harvard University, 26 Oxford Street, Cambridge, Massachusetts, USA; \\
+$^{3}$NASA Goddard Institute for Space Studies, New York, New York, USA; \\
+$^{4}$French National Institute for Agricultural Research, INRA, US1116 AgroClim, F-84914 Avignon, France\\
+$^{5}$Forest \& Conservation Sciences, Faculty of Forestry, University of British Columbia, 2424 Main Mall, Vancouver, BC V6T 1Z4\\
+\vspace{2ex}
+$^*$Corresponding author: 248.953.0189; cchamberlain@g.harvard.edu\\
 
 %EMW: You have a nice mix of refs! It's especially nice that your reference list also hits climate journals, ecology journals and crop journals. Be sure to keep that mix!
 % I think it's okay to reference papers in the last 4 years (say, 2013 onward). I personally would not worry about very recent references (e.g., 2017 is okay but don't do too many) but I would not include:
