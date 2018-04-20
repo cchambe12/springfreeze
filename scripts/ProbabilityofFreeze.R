@@ -333,8 +333,9 @@ ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week P
   geom_line(aes(x=biweekly, y=mean, col=site, group=site)) + geom_linerange(limits, col=limitcolor)
 
 risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
-                                                                "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")))) +
-         geom_point(aes(color=factor(site), group=site)) + ylab("Number of days below -2.2C per two week period") + 
+                                                                "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")),
+                    shape=factor(site))) +
+         geom_point(aes(color=factor(site), group=site, shape=factor(site)), size=2) + ylab("Number of days below -2.2C per two week period") + 
   geom_line(aes(x=biweekly, y=mean,  color=factor(site), group=site), size=1) + 
   geom_linerange(aes(color=factor(site),ymax= high, ymin= low), stat="density", position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
   theme(panel.grid.minor = element_blank(), legend.position="none", axis.title.x=element_blank(), panel.grid.major = element_blank(), 
@@ -344,7 +345,9 @@ risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, 
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                                                                                                "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"),
                    position="top") +scale_y_continuous(expand = c(0, 0.1)) + coord_cartesian(ylim=c(0.03:15)) +
-  annotate("text", x = 6, y = 12, label = "Climate Data", fontface = "bold")
+  annotate("text", x = 6, y = 12, label = "Climate Data", fontface = "bold") + scale_shape_manual(labels=c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
+                                                                                                           "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"),
+                                                                                                  values= c(0, 19, 0, 2, 15))
 risk
 
 #theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), legend.position=c(0.88,0.91),

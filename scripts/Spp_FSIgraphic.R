@@ -28,18 +28,28 @@ bet$risk<-ifelse(bet$doy>=142, 4, bet$risk)
 write.csv(bet, file = "~/Documents/git/springfreeze/output/betall.csv", row.names = FALSE)
 
 ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
-  annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
+  annotate("rect", xmin=82, xmax=97, ymin=0.5
+           , ymax=6, alpha=0.1, color="red") +
   xlab("Day of Year") + ylab("Frost Damage Risk") +
   annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
-  annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
-  annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
-  annotate("text", x = 97.5, y = 11, label = "DVR")
+  annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
+  annotate("text", x = 90, y = 2.05, label = "Spring", fontface="bold") +
+  annotate("text", x = 97.5, y = 11.5, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+                                                                                      panel.background = element_blank(), 
+                                                                                      axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank()) + scale_y_discrete(limits=c("", "low",  "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+ 
+  annotate("segment", x = 96, xend = 96, y = 16, yend = 10, colour = "lightgreen", arrow=arrow(length=(unit(0.3, "cm")))) +
+  annotate("segment", x = 99, xend = 99, y = 16, yend = 10, colour = "darkgreen", arrow=arrow(length=(unit(0.3, "cm"))))
+
 betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
-  annotate("rect", xmin=82, xmax=97, ymin=1, ymax=6, alpha=0.1, color="red") +
+  annotate("rect", xmin=82, xmax=97, ymin=0.5, ymax=6, alpha=0.1, color="red") +
   xlab("Day of Year") + ylab("Frost Damage Risk") +
   annotate("text", x = 140, y = 18, label = "Betula alleghaniensis", fontface = "italic") +
-  annotate("text", x = 90, y = 4, label = "False", fontface="bold") +
-  annotate("text", x = 90, y = 2, label = "Spring", fontface="bold") +
-  annotate("text", x = 132.5, y = 11, label = "DVR") 
-
+  annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
+  annotate("text", x = 90, y = 2.05, label = "Spring", fontface="bold") +
+  annotate("text", x = 132.5, y = 11.5, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+                                                                                       panel.background = element_blank(), 
+                                                                                       axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank()) + scale_y_discrete(limits=c("","low", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+ 
+  annotate("segment", x = 124, xend = 124, y = 16, yend = 10, colour = "lightgreen", arrow=arrow(length=(unit(0.3, "cm")))) +
+  annotate("segment", x = 140, xend = 140, y = 16, yend = 10, colour = "darkgreen", arrow=arrow(length=(unit(0.3, "cm"))))
+  
 grid.arrange(ilemuc, betall, ncol=1, nrow=2)

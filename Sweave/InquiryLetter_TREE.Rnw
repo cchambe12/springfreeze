@@ -41,11 +41,9 @@
 
 \vspace{1.5ex}
 \noindent Sincerely, \\
-\vspace{1.5ex}\\
-\noindent Catherine Chamberlain\\
-\noindent PhD Candidate\\
-\noindent Harvard University\\
-\vspace{1.5ex}\\
+\vspace{3ex}\\
+\noindent Catherine Chamberlain (on behalf of my co-authors)
+\vspace{2ex}\\
 \noindent Authors:\\
 C. J. Chamberlain $^{1,2}$, B. I. Cook $^{3}$, I. Garcia de Cortazar Atauri $^{4}$ \& E. M. Wolkovich $^{1,2,5}$
 \vspace{2ex}\\
