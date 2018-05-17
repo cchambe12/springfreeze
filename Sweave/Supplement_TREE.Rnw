@@ -7,6 +7,8 @@
 \usepackage{geometry}
 \usepackage{pdflscape}
 \usepackage{mdframed}
+\usepackage{amssymb} % for math symbols
+\usepackage{amsmath} % for aligning equations
 \usepackage{natbib}
 \bibliographystyle{..//refs/styles/besjournals.bst}
 \usepackage[small]{caption}
@@ -78,6 +80,15 @@ PhenoCam data are not available for Harvard Forest until 2008 and observation da
 
 \subsection*{How Species' Phenological Cues Shape Vegetative Risk - \textit{methods for experiment}}
 We used data from a growth chamber experiment (Flynn \& Wolkovich, in review) to assess the phenological cue interaction with the duration of vegetative risk. Cuttings for the experiment were made in January 2015 at Harvard Forest (HF, 42.5$^{\circ}$N, 72.2$^{\circ}$W) and the Station de Biologie des Laurentides in St-Hippolyte, Qu\'ebec (SH, 45.9$^{\circ}$N, 74.0$^{\circ}$W). The experiment considered here examined the 9 temperate trees and shrubs using a fully crossed design of three levels of chilling (field chilling, field chilling plus 30 days at either 1 or 4 $^{\circ}$C), two levels of forcing (20$^{\circ}$C/10$^{\circ}$C or 15$^{\circ}$C/5$^{\circ}$C day/night temperatures, such that thermoperiodicity followed photoperiod) and two levels of photoperiod (8 versus 12 hour days) resulting in 12 treatment combinations. Observations on the phenological stage of each cutting was made every 2-3 days over 82 days. Phenology was assessed using a BBCH scale that was modified for trees \citep{Finn2007}. We used the same statistical analyses as the original study: mixed-effects hierarchical models that included warming, photoperiod, and chilling treatments, and all two-way interactions as predictors and species modeled as groups.
+
+The model equation is as from the original study:
+\begin{align*}
+y_i \thicksim N(\alpha_{sp[i]} +& \beta_{site_{sp[i]}} + \beta_{forcing_{sp[i]}} + \beta_{photoperiod_{sp[i]}} + \beta_{chilling1_{sp[i]}} + \beta_{chilling2_{sp[i]}}  \\
+	+& \beta_{forcing \times photoperiod_{sp[i]}} + \beta_{forcing \times site_{sp[i]}} + \beta_{photoperiod \times site_{sp[i]}} \\
+	+& \beta_{forcing  \times chilling1_{sp[i]}} + \beta_{forcing \times chilling2_{sp[i]}} \\
+	+& \beta_{photoperiod \times chilling1_{sp[i]}} + \beta_{photoperiod \times chilling2_{sp[i]}} \\
+	+& \beta_{site \times chilling1_{sp[i]}}  + \beta_{site \times chilling2_{sp[i]}} )
+\end{align*}
 
 
 \subsection*{Predictable Regional Differences in Climate, Species Responses and False Spring Risk - \textit{climate data and phenology data}}
