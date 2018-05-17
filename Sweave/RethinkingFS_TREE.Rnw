@@ -297,7 +297,7 @@ betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   annotate("text", x = 90, y = 2.05, label = "Spring", fontface="bold") +
   annotate("text", x = 132.5, y = 11.5, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), 
-        axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank()) + scale_y_discrete(limits=c("","low", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+
+        axis.line = element_line(colour = "black"), axis.ticks.y = element_blank()) + scale_y_discrete(limits=c("","low", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+
   geom_point(x=124, y=10, shape=15, col="lightgreen") + geom_point(x=140, y=10, shape=17, col="darkgreen")
 
 
@@ -307,7 +307,7 @@ grid.arrange(ilemuc, betall, ncol=1, nrow=2)
 \begin{figure} [H] 
  -\begin{center}
  -\includegraphics[width=16cm, height=10cm]{..//figure/DVR_diffplots_nophoto.pdf} 
- -\caption{Change in duration of vegetative risk under different experimental conditions. (A) A plot of the model parameter estimates on the duration of vegetative risk (means $\pm$ 95\% credible intervals, slightly larger blue circles represent the overall mean estimate, while each species estimate is shown below and colored as shown in B). Spring forcing temperatures had the largest effect on the rate of leafout, with photoperiod also being an important factor. Thus, while greater forcing or longer photoperiods alone will shorten the duration of vegetative risk by 10 and 9 days respectively, their combined effect would be 14 days due to a 5 day delay through their interaction (10 + 9 - 5 = 14). (B) A comparison of the durations of vegetative risk (means $\pm$ standard error) across two treatments (high chilling and high forcing temperatures vs. low chilling and low forcing) for each species collected for the experiment. Species along the x-axis are ordered by day of budburst. \textit{Betula alleghaniensis} was the only species that had a shorter duration of vegetative risk under the low chilling and low forcing treatment. }\label{fig:dan} 
+ -\caption{How major cues of spring phenology alter vegetative risk. (A) A plot of the model parameter estimates on the duration of vegetative risk from experimental results (means $\pm$ 95\% credible intervals, slightly larger blue circles represent the overall mean estimate, while each species estimate is shown below and colored as shown in B). Higher forcing temperatures decreased the period of vegetative risk the most (by 10 days overall given a 10 degree difference), as did photoperiod (by 9 days overall given a 4 hour increase). However, together these effects offset, thus the combined effect of greater forcing and longer photoperiod would be a reduction in duration of vegetative risk of 14 days due to a 5 day delay through their interaction. (B) A comparison of the durations of vegetative risk (means $\pm$ standard error) across two treatments (high chilling and high forcing temperatures vs. low chilling and low forcing) for each species collected for the experiment. Species along the x-axis are ordered by day of budburst. \textit{Betula alleghaniensis} was the only species that had a shorter duration of vegetative risk under the low chilling and low forcing treatment. }\label{fig:dan} 
  -\end{center}
  -\end{figure}
 % Need to say which treatments. 
