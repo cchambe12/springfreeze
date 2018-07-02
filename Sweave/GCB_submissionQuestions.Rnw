@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{mdframed}
+\usepackage{natbib}
+\usepackage{bibentry}
+\bibliographystyle{..//refs/styles/besjournals.bst}
+\usepackage[small]{caption}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{1.5}
+\parindent 0pt
+\usepackage{lineno}
+\linenumbers
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+\begin{document}
+\nobibliography*
+\noindent \textbf{\Large{Rethinking False Spring Risk: Submission Questions}}\\
+\vspace{3ex}
+
+\noindent \textbf{What is the scientific question you are addressing?} \\
+
+\noindent Climate change has brought renewed interest to late spring freeze events, commonly called false springs. Combining theory from ecology, climatology, physiology, biogeography and crop science we examine the effects of false springs and the complexity of factors that drive plants' risk to frost damage to help advance forecasting. \\
+
+\noindent \textbf{What is/are the key finding(s) that answers this question?} \\
+
+\noindent Current definitions for false springs remain generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This definition fails to incorporate factors such as species, functional group, life stages, and other climatic regimes. We argue that a new approach that integrates these and other crucial factors is needed. \\
+
+\noindent \textbf{Why is this work important and timely?}\\
+
+\noindent There has been a growing number of studies that take a simplified view of false springs, which can lead to incorrect forecasting. This manuscript is especially timely because new methods are essential to predict the effects of false spring events across diverse species and climate regimes, especially under climate change. \\
+
+\noindent \textbf{ Does your paper fall within the scope of GCB; what biological AND global change aspects does it address?}\\
+
+\noindent The manuscript will demonstrate how an integrated view of false spring that incorporates the complexity of factors underlying plant strategies to frost would rapidly advance progress in this field, including improved predictions of spring freeze risk with global change, and, novel insights into how plants are shaped by spring frost. \\
+
+\noindent \textbf{What are the three most recently published papers that are relevant to this question?} \\
+
+\bibentry{Vitra2017}\\
+\bibentry{Lenz2016}\\
+\bibentry{Menzel2015}\\
+
+\bibliography{..//refs/SpringFreeze.bib}
+
+\end{document}
