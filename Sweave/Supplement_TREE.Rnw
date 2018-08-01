@@ -62,8 +62,8 @@ $^{4}$French National Institute for Agricultural Research, INRA, US1116 AgroClim
 \vspace{2ex}
 $^*$Corresponding author: 248.953.0189; cchamberlain@g.harvard.edu\\
 
-\renewcommand{\thetable}{\arabic{table}}
-\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\labelitemi}{$-$}
 \setkeys{Gin}{width=0.8\textwidth}
 
@@ -79,7 +79,7 @@ PhenoCam data are not available for Harvard Forest until 2008 and observation da
 \par The FSI values were calculated for each methodology using the formula based on the study performed by Marino et al. (2011).  
 
 \subsection*{How Species' Phenological Cues Shape Vegetative Risk - \textit{methods for experiment}}
-We used data from a growth chamber experiment (Flynn \& Wolkovich, in review) to assess the phenological cue interaction with the duration of vegetative risk. Cuttings for the experiment were made in January 2015 at Harvard Forest (HF, 42.5$^{\circ}$N, 72.2$^{\circ}$W) and the Station de Biologie des Laurentides in St-Hippolyte, Qu\'ebec (SH, 45.9$^{\circ}$N, 74.0$^{\circ}$W). The experiment considered here examined the 9 temperate trees and shrubs using a fully crossed design of three levels of chilling (field chilling, field chilling plus 30 days at either 1 or 4 $^{\circ}$C), two levels of forcing (20$^{\circ}$C/10$^{\circ}$C or 15$^{\circ}$C/5$^{\circ}$C day/night temperatures, such that thermoperiodicity followed photoperiod) and two levels of photoperiod (8 versus 12 hour days) resulting in 12 treatment combinations. Observations on the phenological stage of each cutting was made every 2-3 days over 82 days. Phenology was assessed using a BBCH scale that was modified for trees \citep{Finn2007}. We used the same statistical analyses as the original study: mixed-effects hierarchical models that included warming, photoperiod, and chilling treatments, and all two-way interactions as predictors and species modeled as groups.
+We used data from a growth chamber experiment (Flynn2018) to assess the phenological cue interaction with the duration of vegetative risk. Cuttings for the experiment were made in January 2015 at Harvard Forest (HF, 42.5$^{\circ}$N, 72.2$^{\circ}$W) and the Station de Biologie des Laurentides in St-Hippolyte, Qu\'ebec (SH, 45.9$^{\circ}$N, 74.0$^{\circ}$W). The experiment considered here examined the 9 temperate trees and shrubs used in a fully crossed design of three levels of chilling (field chilling, field chilling plus 30 days at either 1 or 4 $^{\circ}$C), two levels of forcing (20$^{\circ}$C/10$^{\circ}$C or 15$^{\circ}$C/5$^{\circ}$C day/night temperatures, such that thermoperiodicity followed photoperiod) and two levels of photoperiod (8 versus 12 hour days) resulting in 12 treatment combinations. Observations on the phenological stage of each cutting were made every 2-3 days over 82 days. Phenology was assessed using a BBCH scale that was modified for trees \citep{Finn2007}. We used the same statistical analyses as the original study: mixed-effects hierarchical models that included warming, photoperiod, and chilling treatments, and all two-way interactions as predictors and species modeled as groups.
 
 The model equation is as from the original study:
 \begin{align*}
@@ -90,6 +90,12 @@ y_i \thicksim N(\alpha_{sp[i]} +& \beta_{site_{sp[i]}} + \beta_{forcing_{sp[i]}}
 	+& \beta_{site \times chilling1_{sp[i]}}  + \beta_{site \times chilling2_{sp[i]}} )
 \end{align*}
 
+\noindent And the $\alpha$ and each of the 14 $\beta$ coefficients were modeled at the species level in the original study, as follows:
+\begin{align*}
+1.& \; \beta_{site_{sp}} \thicksim N(\mu_{site}, \sigma{^2}_{site}) \\
+   &... \\
+14.& \; \beta_{site \times chilling2_{sp}} \thicksim N(\mu_{site \times chilling2}, \sigma{^2}_{site \times chilling2})
+\end{align*}
 
 \subsection*{Predictable Regional Differences in Climate, Species Responses and False Spring Risk - \textit{climate data and phenology data}}
 %EMW: Include changes from above here below!
@@ -98,11 +104,12 @@ We analyzed five archetypal regions across North America and Europe. We collecte
 \newpage
 \subsection*{Supplemental Figures}
 \begin{figure} [H] 
- -\begin{center}
- -\includegraphics[width=16cm, height=18cm]{..//figure/RegRisk_flipped.pdf} 
- -\caption{False spring risk can vary dramatically across regions. Here we show the period when plants are most at risk to tissue loss -- between budburst and leafout (upper, lines represent the range with the thicker line representing the interquartile range) and the variation in the number of freeze days (-2.2$^{\circ}$C) (Schwartz, 1993) that occurred on average over the past 50 years for five different sites (lower, bars represent the range, points represent the mean). Data come from USA-NPN SI-x tool (1981-2016) and observational studies (1950-2016) for phenology (USA-NPN, 2016; Soudani et al., 2012; White et al., 2009; Schaber \& Badeck, 2005) and NOAA Climate Data Online tool for climate (from 1950-2016). } \label{fig:regional}  
- -\end{center}
- -\end{figure}
+ \begin{center}
+ %\textbf{Regional Differences in False Spring Risk}\par\medskip
+ \includegraphics[width=16cm, height=18cm]{..//figure/RegRisk_flipped.pdf} 
+ \caption{False spring risk can vary dramatically across regions. Here we show the period when plants are most at risk to tissue loss -- between budburst and leafout (upper, lines represent the range with the thicker line representing the interquartile range) and the variation in the number of freeze days (-2.2$^{\circ}$C) (Schwartz, 1993) that occurred on average over the past 50 years for five different sites (lower, bars represent the range, points represent the mean). Data come from USA-NPN SI-x tool (1981-2016) and observational studies (1950-2016) for phenology (USA-NPN, 2016; Soudani et al., 2012; White et al., 2009; Schaber \& Badeck, 2005) and NOAA Climate Data Online tool for climate (from 1950-2016). } \label{fig:regional}  
+ \end{center}
+ \end{figure}
 
 
 \newpage

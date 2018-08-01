@@ -59,10 +59,6 @@
 \usepackage{mdframed}
 \usepackage[numbers]{natbib}
 \bibliographystyle{..//refs/styles/nature.bst}
-\newcommand*{\figuretitle}[1]{%
-    {\centering%              
-    \par\medskip}%            
-}
 \usepackage[small]{caption}
 \setlength{\captionmargin}{30pt}
 \setlength{\abovecaptionskip}{0pt}
@@ -192,7 +188,7 @@ How a single species phenological cues varies across space is not yet well predi
 %Accurate predictions need to carefully consider how chilling and forcing cues vary across regions. [WHAT ABOUT PHOTOPERIOD? How is this paragraph different from the above? Should we combine them?]
 %Climatic variation across regions and at different distances from the coast results in varying durations of vegetative risk due to different chilling and forcing temperatures . 
 
-\section*{Concluding Remarks}
+\section*{Concluding Remarks and Future Perspectives}
 Temperate forest trees are most at risk to frost damage in the spring due to the stochasticity of spring freezes. With warm temperatures advancing in the spring but last spring freeze dates advancing at a slower rate, there could be more damaging false spring events in the future, especially in high-risk regions \citep{Gu2008, Inouye2008, Liu2018}. Current equations for evaluating false spring damage (e.g. Equation \ref{eq:1}) largely simplify the myriad complexities involved in assessing false spring damage and risks. More studies aimed at understanding relationships between species avoidance and tolerance strategies, climatic regimes, and physiological cue interactions with the duration of vegetative risk would improve predictions (see `Outstanding Questions'). Additionally, research to establish temperature thresholds for damage across functional types and phenophases will help effectively predict false spring risk in the future. An integrated approach to assessing past and future spring freeze damage would provide novel insights into plant strategies, and offer more robust predictions as climate change progresses, which is essential for mitigating the adverse ecological and economic effects of false springs.
 
 \section*{Acknowledgments}
@@ -246,12 +242,12 @@ We thank D. Buonaiuto,  W. Daly, A. Ettinger, and I. Morales-Castilla for commen
 
 
 \begin{figure} [H] 
- -\begin{center}
- -\figuretitle{Effects of Cue Interactions on the Duration of Vegetative Risk}
- -\includegraphics[width=16cm, height=10cm]{..//figure/DVR_diffplots_nophoto.pdf} 
- -\caption{How major cues of spring phenology alter vegetative risk. (A) Model estimates of changes in the duration of vegetative risk due to varying cues from a full-factorial experiment (means $\pm$ 95\% credible intervals, slightly larger blue circles represent the overall mean estimate, while each species estimate is shown below and colored as shown in B). Higher forcing temperatures decreased the period of vegetative risk the most (by 10 days overall given a 10 degree difference), as did photoperiod (by 9 days overall given a 4 hour increase). However, together these effects offset, thus the combined effect of greater forcing and longer photoperiod would be a reduction in duration of vegetative risk of 14 days due to a 5 day delay through their interaction. (B) A comparison of the durations of vegetative risk (raw data means $\pm$ 1 standard error) across two treatments (high chilling and high forcing temperatures vs. low chilling and low forcing, in both photoperiod was 12 hr) for each species in the experiment. Species along the x-axis are ordered by day of budburst.}\label{fig:dan} 
- -\end{center}
- -\end{figure}
+ \begin{center}
+ %\textbf{Effects of Cue Interactions on the Duration of Vegetative Risk}\par\medskip
+ \includegraphics[width=16cm, height=10cm]{..//figure/DVR_diffplots_nophoto.pdf} 
+ \caption{How major cues of spring phenology alter vegetative risk. (A) Model estimates of changes in the duration of vegetative risk due to varying cues from a full-factorial experiment (means $\pm$ 95\% credible intervals, slightly larger blue circles represent the overall mean estimate, while each species estimate is shown below and colored as shown in B). Higher forcing temperatures decreased the period of vegetative risk the most (by 10 days overall given a 10 degree difference), as did photoperiod (by 9 days overall given a 4 hour increase). However, together these effects offset, thus the combined effect of greater forcing and longer photoperiod would be a reduction in duration of vegetative risk of 14 days due to a 5 day delay through their interaction. (B) A comparison of the durations of vegetative risk (raw data means $\pm$ 1 standard error) across two treatments (high chilling and high forcing temperatures vs. low chilling and low forcing, in both photoperiod was 12 hr) for each species in the experiment. Species along the x-axis are ordered by day of budburst.}\label{fig:dan} 
+ \end{center}
+ \end{figure}
 % Need to say which treatments. 
 
 \end{document}
