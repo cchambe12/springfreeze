@@ -1,4 +1,4 @@
-\documentclass{article}[12pt]
+\documentclass{article}[14pt]
 \usepackage{Sweave}
 \usepackage{float}
 \usepackage{graphicx}
@@ -23,7 +23,7 @@
 \renewcommand{\baselinestretch}{2}
 \parindent 0pt
 \usepackage{lineno}
-%\linenumbers
+\linenumbers
 
 \newmdenv[
   topline=true,
@@ -196,7 +196,7 @@ methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
         panel.background = element_blank(), 
         axis.line = element_line(colour = "black"), legend.key=element_blank(), plot.title = element_text(family="Helvetica"))  + geom_hline(yintercept=0, linetype="dotted") + geom_hline(yintercept=7, linetype="dotted") + 
   scale_shape_manual(labels = c("SI-x", "Observational (O`Keefe)", "Phenocam"),
-                     values = c(16, 17, 15)) + ggtitle("Comparison of Calculated FSI Values")
+                     values = c(16, 17, 15)) + ggtitle("Calculating False Spring Risk")
 plot(methodplot)
 
 @
@@ -250,7 +250,7 @@ temp<- temp + scale_x_discrete(labels=c("All species - soft freeze (Augspurger, 
                         "Rosaceae - 10% (Longstroth, 2013)"=expression(paste(italic("Rosaceae"), "- 10% (Longstroth, 2013)")),
                         "Rosaceae - 90% (Longstroth, 2013)"=expression(paste(italic("Rosaceae"), "- 90% (Longstroth, 2013)")),
                         "Wheat - 100% (Sanchez et al., 2013)"="Wheat - 100% (Sanchez et al., 2013)"))
-temp<-temp +coord_flip() + ggtitle("Damaging Temperature Thresholds")
+temp<-temp +coord_flip() + ggtitle("Descrepancies in Defining \nFalse Spring Temperatures")
 plot(temp)
 @
 
@@ -267,7 +267,7 @@ ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
   annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
   annotate("text", x = 90, y = 2.05, label = "Spring", fontface="bold") +
-  annotate("text", x = 97.5, y = 11.5, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+  annotate("text", x = 97.5, y = 12, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), 
         axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank(),plot.title = element_text(family="Helvetica")) + scale_y_discrete(limits=c("", "low",  "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+ 
   geom_point(x=96, y=10, shape=15, col="lightgreen") + geom_point(x=99, y=10, shape=17, col="darkgreen") +
