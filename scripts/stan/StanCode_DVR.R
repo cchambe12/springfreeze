@@ -31,22 +31,24 @@ dx<-read.csv("output/danfdata.csv", header=TRUE)
 #dfwide<-read.csv("output/df_modforplot.csv", header=TRUE)
 
 # Prep 
+dx<-dx[!(dx$chill==1),]
+dx$chill<-ifelse(dx$chill==2, 0, 1)
 #dx<-dx%>%filter(species!="VIBCAS")%>%filter(species!="VIBLAN")
 dx$sp <- as.numeric(as.factor(dx$sp))
 #dx$site <- as.numeric(as.factor(dx$site))
 dx<-dx[!is.na(dx$risk),]
-levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = 1:3
+levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = c(0,1)
 dx$warm <- as.numeric(dx$warm)
 dx$warm<-ifelse(dx$warm==15, 0, 1)
 dx$photo <- as.numeric(dx$photo)
-dx$photo<-ifelse(dx$photo==8, 0, 1)
+dx$photo<-ifelse(dx$photo==12, 0, 1)
 dx$chill <- as.numeric(dx$chill)
 #dx$site<- as.numeric(dx$site)
 # Chill dummy variables
-dx$chill1 = ifelse(dx$chill == 1, 1, 0) 
-dx$chill2 = ifelse(dx$chill == 2, 1, 0) 
+#dx$chill1 = ifelse(dx$chill == 1, 1, 0) 
+#dx$chill2 = ifelse(dx$chill == 2, 1, 0) 
 
-with(dx, table(chill1, chill2)) # all three levels in here
+#with(dx, table(chill1, chill2)) # all three levels in here
 
 dxb <- dx[!is.na(dx$risk),]
 
@@ -68,16 +70,16 @@ unique(dxb$photo)
 
 dxb<-filter(dxb, risk>0)
 
-unique(dxb$chill1)
-unique(dxb$chill2)
+#unique(dxb$chill1)
+#unique(dxb$chill2)
 
 risk = as.numeric(dxb$risk) # dvr as response 
 warm = dxb$warm
 #site = as.numeric(dxb$site)
 sp = as.numeric(dxb$sp) 
 photo = dxb$photo
-chill1 = as.numeric(dxb$chill1)
-chill2 = as.numeric(dxb$chill2)
+chill = as.numeric(dxb$chill1)
+#chill2 = as.numeric(dxb$chill2)
 N = length(risk) 
 n_sp = length(unique(dxb$sp))
 #n_site = length(unique(dxb$site))
@@ -108,11 +110,21 @@ fit1<-stan_glmer(risk~ force + photo + chill1 + chill2 + force:photo + force:chi
 fit1
 
 dxb$force<-dxb$warm
-fit.brm<-brm(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 +
-               force:chill2 + photo:chill1 + photo:chill2 + (1|sp) + (force-1|sp) + (photo-1|sp)
-             + (chill1-1|sp) + (chill2-1|sp) + (force:photo-1|sp) +
-               (force:chill1-1|sp) + (force:chill2-1|sp) + (photo:chill1-1|sp) +
-               (photo:chill2-1|sp), data=dxb)
+fit.brm<-brm(risk~ force + photo + chill + force:photo + force:chill +
+              photo:chill + (force + photo + chill + force:photo + force:chill +
+                                        photo:chill|sp), data=dxb)
+
+#fit.brm.check<-brm(risk~ force + photo + chill + force:photo + force:chill +
+ #              photo:chill + (force + photo + chill + force:photo + force:chill +
+  #                              photo:chill-1|sp), data=dxb)
+
+#fit<-stan_glmer(risk~ force + photo + chill + force:photo + force:chill +
+ #              photo:chill + (force + photo + chill + force:photo + force:chill +
+  #                              photo:chill|sp), data=dxb)
+#fit.check<-stan_glmer(risk~ force + photo + chill + force:photo + force:chill +
+ #                    photo:chill + (force + photo + chill + force:photo + force:chill +
+  #                                    photo:chill-1|sp), data=dxb)
+
 
 
 m<-fit.brm
@@ -134,7 +146,7 @@ mat2<-cbind(twoDimMat, c(rep(1:9, length.out=27)), rep(c("Estimate", "2.5%", "95
 df<-as.data.frame(mat2)
 names(df)<-c(rownames(cri.f), "sp", "perc")
 dftot<-rbind(fdf2, df)
-dflong<- tidyr::gather(dftot, var, value, force:`photo:chill2`, factor_key=TRUE)
+dflong<- tidyr::gather(dftot, var, value, force:`photo:chill`, factor_key=TRUE)
 
 #adding the coef estiamtes to the random effect values 
 for (i in seq(from=1,to=nrow(dflong), by=30)) {
@@ -150,9 +162,8 @@ dfwide$sp<-as.factor(dfwide$sp)
 
 pd <- position_dodgev(height = -0.5)
 
-estimates<-c("Forcing", "Photoperiod", "Chilling 1.5°C", "Chilling 4°C", "Forcing x Photoperiod", 
-             "Forcing x Chilling 1.5°C", "Forcing x Chilling 4°C", "Photoperiod x Chilling 1.5°C", 
-             "Photoperiod x Chilling 4°C")
+estimates<-c("Forcing", "Photoperiod", "Chilling", "Forcing x Photoperiod", 
+             "Forcing x Chilling", "Photoperiod x Chilling")
 dfwide$legend<-factor(dfwide$sp,
                       labels=c("Overall Effects","1","2","3","4","5","6","7","8","9"))
 estimates<-rev(estimates)
@@ -174,6 +185,53 @@ fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), al
                               panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title.x=element_blank()) +
   xlab(expression(atop("Model Estimate of Change ", paste("in Duration of Vegetative Risk (days)"))))
 fig1
+
+### Now make a new dataframe for more conceptual figure
+simple<-subset(dfwide, select=c("sp", "var", "Estimate"))
+simple<-simple[(simple$sp=="1"|simple$sp=="7"),]
+simple$sp<-ifelse(simple$sp=="1", "1", "9")
+simple<-simple[!(simple$var=="photo:chill"),]
+
+
+estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod", 
+             "More Forcing and \nLess Chilling")
+
+#pd <- position_dodgev(height = -0.5)
+#simple$Jvar <- ave(as.numeric(simple$var), simple$var, 
+ #                         FUN = function(x) x + rnorm(length(x), sd = .1))
+simple$Jvar<-as.numeric(as.factor(simple$var))
+simple$Jvar<-ifelse(simple$sp=="1", simple$Jvar-0.1, simple$Jvar)
+simple$Jvar2<-rev(simple$Jvar)
+
+simple$est2<-ifelse(simple$sp=="1" & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp=="1"]+
+                                                 simple$Estimate[simple$var=="photo" & simple$sp=="1"]+
+                                                 simple$Estimate[simple$var=="force:photo" & simple$sp=="1"], simple$Estimate)
+simple$est2<-ifelse(simple$sp=="1" & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp=="1"]+
+                      simple$Estimate[simple$var=="chill" & simple$sp=="1"]+
+                      simple$Estimate[simple$var=="force:chill" & simple$sp=="1"], simple$est2)
+simple$est2<-ifelse(simple$sp=="2" & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp=="2"]+
+                      simple$Estimate[simple$var=="photo" & simple$sp=="2"]+
+                      simple$Estimate[simple$var=="force:photo" & simple$sp=="2"], simple$est2)
+simple$est2<-ifelse(simple$sp=="2" & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp=="2"]+
+                      simple$Estimate[simple$var=="chill" & simple$sp=="2"]+
+                      simple$Estimate[simple$var=="force:chill" & simple$sp=="2"], simple$est2)
+
+estimates<-rev(estimates)
+exp<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=sp)) +
+  geom_vline(xintercept=0, linetype="dotted") +
+  scale_colour_manual(name="Species", values=c("firebrick3", "darkblue"),
+                      labels=c("1"=expression(paste(italic("Acer pensylvanicum"))), 
+                               "9"=expression(paste(italic("Ilex mucronata"))))) + 
+  geom_segment(arrow = arrow(length = unit(0.03, "npc"))) +
+  scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) + 
+  xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
+  geom_hline(yintercept=2.5, col="grey") + 
+  annotate("text", x = -6.7, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
+  annotate("text", x = -7, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  theme(legend.text=element_text(size=8), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
+        legend.position=c(0.8, 0.8))
+quartz()
+exp
 
 ######################################################################################
 ##################### Making two plots for manuscript ################################
