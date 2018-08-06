@@ -41,12 +41,12 @@ levels(dx$warm) = c(0,1); levels(dx$photo) = c(0, 1); levels(dx$chill) = 1:3
 dx$warm <- as.numeric(dx$warm)
 dx$warm<-ifelse(dx$warm==15, 0, 1)
 dx$photo <- as.numeric(dx$photo)
-dx$photo<-ifelse(dx$photo==12, 0, 1)
+dx$photo<-ifelse(dx$photo==8, 0, 1)
 dx$chill <- as.numeric(dx$chill)
 #dx$site<- as.numeric(dx$site)
 # Chill dummy variables
-dx$chill1 = ifelse(dx$chill == 1, 0, 1) 
-dx$chill2 = ifelse(dx$chill == 2, 0, 1) 
+dx$chill1 = ifelse(dx$chill == 1, 1, 0) 
+dx$chill2 = ifelse(dx$chill == 2, 1, 0) 
 
 #with(dx, table(chill1, chill2)) # all three levels in here
 
@@ -110,17 +110,17 @@ fit1<-stan_glmer(risk~ force + photo + chill1 + chill2 + force:photo + force:chi
 fit1
 
 dxb$force<-dxb$warm
-fit.brm<-brm(risk~ force + photo + chill + force:photo + force:chill +
-              photo:chill + (force + photo + chill + force:photo + force:chill +
-                                        photo:chill|sp), data=dxb)
+#fit.brm<-brm(risk~ force + photo + chill + force:photo + force:chill +
+ #             photo:chill + (force + photo + chill + force:photo + force:chill +
+  #                                      photo:chill|sp), data=dxb)
 fit.brm2<-brm(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1 + force:chill2 +
                photo:chill1 + photo:chill2 + (force + photo + chill1 + chill2 + force:photo + 
                                                 force:chill1 + force:chill2 +
                                                 photo:chill1 + photo:chill2|sp), data=dxb)
-fit.check<-brm(risk~force + photo + chill1  + chill2 + force:photo + force:chill1 + force:chill2 +
-                 photo:chill1 + photo:chill2 + (1|sp) + (force-1|sp) + (photo-1|sp) + (chill1-1|sp) +
-                 (chill2-1|sp) + (force:photo-1|sp) + (force:chill1-1|sp) + (force:chill2-1|sp) +
-                 (photo:chill1-1|sp) + (photo:chill2-1|sp), data=dxb)
+#fit.check<-brm(risk~force + photo + chill1  + chill2 + force:photo + force:chill1 + force:chill2 +
+ #                photo:chill1 + photo:chill2 + (1|sp) + (force-1|sp) + (photo-1|sp) + (chill1-1|sp) +
+  #               (chill2-1|sp) + (force:photo-1|sp) + (force:chill1-1|sp) + (force:chill2-1|sp) +
+   #              (photo:chill1-1|sp) + (photo:chill2-1|sp), data=dxb)
 
 #fit.brm.check<-brm(risk~ force + photo + chill + force:photo + force:chill +
  #              photo:chill + (force + photo + chill + force:photo + force:chill +
@@ -137,7 +137,7 @@ m<-fit.brm2
 m.int<-posterior_interval(m)
 sum.m<-summary(m)
 cri.f<-as.data.frame(sum.m$fixed[,c("Estimate", "l-95% CI", "u-95% CI")])
-cri.f<-cri.f[-1,] #removing the intercept 
+#cri.f<-cri.f[-1,] #removing the intercept 
 fdf1<-as.data.frame(rbind(as.vector(cri.f[,1]), as.vector(cri.f[,2]), as.vector(cri.f[,3])))
 fdf2<-cbind(fdf1, c(0, 0, 0) , c("Estimate", "2.5%", "95%"))
 names(fdf2)<-c(rownames(cri.f), "sp", "perc")
@@ -193,10 +193,15 @@ fig1 <-ggplot(dfwide, aes(x=Estimate, y=var, color=legend, size=factor(rndm), al
 fig1
 
 ### Now make a new dataframe for more conceptual figure
+## Do I add the intercept? Which is 23.71... 
 simple<-subset(dfwide, select=c("sp", "var", "Estimate"))
-simple<-simple[(simple$sp=="3"|simple$sp=="8"|simple$sp=="6"),]
+#simple<-simple[(simple$sp=="1"|simple$sp=="4"|simple$sp=="8"),]
 #simple$sp<-ifelse(simple$sp=="4", "1", "9")
-simple<-simple[!(simple$var=="photo:chill"),]
+simple<-simple[!(simple$sp=="0"),]
+simple<-simple[!(simple$var=="photo:chill1" | simple$var=="photo:chill2" | simple$var=="force:chill1" 
+                 | simple$var=="chill1"),]
+simple$var<-ifelse(simple$var=="chill2", "chill", as.character(simple$var))
+simple$var<-ifelse(simple$var=="force:chill2", "force:chill", as.character(simple$var))
 
 
 estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod", 
@@ -205,43 +210,54 @@ estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forci
 #pd <- position_dodgev(height = -0.5)
 #simple$Jvar <- ave(as.numeric(simple$var), simple$var, 
  #                         FUN = function(x) x + rnorm(length(x), sd = .1))
-simple$Jvar<-as.numeric(as.factor(simple$var))
-simple$Jvar<-ifelse(simple$sp=="3", simple$Jvar-0.1, simple$Jvar)
-simple$Jvar<-ifelse(simple$sp=="8", simple$Jvar-0.2, simple$Jvar)
-simple$Jvar2<-rev(simple$Jvar)
+simple$Jvar<-NA
+simple$Jvar<-ifelse(simple$var=="force", 5, simple$var)
+simple$Jvar<-ifelse(simple$var=="photo", 4, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="chill", 3, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="force:photo", 2, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="force:chill", 1, simple$Jvar)
+simple$Jvar2<-as.numeric(simple$Jvar)
 
-simple$est2<-ifelse(simple$sp=="3" & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp=="3"]+
-                                                 simple$Estimate[simple$var=="photo" & simple$sp=="3"]+
-                                                 simple$Estimate[simple$var=="force:photo" & simple$sp=="3"], simple$Estimate)
-simple$est2<-ifelse(simple$sp=="3" & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp=="3"]+
-                      simple$Estimate[simple$var=="chill" & simple$sp=="3"]+
-                      simple$Estimate[simple$var=="force:chill" & simple$sp=="3"], simple$est2)
-simple$est2<-ifelse(simple$sp=="8" & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp=="8"]+
-                      simple$Estimate[simple$var=="photo" & simple$sp=="8"]+
-                      simple$Estimate[simple$var=="force:photo" & simple$sp=="8"], simple$est2)
-simple$est2<-ifelse(simple$sp=="8" & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp=="8"]+
-                      simple$Estimate[simple$var=="chill" & simple$sp=="8"]+
-                      simple$Estimate[simple$var=="force:chill" & simple$sp=="8"], simple$est2)
-simple$est2<-ifelse(simple$sp=="6" & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp=="6"]+
-                      simple$Estimate[simple$var=="photo" & simple$sp=="6"]+
-                      simple$Estimate[simple$var=="force:photo" & simple$sp=="6"], simple$est2)
-simple$est2<-ifelse(simple$sp=="6" & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp=="6"]+
-                      simple$Estimate[simple$var=="chill" & simple$sp=="6"]+
-                      simple$Estimate[simple$var=="force:chill" & simple$sp=="6"], simple$est2)
+simple$spp<-(as.numeric(simple$sp)-1)*0.1
+simple$Jvar2<-as.numeric(simple$Jvar)-simple$spp
+
+#simple$Jvar2<-ifelse(simple$sp=="4", simple$Jvar2-0.1, simple$Jvar2)
+#simple$Jvar2<-ifelse(simple$sp=="8", simple$Jvar2-0.2, simple$Jvar2)
+
+simple$Estimate<-ifelse(simple$var=="photo", -simple$Estimate, simple$Estimate)
+simple$Estimate<-ifelse(simple$var=="chill", -simple$Estimate, simple$Estimate)
+simple$Estimate<-ifelse(simple$var=="force:photo", -simple$Estimate, simple$Estimate)
+simple$Estimate<-ifelse(simple$var=="force:chill", -simple$Estimate, simple$Estimate)
+
+species<-unique(simple$sp)
+simple$est2<-NA
+for(i in c(1:length(species))) {
+  simple$est2<-ifelse(simple$sp==species[i] & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="photo" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="force:photo" & simple$sp==species[i]], simple$est2)
+  simple$est2<-ifelse(simple$sp==species[i] & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="chill" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="force:chill" & simple$sp==species[i]], simple$est2)
+
+}
+
+
+simple$est2<-simple$est2+23.71
+
 
 estimates<-rev(estimates)
-exp<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=sp)) +
-  geom_vline(xintercept=0, linetype="dotted") +
+exp<-ggplot(simple, aes(x=23.71, xend=est2, y=Jvar2, yend=Jvar2, col=sp)) +
+  geom_vline(xintercept=23.71, linetype="dotted") +
   scale_colour_manual(name="Species", values=c("#CC6666", "#9999CC", "#66CC99"),
-                      labels=c("3"=expression(paste(italic("Acer saccharum"))), 
-                               "8"=expression(paste(italic("Populus grandidentata"))),
-                               "6"=expression(paste(italic("Fagus grandifolia"))))) + 
+                      labels=c("1"=expression(paste(italic("Acer pensylvanicum"))),
+                               "4"=expression(paste(italic("Betula alleghaniensis"))),
+                               "8"=expression(paste(italic("Populus grandidentata"))))) + 
   geom_segment(arrow = arrow(length = unit(0.03, "npc"))) +
   scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) + 
   xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 
-  annotate("text", x = -4.35, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
-  annotate("text", x = -4.8, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  annotate("text", x = 4.35, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
+  annotate("text", x = 4.8, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
   theme(legend.text=element_text(size=8), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
         legend.position=c(0.8, 0.8)) + theme_linedraw() + coord_cartesian(ylim=c(1,5))
 quartz()
