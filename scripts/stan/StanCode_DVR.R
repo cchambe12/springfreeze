@@ -13,15 +13,16 @@ runstan = TRUE # set to TRUE to actually run stan models. FALSE if loading from 
 # Analysis of bud burst experiment 2015. 
 
 library(ggplot2)
-library(rstan)
+#library(rstan)
 library(rstanarm)
-library(shinystan)
-library(bayesplot)
+#library(shinystan)
+#library(bayesplot)
 library(dplyr)
 library(gridExtra)
 library(brms)
 library(egg)
 library(ggstance)
+library(RColorBrewer)
 
 setwd("~/Documents/git/springfreeze/")
 source('scripts/stan/savestan.R')
@@ -132,6 +133,7 @@ fit.brm2<-brm(risk~ force + photo + chill1 + chill2 + force:photo + force:chill1
 
 
 save(fit.brm2, file="~/Documents/git/springfreeze/output/exp_output.Rdata")
+load(file="output/exp_output.Rdata")
 
 m<-fit.brm2
 m.int<-posterior_interval(m)
@@ -218,7 +220,8 @@ simple$Jvar<-ifelse(simple$var=="force:photo", 2, simple$Jvar)
 simple$Jvar<-ifelse(simple$var=="force:chill", 1, simple$Jvar)
 simple$Jvar2<-as.numeric(simple$Jvar)
 
-simple$spp<-(as.numeric(simple$sp)-1)*0.05
+simple$spp<-(as.numeric(simple$sp)-1)
+simple$spp<-ifelse(simple$spp>1, (simple$spp*0.05) - 0.05, 0)
 simple$Jvar2<-as.numeric(simple$Jvar)-simple$spp
 
 #simple$Jvar2<-ifelse(simple$sp=="4", simple$Jvar2-0.1, simple$Jvar2)
@@ -242,24 +245,34 @@ for(i in c(1:length(species))) {
 }
 
 
-simple$est3<-simple$est2+23.71
+#simple$est3<-simple$est2+23.71
 
 
 estimates<-rev(estimates)
-exp<-ggplot(simple, aes(x=23.71, xend=est3, y=Jvar2, yend=Jvar2, col=sp)) +
-  geom_vline(xintercept=23.71, linetype="dotted") +
-  #scale_colour_manual(name="Species", values=c("#CC6666", "#9999CC", "#66CC99"),
-   #                   labels=c("1"=expression(paste(italic("Acer pensylvanicum"))),
-    #                           "4"=expression(paste(italic("Betula alleghaniensis"))),
-     #                          "8"=expression(paste(italic("Populus grandidentata"))))) + 
+cols <- colorRampPalette(brewer.pal(9,"Spectral"))(9)
+exp<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=sp)) +
+  geom_vline(xintercept=0, linetype="dotted") +
+  scale_colour_manual(name="Species", values=cols,
+                      labels=c("1"=expression(paste(italic("Acer pensylvanicum"))),
+                               "2"=expression(paste(italic("Acer rubrum"))),
+                               "3"=expression(paste(italic("Acer saccharum"))),
+                               "4"=expression(paste(italic("Betula alleghaniensis"))),
+                               "5"=expression(paste(italic("Betula papyrifera"))),
+                               "6"=expression(paste(italic("Fagus grandifolia"))),
+                               "7"=expression(paste(italic("Ilex mucronata"))),
+                               "8"=expression(paste(italic("Populus grandidentata"))),
+                               "9"=expression(paste(italic("Quercus rubra"))))) + 
   geom_segment(arrow = arrow(length = unit(0.03, "npc"))) +
   scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) + 
   xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 
-  annotate("text", x = 11.55, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
-  annotate("text", x = 10.8, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  annotate("text", x = -12.35, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
+  annotate("text", x = -12.8, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  theme_linedraw() +
   theme(legend.text=element_text(size=8), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
-        legend.position=c(0.8, 0.8)) + theme_linedraw() + coord_cartesian(ylim=c(1,5))
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        panel.background = element_blank(), axis.line = element_line(colour = "black"), 
+        text=element_text(family="sans")) + coord_cartesian(ylim=c(1,5))
 quartz()
 exp
 

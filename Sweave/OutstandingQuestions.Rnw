@@ -1,0 +1,74 @@
+\documentclass{article}[12pt]
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{mdframed}
+\usepackage[numbers]{natbib}
+\bibliographystyle{..//refs/styles/nature.bst}
+\usepackage[small]{caption}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+\topmargin -1.5cm        
+\oddsidemargin -0.04cm   
+\evensidemargin -0.04cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{2}
+\parindent 0pt
+\usepackage{lineno}
+\linenumbers
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(xtable)
+library(arm)
+library(grid)
+library(lubridate)
+library(stargazer)
+library(gridExtra)
+@
+
+\begin{document}
+\noindent \textbf{\Large{Rethinking False Spring Risk}}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+\setkeys{Gin}{width=0.8\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General to do
+% Move all figures and their captions to end of manuscript
+% Work on transitions throughout. I made note of it many places.
+% My comments are usually in [] and I made some edits throughout. You can use the app FileMerge (spotlight search for it) on most Macs to see the changes quickly. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Outstanding Questions}
+\begin{enumerate}
+\item What are the different plant avoidance and tolerance strategies across species and how will those differences and strategies shift with climate change?
+\item How should false spring studies determine which temperature threshold is appropriate for defining a false spring?
+\item How does life stage or position within a forest affect a plant`s risk of damage from false springs?
+\item How are phenological cues and their interactions shifting with climate change and how will that affect a plant`s duration of vegetative risk?
+\item What regions are most at risk from false springs now and what regions will be at risk in the future? 
+\item Are there differences in level of risk across elevations, latitudes and/or are there coastal effects? 
+\end{enumerate}
+
+\end{document}
