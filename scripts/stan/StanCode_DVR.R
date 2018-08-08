@@ -14,11 +14,11 @@ runstan = TRUE # set to TRUE to actually run stan models. FALSE if loading from 
 
 library(ggplot2)
 #library(rstan)
-library(rstanarm)
+#library(rstanarm)
 #library(shinystan)
 #library(bayesplot)
 library(dplyr)
-library(gridExtra)
+#library(gridExtra)
 library(brms)
 library(egg)
 library(ggstance)
@@ -199,7 +199,9 @@ fig1
 simple<-subset(dfwide, select=c("sp", "var", "Estimate"))
 #simple<-simple[(simple$sp=="1"|simple$sp=="4"|simple$sp=="8"),]
 #simple$sp<-ifelse(simple$sp=="4", "1", "9")
-simple<-simple[!(simple$sp=="0"),]
+species<-c("1", "6", "8")
+simple<-subset(simple, sp%in%species)
+#simple<-simple[!(simple$sp=="0"),]
 simple<-simple[!(simple$var=="photo:chill1" | simple$var=="photo:chill2" | simple$var=="force:chill1" 
                  | simple$var=="chill1"),]
 simple$var<-ifelse(simple$var=="chill2", "chill", as.character(simple$var))
@@ -208,6 +210,8 @@ simple$var<-ifelse(simple$var=="force:chill2", "force:chill", as.character(simpl
 
 estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod", 
              "More Forcing and \nLess Chilling")
+estimates2<-c("More Forcing", "Longer Photoperiod", "More Chilling", "More Forcing and \nLonger Photoperiod", 
+             "More Forcing and \nMore Chilling")
 
 #pd <- position_dodgev(height = -0.5)
 #simple$Jvar <- ave(as.numeric(simple$var), simple$var, 
@@ -220,61 +224,100 @@ simple$Jvar<-ifelse(simple$var=="force:photo", 2, simple$Jvar)
 simple$Jvar<-ifelse(simple$var=="force:chill", 1, simple$Jvar)
 simple$Jvar2<-as.numeric(simple$Jvar)
 
-simple$spp<-(as.numeric(simple$sp)-1)
-simple$spp<-ifelse(simple$spp>1, (simple$spp*0.05) - 0.05, 0)
+simple$spp<-NA
+simple$spp<-ifelse(simple$sp=="1", 1, simple$spp)
+simple$spp<-ifelse(simple$sp=="6", 2, simple$spp)
+simple$spp<-ifelse(simple$sp=="8", 3, simple$spp)
+#simple$spp<-as.numeric(simple$sp)-1
+simple$spp<-ifelse(simple$spp>1, (simple$spp*0.1) - 0.1, 0)
 simple$Jvar2<-as.numeric(simple$Jvar)-simple$spp
 
 #simple$Jvar2<-ifelse(simple$sp=="4", simple$Jvar2-0.1, simple$Jvar2)
 #simple$Jvar2<-ifelse(simple$sp=="8", simple$Jvar2-0.2, simple$Jvar2)
 
-simple$Estimate<-ifelse(simple$var=="photo", -simple$Estimate, simple$Estimate)
-simple$Estimate<-ifelse(simple$var=="chill", -simple$Estimate, simple$Estimate)
-simple$Estimate<-ifelse(simple$var=="force:photo", -simple$Estimate, simple$Estimate)
-simple$Estimate<-ifelse(simple$var=="force:chill", -simple$Estimate, simple$Estimate)
+simple$newEstimate<-simple$Estimate
+simple$newEstimate<-ifelse(simple$var=="photo", -simple$Estimate, simple$newEstimate)
+simple$newEstimate<-ifelse(simple$var=="chill", -simple$Estimate, simple$newEstimate)
+simple$newEstimate<-ifelse(simple$var=="force:photo", -simple$Estimate, simple$newEstimate)
+simple$newEstimate<-ifelse(simple$var=="force:chill", -simple$Estimate, simple$newEstimate)
 
+simple$sp<-as.numeric(simple$sp)-1
 species<-unique(simple$sp)
-simple$est2<-simple$Estimate
+simple$est2<-simple$newEstimate
 for(i in c(1:length(species))) {
-  simple$est2<-ifelse(simple$sp==species[i] & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp==species[i]]+
-                        simple$Estimate[simple$var=="photo" & simple$sp==species[i]]+
-                        simple$Estimate[simple$var=="force:photo" & simple$sp==species[i]], simple$Estimate)
-  simple$est2<-ifelse(simple$sp==species[i] & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp==species[i]]+
-                        simple$Estimate[simple$var=="chill" & simple$sp==species[i]]+
-                        simple$Estimate[simple$var=="force:chill" & simple$sp==species[i]], simple$est2)
+  simple$est2<-ifelse(simple$sp==species[i] & simple$var=="force:photo", simple$newEstimate[simple$var=="force" & simple$sp==species[i]]+
+                        simple$newEstimate[simple$var=="photo" & simple$sp==species[i]]+
+                        simple$newEstimate[simple$var=="force:photo" & simple$sp==species[i]], simple$est2)
+  simple$est2<-ifelse(simple$sp==species[i] & simple$var=="force:chill", simple$newEstimate[simple$var=="force" & simple$sp==species[i]]+
+                        simple$newEstimate[simple$var=="chill" & simple$sp==species[i]]+
+                        simple$newEstimate[simple$var=="force:chill" & simple$sp==species[i]], simple$est2)
 
 }
+simple$est1<-simple$Estimate
+for(i in c(1:length(species))) {
+  simple$est1<-ifelse(simple$sp==species[i] & simple$var=="force:photo", simple$Estimate[simple$var=="force" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="photo" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="force:photo" & simple$sp==species[i]], simple$est1)
+  simple$est1<-ifelse(simple$sp==species[i] & simple$var=="force:chill", simple$Estimate[simple$var=="force" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="chill" & simple$sp==species[i]]+
+                        simple$Estimate[simple$var=="force:chill" & simple$sp==species[i]], simple$est1)
+  
+}
 
-
-#simple$est3<-simple$est2+23.71
-
+simple$est3<-simple$est2+23.71
+simple$est4<-simple$est1+23.71
 
 estimates<-rev(estimates)
-cols <- colorRampPalette(brewer.pal(9,"Spectral"))(9)
-exp<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=sp)) +
-  geom_vline(xintercept=0, linetype="dotted") +
+estimates2<-rev(estimates2)
+cols <- colorRampPalette(brewer.pal(3,"Accent"))(3)
+expB<-ggplot(simple, aes(x=23.71, xend=est3, y=Jvar2, yend=Jvar2, col=as.factor(sp))) +
+  geom_vline(xintercept=23.71, linetype="dotted") +
   scale_colour_manual(name="Species", values=cols,
-                      labels=c("1"=expression(paste(italic("Acer pensylvanicum"))),
+                      labels=c("1"=expression(paste(italic("Acer \npensylvanicum"))),
                                "2"=expression(paste(italic("Acer rubrum"))),
                                "3"=expression(paste(italic("Acer saccharum"))),
                                "4"=expression(paste(italic("Betula alleghaniensis"))),
                                "5"=expression(paste(italic("Betula papyrifera"))),
-                               "6"=expression(paste(italic("Fagus grandifolia"))),
+                               "6"=expression(paste(italic("Fagus \ngrandifolia"))),
                                "7"=expression(paste(italic("Ilex mucronata"))),
-                               "8"=expression(paste(italic("Populus grandidentata"))),
+                               "8"=expression(paste(italic("Populus \ngrandidentata"))),
                                "9"=expression(paste(italic("Quercus rubra"))))) + 
   geom_segment(arrow = arrow(length = unit(0.03, "npc"))) +
   scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) + 
-  xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
+  xlab("Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 
-  annotate("text", x = -12.35, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
-  annotate("text", x = -12.8, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  annotate("text", x = 7, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
+  annotate("text", x = 5.5, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
   theme_linedraw() +
-  theme(legend.text=element_text(size=8), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
+  theme(legend.text=element_text(size=5), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), axis.line = element_line(colour = "black"), 
-        text=element_text(family="sans")) + coord_cartesian(ylim=c(1,5))
+        text=element_text(family="sans"), legend.position = "none") + coord_cartesian(ylim=c(1,5), xlim=c(0, 40)) + ggtitle("B.")
+expA<-ggplot(simple, aes(x=23.71, xend=est4, y=Jvar2, yend=Jvar2, col=as.factor(sp))) +
+  geom_vline(xintercept=23.71, linetype="dotted") +
+  scale_colour_manual(name="Species", values=cols,
+                      labels=c("1"=expression(paste(italic("Acer \npensylvanicum"))),
+                               "2"=expression(paste(italic("Acer rubrum"))),
+                               "3"=expression(paste(italic("Acer saccharum"))),
+                               "4"=expression(paste(italic("Betula alleghaniensis"))),
+                               "5"=expression(paste(italic("Betula papyrifera"))),
+                               "6"=expression(paste(italic("Fagus \ngrandifolia"))),
+                               "7"=expression(paste(italic("Ilex mucronata"))),
+                               "8"=expression(paste(italic("Populus \ngrandidentata"))),
+                               "9"=expression(paste(italic("Quercus rubra"))))) + 
+  geom_segment(arrow = arrow(length = unit(0.03, "npc"))) +
+  scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates2) + 
+  xlab("Duration (Days) \nof Vegetative Risk") + ylab("") +
+  geom_hline(yintercept=2.5, col="grey") + 
+  annotate("text", x = 7, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
+  annotate("text", x = 5.5, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  theme_linedraw() +
+  theme(legend.text=element_text(size=6), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
+        panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+        panel.background = element_blank(), axis.line = element_line(colour = "black"), 
+        text=element_text(family="sans"), legend.position = c(0.8,0.85)) + coord_cartesian(ylim=c(1,5), xlim=c(0, 40)) + ggtitle("A.")
 quartz()
-exp
+ggarrange(expA, expB, ncol=2, nrow=1)
 
 ######################################################################################
 ##################### Making two plots for manuscript ################################
