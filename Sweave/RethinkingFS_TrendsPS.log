@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 AUG 2018 08:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  8 AUG 2018 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -882,61 +882,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--108
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 212.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 211.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
  [16] <figure/temp-1.pdf, id=64, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
 
 <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 223.
+Package pdftex.def Info: figure/temp-1.pdf used on input line 222.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
  [17 <./figure/fsifig-1.pdf>]
 <figure/risk-1.pdf, id=74, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
  <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 235.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 234.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 [18 <./figure/temp-1.pdf>]
-<..//figure/DVR_diffplots_nophoto.pdf, id=88, 592.80498pt x 332.37836pt>
-File: ..//figure/DVR_diffplots_nophoto.pdf Graphic file (type pdf)
+<..//figure/Exp_plot_Comparison.pdf, id=88, 630.37265pt x 343.20288pt>
+File: ..//figure/Exp_plot_Comparison.pdf Graphic file (type pdf)
 
-<use ..//figure/DVR_diffplots_nophoto.pdf>
-Package pdftex.def Info: ..//figure/DVR_diffplots_nophoto.pdf used on input lin
-e 247.
-(pdftex.def)             Requested size: 455.2582pt x 284.52623pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 248.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 248.
- [19 <./figure/risk-1.pdf>] [20 <..//figure/DVR_diffplots_nophoto.pdf>] (./Reth
-inkingFS_TrendsPS.aux) ) 
+<use ..//figure/Exp_plot_Comparison.pdf>
+Package pdftex.def Info: ..//figure/Exp_plot_Comparison.pdf used on input line 
+246.
+(pdftex.def)             Requested size: 455.26266pt x 284.53886pt.
+ [19 <./figure/risk-1.pdf>] [20 <..//figure/Exp_plot_Comparison.pdf>] (./Rethin
+kingFS_TrendsPS.aux) ) 
 Here is how much of TeX's memory you used:
- 15844 strings out of 493014
- 313972 string characters out of 6133351
+ 15827 strings out of 493014
+ 313772 string characters out of 6133351
  340357 words of memory out of 5000000
- 19178 multiletter control sequences out of 15000+600000
- 35592 words of font info for 69 fonts, out of 8000000 for 9000
+ 19166 multiletter control sequences out of 15000+600000
+ 33740 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,10393b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mss8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.
+ 37i,6n,42p,10393b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+s8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
 pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb
 >
-Output written on RethinkingFS_TrendsPS.pdf (20 pages, 434206 bytes).
+Output written on RethinkingFS_TrendsPS.pdf (20 pages, 426322 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
+ 322 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
