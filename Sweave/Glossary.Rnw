@@ -63,17 +63,17 @@ library(gridExtra)
 
 \section*{Glossary}
 
-\textbf{False Spring: } damaging freezing temperatures after budburst and before full leaf expansion\\
+\textbf{Budburst: } the timing when buds exit the dormany phase and the first green tips are visible 
 
-\textbf{Duration of Vegetative Risk} the number of days between budburst and leafout \\
+\textbf{Leafout: } the timing when leaves are fully unfolded following budburst 
 
-\textbf{Budburst: } the timing when buds exit the dormany phase and the first green tips are visible \\
+\textbf{False Spring: } damaging freezing temperatures after budburst and before full leaf expansion 
 
-\textbf{Leafout: } the timing when leaves are fully unfolded following budburst \\
+\textbf{Duration of Vegetative Risk} the number of days between budburst and leafout 
 
-\textbf{Avoidance Strategies: } flexible spring phenolgies where plants with later budburst times or shorter durations of vegetative risk have a lower risk of exposure to false springs \\
+\textbf{Avoidance Strategies: } flexible spring phenolgies where plants with later budburst times or shorter durations of vegetative risk have a lower risk of exposure to false springs 
 
-\textbf{Tolerance Strategies: } morphological differences that reduce the risk, or extent of, ice formation during a false spring \\
+\textbf{Tolerance Strategies: } morphological differences that reduce the risk, or extent of, ice formation during a false spring 
 
 \textbf{Phenological Cues: } the three major cues (i.e. winter chilling temperatures, spring warming temperatures, and daylength) and their interactions that influence budburst and leafout
 

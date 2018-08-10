@@ -209,7 +209,8 @@ simple$var<-ifelse(simple$var=="force:chill2", "force:chill", as.character(simpl
 
 
 estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod", 
-             "More Forcing and \nLess Chilling")
+             "More Forcing and \nLonger Photoperiod", "More Forcing and \nLess Chilling",
+             "More Forcing and \nMore Chilling")
 estimates2<-c("More Forcing", "Longer Photoperiod", "More Chilling", "More Forcing and \nLonger Photoperiod", 
              "More Forcing and \nMore Chilling")
 
@@ -217,11 +218,11 @@ estimates2<-c("More Forcing", "Longer Photoperiod", "More Chilling", "More Forci
 #simple$Jvar <- ave(as.numeric(simple$var), simple$var, 
  #                         FUN = function(x) x + rnorm(length(x), sd = .1))
 simple$Jvar<-NA
-simple$Jvar<-ifelse(simple$var=="force", 5, simple$var)
-simple$Jvar<-ifelse(simple$var=="photo", 4, simple$Jvar)
-simple$Jvar<-ifelse(simple$var=="chill", 3, simple$Jvar)
-simple$Jvar<-ifelse(simple$var=="force:photo", 2, simple$Jvar)
-simple$Jvar<-ifelse(simple$var=="force:chill", 1, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="force", 7, simple$var)
+simple$Jvar<-ifelse(simple$var=="photo", 6, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="chill", 5, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="force:photo", 4, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="force:chill", 2, simple$Jvar)
 simple$Jvar2<-as.numeric(simple$Jvar)
 
 simple$spp<-NA
@@ -264,14 +265,22 @@ for(i in c(1:length(species))) {
   
 }
 
-simple$est3<-simple$est2+23.71
-simple$est4<-simple$est1+23.71
+simple<-rbind(simple,list(1,"force:photo2",0, 3, 3, 0, 0, -19.931451, 0))
+simple<-rbind(simple,list(6,"force:photo2",0, 3, 2.9, 0, 0, -11.411366, 0))
+simple<-rbind(simple,list(8,"force:photo2",0, 3, 2.8, 0, 0, -17.263985, 0))
+simple<-rbind(simple,list(1,"force:chill2",0, 1, 1, 0, 0, -17.770982, 0))
+simple<-rbind(simple,list(6,"force:chill2",0, 1, 0.9, 0, 0, -8.583867, 0))
+simple<-rbind(simple,list(8,"force:chill2",0, 1, 0.8, 0, 0, -14.645137, 0))
+
+
+#simple$est3<-simple$est2+23.71
+#simple$est4<-simple$est1+23.71
 
 estimates<-rev(estimates)
 estimates2<-rev(estimates2)
 cols <- colorRampPalette(brewer.pal(3,"Accent"))(3)
-expB<-ggplot(simple, aes(x=23.71, xend=est3, y=Jvar2, yend=Jvar2, col=as.factor(sp))) +
-  geom_vline(xintercept=23.71, linetype="dotted") +
+expB<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=as.factor(sp))) +
+  geom_vline(xintercept=0, linetype="dotted") +
   scale_colour_manual(name="Species", values=cols,
                       labels=c("1"=expression(paste(italic("Acer \npensylvanicum"))),
                                "2"=expression(paste(italic("Acer rubrum"))),
@@ -282,17 +291,31 @@ expB<-ggplot(simple, aes(x=23.71, xend=est3, y=Jvar2, yend=Jvar2, col=as.factor(
                                "7"=expression(paste(italic("Ilex mucronata"))),
                                "8"=expression(paste(italic("Populus \ngrandidentata"))),
                                "9"=expression(paste(italic("Quercus rubra"))))) + 
-  geom_segment(arrow = arrow(length = unit(0.03, "npc"))) +
-  scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) + 
-  xlab("Duration (Days) \nof Vegetative Risk") + ylab("") +
-  geom_hline(yintercept=2.5, col="grey") + 
-  annotate("text", x = 7, y = 2.4, label = "Combined Effects:", fontface="bold", size=3) +
-  annotate("text", x = 5.5, y = 5.5, label = "Simple Effects:", fontface="bold", size=3) + 
+  scale_linetype_manual(name="Species", values=c("solid", "longdash", "dotdash"),
+                      labels=c("1"=expression(paste(italic("Acer \npensylvanicum"))),
+                               "2"=expression(paste(italic("Acer rubrum"))),
+                               "3"=expression(paste(italic("Acer saccharum"))),
+                               "4"=expression(paste(italic("Betula alleghaniensis"))),
+                               "5"=expression(paste(italic("Betula papyrifera"))),
+                               "6"=expression(paste(italic("Fagus \ngrandifolia"))),
+                               "7"=expression(paste(italic("Ilex mucronata"))),
+                               "8"=expression(paste(italic("Populus \ngrandidentata"))),
+                               "9"=expression(paste(italic("Quercus rubra"))))) +
+  geom_segment(arrow = arrow(length = unit(0.02, "npc")), aes(linetype=as.factor(sp))) +
+  scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) +
+  xlab("Duration (Days) of Vegetative Risk") + ylab("") +
+  geom_hline(yintercept=4.5, col="grey") + 
+  annotate("text", x = -15.8, y = 4.35, label = "COMBINED EFFECTS:", fontface="bold", size=2.5) +
+  annotate("text", x = -13.0, y = 7.4, label = "ESTIMATED ISOLATED EFFECTS:", fontface="bold", size=2.5) + 
   theme_linedraw() +
   theme(legend.text=element_text(size=5), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), axis.line = element_line(colour = "black"), 
-        text=element_text(family="sans"), legend.position = "none") + coord_cartesian(ylim=c(1,5), xlim=c(0, 40)) + ggtitle("B.")
+        text=element_text(family="sans"), legend.position = c(0.85,0.15),
+        legend.text.align = 0) + coord_cartesian(ylim=c(1,7), xlim=c(-20, 10))
+quartz()
+expB
+
 expA<-ggplot(simple, aes(x=23.71, xend=est4, y=Jvar2, yend=Jvar2, col=as.factor(sp))) +
   geom_vline(xintercept=23.71, linetype="dotted") +
   scale_colour_manual(name="Species", values=cols,
