@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 AUG 2018 14:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 AUG 2018 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**RethinkingFS_TranstoWord.tex
-(./RethinkingFS_TranstoWord.tex
+**PhenologicalCues&Risk.tex
+(./PhenologicalCues&Risk.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -738,12 +738,30 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@ContinuedFloat=\count150
 Package caption Info: float package is loaded.
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count151
+\output=\toks21
+\linenoprevgraf=\count152
+\linenumbersep=\dimen175
+\linenumberwidth=\dimen176
+\c@linenumber=\count153
+\c@pagewiselinenumber=\count154
+\c@LN@truepage=\count155
+\c@internallinenumber=\count156
+\c@internallinenumbers=\count157
+\quotelinenumbersep=\dimen177
+\bframerule=\dimen178
+\bframesep=\dimen179
+\bframebox=\box57
+LaTeX Info: Redefining \\ on input line 3056.
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(./RethinkingFS_TranstoWord.aux)
-\openout1 = `RethinkingFS_TranstoWord.aux'.
+(./PhenologicalCues&Risk.aux)
+\openout1 = `PhenologicalCues&Risk.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
 LaTeX Font Info:    ... okay on input line 89.
@@ -767,17 +785,17 @@ LaTeX Font Info:    ... okay on input line 89.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
-\scratchdimen=\dimen175
-\scratchbox=\box57
-\nofMPsegments=\count152
-\nofMParguments=\count153
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count154
-\MPscratchDim=\dimen176
-\MPnumerator=\count155
-\makeMPintoPDFobject=\count156
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count158
+\scratchdimen=\dimen180
+\scratchbox=\box58
+\nofMPsegments=\count159
+\nofMParguments=\count160
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count161
+\MPscratchDim=\dimen181
+\MPnumerator=\count162
+\makeMPintoPDFobject=\count163
+\everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -834,76 +852,55 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box58
+\AtBeginShipoutBox=\box59
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\c__siunitx_mathsf_int=\count157
+\c__siunitx_mathsf_int=\count164
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 89.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 89.
-\c__siunitx_mathtt_int=\count158
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--108
-
- []
-
-[1
+\c__siunitx_mathtt_int=\count165
+LaTeX Font Info:    Try loading font information for T1+aess on input line 91.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aess.fd
+File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
+) [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3]
+(./PhenologicalCues&Risk.bbl [2])
+<..//figure/Exp_plotTPS.pdf, id=14, 357.21112pt x 355.30101pt>
+File: ..//figure/Exp_plotTPS.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 149.
-
-
-LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 153.
-
-
-LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 153.
-
-[4] [5]
-
-LaTeX Warning: Reference `fig:temp' on page 6 undefined on input line 168.
-
-
-LaTeX Warning: Reference `fig:risk' on page 6 undefined on input line 170.
-
-[6]
-
-LaTeX Warning: Reference `fig:dan' on page 7 undefined on input line 176.
-
-[7] [8] [9] (./RethinkingFS_TranstoWord.bbl [10] [11] [12] [13] [14] [15])
-[16] (./RethinkingFS_TranstoWord.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+<use ..//figure/Exp_plotTPS.pdf>
+Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 106.
+(pdftex.def)             Requested size: 341.45258pt x 341.44833pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 107.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 107.
+ [3] [4 <..//figure/Exp_plotTPS.pdf>]
+(./PhenologicalCues&Risk.aux) ) 
 Here is how much of TeX's memory you used:
- 15561 strings out of 493014
- 309683 string characters out of 6133351
- 337029 words of memory out of 5000000
- 18927 multiletter control sequences out of 15000+600000
- 25867 words of font info for 49 fonts, out of 8000000 for 9000
+ 15655 strings out of 493014
+ 310509 string characters out of 6133351
+ 338474 words of memory out of 5000000
+ 19000 multiletter control sequences out of 15000+600000
+ 29448 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,10396b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on RethinkingFS_TranstoWord.pdf (16 pages, 155037 bytes).
+ 37i,6n,42p,10393b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmss8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti9.pfb>
+Output written on PhenologicalCues&Risk.pdf (4 pages, 234326 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 149 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
