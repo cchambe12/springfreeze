@@ -63,11 +63,11 @@ library(gridExtra)
 
 \section*{Glossary}
 
-\textbf{Budburst:} the timing when buds exit the dormancy phase and begin leaf tissue growth each season, usually estimated visually as when the first green tips are visible.
+\textbf{Budburst:} the timing when buds exit the dormancy phase and begin leaf tissue growth each season, usually estimated visually as when the first green tips are visible
 
-\textbf{Leafout:} the timing when leaves are fully unfolded following budburst 
+\textbf{Leafout:} the timing when leaves are fully unfolded following budburst
 
-\textbf{False Spring:} damaging freezing temperatures after budburst and before full leaf expansion that result in tissue damage.
+\textbf{False Spring:} damaging freezing temperatures after budburst and before full leaf expansion that results in tissue damage
 
 \textbf{Duration of Vegetative Risk:} the number of days between budburst and leafout 
 
