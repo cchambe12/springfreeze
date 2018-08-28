@@ -69,7 +69,7 @@ library(gridExtra)
 
 \textbf{False Spring:} damaging freezing temperatures after budburst and before full leaf expansion that results in tissue damage
 
-\textbf{Duration of Vegetative Risk:} the number of days between budburst and leafout 
+\textbf{Duration of Vegetative Risk:} the number of days between budburst and leafout, when plants are most susceptible to spring freeze damage
 
 \textbf{Avoidance Strategies:} flexible spring phenologies that reduce the risk of exposure to false springs through methods such as later budburst times or shorter durations of vegetative risk
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 AUG 2018 14:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 AUG 2018 07:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -911,10 +911,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [19 <./figure/risk-1.pdf>] [20 <..//figure/Exp_plotTPS.pdf>] (./RethinkingFS_T
 rendsPS.aux) ) 
 Here is how much of TeX's memory you used:
- 15850 strings out of 493014
- 314024 string characters out of 6133351
- 341389 words of memory out of 5000000
- 19184 multiletter control sequences out of 15000+600000
+ 15847 strings out of 493014
+ 313967 string characters out of 6133351
+ 340373 words of memory out of 5000000
+ 19181 multiletter control sequences out of 15000+600000
  35592 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,42p,10393b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -931,7 +931,7 @@ usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_TrendsPS.pdf (20 pages, 345487 bytes).
+Output written on RethinkingFS_TrendsPS.pdf (20 pages, 344953 bytes).
 PDF statistics:
  249 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams
