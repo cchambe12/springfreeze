@@ -208,7 +208,8 @@ simple$var<-ifelse(simple$var=="chill2", "chill", as.character(simple$var))
 simple$var<-ifelse(simple$var=="force:chill2", "force:chill", as.character(simple$var))
 
 
-estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod", "More Forcing and \nLess Chilling")
+estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod \n(Interaction Effect)", "More Forcing and \nLess Chilling \n(Interaction Effect)",
+             "More Forcing and \nShorter Photoperiod", "More Forcing and \nLess Chilling")
 
 #estimates2<-c("More Forcing", "Longer Photoperiod", "More Chilling", "More Forcing and \nLonger Photoperiod", 
  #            "More Forcing and \nMore Chilling")
@@ -217,11 +218,13 @@ estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forci
 #simple$Jvar <- ave(as.numeric(simple$var), simple$var, 
  #                         FUN = function(x) x + rnorm(length(x), sd = .1))
 simple$Jvar<-NA
-simple$Jvar<-ifelse(simple$var=="force", 5, simple$var)
-simple$Jvar<-ifelse(simple$var=="photo", 4, simple$Jvar)
-simple$Jvar<-ifelse(simple$var=="chill", 3, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="force", 7, simple$var)
+simple$Jvar<-ifelse(simple$var=="photo", 6, simple$Jvar)
+simple$Jvar<-ifelse(simple$var=="chill", 5, simple$Jvar)
 simple$Jvar<-ifelse(simple$var=="force:photo", 2, simple$Jvar)
 simple$Jvar<-ifelse(simple$var=="force:chill", 1, simple$Jvar)
+#simple$Jvar<-ifelse(simple$var=="cforce:photo", 2, simple$Jvar)
+#simple$Jvar<-ifelse(simple$var=="cforce:chill", 1, simple$Jvar)
 simple$Jvar2<-as.numeric(simple$Jvar)
 
 simple$spp<-NA
@@ -264,12 +267,12 @@ for(i in c(1:length(species))) {
   
 #}
 
-#simple<-rbind(simple,list(1,"force:photo2",0, 3, 3, 0, 0, -19.931451, 0))
-#simple<-rbind(simple,list(6,"force:photo2",0, 3, 2.9, 0, 0, -11.411366, 0))
-#simple<-rbind(simple,list(8,"force:photo2",0, 3, 2.8, 0, 0, -17.263985, 0))
-#simple<-rbind(simple,list(1,"force:chill2",0, 1, 1, 0, 0, -17.770982, 0))
-#simple<-rbind(simple,list(6,"force:chill2",0, 1, 0.9, 0, 0, -8.583867, 0))
-#simple<-rbind(simple,list(8,"force:chill2",0, 1, 0.8, 0, 0, -14.645137, 0))
+simple<-rbind(simple,list(1,"force:photo2",0, 3, 4, 0, 0, simple$newEstimate[simple$sp==1 & simple$var=="force:photo"], 0))
+simple<-rbind(simple,list(6,"force:photo2",0, 3, 3.9, 0, 0, simple$newEstimate[simple$sp==6 & simple$var=="force:photo"], 0))
+simple<-rbind(simple,list(8,"force:photo2",0, 3, 3.8, 0, 0, simple$newEstimate[simple$sp==8 & simple$var=="force:photo"], 0))
+simple<-rbind(simple,list(1,"force:chill2",0, 1, 3, 0, 0, simple$newEstimate[simple$sp==1 & simple$var=="force:chill"], 0))
+simple<-rbind(simple,list(6,"force:chill2",0, 1, 2.9, 0, 0, simple$newEstimate[simple$sp==6 & simple$var=="force:chill"], 0))
+simple<-rbind(simple,list(8,"force:chill2",0, 1, 2.8, 0, 0, simple$newEstimate[simple$sp==8 & simple$var=="force:chill"], 0))
 
 
 #simple$est3<-simple$est2+23.71
@@ -305,13 +308,13 @@ expB<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=as.factor(sp))
   xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 
   annotate("text", x = -16.1, y = 2.4, label = "COMBINED EFFECTS:", fontface="bold", size=2.5) +
-  annotate("text", x = -13.4, y = 5.5, label = "ESTIMATED ISOLATED EFFECTS:", fontface="bold", size=2.5) + 
+  annotate("text", x = -13.4, y = 7.5, label = "ESTIMATED ISOLATED EFFECTS:", fontface="bold", size=2.5) + 
   theme_linedraw() +
   theme(legend.text=element_text(size=5), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), axis.line = element_line(colour = "black"), 
         text=element_text(family="sans"), legend.position = c(0.85,0.15),
-        legend.text.align = 0) + coord_cartesian(ylim=c(1,5), xlim=c(-20, 10))
+        legend.text.align = 0) + coord_cartesian(ylim=c(1,7), xlim=c(-20, 10))
 quartz()
 expB
 
