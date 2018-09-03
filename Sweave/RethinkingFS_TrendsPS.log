@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 SEP 2018 08:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 SEP 2018 08:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,12 +898,12 @@ Package pdftex.def Info: figure/risk-1.pdf used on input line 234.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 [18 <./figure/temp-1.pdf>]
-<..//figure/Exp_plotTPS.pdf, id=88, 361.6684pt x 400.5095pt>
+<..//figure/Exp_plotTPS.pdf, id=88, 359.75815pt x 355.30101pt>
 File: ..//figure/Exp_plotTPS.pdf Graphic file (type pdf)
 
 <use ..//figure/Exp_plotTPS.pdf>
 Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 246.
-(pdftex.def)             Requested size: 341.4418pt x 341.43694pt.
+(pdftex.def)             Requested size: 341.43893pt x 341.44833pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 247.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -931,7 +931,7 @@ usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_TrendsPS.pdf (20 pages, 375882 bytes).
+Output written on RethinkingFS_TrendsPS.pdf (20 pages, 375856 bytes).
 PDF statistics:
  273 PDF objects out of 1000 (max. 8388607)
  200 compressed objects within 2 object streams
