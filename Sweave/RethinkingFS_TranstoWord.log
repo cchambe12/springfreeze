@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 AUG 2018 08:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 SEP 2018 09:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,7 +877,7 @@ LaTeX Warning: Reference `fig:risk' on page 6 undefined on input line 170.
 
 LaTeX Warning: Reference `fig:dan' on page 7 undefined on input line 176.
 
-[7] [8] [9] (./RethinkingFS_TranstoWord.bbl [10] [11] [12] [13] [14] [15])
+[7] [8] (./RethinkingFS_TranstoWord.bbl [9] [10] [11] [12] [13] [14] [15])
 [16] (./RethinkingFS_TranstoWord.aux)
 
 LaTeX Warning: There were undefined references.
@@ -890,7 +890,7 @@ Here is how much of TeX's memory you used:
  18924 multiletter control sequences out of 15000+600000
  25867 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,10396b,429s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,6n,42p,10396b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
@@ -900,7 +900,7 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on RethinkingFS_TranstoWord.pdf (16 pages, 154499 bytes).
+Output written on RethinkingFS_TranstoWord.pdf (16 pages, 153714 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

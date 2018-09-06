@@ -23,7 +23,6 @@
 \renewcommand{\baselinestretch}{2}
 \parindent 0pt
 \usepackage{lineno}
-\linenumbers
 
 \newmdenv[
   topline=true,
@@ -42,7 +41,6 @@ library(xtable)
 library(arm)
 library(grid)
 library(lubridate)
-library(stargazer)
 library(gridExtra)
 @
 

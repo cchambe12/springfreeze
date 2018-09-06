@@ -208,7 +208,7 @@ simple$var<-ifelse(simple$var=="chill2", "chill", as.character(simple$var))
 simple$var<-ifelse(simple$var=="force:chill2", "force:chill", as.character(simple$var))
 
 
-estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "More Forcing and \nShorter Photoperiod \n(Interaction Effect)", "More Forcing and \nLess Chilling \n(Interaction Effect)",
+estimates<-c("More Forcing", "Shorter Photoperiod", "Less Chilling", "Interaction of More Forcing \nand Shorter Photoperiod", "Interaction of More Forcing \nand Less Chilling",
              "More Forcing and \nShorter Photoperiod", "More Forcing and \nLess Chilling")
 
 #estimates2<-c("More Forcing", "Longer Photoperiod", "More Chilling", "More Forcing and \nLonger Photoperiod", 
@@ -307,13 +307,13 @@ expB<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=as.factor(sp))
   scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) +
   xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 
-  annotate("text", x = -16.1, y = 2.4, label = "COMBINED EFFECTS:", fontface="bold", size=2.5) +
-  annotate("text", x = -13.4, y = 7.5, label = "ESTIMATED ISOLATED EFFECTS:", fontface="bold", size=2.5) + 
+  annotate("text", x = -16.1, y = 2.4, label = "COMBINED EFFECTS:", fontface="bold", size=2.5, family="Helvetica") +
+  annotate("text", x = -13.4, y = 7.5, label = "ESTIMATED ISOLATED EFFECTS:", fontface="bold", size=2.5, family="Helvetica") + 
   theme_linedraw() +
   theme(legend.text=element_text(size=5), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), axis.line = element_line(colour = "black"), 
-        text=element_text(family="sans"), legend.position = c(0.85,0.15),
+        text=element_text(family="Helvetica"), legend.position = c(0.85,0.15),
         legend.text.align = 0) + coord_cartesian(ylim=c(1,7), xlim=c(-20, 10))
 quartz()
 expB

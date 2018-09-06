@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 AUG 2018 07:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 SEP 2018 07:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -763,25 +763,25 @@ tim
 (./OutstandingQuestions.aux)
 \openout1 = `OutstandingQuestions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 88.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    ... okay on input line 88.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -857,33 +857,29 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count164
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 89.
+(Font)              <7> on input line 88.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 89.
+(Font)              <5> on input line 88.
 \c__siunitx_mathtt_int=\count165
-LaTeX Font Info:    Try loading font information for T1+aess on input line 91.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aess.fd
-File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
-) [1
+[1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (./OutstandingQuestions.aux) ) 
 Here is how much of TeX's memory you used:
- 15577 strings out of 493014
- 309455 string characters out of 6133351
- 336345 words of memory out of 5000000
- 18949 multiletter control sequences out of 15000+600000
- 17931 words of font info for 37 fonts, out of 8000000 for 9000
+ 15548 strings out of 493014
+ 308952 string characters out of 6133351
+ 335342 words of memory out of 5000000
+ 18928 multiletter control sequences out of 15000+600000
+ 14110 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,5n,42p,10392b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmss8.pfb>
-Output written on OutstandingQuestions.pdf (1 page, 38876 bytes).
+blic/amsfonts/cm/cmr10.pfb>
+Output written on OutstandingQuestions.pdf (1 page, 30144 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 16 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

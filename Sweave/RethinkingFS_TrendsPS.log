@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 SEP 2018 08:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 SEP 2018 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,37 +877,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--108
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] [8] [9] (./RethinkingFS_TrendsPS.bbl [10] [11] [12]
-[13] [14] [15]) <figure/fsifig-1.pdf, id=60, 433.62pt x 289.08pt>
+[2] [3] [4] [5] [6] [7] [8] (./RethinkingFS_TrendsPS.bbl [9] [10] [11] [12]
+[13] [14] [15]) <figure/fsifig-1.pdf, id=60, 505.89pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 211.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 214.
+(pdftex.def)             Requested size: 472.03111pt x 269.73705pt.
  [16] <figure/temp-1.pdf, id=64, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
 
 <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 222.
+Package pdftex.def Info: figure/temp-1.pdf used on input line 225.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
  [17 <./figure/fsifig-1.pdf>]
 <figure/risk-1.pdf, id=74, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
  <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 234.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 237.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 [18 <./figure/temp-1.pdf>]
-<..//figure/Exp_plotTPS.pdf, id=88, 359.75815pt x 355.30101pt>
+<..//figure/Exp_plotTPS.pdf, id=88, 401.78294pt x 387.7747pt>
 File: ..//figure/Exp_plotTPS.pdf Graphic file (type pdf)
 
 <use ..//figure/Exp_plotTPS.pdf>
-Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 246.
-(pdftex.def)             Requested size: 341.43893pt x 341.44833pt.
+Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 249.
+(pdftex.def)             Requested size: 341.43129pt x 341.44989pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 247.
+(Font)              <9> on input line 250.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 247.
+(Font)              <6> on input line 250.
  [19 <./figure/risk-1.pdf>] [20 <..//figure/Exp_plotTPS.pdf>] (./RethinkingFS_T
 rendsPS.aux) ) 
 Here is how much of TeX's memory you used:
@@ -931,10 +931,10 @@ usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_TrendsPS.pdf (20 pages, 375856 bytes).
+Output written on RethinkingFS_TrendsPS.pdf (20 pages, 358437 bytes).
 PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 200 compressed objects within 2 object streams
+ 265 PDF objects out of 1000 (max. 8388607)
+ 194 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
