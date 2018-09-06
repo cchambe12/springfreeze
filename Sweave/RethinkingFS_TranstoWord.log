@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 SEP 2018 09:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 SEP 2018 14:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -849,7 +849,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--103
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--108
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
@@ -858,24 +858,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--108
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] [3]
 
-LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 149.
+LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 147.
 
 
-LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 153.
+LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 151.
 
 
-LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 153.
+LaTeX Warning: Reference `fig:fsifig' on page 4 undefined on input line 151.
 
 [4] [5]
 
-LaTeX Warning: Reference `fig:temp' on page 6 undefined on input line 168.
+LaTeX Warning: Reference `fig:temp' on page 6 undefined on input line 166.
 
 
-LaTeX Warning: Reference `fig:risk' on page 6 undefined on input line 170.
+LaTeX Warning: Reference `fig:risk' on page 6 undefined on input line 168.
 
 [6]
 
-LaTeX Warning: Reference `fig:dan' on page 7 undefined on input line 176.
+LaTeX Warning: Reference `fig:dan' on page 7 undefined on input line 174.
 
 [7] [8] (./RethinkingFS_TranstoWord.bbl [9] [10] [11] [12] [13] [14] [15])
 [16] (./RethinkingFS_TranstoWord.aux)
@@ -900,7 +900,7 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
 cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on RethinkingFS_TranstoWord.pdf (16 pages, 153714 bytes).
+Output written on RethinkingFS_TranstoWord.pdf (16 pages, 153664 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

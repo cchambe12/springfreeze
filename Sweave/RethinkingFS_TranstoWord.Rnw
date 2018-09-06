@@ -62,8 +62,6 @@ $^*$Corresponding author: 248.953.0189; cchamberlain@g.harvard.edu\\
 
 \noindent \emph{Keywords:} false spring, phenology, freezing tolerance, climate change, forest communities \\
 %\tableofcontents
-\emph{Paper type:} Opinion\\
-\emph{Counts}: Total word count for the main body of the text:  2488; Abstract: 119; 4 figures (all in color). \\
 
 \renewcommand{\thetable}{\arabic{table}}
 \renewcommand{\thefigure}{\arabic{figure}}
@@ -140,7 +138,7 @@ These findings highlight the need for further studies on the interplay between c
 %Considering the interaction of cues and climate change further complicates understanding species future vulnerabilities to false spring events.  %For example, as climate change progresses, higher spring forcing temperatures may be required for species experiencing insufficient winter chilling (due to warmer winter temperatures), especially at lower latitudes \citep{McCreary1990, Morin2009, Fu2012, Polgar2014, Chuine2010}. 
 % Individuals that initiate budburst earlier in the spring may attempt to limit freezing risk by decreasing the duration of vegetative risk in order Further studies are essential 
 
-\subsection* {Predictable Regional Differences in Climate, Species Responses and False Spring Risk}
+\section* {Predictable Regional Differences in Climate, Species Responses and False Spring Risk}
 Robust predictions must consider the interplay of species cues with a specific location's climate. Climate and thus false spring risk vary across regions. Some regions experience harsher winters and greater temperature variability throughout the year (e.g. Maine, USA), and these more variable regions often have a much higher risk of false spring than others (e.g. Lyon, France). Understanding and integrating such spatiotemporal effects and regional differences when investigating false spring risk and duration of vegetative risk would help improve predictions as climate change progresses. Such differences depend both on the local climate, the local species and the cues for each species at that location, as a single species may have varying cues across space. Therefore, based on cues alone, different regions may have different durations of vegetative risk for the same species \citep {Partanen2004, Viheraaarnio2006, Caffarra2011}. Studies also show that different species within the same location can exhibit different sensitivities to the three cues \citep{Basler2012, Laube2013}, further amplifying the myriad of climatic and phenological shifts that determine false spring risk in a region. 
 % CJC (3-Jul-2018): various studies that investigated latitudinal effects indicate that populations growing further north respond to a different interaction of cues than those growing further south. Thus, 
 
