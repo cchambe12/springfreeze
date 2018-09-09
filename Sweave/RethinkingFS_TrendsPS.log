@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 SEP 2018 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 SEP 2018 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -877,7 +877,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--108
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] [8] (./RethinkingFS_TrendsPS.bbl [9] [10] [11] [12]
+[2] [3] [4] [5] [6] [7] [8] [9] (./RethinkingFS_TrendsPS.bbl [10] [11] [12]
 [13] [14] [15]) <figure/fsifig-1.pdf, id=60, 505.89pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
@@ -911,10 +911,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [19 <./figure/risk-1.pdf>] [20 <..//figure/Exp_plotTPS.pdf>] (./RethinkingFS_T
 rendsPS.aux) ) 
 Here is how much of TeX's memory you used:
- 15847 strings out of 493014
- 313967 string characters out of 6133351
- 340373 words of memory out of 5000000
- 19181 multiletter control sequences out of 15000+600000
+ 15851 strings out of 493014
+ 314070 string characters out of 6133351
+ 344187 words of memory out of 5000000
+ 19185 multiletter control sequences out of 15000+600000
  35592 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,6n,42p,10393b,581s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -931,7 +931,7 @@ usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_TrendsPS.pdf (20 pages, 358437 bytes).
+Output written on RethinkingFS_TrendsPS.pdf (20 pages, 360083 bytes).
 PDF statistics:
  265 PDF objects out of 1000 (max. 8388607)
  194 compressed objects within 2 object streams

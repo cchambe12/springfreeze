@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{OKeefe2014}
+O'Keefe, J.
+\newblock {Phenology of woody species at Harvard Forest since 1990}.
+\newblock Technical report,  (2014).
+
+\bibitem{SI-x2016}
+USA-NPN.
+\newblock {USA National Phenology Network Data Visualizer Tool},  (2016).
+
+\bibitem{USA-NPN2016}
+USA-NPN.
+\newblock {USA National Phenology Network Extended Spring Indices},  (2016).
+
+\bibitem{Ault2015}
+Ault, T.~R., Schwartz, M.~D., Zurita-Milla, R., Weltzin, J.~F., and Betancourt,
+  J.~L.
+\newblock {Trends and natural variability of spring onset in the coterminous
+  United States as evaluated by a new gridded dataset of spring indices}.
+\newblock {\em Journal of Climate}{ \bf 28}(21), 8363--8378 (2015).
+
+\bibitem{Ault2015a}
+Ault, T.~R., Zurita-Milla, R., and Schwartz, M.~D.
+\newblock {A Matlab{\textcopyright} toolbox for calculating spring indices from
+  daily meteorological data}.
+\newblock {\em Computers {\&} Geosciences}{ \bf 83}, 46--53 (2015).
+
+\bibitem{Schwartz2013}
+Schwartz, M.~D., Ault, T.~R., and Betancourt, J.~L.
+\newblock {Spring onset variations and trends in the continental United States:
+  Past and regional assessment using temperature-based indices}.
+\newblock {\em International Journal of Climatology}{ \bf 33}(13), 2917--2922
+  (2013).
+
+\bibitem{Schwartz1997}
+Schwartz, M.~D.
+\newblock {Spring Index Models: An approach to connecting Satellite and surface
+  phenology}.
+\newblock In {\em Phenology of Seasonal climates},  23--38.  (1997).
+
+\bibitem{Flynn2018}
+Flynn, D. F.~B. and Wolkovich, E.~M.
+\newblock Temperature and photoperiod drive spring phenology across all species
+  in a temperate forest community.
+\newblock {\em New Phytologist}{ \bf 219}(4), Jun  (2018).
+
+\bibitem{Finn2007}
+Finn, G.~A., Straszewski, A.~E., and Peterson, V.
+\newblock A general growth stage key for describing trees and woody plants.
+\newblock {\em Annals of Applied Biology}{ \bf 151}(1), 127--131 (2007).
+
+\bibitem{Soudani2012}
+Soudani, K., Hmimina, G., Delpierre, N., Pontailler, J.-Y., Aubinet, M., Bonal,
+  D., Caquet, B., de~Grandcourt, A., Burban, B., Flechard, C., and et~al.
+\newblock {Ground-based Network of NDVI measurements for tracking temporal
+  dynamics of canopy structure and vegetation phenology in different biomes}.
+\newblock {\em Remote Sensing of Environment}{ \bf 123}, 234--245, Aug  (2012).
+
+\bibitem{White2009}
+White, M.~A., De~Beurs, K.~M., Didan, K., Inouye, D.~W., Richardson, A.~D.,
+  Jensen, O.~P., O'Keefe, J., Zhang, G., Nemani, R.~R., Van~Leeuwen, W. J.~D.,
+  and Al., E.
+\newblock {Intercomparison, interpretation, and assessment of spring phenology
+  in North America estimated from remote sensing for 1982-2006}.
+\newblock {\em Global Change Biology}{ \bf 15}(10), 2335--2359, Oct  (2009).
+
+\bibitem{Schaber2005}
+Schaber, J. and Badeck, F.-W.
+\newblock Plant phenology in germany over the 20th century.
+\newblock {\em Regional Environmental Change}{ \bf 5}(1), 37--46, Jan  (2005).
+
+\end{thebibliography}
