@@ -307,8 +307,8 @@ expB<-ggplot(simple, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2, col=as.factor(sp))
   scale_y_discrete(limits = sort(unique(simple$var)), labels=estimates) +
   xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 
-  annotate("text", x = -16.8, y = 2.35, label = "Combined Effects:", size=4, family="Times") +
-  annotate("text", x = -14.9, y = 7.45, label = "Estimated Isolated Effects:", size=4, family="Times") + 
+  annotate("text", x = -16.8, y = 2.35, label = "Combined Effects:", size=4, family="Helvetica") +
+  annotate("text", x = -14.9, y = 7.45, label = "Estimated Isolated Effects:", size=4, family="Helvetica") + 
   theme_linedraw() +
   theme(legend.text=element_text(size=5), legend.title = element_text(size=9), legend.background = element_rect(linetype="solid", color="grey", size=0.5),
         panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 OCT 2018 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 OCT 2018 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -756,6 +756,9 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box57
 LaTeX Info: Redefining \\ on input line 3056.
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
@@ -763,25 +766,25 @@ tim
 (./RethinkingFS_GCB.aux)
 \openout1 = `RethinkingFS_GCB.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    ... okay on input line 91.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -826,15 +829,15 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
-* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=472.03111pt
 * \textheight=624.25352pt
-* \oddsidemargin=-1.13791pt
-* \evensidemargin=-1.13791pt
-* \topmargin=-42.67912pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -857,84 +860,87 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count164
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 89.
+(Font)              <7> on input line 91.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 89.
+(Font)              <5> on input line 91.
 \c__siunitx_mathtt_int=\count165
-LaTeX Font Info:    Try loading font information for T1+aess on input line 91.
+LaTeX Font Info:    Try loading font information for T1+aess on input line 93.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 92--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--108
+Underfull \hbox (badness 10000) in paragraph at lines 94--105
 
  []
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] [8] [9] (./RethinkingFS_GCB.bbl [10] [11] [12] [13]
-[14] [15] [16]) <figure/fsifig-1.pdf, id=63, 505.89pt x 289.08pt>
+[2] [3] [4] [5] [6] [7] [8] (./RethinkingFS_GCB.bbl [9] [10] [11] [12] [13]
+[14]) <figure/fsifig-1.pdf, id=57, 505.89pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
 
 <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 213.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 215.
 (pdftex.def)             Requested size: 472.03111pt x 269.73705pt.
- [17] <figure/temp-1.pdf, id=67, 433.62pt x 289.08pt>
+ [15] <figure/temp-1.pdf, id=61, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
 
 <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 224.
+Package pdftex.def Info: figure/temp-1.pdf used on input line 226.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [18 <./figure/fsifig-1.pdf>]
-<figure/risk-1.pdf, id=77, 433.62pt x 289.08pt>
+ [16 <./figure/fsifig-1.pdf>]
+<figure/risk-1.pdf, id=71, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
  <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 236.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 238.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[19 <./figure/temp-1.pdf>]
-<..//figure/Exp_plotTPS.pdf, id=92, 401.78294pt x 387.7747pt>
+[17 <./figure/temp-1.pdf>]
+<..//figure/Exp_plotTPS.pdf, id=85, 505.89pt x 505.89pt>
 File: ..//figure/Exp_plotTPS.pdf Graphic file (type pdf)
 
 <use ..//figure/Exp_plotTPS.pdf>
-Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 248.
-(pdftex.def)             Requested size: 341.43129pt x 341.44989pt.
+Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 250.
+(pdftex.def)             Requested size: 341.43785pt x 341.43785pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 249.
+(Font)              <9> on input line 251.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 249.
- [20 <./figure/risk-1.pdf>] [21 <..//figure/Exp_plotTPS.pdf>] (./RethinkingFS_G
-CB.aux) ) 
+(Font)              <6> on input line 251.
+ [18 <./figure/risk-1.pdf>]
+<..//figure/RegRisk_flipped.pdf, id=100, 650.43pt x 650.43pt>
+File: ..//figure/RegRisk_flipped.pdf Graphic file (type pdf)
+
+<use ..//figure/RegRisk_flipped.pdf>
+Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 259.
+
+(pdftex.def)             Requested size: 455.2582pt x 512.18655pt.
+ [19 <..//figure/Exp_plotTPS.pdf>] [20 <..//figure/RegRisk_flipped.pdf>] (./Ret
+hinkingFS_GCB.aux) ) 
 Here is how much of TeX's memory you used:
- 15880 strings out of 493014
- 314503 string characters out of 6133351
- 341544 words of memory out of 5000000
- 19214 multiletter control sequences out of 15000+600000
+ 15915 strings out of 493014
+ 315250 string characters out of 6133351
+ 344987 words of memory out of 5000000
+ 19244 multiletter control sequences out of 15000+600000
  35592 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,10388b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
-12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_GCB.pdf (21 pages, 355785 bytes).
+ 37i,6n,42p,10402b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on RethinkingFS_GCB.pdf (20 pages, 366206 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
+ 276 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

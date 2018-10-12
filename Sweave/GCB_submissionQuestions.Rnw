@@ -37,8 +37,6 @@
 \noindent \textbf{\Large{Reviewers}}\\
 \vspace{3ex}
 \begin{enumerate}
-\item Lenz, CaraDonna, Inouye, Augspurger and... maybe Melissa Martin or Lena Muffler!
-
 
 \noindent \textbf{\Large{Rethinking False Spring Risk: Submission Questions}}\\
 \vspace{3ex}
@@ -64,6 +62,15 @@
 \bibentry{Vitra2017}\\
 \bibentry{Lenz2016}\\
 \bibentry{Liu2018}\\
+
+\noindent \textbf{ If you listed non-preferred reviewers, please provide a justification for each.} \\
+
+\noindent N/A \\
+
+\noindent \textbf{ If your manuscript does not conform to author or formatting guidelines (e.g. exceeding word limit), please provide a justification.} \\
+
+\noindent N/A \\
+
 
 \bibliography{..//refs/SpringFreeze.bib}
 
