@@ -34,6 +34,12 @@
 ]{siderules}
 \begin{document}
 \nobibliography*
+\noindent \textbf{\Large{Reviewers}}\\
+\vspace{3ex}
+\begin{enumerate}
+\item Lenz, CaraDonna, Inouye, Augspurger and... maybe Melissa Martin or Lena Muffler!
+
+
 \noindent \textbf{\Large{Rethinking False Spring Risk: Submission Questions}}\\
 \vspace{3ex}
 
@@ -43,7 +49,7 @@
 
 \noindent \textbf{What is/are the key finding(s) that answers this question?} \\
 
-\noindent Current definitions for false springs remain generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This definition fails to incorporate factors such as species, functional group, life stages, and other climatic regimes. We argue that a new approach that integrates these and other crucial factors is needed. \\
+\noindent Current definitions for false springs remain generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This definition fails to incorporate factors such as species, functional group, phenological cue requirements, regional effects and other climatic regimes. We argue that a new approach that integrates these and other crucial factors is needed. \\
 
 \noindent \textbf{Why is this work important and timely?}\\
 
@@ -57,7 +63,7 @@
 
 \bibentry{Vitra2017}\\
 \bibentry{Lenz2016}\\
-\bibentry{Menzel2015}\\
+\bibentry{Liu2018}\\
 
 \bibliography{..//refs/SpringFreeze.bib}
 
