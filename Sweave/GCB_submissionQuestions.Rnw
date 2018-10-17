@@ -40,12 +40,12 @@
 \noindent \textbf{What is the scientific question you are addressing?} \\
 
 %\noindent Climate change has brought renewed interest to late spring freeze events, commonly called false springs, which shape species ranges and life history strategies. Combining theory from ecology, climatology, physiology, biogeography and crop science we ask: what are the effects of false springs and what are the major factors that drive plants' risk to frost damage? Our questions are framed with the goal of advancing forecasting. \\ % See if my changes are okay. 65 Words
-\noindent Climate change has renewed interest in late spring freezes, commonly called false springs, which shape species ranges and life history strategies. Combining theory from various fields in an attempt to advance forecasting we ask: what are the effects of false springs and what factors drive plants' risk to frost damage? \\ % Now 50 words
+\noindent Climate change has renewed interest in late spring freezes, commonly called false springs, which shape species ranges and life-history strategies. Combining theory from ecology, climatology, physiology, biogeography, and crop science we ask: what are the effects of false springs and what factors drive plants' risk to frost damage? \\ % Now 50 words
 
 
 \noindent \textbf{What is/are the key finding(s) that answers this question?} \\
 
-\noindent We find that current definitions for false springs remain generally simple. Most definitions fail to incorporate factors such as species, functional group, phenological cue requirements, regional effects and other climatic regimes. We argue that a new approach that integrates these and other crucial factors is needed. \\ % EMW: Be sure to give citation correctly in online formatting! (I only say this as I have screwed it up before). 46 words
+\noindent We find that current definitions for false springs remain generally simple. Most definitions fail to incorporate factors such as species, functional group, phenological cue requirements, regional effects and other climatic regimes. We argue that a new approach that integrates these and other major factors is critical for accurate forecasting. \\ % EMW: Be sure to give citation correctly in online formatting! (I only say this as I have screwed it up before). 46 words
 
 \noindent \textbf{Why is this work important and timely?}\\
 
