@@ -43,15 +43,15 @@
 
 \noindent \textbf{What is the scientific question you are addressing?} \\
 
-\noindent Climate change has brought renewed interest to late spring freeze events, commonly called false springs. Combining theory from ecology, climatology, physiology, biogeography and crop science we examine the effects of false springs and the complexity of factors that drive plants' risk to frost damage to help advance forecasting. \\
+\noindent Climate change has brought renewed interest to late spring freeze events, commonly called false springs, which shape species ranges and life history strategies. Combining theory from ecology, climatology, physiology, biogeography and crop science we ask: what are the effects of false springs and what are the major factors that drive plants' risk to frost damage? Our questions are framed with the goal of advancing forecasting. \\ % See if my changes are okay.
 
 \noindent \textbf{What is/are the key finding(s) that answers this question?} \\
 
-\noindent Current definitions for false springs remain generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This definition fails to incorporate factors such as species, functional group, phenological cue requirements, regional effects and other climatic regimes. We argue that a new approach that integrates these and other crucial factors is needed. \\
+\noindent We find that current definitions for false springs remain generally simple -- i.e. budburst occurs before the last spring freeze \citep{Gu2008}. This definition fails to incorporate factors such as species, functional group, phenological cue requirements, regional effects and other climatic regimes. We argue that a new approach that integrates these and other crucial factors is needed. \\ % EMW: Be sure to give citation correctly in online formatting! (I only say this as I have screwed it up before). 
 
 \noindent \textbf{Why is this work important and timely?}\\
 
-\noindent There has been a growing number of studies that take a simplified view of false springs, which can lead to incorrect forecasting. This manuscript is especially timely because new methods are essential to predict the effects of false spring events across diverse species and climate regimes, especially under climate change. \\
+\noindent There has been a growing number of studies that take a simplified view of false springs, which can lead to incorrect forecasting. This manuscript is especially timely because new methods are essential to predict the effects of false spring events across diverse species and climate regimes, especially under climate change. \\ %If you have space you should start much stronger here. I would start with something like: A growing number of studies have documented how climate change is reshaping late spring freeze events, with cascading ecological and economic impacts. Most of these studies, however, take a simplified view of false springs .... (or something exciting like that).
 
 \noindent \textbf{ Does your paper fall within the scope of GCB; what biological AND global change aspects does it address?}\\
 
@@ -61,8 +61,7 @@
 
 \bibentry{Vitra2017}\\
 \bibentry{Lenz2016}\\
-\bibentry{Liu2018}\\
-
+\bibentry{Liu2018}\\ % We want three papers in journals with equally high or higher impact factors than GCB. So I think these are good choices!
 \noindent \textbf{ If you listed non-preferred reviewers, please provide a justification for each.} \\
 
 \noindent N/A \\
