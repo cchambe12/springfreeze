@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 OCT 2018 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 OCT 2018 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**RethinkingFS_GCB.tex
-(./RethinkingFS_GCB.tex
+**GCB_submissionQuestions.tex
+(./GCB_submissionQuestions.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -721,6 +721,9 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count149
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/natbib/bibentry.sty
+Package: bibentry 2007/10/30 1.5 (PWD)
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
@@ -756,35 +759,32 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframebox=\box57
 LaTeX Info: Redefining \\ on input line 3056.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
-Package: setspace 2011/12/19 v6.7a set line spacing
-)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-(./RethinkingFS_GCB.aux)
-\openout1 = `RethinkingFS_GCB.aux'.
+(./GCB_submissionQuestions.aux)
+\openout1 = `GCB_submissionQuestions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 86.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    ... okay on input line 86.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -829,15 +829,15 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=472.03111pt
 * \textheight=624.25352pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
+* \oddsidemargin=-1.13791pt
+* \evensidemargin=-1.13791pt
+* \topmargin=-42.67912pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
@@ -860,87 +860,106 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count164
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 91.
+(Font)              <7> on input line 86.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 91.
+(Font)              <5> on input line 86.
 \c__siunitx_mathtt_int=\count165
-LaTeX Font Info:    Try loading font information for T1+aess on input line 93.
+(./GCB_submissionQuestions.bbl)
+LaTeX Font Info:    Try loading font information for T1+aess on input line 90.
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aess.fd
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 94--105
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] [3] [4] [5] [6] [7] [8] (./RethinkingFS_GCB.bbl [9] [10] [11] [12] [13]
-[14]) <figure/fsifig-1.pdf, id=57, 505.89pt x 289.08pt>
-File: figure/fsifig-1.pdf Graphic file (type pdf)
+Underfull \hbox (badness 10000) in paragraph at lines 113--116
 
-<use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 213.
-(pdftex.def)             Requested size: 472.03111pt x 269.73705pt.
- [15] <figure/temp-1.pdf, id=61, 433.62pt x 289.08pt>
-File: figure/temp-1.pdf Graphic file (type pdf)
+ []
 
-<use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 224.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
- [16 <./figure/fsifig-1.pdf>]
-<figure/risk-1.pdf, id=71, 433.62pt x 289.08pt>
-File: figure/risk-1.pdf Graphic file (type pdf)
- <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 236.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[17 <./figure/temp-1.pdf>]
-<..//figure/Exp_plotTPS.pdf, id=85, 505.89pt x 505.89pt>
-File: ..//figure/Exp_plotTPS.pdf Graphic file (type pdf)
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
-<use ..//figure/Exp_plotTPS.pdf>
-Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 248.
-(pdftex.def)             Requested size: 341.43785pt x 341.43785pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 249.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 249.
- [18 <./figure/risk-1.pdf>]
-<..//figure/RegRisk_flipped.pdf, id=100, 650.43pt x 650.43pt>
-File: ..//figure/RegRisk_flipped.pdf Graphic file (type pdf)
+ []
 
-<use ..//figure/RegRisk_flipped.pdf>
-Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 257.
 
-(pdftex.def)             Requested size: 455.2582pt x 512.18655pt.
- [19 <..//figure/Exp_plotTPS.pdf>] [20 <..//figure/RegRisk_flipped.pdf>] (./Ret
-hinkingFS_GCB.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+(./GCB_submissionQuestions.bbl) [2] (./GCB_submissionQuestions.aux) ) 
 Here is how much of TeX's memory you used:
- 15915 strings out of 493014
- 315250 string characters out of 6133351
- 344987 words of memory out of 5000000
- 19244 multiletter control sequences out of 15000+600000
- 35592 words of font info for 69 fonts, out of 8000000 for 9000
+ 15629 strings out of 493014
+ 310238 string characters out of 6133351
+ 338026 words of memory out of 5000000
+ 18985 multiletter control sequences out of 15000+600000
+ 22053 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,42p,10402b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8
-.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on RethinkingFS_GCB.pdf (20 pages, 366156 bytes).
+ 37i,5n,42p,10395b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on GCB_submissionQuestions.pdf (2 pages, 78559 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
+ 31 PDF objects out of 1000 (max. 8388607)
+ 21 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
