@@ -1,0 +1,111 @@
+\begin{thebibliography}{14}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Augspurger(2009)}]{Augspurger2009}
+Augspurger CK (2009) {Spring 2007 warmth and frost: Phenology, damage and
+  refoliation in a temperate deciduous forest}.
+\newblock \emph{Functional Ecology}, \textbf{23}, 1031--1039.
+\newblock \doi{10.1111/j.1365-2435.2009.01587.x}.
+
+\bibitem[{Augspurger(2013)}]{Augspurger2013}
+Augspurger CK (2013) {Reconstructing patterns of temperature, phenology, and
+  frost damage over 124 years: Spring damage risk is increasing}.
+\newblock \emph{Ecology}, \textbf{94}, 41--50.
+\newblock \doi{10.1890/12-0200.1}.
+
+\bibitem[{Basler \& K{\"{o}}rner(2012)}]{Basler2012}
+Basler D, K{\"{o}}rner C (2012) {Photoperiod sensitivity of bud burst in 14
+  temperate forest tree species}.
+\newblock \emph{Agricultural and Forest Meteorology}, \textbf{165}, 73--81.
+\newblock \doi{10.1016/j.agrformet.2012.06.001}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.agrformet.2012.06.001}.
+
+\bibitem[{{CaraDonna, Paul J and Bain, Justin A}(2016)}]{Caradonna2016}
+{CaraDonna, Paul J and Bain, Justin A} (2016) {Frost sensitivity of leaves and
+  flowers of subalpine plants is related to tissue type and phenology}.
+\newblock \emph{Journal of Ecology}, \textbf{104}, 55--64.
+\newblock \doi{10.1111/1365-2745.12482}.
+
+\bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post \emph{et~al.}}]{Gu2008}
+Gu L, Hanson PJ, Post WM, \emph{et~al.} (2008) {The 2007 Eastern US spring
+  freeze: Increased cold damage in a warming world}.
+\newblock \emph{BioScience}, \textbf{58}, 253.
+\newblock \doi{10.1641/B580311}.
+
+\bibitem[{Hufkens \emph{et~al.}(2012)Hufkens, Friedl, Keenan, Sonnentag,
+  Bailey, O'Keefe, \& Richardson}]{Hufkens2012}
+Hufkens K, Friedl MA, Keenan TF, Sonnentag O, Bailey A, O'Keefe J, Richardson
+  AD (2012) {Ecological impacts of a widespread frost event following early
+  spring leaf-out}.
+\newblock \emph{Global Change Biology}, \textbf{18}, 2365--2377.
+\newblock \doi{10.1111/j.1365-2486.2012.02712.x}.
+
+\bibitem[{Inouye(2000)}]{Inouye2000}
+Inouye DW (2000) {The ecological and evolutionary significance of frost in the
+  context of climate change}.
+\newblock \emph{Ecology Letters}, \textbf{3}, 457--463.
+\newblock \doi{10.1046/j.1461-0248.2000.00165.x}.
+
+\bibitem[{Klosterman \emph{et~al.}(2018)Klosterman, Hufkens, \&
+  Richardson}]{Klosterman2018}
+Klosterman S, Hufkens K, Richardson AD (2018) {Later springs green-up faster:
+  the relation between onset and completion of green-up in deciduous forests of
+  North America}.
+\newblock \emph{International Journal of Biometeorology}.
+\newblock \doi{10.1007/s00484-018-1564-9}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00484-018-1564-9}.
+
+\bibitem[{Lenz \emph{et~al.}(2013)Lenz, Hoch, Vitasse, \&
+  K{\"{o}}rner}]{Lenz2013}
+Lenz A, Hoch G, Vitasse Y, K{\"{o}}rner C (2013) {European deciduous trees
+  exhibit similar safety margins against damage by spring freeze events along
+  elevational gradients}.
+\newblock \emph{New Phytologist}, \textbf{200}, 1166--1175.
+\newblock \doi{10.1111/nph.12452}.
+
+\bibitem[{Menzel \emph{et~al.}(2015)Menzel, Helm, \& Zang}]{Menzel2015}
+Menzel A, Helm R, Zang C (2015) {Patterns of late spring frost leaf damage and
+  recovery in a European beech (\textit{Fagus sylvatica L.}) stand in
+  south-eastern Germany based on repeated digital photographs}.
+\newblock \emph{Frontiers in Plant Science}, \textbf{6}, 110.
+\newblock \doi{10.3389/fpls.2015.00110}.
+\newblock \urlprefix\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4338663/}.
+
+\bibitem[{NOAA(2017)}]{NOAA}
+NOAA (2017) Climate data online search.
+\newblock
+  \urlprefix\url{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}.
+
+\bibitem[{Richardson \emph{et~al.}(2013)Richardson, Keenan, Migliavacca, Ryu,
+  Sonnentag, \& Toomey}]{Richardson2013}
+Richardson AD, Keenan TF, Migliavacca M, Ryu Y, Sonnentag O, Toomey M (2013)
+  Climate change, phenology, and phenological control of vegetation feedbacks
+  to the climate system.
+\newblock \emph{Agricultural and Forest Meteorology}, \textbf{169}, 156 -- 173.
+\newblock \doi{https://doi.org/10.1016/j.agrformet.2012.09.012}.
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0168192312002869}.
+
+\bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch, \&
+  K{\"{o}}rner}]{Vitasse2014}
+Vitasse Y, Lenz A, Hoch G, K{\"{o}}rner C (2014) {Earlier leaf-out rather than
+  difference in freezing resistance puts juvenile trees at greater risk of
+  damage than adult trees}.
+\newblock \emph{Journal of Ecology}, \textbf{102}, 981--988.
+\newblock \doi{10.1111/1365-2745.12251}.
+
+\bibitem[{Xie \emph{et~al.}(2015)Xie, Wang, \& Silander}]{Xie2015}
+Xie Y, Wang X, Silander JA (2015) Deciduous forest responses to temperature,
+  precipitation, and drought imply complex climate change impacts.
+\newblock \emph{Proceedings of the National Academy of Sciences}, \textbf{112},
+  13585--13590.
+\newblock \doi{10.1073/pnas.1509991112}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1073/pnas.1509991112}.
+
+\end{thebibliography}

@@ -7,11 +7,6 @@
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem[{NOA(2017)}]{NOAA}
- (2017) Climate data online search.
-\newblock
-  \urlprefix\url{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}.
-
 \bibitem[{Agrawal \emph{et~al.}(2004)Agrawal, Conner, \&
   Stinchcombe}]{Agrawal2004}
 Agrawal AA, Conner JK, Stinchcombe JR (2004) Evolution of plant resistance and
@@ -356,6 +351,11 @@ Myking T, Skroppa T (2007) {Variation in phenology and height increment of
   northern \textit{Ulmus glabra} populations: Implications for conservation}.
 \newblock \emph{Scandinavian Journal of Forest Research}, \textbf{22},
   369--374.
+
+\bibitem[{NOAA(2017)}]{NOAA}
+NOAA (2017) Climate data online search.
+\newblock
+  \urlprefix\url{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}.
 
 \bibitem[{Norgaard~Nielsen \& Rasmussen(2009)}]{Nielsen2009}
 Norgaard~Nielsen CC, Rasmussen HN (2009) {Frost hardening and dehardening in
