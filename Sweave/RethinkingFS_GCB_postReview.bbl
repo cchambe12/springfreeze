@@ -1,4 +1,4 @@
-\begin{thebibliography}{77}
+\begin{thebibliography}{80}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -32,6 +32,13 @@ Allstadt AJ, Vavrus SJ, Heglund PJ, Pidgeon AM, Wayne E, Radeloff VC (2015)
 \newblock \doi{10.1088/1748-9326/10/10/104008}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1088/1748-9326/10/10/104008}.
 
+\bibitem[{Augspurger(2008)}]{Augspurger2008}
+Augspurger CK (2008) Early spring leaf out enhances growth and survival of
+  saplings in a temperate deciduous forest.
+\newblock \emph{Oecologia}, \textbf{156}, 281--286.
+\newblock \doi{10.1007/s00442-008-1000-7}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1007/s00442-008-1000-7}.
+
 \bibitem[{Augspurger(2009)}]{Augspurger2009}
 Augspurger CK (2009) {Spring 2007 warmth and frost: Phenology, damage and
   refoliation in a temperate deciduous forest}.
@@ -43,6 +50,13 @@ Augspurger CK (2013) {Reconstructing patterns of temperature, phenology, and
   frost damage over 124 years: Spring damage risk is increasing}.
 \newblock \emph{Ecology}, \textbf{94}, 41--50.
 \newblock \doi{10.1890/12-0200.1}.
+
+\bibitem[{Augspurger \& Bartlett(2003)}]{Augspurger2003}
+Augspurger CK, Bartlett EA (2003) Differences in leaf phenology between
+  juvenile and adult trees in a temperate deciduous forest.
+\newblock \emph{Tree Physiology}, \textbf{23}, 517--525.
+\newblock \doi{10.1093/treephys/23.8.517}.
+\newblock \urlprefix\url{+ http://dx.doi.org/10.1093/treephys/23.8.517}.
 
 \bibitem[{Ault \emph{et~al.}(2013)Ault, Henebry, de~Beurs, Schwartz,
   Betancourt, \& Moore}]{Ault2013}
@@ -93,17 +107,6 @@ Beck EH, Fettig S, Knake C, Hartig K, Bhattarai T (2007) Specific and
   unspecific responses of plants to cold and drought stress.
 \newblock \emph{Journal of Biosciences}, \textbf{32}, 501--510.
 
-\bibitem[{Beck \emph{et~al.}(2004)Beck, Heim, \& Hansen}]{Beck2004}
-Beck EH, Heim R, Hansen J (2004) Plant resistance to cold stress: Mechanisms
-  and environmental signals triggering frost hardening and dehardening.
-\newblock \emph{Journal of Biosciences}, \textbf{29}, 449--459.
-
-\bibitem[{Burke \emph{et~al.}(1976)Burke, Gusta, Quamme, Weiser, \&
-  Li}]{Burke1976}
-Burke M, Gusta L, Quamme H, Weiser C, Li P (1976) Freezing and injury in
-  plants.
-\newblock \emph{Annual Review of Plant Physiology}, \textbf{27}, 507--528.
-
 \bibitem[{Caffarra \& Donnelly(2011)}]{Caffarra2011}
 Caffarra A, Donnelly A (2011) {The ecological significance of phenology in four
   different tree species: Effects of light and temperature on bud burst}.
@@ -133,6 +136,13 @@ Chuine I (2010) Why does phenology drive species distribution?
   Sciences}, \textbf{365}, 3149--3160.
 \newblock \doi{10.1098/rstb.2010.0142}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1098/rstb.2010.0142}.
+
+\bibitem[{Chuine \& Beaubien(2001)}]{Chuine2001b}
+Chuine I, Beaubien EG (2001) {Phenology is a major determinant of tree species
+  range}.
+\newblock \emph{Ecology Letters}, \textbf{4}, 500--510.
+\newblock \doi{doi:10.1046/j.1461-0248.2001.00261.x}.
+\newblock \urlprefix\url{https://doi.org/10.1046/j.1461-0248.2001.00261.x}.
 
 \bibitem[{Cleland \emph{et~al.}(2006)Cleland, Chiariello, Loarie, Mooney, \&
   Field}]{Cleland2006}
@@ -169,6 +179,14 @@ Gauzere J, Delzon S, Davi H, Bonhomme M, Garcia~de Cortazar-Atauri I, Chuine I
   phenological process-based models. A case study with two European tree
   species: \textit{Fagus sylvatica} and \textit{Quercus petraea}}.
 \newblock \emph{Agricultural and Forest Meteorology}, \textbf{244-255}, 9--20.
+
+\bibitem[{Gritti \emph{et~al.}(2013)Gritti, Gaucherel, Crespo-Perez, \&
+  Chuine}]{Gritti2013}
+Gritti ES, Gaucherel C, Crespo-Perez MV, Chuine I (2013) {How can model
+  comparison help improving species distribution models?}
+\newblock \emph{PLoS ONE}, \textbf{8}, e68823.
+\newblock \doi{10.1371/journal.pone.0068823}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1371/journal.pone.0068823}.
 
 \bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post \emph{et~al.}}]{Gu2008}
 Gu L, Hanson PJ, Post WM, \emph{et~al.} (2008) {The 2007 Eastern US spring
@@ -219,6 +237,15 @@ Kathke S, Bruelheide H (2011) {Differences in frost hardiness of two Norway
   Plants}, \textbf{206}, 120--126.
 \newblock \doi{10.1016/j.flora.2010.09.007}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1016/j.flora.2010.09.007}.
+
+\bibitem[{Kim \emph{et~al.}(2015)Kim, Moorcroft, Aleinov, Puma, \&
+  Kiang}]{Kim2015}
+Kim Y, Moorcroft PR, Aleinov I, Puma MJ, Kiang NY (2015) {Variability of
+  phenology and fluxes of water and carbon with observed and simulated soil
+  moisture in the Ent Terrestrial Biosphere Model (Ent TBM version 1.0.1.0.0)}.
+\newblock \emph{Geoscientific Model Development}, \textbf{8}, 3837--3865.
+\newblock \doi{10.5194/gmd-8-3837-2015}.
+\newblock \urlprefix\url{http://dx.doi.org/10.5194/gmd-8-3837-2015}.
 
 \bibitem[{Klosterman \emph{et~al.}(2018)Klosterman, Hufkens, \&
   Richardson}]{Klosterman2018}
@@ -330,6 +357,13 @@ Mock CJ, Mojzisek J, McWaters M, Chenoweth M, Stahle DW (2007) {The winter of
 \newblock \doi{10.1007/s10584-006-9126-2}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1007/s10584-006-9126-2}.
 
+\bibitem[{Moorcroft \emph{et~al.}(2001)Moorcroft, Hurtt, \&
+  Pacala}]{Moorcroft2001}
+Moorcroft PR, Hurtt GC, Pacala SW (2001) {A method for scaling vegetation
+  dynamics: The Ecosystem Demography Model (ED)}.
+\newblock \emph{Ecological Monographs}, \textbf{71}, 557--585.
+\newblock \urlprefix\url{http://www.jstor.org/stable/3100036}.
+
 \bibitem[{Morin \emph{et~al.}(2007)Morin, Ameglio, Ahas
   \emph{et~al.}}]{Morin2007}
 Morin X, Ameglio T, Ahas R, \emph{et~al.} (2007) {Variation in cold hardiness
@@ -378,10 +412,6 @@ Partanen J (2004) {Dependence of photoperiodic response of growth cessation on
 \newblock \doi{10.1016/j.foreco.2003.07.017}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1016/j.foreco.2003.07.017}.
 
-\bibitem[{Pearce(2001)}]{Pearce2001}
-Pearce R (2001) Plant freezing and damage.
-\newblock \emph{Annals of Botany}, \textbf{87}, 417--424.
-
 \bibitem[{Peterson \& Abatzoglou(2014)}]{Peterson2014}
 Peterson AG, Abatzoglou JT (2014) {Observed changes in false springs over the
   contiguous United States}.
@@ -417,6 +447,22 @@ Richardson AD (2015) {PhenoCam images and canopy phenology at Harvard Forest
   since 2008}.
 \newblock
   \urlprefix\url{http://harvardforest.fas.harvard.edu:8080/exist/apps/datasets/showData.html?id=hf158}.
+
+\bibitem[{Richardson(2018)}]{Richardson2018}
+Richardson AD (2018) {Tracking seasonal rhythms of plants in diverse ecosystems
+  with digital camera imagery}.
+\newblock \emph{New Phytologist}.
+\newblock \doi{10.1111/nph.15591}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1111/nph.15591}.
+
+\bibitem[{Richardson \emph{et~al.}(2018)Richardson, Hufkens, Milliman, \&
+  Frolking}]{Richardson2018b}
+Richardson AD, Hufkens K, Milliman T, Frolking S (2018) {Intercomparison of
+  phenological transition dates derived from the PhenoCam Dataset V1.0 and
+  MODIS satellite remote sensing}.
+\newblock \emph{Scientific Reports}, \textbf{8}.
+\newblock \doi{10.1038/s41598-018-23804-6}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1038/s41598-018-23804-6}.
 
 \bibitem[{Richardson \emph{et~al.}(2013)Richardson, Keenan, Migliavacca, Ryu,
   Sonnentag, \& Toomey}]{Richardson2013}
@@ -466,13 +512,6 @@ Soudani K, Hmimina G, Delpierre N, \emph{et~al.} (2012) {Ground-based Network
 \newblock \doi{10.1016/j.rse.2012.03.012}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1016/j.rse.2012.03.012}.
 
-\bibitem[{Taschler \emph{et~al.}(2004)Taschler, Beikircher, \&
-  Neuner}]{Taschler2004}
-Taschler D, Beikircher B, Neuner G (2004) Frost resistance and ice nucleation
-  in leaves of five woody timberline species measured in situ during shoot
-  expansion.
-\newblock \emph{Tree Physiology}, \textbf{24}, 331--337.
-
 \bibitem[{USA-NPN(2016)}]{USA-NPN2016}
 USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
 \newblock \urlprefix\url{http://dx.doi.org/10.5066/F7XD0ZRK}.
@@ -484,22 +523,13 @@ Vihera-aarnio A, Hakkinen R, Junttila O (2006) {Critical night length for bud
   pendula}}.
 \newblock \emph{Tree Physiology}, \textbf{26}, 1013--1018.
 
-\bibitem[{Vitasse \emph{et~al.}(2014{\natexlab{a}})Vitasse, Lenz, Hoch, \&
+\bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch, \&
   K{\"{o}}rner}]{Vitasse2014}
-Vitasse Y, Lenz A, Hoch G, K{\"{o}}rner C (2014{\natexlab{a}}) {Earlier
-  leaf-out rather than difference in freezing resistance puts juvenile trees at
-  greater risk of damage than adult trees}.
+Vitasse Y, Lenz A, Hoch G, K{\"{o}}rner C (2014) {Earlier leaf-out rather than
+  difference in freezing resistance puts juvenile trees at greater risk of
+  damage than adult trees}.
 \newblock \emph{Journal of Ecology}, \textbf{102}, 981--988.
 \newblock \doi{10.1111/1365-2745.12251}.
-
-\bibitem[{Vitasse \emph{et~al.}(2014{\natexlab{b}})Vitasse, Lenz, \&
-  K{\"{o}}rner}]{Vitasse2014a}
-Vitasse Y, Lenz A, K{\"{o}}rner C (2014{\natexlab{b}}) {The interaction between
-  freezing tolerance and phenology in temperate deciduous trees.}
-\newblock \emph{Frontiers in Plant Science}, \textbf{5}, 541.
-\newblock \doi{10.3389/fpls.2014.00541}.
-\newblock
-  \urlprefix\url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=4192447{\{}{\&}{\}}tool=pmcentrez{\{}{\&}{\}}rendertype=abstract}.
 
 \bibitem[{Vitra \emph{et~al.}(2017)Vitra, Lenz, \& Vitasse}]{Vitra2017}
 Vitra A, Lenz A, Vitasse Y (2017) Frost hardening and dehardening potential in

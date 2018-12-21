@@ -54,6 +54,16 @@ library(lubridate)
 \begin{enumerate}
 
 %%% Want this in the paper but not sure where to put it %%%%%%%
+
+%%%%%%%%%%%% NOT SURE WHERE TO PUT THIS... OR SHOULD I CUT IT? %%%%%%%%%%%%%%%%%
+Once buds exit the dormancy phase, they are less freeze tolerant and less resistant to ice formation in contrast to mature tissues \citep{ Lenz2013, Taschler2004, Vitasse2014a}. Intracellular ice formation from false spring events often results in severe leaf and stem damage \citep{Burke1976, Sakai1987}. Ice formation can also occur indirectly (i.e., extracellularly), which results in freezing dehydration and mimics drought conditions \citep{Beck2004, Hofmann2015, Pearce2001}. Both forms of ice formation can cause defoliation and crown dieback \citep{Gu2008}. %An effective and consistent definition of false spring would accurately determine the amount and type of ice formation to evaluate the level of damage that could occur.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
 \item Last Freeze Date: Also critical
 \begin{enumerate}
 \item The false spring equation also requires a last freeze date input.
