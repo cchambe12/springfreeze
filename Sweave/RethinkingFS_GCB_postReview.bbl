@@ -1,4 +1,4 @@
-\begin{thebibliography}{80}
+\begin{thebibliography}{76}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -32,13 +32,6 @@ Allstadt AJ, Vavrus SJ, Heglund PJ, Pidgeon AM, Wayne E, Radeloff VC (2015)
 \newblock \doi{10.1088/1748-9326/10/10/104008}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1088/1748-9326/10/10/104008}.
 
-\bibitem[{Augspurger(2008)}]{Augspurger2008}
-Augspurger CK (2008) Early spring leaf out enhances growth and survival of
-  saplings in a temperate deciduous forest.
-\newblock \emph{Oecologia}, \textbf{156}, 281--286.
-\newblock \doi{10.1007/s00442-008-1000-7}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1007/s00442-008-1000-7}.
-
 \bibitem[{Augspurger(2009)}]{Augspurger2009}
 Augspurger CK (2009) {Spring 2007 warmth and frost: Phenology, damage and
   refoliation in a temperate deciduous forest}.
@@ -50,13 +43,6 @@ Augspurger CK (2013) {Reconstructing patterns of temperature, phenology, and
   frost damage over 124 years: Spring damage risk is increasing}.
 \newblock \emph{Ecology}, \textbf{94}, 41--50.
 \newblock \doi{10.1890/12-0200.1}.
-
-\bibitem[{Augspurger \& Bartlett(2003)}]{Augspurger2003}
-Augspurger CK, Bartlett EA (2003) Differences in leaf phenology between
-  juvenile and adult trees in a temperate deciduous forest.
-\newblock \emph{Tree Physiology}, \textbf{23}, 517--525.
-\newblock \doi{10.1093/treephys/23.8.517}.
-\newblock \urlprefix\url{+ http://dx.doi.org/10.1093/treephys/23.8.517}.
 
 \bibitem[{Ault \emph{et~al.}(2013)Ault, Henebry, de~Beurs, Schwartz,
   Betancourt, \& Moore}]{Ault2013}
@@ -137,13 +123,6 @@ Chuine I (2010) Why does phenology drive species distribution?
 \newblock \doi{10.1098/rstb.2010.0142}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1098/rstb.2010.0142}.
 
-\bibitem[{Chuine \& Beaubien(2001)}]{Chuine2001b}
-Chuine I, Beaubien EG (2001) {Phenology is a major determinant of tree species
-  range}.
-\newblock \emph{Ecology Letters}, \textbf{4}, 500--510.
-\newblock \doi{doi:10.1046/j.1461-0248.2001.00261.x}.
-\newblock \urlprefix\url{https://doi.org/10.1046/j.1461-0248.2001.00261.x}.
-
 \bibitem[{Cleland \emph{et~al.}(2006)Cleland, Chiariello, Loarie, Mooney, \&
   Field}]{Cleland2006}
 Cleland E, Chiariello N, Loarie S, Mooney H, Field C (2006) Diverse responses
@@ -179,14 +158,6 @@ Gauzere J, Delzon S, Davi H, Bonhomme M, Garcia~de Cortazar-Atauri I, Chuine I
   phenological process-based models. A case study with two European tree
   species: \textit{Fagus sylvatica} and \textit{Quercus petraea}}.
 \newblock \emph{Agricultural and Forest Meteorology}, \textbf{244-255}, 9--20.
-
-\bibitem[{Gritti \emph{et~al.}(2013)Gritti, Gaucherel, Crespo-Perez, \&
-  Chuine}]{Gritti2013}
-Gritti ES, Gaucherel C, Crespo-Perez MV, Chuine I (2013) {How can model
-  comparison help improving species distribution models?}
-\newblock \emph{PLoS ONE}, \textbf{8}, e68823.
-\newblock \doi{10.1371/journal.pone.0068823}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1371/journal.pone.0068823}.
 
 \bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post \emph{et~al.}}]{Gu2008}
 Gu L, Hanson PJ, Post WM, \emph{et~al.} (2008) {The 2007 Eastern US spring
