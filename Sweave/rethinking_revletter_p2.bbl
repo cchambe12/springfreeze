@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -6,6 +6,16 @@
   \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
+
+\bibitem[{Allstadt \emph{et~al.}(2015)Allstadt, Vavrus, Heglund, Pidgeon,
+  Wayne, \& Radeloff}]{Allstadt2015}
+Allstadt AJ, Vavrus SJ, Heglund PJ, Pidgeon AM, Wayne E, Radeloff VC (2015)
+  {Spring plant phenology and false springs in the conterminous U. S. during
+  the 21st century}.
+\newblock \emph{Environmental Research Letters (submitted)}, \textbf{10},
+  104008.
+\newblock \doi{10.1088/1748-9326/10/10/104008}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1088/1748-9326/10/10/104008}.
 
 \bibitem[{Augspurger(2009)}]{Augspurger2009}
 Augspurger CK (2009) {Spring 2007 warmth and frost: Phenology, damage and
@@ -52,6 +62,15 @@ Inouye DW (2000) {The ecological and evolutionary significance of frost in the
 \newblock \emph{Ecology Letters}, \textbf{3}, 457--463.
 \newblock \doi{10.1046/j.1461-0248.2000.00165.x}.
 
+\bibitem[{Kim \emph{et~al.}(2015)Kim, Moorcroft, Aleinov, Puma, \&
+  Kiang}]{Kim2015}
+Kim Y, Moorcroft PR, Aleinov I, Puma MJ, Kiang NY (2015) {Variability of
+  phenology and fluxes of water and carbon with observed and simulated soil
+  moisture in the Ent Terrestrial Biosphere Model (Ent TBM version 1.0.1.0.0)}.
+\newblock \emph{Geoscientific Model Development}, \textbf{8}, 3837--3865.
+\newblock \doi{10.5194/gmd-8-3837-2015}.
+\newblock \urlprefix\url{http://dx.doi.org/10.5194/gmd-8-3837-2015}.
+
 \bibitem[{Klosterman \emph{et~al.}(2018)Klosterman, Hufkens, \&
   Richardson}]{Klosterman2018}
 Klosterman S, Hufkens K, Richardson AD (2018) {Later springs green-up faster:
@@ -69,6 +88,28 @@ Lenz A, Hoch G, Vitasse Y, K{\"{o}}rner C (2013) {European deciduous trees
 \newblock \emph{New Phytologist}, \textbf{200}, 1166--1175.
 \newblock \doi{10.1111/nph.12452}.
 
+\bibitem[{Marino \emph{et~al.}(2011)Marino, Kaiser, Gu, \&
+  Ricciuto}]{Marino2011}
+Marino GP, Kaiser DP, Gu L, Ricciuto DM (2011) {Reconstruction of false spring
+  occurrences over the southeastern United States, 1901--2007: an increasing
+  risk of spring freeze damage?}
+\newblock \emph{Environmental Research Letters}, \textbf{6}, 24015.
+\newblock \doi{10.1088/1748-9326/6/2/024015}.
+
+\bibitem[{Martin \emph{et~al.}(2010)Martin, Gavazov, K{\"{o}}rner,
+  Hattenschwiler, \& Rixen}]{Martin2010}
+Martin M, Gavazov K, K{\"{o}}rner C, Hattenschwiler S, Rixen C (2010) {Reduced
+  early growing season freezing resistance in alpine treeline plants under
+  elevated atmospheric {$CO_2$}}.
+\newblock \emph{Global Change Biology}, \textbf{16}, 1057--1070.
+\newblock \doi{10.1111/j.1365-2486.2009.01987.x}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1111/j.1365-2486.2009.01987.x}.
+
+\bibitem[{Mehdipoor \& Zurita-Milla(2017)}]{Mehdipoor2017}
+Mehdipoor H, Zurita-Milla EIVR (2017) Continental-scale monitoring and mapping
+  of false spring: A cloud computing solution.
+\newblock \urlprefix\url{http://www.geocomputation.org/2017/papers/48.pdf}.
+
 \bibitem[{Menzel \emph{et~al.}(2015)Menzel, Helm, \& Zang}]{Menzel2015}
 Menzel A, Helm R, Zang C (2015) {Patterns of late spring frost leaf damage and
   recovery in a European beech (\textit{Fagus sylvatica L.}) stand in
@@ -77,10 +118,39 @@ Menzel A, Helm R, Zang C (2015) {Patterns of late spring frost leaf damage and
 \newblock \doi{10.3389/fpls.2015.00110}.
 \newblock \urlprefix\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4338663/}.
 
+\bibitem[{Moorcroft \emph{et~al.}(2001)Moorcroft, Hurtt, \&
+  Pacala}]{Moorcroft2001}
+Moorcroft PR, Hurtt GC, Pacala SW (2001) {A method for scaling vegetation
+  dynamics: The Ecosystem Demography Model (ED)}.
+\newblock \emph{Ecological Monographs}, \textbf{71}, 557--585.
+\newblock \urlprefix\url{http://www.jstor.org/stable/3100036}.
+
 \bibitem[{NOAA(2017)}]{NOAA}
 NOAA (2017) Climate data online search.
 \newblock
   \urlprefix\url{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}.
+
+\bibitem[{Peterson \& Abatzoglou(2014)}]{Peterson2014}
+Peterson AG, Abatzoglou JT (2014) {Observed changes in false springs over the
+  contiguous United States}.
+\newblock \emph{Geophysical Research Letters}, \textbf{41}, 2156--2162.
+\newblock \doi{10.1002/2014GL059266}.
+
+\bibitem[{Richardson(2018)}]{Richardson2018}
+Richardson AD (2018) {Tracking seasonal rhythms of plants in diverse ecosystems
+  with digital camera imagery}.
+\newblock \emph{New Phytologist}.
+\newblock \doi{10.1111/nph.15591}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1111/nph.15591}.
+
+\bibitem[{Richardson \emph{et~al.}(2018)Richardson, Hufkens, Milliman, \&
+  Frolking}]{Richardson2018b}
+Richardson AD, Hufkens K, Milliman T, Frolking S (2018) {Intercomparison of
+  phenological transition dates derived from the PhenoCam Dataset V1.0 and
+  MODIS satellite remote sensing}.
+\newblock \emph{Scientific Reports}, \textbf{8}.
+\newblock \doi{10.1038/s41598-018-23804-6}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1038/s41598-018-23804-6}.
 
 \bibitem[{Richardson \emph{et~al.}(2013)Richardson, Keenan, Migliavacca, Ryu,
   Sonnentag, \& Toomey}]{Richardson2013}
@@ -91,6 +161,10 @@ Richardson AD, Keenan TF, Migliavacca M, Ryu Y, Sonnentag O, Toomey M (2013)
 \newblock \doi{https://doi.org/10.1016/j.agrformet.2012.09.012}.
 \newblock
   \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0168192312002869}.
+
+\bibitem[{Sakai \& Larcher(1987)}]{Sakai1987}
+Sakai A, Larcher W (1987) \emph{Frost Survival of Plants}.
+\newblock Springer-Verlag.
 
 \bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch, \&
   K{\"{o}}rner}]{Vitasse2014}
