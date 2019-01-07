@@ -104,7 +104,7 @@ In this paper we highlight the complexity of factors driving a plant's false spr
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Defining false springs} %%%%%%%%%%% NEED TO RENAME
+\section*{Defining false springs} 
 \subsection*{When are plants vulnerable to frost damage?} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Lots of edits here: In trying to address R2 I have aimed for a section that summarizes background info without making too many new assertions. See what you think.
