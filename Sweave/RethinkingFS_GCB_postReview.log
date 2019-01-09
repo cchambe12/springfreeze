@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 JAN 2019 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 JAN 2019 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -879,70 +879,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--106
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] <figure/temp-1.pdf, id=16, 433.62pt x 289.08pt>
+[2] [3] [4] <figure/temp-1.pdf, id=22, 433.62pt x 289.08pt>
 File: figure/temp-1.pdf Graphic file (type pdf)
- <use figure/temp-1.pdf>
-Package pdftex.def Info: figure/temp-1.pdf used on input line 150.
-(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[3] [4 <./figure/temp-1.pdf>] [5]
-<figure/fsifig-1.pdf, id=39, 505.89pt x 289.08pt>
+<use figure/temp-1.pdf>
+Package pdftex.def Info: figure/temp-1.pdf used on input line 167.
+(pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
+ [5] [6 <./figure/temp-1.pdf>] [7]
+<figure/fsifig-1.pdf, id=46, 505.89pt x 289.08pt>
 File: figure/fsifig-1.pdf Graphic file (type pdf)
  <use figure/fsifig-1.pdf>
-Package pdftex.def Info: figure/fsifig-1.pdf used on input line 177.
+Package pdftex.def Info: figure/fsifig-1.pdf used on input line 194.
 (pdftex.def)             Requested size: 472.03111pt x 269.73705pt.
 
-[6] [7 <./figure/fsifig-1.pdf>] [8]
-<figure/risk-1.pdf, id=55, 433.62pt x 289.08pt>
+[8] [9 <./figure/fsifig-1.pdf>] [10] [11]
+<figure/risk-1.pdf, id=64, 433.62pt x 289.08pt>
 File: figure/risk-1.pdf Graphic file (type pdf)
  <use figure/risk-1.pdf>
-Package pdftex.def Info: figure/risk-1.pdf used on input line 209.
+Package pdftex.def Info: figure/risk-1.pdf used on input line 223.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
-[9] [10 <./figure/risk-1.pdf>]
-<..//figure/Exp_plotTPS.pdf, id=73, 505.89pt x 505.89pt>
+[12 <./figure/risk-1.pdf>] [13]
+<..//figure/Exp_plotTPS.pdf, id=83, 505.89pt x 505.89pt>
 File: ..//figure/Exp_plotTPS.pdf Graphic file (type pdf)
 
 <use ..//figure/Exp_plotTPS.pdf>
-Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 230.
+Package pdftex.def Info: ..//figure/Exp_plotTPS.pdf used on input line 246.
 (pdftex.def)             Requested size: 341.43785pt x 341.43785pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 231.
+(Font)              <9> on input line 247.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 231.
- [11] [12 <..//figure/Exp_plotTPS.pdf>]
-<..//figure/RegRisk_flipped.pdf, id=196, 524.45477pt x 507.21606pt>
+(Font)              <6> on input line 247.
+ [14 <..//figure/Exp_plotTPS.pdf>]
+<..//figure/RegRisk_flipped.pdf, id=203, 524.45477pt x 507.21606pt>
 File: ..//figure/RegRisk_flipped.pdf Graphic file (type pdf)
 
 <use ..//figure/RegRisk_flipped.pdf>
-Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 250.
+Package pdftex.def Info: ..//figure/RegRisk_flipped.pdf used on input line 266.
 
 (pdftex.def)             Requested size: 341.43573pt x 341.45055pt.
- [13] [14 <..//figure/RegRisk_flipped.pdf>] [15] (./RethinkingFS_GCB_postReview
+ [15] [16 <..//figure/RegRisk_flipped.pdf>] [17] (./RethinkingFS_GCB_postReview
 .bbl
 LaTeX Font Info:    Try loading font information for T1+aett on input line 16.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [16] [17] [18]
-[19]
-Underfull \hbox (badness 4060) in paragraph at lines 282--287
+) [18] [19] [20]
+[21] [22]
+Underfull \hbox (badness 4060) in paragraph at lines 322--327
 []\T1/aer/m/n/10 Longstroth M (2013) As-sess-ing frost and freeze dam-age to fl
 ow-ers and buds of fruit trees.
  []
 
-[20]
-Underfull \hbox (badness 2512) in paragraph at lines 361--364
+[23]
+Underfull \hbox (badness 2512) in paragraph at lines 410--413
 []\T1/aer/m/n/10 NOAA (2017) Cli-mate data on-line search.  URL $\T1/aett/m/n/1
 0 https : / / www . ncdc . noaa . gov / cdo -[] web / search ?
  []
 
-[21] [22] [23]) [24] (./RethinkingFS_GCB_postReview.aux) ) 
+[24] [25] [26]) [27] (./RethinkingFS_GCB_postReview.aux) ) 
 Here is how much of TeX's memory you used:
- 16021 strings out of 493014
- 316852 string characters out of 6133351
- 347021 words of memory out of 5000000
- 19342 multiletter control sequences out of 15000+600000
+ 16051 strings out of 493014
+ 317416 string characters out of 6133351
+ 348681 words of memory out of 5000000
+ 19372 multiletter control sequences out of 15000+600000
  35913 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,7n,42p,10413b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -961,10 +961,10 @@ ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb>
-Output written on RethinkingFS_GCB_postReview.pdf (24 pages, 578319 bytes).
+Output written on RethinkingFS_GCB_postReview.pdf (27 pages, 593375 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
+ 398 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

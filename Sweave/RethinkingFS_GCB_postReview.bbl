@@ -1,4 +1,4 @@
-\begin{thebibliography}{76}
+\begin{thebibliography}{86}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -100,6 +100,12 @@ Caffarra A, Donnelly A (2011) {The ecological significance of phenology in four
   711--721.
 \newblock \doi{10.1007/s00484-010-0386-1}.
 
+\bibitem[{Campbell \& Sugano(1979)}]{Campbell1979}
+Campbell RK, Sugano AI (1979) {Genecology of bud-burst phenology in
+  Douglas-Fir: response to flushing temperature and chilling}.
+\newblock \emph{Botanical Gazette}, \textbf{140}, 223--231.
+\newblock \urlprefix\url{http://www.jstor.org/stable/2473722}.
+
 \bibitem[{{CaraDonna, Paul J and Bain, Justin A}(2016)}]{Caradonna2016}
 {CaraDonna, Paul J and Bain, Justin A} (2016) {Frost sensitivity of leaves and
   flowers of subalpine plants is related to tissue type and phenology}.
@@ -137,6 +143,14 @@ Edwards EJ, Chatelet DS, Spriggs EL, Johnson ES, Schlutius C, Donoghue MJ
 \newblock \emph{Am J Bot}, \textbf{104}, 509--515.
 \newblock \doi{10.3732/ajb.1700075}.
 
+\bibitem[{Estiarte \& Pe{\~n}uelas(2015)}]{Estiarte2015}
+Estiarte M, Pe{\~n}uelas J (2015) Alteration of the phenology of leaf
+  senescence and fall in winter deciduous species by climate change: effects on
+  nutrient proficiency.
+\newblock \emph{Global Change Biology}, \textbf{21}, 1005--1017.
+\newblock \doi{doi:10.1111/gcb.12804}.
+\newblock \urlprefix\url{https://doi.org/10.1111/gcb.12804}.
+
 \bibitem[{Flynn \& Wolkovich(2018)}]{Flynn2018}
 Flynn DFB, Wolkovich EM (2018) Temperature and photoperiod drive spring
   phenology across all species in a temperate forest community.
@@ -165,6 +179,13 @@ Gu L, Hanson PJ, Post WM, \emph{et~al.} (2008) {The 2007 Eastern US spring
 \newblock \emph{BioScience}, \textbf{58}, 253.
 \newblock \doi{10.1641/B580311}.
 
+\bibitem[{H{\"a}nninen \& Tanino(2011)}]{Hanninen2011}
+H{\"a}nninen H, Tanino K (2011) Tree seasonality in a warming climate.
+\newblock \emph{Trends in Plant Science}, \textbf{16}, 412 -- 416.
+\newblock \doi{https://doi.org/10.1016/j.tplants.2011.05.001}.
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S1360138511000999}.
+
 \bibitem[{Harrington \& Gould(2015)}]{Harrington2015}
 Harrington CA, Gould PJ (2015) {Tradeoffs between chilling and forcing in
   satisfying dormancy requirements for Pacific Northwest tree species}.
@@ -172,11 +193,25 @@ Harrington CA, Gould PJ (2015) {Tradeoffs between chilling and forcing in
 \newblock \doi{10.3389/fpls.2015.00120}.
 \newblock \urlprefix\url{http://dx.doi.org/10.3389/fpls.2015.00120}.
 
+\bibitem[{Heide \& Prestrud(2005)}]{Heide2005}
+Heide O, Prestrud A (2005) Low temperature, but not photoperiod, controls
+  growth cessation and dormancy induction and release in apple and pear.
+\newblock \emph{Tree physiology}, \textbf{25}, 109--114.
+
 \bibitem[{Hofmann \& Bruelheide(2015)}]{Hofmann2015}
 Hofmann M, Bruelheide H (2015) {Frost hardiness of tree species is independent
   of phenology and macroclimatic niche}.
 \newblock \emph{Journal of Biosciences}, \textbf{40}, 147--157.
 \newblock \doi{10.1007/s12038-015-9505-9}.
+
+\bibitem[{Howe \emph{et~al.}(2003)Howe, Aitken, Neale, Jermstad, Wheeler, \&
+  Chen}]{Howe2003}
+Howe GT, Aitken SN, Neale DB, Jermstad KD, Wheeler NC, Chen TH (2003) From
+  genotype to phenotype: unraveling the complexities of cold adaptation in
+  forest trees.
+\newblock \emph{Canadian Journal of Botany}, \textbf{81}, 1247--1266.
+\newblock \doi{10.1139/b03-141}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1139/B03-141}.
 
 \bibitem[{Hufkens \emph{et~al.}(2012)Hufkens, Friedl, Keenan, Sonnentag,
   Bailey, O'Keefe, \& Richardson}]{Hufkens2012}
@@ -240,6 +275,11 @@ Kollas C, K{\"{o}}rner C, Randin CF (2014) {Spring frost and growing season
   length co-control the cold range limits of broad-leaved trees}.
 \newblock \emph{Journal of Biogeography}, \textbf{41}, 773--783.
 \newblock \doi{10.1111/jbi.12238}.
+
+\bibitem[{{K{\"o}rner, Christian}(2012)}]{Korner2012}
+{K{\"o}rner, Christian} (2012) \emph{Alpine treelines: functional ecology of
+  the global high elevation tree limits}.
+\newblock Springer Science \& Business Media.
 
 \bibitem[{Laube \emph{et~al.}(2013)Laube, Sparks, Estrella, H{\"o}fler,
   Ankerst, \& Menzel}]{Laube2013}
@@ -327,6 +367,15 @@ Mock CJ, Mojzisek J, McWaters M, Chenoweth M, Stahle DW (2007) {The winter of
 \newblock \emph{Climatic Change}, \textbf{83}, 87--115.
 \newblock \doi{10.1007/s10584-006-9126-2}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1007/s10584-006-9126-2}.
+
+\bibitem[{Montw{\'e} \emph{et~al.}(2018)Montw{\'e}, Isaac-Renton, Hamann, \&
+  Spiecker}]{Montwe2018}
+Montw{\'e} D, Isaac-Renton M, Hamann A, Spiecker H (2018) Cold adaptation
+  recorded in tree rings highlights risks associated with climate change and
+  assisted migration.
+\newblock \emph{Nature Communications}, \textbf{9}.
+\newblock \doi{10.1038/s41467-018-04039-5}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1038/s41467-018-04039-5}.
 
 \bibitem[{Moorcroft \emph{et~al.}(2001)Moorcroft, Hurtt, \&
   Pacala}]{Moorcroft2001}
@@ -419,13 +468,6 @@ Richardson AD (2015) {PhenoCam images and canopy phenology at Harvard Forest
 \newblock
   \urlprefix\url{http://harvardforest.fas.harvard.edu:8080/exist/apps/datasets/showData.html?id=hf158}.
 
-\bibitem[{Richardson(2018)}]{Richardson2018}
-Richardson AD (2018) {Tracking seasonal rhythms of plants in diverse ecosystems
-  with digital camera imagery}.
-\newblock \emph{New Phytologist}.
-\newblock \doi{10.1111/nph.15591}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1111/nph.15591}.
-
 \bibitem[{Richardson \emph{et~al.}(2018)Richardson, Hufkens, Milliman, \&
   Frolking}]{Richardson2018b}
 Richardson AD, Hufkens K, Milliman T, Frolking S (2018) {Intercomparison of
@@ -457,6 +499,16 @@ S{\'a}nchez B, Rasmussen A, Porter JR (2013) Temperatures and the growth and
 \newblock \doi{10.1111/gcb.12389}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1111/gcb.12389}.
 
+\bibitem[{Savolainen \emph{et~al.}(2007)Savolainen, Pyh{\"a}j{\"a}rvi, \&
+  Kn{\"u}rr}]{Savolainen2007}
+Savolainen O, Pyh{\"a}j{\"a}rvi T, Kn{\"u}rr T (2007) Gene flow and local
+  adaptation in trees.
+\newblock \emph{Annual Review of Ecology, Evolution, and Systematics},
+  \textbf{38}, 595--619.
+\newblock \doi{10.1146/annurev.ecolsys.38.091206.095646}.
+\newblock
+  \urlprefix\url{https://doi.org/10.1146/annurev.ecolsys.38.091206.095646}.
+
 \bibitem[{Schaber \& Badeck(2005)}]{Schaber2005}
 Schaber J, Badeck FW (2005) {Plant phenology in Germany over the 20th century}.
 \newblock \emph{Regional Environmental Change}, \textbf{5}, 37--46.
@@ -483,6 +535,14 @@ Soudani K, Hmimina G, Delpierre N, \emph{et~al.} (2012) {Ground-based Network
 \newblock \doi{10.1016/j.rse.2012.03.012}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1016/j.rse.2012.03.012}.
 
+\bibitem[{Strimbeck \emph{et~al.}(2015)Strimbeck, Schaberg, Fossdal,
+  Schr{\"o}der, \& Kjellsen}]{Strimbeck2015}
+Strimbeck GR, Schaberg PG, Fossdal CG, Schr{\"o}der WP, Kjellsen TD (2015)
+  Extreme low temperature tolerance in woody plants.
+\newblock \emph{Frontiers in Plant Science}, \textbf{6}.
+\newblock \doi{10.3389/fpls.2015.00884}.
+\newblock \urlprefix\url{http://dx.doi.org/10.3389/fpls.2015.00884}.
+
 \bibitem[{USA-NPN(2016)}]{USA-NPN2016}
 USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
 \newblock \urlprefix\url{http://dx.doi.org/10.5066/F7XD0ZRK}.
@@ -493,6 +553,13 @@ Vihera-aarnio A, Hakkinen R, Junttila O (2006) {Critical night length for bud
   set and its variation in two photoperiodic ecotypes of \textit{Betula
   pendula}}.
 \newblock \emph{Tree Physiology}, \textbf{26}, 1013--1018.
+
+\bibitem[{Vitasse \emph{et~al.}(2009)Vitasse, Delzon, Bresson, Michalet, \&
+  Kremer}]{Vitasse2009}
+Vitasse Y, Delzon S, Bresson CC, Michalet R, Kremer A (2009) Altitudinal
+  differentiation in growth and phenology among populations of temperate-zone
+  tree species growing in a common garden.
+\newblock \emph{Canadian Journal of Forest Research}, \textbf{39}, 1259--1269.
 
 \bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch, \&
   K{\"{o}}rner}]{Vitasse2014}
@@ -516,6 +583,13 @@ Way DA, Montgomery RA (2015) Photoperiod constraints on tree phenology,
 \newblock \doi{10.1111/pce.12431}.
 \newblock
   \urlprefix\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/pce.12431}.
+
+\bibitem[{{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne,
+  P{\"a}ivi}(1997)}]{Welling1997}
+{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne, P{\"a}ivi} (1997)
+  {Photoperiodic induction of dormancy and freezing tolerance in \textit{Betula
+  pubescens}. Involvement of ABA and dehydrins}.
+\newblock \emph{Physiologia Plantarum}, \textbf{100}, 119--125.
 
 \bibitem[{White \emph{et~al.}(2009)White, De~Beurs, Didan
   \emph{et~al.}}]{White2009}
