@@ -1,4 +1,4 @@
-\begin{thebibliography}{24}
+\begin{thebibliography}{44}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -29,6 +29,14 @@ Augspurger CK (2013) {Reconstructing patterns of temperature, phenology, and
 \newblock \emph{Ecology}, \textbf{94}, 41--50.
 \newblock \doi{10.1890/12-0200.1}.
 
+\bibitem[{Ault \emph{et~al.}(2015)Ault, Schwartz, Zurita-Milla, Weltzin, \&
+  Betancourt}]{Ault2015}
+Ault TR, Schwartz MD, Zurita-Milla R, Weltzin JF, Betancourt JL (2015) {Trends
+  and natural variability of spring onset in the coterminous United States as
+  evaluated by a new gridded dataset of spring indices}.
+\newblock \emph{Journal of Climate}, \textbf{28}, 8363--8378.
+\newblock \doi{10.1175/JCLI-D-14-00736.1}.
+
 \bibitem[{Basler \& K{\"{o}}rner(2012)}]{Basler2012}
 Basler D, K{\"{o}}rner C (2012) {Photoperiod sensitivity of bud burst in 14
   temperate forest tree species}.
@@ -42,11 +50,52 @@ Basler D, K{\"{o}}rner C (2012) {Photoperiod sensitivity of bud burst in 14
 \newblock \emph{Journal of Ecology}, \textbf{104}, 55--64.
 \newblock \doi{10.1111/1365-2745.12482}.
 
+\bibitem[{Charrier \emph{et~al.}(2011)Charrier, Bonhomme, Lacointe, \&
+  Am{\'e}glio}]{Charrier2011}
+Charrier G, Bonhomme M, Lacointe A, Am{\'e}glio T (2011) {Are budburst dates,
+  dormancy and cold acclimation in walnut trees (\textit{Juglans regia L.})
+  under mainly genotypic or environmental control?}
+\newblock \emph{International Journal of Biometeorology}, \textbf{55},
+  763--774.
+\newblock \doi{10.1007/s00484-011-0470-1}.
+\newblock \urlprefix\url{https://doi.org/10.1007/s00484-011-0470-1}.
+
+\bibitem[{Estiarte \& Pe{\~n}uelas(2015)}]{Estiarte2015}
+Estiarte M, Pe{\~n}uelas J (2015) Alteration of the phenology of leaf
+  senescence and fall in winter deciduous species by climate change: effects on
+  nutrient proficiency.
+\newblock \emph{Global Change Biology}, \textbf{21}, 1005--1017.
+\newblock \doi{doi:10.1111/gcb.12804}.
+\newblock \urlprefix\url{https://doi.org/10.1111/gcb.12804}.
+
+\bibitem[{Foley \emph{et~al.}(1998)Foley, Levis, Prentice, Pollard, \&
+  Thompson}]{Foley1998}
+Foley JA, Levis S, Prentice IC, Pollard D, Thompson SL (1998) Coupling dynamic
+  models of climate and vegetation.
+\newblock \emph{Global Change Biology}, \textbf{4}, 561--579.
+\newblock \doi{doi:10.1046/j.1365-2486.1998.t01-1-00168.x}.
+\newblock
+  \urlprefix\url{https://doi.org/10.1046/j.1365-2486.1998.t01-1-00168.x}.
+
 \bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post \emph{et~al.}}]{Gu2008}
 Gu L, Hanson PJ, Post WM, \emph{et~al.} (2008) {The 2007 Eastern US spring
   freeze: Increased cold damage in a warming world}.
 \newblock \emph{BioScience}, \textbf{58}, 253.
 \newblock \doi{10.1641/B580311}.
+
+\bibitem[{Heide \& Prestrud(2005)}]{Heide2005}
+Heide O, Prestrud A (2005) Low temperature, but not photoperiod, controls
+  growth cessation and dormancy induction and release in apple and pear.
+\newblock \emph{Tree physiology}, \textbf{25}, 109--114.
+
+\bibitem[{Howe \emph{et~al.}(2003)Howe, Aitken, Neale, Jermstad, Wheeler, \&
+  Chen}]{Howe2003}
+Howe GT, Aitken SN, Neale DB, Jermstad KD, Wheeler NC, Chen TH (2003) From
+  genotype to phenotype: unraveling the complexities of cold adaptation in
+  forest trees.
+\newblock \emph{Canadian Journal of Botany}, \textbf{81}, 1247--1266.
+\newblock \doi{10.1139/b03-141}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1139/B03-141}.
 
 \bibitem[{Hufkens \emph{et~al.}(2012)Hufkens, Friedl, Keenan, Sonnentag,
   Bailey, O'Keefe, \& Richardson}]{Hufkens2012}
@@ -80,6 +129,18 @@ Klosterman S, Hufkens K, Richardson AD (2018) {Later springs green-up faster:
 \newblock \doi{10.1007/s00484-018-1564-9}.
 \newblock \urlprefix\url{https://doi.org/10.1007/s00484-018-1564-9}.
 
+\bibitem[{{K{\"o}rner, Christian}(2012)}]{Korner2012}
+{K{\"o}rner, Christian} (2012) \emph{Alpine treelines: functional ecology of
+  the global high elevation tree limits}.
+\newblock Springer Science \& Business Media.
+
+\bibitem[{Lenz \emph{et~al.}(2016)Lenz, Hoch, K{\"{o}}rner, \&
+  Vitasse}]{Lenz2016}
+Lenz A, Hoch G, K{\"{o}}rner C, Vitasse Y (2016) {Convergence of leaf-out
+  towards minimum risk of freezing damage in temperate trees}.
+\newblock \emph{Functional Ecology}, \textbf{30}, 1--11.
+\newblock \doi{10.1111/1365-2435.12623}.
+
 \bibitem[{Lenz \emph{et~al.}(2013)Lenz, Hoch, Vitasse, \&
   K{\"{o}}rner}]{Lenz2013}
 Lenz A, Hoch G, Vitasse Y, K{\"{o}}rner C (2013) {European deciduous trees
@@ -87,6 +148,17 @@ Lenz A, Hoch G, Vitasse Y, K{\"{o}}rner C (2013) {European deciduous trees
   elevational gradients}.
 \newblock \emph{New Phytologist}, \textbf{200}, 1166--1175.
 \newblock \doi{10.1111/nph.12452}.
+
+\bibitem[{Liu \emph{et~al.}(2018)Liu, Piao, Janssens \emph{et~al.}}]{Liu2018}
+Liu Q, Piao S, Janssens IA, \emph{et~al.} (2018) Extension of the growing
+  season increases vegetation exposure to frost.
+\newblock \emph{Nature Communications}, \textbf{9}.
+\newblock \doi{10.1038/s41467-017-02690-y}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1038/s41467-017-02690-y}.
+
+\bibitem[{Ludlum(1968)}]{Ludlum1968}
+Ludlum DM (1968) \emph{Early American Winters: 1604-1820}.
+\newblock 3. Boston: American Meteorological Society.
 
 \bibitem[{Marino \emph{et~al.}(2011)Marino, Kaiser, Gu, \&
   Ricciuto}]{Marino2011}
@@ -118,6 +190,15 @@ Menzel A, Helm R, Zang C (2015) {Patterns of late spring frost leaf damage and
 \newblock \doi{10.3389/fpls.2015.00110}.
 \newblock \urlprefix\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4338663/}.
 
+\bibitem[{Mock \emph{et~al.}(2007)Mock, Mojzisek, McWaters, Chenoweth, \&
+  Stahle}]{Mock2007}
+Mock CJ, Mojzisek J, McWaters M, Chenoweth M, Stahle DW (2007) {The winter of
+  1827--1828 over eastern North America: a season of extraordinary climatic
+  anomalies, societal impacts, and false spring}.
+\newblock \emph{Climatic Change}, \textbf{83}, 87--115.
+\newblock \doi{10.1007/s10584-006-9126-2}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1007/s10584-006-9126-2}.
+
 \bibitem[{Moorcroft \emph{et~al.}(2001)Moorcroft, Hurtt, \&
   Pacala}]{Moorcroft2001}
 Moorcroft PR, Hurtt GC, Pacala SW (2001) {A method for scaling vegetation
@@ -130,18 +211,29 @@ NOAA (2017) Climate data online search.
 \newblock
   \urlprefix\url{https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND}.
 
+\bibitem[{O'Keefe(2014)}]{Okeefe2014}
+O'Keefe J (2014) {Phenology of woody species at Harvard Forest since 1990}.
+\newblock
+  \urlprefix\url{http://harvardforest.fas.harvard.edu:8080/exist/apps/datasets/showData.html?id=hf003}.
+
 \bibitem[{Peterson \& Abatzoglou(2014)}]{Peterson2014}
 Peterson AG, Abatzoglou JT (2014) {Observed changes in false springs over the
   contiguous United States}.
 \newblock \emph{Geophysical Research Letters}, \textbf{41}, 2156--2162.
 \newblock \doi{10.1002/2014GL059266}.
 
-\bibitem[{Richardson(2018)}]{Richardson2018}
-Richardson AD (2018) {Tracking seasonal rhythms of plants in diverse ecosystems
-  with digital camera imagery}.
-\newblock \emph{New Phytologist}.
-\newblock \doi{10.1111/nph.15591}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1111/nph.15591}.
+\bibitem[{Prentice \emph{et~al.}(1992)Prentice, Cramer, Harrison, Leemans,
+  Monserud, \& Solomon}]{Prentice1992}
+Prentice IC, Cramer W, Harrison SP, Leemans R, Monserud RA, Solomon AM (1992)
+  Special paper: a global biome model based on plant physiology and dominance,
+  soil properties and climate.
+\newblock \emph{Journal of biogeography}, pp. 117--134.
+
+\bibitem[{Richardson(2015)}]{Richardson2015}
+Richardson AD (2015) {PhenoCam images and canopy phenology at Harvard Forest
+  since 2008}.
+\newblock
+  \urlprefix\url{http://harvardforest.fas.harvard.edu:8080/exist/apps/datasets/showData.html?id=hf158}.
 
 \bibitem[{Richardson \emph{et~al.}(2018)Richardson, Hufkens, Milliman, \&
   Frolking}]{Richardson2018b}
@@ -166,6 +258,33 @@ Richardson AD, Keenan TF, Migliavacca M, Ryu Y, Sonnentag O, Toomey M (2013)
 Sakai A, Larcher W (1987) \emph{Frost Survival of Plants}.
 \newblock Springer-Verlag.
 
+\bibitem[{Schaber \& Badeck(2005)}]{Schaber2005}
+Schaber J, Badeck FW (2005) {Plant phenology in Germany over the 20th century}.
+\newblock \emph{Regional Environmental Change}, \textbf{5}, 37--46.
+\newblock \doi{10.1007/s10113-004-0094-7}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1007/s10113-004-0094-7}.
+
+\bibitem[{Soudani \emph{et~al.}(2012)Soudani, Hmimina, Delpierre
+  \emph{et~al.}}]{Soudani2012}
+Soudani K, Hmimina G, Delpierre N, \emph{et~al.} (2012) {Ground-based Network
+  of NDVI measurements for tracking temporal dynamics of canopy structure and
+  vegetation phenology in different biomes}.
+\newblock \emph{Remote Sensing of Environment}, \textbf{123}, 234--245.
+\newblock \doi{10.1016/j.rse.2012.03.012}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.rse.2012.03.012}.
+
+\bibitem[{Strimbeck \emph{et~al.}(2015)Strimbeck, Schaberg, Fossdal,
+  Schr{\"o}der, \& Kjellsen}]{Strimbeck2015}
+Strimbeck GR, Schaberg PG, Fossdal CG, Schr{\"o}der WP, Kjellsen TD (2015)
+  Extreme low temperature tolerance in woody plants.
+\newblock \emph{Frontiers in Plant Science}, \textbf{6}.
+\newblock \doi{10.3389/fpls.2015.00884}.
+\newblock \urlprefix\url{http://dx.doi.org/10.3389/fpls.2015.00884}.
+
+\bibitem[{USA-NPN(2016)}]{USA-NPN2016}
+USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
+\newblock \urlprefix\url{http://dx.doi.org/10.5066/F7XD0ZRK}.
+
 \bibitem[{Vitasse \emph{et~al.}(2014)Vitasse, Lenz, Hoch, \&
   K{\"{o}}rner}]{Vitasse2014}
 Vitasse Y, Lenz A, Hoch G, K{\"{o}}rner C (2014) {Earlier leaf-out rather than
@@ -174,6 +293,22 @@ Vitasse Y, Lenz A, Hoch G, K{\"{o}}rner C (2014) {Earlier leaf-out rather than
 \newblock \emph{Journal of Ecology}, \textbf{102}, 981--988.
 \newblock \doi{10.1111/1365-2745.12251}.
 
+\bibitem[{{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne,
+  P{\"a}ivi}(1997)}]{Welling1997}
+{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne, P{\"a}ivi} (1997)
+  {Photoperiodic induction of dormancy and freezing tolerance in \textit{Betula
+  pubescens}. Involvement of ABA and dehydrins}.
+\newblock \emph{Physiologia Plantarum}, \textbf{100}, 119--125.
+
+\bibitem[{White \emph{et~al.}(2009)White, De~Beurs, Didan
+  \emph{et~al.}}]{White2009}
+White MA, De~Beurs KM, Didan K, \emph{et~al.} (2009) {Intercomparison,
+  interpretation, and assessment of spring phenology in North America estimated
+  from remote sensing for 1982-2006}.
+\newblock \emph{Global Change Biology}, \textbf{15}, 2335--2359.
+\newblock \doi{10.1111/j.1365-2486.2009.01910.x}.
+\newblock \urlprefix\url{http://dx.doi.org/10.1111/j.1365-2486.2009.01910.x}.
+
 \bibitem[{Xie \emph{et~al.}(2015)Xie, Wang, \& Silander}]{Xie2015}
 Xie Y, Wang X, Silander JA (2015) Deciduous forest responses to temperature,
   precipitation, and drought imply complex climate change impacts.
@@ -181,5 +316,12 @@ Xie Y, Wang X, Silander JA (2015) Deciduous forest responses to temperature,
   13585--13590.
 \newblock \doi{10.1073/pnas.1509991112}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1073/pnas.1509991112}.
+
+\bibitem[{Yu \emph{et~al.}(2016)Yu, Wang, \& Chen}]{Yu2016}
+Yu M, Wang G, Chen H (2016) Quantifying the impacts of land surface schemes and
+  dynamic vegetation on the model dependency of projected changes in surface
+  energy and water budgets.
+\newblock \emph{Journal of Advances in Modeling Earth Systems}, \textbf{8},
+  370--386.
 
 \end{thebibliography}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{86}
+\begin{thebibliography}{89}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -157,6 +157,15 @@ Flynn DFB, Wolkovich EM (2018) Temperature and photoperiod drive spring
 \newblock \emph{New Phytologist}, \textbf{219}.
 \newblock \doi{10.1111/nph.15232}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1111/nph.15232}.
+
+\bibitem[{Foley \emph{et~al.}(1998)Foley, Levis, Prentice, Pollard, \&
+  Thompson}]{Foley1998}
+Foley JA, Levis S, Prentice IC, Pollard D, Thompson SL (1998) Coupling dynamic
+  models of climate and vegetation.
+\newblock \emph{Global Change Biology}, \textbf{4}, 561--579.
+\newblock \doi{doi:10.1046/j.1365-2486.1998.t01-1-00168.x}.
+\newblock
+  \urlprefix\url{https://doi.org/10.1046/j.1365-2486.1998.t01-1-00168.x}.
 
 \bibitem[{Fu \emph{et~al.}(2015)Fu, Zhao, Piao \emph{et~al.}}]{Fu2015}
 Fu YH, Zhao H, Piao S, \emph{et~al.} (2015) Declining global warming effects on
@@ -446,6 +455,13 @@ Poirier M, Lacointe A, Ameglio T (2010) A semi-physiological model of cold
 \newblock \doi{10.1093/treephys/tpq087}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1093/treephys/tpq087}.
 
+\bibitem[{Prentice \emph{et~al.}(1992)Prentice, Cramer, Harrison, Leemans,
+  Monserud, \& Solomon}]{Prentice1992}
+Prentice IC, Cramer W, Harrison SP, Leemans R, Monserud RA, Solomon AM (1992)
+  Special paper: a global biome model based on plant physiology and dominance,
+  soil properties and climate.
+\newblock \emph{Journal of biogeography}, pp. 117--134.
+
 \bibitem[{Prozherina \emph{et~al.}(2003)Prozherina, Freiwald, Rousi, \&
   Oksanen}]{Prozherina2003}
 Prozherina N, Freiwald V, Rousi M, Oksanen E (2003) {Interactive effect of
@@ -614,6 +630,13 @@ Xin Q (2016) {A risk-benefit model to simulate vegetation spring onset in
   applications from the field to the Northern Hemisphere}.
 \newblock \emph{Agriculture and Forest Meteorology}, \textbf{228-229},
   139--163.
+
+\bibitem[{Yu \emph{et~al.}(2016)Yu, Wang, \& Chen}]{Yu2016}
+Yu M, Wang G, Chen H (2016) Quantifying the impacts of land surface schemes and
+  dynamic vegetation on the model dependency of projected changes in surface
+  energy and water budgets.
+\newblock \emph{Journal of Advances in Modeling Earth Systems}, \textbf{8},
+  370--386.
 
 \bibitem[{Zohner \emph{et~al.}(2016)Zohner, Benito, Svenning, \&
   Renner}]{Zohner2016}

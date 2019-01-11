@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  2 JAN 2019 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 JAN 2019 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -210,28 +210,48 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count95
+)
 (./rethinking_revletter_p2.aux)
 \openout1 = `rethinking_revletter_p2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 12.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    ... okay on input line 12.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -269,16 +289,16 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count95
-\scratchdimen=\dimen113
+\scratchcounter=\count96
+\scratchdimen=\dimen120
 \scratchbox=\box27
-\nofMPsegments=\count96
-\nofMParguments=\count97
+\nofMPsegments=\count97
+\nofMParguments=\count98
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count98
-\MPscratchDim=\dimen114
-\MPnumerator=\count99
-\makeMPintoPDFobject=\count100
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen121
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
 \everyMPtoPDFconversion=\toks17
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
@@ -324,47 +344,34 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-
-Overfull \hbox (4.5628pt too wide) in paragraph at lines 21--22
-\T1/aer/m/n/10.95 tem-per-a-tures than veg-e-ta-tive phases (In-ouye, 2000; Aug
-spurger, 2009; CaraDonna,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--25
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 38--39
-
- []
-
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 28.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 28.
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
 
-Overfull \hbox (4.5628pt too wide) in paragraph at lines 43--44
-\T1/aer/m/n/10.95 tem-per-a-tures than veg-e-ta-tive phases (In-ouye, 2000; Aug
-spurger, 2009; CaraDonna,
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
  []
 
 
@@ -377,59 +384,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 80--81
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
-
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 85.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 85.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 85.
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 96--97
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+[5] [6]
 Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
@@ -443,7 +429,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 114--115
 
  []
@@ -453,13 +439,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--117
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
@@ -468,109 +459,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-[6]
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-[7] (./rethinking_revletter_p2.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 153--154
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
+[11] [12] (./rethinking_revletter_p2.bbl
 LaTeX Font Info:    Try loading font information for T1+aett on input line 18.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
-[]\T1/aer/m/n/10.95 Basler D, Körner C (2012) Pho-tope-riod sen-si-tiv-ity of b
-ud burst in
+) [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 215--218
+\T1/aett/m/n/10.95 http : / / harvardforest . fas . harvard . edu : 8080 / exis
+t / apps / datasets / showData .
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
-\T1/aer/m/n/10.95 14 tem-per-ate for-est tree species.  \T1/aer/m/it/10.95 Agri
--cul-tural and For-est Me-te-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--38
-\T1/aer/m/it/10.95 o-rol-ogy\T1/aer/m/n/10.95 , \T1/aer/bx/n/10.95 165\T1/aer/m
-/n/10.95 , 73--81.  doi:10.1016/j.agrformet.2012.06.001.  URL
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
-[]\T1/aer/m/n/10.95 Mehdipoor H, Zurita-Milla EIVR (2017) Continental-scale mon
--i-tor-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
-\T1/aer/m/n/10.95 and map-ping of false spring: A cloud com-put-ing so-lu-tion.
-  URL
- []
-
-[8]
-Underfull \hbox (badness 2012) in paragraph at lines 140--145
-[]\T1/aer/m/n/10.95 Richardson AD (2018) Track-ing sea-sonal rhythms of plants 
-in di-verse ecosys-tems
- []
-
-
-Underfull \hbox (badness 1960) in paragraph at lines 140--145
-\T1/aer/m/n/10.95 with dig-i-tal cam-era im-agery.  \T1/aer/m/it/10.95 New Phy-
-tol-o-gist\T1/aer/m/n/10.95 .  doi:10.1111/nph.15591.  URL
- []
-
-
-Underfull \hbox (badness 7344) in paragraph at lines 157--164
-[]\T1/aer/m/n/10.95 Richardson AD, Keenan TF, Migli-avacca M, Ryu Y, Son-nen-ta
-g O, Toomey
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--164
-\T1/aer/m/n/10.95 M (2013) Cli-mate change, phe-nol-ogy, and phe-no-log-i-cal c
-on-trol of veg-e-ta-
- []
-
-
-Underfull \hbox (badness 4859) in paragraph at lines 157--164
-\T1/aer/m/n/10.95 tion feed-backs to the cli-mate sys-tem.  \T1/aer/m/it/10.95 
-Agri-cul-tural and For-est Me-te-o-rol-ogy\T1/aer/m/n/10.95 ,
- []
-
-
-Underfull \hbox (badness 7344) in paragraph at lines 157--164
-\T1/aer/bx/n/10.95 169\T1/aer/m/n/10.95 , 156 -- 173.  doi:https://doi.org/10.1
-016/j.agrformet.2012.09.012.  URL
- []
-
-) [9] (./rethinking_revletter_p2.aux) ) 
+[15]) [16] (./rethinking_revletter_p2.aux) ) 
 Here is how much of TeX's memory you used:
- 3579 strings out of 493014
- 51253 string characters out of 6133351
- 116684 words of memory out of 5000000
- 7057 multiletter control sequences out of 15000+600000
+ 4769 strings out of 493014
+ 72423 string characters out of 6133351
+ 140975 words of memory out of 5000000
+ 8239 multiletter control sequences out of 15000+600000
  20057 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,26p,1668b,238s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmtt10.pfb>
-Output written on rethinking_revletter_p2.pdf (9 pages, 143830 bytes).
+ 38i,4n,38p,1740b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb>
+Output written on rethinking_revletter_p2.pdf (16 pages, 170527 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
