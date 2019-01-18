@@ -1,4 +1,4 @@
-\begin{thebibliography}{89}
+\begin{thebibliography}{91}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -106,9 +106,9 @@ Campbell RK, Sugano AI (1979) {Genecology of bud-burst phenology in
 \newblock \emph{Botanical Gazette}, \textbf{140}, 223--231.
 \newblock \urlprefix\url{http://www.jstor.org/stable/2473722}.
 
-\bibitem[{{CaraDonna, Paul J and Bain, Justin A}(2016)}]{Caradonna2016}
-{CaraDonna, Paul J and Bain, Justin A} (2016) {Frost sensitivity of leaves and
-  flowers of subalpine plants is related to tissue type and phenology}.
+\bibitem[{CaraDonna \& Bain(2016)}]{Caradonna2016}
+CaraDonna PJ, Bain JA (2016) {Frost sensitivity of leaves and flowers of
+  subalpine plants is related to tissue type and phenology}.
 \newblock \emph{Journal of Ecology}, \textbf{104}, 55--64.
 \newblock \doi{10.1111/1365-2745.12482}.
 
@@ -244,6 +244,12 @@ Inouye DW (2008) Effects of climate change on phenology, frost damage, and
 \bibitem[{IPCC(2015)}]{IPCC2014}
 IPCC (2015) \emph{Climate change 2014: mitigation of climate change}, vol.~3.
 \newblock Cambridge University Press.
+
+\bibitem[{Jochner \emph{et~al.}(2011)Jochner, Beck, Behrendt, Traidl-Hoffmann,
+  \& Menzel}]{Jochner2011}
+Jochner SC, Beck I, Behrendt H, Traidl-Hoffmann C, Menzel A (2011) {Effects of
+  extreme spring temperatures on urban phenology and pollen production: a case
+  study in Munich and Ingolstadt}.
 
 \bibitem[{Kathke \& Bruelheide(2011)}]{Kathke2011}
 Kathke S, Bruelheide H (2011) {Differences in frost hardiness of two Norway
@@ -470,6 +476,12 @@ Prozherina N, Freiwald V, Rousi M, Oksanen E (2003) {Interactive effect of
 \newblock \emph{New Phytologist}, \textbf{159}, 623--636.
 \newblock \doi{10.1046/j.1469-8137.2003.00828.x}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1046/j.1469-8137.2003.00828.x}.
+
+\bibitem[{Reyer \emph{et~al.}(2013)Reyer, Leuzinger, Rammig
+  \emph{et~al.}}]{Reyer2013}
+Reyer CP, Leuzinger S, Rammig A, \emph{et~al.} (2013) A plant's perspective of
+  extremes: terrestrial plant responses to changing climatic variability.
+\newblock \emph{Global change biology}, \textbf{19}, 75--89.
 
 \bibitem[{Richardson \& O'Keefe(2009)}]{Richardson2009}
 Richardson A, O'Keefe J (2009) \emph{{Phenological differences between

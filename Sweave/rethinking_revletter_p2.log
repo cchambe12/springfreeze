@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 JAN 2019 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 JAN 2019 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,25 +356,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 28.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 28.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 28.
-[1
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
 
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
-
- []
-
-
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 47--48
 
  []
@@ -384,23 +373,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-[2] [3]
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+[2]
 Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
@@ -409,48 +413,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--84
 
  []
 
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 88.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 88.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 88.
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
@@ -459,69 +484,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-[8]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--137
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-
- []
-
-[11] [12] (./rethinking_revletter_p2.bbl
+[7] [8] (./rethinking_revletter_p2.bbl
 LaTeX Font Info:    Try loading font information for T1+aett on input line 18.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-) [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 215--218
+)
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 \T1/aett/m/n/10.95 http : / / harvardforest . fas . harvard . edu : 8080 / exis
 t / apps / datasets / showData .
  []
 
-[15]) [16] (./rethinking_revletter_p2.aux) ) 
+[9]) [10] (./rethinking_revletter_p2.aux) ) 
 Here is how much of TeX's memory you used:
- 4769 strings out of 493014
- 72423 string characters out of 6133351
- 140975 words of memory out of 5000000
- 8239 multiletter control sequences out of 15000+600000
+ 4714 strings out of 493014
+ 71415 string characters out of 6133351
+ 138760 words of memory out of 5000000
+ 8182 multiletter control sequences out of 15000+600000
  20057 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,4n,38p,1740b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmtt10.pfb>
-Output written on rethinking_revletter_p2.pdf (16 pages, 170527 bytes).
+ 38i,4n,38p,1740b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmtt10.pfb>
+Output written on rethinking_revletter_p2.pdf (10 pages, 144475 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 69 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -23,20 +23,6 @@ Augspurger CK (2009) {Spring 2007 warmth and frost: Phenology, damage and
 \newblock \emph{Functional Ecology}, \textbf{23}, 1031--1039.
 \newblock \doi{10.1111/j.1365-2435.2009.01587.x}.
 
-\bibitem[{Augspurger(2013)}]{Augspurger2013}
-Augspurger CK (2013) {Reconstructing patterns of temperature, phenology, and
-  frost damage over 124 years: Spring damage risk is increasing}.
-\newblock \emph{Ecology}, \textbf{94}, 41--50.
-\newblock \doi{10.1890/12-0200.1}.
-
-\bibitem[{Ault \emph{et~al.}(2015)Ault, Schwartz, Zurita-Milla, Weltzin, \&
-  Betancourt}]{Ault2015}
-Ault TR, Schwartz MD, Zurita-Milla R, Weltzin JF, Betancourt JL (2015) {Trends
-  and natural variability of spring onset in the coterminous United States as
-  evaluated by a new gridded dataset of spring indices}.
-\newblock \emph{Journal of Climate}, \textbf{28}, 8363--8378.
-\newblock \doi{10.1175/JCLI-D-14-00736.1}.
-
 \bibitem[{Basler \& K{\"{o}}rner(2012)}]{Basler2012}
 Basler D, K{\"{o}}rner C (2012) {Photoperiod sensitivity of bud burst in 14
   temperate forest tree species}.
@@ -60,14 +46,6 @@ Charrier G, Bonhomme M, Lacointe A, Am{\'e}glio T (2011) {Are budburst dates,
 \newblock \doi{10.1007/s00484-011-0470-1}.
 \newblock \urlprefix\url{https://doi.org/10.1007/s00484-011-0470-1}.
 
-\bibitem[{Estiarte \& Pe{\~n}uelas(2015)}]{Estiarte2015}
-Estiarte M, Pe{\~n}uelas J (2015) Alteration of the phenology of leaf
-  senescence and fall in winter deciduous species by climate change: effects on
-  nutrient proficiency.
-\newblock \emph{Global Change Biology}, \textbf{21}, 1005--1017.
-\newblock \doi{doi:10.1111/gcb.12804}.
-\newblock \urlprefix\url{https://doi.org/10.1111/gcb.12804}.
-
 \bibitem[{Foley \emph{et~al.}(1998)Foley, Levis, Prentice, Pollard, \&
   Thompson}]{Foley1998}
 Foley JA, Levis S, Prentice IC, Pollard D, Thompson SL (1998) Coupling dynamic
@@ -77,69 +55,11 @@ Foley JA, Levis S, Prentice IC, Pollard D, Thompson SL (1998) Coupling dynamic
 \newblock
   \urlprefix\url{https://doi.org/10.1046/j.1365-2486.1998.t01-1-00168.x}.
 
-\bibitem[{Gu \emph{et~al.}(2008)Gu, Hanson, Post \emph{et~al.}}]{Gu2008}
-Gu L, Hanson PJ, Post WM, \emph{et~al.} (2008) {The 2007 Eastern US spring
-  freeze: Increased cold damage in a warming world}.
-\newblock \emph{BioScience}, \textbf{58}, 253.
-\newblock \doi{10.1641/B580311}.
-
-\bibitem[{Heide \& Prestrud(2005)}]{Heide2005}
-Heide O, Prestrud A (2005) Low temperature, but not photoperiod, controls
-  growth cessation and dormancy induction and release in apple and pear.
-\newblock \emph{Tree physiology}, \textbf{25}, 109--114.
-
-\bibitem[{Howe \emph{et~al.}(2003)Howe, Aitken, Neale, Jermstad, Wheeler, \&
-  Chen}]{Howe2003}
-Howe GT, Aitken SN, Neale DB, Jermstad KD, Wheeler NC, Chen TH (2003) From
-  genotype to phenotype: unraveling the complexities of cold adaptation in
-  forest trees.
-\newblock \emph{Canadian Journal of Botany}, \textbf{81}, 1247--1266.
-\newblock \doi{10.1139/b03-141}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1139/B03-141}.
-
-\bibitem[{Hufkens \emph{et~al.}(2012)Hufkens, Friedl, Keenan, Sonnentag,
-  Bailey, O'Keefe, \& Richardson}]{Hufkens2012}
-Hufkens K, Friedl MA, Keenan TF, Sonnentag O, Bailey A, O'Keefe J, Richardson
-  AD (2012) {Ecological impacts of a widespread frost event following early
-  spring leaf-out}.
-\newblock \emph{Global Change Biology}, \textbf{18}, 2365--2377.
-\newblock \doi{10.1111/j.1365-2486.2012.02712.x}.
-
 \bibitem[{Inouye(2000)}]{Inouye2000}
 Inouye DW (2000) {The ecological and evolutionary significance of frost in the
   context of climate change}.
 \newblock \emph{Ecology Letters}, \textbf{3}, 457--463.
 \newblock \doi{10.1046/j.1461-0248.2000.00165.x}.
-
-\bibitem[{Kim \emph{et~al.}(2015)Kim, Moorcroft, Aleinov, Puma, \&
-  Kiang}]{Kim2015}
-Kim Y, Moorcroft PR, Aleinov I, Puma MJ, Kiang NY (2015) {Variability of
-  phenology and fluxes of water and carbon with observed and simulated soil
-  moisture in the Ent Terrestrial Biosphere Model (Ent TBM version 1.0.1.0.0)}.
-\newblock \emph{Geoscientific Model Development}, \textbf{8}, 3837--3865.
-\newblock \doi{10.5194/gmd-8-3837-2015}.
-\newblock \urlprefix\url{http://dx.doi.org/10.5194/gmd-8-3837-2015}.
-
-\bibitem[{Klosterman \emph{et~al.}(2018)Klosterman, Hufkens, \&
-  Richardson}]{Klosterman2018}
-Klosterman S, Hufkens K, Richardson AD (2018) {Later springs green-up faster:
-  the relation between onset and completion of green-up in deciduous forests of
-  North America}.
-\newblock \emph{International Journal of Biometeorology}.
-\newblock \doi{10.1007/s00484-018-1564-9}.
-\newblock \urlprefix\url{https://doi.org/10.1007/s00484-018-1564-9}.
-
-\bibitem[{{K{\"o}rner, Christian}(2012)}]{Korner2012}
-{K{\"o}rner, Christian} (2012) \emph{Alpine treelines: functional ecology of
-  the global high elevation tree limits}.
-\newblock Springer Science \& Business Media.
-
-\bibitem[{Lenz \emph{et~al.}(2016)Lenz, Hoch, K{\"{o}}rner, \&
-  Vitasse}]{Lenz2016}
-Lenz A, Hoch G, K{\"{o}}rner C, Vitasse Y (2016) {Convergence of leaf-out
-  towards minimum risk of freezing damage in temperate trees}.
-\newblock \emph{Functional Ecology}, \textbf{30}, 1--11.
-\newblock \doi{10.1111/1365-2435.12623}.
 
 \bibitem[{Lenz \emph{et~al.}(2013)Lenz, Hoch, Vitasse, \&
   K{\"{o}}rner}]{Lenz2013}
@@ -148,17 +68,6 @@ Lenz A, Hoch G, Vitasse Y, K{\"{o}}rner C (2013) {European deciduous trees
   elevational gradients}.
 \newblock \emph{New Phytologist}, \textbf{200}, 1166--1175.
 \newblock \doi{10.1111/nph.12452}.
-
-\bibitem[{Liu \emph{et~al.}(2018)Liu, Piao, Janssens \emph{et~al.}}]{Liu2018}
-Liu Q, Piao S, Janssens IA, \emph{et~al.} (2018) Extension of the growing
-  season increases vegetation exposure to frost.
-\newblock \emph{Nature Communications}, \textbf{9}.
-\newblock \doi{10.1038/s41467-017-02690-y}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1038/s41467-017-02690-y}.
-
-\bibitem[{Ludlum(1968)}]{Ludlum1968}
-Ludlum DM (1968) \emph{Early American Winters: 1604-1820}.
-\newblock 3. Boston: American Meteorological Society.
 
 \bibitem[{Marino \emph{et~al.}(2011)Marino, Kaiser, Gu, \&
   Ricciuto}]{Marino2011}
@@ -181,23 +90,6 @@ Martin M, Gavazov K, K{\"{o}}rner C, Hattenschwiler S, Rixen C (2010) {Reduced
 Mehdipoor H, Zurita-Milla EIVR (2017) Continental-scale monitoring and mapping
   of false spring: A cloud computing solution.
 \newblock \urlprefix\url{http://www.geocomputation.org/2017/papers/48.pdf}.
-
-\bibitem[{Menzel \emph{et~al.}(2015)Menzel, Helm, \& Zang}]{Menzel2015}
-Menzel A, Helm R, Zang C (2015) {Patterns of late spring frost leaf damage and
-  recovery in a European beech (\textit{Fagus sylvatica L.}) stand in
-  south-eastern Germany based on repeated digital photographs}.
-\newblock \emph{Frontiers in Plant Science}, \textbf{6}, 110.
-\newblock \doi{10.3389/fpls.2015.00110}.
-\newblock \urlprefix\url{http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4338663/}.
-
-\bibitem[{Mock \emph{et~al.}(2007)Mock, Mojzisek, McWaters, Chenoweth, \&
-  Stahle}]{Mock2007}
-Mock CJ, Mojzisek J, McWaters M, Chenoweth M, Stahle DW (2007) {The winter of
-  1827--1828 over eastern North America: a season of extraordinary climatic
-  anomalies, societal impacts, and false spring}.
-\newblock \emph{Climatic Change}, \textbf{83}, 87--115.
-\newblock \doi{10.1007/s10584-006-9126-2}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1007/s10584-006-9126-2}.
 
 \bibitem[{Moorcroft \emph{et~al.}(2001)Moorcroft, Hurtt, \&
   Pacala}]{Moorcroft2001}
@@ -234,25 +126,6 @@ Richardson AD (2015) {PhenoCam images and canopy phenology at Harvard Forest
   since 2008}.
 \newblock
   \urlprefix\url{http://harvardforest.fas.harvard.edu:8080/exist/apps/datasets/showData.html?id=hf158}.
-
-\bibitem[{Richardson \emph{et~al.}(2018)Richardson, Hufkens, Milliman, \&
-  Frolking}]{Richardson2018b}
-Richardson AD, Hufkens K, Milliman T, Frolking S (2018) {Intercomparison of
-  phenological transition dates derived from the PhenoCam Dataset V1.0 and
-  MODIS satellite remote sensing}.
-\newblock \emph{Scientific Reports}, \textbf{8}.
-\newblock \doi{10.1038/s41598-018-23804-6}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1038/s41598-018-23804-6}.
-
-\bibitem[{Richardson \emph{et~al.}(2013)Richardson, Keenan, Migliavacca, Ryu,
-  Sonnentag, \& Toomey}]{Richardson2013}
-Richardson AD, Keenan TF, Migliavacca M, Ryu Y, Sonnentag O, Toomey M (2013)
-  Climate change, phenology, and phenological control of vegetation feedbacks
-  to the climate system.
-\newblock \emph{Agricultural and Forest Meteorology}, \textbf{169}, 156 -- 173.
-\newblock \doi{https://doi.org/10.1016/j.agrformet.2012.09.012}.
-\newblock
-  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0168192312002869}.
 
 \bibitem[{Sakai \& Larcher(1987)}]{Sakai1987}
 Sakai A, Larcher W (1987) \emph{Frost Survival of Plants}.
@@ -293,13 +166,6 @@ Vitasse Y, Lenz A, Hoch G, K{\"{o}}rner C (2014) {Earlier leaf-out rather than
 \newblock \emph{Journal of Ecology}, \textbf{102}, 981--988.
 \newblock \doi{10.1111/1365-2745.12251}.
 
-\bibitem[{{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne,
-  P{\"a}ivi}(1997)}]{Welling1997}
-{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne, P{\"a}ivi} (1997)
-  {Photoperiodic induction of dormancy and freezing tolerance in \textit{Betula
-  pubescens}. Involvement of ABA and dehydrins}.
-\newblock \emph{Physiologia Plantarum}, \textbf{100}, 119--125.
-
 \bibitem[{White \emph{et~al.}(2009)White, De~Beurs, Didan
   \emph{et~al.}}]{White2009}
 White MA, De~Beurs KM, Didan K, \emph{et~al.} (2009) {Intercomparison,
@@ -316,12 +182,5 @@ Xie Y, Wang X, Silander JA (2015) Deciduous forest responses to temperature,
   13585--13590.
 \newblock \doi{10.1073/pnas.1509991112}.
 \newblock \urlprefix\url{http://dx.doi.org/10.1073/pnas.1509991112}.
-
-\bibitem[{Yu \emph{et~al.}(2016)Yu, Wang, \& Chen}]{Yu2016}
-Yu M, Wang G, Chen H (2016) Quantifying the impacts of land surface schemes and
-  dynamic vegetation on the model dependency of projected changes in surface
-  energy and water budgets.
-\newblock \emph{Journal of Advances in Modeling Earth Systems}, \textbf{8},
-  370--386.
 
 \end{thebibliography}
