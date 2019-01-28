@@ -15,7 +15,6 @@ Allstadt AJ, Vavrus SJ, Heglund PJ, Pidgeon AM, Wayne E, Radeloff VC (2015)
 \newblock \emph{Environmental Research Letters (submitted)}, \textbf{10},
   104008.
 \newblock \doi{10.1088/1748-9326/10/10/104008}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1088/1748-9326/10/10/104008}.
 
 \bibitem[{Augspurger(2009)}]{Augspurger2009}
 Augspurger CK (2009) {Spring 2007 warmth and frost: Phenology, damage and
@@ -28,7 +27,6 @@ Basler D, K{\"{o}}rner C (2012) {Photoperiod sensitivity of bud burst in 14
   temperate forest tree species}.
 \newblock \emph{Agricultural and Forest Meteorology}, \textbf{165}, 73--81.
 \newblock \doi{10.1016/j.agrformet.2012.06.001}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.agrformet.2012.06.001}.
 
 \bibitem[{CaraDonna \& Bain(2016)}]{Caradonna2016}
 CaraDonna PJ, Bain JA (2016) {Frost sensitivity of leaves and flowers of
@@ -44,7 +42,6 @@ Charrier G, Bonhomme M, Lacointe A, Am{\'e}glio T (2011) {Are budburst dates,
 \newblock \emph{International Journal of Biometeorology}, \textbf{55},
   763--774.
 \newblock \doi{10.1007/s00484-011-0470-1}.
-\newblock \urlprefix\url{https://doi.org/10.1007/s00484-011-0470-1}.
 
 \bibitem[{Foley \emph{et~al.}(1998)Foley, Levis, Prentice, Pollard, \&
   Thompson}]{Foley1998}
@@ -52,8 +49,6 @@ Foley JA, Levis S, Prentice IC, Pollard D, Thompson SL (1998) Coupling dynamic
   models of climate and vegetation.
 \newblock \emph{Global Change Biology}, \textbf{4}, 561--579.
 \newblock \doi{doi:10.1046/j.1365-2486.1998.t01-1-00168.x}.
-\newblock
-  \urlprefix\url{https://doi.org/10.1046/j.1365-2486.1998.t01-1-00168.x}.
 
 \bibitem[{Inouye(2000)}]{Inouye2000}
 Inouye DW (2000) {The ecological and evolutionary significance of frost in the
@@ -84,7 +79,6 @@ Martin M, Gavazov K, K{\"{o}}rner C, Hattenschwiler S, Rixen C (2010) {Reduced
   elevated atmospheric {$CO_2$}}.
 \newblock \emph{Global Change Biology}, \textbf{16}, 1057--1070.
 \newblock \doi{10.1111/j.1365-2486.2009.01987.x}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1111/j.1365-2486.2009.01987.x}.
 
 \bibitem[{Mehdipoor \& Zurita-Milla(2017)}]{Mehdipoor2017}
 Mehdipoor H, Zurita-Milla EIVR (2017) Continental-scale monitoring and mapping
@@ -135,7 +129,6 @@ Sakai A, Larcher W (1987) \emph{Frost Survival of Plants}.
 Schaber J, Badeck FW (2005) {Plant phenology in Germany over the 20th century}.
 \newblock \emph{Regional Environmental Change}, \textbf{5}, 37--46.
 \newblock \doi{10.1007/s10113-004-0094-7}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1007/s10113-004-0094-7}.
 
 \bibitem[{Soudani \emph{et~al.}(2012)Soudani, Hmimina, Delpierre
   \emph{et~al.}}]{Soudani2012}
@@ -144,7 +137,6 @@ Soudani K, Hmimina G, Delpierre N, \emph{et~al.} (2012) {Ground-based Network
   vegetation phenology in different biomes}.
 \newblock \emph{Remote Sensing of Environment}, \textbf{123}, 234--245.
 \newblock \doi{10.1016/j.rse.2012.03.012}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1016/j.rse.2012.03.012}.
 
 \bibitem[{Strimbeck \emph{et~al.}(2015)Strimbeck, Schaberg, Fossdal,
   Schr{\"o}der, \& Kjellsen}]{Strimbeck2015}
@@ -152,14 +144,12 @@ Strimbeck GR, Schaberg PG, Fossdal CG, Schr{\"o}der WP, Kjellsen TD (2015)
   Extreme low temperature tolerance in woody plants.
 \newblock \emph{Frontiers in Plant Science}, \textbf{6}.
 \newblock \doi{10.3389/fpls.2015.00884}.
-\newblock \urlprefix\url{http://dx.doi.org/10.3389/fpls.2015.00884}.
 
 \bibitem[{Thornton \emph{et~al.}(2005)Thornton, Running, \&
   Hunt}]{Thornton2005}
 Thornton PE, Running SW, Hunt ER (2005) Biome-bgc: Terrestrial ecosystem
   process model, version 4.1.1.
 \newblock \doi{10.3334/ornldaac/805}.
-\newblock \urlprefix\url{http://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=805}.
 
 \bibitem[{USA-NPN(2016)}]{USA-NPN2016}
 USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
@@ -180,7 +170,6 @@ White MA, De~Beurs KM, Didan K, \emph{et~al.} (2009) {Intercomparison,
   from remote sensing for 1982-2006}.
 \newblock \emph{Global Change Biology}, \textbf{15}, 2335--2359.
 \newblock \doi{10.1111/j.1365-2486.2009.01910.x}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1111/j.1365-2486.2009.01910.x}.
 
 \bibitem[{Xie \emph{et~al.}(2015)Xie, Wang, \& Silander}]{Xie2015}
 Xie Y, Wang X, Silander JA (2015) Deciduous forest responses to temperature,
@@ -188,6 +177,5 @@ Xie Y, Wang X, Silander JA (2015) Deciduous forest responses to temperature,
 \newblock \emph{Proceedings of the National Academy of Sciences}, \textbf{112},
   13585--13590.
 \newblock \doi{10.1073/pnas.1509991112}.
-\newblock \urlprefix\url{http://dx.doi.org/10.1073/pnas.1509991112}.
 
 \end{thebibliography}

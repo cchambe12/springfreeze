@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 JAN 2019 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 JAN 2019 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -495,12 +495,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--138
  []
 
 [7] [8] (./rethinking_revletter_p2.bbl
-LaTeX Font Info:    Try loading font information for T1+aett on input line 18.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 86.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 107--110
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 \T1/aett/m/n/10.95 http : / / harvardforest . fas . harvard . edu : 8080 / exis
 t / apps / datasets / showData .
  []
@@ -513,7 +513,7 @@ Here is how much of TeX's memory you used:
  8185 multiletter control sequences out of 15000+600000
  20057 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,38p,1759b,311s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,5n,38p,1759b,309s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fo
@@ -523,7 +523,7 @@ ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts
 pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmtt10.pfb>
-Output written on rethinking_revletter_p2.pdf (10 pages, 144992 bytes).
+Output written on rethinking_revletter_p2.pdf (10 pages, 144117 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
