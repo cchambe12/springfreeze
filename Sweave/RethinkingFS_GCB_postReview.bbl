@@ -1,4 +1,4 @@
-\begin{thebibliography}{91}
+\begin{thebibliography}{92}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -570,6 +570,13 @@ Strimbeck GR, Schaberg PG, Fossdal CG, Schr{\"o}der WP, Kjellsen TD (2015)
 \newblock \emph{Frontiers in Plant Science}, \textbf{6}.
 \newblock \doi{10.3389/fpls.2015.00884}.
 \newblock \urlprefix\url{http://dx.doi.org/10.3389/fpls.2015.00884}.
+
+\bibitem[{Thornton \emph{et~al.}(2005)Thornton, Running, \&
+  Hunt}]{Thornton2005}
+Thornton PE, Running SW, Hunt ER (2005) Biome-bgc: Terrestrial ecosystem
+  process model, version 4.1.1.
+\newblock \doi{10.3334/ornldaac/805}.
+\newblock \urlprefix\url{http://daac.ornl.gov/cgi-bin/dsviewer.pl?ds_id=805}.
 
 \bibitem[{USA-NPN(2016)}]{USA-NPN2016}
 USA-NPN (2016) {USA National Phenology Network Extended Spring Indices}.
