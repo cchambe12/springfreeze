@@ -274,9 +274,9 @@ Kollas C, K{\"{o}}rner C, Randin CF (2014) {Spring frost and growing season
 \newblock \emph{Journal of Biogeography}, \textbf{41}, 773--783.
 \newblock \doi{10.1111/jbi.12238}.
 
-\bibitem[{{K{\"o}rner, Christian}(2012)}]{Korner2012}
-{K{\"o}rner, Christian} (2012) \emph{Alpine treelines: functional ecology of
-  the global high elevation tree limits}.
+\bibitem[{K{\"o}rner(2012)}]{Korner2012}
+K{\"o}rner C (2012) \emph{Alpine treelines: functional ecology of the global
+  high elevation tree limits}.
 \newblock Springer Science \& Business Media.
 
 \bibitem[{Laube \emph{et~al.}(2013)Laube, Sparks, Estrella, H{\"o}fler,
@@ -511,11 +511,10 @@ Schaber J, Badeck FW (2005) {Plant phenology in Germany over the 20th century}.
 Schwartz MD (1993) Assessing the onset of spring: A climatological perspective.
 \newblock \emph{Physical Geography}, \textbf{14(6)}, 536--550.
 
-\bibitem[{{S{\o}gaard, Gunnhild and Johnsen, {\O}ystein and Nilsen, Jarle and
-  Junttila, Olavi}({2008})}]{Sogaard2008}
-{S{\o}gaard, Gunnhild and Johnsen, {\O}ystein and Nilsen, Jarle and Junttila,
-  Olavi} ({2008}) {Climatic control of bud burst in young seedlings of nine
-  provenances of Norway spruce}.
+\bibitem[{S{\o}gaard \emph{et~al.}({2008})S{\o}gaard, Johnsen, Nilsen, \&
+  Junttila}]{Sogaard2008}
+S{\o}gaard G, Johnsen {\O}, Nilsen J, Junttila O ({2008}) {Climatic control of
+  bud burst in young seedlings of nine provenances of Norway spruce}.
 \newblock \emph{{Tree Physiology}}, \textbf{{28}}, {311--320}.
 
 \bibitem[{Soudani \emph{et~al.}(2012)Soudani, Hmimina, Delpierre
@@ -535,8 +534,8 @@ Strimbeck GR, Schaberg PG, Fossdal CG, Schr{\"o}der WP, Kjellsen TD (2015)
 
 \bibitem[{Thornton \emph{et~al.}(2005)Thornton, Running, \&
   Hunt}]{Thornton2005}
-Thornton PE, Running SW, Hunt ER (2005) Biome-bgc: Terrestrial ecosystem
-  process model, version 4.1.1.
+Thornton PE, Running SW, Hunt ER (2005) {Biome-BGC: Terrestrial Ecosystem
+  Process Model, Version 4.1.1}.
 \newblock \doi{10.3334/ornldaac/805}.
 
 \bibitem[{USA-NPN(2016)}]{USA-NPN2016}
@@ -577,11 +576,11 @@ Way DA, Montgomery RA (2015) Photoperiod constraints on tree phenology,
 \newblock \emph{Plant, Cell \& Environment}, \textbf{38}, 1725--1736.
 \newblock \doi{10.1111/pce.12431}.
 
-\bibitem[{{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne,
-  P{\"a}ivi}(1997)}]{Welling1997}
-{Welling, Annikki and Kaikuranta, P{\"a}ivi and Rinne, P{\"a}ivi} (1997)
-  {Photoperiodic induction of dormancy and freezing tolerance in \textit{Betula
-  pubescens}. Involvement of ABA and dehydrins}.
+\bibitem[{Welling \emph{et~al.}(1997)Welling, Kaikuranta, \&
+  Rinne}]{Welling1997}
+Welling A, Kaikuranta P, Rinne P (1997) {Photoperiodic induction of dormancy
+  and freezing tolerance in \textit{Betula pubescens}. Involvement of ABA and
+  dehydrins}.
 \newblock \emph{Physiologia Plantarum}, \textbf{100}, 119--125.
 
 \bibitem[{White \emph{et~al.}(2009)White, De~Beurs, Didan
