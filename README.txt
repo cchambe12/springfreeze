@@ -1,6 +1,7 @@
 30 May 2017
 
-Aim: integrative approach to highlight complexity of factors contributing to damage risk from a false spring event on temperate forest ecosystems
+Aim: The aim of this perspective paper is to highlight the complexity of factors contributing to a plant’s false spring risk. By integrating the various factors contributing to spring freezing risk, researchers can better evaluate future trends as climate change progresses. False spring events can be detrimental not only ecologically but also economically. The aim of this paper is to demonstrate to researchers the urgency of a more integrative approach for false spring studies to advance progress in the field. 
+
 
 <><><><><><><>
 Where things live
