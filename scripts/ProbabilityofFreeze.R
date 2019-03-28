@@ -3,9 +3,6 @@
 # Instead of using GDDs as guidance, attempt to find probability of low 
 # temperatures within a timeframe where budburst is likely for a region
 # Break into 2 week periods and then make boxplots
-## Help from Ben Cook!
-
-# Currently by Week, maybe convert to monthly instead?
 
 
 # Clear workspace
@@ -326,18 +323,14 @@ d$low<-as.numeric(d$low)
 
 d$biweekly <- factor(d$biweekly, levels=c("Feb 15-Feb 29", "Mar 1-Mar 14", "Mar 15-Mar 31", "Apr 1-Apr 14",
                                             "Apr 15-Apr 30","May 1-May 14","May 15-May 31"))
-limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum", "plum", 
-              "lightblue", "lightblue", "lightblue", "lightblue",
-              "pink", "pink", "pink", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine")
-ggplot((d), aes(x=biweekly, y=mean, col=site)) + geom_point() + xlab("Two Week Period") + ylab("Average Number of days per two week period below -2.2C") + 
-  geom_line(aes(x=biweekly, y=mean, col=site, group=site)) + geom_linerange(limits, col=limitcolor)
+#limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum", "plum", 
+ #             "lightblue", "lightblue", "lightblue", "lightblue",
+  #            "pink", "pink", "pink", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine")
 
-risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
-                                                                "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30")),
-                    shape=factor(site))) +
-         geom_point(aes(color=factor(site), group=site, shape=factor(site)), size=2) + ylab("Number of days below -2.2C per two-week period") + 
-  geom_line(aes(x=biweekly, y=mean,  color=factor(site), group=site), size=1) + 
-  geom_linerange(aes(ymax=high, color=as.factor(site),  ymin=low), position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
+risk<-ggplot(d, aes(x=biweekly, y=mean, shape=factor(site))) +
+         geom_point(aes(size=factor(site), group=site, shape=factor(site)), size=2) + ylab("Number of days below -2.2C per two-week period") + 
+  geom_line(aes(x=biweekly, y=mean,  linetype=factor(site), group=site), size=1) + 
+  geom_linerange(aes(ymax=high, linetype=as.factor(site),  ymin=low), position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
   theme(panel.grid.minor = element_blank(), legend.position="none", axis.title.x=element_blank(), panel.grid.major = element_blank(), 
                                            panel.background = element_blank(), 
                                            panel.border = element_rect(fill=NA), legend.key=element_blank(),
@@ -345,88 +338,57 @@ risk<-ggplot(d, aes(x=biweekly, y=mean, color=factor(site, labels = c("Bavaria, 
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
                                                                                                                "Apr 15 - Apr 30", "May 1 - May 14", "May 15 - May 31"),
                    position="top") +scale_y_continuous(expand = c(0, 0.1)) + coord_cartesian(ylim=c(0.03:15)) +
-  annotate("text", x = 6, y = 12, label = "Climate Data", fontface = "bold") + scale_shape_manual(labels=c("Bavaria, DE: March 31 - April 30", "Maine, USA: April 10 - May 30", 
-                                                                                                           "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"),
-                                                                                                  values= c(0, 19, 0, 2, 15))
-risk
+  annotate("text", x = 6.3, y = 12, label = "Climate Data", fontface = "bold", size=4) + 
+  scale_shape_manual(labels=c("Bavaria, DE: March 31 - April 30", 
+                              "Maine, USA: April 10 - May 30", "North Carolina, USA: February 21 - April 4",  
+                              "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"),
+                     values= c(0, 19, 0, 2, 15)) +
+  scale_linetype_manual(labels=c("Bavaria, DE: March 31 - April 30", 
+                              "Maine, USA: April 10 - May 30", "North Carolina, USA: February 21 - April 4",  
+                              "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"),
+                     values= c(1,3,4,2,5))
 
-#theme(panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), legend.position=c(0.88,0.91),
-#      +        legend.key.size=unit(0.3, "cm"), plot.margin=unit(c(.2,.5,-.3,.5),"cm")
-      
-## Make a dataframe:
+#risk
 
 x<- data.frame("Site"=c( "Rhone-Alps, France", "Bavaria, Germany", "Maine, USA", "North Carolina, USA","Washington, USA"), "Earliest"=c( 90,90, 100, 50, 80), 
                "Early" = c( 100, 112, 115, 80,100), "Late" = c( 115, 127, 120, 90, 120), "Latest" = c( 120,140, 150, 100, 130))
 
-fix<-x%>%
+timeprep<-x%>%
   gather("time", "doy", Earliest, Early, Late, Latest) %>%
   arrange(desc(Site))
 
-fix$biweekly<-ifelse((fix$doy>=46 & fix$doy <=60), "Feb 15-Feb 29", fix$doy)
-fix$biweekly<-ifelse((fix$doy>=61 & fix$doy <=73), "Mar 1-Mar 14", fix$biweekly)
-fix$biweekly<-ifelse((fix$doy>=74 & fix$doy <=91), "Mar 15-Mar 31", fix$biweekly)
-fix$biweekly<-ifelse((fix$doy>=92 & fix$doy <=106), "Apr 1-Apr 14", fix$biweekly)
-fix$biweekly<-ifelse((fix$doy>=107 & fix$doy <=121), "Apr 15-Apr 30", fix$biweekly)
-fix$biweekly<-ifelse((fix$doy>=122 & fix$doy <=136), "May 1-May 14", fix$biweekly)
-fix$biweekly<-ifelse((fix$doy>=137 & fix$doy <=152), "May 15-May 31", fix$biweekly)
+timeprep$biweekly<-ifelse((timeprep$doy>=46 & timeprep$doy <=60), "Feb 15-Feb 29", timeprep$doy)
+timeprep$biweekly<-ifelse((timeprep$doy>=61 & timeprep$doy <=73), "Mar 1-Mar 14", timeprep$biweekly)
+timeprep$biweekly<-ifelse((timeprep$doy>=74 & timeprep$doy <=91), "Mar 15-Mar 31", timeprep$biweekly)
+timeprep$biweekly<-ifelse((timeprep$doy>=92 & timeprep$doy <=106), "Apr 1-Apr 14", timeprep$biweekly)
+timeprep$biweekly<-ifelse((timeprep$doy>=107 & timeprep$doy <=121), "Apr 15-Apr 30", timeprep$biweekly)
+timeprep$biweekly<-ifelse((timeprep$doy>=122 & timeprep$doy <=136), "May 1-May 14", timeprep$biweekly)
+timeprep$biweekly<-ifelse((timeprep$doy>=137 & timeprep$doy <=152), "May 15-May 31", timeprep$biweekly)
 
-fix$doy<-as.numeric(as.character(fix$doy))
+timeprep$doy<-as.numeric(as.character(timeprep$doy))
 
-fix2 <- transform(fix, Site = reorder(Site, order(Site, decreasing = TRUE)))
-fix$Site <- factor(fix$Site,levels=sort(unique(fix$Site), decreasing=FALSE))
-time<- ggplot((fix), aes(y=doy, x=Site, color=Site)) + geom_boxplot(aes(y=doy, x=Site, fill=Site), width=0.2) + coord_flip() +
+timeprep2 <- transform(timeprep, Site = reorder(Site, order(Site, decreasing = TRUE)))
+timeprep$Site <- factor(timeprep$Site,levels=sort(unique(timeprep$Site), decreasing=FALSE))
+time<- ggplot((timeprep), aes(y=doy, x=Site, linetype=Site)) + geom_boxplot(aes(y=doy, x=Site), width=0.2) + coord_flip() +
   scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb15-Feb29", "Mar1-Mar14", "Mar15-Mar31", "Apr1-Apr14",
                                                                        "Apr15-Apr30", "May1-May14", "May15-May31")) +
   theme(legend.position="none", 
         panel.grid.major = element_blank(),panel.grid.minor = element_blank(), panel.background= element_blank(),plot.margin=unit(c(.2,.5,-.3,.5),"cm"),
-        panel.border = element_rect(fill=NA)) +
-  ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(fix$Site))) +
-  annotate("text", x=5.35, y=118, label="March 31-April 30", fontface="bold", color="pink2") +
-  annotate("text", x=4.35, y=120, label="April 10-May 30", fontface="bold", color="goldenrod") +
-  annotate("text", x=3.35, y=83, label="February 21-April 4", fontface="bold", color="mediumaquamarine") +
-  annotate("text", x=2.35, y=107, label="April 5-May 10", fontface="bold", color="lightblue4") +
-  annotate("text", x=1.35, y=109, label="March 22-April 30", fontface="bold", color="plum2") +
-  annotate("text", x=5.4, y=60, label="Phenology Data", fontface="bold")
-time
+        panel.border = element_rect(fill=NA), axis.text.x = element_text(size=7)) +
+  ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(timeprep$Site))) +
+  annotate("text", x=5.35, y=118, label="March 31-April 30", fontface="bold", size=3, col="grey") +
+  annotate("text", x=4.35, y=120, label="April 10-May 30", fontface="bold", size=3, col="grey") +
+  annotate("text", x=3.35, y=83, label="February 21-April 4", fontface="bold", size=3, col="grey") +
+  annotate("text", x=2.35, y=107, label="April 5-May 10", fontface="bold", size=3, col="grey") +
+  annotate("text", x=1.35, y=109, label="March 22-April 30", fontface="bold", size=3, col="grey") +
+  annotate("text", x=4.8, y=63, label="Phenology Data", fontface="bold", size=4) +
+  scale_linetype_manual(labels=c("Bavaria, DE: March 31 - April 30", 
+                                 "Maine, USA: April 10 - May 30", "North Carolina, USA: February 21 - April 4",  
+                                 "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"),
+                        values= c(1,3,4,2,5))
+#time
 
-annotate("text", x = -13, y = 10, label = "Phenology Data", fontface = "bold")
-limitcolor<-c("lightgoldenrod", "lightgoldenrod", "lightgoldenrod","plum", "plum", "plum", 
-              "lightblue", "lightblue", "lightblue", "lightblue",
-              "pink", "pink", "pink", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine", "mediumaquamarine")
-
-
-  labels = c("Bavaria, Germany: March 31-April 30", "Maine, USA: April 10 - May 30", 
-             "North Carolina, USA: February 21 - April 4",  "Rhone-Alps, FR: April 5 - May 10", "Washington, USA: March 22 - April 30"))
-
-#c(0.08,0.22), legend.key.size=unit(0.3, "cm")
-#theme(legend.position=c(0.05,0.3), legend.key.size=unit(0.4, "cm"), aspect.ratio=0.3,
-#      +        panel.grid.major = element_line(size=0.1),panel.grid.minor = element_line(size=0.1), plot.margin=unit(c(-.2,.5,.2,.5),"cm"))
 
 quartz()
 ggarrange(time, risk, nrow=2, heights=c(0.45, 1))
-
-#grid.arrange(risk, time, ncol=1, nrow=2, respect=TRUE)
-
-#grid.draw(rbind(ggplotGrob(risk), ggplotGrob(time)))
-
-ggplot(data = df, aes(x=biweekly, y=count)) + geom_boxplot(aes(fill=site))
-
-
-df$biweekly<-ifelse(df$biweekly=="02_2", "Feb 15 - Feb 29", df$biweekly)
-df$biweekly<-ifelse(df$biweekly=="03_1", "Mar 1 - Mar 14", df$biweekly)
-df$biweekly<-ifelse(df$biweekly=="03_2", "Mar 15 - Mar 31", df$biweekly)
-df$biweekly<-ifelse(df$biweekly=="04_1", "Apr 1 - Apr 14", df$biweekly)
-df$biweekly<-ifelse(df$biweekly=="04_2", "Apr 15 - Apr 30", df$biweekly)
-df$biweekly<-ifelse(df$biweekly=="05_1", "May 1 - May 14", df$biweekly)
-df$biweekly<-ifelse(df$biweekly=="05_2", "May 15 - May 31", df$biweekly)
-
-
-#df_table <- table(df$biweekly)
-#df_levels <- names(df_table)[order(df_table)]
-df$biweekly <- factor(df$biweekly, levels=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
-                                            "Apr 15 - Apr 30","May 1 - May 14","May 15 - May 31"))
-qplot(site, count, data = df, 
-      geom = "boxplot", color=biweekly) + 
-  xlab("Site")+ylab("Mean number of freeze days")
-
 
