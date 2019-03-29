@@ -1,0 +1,76 @@
+\documentclass{article}[12pt]
+\usepackage{Sweave}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{siunitx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{pdflscape}
+\usepackage{mdframed}
+\usepackage{natbib}
+\bibliographystyle{..//refs/styles/gcb}
+\usepackage[hyphens]{url}
+\usepackage[small]{caption}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+%\topmargin -2.5cm        
+%\oddsidemargin -2.5cm   
+%\evensidemargin -2.5cm
+\textwidth 16.59cm
+\textheight 21.94cm 
+%\pagestyle{empty} %comment if want page numbers
+\parskip 7.2pt
+\renewcommand{\baselinestretch}{2}
+\parindent 0pt
+\usepackage{lineno}
+\linenumbers
+\usepackage{setspace}
+\doublespacing
+
+\newmdenv[
+  topline=true,
+  bottomline=true,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{siderules}
+
+%% R Script
+<<label=libraries, echo=FALSE, results="asis", message=FALSE, warning=FALSE>>=
+  options(stringsAsFactors=FALSE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(lubridate)
+library(gridExtra)
+library(RColorBrewer)
+@
+
+\begin{document}
+
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\labelitemi}{$-$}
+\setkeys{Gin}{width=0.8\textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General to do
+% Move all figures and their captions to end of manuscript
+% Work on transitions throughout. I made note of it many places.
+% My comments are usually in [] and I made some edits throughout. You can use the app FileMerge (spotlight search for it) on most Macs to see the changes quickly. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section*{Graphical Abstract}
+
+Temperate plants are at risk of being exposed to late spring freezes---often called false springs---, which are one of the strongest factors determining temperate plants species range limits and can impose high ecological and economic damage. More studies aimed at understanding relationships among species tolerance and avoidance strategies, climatic regimes, and the environmental cues that underlie spring phenology would improve predictions at all biological levels. An integrated approach to assessing past and future spring freeze damage would provide novel insights into fundamental plant biology, and offer more robust predictions as climate change progresses.
+
+\begin{figure} [H] 
+ \begin{center}
+ %\textbf{Regional Differences in False Spring Risk}\par\medskip
+ \includegraphics[width=12cm, height=11cm]{..//figure/dvrgraphic.pdf} 
+ \caption{Differences in spring phenology and false spring risk across two species: \textit{Ilex mucronata} (L.) and \textit{Betula alleghaniensis} (Marsh.). We mapped a hypothetical false spring event based on historical weather data and long-term observational phenological data collected at Harvard Forest (O'Keefe, 2014). In this scenario, \textit{Ilex mucronata}, which bursts bud early and generally has a short period between budburst (squares) and leafout (triangles), would be exposed to a false spring event during its duration of vegetative risk (i.e., from budburst to leafout), whereas \textit{Betula alleghaniensis} would avoid it entirely (even though it has a longer duration of vegetative risk), due to later budburst. } \label{fig:region}  
+ \end{center}
+ \end{figure}
+
+\end{document}

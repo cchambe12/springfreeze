@@ -15,7 +15,7 @@ https://github.com/cchambe12/springfreeze
 Organization
 <><><><><>
 
-## Sweave folder : all sweave files and PDF outputs
+## docs folder : all sweave files and PDF outputs
 
 ## archive: old scripts, sweave files, figures, and data that is no longer needed
 
