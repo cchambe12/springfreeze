@@ -63,7 +63,7 @@ library(RColorBrewer)
 \newpage
 \section*{Graphical Abstract}
 
-Temperate plants are at risk of being exposed to late spring freezes---often called false springs---, which are one of the strongest factors determining temperate plants species range limits and can impose high ecological and economic damage. More studies aimed at understanding relationships among species tolerance and avoidance strategies, climatic regimes, and the environmental cues that underlie spring phenology would improve predictions at all biological levels. An integrated approach to assessing past and future spring freeze damage would provide novel insights into fundamental plant biology, and offer more robust predictions as climate change progresses.
+Temperate plants are at risk of being exposed to late spring freezes---called false springs---which are a major factor determining range limits, can impose high ecological and economic damage, and may be increasing with climate change. Currently, many false spring studies simplify the myriad complexities involved in assessing false spring risks and damage. Here we review major areas that could improve predictions: understanding how species have evolved to avoid or tolerate false springs (for example, through shortening how long they are at risk), identifying the cues that underlie spring phenology, and studying how local climate impacts false spring risk.
 
 \begin{figure} [H] 
  \begin{center}
