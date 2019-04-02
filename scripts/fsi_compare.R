@@ -14,6 +14,7 @@ graphics.off()
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(RColorBrewer)
 
 # Integrate Phenology Data and compare methodologies
 # Set Working Directory
@@ -42,11 +43,11 @@ blend<-FSI.table %>%
   arrange(year) 
 
 cols<-colorRampPalette(brewer.pal(9,"Dark2"))(3)
-methodplot<-ggplot(blend, aes(year, FSI)) + xlab("Year") +
+methodplot<-ggplot(blend, aes(year, FSI, col=Method)) + xlab("Year") +
   ylab("False Spring Index") + scale_x_continuous(limits = c(2008,2014),breaks=seq(2008,2014,1)) +
-  geom_point(aes(shape=Method)) + 
-  scale_linetype_manual(name="Method", values=c(4,3,1), labels=c("SI-x", "Observational (O`Keefe)", "PhenoCam")) +
-  geom_line(aes(x=year, y=FSI, linetype=Method)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+  geom_point(aes(shape=Method, col=Method)) + 
+  scale_color_manual(name="Method", values=cols, labels=c("SI-x", "Observational (O`Keefe)", "PhenoCam")) +
+  geom_line(aes(x=year, y=FSI, col=Method)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
                                                          panel.background = element_blank(), 
                                                          axis.line = element_line(colour = "black"), legend.key=element_blank(), plot.title = element_text(family="Helvetica"))  + geom_hline(yintercept=0, linetype="solid", col="grey") + geom_hline(yintercept=7, linetype="dotted", col="grey") + 
   scale_shape_manual(name="Method", labels = c("SI-x", "Observational (O`Keefe)", "PhenoCam"),
