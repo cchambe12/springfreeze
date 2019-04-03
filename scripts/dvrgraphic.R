@@ -40,7 +40,7 @@ bet<-read.csv("output/betall.csv",header=TRUE)
 
 ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
   annotate("rect", xmin=82, xmax=97, ymin=0.5
-           , ymax=6, alpha=0.1, color="black") +
+           , ymax=6, alpha=0.1, color="red") +
   xlab("Day of Year") + ylab("Frost Damage Risk") +
   annotate("text", x = 140, y = 18, label = "Ilex mucronata", fontface = "italic") +
   annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
@@ -48,12 +48,14 @@ ilemuc<-ggplot(ile, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   annotate("text", x = 97.5, y = 12, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
                                                                                     panel.background = element_blank(), 
                                                                                     axis.line = element_line(colour = "black"), axis.ticks.y = element_blank(), legend.key=element_blank(),plot.title = element_text(family="Helvetica")) + scale_y_discrete(limits=c("", "low",  "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+ 
-  geom_point(x=96, y=10, shape=15) + geom_point(x=99, y=10, shape=17) #+
+  geom_segment(x=96, xend=99, y=10, yend=10, col="green3") +
+  geom_point(x=96, y=10, shape=15, col="green2") + geom_point(x=99, y=10, shape=17, col="green4") 
+  
 #ggtitle("Defining the Duration of Vegetative Risk")
 
 
 betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:20) + 
-  annotate("rect", xmin=82, xmax=97, ymin=0.5, ymax=6, alpha=0.1, color="black") +
+  annotate("rect", xmin=82, xmax=97, ymin=0.5, ymax=6, alpha=0.1, color="red") +
   xlab("Day of Year") + ylab("Frost Damage Risk") +
   annotate("text", x = 140, y = 18, label = "Betula alleghaniensis", fontface = "italic") +
   annotate("text", x = 90, y = 4.5, label = "False", fontface="bold") +
@@ -61,7 +63,9 @@ betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   annotate("text", x = 132.5, y = 11.5, label = "Duration of Vegetative Risk") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
                                                                                        panel.background = element_blank(), 
                                                                                        axis.line = element_line(colour = "black"), axis.ticks.y = element_blank()) + scale_y_discrete(limits=c("","low", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "high"))+
-  geom_point(x=124, y=10, shape=15) + geom_point(x=140, y=10, shape=17) 
+  geom_segment(x=124, xend=140, y=10, yend=10, col="green3") +
+  geom_point(x=124, y=10, shape=15, col="green2") + geom_point(x=140, y=10, shape=17, col="green4") 
+  
 
 quartz()
 grid.arrange(ilemuc, betall, ncol=1, nrow=2)
