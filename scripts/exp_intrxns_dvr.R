@@ -151,7 +151,11 @@ expB<-ggplot(configprep, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2)) +
                       labels=c("1"=expression(paste(italic("Acer pensylvanicum"))),
                                "6"=expression(paste(italic("Fagus grandifolia"))),
                                "8"=expression(paste(italic("Populus grandidentata"))))) +
-  geom_segment(arrow = arrow(length = unit(0.02, "npc")), aes(linetype=as.factor(sp))) +
+  scale_color_manual(name="Species", values=cols,
+                        labels=c("1"=expression(paste(italic("Acer pensylvanicum"))),
+                                 "6"=expression(paste(italic("Fagus grandifolia"))),
+                                 "8"=expression(paste(italic("Populus grandidentata"))))) +
+  geom_segment(arrow = arrow(length = unit(0.02, "npc")), aes(linetype=as.factor(sp), col=as.factor(sp))) +
   scale_y_discrete(limits = sort(unique(configprep$var)), labels=estimates) +
   xlab("Change in Duration (Days) \nof Vegetative Risk") + ylab("") +
   geom_hline(yintercept=2.5, col="grey") + 

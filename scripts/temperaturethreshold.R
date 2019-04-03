@@ -30,7 +30,7 @@ d$alph<-ifelse(d$Sector=="Agronomic", 1, 2)
 d$dataset<-reorder(d$study, d$alph)
 d$dataset <- factor(d$dataset, levels = d$dataset[order(d$Sector, d$temperature)])
 my.xlab = expression(paste("Temperature Threshold ", degree,"C"))
-temp<-ggplot(d, aes(x=dataset, y=temperature)) + 
+temp<-ggplot(d, aes(x=dataset, y=temperature, col=Sector)) + 
   geom_linerange(aes(ymin=temperature-sd, ymax=temperature+sd), alpha=0.3) + 
   geom_point(aes(shape=Phase)) + ylab(my.xlab) + theme(axis.title.y=element_blank()) +
   geom_hline(yintercept=0, linetype=2) + geom_vline(xintercept = 10.5, linetype=4) +
