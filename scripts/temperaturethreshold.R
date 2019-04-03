@@ -39,7 +39,7 @@ temp<-ggplot(d, aes(x=dataset, y=temperature, col=Sector)) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
         panel.background = element_blank(), 
         axis.line = element_line(colour = "black"), legend.key=element_blank(), plot.title = element_text(family="Helvetica")) + 
-  ylim(c(-20, 10))
+  ylim(c(-20, 10)) + scale_color_manual(name="Sector", values=c("navyblue", "red4"), labels=c("Ecological", "Agronomic"))
 
 temp<- temp + scale_x_discrete(labels=c("All species - soft freeze (Augspurger, 2013)"="All species - soft freeze (Augspurger, 2013)",
                                         "All species (Peterson & Abatzoglou, 2014)"="All species (Peterson & Abatzoglou, 2014)",
