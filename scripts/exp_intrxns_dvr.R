@@ -170,4 +170,8 @@ expB<-ggplot(configprep, aes(x=0, xend=est2, y=Jvar2, yend=Jvar2)) +
 quartz()
 expB
 
-
+png("figures/exp_intrxns_dvr_color.png", 
+    width=8, units="in",
+    height=6,res = 750 )
+plot(expB)
+dev.off()

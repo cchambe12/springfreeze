@@ -54,3 +54,10 @@ methodplot<-ggplot(blend, aes(year, FSI, col=Method)) + xlab("Year") +
                      values = c(16, 17, 15)) #+ ggtitle("Calculating False Spring Risk")
 quartz()
 plot(methodplot)
+
+png("~/Documents/git/springfreeze/figures/fsi_compare_color.png", 
+    width=8, units="in",
+    height=6,res = 750 )
+plot(methodplot)
+dev.off()
+
