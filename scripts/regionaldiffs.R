@@ -15,11 +15,8 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(lubridate)
-library(gridExtra)
-library(gtable)
-library(reshape2)
-library(grid)
 library(egg)
+library(RColorBrewer)
 
 # Set Working Directory
 setwd("~/Documents/git/springfreeze")
@@ -333,7 +330,7 @@ risk<-ggplot(d, aes(x=biweekly, y=mean, shape=factor(site))) +
   geom_line(aes(x=biweekly, y=mean,  col=factor(site), group=site), size=1) + 
   geom_linerange(aes(ymax=high, col=as.factor(site),  ymin=low), position=position_dodge(.2), alpha=0.3, size=2) + labs(color="Location and Day of Budburst Range") + 
   theme(panel.grid.minor = element_blank(), legend.position="none", axis.title.x=element_blank(), panel.grid.major = element_blank(), 
-                                           panel.background = element_blank(), 
+        element_rect(fill="transparent"), 
                                            panel.border = element_rect(fill=NA), legend.key=element_blank(),
         axis.ticks.x=element_line(), plot.margin=unit(c(-.6,.5,.3,.5),"cm")) +
   scale_x_discrete(breaks=c(53, 66, 82, 98, 114, 128, 144), label=c("Feb 15 - Feb 29", "Mar 1 - Mar 14", "Mar 15 - Mar 31", "Apr 1 - Apr 14",
@@ -374,7 +371,7 @@ time<- ggplot(timeprep, aes(y=doy, x=Site, col=Site)) + geom_boxplot(aes(y=doy, 
   scale_y_continuous(breaks=c(55, 70, 85, 101, 116, 131, 146), label=c("Feb15-Feb29", "Mar1-Mar14", "Mar15-Mar31", "Apr1-Apr14",
                                                                        "Apr15-Apr30", "May1-May14", "May15-May31")) +
   theme(legend.position="none", 
-        panel.grid.major = element_blank(),panel.grid.minor = element_blank(), panel.background= element_blank(),plot.margin=unit(c(.2,.5,-.3,.5),"cm"),
+        panel.grid.major = element_blank(),panel.grid.minor = element_blank(), panel.background= element_rect(fill="transparent"),plot.margin=unit(c(.2,.5,-.3,.5),"cm"),
         panel.border = element_rect(fill=NA), axis.text.x = element_text(size=7)) +
   ylab("") + xlab("") + scale_x_discrete(limits = rev(levels(timeprep$Site))) +
   annotate("text", x=5.35, y=118, label="March 31-April 30", fontface="bold", size=3, col="grey") +
@@ -391,5 +388,10 @@ time<- ggplot(timeprep, aes(y=doy, x=Site, col=Site)) + geom_boxplot(aes(y=doy, 
 
 
 quartz()
-ggarrange(time, risk, nrow=2, heights=c(0.45, 1))
+regrisk <- ggarrange(time, risk, nrow=2, heights=c(0.45, 1))
 
+png("figures/regionalrisk_sites_color.png", 
+    width=8, units="cm", res=750,
+    height=7 )
+plot(regrisk)
+dev.off()

@@ -68,4 +68,10 @@ betall<-ggplot(bet, aes(x=doy, y=risk)) + geom_line() + coord_cartesian(ylim=0:2
   
 
 quartz()
-grid.arrange(ilemuc, betall, ncol=1, nrow=2)
+fig3<-grid.arrange(ilemuc, betall, ncol=1, nrow=2)
+
+png("figures/dvrgraphic_color.png", 
+    width=6, units="in",
+    height=5,res = 750 )
+plot(fig3)
+dev.off()

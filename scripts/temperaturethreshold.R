@@ -10,6 +10,8 @@ graphics.off()
 # Load libraries
 library(ggplot2)
 
+setwd("~/Documents/git/springfreeze")
+
 ## Let's make the data...
 d<- data.frame(study=c("Sorbus aucuparia - 50% (Lenz et al., 2016)", "Prunus avium - 50% (Lenz et al., 2016)", "Tilia platyphyllos - 50% (Lenz et al., 2016)", 
                        "Acer pseudoplatanus - 50% (Lenz et al., 2016)", "Fagus sylvatica - 50% (Lenz et al., 2016)", "All species - hard freeze (Schwartz, 1993))", 
@@ -62,5 +64,11 @@ temp<- temp + scale_x_discrete(labels=c("All species - soft freeze (Augspurger, 
 temp<-temp +coord_flip() #+ ggtitle("Descrepancies in Defining \nFalse Spring Temperatures")
 quartz()
 plot(temp)
+
+png("figures/temperaturethreshold_color.png", 
+    width=6, units="in",
+    height=6,res = 750 )
+plot(temp)
+dev.off()
 
 
